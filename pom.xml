@@ -8,7 +8,7 @@
     <artifactId>vecmath</artifactId>
     <version>0.0.0-alpha</version>
 
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

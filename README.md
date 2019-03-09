@@ -1,2 +1,127 @@
 # VecMath
 
+A simple GLSL inspired vector math library for 3D and computer graphics.
+
+
+## Build
+
+Building the project requires at least JDK11.
+
+1. Fetch it from GitHub:<br>
+`git clone https://github.com/rsarendus/vecmath.git`
+
+2. Navigate into the project's root directory:<br>
+`cd vecmath`
+
+3. Build:<br>
+`mvn clean install`
+
+
+## Highlights of the Library
+
+The library offers currently the following types:
+
+- **Value** - a single value / 1-dimensional vector
+- **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
+
+Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
+<br>
+Additionally **Consumer** and **Factory** functional interfaces are provided for each type.
+
+The library also provides concrete implementations of each type (excluding *Value*) as both mutable and immutable objects.
+
+
+### Naming Conventions
+
+**Vector components** are named with single characters: **x**, **y**, **z** and **w** (in that particular order).<br>
+The same naming is followed by accessor and mutator methods:
+
+```java
+Vector2.AccessibleAndMutable vector = ...
+
+double x = vector.x();
+vector.y(1.0);
+```
+
+Methods that interact with multiple components, are named with the concatenated string of all the component names they interact with:
+
+```java
+vector.xy(1.0);
+vector.xy(2.0, 3.0);
+vector.xy(anotherVector);
+```
+
+
+### "Reference" Methods
+
+Instance methods with `$` in their names return objects that interact with the components of the original. For example, only partial references to the original vector can be obtained:
+
+```java
+Vector3.AccessibleAndMutable original = ...
+
+Vector2.AccessibleAndMutable derived1 = original.$xy();
+Vector2.Accessible derived2 = original.const$yz();
+```
+
+Accessible references reflect all the changes made in the original, mutable references allow making changes in the original via the reference.
+
+
+### Component Swizzling
+
+Derived objects can reference the components of the original in any order. In case of accessible-only references, the same component can be referenced more than once.
+
+```java
+Vector3.AccessibleAndMutable original = ...
+
+Vector3.AccessibleAndMutable derived1 = original.$yzx();
+Vector3.Accessible derived2 = original.const$xyy();
+```
+
+The same applies to mutator methods, except mutators cannot interact with the same component more than once.
+
+```java
+Vector3.Mutable vector = ...
+
+vector.yzx(another3dVector);
+vector.zy(some2dVector);
+```
+
+
+### Output Direction
+
+The output of various operations can be directed either to existing objects or to newly constructed ones:
+
+```java
+Vector3.Accessible operand1 = ...
+Vector3.Accessible operand2 = ...
+
+Vector3.Mutable result1 = ...
+VecMath.add(result1, operand1, operand2);
+VecMath.add(result1::yzx, operand1, operand2);
+
+Vector4.Mutable result2 = ...
+VecMath.add((x, y, z) -> result2.xyzw(x, y, z, 0.0), operand1, operand2);
+
+Vector3.Accessible result3 = VecMath.add(operand1, operand2, ImmutableVector3::new);
+Vector4.Accessible result4 = VecMath.add(operand1, operand2, (x, y, z) -> new ImmutableVector4(x, y, z, 0.0));
+```
+
+Accessible types can also output their contents the same way:
+
+```java
+Vector3.Accessible source = ...
+
+Vector3.Mutable destination1 = ...
+source.yzxTo(destination1);
+source.xyzTo(destination1::yzx);
+
+Vector3.Accessible destination2 = source.xyz(ImmutableVector3::new);
+Vector4.Accessible destination3 = source.xyz((x, y, z) -> new ImmutableVector4(x, y, z, 0.0));
+```
+
+
+### Segregation of Read and Write Operations
+
+Operations that can take the same object (or partial or swizzled references of the same object) as both the source of input and destination for output, are guaranteed to perform all the read operations from the source before any write operations to the destination take place.
+
+The same is expected from any implementing or extending classes. For example, when overriding default mutator methods, then operations like these `vector.zyx(vector);`, these `vector.xyz(vector.$yzx());` or these `vector.zyx(vector.$yzx());` should not cause undefined behaviour.

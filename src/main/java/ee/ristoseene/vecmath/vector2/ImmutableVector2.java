@@ -13,23 +13,21 @@ public class ImmutableVector2 implements Vector2.Accessible {
         this.y = v;
     }
 
-    public ImmutableVector2(Value.Accessible v) {
-        this(v.get());
-    }
-
     public ImmutableVector2(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
+    public ImmutableVector2(Value.Accessible v) {
+        this(v.get());
+    }
+
     public ImmutableVector2(Value.Accessible x, Value.Accessible y) {
-        this.x = x.get();
-        this.y = y.get();
+        this(x.get(), y.get());
     }
 
     public ImmutableVector2(Vector2.Accessible xy) {
-        this.x = xy.x();
-        this.y = xy.y();
+        this(xy.x(), xy.y());
     }
 
     @Override

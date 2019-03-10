@@ -18,50 +18,38 @@ public class MutableVector3 implements Vector3.AccessibleAndMutable {
         this.z = v;
     }
 
-    public MutableVector3(Value.Accessible v) {
-        this(v.get());
-    }
-
     public MutableVector3(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
+    public MutableVector3(Value.Accessible v) {
+        this(v.get());
+    }
+
     public MutableVector3(Value.Accessible x, Value.Accessible y, Value.Accessible z) {
-        this.x = x.get();
-        this.y = y.get();
-        this.z = z.get();
+        this(x.get(), y.get(), z.get());
     }
 
     public MutableVector3(double x, Vector2.Accessible yz) {
-        this.x = x;
-        this.y = yz.x();
-        this.z = yz.y();
+        this(x, yz.x(), yz.y());
     }
 
     public MutableVector3(Value.Accessible x, Vector2.Accessible yz) {
-        this.x = x.get();
-        this.y = yz.x();
-        this.z = yz.y();
+        this(x.get(), yz.x(), yz.y());
     }
 
     public MutableVector3(Vector2.Accessible xy, double z) {
-        this.x = xy.x();
-        this.y = xy.y();
-        this.z = z;
+        this(xy.x(), xy.y(), z);
     }
 
     public MutableVector3(Vector2.Accessible xy, Value.Accessible z) {
-        this.x = xy.x();
-        this.y = xy.y();
-        this.z = z.get();
+        this(xy.x(), xy.y(), z.get());
     }
 
     public MutableVector3(Vector3.Accessible xyz) {
-        this.x = xyz.x();
-        this.y = xyz.y();
-        this.z = xyz.z();
+        this(xyz.x(), xyz.y(), xyz.z());
     }
 
     @Override
@@ -91,20 +79,6 @@ public class MutableVector3 implements Vector3.AccessibleAndMutable {
 
     @Override
     public void z(double z) {
-        this.z = z;
-    }
-
-    @Override
-    public void xyz(double v) {
-        this.x = v;
-        this.y = v;
-        this.z = v;
-    }
-
-    @Override
-    public void xyz(double x, double y, double z) {
-        this.x = x;
-        this.y = y;
         this.z = z;
     }
 

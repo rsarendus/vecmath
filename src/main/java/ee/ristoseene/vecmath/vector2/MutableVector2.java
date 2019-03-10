@@ -3,10 +3,10 @@ package ee.ristoseene.vecmath.vector2;
 import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector2;
 
-public class MutableVector2 implements Vector2.AccessibleAndMutable {
+public final class MutableVector2 implements Vector2.AccessibleAndMutable {
 
-    protected double x;
-    protected double y;
+    private double x;
+    private double y;
 
     public MutableVector2() {}
 

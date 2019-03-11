@@ -3,10 +3,10 @@ package ee.ristoseene.vecmath.vector2;
 import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector2;
 
-public final class ImmutableVector2 implements Vector2.Accessible {
+public class ImmutableVector2 implements Vector2.Accessible {
 
-    private final double x;
-    private final double y;
+    protected final double x;
+    protected final double y;
 
     public ImmutableVector2(double v) {
         this.x = v;

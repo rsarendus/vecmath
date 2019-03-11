@@ -5,12 +5,12 @@ import ee.ristoseene.vecmath.Vector2;
 import ee.ristoseene.vecmath.Vector3;
 import ee.ristoseene.vecmath.Vector4;
 
-public final class MutableVector4 implements Vector4.AccessibleAndMutable {
+public class MutableVector4 implements Vector4.AccessibleAndMutable {
 
-    private double x;
-    private double y;
-    private double z;
-    private double w;
+    protected double x;
+    protected double y;
+    protected double z;
+    protected double w;
 
     public MutableVector4() {}
 

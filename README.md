@@ -23,6 +23,7 @@ The library offers currently the following types:
 
 - **Value** - a single value / 1-dimensional vector
 - **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
+- **Matrix3x3** and **Matrix4x4** - 3 x 3 and 4 x 4 matrices
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
 <br>
@@ -31,9 +32,9 @@ Additionally **Consumer** and **Factory** functional interfaces are provided for
 The library also provides concrete implementations of each type (excluding *Value*) as both mutable and immutable objects.
 
 
-### Naming Conventions
+### Naming Conventions and notations
 
-**Vector components** are named with single characters: **x**, **y**, **z** and **w** (in that particular order).<br>
+**Vector components** are named using single characters: **x**, **y**, **z** and **w** (in that particular order).<br>
 The same naming is followed by accessor and mutator methods:
 
 ```java
@@ -43,7 +44,7 @@ double x = vector.x();
 vector.y(1.0);
 ```
 
-Methods that interact with multiple components, are named with the concatenated string of all the component names they interact with:
+Methods that interact with multiple components, are named using the concatenated string of all the component names they interact with:
 
 ```java
 vector.xy(1.0);
@@ -51,10 +52,32 @@ vector.xy(2.0, 3.0);
 vector.xy(anotherVector);
 ```
 
+**Matrix elements** are referred to by the combination of vector (**X**, **Y**, **Z**, **T**) and component names (**x**, **y**, **z** **w**) in vector-major order.
+For example **Xx**, **Xy**, **Zx**, **Tw** and so on.<br>
+The same naming is followed by single-element accessor and mutator methods:
+
+```java
+Matrix3x3.AccessibleAndMutable matrix = ...
+
+double Xy = matrix.Xy();
+matrix.Yz(1.0);
+```
+
+For more complex methods that interact with entire vectors or matrices, please refer to the source code.
+
+For mathematical purposes, the base vectors of a matrix are treated as columns and vectors as column vectors, thus post-multiplication is used for transforming vectors:
+
+```
+ | Xx Yx Zx Tx |     | x |      | Xx * x + Yx * y + Zx * z + Tx * w |
+ | Xy Yy Zy Ty |     | y |      | Xy * x + Yy * y + Zy * z + Ty * w |
+ | Xz Yz Zz Tz |  x  | z |  ->  | Xz * x + Yz * y + Zz * z + Tz * w |
+ | Xw Yw Zw Tw |     | w |      | Xw * x + Yw * y + Zw * z + Tw * w |
+```
+
 
 ### "Reference" Methods
 
-Instance methods with `$` in their names return objects that interact with the components of the original. For example, only partial references to the original vector can be obtained:
+Instance methods with `$` in their names, return objects that interact with the components of the original. For example, only partial references to the original vector can be obtained:
 
 ```java
 Vector3.AccessibleAndMutable original = ...
@@ -68,7 +91,7 @@ Accessible references reflect all the changes made in the original, mutable refe
 
 ### Component Swizzling
 
-Derived objects can reference the components of the original in any order. In case of accessible-only references, the same component can be referenced more than once.
+Derived objects can reference the components of the original in any order. In case of accessible-only references, the same component can be repeated multiple times.
 
 ```java
 Vector3.AccessibleAndMutable original = ...
@@ -115,8 +138,11 @@ Vector3.Mutable destination1 = ...
 source.yzxTo(destination1);
 source.xyzTo(destination1::yzx);
 
-Vector3.Accessible destination2 = source.xyz(ImmutableVector3::new);
-Vector4.Accessible destination3 = source.xyz((x, y, z) -> new ImmutableVector4(x, y, z, 0.0));
+Vector4.Mutable destination2 = ...
+source.xyzTo((x, y, z) -> destination2.xyzw(x, y, z, 0.0));
+
+Vector3.Accessible destination3 = source.xyz(ImmutableVector3::new);
+Vector4.Accessible destination4 = source.xyz((x, y, z) -> new ImmutableVector4(x, y, z, 0.0));
 ```
 
 

@@ -148,6 +148,7 @@ public final class VecMath {
 
     public static <R> R lerp(Vector2.Accessible value1, Vector2.Accessible value2, double t, Vector2.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
+
         return resultFactory.create(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t
@@ -156,6 +157,7 @@ public final class VecMath {
 
     public static void lerp(Vector2.Consumer result, Vector2.Accessible value1, Vector2.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
+
         result.xy(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t
@@ -303,16 +305,20 @@ public final class VecMath {
     }
 
     public static <R> R divide(Vector2.Accessible left, double right, Vector2.Factory<R> resultFactory) {
+        final double inverseRight = 1.0D / right;
+
         return resultFactory.create(
-                left.x() / right,
-                left.y() / right
+                left.x() * inverseRight,
+                left.y() * inverseRight
         );
     }
 
     public static void divide(Vector2.Consumer result, Vector2.Accessible left, double right) {
+        final double inverseRight = 1.0D / right;
+
         result.xy(
-                left.x() / right,
-                left.y() / right
+                left.x() * inverseRight,
+                left.y() * inverseRight
         );
     }
 
@@ -403,36 +409,42 @@ public final class VecMath {
     public static double lengthSqr(Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
+
         return x * x + y * y;
     }
 
     public static double distanceSqr(Vector2.Accessible a, double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
+
         return x * x + y * y;
     }
 
     public static double distanceSqr(Vector2.Accessible a, Vector2.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
+
         return x * x + y * y;
     }
 
     public static double length(Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
+
         return Math.sqrt(x * x + y * y);
     }
 
     public static double distance(Vector2.Accessible a, double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
+
         return Math.sqrt(x * x + y * y);
     }
 
     public static double distance(Vector2.Accessible a, Vector2.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
+
         return Math.sqrt(x * x + y * y);
     }
 
@@ -445,63 +457,103 @@ public final class VecMath {
     }
 
     public static <R> R normalize(Vector2.Accessible vector, Vector2.Factory<R> resultFactory) {
-        final double length = length(vector);
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+
+        final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
         final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+
         return resultFactory.create(
-                vector.x() * inverseLength,
-                vector.y() * inverseLength
+                vectorX * inverseLength,
+                vectorY * inverseLength
         );
     }
 
     public static void normalize(Vector2.Consumer result, Vector2.Accessible vector) {
-        final double length = length(vector);
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+
+        final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
         final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+
         result.xy(
-                vector.x() * inverseLength,
-                vector.y() * inverseLength
+                vectorX * inverseLength,
+                vectorY * inverseLength
         );
     }
 
     public static <R> R reflect(Vector2.Accessible incident, Vector2.Accessible normal, Vector2.Factory<R> resultFactory) {
-        final double dotNI2 = dot(normal, incident) * 2.0D;
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+
+        final double dotNI2 = (normalX * incidentX + normalY * incidentY) * 2.0D;
+
         return resultFactory.create(
-                incident.x() - dotNI2 * normal.x(),
-                incident.y() - dotNI2 * normal.y()
+                incidentX - dotNI2 * normalX,
+                incidentY - dotNI2 * normalY
         );
     }
 
     public static void reflect(Vector2.Consumer result, Vector2.Accessible incident, Vector2.Accessible normal) {
-        final double dotNI2 = dot(normal, incident) * 2.0D;
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+
+        final double dotNI2 = (normalX * incidentX + normalY * incidentY) * 2.0D;
+
         result.xy(
-                incident.x() - dotNI2 * normal.x(),
-                incident.y() - dotNI2 * normal.y()
+                incidentX - dotNI2 * normalX,
+                incidentY - dotNI2 * normalY
         );
     }
 
     public static <R> R refract(Vector2.Accessible incident, Vector2.Accessible normal, double eta, Vector2.Factory<R> resultFactory) {
-        final double dotNI = dot(normal, incident);
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+
+        final double dotNI = normalX * incidentX + normalY * incidentY;
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
+
         if (k < 0.0D) {
             return resultFactory.create(0.0D, 0.0D);
         }
+
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
+
         return resultFactory.create(
-                eta * incident.x() - etaNIsqrtK * normal.x(),
-                eta * incident.y() - etaNIsqrtK * normal.y()
+                eta * incidentX - etaNIsqrtK * normalX,
+                eta * incidentY - etaNIsqrtK * normalY
         );
     }
 
     public static void refract(Vector2.Consumer result, Vector2.Accessible incident, Vector2.Accessible normal, double eta) {
-        final double dotNI = dot(normal, incident);
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+
+        final double dotNI = normalX * incidentX + normalY * incidentY;
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
+
         if (k < 0.0D) {
             result.xy(0.0D, 0.0D);
             return;
         }
+
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
+
         result.xy(
-                eta * incident.x() - etaNIsqrtK * normal.x(),
-                eta * incident.y() - etaNIsqrtK * normal.y()
+                eta * incidentX - etaNIsqrtK * normalX,
+                eta * incidentY - etaNIsqrtK * normalY
         );
     }
 
@@ -651,6 +703,7 @@ public final class VecMath {
 
     public static <R> R lerp(Vector3.Accessible value1, Vector3.Accessible value2, double t, Vector3.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
+
         return resultFactory.create(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
@@ -660,6 +713,7 @@ public final class VecMath {
 
     public static void lerp(Vector3.Consumer result, Vector3.Accessible value1, Vector3.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
+
         result.xyz(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
@@ -828,18 +882,22 @@ public final class VecMath {
     }
 
     public static <R> R divide(Vector3.Accessible left, double right, Vector3.Factory<R> resultFactory) {
+        final double inverseRight = 1.0D / right;
+
         return resultFactory.create(
-                left.x() / right,
-                left.y() / right,
-                left.z() / right
+                left.x() * inverseRight,
+                left.y() * inverseRight,
+                left.z() * inverseRight
         );
     }
 
     public static void divide(Vector3.Consumer result, Vector3.Accessible left, double right) {
+        final double inverseRight = 1.0D / right;
+
         result.xyz(
-                left.x() / right,
-                left.y() / right,
-                left.z() / right
+                left.x() * inverseRight,
+                left.y() * inverseRight,
+                left.z() * inverseRight
         );
     }
 
@@ -943,6 +1001,7 @@ public final class VecMath {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
+
         return x * x + y * y + z * z;
     }
 
@@ -950,6 +1009,7 @@ public final class VecMath {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
+
         return x * x + y * y + z * z;
     }
 
@@ -957,6 +1017,7 @@ public final class VecMath {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
+
         return x * x + y * y + z * z;
     }
 
@@ -964,6 +1025,7 @@ public final class VecMath {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
+
         return Math.sqrt(x * x + y * y + z * z);
     }
 
@@ -971,6 +1033,7 @@ public final class VecMath {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
+
         return Math.sqrt(x * x + y * y + z * z);
     }
 
@@ -978,6 +1041,7 @@ public final class VecMath {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
+
         return Math.sqrt(x * x + y * y + z * z);
     }
 
@@ -989,7 +1053,7 @@ public final class VecMath {
         return a.x() * b.x() + a.y() * b.y() + a.z() * b.z();
     }
 
-    public static <R> R cross(Vector3.Accessible left, Vector3.Accessible right, Vector3.Factory<R> result) {
+    public static <R> R cross(Vector3.Accessible left, Vector3.Accessible right, Vector3.Factory<R> resultFactory) {
         final double leftX = left.x();
         final double leftY = left.y();
         final double leftZ = left.z();
@@ -998,14 +1062,14 @@ public final class VecMath {
         final double rightY = right.y();
         final double rightZ = right.z();
 
-        return result.create(
+        return resultFactory.create(
                 leftY * rightZ - rightY * leftZ,
                 leftZ * rightX - rightZ * leftX,
                 leftX * rightY - rightX * leftY
         );
     }
 
-    public static void cross(Vector3.Accessible left, Vector3.Accessible right, Vector3.Consumer result) {
+    public static void cross(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible right) {
         final double leftX = left.x();
         final double leftY = left.y();
         final double leftZ = left.z();
@@ -1022,69 +1086,119 @@ public final class VecMath {
     }
 
     public static <R> R normalize(Vector3.Accessible vector, Vector3.Factory<R> resultFactory) {
-        final double length = length(vector);
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+        final double vectorZ = vector.z();
+
+        final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
         final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+
         return resultFactory.create(
-                vector.x() * inverseLength,
-                vector.y() * inverseLength,
-                vector.z() * inverseLength
+                vectorX * inverseLength,
+                vectorY * inverseLength,
+                vectorZ * inverseLength
         );
     }
 
     public static void normalize(Vector3.Consumer result, Vector3.Accessible vector) {
-        final double length = length(vector);
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+        final double vectorZ = vector.z();
+
+        final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
         final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+
         result.xyz(
-                vector.x() * inverseLength,
-                vector.y() * inverseLength,
-                vector.z() * inverseLength
+                vectorX * inverseLength,
+                vectorY * inverseLength,
+                vectorZ * inverseLength
         );
     }
 
     public static <R> R reflect(Vector3.Accessible incident, Vector3.Accessible normal, Vector3.Factory<R> resultFactory) {
-        final double dotNI2 = dot(normal, incident) * 2.0D;
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+
+        final double dotNI2 = (normalX * incidentX + normalY * incidentY + normalZ * incidentZ) * 2.0D;
+
         return resultFactory.create(
-                incident.x() - dotNI2 * normal.x(),
-                incident.y() - dotNI2 * normal.y(),
-                incident.z() - dotNI2 * normal.z()
+                incidentX - dotNI2 * normalX,
+                incidentY - dotNI2 * normalY,
+                incidentZ - dotNI2 * normalZ
         );
     }
 
     public static void reflect(Vector3.Consumer result, Vector3.Accessible incident, Vector3.Accessible normal) {
-        final double dotNI2 = dot(normal, incident) * 2.0D;
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+
+        final double dotNI2 = (normalX * incidentX + normalY * incidentY + normalZ * incidentZ) * 2.0D;
+
         result.xyz(
-                incident.x() - dotNI2 * normal.x(),
-                incident.y() - dotNI2 * normal.y(),
-                incident.z() - dotNI2 * normal.z()
+                incidentX - dotNI2 * normalX,
+                incidentY - dotNI2 * normalY,
+                incidentZ - dotNI2 * normalZ
         );
     }
 
     public static <R> R refract(Vector3.Accessible incident, Vector3.Accessible normal, double eta, Vector3.Factory<R> resultFactory) {
-        final double dotNI = dot(normal, incident);
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+
+        final double dotNI = normalX * incidentX + normalY * incidentY + normalZ * incidentZ;
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
+
         if (k < 0.0D) {
             return resultFactory.create(0.0D, 0.0D, 0.0D);
         }
+
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
+
         return resultFactory.create(
-                eta * incident.x() - etaNIsqrtK * normal.x(),
-                eta * incident.y() - etaNIsqrtK * normal.y(),
-                eta * incident.z() - etaNIsqrtK * normal.z()
+                eta * incidentX - etaNIsqrtK * normalX,
+                eta * incidentY - etaNIsqrtK * normalY,
+                eta * incidentZ - etaNIsqrtK * normalZ
         );
     }
 
     public static void refract(Vector3.Consumer result, Vector3.Accessible incident, Vector3.Accessible normal, double eta) {
-        final double dotNI = dot(normal, incident);
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+
+        final double dotNI = normalX * incidentX + normalY * incidentY + normalZ * incidentZ;
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
+
         if (k < 0.0D) {
             result.xyz(0.0D, 0.0D, 0.0D);
             return;
         }
+
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
+
         result.xyz(
-                eta * incident.x() - etaNIsqrtK * normal.x(),
-                eta * incident.y() - etaNIsqrtK * normal.y(),
-                eta * incident.z() - etaNIsqrtK * normal.z()
+                eta * incidentX - etaNIsqrtK * normalX,
+                eta * incidentY - etaNIsqrtK * normalY,
+                eta * incidentZ - etaNIsqrtK * normalZ
         );
     }
 
@@ -1252,6 +1366,7 @@ public final class VecMath {
 
     public static <R> R lerp(Vector4.Accessible value1, Vector4.Accessible value2, double t, Vector4.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
+
         return resultFactory.create(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
@@ -1262,6 +1377,7 @@ public final class VecMath {
 
     public static void lerp(Vector4.Consumer result, Vector4.Accessible value1, Vector4.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
+
         result.xyzw(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
@@ -1451,20 +1567,24 @@ public final class VecMath {
     }
 
     public static <R> R divide(Vector4.Accessible left, double right, Vector4.Factory<R> resultFactory) {
+        final double inverseRight = 1.0D / right;
+
         return resultFactory.create(
-                left.x() / right,
-                left.y() / right,
-                left.z() / right,
-                left.w() / right
+                left.x() * inverseRight,
+                left.y() * inverseRight,
+                left.z() * inverseRight,
+                left.w() * inverseRight
         );
     }
 
     public static void divide(Vector4.Consumer result, Vector4.Accessible left, double right) {
+        final double inverseRight = 1.0D / right;
+
         result.xyzw(
-                left.x() / right,
-                left.y() / right,
-                left.z() / right,
-                left.w() / right
+                left.x() * inverseRight,
+                left.y() * inverseRight,
+                left.z() * inverseRight,
+                left.w() * inverseRight
         );
     }
 
@@ -1581,6 +1701,7 @@ public final class VecMath {
         final double y = vector.y();
         final double z = vector.z();
         final double w = vector.w();
+
         return x * x + y * y + z * z + w * w;
     }
 
@@ -1589,6 +1710,7 @@ public final class VecMath {
         final double y = a.y() - b;
         final double z = a.z() - b;
         final double w = a.w() - b;
+
         return x * x + y * y + z * z + w * w;
     }
 
@@ -1597,6 +1719,7 @@ public final class VecMath {
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
         final double w = a.w() - b.w();
+
         return x * x + y * y + z * z + w * w;
     }
 
@@ -1605,6 +1728,7 @@ public final class VecMath {
         final double y = vector.y();
         final double z = vector.z();
         final double w = vector.w();
+
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 
@@ -1613,6 +1737,7 @@ public final class VecMath {
         final double y = a.y() - b;
         final double z = a.z() - b;
         final double w = a.w() - b;
+
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 
@@ -1621,6 +1746,7 @@ public final class VecMath {
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
         final double w = a.w() - b.w();
+
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 
@@ -1633,75 +1759,135 @@ public final class VecMath {
     }
 
     public static <R> R normalize(Vector4.Accessible vector, Vector4.Factory<R> resultFactory) {
-        final double length = length(vector);
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+        final double vectorZ = vector.z();
+        final double vectorW = vector.w();
+
+        final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
         final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+
         return resultFactory.create(
-                vector.x() * inverseLength,
-                vector.y() * inverseLength,
-                vector.z() * inverseLength,
-                vector.w() * inverseLength
+                vectorX * inverseLength,
+                vectorY * inverseLength,
+                vectorZ * inverseLength,
+                vectorW * inverseLength
         );
     }
 
     public static void normalize(Vector4.Consumer result, Vector4.Accessible vector) {
-        final double length = length(vector);
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+        final double vectorZ = vector.z();
+        final double vectorW = vector.w();
+
+        final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
         final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+
         result.xyzw(
-                vector.x() * inverseLength,
-                vector.y() * inverseLength,
-                vector.z() * inverseLength,
-                vector.w() * inverseLength
+                vectorX * inverseLength,
+                vectorY * inverseLength,
+                vectorZ * inverseLength,
+                vectorW * inverseLength
         );
     }
 
     public static <R> R reflect(Vector4.Accessible incident, Vector4.Accessible normal, Vector4.Factory<R> resultFactory) {
-        final double dotNI2 = dot(normal, incident) * 2.0D;
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+        final double incidentW = incident.w();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+        final double normalW = normal.w();
+
+        final double dotNI2 = (normalX * incidentX + normalY * incidentY + normalZ * incidentZ + normalW * incidentW) * 2.0D;
+
         return resultFactory.create(
-                incident.x() - dotNI2 * normal.x(),
-                incident.y() - dotNI2 * normal.y(),
-                incident.z() - dotNI2 * normal.z(),
-                incident.w() - dotNI2 * normal.w()
+                incidentX - dotNI2 * normalX,
+                incidentY - dotNI2 * normalY,
+                incidentZ - dotNI2 * normalZ,
+                incidentW - dotNI2 * normalW
         );
     }
 
     public static void reflect(Vector4.Consumer result, Vector4.Accessible incident, Vector4.Accessible normal) {
-        final double dotNI2 = dot(normal, incident) * 2.0D;
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+        final double incidentW = incident.w();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+        final double normalW = normal.w();
+
+        final double dotNI2 = (normalX * incidentX + normalY * incidentY + normalZ * incidentZ + normalW * incidentW) * 2.0D;
+
         result.xyzw(
-                incident.x() - dotNI2 * normal.x(),
-                incident.y() - dotNI2 * normal.y(),
-                incident.z() - dotNI2 * normal.z(),
-                incident.w() - dotNI2 * normal.w()
+                incidentX - dotNI2 * normalX,
+                incidentY - dotNI2 * normalY,
+                incidentZ - dotNI2 * normalZ,
+                incidentW - dotNI2 * normalW
         );
     }
 
     public static <R> R refract(Vector4.Accessible incident, Vector4.Accessible normal, double eta, Vector4.Factory<R> resultFactory) {
-        final double dotNI = dot(normal, incident);
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+        final double incidentW = incident.w();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+        final double normalW = normal.w();
+
+        final double dotNI = normalX * incidentX + normalY * incidentY + normalZ * incidentZ + normalW * incidentW;
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
+
         if (k < 0.0D) {
             return resultFactory.create(0.0D, 0.0D, 0.0D, 0.0D);
         }
+
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
+
         return resultFactory.create(
-                eta * incident.x() - etaNIsqrtK * normal.x(),
-                eta * incident.y() - etaNIsqrtK * normal.y(),
-                eta * incident.z() - etaNIsqrtK * normal.z(),
-                eta * incident.w() - etaNIsqrtK * normal.w()
+                eta * incidentX - etaNIsqrtK * normalX,
+                eta * incidentY - etaNIsqrtK * normalY,
+                eta * incidentZ - etaNIsqrtK * normalZ,
+                eta * incidentW - etaNIsqrtK * normalW
         );
     }
 
     public static void refract(Vector4.Consumer result, Vector4.Accessible incident, Vector4.Accessible normal, double eta) {
-        final double dotNI = dot(normal, incident);
+        final double incidentX = incident.x();
+        final double incidentY = incident.y();
+        final double incidentZ = incident.z();
+        final double incidentW = incident.w();
+
+        final double normalX = normal.x();
+        final double normalY = normal.y();
+        final double normalZ = normal.z();
+        final double normalW = normal.w();
+
+        final double dotNI = normalX * incidentX + normalY * incidentY + normalZ * incidentZ + normalW * incidentW;
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
+
         if (k < 0.0D) {
             result.xyzw(0.0D, 0.0D, 0.0D, 0.0D);
             return;
         }
+
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
+
         result.xyzw(
-                eta * incident.x() - etaNIsqrtK * normal.x(),
-                eta * incident.y() - etaNIsqrtK * normal.y(),
-                eta * incident.z() - etaNIsqrtK * normal.z(),
-                eta * incident.w() - etaNIsqrtK * normal.w()
+                eta * incidentX - etaNIsqrtK * normalX,
+                eta * incidentY - etaNIsqrtK * normalY,
+                eta * incidentZ - etaNIsqrtK * normalZ,
+                eta * incidentW - etaNIsqrtK * normalW
         );
     }
 
@@ -1959,6 +2145,7 @@ public final class VecMath {
 
     public static <R> R lerp(Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, double t, Matrix3x3.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
+
         return resultFactory.create(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
@@ -1974,6 +2161,7 @@ public final class VecMath {
 
     public static void lerp(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
+
         result.set3x3(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
@@ -2240,30 +2428,34 @@ public final class VecMath {
     }
 
     public static <R> R divide(Matrix3x3.Accessible left, double right, Matrix3x3.Factory<R> resultFactory) {
+        final double inverseRight = 1.0D / right;
+
         return resultFactory.create(
-                left.Xx() / right,
-                left.Xy() / right,
-                left.Xz() / right,
-                left.Yx() / right,
-                left.Yy() / right,
-                left.Yz() / right,
-                left.Zx() / right,
-                left.Zy() / right,
-                left.Zz() / right
+                left.Xx() * inverseRight,
+                left.Xy() * inverseRight,
+                left.Xz() * inverseRight,
+                left.Yx() * inverseRight,
+                left.Yy() * inverseRight,
+                left.Yz() * inverseRight,
+                left.Zx() * inverseRight,
+                left.Zy() * inverseRight,
+                left.Zz() * inverseRight
         );
     }
 
     public static void divide(Matrix3x3.Consumer result, Matrix3x3.Accessible left, double right) {
+        final double inverseRight = 1.0D / right;
+
         result.set3x3(
-                left.Xx() / right,
-                left.Xy() / right,
-                left.Xz() / right,
-                left.Yx() / right,
-                left.Yy() / right,
-                left.Yz() / right,
-                left.Zx() / right,
-                left.Zy() / right,
-                left.Zz() / right
+                left.Xx() * inverseRight,
+                left.Xy() * inverseRight,
+                left.Xz() * inverseRight,
+                left.Yx() * inverseRight,
+                left.Yy() * inverseRight,
+                left.Yz() * inverseRight,
+                left.Zx() * inverseRight,
+                left.Zy() * inverseRight,
+                left.Zz() * inverseRight
         );
     }
 
@@ -2310,19 +2502,19 @@ public final class VecMath {
         final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
         final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
 
-        double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
-        det = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
+        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
 
         return resultFactory.create(
-                det01 * det,
-                (matrixXz * matrixZy - matrixZz * matrixXy) * det,
-                (matrixYz * matrixXy - matrixXz * matrixYy) * det,
-                det11 * det,
-                (matrixZz * matrixXx - matrixXz * matrixZx) * det,
-                (matrixXz * matrixYx - matrixYz * matrixXx) * det,
-                det21 * det,
-                (matrixXy * matrixZx - matrixZy * matrixXx) * det,
-                (matrixYy * matrixXx - matrixXy * matrixYx) * det
+                det01 * inverseDet,
+                (matrixXz * matrixZy - matrixZz * matrixXy) * inverseDet,
+                (matrixYz * matrixXy - matrixXz * matrixYy) * inverseDet,
+                det11 * inverseDet,
+                (matrixZz * matrixXx - matrixXz * matrixZx) * inverseDet,
+                (matrixXz * matrixYx - matrixYz * matrixXx) * inverseDet,
+                det21 * inverseDet,
+                (matrixXy * matrixZx - matrixZy * matrixXx) * inverseDet,
+                (matrixYy * matrixXx - matrixXy * matrixYx) * inverseDet
         );
     }
 
@@ -2341,19 +2533,19 @@ public final class VecMath {
         final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
         final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
 
-        double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
-        det = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
+        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
 
         result.set3x3(
-                det01 * det,
-                (matrixXz * matrixZy - matrixZz * matrixXy) * det,
-                (matrixYz * matrixXy - matrixXz * matrixYy) * det,
-                det11 * det,
-                (matrixZz * matrixXx - matrixXz * matrixZx) * det,
-                (matrixXz * matrixYx - matrixYz * matrixXx) * det,
-                det21 * det,
-                (matrixXy * matrixZx - matrixZy * matrixXx) * det,
-                (matrixYy * matrixXx - matrixXy * matrixYx) * det
+                det01 * inverseDet,
+                (matrixXz * matrixZy - matrixZz * matrixXy) * inverseDet,
+                (matrixYz * matrixXy - matrixXz * matrixYy) * inverseDet,
+                det11 * inverseDet,
+                (matrixZz * matrixXx - matrixXz * matrixZx) * inverseDet,
+                (matrixXz * matrixYx - matrixYz * matrixXx) * inverseDet,
+                det21 * inverseDet,
+                (matrixXy * matrixZx - matrixZy * matrixXx) * inverseDet,
+                (matrixYy * matrixXx - matrixXy * matrixYx) * inverseDet
         );
     }
 
@@ -2829,6 +3021,7 @@ public final class VecMath {
 
     public static <R> R lerp(Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, double t, Matrix4x4.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
+
         return resultFactory.create(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
@@ -2851,6 +3044,7 @@ public final class VecMath {
 
     public static void lerp(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
+
         result.set4x4(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
@@ -3250,44 +3444,48 @@ public final class VecMath {
     }
 
     public static <R> R divide(Matrix4x4.Accessible left, double right, Matrix4x4.Factory<R> resultFactory) {
+        final double inverseRight = 1.0D / right;
+
         return resultFactory.create(
-                left.Xx() / right,
-                left.Xy() / right,
-                left.Xz() / right,
-                left.Xw() / right,
-                left.Yx() / right,
-                left.Yy() / right,
-                left.Yz() / right,
-                left.Yw() / right,
-                left.Zx() / right,
-                left.Zy() / right,
-                left.Zz() / right,
-                left.Zw() / right,
-                left.Tx() / right,
-                left.Ty() / right,
-                left.Tz() / right,
-                left.Tw() / right
+                left.Xx() * inverseRight,
+                left.Xy() * inverseRight,
+                left.Xz() * inverseRight,
+                left.Xw() * inverseRight,
+                left.Yx() * inverseRight,
+                left.Yy() * inverseRight,
+                left.Yz() * inverseRight,
+                left.Yw() * inverseRight,
+                left.Zx() * inverseRight,
+                left.Zy() * inverseRight,
+                left.Zz() * inverseRight,
+                left.Zw() * inverseRight,
+                left.Tx() * inverseRight,
+                left.Ty() * inverseRight,
+                left.Tz() * inverseRight,
+                left.Tw() * inverseRight
         );
     }
 
     public static void divide(Matrix4x4.Consumer result, Matrix4x4.Accessible left, double right) {
+        final double inverseRight = 1.0D / right;
+
         result.set4x4(
-                left.Xx() / right,
-                left.Xy() / right,
-                left.Xz() / right,
-                left.Xw() / right,
-                left.Yx() / right,
-                left.Yy() / right,
-                left.Yz() / right,
-                left.Yw() / right,
-                left.Zx() / right,
-                left.Zy() / right,
-                left.Zz() / right,
-                left.Zw() / right,
-                left.Tx() / right,
-                left.Ty() / right,
-                left.Tz() / right,
-                left.Tw() / right
+                left.Xx() * inverseRight,
+                left.Xy() * inverseRight,
+                left.Xz() * inverseRight,
+                left.Xw() * inverseRight,
+                left.Yx() * inverseRight,
+                left.Yy() * inverseRight,
+                left.Yz() * inverseRight,
+                left.Yw() * inverseRight,
+                left.Zx() * inverseRight,
+                left.Zy() * inverseRight,
+                left.Zz() * inverseRight,
+                left.Zw() * inverseRight,
+                left.Tx() * inverseRight,
+                left.Ty() * inverseRight,
+                left.Tz() * inverseRight,
+                left.Tw() * inverseRight
         );
     }
 
@@ -3364,26 +3562,26 @@ public final class VecMath {
         final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
         final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
 
-        double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
-        det = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
+        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
 
         return resultFactory.create(
-                (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * det,
-                (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * det,
-                (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * det,
-                (matrixZz * det04 - matrixZy * det05 - matrixZw * det03) * det,
-                (matrixYz * det08 - matrixYx * det11 - matrixYw * det07) * det,
-                (matrixXx * det11 - matrixXz * det08 + matrixXw * det07) * det,
-                (matrixTz * det02 - matrixTx * det05 - matrixTw * det01) * det,
-                (matrixZx * det05 - matrixZz * det02 + matrixZw * det01) * det,
-                (matrixYx * det10 - matrixYy * det08 + matrixYw * det06) * det,
-                (matrixXy * det08 - matrixXx * det10 - matrixXw * det06) * det,
-                (matrixTx * det04 - matrixTy * det02 + matrixTw * det00) * det,
-                (matrixZy * det02 - matrixZx * det04 - matrixZw * det00) * det,
-                (matrixYy * det07 - matrixYx * det09 - matrixYz * det06) * det,
-                (matrixXx * det09 - matrixXy * det07 + matrixXz * det06) * det,
-                (matrixTy * det01 - matrixTx * det03 - matrixTz * det00) * det,
-                (matrixZx * det03 - matrixZy * det01 + matrixZz * det00) * det
+                (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
+                (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * inverseDet,
+                (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * inverseDet,
+                (matrixZz * det04 - matrixZy * det05 - matrixZw * det03) * inverseDet,
+                (matrixYz * det08 - matrixYx * det11 - matrixYw * det07) * inverseDet,
+                (matrixXx * det11 - matrixXz * det08 + matrixXw * det07) * inverseDet,
+                (matrixTz * det02 - matrixTx * det05 - matrixTw * det01) * inverseDet,
+                (matrixZx * det05 - matrixZz * det02 + matrixZw * det01) * inverseDet,
+                (matrixYx * det10 - matrixYy * det08 + matrixYw * det06) * inverseDet,
+                (matrixXy * det08 - matrixXx * det10 - matrixXw * det06) * inverseDet,
+                (matrixTx * det04 - matrixTy * det02 + matrixTw * det00) * inverseDet,
+                (matrixZy * det02 - matrixZx * det04 - matrixZw * det00) * inverseDet,
+                (matrixYy * det07 - matrixYx * det09 - matrixYz * det06) * inverseDet,
+                (matrixXx * det09 - matrixXy * det07 + matrixXz * det06) * inverseDet,
+                (matrixTy * det01 - matrixTx * det03 - matrixTz * det00) * inverseDet,
+                (matrixZx * det03 - matrixZy * det01 + matrixZz * det00) * inverseDet
         );
     }
 
@@ -3418,26 +3616,26 @@ public final class VecMath {
         final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
         final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
 
-        double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
-        det = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
+        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
 
         result.set4x4(
-                (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * det,
-                (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * det,
-                (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * det,
-                (matrixZz * det04 - matrixZy * det05 - matrixZw * det03) * det,
-                (matrixYz * det08 - matrixYx * det11 - matrixYw * det07) * det,
-                (matrixXx * det11 - matrixXz * det08 + matrixXw * det07) * det,
-                (matrixTz * det02 - matrixTx * det05 - matrixTw * det01) * det,
-                (matrixZx * det05 - matrixZz * det02 + matrixZw * det01) * det,
-                (matrixYx * det10 - matrixYy * det08 + matrixYw * det06) * det,
-                (matrixXy * det08 - matrixXx * det10 - matrixXw * det06) * det,
-                (matrixTx * det04 - matrixTy * det02 + matrixTw * det00) * det,
-                (matrixZy * det02 - matrixZx * det04 - matrixZw * det00) * det,
-                (matrixYy * det07 - matrixYx * det09 - matrixYz * det06) * det,
-                (matrixXx * det09 - matrixXy * det07 + matrixXz * det06) * det,
-                (matrixTy * det01 - matrixTx * det03 - matrixTz * det00) * det,
-                (matrixZx * det03 - matrixZy * det01 + matrixZz * det00) * det
+                (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
+                (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * inverseDet,
+                (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * inverseDet,
+                (matrixZz * det04 - matrixZy * det05 - matrixZw * det03) * inverseDet,
+                (matrixYz * det08 - matrixYx * det11 - matrixYw * det07) * inverseDet,
+                (matrixXx * det11 - matrixXz * det08 + matrixXw * det07) * inverseDet,
+                (matrixTz * det02 - matrixTx * det05 - matrixTw * det01) * inverseDet,
+                (matrixZx * det05 - matrixZz * det02 + matrixZw * det01) * inverseDet,
+                (matrixYx * det10 - matrixYy * det08 + matrixYw * det06) * inverseDet,
+                (matrixXy * det08 - matrixXx * det10 - matrixXw * det06) * inverseDet,
+                (matrixTx * det04 - matrixTy * det02 + matrixTw * det00) * inverseDet,
+                (matrixZy * det02 - matrixZx * det04 - matrixZw * det00) * inverseDet,
+                (matrixYy * det07 - matrixYx * det09 - matrixYz * det06) * inverseDet,
+                (matrixXx * det09 - matrixXy * det07 + matrixXz * det06) * inverseDet,
+                (matrixTy * det01 - matrixTx * det03 - matrixTz * det00) * inverseDet,
+                (matrixZx * det03 - matrixZy * det01 + matrixZz * det00) * inverseDet
         );
     }
 

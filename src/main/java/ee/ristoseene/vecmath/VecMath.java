@@ -406,6 +406,48 @@ public final class VecMath {
         );
     }
 
+    public static <R> R power(Vector2.Accessible base, double exponent, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base.x(), exponent),
+                Math.pow(base.y(), exponent)
+        );
+    }
+
+    public static void power(Vector2.Consumer result, Vector2.Accessible base, double exponent) {
+        result.xy(
+                Math.pow(base.x(), exponent),
+                Math.pow(base.y(), exponent)
+        );
+    }
+
+    public static <R> R power(double base, Vector2.Accessible exponent, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y())
+        );
+    }
+
+    public static void power(Vector2.Consumer result, double base, Vector2.Accessible exponent) {
+        result.xy(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y())
+        );
+    }
+
+    public static <R> R power(Vector2.Accessible base, Vector2.Accessible exponent, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base.x(), exponent.x()),
+                Math.pow(base.y(), exponent.y())
+        );
+    }
+
+    public static void power(Vector2.Consumer result, Vector2.Accessible base, Vector2.Accessible exponent) {
+        result.xy(
+                Math.pow(base.x(), exponent.x()),
+                Math.pow(base.y(), exponent.y())
+        );
+    }
+
     public static double lengthSqr(Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
@@ -994,6 +1036,54 @@ public final class VecMath {
                 left.x() * middle.x() + right.x(),
                 left.y() * middle.y() + right.y(),
                 left.z() * middle.z() + right.z()
+        );
+    }
+
+    public static <R> R power(Vector3.Accessible base, double exponent, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base.x(), exponent),
+                Math.pow(base.y(), exponent),
+                Math.pow(base.z(), exponent)
+        );
+    }
+
+    public static void power(Vector3.Consumer result, Vector3.Accessible base, double exponent) {
+        result.xyz(
+                Math.pow(base.x(), exponent),
+                Math.pow(base.y(), exponent),
+                Math.pow(base.z(), exponent)
+        );
+    }
+
+    public static <R> R power(double base, Vector3.Accessible exponent, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z())
+        );
+    }
+
+    public static void power(Vector3.Consumer result, double base, Vector3.Accessible exponent) {
+        result.xyz(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z())
+        );
+    }
+
+    public static <R> R power(Vector3.Accessible base, Vector3.Accessible exponent, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base.x(), exponent.x()),
+                Math.pow(base.y(), exponent.y()),
+                Math.pow(base.z(), exponent.z())
+        );
+    }
+
+    public static void power(Vector3.Consumer result, Vector3.Accessible base, Vector3.Accessible exponent) {
+        result.xyz(
+                Math.pow(base.x(), exponent.x()),
+                Math.pow(base.y(), exponent.y()),
+                Math.pow(base.z(), exponent.z())
         );
     }
 
@@ -1693,6 +1783,60 @@ public final class VecMath {
                 left.y() * middle.y() + right.y(),
                 left.z() * middle.z() + right.z(),
                 left.w() * middle.w() + right.w()
+        );
+    }
+
+    public static <R> R power(Vector4.Accessible base, double exponent, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base.x(), exponent),
+                Math.pow(base.y(), exponent),
+                Math.pow(base.z(), exponent),
+                Math.pow(base.w(), exponent)
+        );
+    }
+
+    public static void power(Vector4.Consumer result, Vector4.Accessible base, double exponent) {
+        result.xyzw(
+                Math.pow(base.x(), exponent),
+                Math.pow(base.y(), exponent),
+                Math.pow(base.z(), exponent),
+                Math.pow(base.w(), exponent)
+        );
+    }
+
+    public static <R> R power(double base, Vector4.Accessible exponent, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z()),
+                Math.pow(base, exponent.w())
+        );
+    }
+
+    public static void power(Vector4.Consumer result, double base, Vector4.Accessible exponent) {
+        result.xyzw(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z()),
+                Math.pow(base, exponent.w())
+        );
+    }
+
+    public static <R> R power(Vector4.Accessible base, Vector4.Accessible exponent, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base.x(), exponent.x()),
+                Math.pow(base.y(), exponent.y()),
+                Math.pow(base.z(), exponent.z()),
+                Math.pow(base.w(), exponent.w())
+        );
+    }
+
+    public static void power(Vector4.Consumer result, Vector4.Accessible base, Vector4.Accessible exponent) {
+        result.xyzw(
+                Math.pow(base.x(), exponent.x()),
+                Math.pow(base.y(), exponent.y()),
+                Math.pow(base.z(), exponent.z()),
+                Math.pow(base.w(), exponent.w())
         );
     }
 

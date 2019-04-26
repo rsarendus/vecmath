@@ -24,6 +24,7 @@ The library offers currently the following types:
 - **Value** - a single value / 1-dimensional vector
 - **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
 - **Matrix3x3** and **Matrix4x4** - 3 x 3 and 4 x 4 matrices
+- **Quaternion** - a representation of spatial rotation
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
 <br>
@@ -65,7 +66,7 @@ matrix.Yz(1.0);
 
 For more complex methods that interact with entire vectors or matrices, please refer to the source code.
 
-For mathematical purposes, the base vectors of a matrix are treated as columns and vectors as column vectors, thus post-multiplication is used for transforming vectors:
+For all mathematical purposes, the base vectors of a matrix are treated as columns and any stand-alone vectors as column vectors, thus post-multiplication is used for transforming vectors:
 
 ```
  | Xx Yx Zx Tx |     | x |      | Xx * x + Yx * y + Zx * z + Tx * w |
@@ -73,6 +74,8 @@ For mathematical purposes, the base vectors of a matrix are treated as columns a
  | Xz Yz Zz Tz |  x  | z |  ->  | Xz * x + Yz * y + Zz * z + Tz * w |
  | Xw Yw Zw Tw |     | w |      | Xw * x + Yw * y + Zw * z + Tw * w |
 ```
+
+**Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties.
 
 
 ### "Reference" Methods

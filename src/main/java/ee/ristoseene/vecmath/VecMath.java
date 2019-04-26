@@ -503,7 +503,7 @@ public final class VecMath {
         final double vectorY = vector.y();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
-        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -516,7 +516,7 @@ public final class VecMath {
         final double vectorY = vector.y();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
-        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
 
         result.xy(
                 vectorX * inverseLength,
@@ -1181,7 +1181,7 @@ public final class VecMath {
         final double vectorZ = vector.z();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
-        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -1196,7 +1196,7 @@ public final class VecMath {
         final double vectorZ = vector.z();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
-        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
 
         result.xyz(
                 vectorX * inverseLength,
@@ -1909,7 +1909,7 @@ public final class VecMath {
         final double vectorW = vector.w();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
-        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -1926,7 +1926,7 @@ public final class VecMath {
         final double vectorW = vector.w();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
-        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
 
         result.xyzw(
                 vectorX * inverseLength,
@@ -3966,6 +3966,338 @@ public final class VecMath {
                 transformationMatrix.Xx() * directionX + transformationMatrix.Yx() * directionY + transformationMatrix.Zx() * directionZ,
                 transformationMatrix.Xy() * directionX + transformationMatrix.Yy() * directionY + transformationMatrix.Zy() * directionZ,
                 transformationMatrix.Xz() * directionX + transformationMatrix.Yz() * directionY + transformationMatrix.Zz() * directionZ
+        );
+    }
+
+    public static <R> R toRotation(Vector3.Accessible axis, double angle, Quaternion.Factory<R> resultFactory) {
+        final double halfAngle = angle * 0.5D;
+        final double s = Math.sin(halfAngle);
+
+        return resultFactory.create(
+                axis.x() * s,
+                axis.y() * s,
+                axis.z() * s,
+                Math.cos(halfAngle)
+        );
+    }
+
+    public static void toRotation(Quaternion.Consumer result, Vector3.Accessible axis, double angle) {
+        final double halfAngle = angle * 0.5D;
+        final double s = Math.sin(halfAngle);
+
+        result.xyzw(
+                axis.x() * s,
+                axis.y() * s,
+                axis.z() * s,
+                Math.cos(halfAngle)
+        );
+    }
+
+    public static <R> R toRotation(Vector3.Accessible axis, double angle, Matrix3x3.Factory<R> resultFactory) {
+        final double axisX = axis.x();
+        final double axisY = axis.y();
+        final double axisZ = axis.z();
+
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+        final double oneMinusC = 1.0D - cos;
+
+        final double xs = axisX * sin;
+        final double ys = axisY * sin;
+        final double zs = axisZ * sin;
+
+        final double cxy = oneMinusC * axisX * axisY;
+        final double cxz = oneMinusC * axisX * axisZ;
+        final double cyz = oneMinusC * axisY * axisZ;
+
+        return resultFactory.create(
+                oneMinusC * axisX * axisX + cos,
+                cxy + zs,
+                cxz - ys,
+                cxy - zs,
+                oneMinusC * axisY * axisY + cos,
+                cyz + xs,
+                cxz + ys,
+                cyz - xs,
+                oneMinusC * axisZ * axisZ + cos
+        );
+    }
+
+    public static void toRotation(Matrix3x3.Consumer result, Vector3.Accessible axis, double angle) {
+        final double axisX = axis.x();
+        final double axisY = axis.y();
+        final double axisZ = axis.z();
+
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+        final double oneMinusC = 1.0D - cos;
+
+        final double xs = axisX * sin;
+        final double ys = axisY * sin;
+        final double zs = axisZ * sin;
+
+        final double cxy = oneMinusC * axisX * axisY;
+        final double cxz = oneMinusC * axisX * axisZ;
+        final double cyz = oneMinusC * axisY * axisZ;
+
+        result.set3x3(
+                oneMinusC * axisX * axisX + cos,
+                cxy + zs,
+                cxz - ys,
+                cxy - zs,
+                oneMinusC * axisY * axisY + cos,
+                cyz + xs,
+                cxz + ys,
+                cyz - xs,
+                oneMinusC * axisZ * axisZ + cos
+        );
+    }
+
+    public static <R> R toRotation(Quaternion.Accessible quaternion, Matrix3x3.Factory<R> resultFactory) {
+        final double quaternionX = quaternion.x();
+        final double quaternionY = quaternion.y();
+        final double quaternionZ = quaternion.z();
+        final double quaternionW = quaternion.w();
+
+        final double x2 = quaternionX + quaternionX;
+        final double y2 = quaternionY + quaternionY;
+        final double z2 = quaternionZ + quaternionZ;
+
+        final double xx2 = quaternionX * x2;
+        final double yx2 = quaternionY * x2;
+        final double yy2 = quaternionY * y2;
+        final double zx2 = quaternionZ * x2;
+        final double zy2 = quaternionZ * y2;
+        final double zz2 = quaternionZ * z2;
+        final double wx2 = quaternionW * x2;
+        final double wy2 = quaternionW * y2;
+        final double wz2 = quaternionW * z2;
+
+        return resultFactory.create(
+                1.0D - yy2 - zz2,
+                yx2 + wz2,
+                zx2 - wy2,
+                yx2 - wz2,
+                1.0D - xx2 - zz2,
+                zy2 + wx2,
+                zx2 + wy2,
+                zy2 - wx2,
+                1.0D - xx2 - yy2
+        );
+    }
+
+    public static void toRotation(Matrix3x3.Consumer result, Quaternion.Accessible quaternion) {
+        final double quaternionX = quaternion.x();
+        final double quaternionY = quaternion.y();
+        final double quaternionZ = quaternion.z();
+        final double quaternionW = quaternion.w();
+
+        final double x2 = quaternionX + quaternionX;
+        final double y2 = quaternionY + quaternionY;
+        final double z2 = quaternionZ + quaternionZ;
+
+        final double xx2 = quaternionX * x2;
+        final double yx2 = quaternionY * x2;
+        final double yy2 = quaternionY * y2;
+        final double zx2 = quaternionZ * x2;
+        final double zy2 = quaternionZ * y2;
+        final double zz2 = quaternionZ * z2;
+        final double wx2 = quaternionW * x2;
+        final double wy2 = quaternionW * y2;
+        final double wz2 = quaternionW * z2;
+
+        result.set3x3(
+                1.0D - yy2 - zz2,
+                yx2 + wz2,
+                zx2 - wy2,
+                yx2 - wz2,
+                1.0D - xx2 - zz2,
+                zy2 + wx2,
+                zx2 + wy2,
+                zy2 - wx2,
+                1.0D - xx2 - yy2
+        );
+    }
+
+    public static <R> R slerp(Quaternion.Accessible value1, Quaternion.Accessible value2, double t, Quaternion.Factory<R> resultFactory) {
+        final double value1X = value1.x();
+        final double value1Y = value1.y();
+        final double value1Z = value1.z();
+        final double value1W = value1.w();
+
+        final double value2X = value2.x();
+        final double value2Y = value2.y();
+        final double value2Z = value2.z();
+        final double value2W = value2.w();
+
+        final double dot = value1X * value2X + value1Y * value2Y + value1Z * value2Z + value1W * value2W;
+        final double sign = (dot < 0.0D) ? -1.0D : 1.0D;
+        final double cosOmega = dot * sign;
+        double scale1, scale2;
+
+        if (cosOmega < 0.999999D) {
+            final double omega = Math.acos(cosOmega);
+            final double inverseSinOmega = 1.0D / Math.sin(omega);
+            scale1 = Math.sin((1.0D - t) * omega) * inverseSinOmega;
+            scale2 = Math.sin(t * omega) * inverseSinOmega * sign;
+        } else {
+            scale1 = 1.0D - t;
+            scale2 = t * sign;
+        }
+
+        return resultFactory.create(
+                value1X * scale1 + value2X * scale2,
+                value1Y * scale1 + value2Y * scale2,
+                value1Z * scale1 + value2Z * scale2,
+                value1W * scale1 + value2W * scale2
+        );
+    }
+
+    public static void slerp(Quaternion.Consumer result, Quaternion.Accessible value1, Quaternion.Accessible value2, double t) {
+        final double value1X = value1.x();
+        final double value1Y = value1.y();
+        final double value1Z = value1.z();
+        final double value1W = value1.w();
+
+        final double value2X = value2.x();
+        final double value2Y = value2.y();
+        final double value2Z = value2.z();
+        final double value2W = value2.w();
+
+        final double dot = value1X * value2X + value1Y * value2Y + value1Z * value2Z + value1W * value2W;
+        final double sign = (dot < 0.0D) ? -1.0D : 1.0D;
+        final double cosOmega = dot * sign;
+        double scale1, scale2;
+
+        if (cosOmega < 0.999999D) {
+            final double omega = Math.acos(cosOmega);
+            final double inverseSinOmega = 1.0D / Math.sin(omega);
+            scale1 = Math.sin((1.0D - t) * omega) * inverseSinOmega;
+            scale2 = Math.sin(t * omega) * inverseSinOmega * sign;
+        } else {
+            scale1 = 1.0D - t;
+            scale2 = t * sign;
+        }
+
+        result.xyzw(
+                value1X * scale1 + value2X * scale2,
+                value1Y * scale1 + value2Y * scale2,
+                value1Z * scale1 + value2Z * scale2,
+                value1W * scale1 + value2W * scale2
+        );
+    }
+
+    public static <R> R inverse(Quaternion.Accessible quaternion, Quaternion.Factory<R> resultFactory) {
+        final double quaternionX = quaternion.x();
+        final double quaternionY = quaternion.y();
+        final double quaternionZ = quaternion.z();
+        final double quaternionW = quaternion.w();
+
+        final double dot = quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW;
+        final double inverseDot = (dot != 0.0D) ? (1.0D / dot) : 0.0D;
+
+        return resultFactory.create(
+                -quaternionX * inverseDot,
+                -quaternionY * inverseDot,
+                -quaternionZ * inverseDot,
+                quaternionW * inverseDot
+        );
+    }
+
+    public static void inverse(Quaternion.Consumer result, Quaternion.Accessible quaternion) {
+        final double quaternionX = quaternion.x();
+        final double quaternionY = quaternion.y();
+        final double quaternionZ = quaternion.z();
+        final double quaternionW = quaternion.w();
+
+        final double dot = quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW;
+        final double inverseDot = (dot != 0.0D) ? (1.0D / dot) : 0.0D;
+
+        result.xyzw(
+                -quaternionX * inverseDot,
+                -quaternionY * inverseDot,
+                -quaternionZ * inverseDot,
+                quaternionW * inverseDot
+        );
+    }
+
+    public static <R> R multiply(Quaternion.Accessible left, Quaternion.Accessible right, Quaternion.Factory<R> resultFactory) {
+        final double leftX = left.x();
+        final double leftY = left.y();
+        final double leftZ = left.z();
+        final double leftW = left.w();
+
+        final double rightX = right.x();
+        final double rightY = right.y();
+        final double rightZ = right.z();
+        final double rightW = right.w();
+
+        return resultFactory.create(
+                leftW * rightX + leftX * rightW + leftY * rightZ - leftZ * rightY,
+                leftW * rightY + leftY * rightW + leftZ * rightX - leftX * rightZ,
+                leftW * rightZ + leftZ * rightW + leftX * rightY - leftY * rightX,
+                leftW * rightW - leftX * rightX - leftY * rightY - leftZ * rightZ
+        );
+    }
+
+    public static void multiply(Quaternion.Consumer result, Quaternion.Accessible left, Quaternion.Accessible right) {
+        final double leftX = left.x();
+        final double leftY = left.y();
+        final double leftZ = left.z();
+        final double leftW = left.w();
+
+        final double rightX = right.x();
+        final double rightY = right.y();
+        final double rightZ = right.z();
+        final double rightW = right.w();
+
+        result.xyzw(
+                leftW * rightX + leftX * rightW + leftY * rightZ - leftZ * rightY,
+                leftW * rightY + leftY * rightW + leftZ * rightX - leftX * rightZ,
+                leftW * rightZ + leftZ * rightW + leftX * rightY - leftY * rightX,
+                leftW * rightW - leftX * rightX - leftY * rightY - leftZ * rightZ
+        );
+    }
+
+    public static <R> R transformVector(Quaternion.Accessible quaternion, Vector3.Accessible vector, Vector3.Factory<R> resultFactory) {
+        final double quaternionX = quaternion.x();
+        final double quaternionY = quaternion.y();
+        final double quaternionZ = quaternion.z();
+        final double quaternionW = quaternion.w();
+
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+        final double vectorZ = vector.z();
+
+        final double crossQVX = quaternionY * vectorZ - vectorY * quaternionZ;
+        final double crossQVY = quaternionZ * vectorX - vectorZ * quaternionX;
+        final double crossQVZ = quaternionX * vectorY - vectorX * quaternionY;
+
+        return resultFactory.create(
+                vectorX + (crossQVX * quaternionW + (quaternionY * crossQVZ - crossQVY * quaternionZ)) * 2.0D,
+                vectorY + (crossQVY * quaternionW + (quaternionZ * crossQVX - crossQVZ * quaternionX)) * 2.0D,
+                vectorZ + (crossQVZ * quaternionW + (quaternionX * crossQVY - crossQVX * quaternionY)) * 2.0D
+        );
+    }
+
+    public static void transformVector(Vector3.Consumer result, Quaternion.Accessible quaternion, Vector3.Accessible vector) {
+        final double quaternionX = quaternion.x();
+        final double quaternionY = quaternion.y();
+        final double quaternionZ = quaternion.z();
+        final double quaternionW = quaternion.w();
+
+        final double vectorX = vector.x();
+        final double vectorY = vector.y();
+        final double vectorZ = vector.z();
+
+        final double crossQVX = quaternionY * vectorZ - vectorY * quaternionZ;
+        final double crossQVY = quaternionZ * vectorX - vectorZ * quaternionX;
+        final double crossQVZ = quaternionX * vectorY - vectorX * quaternionY;
+
+        result.xyz(
+                vectorX + (crossQVX * quaternionW + (quaternionY * crossQVZ - crossQVY * quaternionZ)) * 2.0D,
+                vectorY + (crossQVY * quaternionW + (quaternionZ * crossQVX - crossQVZ * quaternionX)) * 2.0D,
+                vectorZ + (crossQVZ * quaternionW + (quaternionX * crossQVY - crossQVX * quaternionY)) * 2.0D
         );
     }
 

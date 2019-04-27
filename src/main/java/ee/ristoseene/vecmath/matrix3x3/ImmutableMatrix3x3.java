@@ -28,6 +28,18 @@ public class ImmutableMatrix3x3 implements Matrix3x3.Accessible {
         this.Zz = v;
     }
 
+    public ImmutableMatrix3x3(double Xx, double Yy, double Zz) {
+        this.Xx = Xx;
+        this.Xy = 0.0D;
+        this.Xz = 0.0D;
+        this.Yx = 0.0D;
+        this.Yy = Yy;
+        this.Yz = 0.0D;
+        this.Zx = 0.0D;
+        this.Zy = 0.0D;
+        this.Zz = Zz;
+    }
+
     public ImmutableMatrix3x3(
             double Xx, double Xy, double Xz,
             double Yx, double Yy, double Yz,
@@ -46,6 +58,14 @@ public class ImmutableMatrix3x3 implements Matrix3x3.Accessible {
 
     public ImmutableMatrix3x3(Value.Accessible v) {
         this(v.get());
+    }
+
+    public ImmutableMatrix3x3(Value.Accessible Xx, Value.Accessible Yy, Value.Accessible Zz) {
+        this(Xx.get(), Yy.get(), Zz.get());
+    }
+
+    public ImmutableMatrix3x3(Vector3.Accessible diagonal) {
+        this(diagonal.x(), diagonal.y(), diagonal.z());
     }
 
     public ImmutableMatrix3x3(

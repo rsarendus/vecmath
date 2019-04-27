@@ -44,6 +44,25 @@ public class MutableMatrix4x4 implements Matrix4x4.AccessibleAndMutable {
         this.Tw = v;
     }
 
+    public MutableMatrix4x4(double Xx, double Yy, double Zz, double Tw) {
+        this.Xx = Xx;
+        this.Xy = 0.0D;
+        this.Xz = 0.0D;
+        this.Xw = 0.0D;
+        this.Yx = 0.0D;
+        this.Yy = Yy;
+        this.Yz = 0.0D;
+        this.Yw = 0.0D;
+        this.Zx = 0.0D;
+        this.Zy = 0.0D;
+        this.Zz = Zz;
+        this.Zw = 0.0D;
+        this.Tx = 0.0D;
+        this.Ty = 0.0D;
+        this.Tz = 0.0D;
+        this.Tw = Tw;
+    }
+
     public MutableMatrix4x4(
             double Xx, double Xy, double Xz, double Xw,
             double Yx, double Yy, double Yz, double Yw,
@@ -70,6 +89,14 @@ public class MutableMatrix4x4 implements Matrix4x4.AccessibleAndMutable {
 
     public MutableMatrix4x4(Value.Accessible v) {
         this(v.get());
+    }
+
+    public MutableMatrix4x4(Value.Accessible Xx, Value.Accessible Yy, Value.Accessible Zz, Value.Accessible Tw) {
+        this(Xx.get(), Yy.get(), Zz.get(), Tw.get());
+    }
+
+    public MutableMatrix4x4(Vector4.Accessible diagonal) {
+        this(diagonal.x(), diagonal.y(), diagonal.z(), diagonal.w());
     }
 
     public MutableMatrix4x4(

@@ -20,6 +20,22 @@ public final class VecMath {
         return value1 * (1.0D - t) + value2 * t;
     }
 
+    public static double min(Vector2.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Vector2.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) > result) result = tmp;
+
+        return result;
+    }
+
     public static <R> R min(Vector2.Accessible value1, double value2, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
                 min(value1.x(), value2),
@@ -597,6 +613,24 @@ public final class VecMath {
                 eta * incidentX - etaNIsqrtK * normalX,
                 eta * incidentY - etaNIsqrtK * normalY
         );
+    }
+
+    public static double min(Vector3.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) < result) result = tmp;
+        if ((tmp = vector.z()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Vector3.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) > result) result = tmp;
+        if ((tmp = vector.z()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Vector3.Accessible value1, double value2, Vector3.Factory<R> resultFactory) {
@@ -1290,6 +1324,26 @@ public final class VecMath {
                 eta * incidentY - etaNIsqrtK * normalY,
                 eta * incidentZ - etaNIsqrtK * normalZ
         );
+    }
+
+    public static double min(Vector4.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) < result) result = tmp;
+        if ((tmp = vector.z()) < result) result = tmp;
+        if ((tmp = vector.w()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Vector4.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) > result) result = tmp;
+        if ((tmp = vector.z()) > result) result = tmp;
+        if ((tmp = vector.w()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Vector4.Accessible value1, double value2, Vector4.Factory<R> resultFactory) {
@@ -2033,6 +2087,36 @@ public final class VecMath {
                 eta * incidentZ - etaNIsqrtK * normalZ,
                 eta * incidentW - etaNIsqrtK * normalW
         );
+    }
+
+    public static double min(Matrix3x3.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) < result) result = tmp;
+        if ((tmp = matrix.Xz()) < result) result = tmp;
+        if ((tmp = matrix.Yx()) < result) result = tmp;
+        if ((tmp = matrix.Yy()) < result) result = tmp;
+        if ((tmp = matrix.Yz()) < result) result = tmp;
+        if ((tmp = matrix.Zx()) < result) result = tmp;
+        if ((tmp = matrix.Zy()) < result) result = tmp;
+        if ((tmp = matrix.Zz()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Matrix3x3.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) > result) result = tmp;
+        if ((tmp = matrix.Xz()) > result) result = tmp;
+        if ((tmp = matrix.Yx()) > result) result = tmp;
+        if ((tmp = matrix.Yy()) > result) result = tmp;
+        if ((tmp = matrix.Yz()) > result) result = tmp;
+        if ((tmp = matrix.Zx()) > result) result = tmp;
+        if ((tmp = matrix.Zy()) > result) result = tmp;
+        if ((tmp = matrix.Zz()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Matrix3x3.Accessible value1, double value2, Matrix3x3.Factory<R> resultFactory) {
@@ -2783,6 +2867,50 @@ public final class VecMath {
                 left.Xy() * rightX + left.Yy() * rightY + left.Zy() * rightZ,
                 left.Xz() * rightX + left.Yz() * rightY + left.Zz() * rightZ
         );
+    }
+
+    public static double min(Matrix4x4.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) < result) result = tmp;
+        if ((tmp = matrix.Xz()) < result) result = tmp;
+        if ((tmp = matrix.Xw()) < result) result = tmp;
+        if ((tmp = matrix.Yx()) < result) result = tmp;
+        if ((tmp = matrix.Yy()) < result) result = tmp;
+        if ((tmp = matrix.Yz()) < result) result = tmp;
+        if ((tmp = matrix.Yw()) < result) result = tmp;
+        if ((tmp = matrix.Zx()) < result) result = tmp;
+        if ((tmp = matrix.Zy()) < result) result = tmp;
+        if ((tmp = matrix.Zz()) < result) result = tmp;
+        if ((tmp = matrix.Zw()) < result) result = tmp;
+        if ((tmp = matrix.Tx()) < result) result = tmp;
+        if ((tmp = matrix.Ty()) < result) result = tmp;
+        if ((tmp = matrix.Tz()) < result) result = tmp;
+        if ((tmp = matrix.Tw()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Matrix4x4.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) > result) result = tmp;
+        if ((tmp = matrix.Xz()) > result) result = tmp;
+        if ((tmp = matrix.Xw()) > result) result = tmp;
+        if ((tmp = matrix.Yx()) > result) result = tmp;
+        if ((tmp = matrix.Yy()) > result) result = tmp;
+        if ((tmp = matrix.Yz()) > result) result = tmp;
+        if ((tmp = matrix.Yw()) > result) result = tmp;
+        if ((tmp = matrix.Zx()) > result) result = tmp;
+        if ((tmp = matrix.Zy()) > result) result = tmp;
+        if ((tmp = matrix.Zz()) > result) result = tmp;
+        if ((tmp = matrix.Zw()) > result) result = tmp;
+        if ((tmp = matrix.Tx()) > result) result = tmp;
+        if ((tmp = matrix.Ty()) > result) result = tmp;
+        if ((tmp = matrix.Tz()) > result) result = tmp;
+        if ((tmp = matrix.Tw()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Matrix4x4.Accessible value1, double value2, Matrix4x4.Factory<R> resultFactory) {

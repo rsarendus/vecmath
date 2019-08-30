@@ -21,6 +21,18 @@ public final class VecOps {
 
     }
 
+    public static double apply(DoubleBinaryOperator operator, Vector2.Accessible vector) {
+        return operator.applyAsDouble(vector.x(), vector.y());
+    }
+
+    public static double apply(DoubleTernaryOperator operator, Vector3.Accessible vector) {
+        return operator.applyAsDouble(vector.x(), vector.y(), vector.z());
+    }
+
+    public static double apply(DoubleQuaternaryOperator operator, Vector4.Accessible vector) {
+        return operator.applyAsDouble(vector.x(), vector.y(), vector.z(), vector.w());
+    }
+
     public static <R> R apply(DoubleUnaryOperator operator, Vector2.Accessible operand, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
                 operator.applyAsDouble(operand.x()),

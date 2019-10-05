@@ -5,16 +5,19 @@ A simple GLSL inspired vector math library for 3D and computer graphics.
 
 ## Build
 
-Building the project requires at least JDK11.
+Building the project requires at least JDK8.
 
-1. Fetch it from GitHub:<br>
-`git clone https://github.com/rsarendus/vecmath.git`
+1. Fetch it from GitHub:
+<br>`git clone https://github.com/rsarendus/vecmath.git`
 
-2. Navigate into the project's root directory:<br>
-`cd vecmath`
+2. Navigate into the project's root directory:
+<br>`cd vecmath`
 
-3. Build:<br>
-`mvn clean install`
+3. Build:
+   * Compile and package as a JAR into the project's `target` directory:
+   <br>`mvn clean package`
+   * Compile, package and install into the local repository:
+   <br>`mvn clean install`
 
 
 ## Highlights of the Library

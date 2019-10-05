@@ -19,21 +19,19 @@ Building the project requires at least JDK11.
 
 ## Highlights of the Library
 
-The library offers currently the following types:
+The library currently offers the following types:
 
-- **Value** - a single value / 1-dimensional vector
+- **Value** - a single value (1-dimensional vector)
 - **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
 - **Matrix3x3** and **Matrix4x4** - 3 x 3 and 4 x 4 matrices
 - **Quaternion** - a representation of spatial rotation
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
-<br>
-Additionally **Consumer** and **Factory** functional interfaces are provided for each type.
 
-The library also provides concrete implementations of each type (excluding *Value*) as both mutable and immutable objects.
+The library also provides concrete implementations of each type (excluding *Value*) in both mutable and immutable variety.
 
 
-### Naming Conventions and notations
+### Naming Conventions and Notations
 
 **Vector components** are named using single characters: **x**, **y**, **z** and **w** (in that particular order).<br>
 The same naming is followed by accessor and mutator methods:
@@ -45,15 +43,15 @@ double x = vector.x();
 vector.y(1.0);
 ```
 
-Methods that interact with multiple components, are named using the concatenated string of all the component names they interact with:
+Methods that interact with multiple components, combine in their name all the components they interact with:
 
 ```java
 vector.xy(1.0);
 vector.xy(2.0, 3.0);
-vector.xy(anotherVector);
+vector.xy(another2dVector);
 ```
 
-**Matrix elements** are referred to by the combination of vector (**X**, **Y**, **Z**, **T**) and component names (**x**, **y**, **z** **w**) in vector-major order.
+**Matrix elements** are referred to by the combination of vector (**X**, **Y**, **Z**, **T**) and component names (**x**, **y**, **z**, **w**) in vector-major order.
 For example **Xx**, **Xy**, **Zx**, **Tw** and so on.<br>
 The same naming is followed by single-element accessor and mutator methods:
 
@@ -66,7 +64,7 @@ matrix.Yz(1.0);
 
 For more complex methods that interact with entire vectors or matrices, please refer to the source code.
 
-For all mathematical purposes, the base vectors of a matrix are treated as columns and any stand-alone vectors as column vectors, thus post-multiplication is used for transforming vectors:
+For all mathematical purposes, the base vectors of matrices are treated as columns and all other vectors as column vectors, thus post-multiplication is used for performing vector transformations:
 
 ```
  | Xx Yx Zx Tx |     | x |      | Xx * x + Yx * y + Zx * z + Tx * w |
@@ -75,7 +73,7 @@ For all mathematical purposes, the base vectors of a matrix are treated as colum
  | Xw Yw Zw Tw |     | w |      | Xw * x + Yw * y + Zw * z + Tw * w |
 ```
 
-**Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties.
+**Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties as regular vectors.
 
 
 ### "Reference" Methods
@@ -92,15 +90,15 @@ Vector2.Accessible derived2 = original.const$yz();
 Accessible references reflect all the changes made in the original, mutable references allow making changes in the original via the reference.
 
 
-### Component Swizzling
+### Component Swizzling and Replication
 
-Derived objects can reference the components of the original in any order. In case of accessible-only references, the same component can be repeated multiple times.
+Derived objects can reference the components of their original in any order. In case of accessible-only references, the same component can be repeated multiple times.
 
 ```java
 Vector3.AccessibleAndMutable original = ...
 
 Vector3.AccessibleAndMutable derived1 = original.$yzx();
-Vector3.Accessible derived2 = original.const$xyy();
+Vector3.Accessible derived2 = original.const$yyy();
 ```
 
 The same applies to mutator methods, except mutators cannot interact with the same component more than once.
@@ -153,4 +151,4 @@ Vector4.Accessible destination4 = source.xyz((x, y, z) -> new ImmutableVector4(x
 
 Operations that can take the same object (or partial or swizzled references of the same object) as both the source of input and destination for output, are guaranteed to perform all the read operations from the source before any write operations to the destination take place.
 
-The same is expected from any implementing or extending classes. For example, when overriding default mutator methods, then operations like these `vector.zyx(vector);`, these `vector.xyz(vector.$yzx());` or these `vector.zyx(vector.$yzx());` should not cause undefined behaviour.
+The same is expected from any implementing or extending classes. For example, when overriding default mutator methods, then operations like `vector.zyx(vector);`, `vector.xyz(vector.$yzx());` or `vector.zyx(vector.$yzx());` must not cause undefined behaviour.

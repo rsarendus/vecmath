@@ -5,15 +5,20 @@ public final class VecMath {
     private VecMath() {}
 
     public static double min(double value1, double value2) {
-        return (value1 < value2) ? value1 : value2;
+        return (value1 <= value2) ? value1 : value2;
     }
 
     public static double max(double value1, double value2) {
-        return (value1 > value2) ? value1 : value2;
+        return (value1 >= value2) ? value1 : value2;
     }
 
     public static double clamp(double value, double min, double max) {
-        return (value < max) ? (value > min ? value : min) : max;
+        double result = value;
+
+        if (result < min) result = min;
+        if (result > max) result = max;
+
+        return result;
     }
 
     public static double lerp(double value1, double value2, double t) {
@@ -519,7 +524,7 @@ public final class VecMath {
         final double vectorY = vector.y();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -532,7 +537,7 @@ public final class VecMath {
         final double vectorY = vector.y();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         resultConsumer.xy(
                 vectorX * inverseLength,
@@ -1215,7 +1220,7 @@ public final class VecMath {
         final double vectorZ = vector.z();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -1230,7 +1235,7 @@ public final class VecMath {
         final double vectorZ = vector.z();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         resultConsumer.xyz(
                 vectorX * inverseLength,
@@ -1963,7 +1968,7 @@ public final class VecMath {
         final double vectorW = vector.w();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -1980,7 +1985,7 @@ public final class VecMath {
         final double vectorW = vector.w();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         resultConsumer.xyzw(
                 vectorX * inverseLength,
@@ -2730,8 +2735,7 @@ public final class VecMath {
         final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
         final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
 
-        final double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
 
         return resultFactory.create(
                 det01 * inverseDet,
@@ -2761,8 +2765,7 @@ public final class VecMath {
         final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
         final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
 
-        final double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
 
         resultConsumer.set3x3(
                 det01 * inverseDet,
@@ -3834,8 +3837,7 @@ public final class VecMath {
         final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
         final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
 
-        final double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
 
         return resultFactory.create(
                 (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
@@ -3888,8 +3890,7 @@ public final class VecMath {
         final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
         final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
 
-        final double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
 
         resultConsumer.set4x4(
                 (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
@@ -4321,8 +4322,7 @@ public final class VecMath {
         final double quaternionZ = quaternion.z();
         final double quaternionW = quaternion.w();
 
-        final double dot = quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW;
-        final double inverseDot = (dot != 0.0D) ? (1.0D / dot) : 0.0D;
+        final double inverseDot = 1.0D / (quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW);
 
         return resultFactory.create(
                 -quaternionX * inverseDot,
@@ -4338,8 +4338,7 @@ public final class VecMath {
         final double quaternionZ = quaternion.z();
         final double quaternionW = quaternion.w();
 
-        final double dot = quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW;
-        final double inverseDot = (dot != 0.0D) ? (1.0D / dot) : 0.0D;
+        final double inverseDot = 1.0D / (quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW);
 
         resultConsumer.xyzw(
                 -quaternionX * inverseDot,

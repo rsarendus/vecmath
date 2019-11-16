@@ -3,23 +3,12 @@ package ee.ristoseene.vecmath;
 import java.util.function.DoubleUnaryOperator;
 import java.util.function.DoubleBinaryOperator;
 
+import ee.ristoseene.vecmath.function.DoubleTernaryOperator;
+import ee.ristoseene.vecmath.function.DoubleQuaternaryOperator;
+
 public final class VecOps {
 
     private VecOps() {}
-
-    @FunctionalInterface
-    public interface DoubleTernaryOperator {
-
-        double applyAsDouble(double left, double middle, double right);
-
-    }
-
-    @FunctionalInterface
-    public interface DoubleQuaternaryOperator {
-
-        double applyAsDouble(double first, double second, double third, double fourth);
-
-    }
 
     public static double apply(DoubleBinaryOperator operator, Vector2.Accessible vector) {
         return operator.applyAsDouble(vector.x(), vector.y());

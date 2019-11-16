@@ -5,6 +5,8 @@ import java.util.function.DoubleBinaryOperator;
 
 import ee.ristoseene.vecmath.function.DoubleTernaryOperator;
 import ee.ristoseene.vecmath.function.DoubleQuaternaryOperator;
+import ee.ristoseene.vecmath.function.DoubleNovenaryOperator;
+import ee.ristoseene.vecmath.function.DoubleHexadecenaryOperator;
 
 public final class VecOps {
 
@@ -1267,6 +1269,23 @@ public final class VecOps {
                 operator.applyAsDouble(first, second, third, fourth.y()),
                 operator.applyAsDouble(first, second, third, fourth.z()),
                 operator.applyAsDouble(first, second, third, fourth.w())
+        );
+    }
+
+    public static double apply(DoubleNovenaryOperator operator, Matrix3x3.Accessible matrix) {
+        return operator.applyAsDouble(
+                matrix.Xx(), matrix.Xy(), matrix.Xz(),
+                matrix.Yx(), matrix.Yy(), matrix.Yz(),
+                matrix.Zx(), matrix.Zy(), matrix.Zz()
+        );
+    }
+
+    public static double apply(DoubleHexadecenaryOperator operator, Matrix4x4.Accessible matrix) {
+        return operator.applyAsDouble(
+                matrix.Xx(), matrix.Xy(), matrix.Xz(), matrix.Xw(),
+                matrix.Yx(), matrix.Yy(), matrix.Yz(), matrix.Yw(),
+                matrix.Zx(), matrix.Zy(), matrix.Zz(), matrix.Zw(),
+                matrix.Tx(), matrix.Ty(), matrix.Tz(), matrix.Tw()
         );
     }
 

@@ -4050,6 +4050,30 @@ public final class VecMath {
         );
     }
 
+    public static <R> R transformDirection(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible direction, Vector3.Factory<R> resultFactory) {
+        final double directionX = direction.x();
+        final double directionY = direction.y();
+        final double directionZ = direction.z();
+
+        return resultFactory.create(
+                transformationMatrix.Xx() * directionX + transformationMatrix.Yx() * directionY + transformationMatrix.Zx() * directionZ,
+                transformationMatrix.Xy() * directionX + transformationMatrix.Yy() * directionY + transformationMatrix.Zy() * directionZ,
+                transformationMatrix.Xz() * directionX + transformationMatrix.Yz() * directionY + transformationMatrix.Zz() * directionZ
+        );
+    }
+
+    public static void transformDirection(Vector3.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible direction) {
+        final double directionX = direction.x();
+        final double directionY = direction.y();
+        final double directionZ = direction.z();
+
+        resultConsumer.xyz(
+                transformationMatrix.Xx() * directionX + transformationMatrix.Yx() * directionY + transformationMatrix.Zx() * directionZ,
+                transformationMatrix.Xy() * directionX + transformationMatrix.Yy() * directionY + transformationMatrix.Zy() * directionZ,
+                transformationMatrix.Xz() * directionX + transformationMatrix.Yz() * directionY + transformationMatrix.Zz() * directionZ
+        );
+    }
+
     public static <R> R transformPosition(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector3.Factory<R> resultFactory) {
         final double positionX = position.x();
         final double positionY = position.y();
@@ -4074,27 +4098,57 @@ public final class VecMath {
         );
     }
 
-    public static <R> R transformDirection(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible direction, Vector3.Factory<R> resultFactory) {
-        final double directionX = direction.x();
-        final double directionY = direction.y();
-        final double directionZ = direction.z();
+    public static <R> R transformPosition(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector4.Factory<R> resultFactory) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
 
         return resultFactory.create(
-                transformationMatrix.Xx() * directionX + transformationMatrix.Yx() * directionY + transformationMatrix.Zx() * directionZ,
-                transformationMatrix.Xy() * directionX + transformationMatrix.Yy() * directionY + transformationMatrix.Zy() * directionZ,
-                transformationMatrix.Xz() * directionX + transformationMatrix.Yz() * directionY + transformationMatrix.Zz() * directionZ
+                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
+                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
+                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz(),
+                transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw()
         );
     }
 
-    public static void transformDirection(Vector3.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible direction) {
-        final double directionX = direction.x();
-        final double directionY = direction.y();
-        final double directionZ = direction.z();
+    public static void transformPosition(Vector4.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        resultConsumer.xyzw(
+                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
+                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
+                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz(),
+                transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw()
+        );
+    }
+
+    public static <R> R transformPositionWithPerspectiveDivision(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector3.Factory<R> resultFactory) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        final double inverseDivisor = 1.0D / (transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw());
+
+        return resultFactory.create(
+                (transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx()) * inverseDivisor,
+                (transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty()) * inverseDivisor,
+                (transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()) * inverseDivisor
+        );
+    }
+
+    public static void transformPositionWithPerspectiveDivision(Vector3.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        final double inverseDivisor = 1.0D / (transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw());
 
         resultConsumer.xyz(
-                transformationMatrix.Xx() * directionX + transformationMatrix.Yx() * directionY + transformationMatrix.Zx() * directionZ,
-                transformationMatrix.Xy() * directionX + transformationMatrix.Yy() * directionY + transformationMatrix.Zy() * directionZ,
-                transformationMatrix.Xz() * directionX + transformationMatrix.Yz() * directionY + transformationMatrix.Zz() * directionZ
+                (transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx()) * inverseDivisor,
+                (transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty()) * inverseDivisor,
+                (transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()) * inverseDivisor
         );
     }
 

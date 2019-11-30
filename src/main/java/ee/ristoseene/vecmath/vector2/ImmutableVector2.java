@@ -5,8 +5,8 @@ import ee.ristoseene.vecmath.Vector2;
 
 public class ImmutableVector2 implements Vector2.Accessible {
 
-    protected final double x;
-    protected final double y;
+    private final double x;
+    private final double y;
 
     public ImmutableVector2(double v) {
         this.x = v;

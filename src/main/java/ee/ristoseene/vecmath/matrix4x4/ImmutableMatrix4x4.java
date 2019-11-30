@@ -6,22 +6,22 @@ import ee.ristoseene.vecmath.Matrix4x4;
 
 public class ImmutableMatrix4x4 implements Matrix4x4.Accessible {
 
-    protected final double Xx;
-    protected final double Xy;
-    protected final double Xz;
-    protected final double Xw;
-    protected final double Yx;
-    protected final double Yy;
-    protected final double Yz;
-    protected final double Yw;
-    protected final double Zx;
-    protected final double Zy;
-    protected final double Zz;
-    protected final double Zw;
-    protected final double Tx;
-    protected final double Ty;
-    protected final double Tz;
-    protected final double Tw;
+    private final double Xx;
+    private final double Xy;
+    private final double Xz;
+    private final double Xw;
+    private final double Yx;
+    private final double Yy;
+    private final double Yz;
+    private final double Yw;
+    private final double Zx;
+    private final double Zy;
+    private final double Zz;
+    private final double Zw;
+    private final double Tx;
+    private final double Ty;
+    private final double Tz;
+    private final double Tw;
 
     public ImmutableMatrix4x4(double v) {
         this.Xx = v;

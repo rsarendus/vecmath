@@ -6,15 +6,15 @@ import ee.ristoseene.vecmath.Matrix3x3;
 
 public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
 
-    protected double Xx;
-    protected double Xy;
-    protected double Xz;
-    protected double Yx;
-    protected double Yy;
-    protected double Yz;
-    protected double Zx;
-    protected double Zy;
-    protected double Zz;
+    private double Xx;
+    private double Xy;
+    private double Xz;
+    private double Yx;
+    private double Yy;
+    private double Yz;
+    private double Zx;
+    private double Zy;
+    private double Zz;
 
     public MutableMatrix3x3() {}
 

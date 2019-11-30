@@ -5,19 +5,40 @@ public final class VecMath {
     private VecMath() {}
 
     public static double min(double value1, double value2) {
-        return (value1 < value2) ? value1 : value2;
+        return (value1 <= value2) ? value1 : value2;
     }
 
     public static double max(double value1, double value2) {
-        return (value1 > value2) ? value1 : value2;
+        return (value1 >= value2) ? value1 : value2;
     }
 
     public static double clamp(double value, double min, double max) {
-        return (value < max) ? (value > min ? value : min) : max;
+        double result = value;
+
+        if (result < min) result = min;
+        if (result > max) result = max;
+
+        return result;
     }
 
     public static double lerp(double value1, double value2, double t) {
         return value1 * (1.0D - t) + value2 * t;
+    }
+
+    public static double min(Vector2.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Vector2.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Vector2.Accessible value1, double value2, Vector2.Factory<R> resultFactory) {
@@ -27,8 +48,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Vector2.Consumer result, Vector2.Accessible value1, double value2) {
-        result.xy(
+    public static void min(Vector2.Consumer resultConsumer, Vector2.Accessible value1, double value2) {
+        resultConsumer.xy(
                 min(value1.x(), value2),
                 min(value1.y(), value2)
         );
@@ -41,8 +62,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Vector2.Consumer result, Vector2.Accessible value1, Vector2.Accessible value2) {
-        result.xy(
+    public static void min(Vector2.Consumer resultConsumer, Vector2.Accessible value1, Vector2.Accessible value2) {
+        resultConsumer.xy(
                 min(value1.x(), value2.x()),
                 min(value1.y(), value2.y())
         );
@@ -55,8 +76,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Vector2.Consumer result, Vector2.Accessible value1, double value2) {
-        result.xy(
+    public static void max(Vector2.Consumer resultConsumer, Vector2.Accessible value1, double value2) {
+        resultConsumer.xy(
                 max(value1.x(), value2),
                 max(value1.y(), value2)
         );
@@ -69,8 +90,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Vector2.Consumer result, Vector2.Accessible value1, Vector2.Accessible value2) {
-        result.xy(
+    public static void max(Vector2.Consumer resultConsumer, Vector2.Accessible value1, Vector2.Accessible value2) {
+        resultConsumer.xy(
                 max(value1.x(), value2.x()),
                 max(value1.y(), value2.y())
         );
@@ -83,8 +104,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector2.Consumer result, Vector2.Accessible value, double min, double max) {
-        result.xy(
+    public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, double min, double max) {
+        resultConsumer.xy(
                 clamp(value.x(), min, max),
                 clamp(value.y(), min, max)
         );
@@ -97,8 +118,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector2.Consumer result, Vector2.Accessible value, Vector2.Accessible min, double max) {
-        result.xy(
+    public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, Vector2.Accessible min, double max) {
+        resultConsumer.xy(
                 clamp(value.x(), min.x(), max),
                 clamp(value.y(), min.y(), max)
         );
@@ -111,8 +132,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector2.Consumer result, Vector2.Accessible value, double min, Vector2.Accessible max) {
-        result.xy(
+    public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, double min, Vector2.Accessible max) {
+        resultConsumer.xy(
                 clamp(value.x(), min, max.x()),
                 clamp(value.y(), min, max.y())
         );
@@ -125,8 +146,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector2.Consumer result, Vector2.Accessible value, Vector2.Accessible min, Vector2.Accessible max) {
-        result.xy(
+    public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, Vector2.Accessible min, Vector2.Accessible max) {
+        resultConsumer.xy(
                 clamp(value.x(), min.x(), max.x()),
                 clamp(value.y(), min.y(), max.y())
         );
@@ -139,8 +160,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector2.Consumer result, double value, Vector2.Accessible min, Vector2.Accessible max) {
-        result.xy(
+    public static void clamp(Vector2.Consumer resultConsumer, double value, Vector2.Accessible min, Vector2.Accessible max) {
+        resultConsumer.xy(
                 clamp(value, min.x(), max.x()),
                 clamp(value, min.y(), max.y())
         );
@@ -155,10 +176,10 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector2.Consumer result, Vector2.Accessible value1, Vector2.Accessible value2, double t) {
+    public static void lerp(Vector2.Consumer resultConsumer, Vector2.Accessible value1, Vector2.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        result.xy(
+        resultConsumer.xy(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t
         );
@@ -171,8 +192,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector2.Consumer result, Vector2.Accessible value1, double value2, Vector2.Accessible t) {
-        result.xy(
+    public static void lerp(Vector2.Consumer resultConsumer, Vector2.Accessible value1, double value2, Vector2.Accessible t) {
+        resultConsumer.xy(
                 lerp(value1.x(), value2, t.x()),
                 lerp(value1.y(), value2, t.y())
         );
@@ -185,8 +206,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector2.Consumer result, Vector2.Accessible value1, Vector2.Accessible value2, Vector2.Accessible t) {
-        result.xy(
+    public static void lerp(Vector2.Consumer resultConsumer, Vector2.Accessible value1, Vector2.Accessible value2, Vector2.Accessible t) {
+        resultConsumer.xy(
                 lerp(value1.x(), value2.x(), t.x()),
                 lerp(value1.y(), value2.y(), t.y())
         );
@@ -199,8 +220,8 @@ public final class VecMath {
         );
     }
 
-    public static void negate(Vector2.Consumer result, Vector2.Accessible value) {
-        result.xy(
+    public static void negate(Vector2.Consumer resultConsumer, Vector2.Accessible value) {
+        resultConsumer.xy(
                 -value.x(),
                 -value.y()
         );
@@ -213,8 +234,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Vector2.Consumer result, Vector2.Accessible left, double right) {
-        result.xy(
+    public static void add(Vector2.Consumer resultConsumer, Vector2.Accessible left, double right) {
+        resultConsumer.xy(
                 left.x() + right,
                 left.y() + right
         );
@@ -227,8 +248,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Vector2.Consumer result, Vector2.Accessible left, Vector2.Accessible right) {
-        result.xy(
+    public static void add(Vector2.Consumer resultConsumer, Vector2.Accessible left, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left.x() + right.x(),
                 left.y() + right.y()
         );
@@ -241,8 +262,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector2.Consumer result, Vector2.Accessible left, double right) {
-        result.xy(
+    public static void subtract(Vector2.Consumer resultConsumer, Vector2.Accessible left, double right) {
+        resultConsumer.xy(
                 left.x() - right,
                 left.y() - right
         );
@@ -255,8 +276,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector2.Consumer result, Vector2.Accessible left, Vector2.Accessible right) {
-        result.xy(
+    public static void subtract(Vector2.Consumer resultConsumer, Vector2.Accessible left, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left.x() - right.x(),
                 left.y() - right.y()
         );
@@ -269,8 +290,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector2.Consumer result, double left, Vector2.Accessible right) {
-        result.xy(
+    public static void subtract(Vector2.Consumer resultConsumer, double left, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left - right.x(),
                 left - right.y()
         );
@@ -283,8 +304,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector2.Consumer result, Vector2.Accessible left, double right) {
-        result.xy(
+    public static void multiply(Vector2.Consumer resultConsumer, Vector2.Accessible left, double right) {
+        resultConsumer.xy(
                 left.x() * right,
                 left.y() * right
         );
@@ -297,8 +318,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector2.Consumer result, Vector2.Accessible left, Vector2.Accessible right) {
-        result.xy(
+    public static void multiply(Vector2.Consumer resultConsumer, Vector2.Accessible left, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left.x() * right.x(),
                 left.y() * right.y()
         );
@@ -313,10 +334,10 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector2.Consumer result, Vector2.Accessible left, double right) {
+    public static void divide(Vector2.Consumer resultConsumer, Vector2.Accessible left, double right) {
         final double inverseRight = 1.0D / right;
 
-        result.xy(
+        resultConsumer.xy(
                 left.x() * inverseRight,
                 left.y() * inverseRight
         );
@@ -329,8 +350,8 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector2.Consumer result, Vector2.Accessible left, Vector2.Accessible right) {
-        result.xy(
+    public static void divide(Vector2.Consumer resultConsumer, Vector2.Accessible left, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left.x() / right.x(),
                 left.y() / right.y()
         );
@@ -343,8 +364,8 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector2.Consumer result, double left, Vector2.Accessible right) {
-        result.xy(
+    public static void divide(Vector2.Consumer resultConsumer, double left, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left / right.x(),
                 left / right.y()
         );
@@ -357,8 +378,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector2.Consumer result, Vector2.Accessible left, double middle, double right) {
-        result.xy(
+    public static void multiplyAdd(Vector2.Consumer resultConsumer, Vector2.Accessible left, double middle, double right) {
+        resultConsumer.xy(
                 left.x() * middle + right,
                 left.y() * middle + right
         );
@@ -371,8 +392,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector2.Consumer result, Vector2.Accessible left, Vector2.Accessible middle, double right) {
-        result.xy(
+    public static void multiplyAdd(Vector2.Consumer resultConsumer, Vector2.Accessible left, Vector2.Accessible middle, double right) {
+        resultConsumer.xy(
                 left.x() * middle.x() + right,
                 left.y() * middle.y() + right
         );
@@ -385,8 +406,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector2.Consumer result, Vector2.Accessible left, double middle, Vector2.Accessible right) {
-        result.xy(
+    public static void multiplyAdd(Vector2.Consumer resultConsumer, Vector2.Accessible left, double middle, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left.x() * middle + right.x(),
                 left.y() * middle + right.y()
         );
@@ -399,8 +420,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector2.Consumer result, Vector2.Accessible left, Vector2.Accessible middle, Vector2.Accessible right) {
-        result.xy(
+    public static void multiplyAdd(Vector2.Consumer resultConsumer, Vector2.Accessible left, Vector2.Accessible middle, Vector2.Accessible right) {
+        resultConsumer.xy(
                 left.x() * middle.x() + right.x(),
                 left.y() * middle.y() + right.y()
         );
@@ -413,8 +434,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector2.Consumer result, Vector2.Accessible base, double exponent) {
-        result.xy(
+    public static void power(Vector2.Consumer resultConsumer, Vector2.Accessible base, double exponent) {
+        resultConsumer.xy(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent)
         );
@@ -427,8 +448,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector2.Consumer result, double base, Vector2.Accessible exponent) {
-        result.xy(
+    public static void power(Vector2.Consumer resultConsumer, double base, Vector2.Accessible exponent) {
+        resultConsumer.xy(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y())
         );
@@ -441,8 +462,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector2.Consumer result, Vector2.Accessible base, Vector2.Accessible exponent) {
-        result.xy(
+    public static void power(Vector2.Consumer resultConsumer, Vector2.Accessible base, Vector2.Accessible exponent) {
+        resultConsumer.xy(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y())
         );
@@ -503,7 +524,7 @@ public final class VecMath {
         final double vectorY = vector.y();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -511,14 +532,14 @@ public final class VecMath {
         );
     }
 
-    public static void normalize(Vector2.Consumer result, Vector2.Accessible vector) {
+    public static void normalize(Vector2.Consumer resultConsumer, Vector2.Accessible vector) {
         final double vectorX = vector.x();
         final double vectorY = vector.y();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
-        result.xy(
+        resultConsumer.xy(
                 vectorX * inverseLength,
                 vectorY * inverseLength
         );
@@ -539,7 +560,7 @@ public final class VecMath {
         );
     }
 
-    public static void reflect(Vector2.Consumer result, Vector2.Accessible incident, Vector2.Accessible normal) {
+    public static void reflect(Vector2.Consumer resultConsumer, Vector2.Accessible incident, Vector2.Accessible normal) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
 
@@ -548,7 +569,7 @@ public final class VecMath {
 
         final double dotNI2 = (normalX * incidentX + normalY * incidentY) * 2.0D;
 
-        result.xy(
+        resultConsumer.xy(
                 incidentX - dotNI2 * normalX,
                 incidentY - dotNI2 * normalY
         );
@@ -576,7 +597,7 @@ public final class VecMath {
         );
     }
 
-    public static void refract(Vector2.Consumer result, Vector2.Accessible incident, Vector2.Accessible normal, double eta) {
+    public static void refract(Vector2.Consumer resultConsumer, Vector2.Accessible incident, Vector2.Accessible normal, double eta) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
 
@@ -587,16 +608,34 @@ public final class VecMath {
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
 
         if (k < 0.0D) {
-            result.xy(0.0D, 0.0D);
+            resultConsumer.xy(0.0D, 0.0D);
             return;
         }
 
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
 
-        result.xy(
+        resultConsumer.xy(
                 eta * incidentX - etaNIsqrtK * normalX,
                 eta * incidentY - etaNIsqrtK * normalY
         );
+    }
+
+    public static double min(Vector3.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) < result) result = tmp;
+        if ((tmp = vector.z()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Vector3.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) > result) result = tmp;
+        if ((tmp = vector.z()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Vector3.Accessible value1, double value2, Vector3.Factory<R> resultFactory) {
@@ -607,8 +646,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Vector3.Consumer result, Vector3.Accessible value1, double value2) {
-        result.xyz(
+    public static void min(Vector3.Consumer resultConsumer, Vector3.Accessible value1, double value2) {
+        resultConsumer.xyz(
                 min(value1.x(), value2),
                 min(value1.y(), value2),
                 min(value1.z(), value2)
@@ -623,8 +662,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Vector3.Consumer result, Vector3.Accessible value1, Vector3.Accessible value2) {
-        result.xyz(
+    public static void min(Vector3.Consumer resultConsumer, Vector3.Accessible value1, Vector3.Accessible value2) {
+        resultConsumer.xyz(
                 min(value1.x(), value2.x()),
                 min(value1.y(), value2.y()),
                 min(value1.z(), value2.z())
@@ -639,8 +678,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Vector3.Consumer result, Vector3.Accessible value1, double value2) {
-        result.xyz(
+    public static void max(Vector3.Consumer resultConsumer, Vector3.Accessible value1, double value2) {
+        resultConsumer.xyz(
                 max(value1.x(), value2),
                 max(value1.y(), value2),
                 max(value1.z(), value2)
@@ -655,8 +694,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Vector3.Consumer result, Vector3.Accessible value1, Vector3.Accessible value2) {
-        result.xyz(
+    public static void max(Vector3.Consumer resultConsumer, Vector3.Accessible value1, Vector3.Accessible value2) {
+        resultConsumer.xyz(
                 max(value1.x(), value2.x()),
                 max(value1.y(), value2.y()),
                 max(value1.z(), value2.z())
@@ -671,8 +710,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector3.Consumer result, Vector3.Accessible value, double min, double max) {
-        result.xyz(
+    public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, double min, double max) {
+        resultConsumer.xyz(
                 clamp(value.x(), min, max),
                 clamp(value.y(), min, max),
                 clamp(value.z(), min, max)
@@ -687,8 +726,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector3.Consumer result, Vector3.Accessible value, Vector3.Accessible min, double max) {
-        result.xyz(
+    public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, Vector3.Accessible min, double max) {
+        resultConsumer.xyz(
                 clamp(value.x(), min.x(), max),
                 clamp(value.y(), min.y(), max),
                 clamp(value.z(), min.z(), max)
@@ -703,8 +742,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector3.Consumer result, Vector3.Accessible value, double min, Vector3.Accessible max) {
-        result.xyz(
+    public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, double min, Vector3.Accessible max) {
+        resultConsumer.xyz(
                 clamp(value.x(), min, max.x()),
                 clamp(value.y(), min, max.y()),
                 clamp(value.z(), min, max.z())
@@ -719,8 +758,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector3.Consumer result, Vector3.Accessible value, Vector3.Accessible min, Vector3.Accessible max) {
-        result.xyz(
+    public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, Vector3.Accessible min, Vector3.Accessible max) {
+        resultConsumer.xyz(
                 clamp(value.x(), min.x(), max.x()),
                 clamp(value.y(), min.y(), max.y()),
                 clamp(value.z(), min.z(), max.z())
@@ -735,8 +774,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector3.Consumer result, double value, Vector3.Accessible min, Vector3.Accessible max) {
-        result.xyz(
+    public static void clamp(Vector3.Consumer resultConsumer, double value, Vector3.Accessible min, Vector3.Accessible max) {
+        resultConsumer.xyz(
                 clamp(value, min.x(), max.x()),
                 clamp(value, min.y(), max.y()),
                 clamp(value, min.z(), max.z())
@@ -753,10 +792,10 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector3.Consumer result, Vector3.Accessible value1, Vector3.Accessible value2, double t) {
+    public static void lerp(Vector3.Consumer resultConsumer, Vector3.Accessible value1, Vector3.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        result.xyz(
+        resultConsumer.xyz(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
                 value1.z() * oneMinusT + value2.z() * t
@@ -771,8 +810,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector3.Consumer result, Vector3.Accessible value1, double value2, Vector3.Accessible t) {
-        result.xyz(
+    public static void lerp(Vector3.Consumer resultConsumer, Vector3.Accessible value1, double value2, Vector3.Accessible t) {
+        resultConsumer.xyz(
                 lerp(value1.x(), value2, t.x()),
                 lerp(value1.y(), value2, t.y()),
                 lerp(value1.z(), value2, t.z())
@@ -787,8 +826,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector3.Consumer result, Vector3.Accessible value1, Vector3.Accessible value2, Vector3.Accessible t) {
-        result.xyz(
+    public static void lerp(Vector3.Consumer resultConsumer, Vector3.Accessible value1, Vector3.Accessible value2, Vector3.Accessible t) {
+        resultConsumer.xyz(
                 lerp(value1.x(), value2.x(), t.x()),
                 lerp(value1.y(), value2.y(), t.y()),
                 lerp(value1.z(), value2.z(), t.z())
@@ -803,8 +842,8 @@ public final class VecMath {
         );
     }
 
-    public static void negate(Vector3.Consumer result, Vector3.Accessible value) {
-        result.xyz(
+    public static void negate(Vector3.Consumer resultConsumer, Vector3.Accessible value) {
+        resultConsumer.xyz(
                 -value.x(),
                 -value.y(),
                 -value.z()
@@ -819,8 +858,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Vector3.Consumer result, Vector3.Accessible left, double right) {
-        result.xyz(
+    public static void add(Vector3.Consumer resultConsumer, Vector3.Accessible left, double right) {
+        resultConsumer.xyz(
                 left.x() + right,
                 left.y() + right,
                 left.z() + right
@@ -835,8 +874,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible right) {
-        result.xyz(
+    public static void add(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left.x() + right.x(),
                 left.y() + right.y(),
                 left.z() + right.z()
@@ -851,8 +890,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector3.Consumer result, Vector3.Accessible left, double right) {
-        result.xyz(
+    public static void subtract(Vector3.Consumer resultConsumer, Vector3.Accessible left, double right) {
+        resultConsumer.xyz(
                 left.x() - right,
                 left.y() - right,
                 left.z() - right
@@ -867,8 +906,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible right) {
-        result.xyz(
+    public static void subtract(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left.x() - right.x(),
                 left.y() - right.y(),
                 left.z() - right.z()
@@ -883,8 +922,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector3.Consumer result, double left, Vector3.Accessible right) {
-        result.xyz(
+    public static void subtract(Vector3.Consumer resultConsumer, double left, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left - right.x(),
                 left - right.y(),
                 left - right.z()
@@ -899,8 +938,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector3.Consumer result, Vector3.Accessible left, double right) {
-        result.xyz(
+    public static void multiply(Vector3.Consumer resultConsumer, Vector3.Accessible left, double right) {
+        resultConsumer.xyz(
                 left.x() * right,
                 left.y() * right,
                 left.z() * right
@@ -915,8 +954,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible right) {
-        result.xyz(
+    public static void multiply(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left.x() * right.x(),
                 left.y() * right.y(),
                 left.z() * right.z()
@@ -933,10 +972,10 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector3.Consumer result, Vector3.Accessible left, double right) {
+    public static void divide(Vector3.Consumer resultConsumer, Vector3.Accessible left, double right) {
         final double inverseRight = 1.0D / right;
 
-        result.xyz(
+        resultConsumer.xyz(
                 left.x() * inverseRight,
                 left.y() * inverseRight,
                 left.z() * inverseRight
@@ -951,8 +990,8 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible right) {
-        result.xyz(
+    public static void divide(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left.x() / right.x(),
                 left.y() / right.y(),
                 left.z() / right.z()
@@ -967,8 +1006,8 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector3.Consumer result, double left, Vector3.Accessible right) {
-        result.xyz(
+    public static void divide(Vector3.Consumer resultConsumer, double left, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left / right.x(),
                 left / right.y(),
                 left / right.z()
@@ -983,8 +1022,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector3.Consumer result, Vector3.Accessible left, double middle, double right) {
-        result.xyz(
+    public static void multiplyAdd(Vector3.Consumer resultConsumer, Vector3.Accessible left, double middle, double right) {
+        resultConsumer.xyz(
                 left.x() * middle + right,
                 left.y() * middle + right,
                 left.z() * middle + right
@@ -999,8 +1038,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible middle, double right) {
-        result.xyz(
+    public static void multiplyAdd(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible middle, double right) {
+        resultConsumer.xyz(
                 left.x() * middle.x() + right,
                 left.y() * middle.y() + right,
                 left.z() * middle.z() + right
@@ -1015,8 +1054,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector3.Consumer result, Vector3.Accessible left, double middle, Vector3.Accessible right) {
-        result.xyz(
+    public static void multiplyAdd(Vector3.Consumer resultConsumer, Vector3.Accessible left, double middle, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left.x() * middle + right.x(),
                 left.y() * middle + right.y(),
                 left.z() * middle + right.z()
@@ -1031,8 +1070,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible middle, Vector3.Accessible right) {
-        result.xyz(
+    public static void multiplyAdd(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible middle, Vector3.Accessible right) {
+        resultConsumer.xyz(
                 left.x() * middle.x() + right.x(),
                 left.y() * middle.y() + right.y(),
                 left.z() * middle.z() + right.z()
@@ -1047,8 +1086,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector3.Consumer result, Vector3.Accessible base, double exponent) {
-        result.xyz(
+    public static void power(Vector3.Consumer resultConsumer, Vector3.Accessible base, double exponent) {
+        resultConsumer.xyz(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent),
                 Math.pow(base.z(), exponent)
@@ -1063,8 +1102,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector3.Consumer result, double base, Vector3.Accessible exponent) {
-        result.xyz(
+    public static void power(Vector3.Consumer resultConsumer, double base, Vector3.Accessible exponent) {
+        resultConsumer.xyz(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y()),
                 Math.pow(base, exponent.z())
@@ -1079,8 +1118,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector3.Consumer result, Vector3.Accessible base, Vector3.Accessible exponent) {
-        result.xyz(
+    public static void power(Vector3.Consumer resultConsumer, Vector3.Accessible base, Vector3.Accessible exponent) {
+        resultConsumer.xyz(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
                 Math.pow(base.z(), exponent.z())
@@ -1159,7 +1198,7 @@ public final class VecMath {
         );
     }
 
-    public static void cross(Vector3.Consumer result, Vector3.Accessible left, Vector3.Accessible right) {
+    public static void cross(Vector3.Consumer resultConsumer, Vector3.Accessible left, Vector3.Accessible right) {
         final double leftX = left.x();
         final double leftY = left.y();
         final double leftZ = left.z();
@@ -1168,7 +1207,7 @@ public final class VecMath {
         final double rightY = right.y();
         final double rightZ = right.z();
 
-        result.xyz(
+        resultConsumer.xyz(
                 leftY * rightZ - rightY * leftZ,
                 leftZ * rightX - rightZ * leftX,
                 leftX * rightY - rightX * leftY
@@ -1181,7 +1220,7 @@ public final class VecMath {
         final double vectorZ = vector.z();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -1190,15 +1229,15 @@ public final class VecMath {
         );
     }
 
-    public static void normalize(Vector3.Consumer result, Vector3.Accessible vector) {
+    public static void normalize(Vector3.Consumer resultConsumer, Vector3.Accessible vector) {
         final double vectorX = vector.x();
         final double vectorY = vector.y();
         final double vectorZ = vector.z();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
-        result.xyz(
+        resultConsumer.xyz(
                 vectorX * inverseLength,
                 vectorY * inverseLength,
                 vectorZ * inverseLength
@@ -1223,7 +1262,7 @@ public final class VecMath {
         );
     }
 
-    public static void reflect(Vector3.Consumer result, Vector3.Accessible incident, Vector3.Accessible normal) {
+    public static void reflect(Vector3.Consumer resultConsumer, Vector3.Accessible incident, Vector3.Accessible normal) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1234,7 +1273,7 @@ public final class VecMath {
 
         final double dotNI2 = (normalX * incidentX + normalY * incidentY + normalZ * incidentZ) * 2.0D;
 
-        result.xyz(
+        resultConsumer.xyz(
                 incidentX - dotNI2 * normalX,
                 incidentY - dotNI2 * normalY,
                 incidentZ - dotNI2 * normalZ
@@ -1266,7 +1305,7 @@ public final class VecMath {
         );
     }
 
-    public static void refract(Vector3.Consumer result, Vector3.Accessible incident, Vector3.Accessible normal, double eta) {
+    public static void refract(Vector3.Consumer resultConsumer, Vector3.Accessible incident, Vector3.Accessible normal, double eta) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1279,17 +1318,37 @@ public final class VecMath {
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
 
         if (k < 0.0D) {
-            result.xyz(0.0D, 0.0D, 0.0D);
+            resultConsumer.xyz(0.0D, 0.0D, 0.0D);
             return;
         }
 
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
 
-        result.xyz(
+        resultConsumer.xyz(
                 eta * incidentX - etaNIsqrtK * normalX,
                 eta * incidentY - etaNIsqrtK * normalY,
                 eta * incidentZ - etaNIsqrtK * normalZ
         );
+    }
+
+    public static double min(Vector4.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) < result) result = tmp;
+        if ((tmp = vector.z()) < result) result = tmp;
+        if ((tmp = vector.w()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Vector4.Accessible vector) {
+        double tmp, result = vector.x();
+
+        if ((tmp = vector.y()) > result) result = tmp;
+        if ((tmp = vector.z()) > result) result = tmp;
+        if ((tmp = vector.w()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Vector4.Accessible value1, double value2, Vector4.Factory<R> resultFactory) {
@@ -1301,8 +1360,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Vector4.Consumer result, Vector4.Accessible value1, double value2) {
-        result.xyzw(
+    public static void min(Vector4.Consumer resultConsumer, Vector4.Accessible value1, double value2) {
+        resultConsumer.xyzw(
                 min(value1.x(), value2),
                 min(value1.y(), value2),
                 min(value1.z(), value2),
@@ -1319,8 +1378,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Vector4.Consumer result, Vector4.Accessible value1, Vector4.Accessible value2) {
-        result.xyzw(
+    public static void min(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2) {
+        resultConsumer.xyzw(
                 min(value1.x(), value2.x()),
                 min(value1.y(), value2.y()),
                 min(value1.z(), value2.z()),
@@ -1337,8 +1396,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Vector4.Consumer result, Vector4.Accessible value1, double value2) {
-        result.xyzw(
+    public static void max(Vector4.Consumer resultConsumer, Vector4.Accessible value1, double value2) {
+        resultConsumer.xyzw(
                 max(value1.x(), value2),
                 max(value1.y(), value2),
                 max(value1.z(), value2),
@@ -1355,8 +1414,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Vector4.Consumer result, Vector4.Accessible value1, Vector4.Accessible value2) {
-        result.xyzw(
+    public static void max(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2) {
+        resultConsumer.xyzw(
                 max(value1.x(), value2.x()),
                 max(value1.y(), value2.y()),
                 max(value1.z(), value2.z()),
@@ -1373,8 +1432,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector4.Consumer result, Vector4.Accessible value, double min, double max) {
-        result.xyzw(
+    public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, double min, double max) {
+        resultConsumer.xyzw(
                 clamp(value.x(), min, max),
                 clamp(value.y(), min, max),
                 clamp(value.z(), min, max),
@@ -1391,8 +1450,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector4.Consumer result, Vector4.Accessible value, Vector4.Accessible min, double max) {
-        result.xyzw(
+    public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, Vector4.Accessible min, double max) {
+        resultConsumer.xyzw(
                 clamp(value.x(), min.x(), max),
                 clamp(value.y(), min.y(), max),
                 clamp(value.z(), min.z(), max),
@@ -1409,8 +1468,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector4.Consumer result, Vector4.Accessible value, double min, Vector4.Accessible max) {
-        result.xyzw(
+    public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, double min, Vector4.Accessible max) {
+        resultConsumer.xyzw(
                 clamp(value.x(), min, max.x()),
                 clamp(value.y(), min, max.y()),
                 clamp(value.z(), min, max.z()),
@@ -1427,8 +1486,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector4.Consumer result, Vector4.Accessible value, Vector4.Accessible min, Vector4.Accessible max) {
-        result.xyzw(
+    public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, Vector4.Accessible min, Vector4.Accessible max) {
+        resultConsumer.xyzw(
                 clamp(value.x(), min.x(), max.x()),
                 clamp(value.y(), min.y(), max.y()),
                 clamp(value.z(), min.z(), max.z()),
@@ -1445,8 +1504,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Vector4.Consumer result, double value, Vector4.Accessible min, Vector4.Accessible max) {
-        result.xyzw(
+    public static void clamp(Vector4.Consumer resultConsumer, double value, Vector4.Accessible min, Vector4.Accessible max) {
+        resultConsumer.xyzw(
                 clamp(value, min.x(), max.x()),
                 clamp(value, min.y(), max.y()),
                 clamp(value, min.z(), max.z()),
@@ -1465,10 +1524,10 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector4.Consumer result, Vector4.Accessible value1, Vector4.Accessible value2, double t) {
+    public static void lerp(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
                 value1.z() * oneMinusT + value2.z() * t,
@@ -1485,8 +1544,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector4.Consumer result, Vector4.Accessible value1, double value2, Vector4.Accessible t) {
-        result.xyzw(
+    public static void lerp(Vector4.Consumer resultConsumer, Vector4.Accessible value1, double value2, Vector4.Accessible t) {
+        resultConsumer.xyzw(
                 lerp(value1.x(), value2, t.x()),
                 lerp(value1.y(), value2, t.y()),
                 lerp(value1.z(), value2, t.z()),
@@ -1503,8 +1562,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Vector4.Consumer result, Vector4.Accessible value1, Vector4.Accessible value2, Vector4.Accessible t) {
-        result.xyzw(
+    public static void lerp(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2, Vector4.Accessible t) {
+        resultConsumer.xyzw(
                 lerp(value1.x(), value2.x(), t.x()),
                 lerp(value1.y(), value2.y(), t.y()),
                 lerp(value1.z(), value2.z(), t.z()),
@@ -1521,8 +1580,8 @@ public final class VecMath {
         );
     }
 
-    public static void negate(Vector4.Consumer result, Vector4.Accessible value) {
-        result.xyzw(
+    public static void negate(Vector4.Consumer resultConsumer, Vector4.Accessible value) {
+        resultConsumer.xyzw(
                 -value.x(),
                 -value.y(),
                 -value.z(),
@@ -1539,8 +1598,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Vector4.Consumer result, Vector4.Accessible left, double right) {
-        result.xyzw(
+    public static void add(Vector4.Consumer resultConsumer, Vector4.Accessible left, double right) {
+        resultConsumer.xyzw(
                 left.x() + right,
                 left.y() + right,
                 left.z() + right,
@@ -1557,8 +1616,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Vector4.Consumer result, Vector4.Accessible left, Vector4.Accessible right) {
-        result.xyzw(
+    public static void add(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left.x() + right.x(),
                 left.y() + right.y(),
                 left.z() + right.z(),
@@ -1575,8 +1634,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector4.Consumer result, Vector4.Accessible left, double right) {
-        result.xyzw(
+    public static void subtract(Vector4.Consumer resultConsumer, Vector4.Accessible left, double right) {
+        resultConsumer.xyzw(
                 left.x() - right,
                 left.y() - right,
                 left.z() - right,
@@ -1593,8 +1652,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector4.Consumer result, Vector4.Accessible left, Vector4.Accessible right) {
-        result.xyzw(
+    public static void subtract(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left.x() - right.x(),
                 left.y() - right.y(),
                 left.z() - right.z(),
@@ -1611,8 +1670,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Vector4.Consumer result, double left, Vector4.Accessible right) {
-        result.xyzw(
+    public static void subtract(Vector4.Consumer resultConsumer, double left, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left - right.x(),
                 left - right.y(),
                 left - right.z(),
@@ -1629,8 +1688,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector4.Consumer result, Vector4.Accessible left, double right) {
-        result.xyzw(
+    public static void multiply(Vector4.Consumer resultConsumer, Vector4.Accessible left, double right) {
+        resultConsumer.xyzw(
                 left.x() * right,
                 left.y() * right,
                 left.z() * right,
@@ -1647,8 +1706,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector4.Consumer result, Vector4.Accessible left, Vector4.Accessible right) {
-        result.xyzw(
+    public static void multiply(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left.x() * right.x(),
                 left.y() * right.y(),
                 left.z() * right.z(),
@@ -1667,10 +1726,10 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector4.Consumer result, Vector4.Accessible left, double right) {
+    public static void divide(Vector4.Consumer resultConsumer, Vector4.Accessible left, double right) {
         final double inverseRight = 1.0D / right;
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 left.x() * inverseRight,
                 left.y() * inverseRight,
                 left.z() * inverseRight,
@@ -1687,8 +1746,8 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector4.Consumer result, Vector4.Accessible left, Vector4.Accessible right) {
-        result.xyzw(
+    public static void divide(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left.x() / right.x(),
                 left.y() / right.y(),
                 left.z() / right.z(),
@@ -1705,8 +1764,8 @@ public final class VecMath {
         );
     }
 
-    public static void divide(Vector4.Consumer result, double left, Vector4.Accessible right) {
-        result.xyzw(
+    public static void divide(Vector4.Consumer resultConsumer, double left, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left / right.x(),
                 left / right.y(),
                 left / right.z(),
@@ -1723,8 +1782,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector4.Consumer result, Vector4.Accessible left, double middle, double right) {
-        result.xyzw(
+    public static void multiplyAdd(Vector4.Consumer resultConsumer, Vector4.Accessible left, double middle, double right) {
+        resultConsumer.xyzw(
                 left.x() * middle + right,
                 left.y() * middle + right,
                 left.z() * middle + right,
@@ -1741,8 +1800,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector4.Consumer result, Vector4.Accessible left, Vector4.Accessible middle, double right) {
-        result.xyzw(
+    public static void multiplyAdd(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible middle, double right) {
+        resultConsumer.xyzw(
                 left.x() * middle.x() + right,
                 left.y() * middle.y() + right,
                 left.z() * middle.z() + right,
@@ -1759,8 +1818,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector4.Consumer result, Vector4.Accessible left, double middle, Vector4.Accessible right) {
-        result.xyzw(
+    public static void multiplyAdd(Vector4.Consumer resultConsumer, Vector4.Accessible left, double middle, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left.x() * middle + right.x(),
                 left.y() * middle + right.y(),
                 left.z() * middle + right.z(),
@@ -1777,8 +1836,8 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyAdd(Vector4.Consumer result, Vector4.Accessible left, Vector4.Accessible middle, Vector4.Accessible right) {
-        result.xyzw(
+    public static void multiplyAdd(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible middle, Vector4.Accessible right) {
+        resultConsumer.xyzw(
                 left.x() * middle.x() + right.x(),
                 left.y() * middle.y() + right.y(),
                 left.z() * middle.z() + right.z(),
@@ -1795,8 +1854,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector4.Consumer result, Vector4.Accessible base, double exponent) {
-        result.xyzw(
+    public static void power(Vector4.Consumer resultConsumer, Vector4.Accessible base, double exponent) {
+        resultConsumer.xyzw(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent),
                 Math.pow(base.z(), exponent),
@@ -1813,8 +1872,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector4.Consumer result, double base, Vector4.Accessible exponent) {
-        result.xyzw(
+    public static void power(Vector4.Consumer resultConsumer, double base, Vector4.Accessible exponent) {
+        resultConsumer.xyzw(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y()),
                 Math.pow(base, exponent.z()),
@@ -1831,8 +1890,8 @@ public final class VecMath {
         );
     }
 
-    public static void power(Vector4.Consumer result, Vector4.Accessible base, Vector4.Accessible exponent) {
-        result.xyzw(
+    public static void power(Vector4.Consumer resultConsumer, Vector4.Accessible base, Vector4.Accessible exponent) {
+        resultConsumer.xyzw(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
                 Math.pow(base.z(), exponent.z()),
@@ -1909,7 +1968,7 @@ public final class VecMath {
         final double vectorW = vector.w();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
         return resultFactory.create(
                 vectorX * inverseLength,
@@ -1919,16 +1978,16 @@ public final class VecMath {
         );
     }
 
-    public static void normalize(Vector4.Consumer result, Vector4.Accessible vector) {
+    public static void normalize(Vector4.Consumer resultConsumer, Vector4.Accessible vector) {
         final double vectorX = vector.x();
         final double vectorY = vector.y();
         final double vectorZ = vector.z();
         final double vectorW = vector.w();
 
         final double length = Math.sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ + vectorW * vectorW);
-        final double inverseLength = 1.0D / (length != 0.0D ? length : 1.0D);
+        final double inverseLength = 1.0D / (length > 0.0D ? length : 1.0D);
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 vectorX * inverseLength,
                 vectorY * inverseLength,
                 vectorZ * inverseLength,
@@ -1957,7 +2016,7 @@ public final class VecMath {
         );
     }
 
-    public static void reflect(Vector4.Consumer result, Vector4.Accessible incident, Vector4.Accessible normal) {
+    public static void reflect(Vector4.Consumer resultConsumer, Vector4.Accessible incident, Vector4.Accessible normal) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1970,7 +2029,7 @@ public final class VecMath {
 
         final double dotNI2 = (normalX * incidentX + normalY * incidentY + normalZ * incidentZ + normalW * incidentW) * 2.0D;
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 incidentX - dotNI2 * normalX,
                 incidentY - dotNI2 * normalY,
                 incidentZ - dotNI2 * normalZ,
@@ -2006,7 +2065,7 @@ public final class VecMath {
         );
     }
 
-    public static void refract(Vector4.Consumer result, Vector4.Accessible incident, Vector4.Accessible normal, double eta) {
+    public static void refract(Vector4.Consumer resultConsumer, Vector4.Accessible incident, Vector4.Accessible normal, double eta) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -2021,18 +2080,48 @@ public final class VecMath {
         final double k = 1.0D - eta * eta * (1.0D - dotNI * dotNI);
 
         if (k < 0.0D) {
-            result.xyzw(0.0D, 0.0D, 0.0D, 0.0D);
+            resultConsumer.xyzw(0.0D, 0.0D, 0.0D, 0.0D);
             return;
         }
 
         final double etaNIsqrtK = eta * dotNI + Math.sqrt(k);
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 eta * incidentX - etaNIsqrtK * normalX,
                 eta * incidentY - etaNIsqrtK * normalY,
                 eta * incidentZ - etaNIsqrtK * normalZ,
                 eta * incidentW - etaNIsqrtK * normalW
         );
+    }
+
+    public static double min(Matrix3x3.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) < result) result = tmp;
+        if ((tmp = matrix.Xz()) < result) result = tmp;
+        if ((tmp = matrix.Yx()) < result) result = tmp;
+        if ((tmp = matrix.Yy()) < result) result = tmp;
+        if ((tmp = matrix.Yz()) < result) result = tmp;
+        if ((tmp = matrix.Zx()) < result) result = tmp;
+        if ((tmp = matrix.Zy()) < result) result = tmp;
+        if ((tmp = matrix.Zz()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Matrix3x3.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) > result) result = tmp;
+        if ((tmp = matrix.Xz()) > result) result = tmp;
+        if ((tmp = matrix.Yx()) > result) result = tmp;
+        if ((tmp = matrix.Yy()) > result) result = tmp;
+        if ((tmp = matrix.Yz()) > result) result = tmp;
+        if ((tmp = matrix.Zx()) > result) result = tmp;
+        if ((tmp = matrix.Zy()) > result) result = tmp;
+        if ((tmp = matrix.Zz()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Matrix3x3.Accessible value1, double value2, Matrix3x3.Factory<R> resultFactory) {
@@ -2049,8 +2138,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, double value2) {
-        result.set3x3(
+    public static void min(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2) {
+        resultConsumer.set3x3(
                 min(value1.Xx(), value2),
                 min(value1.Xy(), value2),
                 min(value1.Xz(), value2),
@@ -2077,8 +2166,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
-        result.set3x3(
+    public static void min(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
+        resultConsumer.set3x3(
                 min(value1.Xx(), value2.Xx()),
                 min(value1.Xy(), value2.Xy()),
                 min(value1.Xz(), value2.Xz()),
@@ -2105,8 +2194,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, double value2) {
-        result.set3x3(
+    public static void max(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2) {
+        resultConsumer.set3x3(
                 max(value1.Xx(), value2),
                 max(value1.Xy(), value2),
                 max(value1.Xz(), value2),
@@ -2133,8 +2222,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
-        result.set3x3(
+    public static void max(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
+        resultConsumer.set3x3(
                 max(value1.Xx(), value2.Xx()),
                 max(value1.Xy(), value2.Xy()),
                 max(value1.Xz(), value2.Xz()),
@@ -2161,8 +2250,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix3x3.Consumer result, Matrix3x3.Accessible value, double min, double max) {
-        result.set3x3(
+    public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, double min, double max) {
+        resultConsumer.set3x3(
                 clamp(value.Xx(), min, max),
                 clamp(value.Xy(), min, max),
                 clamp(value.Xz(), min, max),
@@ -2189,8 +2278,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix3x3.Consumer result, Matrix3x3.Accessible value, Matrix3x3.Accessible min, double max) {
-        result.set3x3(
+    public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, Matrix3x3.Accessible min, double max) {
+        resultConsumer.set3x3(
                 clamp(value.Xx(), min.Xx(), max),
                 clamp(value.Xy(), min.Xy(), max),
                 clamp(value.Xz(), min.Xz(), max),
@@ -2217,8 +2306,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix3x3.Consumer result, Matrix3x3.Accessible value, double min, Matrix3x3.Accessible max) {
-        result.set3x3(
+    public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, double min, Matrix3x3.Accessible max) {
+        resultConsumer.set3x3(
                 clamp(value.Xx(), min, max.Xx()),
                 clamp(value.Xy(), min, max.Xy()),
                 clamp(value.Xz(), min, max.Xz()),
@@ -2245,8 +2334,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix3x3.Consumer result, Matrix3x3.Accessible value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
-        result.set3x3(
+    public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
+        resultConsumer.set3x3(
                 clamp(value.Xx(), min.Xx(), max.Xx()),
                 clamp(value.Xy(), min.Xy(), max.Xy()),
                 clamp(value.Xz(), min.Xz(), max.Xz()),
@@ -2273,8 +2362,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix3x3.Consumer result, double value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
-        result.set3x3(
+    public static void clamp(Matrix3x3.Consumer resultConsumer, double value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
+        resultConsumer.set3x3(
                 clamp(value, min.Xx(), max.Xx()),
                 clamp(value, min.Xy(), max.Xy()),
                 clamp(value, min.Xz(), max.Xz()),
@@ -2303,10 +2392,10 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, double t) {
+    public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        result.set3x3(
+        resultConsumer.set3x3(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
                 value1.Xz() * oneMinusT + value2.Xz() * t,
@@ -2333,8 +2422,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, double value2, Matrix3x3.Accessible t) {
-        result.set3x3(
+    public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2, Matrix3x3.Accessible t) {
+        resultConsumer.set3x3(
                 lerp(value1.Xx(), value2, t.Xx()),
                 lerp(value1.Xy(), value2, t.Xy()),
                 lerp(value1.Xz(), value2, t.Xz()),
@@ -2361,8 +2450,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Matrix3x3.Consumer result, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, Matrix3x3.Accessible t) {
-        result.set3x3(
+    public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, Matrix3x3.Accessible t) {
+        resultConsumer.set3x3(
                 lerp(value1.Xx(), value2.Xx(), t.Xx()),
                 lerp(value1.Xy(), value2.Xy(), t.Xy()),
                 lerp(value1.Xz(), value2.Xz(), t.Xz()),
@@ -2389,8 +2478,8 @@ public final class VecMath {
         );
     }
 
-    public static void negate(Matrix3x3.Consumer result, Matrix3x3.Accessible value) {
-        result.set3x3(
+    public static void negate(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value) {
+        resultConsumer.set3x3(
                 -value.Xx(),
                 -value.Xy(),
                 -value.Xz(),
@@ -2417,8 +2506,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Matrix3x3.Consumer result, Matrix3x3.Accessible left, double right) {
-        result.set3x3(
+    public static void add(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, double right) {
+        resultConsumer.set3x3(
                 left.Xx() + right,
                 left.Xy() + right,
                 left.Xz() + right,
@@ -2445,8 +2534,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Matrix3x3.Consumer result, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
-        result.set3x3(
+    public static void add(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
+        resultConsumer.set3x3(
                 left.Xx() + right.Xx(),
                 left.Xy() + right.Xy(),
                 left.Xz() + right.Xz(),
@@ -2473,8 +2562,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Matrix3x3.Consumer result, Matrix3x3.Accessible left, double right) {
-        result.set3x3(
+    public static void subtract(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, double right) {
+        resultConsumer.set3x3(
                 left.Xx() - right,
                 left.Xy() - right,
                 left.Xz() - right,
@@ -2501,8 +2590,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Matrix3x3.Consumer result, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
-        result.set3x3(
+    public static void subtract(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
+        resultConsumer.set3x3(
                 left.Xx() - right.Xx(),
                 left.Xy() - right.Xy(),
                 left.Xz() - right.Xz(),
@@ -2529,8 +2618,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Matrix3x3.Consumer result, double left, Matrix3x3.Accessible right) {
-        result.set3x3(
+    public static void subtract(Matrix3x3.Consumer resultConsumer, double left, Matrix3x3.Accessible right) {
+        resultConsumer.set3x3(
                 left - right.Xx(),
                 left - right.Xy(),
                 left - right.Xz(),
@@ -2540,94 +2629,6 @@ public final class VecMath {
                 left - right.Zx(),
                 left - right.Zy(),
                 left - right.Zz()
-        );
-    }
-
-    public static <R> R multiply(Matrix3x3.Accessible left, double right, Matrix3x3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                left.Xx() * right,
-                left.Xy() * right,
-                left.Xz() * right,
-                left.Yx() * right,
-                left.Yy() * right,
-                left.Yz() * right,
-                left.Zx() * right,
-                left.Zy() * right,
-                left.Zz() * right
-        );
-    }
-
-    public static void multiply(Matrix3x3.Consumer result, Matrix3x3.Accessible left, double right) {
-        result.set3x3(
-                left.Xx() * right,
-                left.Xy() * right,
-                left.Xz() * right,
-                left.Yx() * right,
-                left.Yy() * right,
-                left.Yz() * right,
-                left.Zx() * right,
-                left.Zy() * right,
-                left.Zz() * right
-        );
-    }
-
-    public static <R> R divide(Matrix3x3.Accessible left, double right, Matrix3x3.Factory<R> resultFactory) {
-        final double inverseRight = 1.0D / right;
-
-        return resultFactory.create(
-                left.Xx() * inverseRight,
-                left.Xy() * inverseRight,
-                left.Xz() * inverseRight,
-                left.Yx() * inverseRight,
-                left.Yy() * inverseRight,
-                left.Yz() * inverseRight,
-                left.Zx() * inverseRight,
-                left.Zy() * inverseRight,
-                left.Zz() * inverseRight
-        );
-    }
-
-    public static void divide(Matrix3x3.Consumer result, Matrix3x3.Accessible left, double right) {
-        final double inverseRight = 1.0D / right;
-
-        result.set3x3(
-                left.Xx() * inverseRight,
-                left.Xy() * inverseRight,
-                left.Xz() * inverseRight,
-                left.Yx() * inverseRight,
-                left.Yy() * inverseRight,
-                left.Yz() * inverseRight,
-                left.Zx() * inverseRight,
-                left.Zy() * inverseRight,
-                left.Zz() * inverseRight
-        );
-    }
-
-    public static <R> R divide(double left, Matrix3x3.Accessible right, Matrix3x3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                left / right.Xx(),
-                left / right.Xy(),
-                left / right.Xz(),
-                left / right.Yx(),
-                left / right.Yy(),
-                left / right.Yz(),
-                left / right.Zx(),
-                left / right.Zy(),
-                left / right.Zz()
-        );
-    }
-
-    public static void divide(Matrix3x3.Consumer result, double left, Matrix3x3.Accessible right) {
-        result.set3x3(
-                left / right.Xx(),
-                left / right.Xy(),
-                left / right.Xz(),
-                left / right.Yx(),
-                left / right.Yy(),
-                left / right.Yz(),
-                left / right.Zx(),
-                left / right.Zy(),
-                left / right.Zz()
         );
     }
 
@@ -2646,8 +2647,7 @@ public final class VecMath {
         final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
         final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
 
-        final double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
 
         return resultFactory.create(
                 det01 * inverseDet,
@@ -2662,7 +2662,7 @@ public final class VecMath {
         );
     }
 
-    public static void inverse(Matrix3x3.Consumer result, Matrix3x3.Accessible matrix) {
+    public static void inverse(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible matrix) {
         final double matrixXx = matrix.Xx();
         final double matrixXy = matrix.Xy();
         final double matrixXz = matrix.Xz();
@@ -2677,10 +2677,9 @@ public final class VecMath {
         final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
         final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
 
-        final double det = matrixXx * det01 + matrixXy * det11 + matrixXz * det21;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
 
-        result.set3x3(
+        resultConsumer.set3x3(
                 det01 * inverseDet,
                 (matrixXz * matrixZy - matrixZz * matrixXy) * inverseDet,
                 (matrixYz * matrixXy - matrixXz * matrixYy) * inverseDet,
@@ -2727,7 +2726,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Matrix3x3.Consumer result, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
+    public static void multiply(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
         final double leftXx = left.Xx();
         final double leftXy = left.Xy();
         final double leftXz = left.Xz();
@@ -2748,7 +2747,7 @@ public final class VecMath {
         final double rightZy = right.Zy();
         final double rightZz = right.Zz();
 
-        result.set3x3(
+        resultConsumer.set3x3(
                 leftXx * rightXx + leftYx * rightXy + leftZx * rightXz,
                 leftXy * rightXx + leftYy * rightXy + leftZy * rightXz,
                 leftXz * rightXx + leftYz * rightXy + leftZz * rightXz,
@@ -2773,16 +2772,60 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector3.Consumer result, Matrix3x3.Accessible left, Vector3.Accessible right) {
+    public static void multiply(Vector3.Consumer resultConsumer, Matrix3x3.Accessible left, Vector3.Accessible right) {
         final double rightX = right.x();
         final double rightY = right.y();
         final double rightZ = right.z();
 
-        result.xyz(
+        resultConsumer.xyz(
                 left.Xx() * rightX + left.Yx() * rightY + left.Zx() * rightZ,
                 left.Xy() * rightX + left.Yy() * rightY + left.Zy() * rightZ,
                 left.Xz() * rightX + left.Yz() * rightY + left.Zz() * rightZ
         );
+    }
+
+    public static double min(Matrix4x4.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) < result) result = tmp;
+        if ((tmp = matrix.Xz()) < result) result = tmp;
+        if ((tmp = matrix.Xw()) < result) result = tmp;
+        if ((tmp = matrix.Yx()) < result) result = tmp;
+        if ((tmp = matrix.Yy()) < result) result = tmp;
+        if ((tmp = matrix.Yz()) < result) result = tmp;
+        if ((tmp = matrix.Yw()) < result) result = tmp;
+        if ((tmp = matrix.Zx()) < result) result = tmp;
+        if ((tmp = matrix.Zy()) < result) result = tmp;
+        if ((tmp = matrix.Zz()) < result) result = tmp;
+        if ((tmp = matrix.Zw()) < result) result = tmp;
+        if ((tmp = matrix.Tx()) < result) result = tmp;
+        if ((tmp = matrix.Ty()) < result) result = tmp;
+        if ((tmp = matrix.Tz()) < result) result = tmp;
+        if ((tmp = matrix.Tw()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Matrix4x4.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) > result) result = tmp;
+        if ((tmp = matrix.Xz()) > result) result = tmp;
+        if ((tmp = matrix.Xw()) > result) result = tmp;
+        if ((tmp = matrix.Yx()) > result) result = tmp;
+        if ((tmp = matrix.Yy()) > result) result = tmp;
+        if ((tmp = matrix.Yz()) > result) result = tmp;
+        if ((tmp = matrix.Yw()) > result) result = tmp;
+        if ((tmp = matrix.Zx()) > result) result = tmp;
+        if ((tmp = matrix.Zy()) > result) result = tmp;
+        if ((tmp = matrix.Zz()) > result) result = tmp;
+        if ((tmp = matrix.Zw()) > result) result = tmp;
+        if ((tmp = matrix.Tx()) > result) result = tmp;
+        if ((tmp = matrix.Ty()) > result) result = tmp;
+        if ((tmp = matrix.Tz()) > result) result = tmp;
+        if ((tmp = matrix.Tw()) > result) result = tmp;
+
+        return result;
     }
 
     public static <R> R min(Matrix4x4.Accessible value1, double value2, Matrix4x4.Factory<R> resultFactory) {
@@ -2806,8 +2849,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, double value2) {
-        result.set4x4(
+    public static void min(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2) {
+        resultConsumer.set4x4(
                 min(value1.Xx(), value2),
                 min(value1.Xy(), value2),
                 min(value1.Xz(), value2),
@@ -2848,8 +2891,8 @@ public final class VecMath {
         );
     }
 
-    public static void min(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
-        result.set4x4(
+    public static void min(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
+        resultConsumer.set4x4(
                 min(value1.Xx(), value2.Xx()),
                 min(value1.Xy(), value2.Xy()),
                 min(value1.Xz(), value2.Xz()),
@@ -2890,8 +2933,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, double value2) {
-        result.set4x4(
+    public static void max(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2) {
+        resultConsumer.set4x4(
                 max(value1.Xx(), value2),
                 max(value1.Xy(), value2),
                 max(value1.Xz(), value2),
@@ -2932,8 +2975,8 @@ public final class VecMath {
         );
     }
 
-    public static void max(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
-        result.set4x4(
+    public static void max(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
+        resultConsumer.set4x4(
                 max(value1.Xx(), value2.Xx()),
                 max(value1.Xy(), value2.Xy()),
                 max(value1.Xz(), value2.Xz()),
@@ -2974,8 +3017,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix4x4.Consumer result, Matrix4x4.Accessible value, double min, double max) {
-        result.set4x4(
+    public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, double min, double max) {
+        resultConsumer.set4x4(
                 clamp(value.Xx(), min, max),
                 clamp(value.Xy(), min, max),
                 clamp(value.Xz(), min, max),
@@ -3016,8 +3059,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix4x4.Consumer result, Matrix4x4.Accessible value, Matrix4x4.Accessible min, double max) {
-        result.set4x4(
+    public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, Matrix4x4.Accessible min, double max) {
+        resultConsumer.set4x4(
                 clamp(value.Xx(), min.Xx(), max),
                 clamp(value.Xy(), min.Xy(), max),
                 clamp(value.Xz(), min.Xz(), max),
@@ -3058,8 +3101,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix4x4.Consumer result, Matrix4x4.Accessible value, double min, Matrix4x4.Accessible max) {
-        result.set4x4(
+    public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, double min, Matrix4x4.Accessible max) {
+        resultConsumer.set4x4(
                 clamp(value.Xx(), min, max.Xx()),
                 clamp(value.Xy(), min, max.Xy()),
                 clamp(value.Xz(), min, max.Xz()),
@@ -3100,8 +3143,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix4x4.Consumer result, Matrix4x4.Accessible value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
-        result.set4x4(
+    public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
+        resultConsumer.set4x4(
                 clamp(value.Xx(), min.Xx(), max.Xx()),
                 clamp(value.Xy(), min.Xy(), max.Xy()),
                 clamp(value.Xz(), min.Xz(), max.Xz()),
@@ -3142,8 +3185,8 @@ public final class VecMath {
         );
     }
 
-    public static void clamp(Matrix4x4.Consumer result, double value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
-        result.set4x4(
+    public static void clamp(Matrix4x4.Consumer resultConsumer, double value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
+        resultConsumer.set4x4(
                 clamp(value, min.Xx(), max.Xx()),
                 clamp(value, min.Xy(), max.Xy()),
                 clamp(value, min.Xz(), max.Xz()),
@@ -3186,10 +3229,10 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, double t) {
+    public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        result.set4x4(
+        resultConsumer.set4x4(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
                 value1.Xz() * oneMinusT + value2.Xz() * t,
@@ -3230,8 +3273,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, double value2, Matrix4x4.Accessible t) {
-        result.set4x4(
+    public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2, Matrix4x4.Accessible t) {
+        resultConsumer.set4x4(
                 lerp(value1.Xx(), value2, t.Xx()),
                 lerp(value1.Xy(), value2, t.Xy()),
                 lerp(value1.Xz(), value2, t.Xz()),
@@ -3272,8 +3315,8 @@ public final class VecMath {
         );
     }
 
-    public static void lerp(Matrix4x4.Consumer result, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, Matrix4x4.Accessible t) {
-        result.set4x4(
+    public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, Matrix4x4.Accessible t) {
+        resultConsumer.set4x4(
                 lerp(value1.Xx(), value2.Xx(), t.Xx()),
                 lerp(value1.Xy(), value2.Xy(), t.Xy()),
                 lerp(value1.Xz(), value2.Xz(), t.Xz()),
@@ -3314,8 +3357,8 @@ public final class VecMath {
         );
     }
 
-    public static void negate(Matrix4x4.Consumer result, Matrix4x4.Accessible value) {
-        result.set4x4(
+    public static void negate(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value) {
+        resultConsumer.set4x4(
                 -value.Xx(),
                 -value.Xy(),
                 -value.Xz(),
@@ -3356,8 +3399,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Matrix4x4.Consumer result, Matrix4x4.Accessible left, double right) {
-        result.set4x4(
+    public static void add(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, double right) {
+        resultConsumer.set4x4(
                 left.Xx() + right,
                 left.Xy() + right,
                 left.Xz() + right,
@@ -3398,8 +3441,8 @@ public final class VecMath {
         );
     }
 
-    public static void add(Matrix4x4.Consumer result, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
-        result.set4x4(
+    public static void add(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
+        resultConsumer.set4x4(
                 left.Xx() + right.Xx(),
                 left.Xy() + right.Xy(),
                 left.Xz() + right.Xz(),
@@ -3440,8 +3483,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Matrix4x4.Consumer result, Matrix4x4.Accessible left, double right) {
-        result.set4x4(
+    public static void subtract(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, double right) {
+        resultConsumer.set4x4(
                 left.Xx() - right,
                 left.Xy() - right,
                 left.Xz() - right,
@@ -3482,8 +3525,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Matrix4x4.Consumer result, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
-        result.set4x4(
+    public static void subtract(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
+        resultConsumer.set4x4(
                 left.Xx() - right.Xx(),
                 left.Xy() - right.Xy(),
                 left.Xz() - right.Xz(),
@@ -3524,8 +3567,8 @@ public final class VecMath {
         );
     }
 
-    public static void subtract(Matrix4x4.Consumer result, double left, Matrix4x4.Accessible right) {
-        result.set4x4(
+    public static void subtract(Matrix4x4.Consumer resultConsumer, double left, Matrix4x4.Accessible right) {
+        resultConsumer.set4x4(
                 left - right.Xx(),
                 left - right.Xy(),
                 left - right.Xz(),
@@ -3542,136 +3585,6 @@ public final class VecMath {
                 left - right.Ty(),
                 left - right.Tz(),
                 left - right.Tw()
-        );
-    }
-
-    public static <R> R multiply(Matrix4x4.Accessible left, double right, Matrix4x4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                left.Xx() * right,
-                left.Xy() * right,
-                left.Xz() * right,
-                left.Xw() * right,
-                left.Yx() * right,
-                left.Yy() * right,
-                left.Yz() * right,
-                left.Yw() * right,
-                left.Zx() * right,
-                left.Zy() * right,
-                left.Zz() * right,
-                left.Zw() * right,
-                left.Tx() * right,
-                left.Ty() * right,
-                left.Tz() * right,
-                left.Tw() * right
-        );
-    }
-
-    public static void multiply(Matrix4x4.Consumer result, Matrix4x4.Accessible left, double right) {
-        result.set4x4(
-                left.Xx() * right,
-                left.Xy() * right,
-                left.Xz() * right,
-                left.Xw() * right,
-                left.Yx() * right,
-                left.Yy() * right,
-                left.Yz() * right,
-                left.Yw() * right,
-                left.Zx() * right,
-                left.Zy() * right,
-                left.Zz() * right,
-                left.Zw() * right,
-                left.Tx() * right,
-                left.Ty() * right,
-                left.Tz() * right,
-                left.Tw() * right
-        );
-    }
-
-    public static <R> R divide(Matrix4x4.Accessible left, double right, Matrix4x4.Factory<R> resultFactory) {
-        final double inverseRight = 1.0D / right;
-
-        return resultFactory.create(
-                left.Xx() * inverseRight,
-                left.Xy() * inverseRight,
-                left.Xz() * inverseRight,
-                left.Xw() * inverseRight,
-                left.Yx() * inverseRight,
-                left.Yy() * inverseRight,
-                left.Yz() * inverseRight,
-                left.Yw() * inverseRight,
-                left.Zx() * inverseRight,
-                left.Zy() * inverseRight,
-                left.Zz() * inverseRight,
-                left.Zw() * inverseRight,
-                left.Tx() * inverseRight,
-                left.Ty() * inverseRight,
-                left.Tz() * inverseRight,
-                left.Tw() * inverseRight
-        );
-    }
-
-    public static void divide(Matrix4x4.Consumer result, Matrix4x4.Accessible left, double right) {
-        final double inverseRight = 1.0D / right;
-
-        result.set4x4(
-                left.Xx() * inverseRight,
-                left.Xy() * inverseRight,
-                left.Xz() * inverseRight,
-                left.Xw() * inverseRight,
-                left.Yx() * inverseRight,
-                left.Yy() * inverseRight,
-                left.Yz() * inverseRight,
-                left.Yw() * inverseRight,
-                left.Zx() * inverseRight,
-                left.Zy() * inverseRight,
-                left.Zz() * inverseRight,
-                left.Zw() * inverseRight,
-                left.Tx() * inverseRight,
-                left.Ty() * inverseRight,
-                left.Tz() * inverseRight,
-                left.Tw() * inverseRight
-        );
-    }
-
-    public static <R> R divide(double left, Matrix4x4.Accessible right, Matrix4x4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                left / right.Xx(),
-                left / right.Xy(),
-                left / right.Xz(),
-                left / right.Xw(),
-                left / right.Yx(),
-                left / right.Yy(),
-                left / right.Yz(),
-                left / right.Yw(),
-                left / right.Zx(),
-                left / right.Zy(),
-                left / right.Zz(),
-                left / right.Zw(),
-                left / right.Tx(),
-                left / right.Ty(),
-                left / right.Tz(),
-                left / right.Tw()
-        );
-    }
-
-    public static void divide(Matrix4x4.Consumer result, double left, Matrix4x4.Accessible right) {
-        result.set4x4(
-                left / right.Xx(),
-                left / right.Xy(),
-                left / right.Xz(),
-                left / right.Xw(),
-                left / right.Yx(),
-                left / right.Yy(),
-                left / right.Yz(),
-                left / right.Yw(),
-                left / right.Zx(),
-                left / right.Zy(),
-                left / right.Zz(),
-                left / right.Zw(),
-                left / right.Tx(),
-                left / right.Ty(),
-                left / right.Tz(),
-                left / right.Tw()
         );
     }
 
@@ -3706,8 +3619,7 @@ public final class VecMath {
         final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
         final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
 
-        final double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
 
         return resultFactory.create(
                 (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
@@ -3729,7 +3641,7 @@ public final class VecMath {
         );
     }
 
-    public static void inverse(Matrix4x4.Consumer result, Matrix4x4.Accessible matrix) {
+    public static void inverse(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible matrix) {
         final double matrixXx = matrix.Xx();
         final double matrixXy = matrix.Xy();
         final double matrixXz = matrix.Xz();
@@ -3760,10 +3672,9 @@ public final class VecMath {
         final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
         final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
 
-        final double det = det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06;
-        final double inverseDet = (det != 0.0D) ? (1.0D / det) : 0.0D;
+        final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
 
-        result.set4x4(
+        resultConsumer.set4x4(
                 (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
                 (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * inverseDet,
                 (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * inverseDet,
@@ -3838,7 +3749,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Matrix4x4.Consumer result, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
+    public static void multiply(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
         final double leftXx = left.Xx();
         final double leftXy = left.Xy();
         final double leftXz = left.Xz();
@@ -3873,7 +3784,7 @@ public final class VecMath {
         final double rightTz = right.Tz();
         final double rightTw = right.Tw();
 
-        result.set4x4(
+        resultConsumer.set4x4(
                 leftXx * rightXx + leftYx * rightXy + leftZx * rightXz + leftTx * rightXw,
                 leftXy * rightXx + leftYy * rightXy + leftZy * rightXz + leftTy * rightXw,
                 leftXz * rightXx + leftYz * rightXy + leftZz * rightXz + leftTz * rightXw,
@@ -3907,41 +3818,17 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Vector4.Consumer result, Matrix4x4.Accessible left, Vector4.Accessible right) {
+    public static void multiply(Vector4.Consumer resultConsumer, Matrix4x4.Accessible left, Vector4.Accessible right) {
         final double rightX = right.x();
         final double rightY = right.y();
         final double rightZ = right.z();
         final double rightW = right.w();
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 left.Xx() * rightX + left.Yx() * rightY + left.Zx() * rightZ + left.Tx() * rightW,
                 left.Xy() * rightX + left.Yy() * rightY + left.Zy() * rightZ + left.Ty() * rightW,
                 left.Xz() * rightX + left.Yz() * rightY + left.Zz() * rightZ + left.Tz() * rightW,
                 left.Xw() * rightX + left.Yw() * rightY + left.Zw() * rightZ + left.Tw() * rightW
-        );
-    }
-
-    public static <R> R transformPosition(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector3.Factory<R> resultFactory) {
-        final double positionX = position.x();
-        final double positionY = position.y();
-        final double positionZ = position.z();
-
-        return resultFactory.create(
-                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
-                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
-                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()
-        );
-    }
-
-    public static void transformPosition(Vector3.Consumer result, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position) {
-        final double positionX = position.x();
-        final double positionY = position.y();
-        final double positionZ = position.z();
-
-        result.xyz(
-                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
-                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
-                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()
         );
     }
 
@@ -3957,38 +3844,116 @@ public final class VecMath {
         );
     }
 
-    public static void transformDirection(Vector3.Consumer result, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible direction) {
+    public static void transformDirection(Vector3.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible direction) {
         final double directionX = direction.x();
         final double directionY = direction.y();
         final double directionZ = direction.z();
 
-        result.xyz(
+        resultConsumer.xyz(
                 transformationMatrix.Xx() * directionX + transformationMatrix.Yx() * directionY + transformationMatrix.Zx() * directionZ,
                 transformationMatrix.Xy() * directionX + transformationMatrix.Yy() * directionY + transformationMatrix.Zy() * directionZ,
                 transformationMatrix.Xz() * directionX + transformationMatrix.Yz() * directionY + transformationMatrix.Zz() * directionZ
         );
     }
 
-    public static <R> R toRotation(Vector3.Accessible axis, double angle, Quaternion.Factory<R> resultFactory) {
-        final double halfAngle = angle * 0.5D;
-        final double s = Math.sin(halfAngle);
+    public static <R> R transformPosition(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector3.Factory<R> resultFactory) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
 
         return resultFactory.create(
-                axis.x() * s,
-                axis.y() * s,
-                axis.z() * s,
+                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
+                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
+                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()
+        );
+    }
+
+    public static void transformPosition(Vector3.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        resultConsumer.xyz(
+                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
+                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
+                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()
+        );
+    }
+
+    public static <R> R transformPosition(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector4.Factory<R> resultFactory) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        return resultFactory.create(
+                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
+                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
+                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz(),
+                transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw()
+        );
+    }
+
+    public static void transformPosition(Vector4.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        resultConsumer.xyzw(
+                transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx(),
+                transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty(),
+                transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz(),
+                transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw()
+        );
+    }
+
+    public static <R> R transformPositionWithPerspectiveDivision(Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position, Vector3.Factory<R> resultFactory) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        final double inverseDivisor = 1.0D / (transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw());
+
+        return resultFactory.create(
+                (transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx()) * inverseDivisor,
+                (transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty()) * inverseDivisor,
+                (transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()) * inverseDivisor
+        );
+    }
+
+    public static void transformPositionWithPerspectiveDivision(Vector3.Consumer resultConsumer, Matrix4x4.Accessible transformationMatrix, Vector3.Accessible position) {
+        final double positionX = position.x();
+        final double positionY = position.y();
+        final double positionZ = position.z();
+
+        final double inverseDivisor = 1.0D / (transformationMatrix.Xw() * positionX + transformationMatrix.Yw() * positionY + transformationMatrix.Zw() * positionZ + transformationMatrix.Tw());
+
+        resultConsumer.xyz(
+                (transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx()) * inverseDivisor,
+                (transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty()) * inverseDivisor,
+                (transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()) * inverseDivisor
+        );
+    }
+
+    public static <R> R toRotation(Vector3.Accessible axis, double angle, Quaternion.Factory<R> resultFactory) {
+        final double halfAngle = angle * 0.5D;
+        final double sin = Math.sin(halfAngle);
+
+        return resultFactory.create(
+                axis.x() * sin,
+                axis.y() * sin,
+                axis.z() * sin,
                 Math.cos(halfAngle)
         );
     }
 
-    public static void toRotation(Quaternion.Consumer result, Vector3.Accessible axis, double angle) {
+    public static void toRotation(Quaternion.Consumer resultConsumer, Vector3.Accessible axis, double angle) {
         final double halfAngle = angle * 0.5D;
-        final double s = Math.sin(halfAngle);
+        final double sin = Math.sin(halfAngle);
 
-        result.xyzw(
-                axis.x() * s,
-                axis.y() * s,
-                axis.z() * s,
+        resultConsumer.xyzw(
+                axis.x() * sin,
+                axis.y() * sin,
+                axis.z() * sin,
                 Math.cos(halfAngle)
         );
     }
@@ -4023,7 +3988,7 @@ public final class VecMath {
         );
     }
 
-    public static void toRotation(Matrix3x3.Consumer result, Vector3.Accessible axis, double angle) {
+    public static void toRotation(Matrix3x3.Consumer resultConsumer, Vector3.Accessible axis, double angle) {
         final double axisX = axis.x();
         final double axisY = axis.y();
         final double axisZ = axis.z();
@@ -4040,7 +4005,7 @@ public final class VecMath {
         final double cxz = oneMinusC * axisX * axisZ;
         final double cyz = oneMinusC * axisY * axisZ;
 
-        result.set3x3(
+        resultConsumer.set3x3(
                 oneMinusC * axisX * axisX + cos,
                 cxy + zs,
                 cxz - ys,
@@ -4086,7 +4051,7 @@ public final class VecMath {
         );
     }
 
-    public static void toRotation(Matrix3x3.Consumer result, Quaternion.Accessible quaternion) {
+    public static void toRotation(Matrix3x3.Consumer resultConsumer, Quaternion.Accessible quaternion) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -4106,7 +4071,7 @@ public final class VecMath {
         final double wy2 = quaternionW * y2;
         final double wz2 = quaternionW * z2;
 
-        result.set3x3(
+        resultConsumer.set3x3(
                 1.0D - yy2 - zz2,
                 yx2 + wz2,
                 zx2 - wy2,
@@ -4153,7 +4118,7 @@ public final class VecMath {
         );
     }
 
-    public static void slerp(Quaternion.Consumer result, Quaternion.Accessible value1, Quaternion.Accessible value2, double t) {
+    public static void slerp(Quaternion.Consumer resultConsumer, Quaternion.Accessible value1, Quaternion.Accessible value2, double t) {
         final double value1X = value1.x();
         final double value1Y = value1.y();
         final double value1Z = value1.z();
@@ -4179,7 +4144,7 @@ public final class VecMath {
             scale2 = t * sign;
         }
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 value1X * scale1 + value2X * scale2,
                 value1Y * scale1 + value2Y * scale2,
                 value1Z * scale1 + value2Z * scale2,
@@ -4193,8 +4158,7 @@ public final class VecMath {
         final double quaternionZ = quaternion.z();
         final double quaternionW = quaternion.w();
 
-        final double dot = quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW;
-        final double inverseDot = (dot != 0.0D) ? (1.0D / dot) : 0.0D;
+        final double inverseDot = 1.0D / (quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW);
 
         return resultFactory.create(
                 -quaternionX * inverseDot,
@@ -4204,16 +4168,15 @@ public final class VecMath {
         );
     }
 
-    public static void inverse(Quaternion.Consumer result, Quaternion.Accessible quaternion) {
+    public static void inverse(Quaternion.Consumer resultConsumer, Quaternion.Accessible quaternion) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
         final double quaternionW = quaternion.w();
 
-        final double dot = quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW;
-        final double inverseDot = (dot != 0.0D) ? (1.0D / dot) : 0.0D;
+        final double inverseDot = 1.0D / (quaternionX * quaternionX + quaternionY * quaternionY + quaternionZ * quaternionZ + quaternionW * quaternionW);
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 -quaternionX * inverseDot,
                 -quaternionY * inverseDot,
                 -quaternionZ * inverseDot,
@@ -4240,7 +4203,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Quaternion.Consumer result, Quaternion.Accessible left, Quaternion.Accessible right) {
+    public static void multiply(Quaternion.Consumer resultConsumer, Quaternion.Accessible left, Quaternion.Accessible right) {
         final double leftX = left.x();
         final double leftY = left.y();
         final double leftZ = left.z();
@@ -4251,7 +4214,7 @@ public final class VecMath {
         final double rightZ = right.z();
         final double rightW = right.w();
 
-        result.xyzw(
+        resultConsumer.xyzw(
                 leftW * rightX + leftX * rightW + leftY * rightZ - leftZ * rightY,
                 leftW * rightY + leftY * rightW + leftZ * rightX - leftX * rightZ,
                 leftW * rightZ + leftZ * rightW + leftX * rightY - leftY * rightX,
@@ -4280,7 +4243,7 @@ public final class VecMath {
         );
     }
 
-    public static void transformVector(Vector3.Consumer result, Quaternion.Accessible quaternion, Vector3.Accessible vector) {
+    public static void transformVector(Vector3.Consumer resultConsumer, Quaternion.Accessible quaternion, Vector3.Accessible vector) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -4294,7 +4257,7 @@ public final class VecMath {
         final double crossQVY = quaternionZ * vectorX - vectorZ * quaternionX;
         final double crossQVZ = quaternionX * vectorY - vectorX * quaternionY;
 
-        result.xyz(
+        resultConsumer.xyz(
                 vectorX + (crossQVX * quaternionW + (quaternionY * crossQVZ - crossQVY * quaternionZ)) * 2.0D,
                 vectorY + (crossQVY * quaternionW + (quaternionZ * crossQVX - crossQVZ * quaternionX)) * 2.0D,
                 vectorZ + (crossQVZ * quaternionW + (quaternionX * crossQVY - crossQVX * quaternionY)) * 2.0D

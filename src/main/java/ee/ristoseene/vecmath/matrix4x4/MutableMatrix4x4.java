@@ -6,22 +6,22 @@ import ee.ristoseene.vecmath.Matrix4x4;
 
 public class MutableMatrix4x4 implements Matrix4x4.AccessibleAndMutable {
 
-    protected double Xx;
-    protected double Xy;
-    protected double Xz;
-    protected double Xw;
-    protected double Yx;
-    protected double Yy;
-    protected double Yz;
-    protected double Yw;
-    protected double Zx;
-    protected double Zy;
-    protected double Zz;
-    protected double Zw;
-    protected double Tx;
-    protected double Ty;
-    protected double Tz;
-    protected double Tw;
+    private double Xx;
+    private double Xy;
+    private double Xz;
+    private double Xw;
+    private double Yx;
+    private double Yy;
+    private double Yz;
+    private double Yw;
+    private double Zx;
+    private double Zy;
+    private double Zz;
+    private double Zw;
+    private double Tx;
+    private double Ty;
+    private double Tz;
+    private double Tw;
 
     public MutableMatrix4x4() {}
 

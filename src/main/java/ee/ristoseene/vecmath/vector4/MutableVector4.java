@@ -7,10 +7,10 @@ import ee.ristoseene.vecmath.Vector4;
 
 public class MutableVector4 implements Vector4.AccessibleAndMutable {
 
-    protected double x;
-    protected double y;
-    protected double z;
-    protected double w;
+    private double x;
+    private double y;
+    private double z;
+    private double w;
 
     public MutableVector4() {}
 

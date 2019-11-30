@@ -6,9 +6,9 @@ import ee.ristoseene.vecmath.Vector3;
 
 public class ImmutableVector3 implements Vector3.Accessible {
 
-    protected final double x;
-    protected final double y;
-    protected final double z;
+    private final double x;
+    private final double y;
+    private final double z;
 
     public ImmutableVector3(double v) {
         this.x = v;

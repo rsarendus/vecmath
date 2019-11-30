@@ -6,15 +6,15 @@ import ee.ristoseene.vecmath.Matrix3x3;
 
 public class ImmutableMatrix3x3 implements Matrix3x3.Accessible {
 
-    protected final double Xx;
-    protected final double Xy;
-    protected final double Xz;
-    protected final double Yx;
-    protected final double Yy;
-    protected final double Yz;
-    protected final double Zx;
-    protected final double Zy;
-    protected final double Zz;
+    private final double Xx;
+    private final double Xy;
+    private final double Xz;
+    private final double Yx;
+    private final double Yy;
+    private final double Yz;
+    private final double Zx;
+    private final double Zy;
+    private final double Zz;
 
     public ImmutableMatrix3x3(double v) {
         this.Xx = v;

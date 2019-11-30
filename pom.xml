@@ -6,7 +6,7 @@
 
     <groupId>ee.ristoseene.vecmath</groupId>
     <artifactId>vecmath</artifactId>
-    <version>0.1.0-alpha</version>
+    <version>0.2.0-alpha</version>
 
     <packaging>jar</packaging>
 

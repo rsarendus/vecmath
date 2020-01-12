@@ -419,49 +419,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Accessible const$XYx() {
+        default Vector2.Accessible const$xXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Yx(); }
             };
         }
 
-        default Vector2.Accessible const$XZx() {
+        default Vector2.Accessible const$xXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Zx(); }
             };
         }
 
-        default Vector2.Accessible const$XTx() {
+        default Vector2.Accessible const$xXT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Tx(); }
             };
         }
 
-        default Vector2.Accessible const$YZx() {
+        default Vector2.Accessible const$xYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yx(); }
                 public double y() { return Accessible.this.Zx(); }
             };
         }
 
-        default Vector2.Accessible const$YTx() {
+        default Vector2.Accessible const$xYT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yx(); }
                 public double y() { return Accessible.this.Tx(); }
             };
         }
 
-        default Vector2.Accessible const$ZTx() {
+        default Vector2.Accessible const$xZT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Zx(); }
                 public double y() { return Accessible.this.Tx(); }
             };
         }
 
-        default Vector3.Accessible const$XYZx() {
+        default Vector3.Accessible const$xXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Yx(); }
@@ -469,7 +469,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XYTx() {
+        default Vector3.Accessible const$xXYT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Yx(); }
@@ -477,7 +477,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XZTx() {
+        default Vector3.Accessible const$xXZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Zx(); }
@@ -485,7 +485,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$YZTx() {
+        default Vector3.Accessible const$xYZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Yx(); }
                 public double y() { return Accessible.this.Zx(); }
@@ -493,7 +493,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Accessible const$XYZTx() {
+        default Vector4.Accessible const$xXYZT() {
             return new Vector4.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Yx(); }
@@ -502,49 +502,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Accessible const$XYy() {
+        default Vector2.Accessible const$yXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Yy(); }
             };
         }
 
-        default Vector2.Accessible const$XZy() {
+        default Vector2.Accessible const$yXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Zy(); }
             };
         }
 
-        default Vector2.Accessible const$XTy() {
+        default Vector2.Accessible const$yXT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Ty(); }
             };
         }
 
-        default Vector2.Accessible const$YZy() {
+        default Vector2.Accessible const$yYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yy(); }
                 public double y() { return Accessible.this.Zy(); }
             };
         }
 
-        default Vector2.Accessible const$YTy() {
+        default Vector2.Accessible const$yYT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yy(); }
                 public double y() { return Accessible.this.Ty(); }
             };
         }
 
-        default Vector2.Accessible const$ZTy() {
+        default Vector2.Accessible const$yZT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Zy(); }
                 public double y() { return Accessible.this.Ty(); }
             };
         }
 
-        default Vector3.Accessible const$XYZy() {
+        default Vector3.Accessible const$yXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Yy(); }
@@ -552,7 +552,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XYTy() {
+        default Vector3.Accessible const$yXYT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Yy(); }
@@ -560,7 +560,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XZTy() {
+        default Vector3.Accessible const$yXZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Zy(); }
@@ -568,7 +568,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$YZTy() {
+        default Vector3.Accessible const$yYZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Yy(); }
                 public double y() { return Accessible.this.Zy(); }
@@ -576,7 +576,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Accessible const$XYZTy() {
+        default Vector4.Accessible const$yXYZT() {
             return new Vector4.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Yy(); }
@@ -585,49 +585,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Accessible const$XYz() {
+        default Vector2.Accessible const$zXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Yz(); }
             };
         }
 
-        default Vector2.Accessible const$XZz() {
+        default Vector2.Accessible const$zXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Zz(); }
             };
         }
 
-        default Vector2.Accessible const$XTz() {
+        default Vector2.Accessible const$zXT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Tz(); }
             };
         }
 
-        default Vector2.Accessible const$YZz() {
+        default Vector2.Accessible const$zYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yz(); }
                 public double y() { return Accessible.this.Zz(); }
             };
         }
 
-        default Vector2.Accessible const$YTz() {
+        default Vector2.Accessible const$zYT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yz(); }
                 public double y() { return Accessible.this.Tz(); }
             };
         }
 
-        default Vector2.Accessible const$ZTz() {
+        default Vector2.Accessible const$zZT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Zz(); }
                 public double y() { return Accessible.this.Tz(); }
             };
         }
 
-        default Vector3.Accessible const$XYZz() {
+        default Vector3.Accessible const$zXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Yz(); }
@@ -635,7 +635,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XYTz() {
+        default Vector3.Accessible const$zXYT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Yz(); }
@@ -643,7 +643,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XZTz() {
+        default Vector3.Accessible const$zXZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Zz(); }
@@ -651,7 +651,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$YZTz() {
+        default Vector3.Accessible const$zYZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Yz(); }
                 public double y() { return Accessible.this.Zz(); }
@@ -659,7 +659,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Accessible const$XYZTz() {
+        default Vector4.Accessible const$zXYZT() {
             return new Vector4.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Yz(); }
@@ -668,49 +668,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Accessible const$XYw() {
+        default Vector2.Accessible const$wXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Yw(); }
             };
         }
 
-        default Vector2.Accessible const$XZw() {
+        default Vector2.Accessible const$wXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Zw(); }
             };
         }
 
-        default Vector2.Accessible const$XTw() {
+        default Vector2.Accessible const$wXT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Tw(); }
             };
         }
 
-        default Vector2.Accessible const$YZw() {
+        default Vector2.Accessible const$wYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yw(); }
                 public double y() { return Accessible.this.Zw(); }
             };
         }
 
-        default Vector2.Accessible const$YTw() {
+        default Vector2.Accessible const$wYT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yw(); }
                 public double y() { return Accessible.this.Tw(); }
             };
         }
 
-        default Vector2.Accessible const$ZTw() {
+        default Vector2.Accessible const$wZT() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Zw(); }
                 public double y() { return Accessible.this.Tw(); }
             };
         }
 
-        default Vector3.Accessible const$XYZw() {
+        default Vector3.Accessible const$wXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Yw(); }
@@ -718,7 +718,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XYTw() {
+        default Vector3.Accessible const$wXYT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Yw(); }
@@ -726,7 +726,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$XZTw() {
+        default Vector3.Accessible const$wXZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Zw(); }
@@ -734,7 +734,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Accessible const$YZTw() {
+        default Vector3.Accessible const$wYZT() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Yw(); }
                 public double y() { return Accessible.this.Zw(); }
@@ -742,7 +742,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Accessible const$XYZTw() {
+        default Vector4.Accessible const$wXYZT() {
             return new Vector4.Accessible() {
                 public double x() { return Accessible.this.Xw(); }
                 public double y() { return Accessible.this.Yw(); }
@@ -834,7 +834,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix3x3.Accessible const$rotation3x3() {
+        default Matrix3x3.Accessible const$XYZxyz() {
             return new Matrix3x3.Accessible() {
                 public double Xx() { return Accessible.this.Xx(); }
                 public double Xy() { return Accessible.this.Xy(); }
@@ -848,7 +848,105 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix4x4.Accessible const$4x4() {
+        default Matrix3x3.Accessible const$xyzXYZ() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Xx(); }
+                public double Xy() { return Accessible.this.Yx(); }
+                public double Xz() { return Accessible.this.Zx(); }
+                public double Yx() { return Accessible.this.Xy(); }
+                public double Yy() { return Accessible.this.Yy(); }
+                public double Yz() { return Accessible.this.Zy(); }
+                public double Zx() { return Accessible.this.Xz(); }
+                public double Zy() { return Accessible.this.Yz(); }
+                public double Zz() { return Accessible.this.Zz(); }
+            };
+        }
+
+        default Matrix3x3.Accessible const$XYZyzw() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Xy(); }
+                public double Xy() { return Accessible.this.Xz(); }
+                public double Xz() { return Accessible.this.Xw(); }
+                public double Yx() { return Accessible.this.Yy(); }
+                public double Yy() { return Accessible.this.Yz(); }
+                public double Yz() { return Accessible.this.Yw(); }
+                public double Zx() { return Accessible.this.Zy(); }
+                public double Zy() { return Accessible.this.Zz(); }
+                public double Zz() { return Accessible.this.Zw(); }
+            };
+        }
+
+        default Matrix3x3.Accessible const$yzwXYZ() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Xy(); }
+                public double Xy() { return Accessible.this.Yy(); }
+                public double Xz() { return Accessible.this.Zy(); }
+                public double Yx() { return Accessible.this.Xz(); }
+                public double Yy() { return Accessible.this.Yz(); }
+                public double Yz() { return Accessible.this.Zz(); }
+                public double Zx() { return Accessible.this.Xw(); }
+                public double Zy() { return Accessible.this.Yw(); }
+                public double Zz() { return Accessible.this.Zw(); }
+            };
+        }
+
+        default Matrix3x3.Accessible const$YZTxyz() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Yx(); }
+                public double Xy() { return Accessible.this.Yy(); }
+                public double Xz() { return Accessible.this.Yz(); }
+                public double Yx() { return Accessible.this.Zx(); }
+                public double Yy() { return Accessible.this.Zy(); }
+                public double Yz() { return Accessible.this.Zz(); }
+                public double Zx() { return Accessible.this.Tx(); }
+                public double Zy() { return Accessible.this.Ty(); }
+                public double Zz() { return Accessible.this.Tz(); }
+            };
+        }
+
+        default Matrix3x3.Accessible const$xyzYZT() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Yx(); }
+                public double Xy() { return Accessible.this.Zx(); }
+                public double Xz() { return Accessible.this.Tx(); }
+                public double Yx() { return Accessible.this.Yy(); }
+                public double Yy() { return Accessible.this.Zy(); }
+                public double Yz() { return Accessible.this.Ty(); }
+                public double Zx() { return Accessible.this.Yz(); }
+                public double Zy() { return Accessible.this.Zz(); }
+                public double Zz() { return Accessible.this.Tz(); }
+            };
+        }
+
+        default Matrix3x3.Accessible const$YZTyzw() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Yy(); }
+                public double Xy() { return Accessible.this.Yz(); }
+                public double Xz() { return Accessible.this.Yw(); }
+                public double Yx() { return Accessible.this.Zy(); }
+                public double Yy() { return Accessible.this.Zz(); }
+                public double Yz() { return Accessible.this.Zw(); }
+                public double Zx() { return Accessible.this.Ty(); }
+                public double Zy() { return Accessible.this.Tz(); }
+                public double Zz() { return Accessible.this.Tw(); }
+            };
+        }
+
+        default Matrix3x3.Accessible const$yzwYZT() {
+            return new Matrix3x3.Accessible() {
+                public double Xx() { return Accessible.this.Yy(); }
+                public double Xy() { return Accessible.this.Zy(); }
+                public double Xz() { return Accessible.this.Ty(); }
+                public double Yx() { return Accessible.this.Yz(); }
+                public double Yy() { return Accessible.this.Zz(); }
+                public double Yz() { return Accessible.this.Tz(); }
+                public double Zx() { return Accessible.this.Yw(); }
+                public double Zy() { return Accessible.this.Zw(); }
+                public double Zz() { return Accessible.this.Tw(); }
+            };
+        }
+
+        default Matrix4x4.Accessible const$XYZTxyzw() {
             return new Matrix4x4.Accessible() {
                 public double Xx() { return Accessible.this.Xx(); }
                 public double Xy() { return Accessible.this.Xy(); }
@@ -869,7 +967,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix4x4.Accessible const$transposed4x4() {
+        default Matrix4x4.Accessible const$xyzwXYZT() {
             return new Matrix4x4.Accessible() {
                 public double Xx() { return Accessible.this.Xx(); }
                 public double Xy() { return Accessible.this.Yx(); }
@@ -1130,180 +1228,180 @@ public final class Matrix4x4 {
             return const$Txyzw();
         }
 
-        default Vector2.Accessible $XYx() {
-            return const$XYx();
+        default Vector2.Accessible $xXY() {
+            return const$xXY();
         }
 
-        default Vector2.Accessible $XZx() {
-            return const$XZx();
+        default Vector2.Accessible $xXZ() {
+            return const$xXZ();
         }
 
-        default Vector2.Accessible $XTx() {
-            return const$XTx();
+        default Vector2.Accessible $xXT() {
+            return const$xXT();
         }
 
-        default Vector2.Accessible $YZx() {
-            return const$YZx();
+        default Vector2.Accessible $xYZ() {
+            return const$xYZ();
         }
 
-        default Vector2.Accessible $YTx() {
-            return const$YTx();
+        default Vector2.Accessible $xYT() {
+            return const$xYT();
         }
 
-        default Vector2.Accessible $ZTx() {
-            return const$ZTx();
+        default Vector2.Accessible $xZT() {
+            return const$xZT();
         }
 
-        default Vector3.Accessible $XYZx() {
-            return const$XYZx();
+        default Vector3.Accessible $xXYZ() {
+            return const$xXYZ();
         }
 
-        default Vector3.Accessible $XYTx() {
-            return const$XYTx();
+        default Vector3.Accessible $xXYT() {
+            return const$xXYT();
         }
 
-        default Vector3.Accessible $XZTx() {
-            return const$XZTx();
+        default Vector3.Accessible $xXZT() {
+            return const$xXZT();
         }
 
-        default Vector3.Accessible $YZTx() {
-            return const$YZTx();
+        default Vector3.Accessible $xYZT() {
+            return const$xYZT();
         }
 
-        default Vector4.Accessible $XYZTx() {
-            return const$XYZTx();
+        default Vector4.Accessible $xXYZT() {
+            return const$xXYZT();
         }
 
-        default Vector2.Accessible $XYy() {
-            return const$XYy();
+        default Vector2.Accessible $yXY() {
+            return const$yXY();
         }
 
-        default Vector2.Accessible $XZy() {
-            return const$XZy();
+        default Vector2.Accessible $yXZ() {
+            return const$yXZ();
         }
 
-        default Vector2.Accessible $XTy() {
-            return const$XTy();
+        default Vector2.Accessible $yXT() {
+            return const$yXT();
         }
 
-        default Vector2.Accessible $YZy() {
-            return const$YZy();
+        default Vector2.Accessible $yYZ() {
+            return const$yYZ();
         }
 
-        default Vector2.Accessible $YTy() {
-            return const$YTy();
+        default Vector2.Accessible $yYT() {
+            return const$yYT();
         }
 
-        default Vector2.Accessible $ZTy() {
-            return const$ZTy();
+        default Vector2.Accessible $yZT() {
+            return const$yZT();
         }
 
-        default Vector3.Accessible $XYZy() {
-            return const$XYZy();
+        default Vector3.Accessible $yXYZ() {
+            return const$yXYZ();
         }
 
-        default Vector3.Accessible $XYTy() {
-            return const$XYTy();
+        default Vector3.Accessible $yXYT() {
+            return const$yXYT();
         }
 
-        default Vector3.Accessible $XZTy() {
-            return const$XZTy();
+        default Vector3.Accessible $yXZT() {
+            return const$yXZT();
         }
 
-        default Vector3.Accessible $YZTy() {
-            return const$YZTy();
+        default Vector3.Accessible $yYZT() {
+            return const$yYZT();
         }
 
-        default Vector4.Accessible $XYZTy() {
-            return const$XYZTy();
+        default Vector4.Accessible $yXYZT() {
+            return const$yXYZT();
         }
 
-        default Vector2.Accessible $XYz() {
-            return const$XYz();
+        default Vector2.Accessible $zXY() {
+            return const$zXY();
         }
 
-        default Vector2.Accessible $XZz() {
-            return const$XZz();
+        default Vector2.Accessible $zXZ() {
+            return const$zXZ();
         }
 
-        default Vector2.Accessible $XTz() {
-            return const$XTz();
+        default Vector2.Accessible $zXT() {
+            return const$zXT();
         }
 
-        default Vector2.Accessible $YZz() {
-            return const$YZz();
+        default Vector2.Accessible $zYZ() {
+            return const$zYZ();
         }
 
-        default Vector2.Accessible $YTz() {
-            return const$YTz();
+        default Vector2.Accessible $zYT() {
+            return const$zYT();
         }
 
-        default Vector2.Accessible $ZTz() {
-            return const$ZTz();
+        default Vector2.Accessible $zZT() {
+            return const$zZT();
         }
 
-        default Vector3.Accessible $XYZz() {
-            return const$XYZz();
+        default Vector3.Accessible $zXYZ() {
+            return const$zXYZ();
         }
 
-        default Vector3.Accessible $XYTz() {
-            return const$XYTz();
+        default Vector3.Accessible $zXYT() {
+            return const$zXYT();
         }
 
-        default Vector3.Accessible $XZTz() {
-            return const$XZTz();
+        default Vector3.Accessible $zXZT() {
+            return const$zXZT();
         }
 
-        default Vector3.Accessible $YZTz() {
-            return const$YZTz();
+        default Vector3.Accessible $zYZT() {
+            return const$zYZT();
         }
 
-        default Vector4.Accessible $XYZTz() {
-            return const$XYZTz();
+        default Vector4.Accessible $zXYZT() {
+            return const$zXYZT();
         }
 
-        default Vector2.Accessible $XYw() {
-            return const$XYw();
+        default Vector2.Accessible $wXY() {
+            return const$wXY();
         }
 
-        default Vector2.Accessible $XZw() {
-            return const$XZw();
+        default Vector2.Accessible $wXZ() {
+            return const$wXZ();
         }
 
-        default Vector2.Accessible $XTw() {
-            return const$XTw();
+        default Vector2.Accessible $wXT() {
+            return const$wXT();
         }
 
-        default Vector2.Accessible $YZw() {
-            return const$YZw();
+        default Vector2.Accessible $wYZ() {
+            return const$wYZ();
         }
 
-        default Vector2.Accessible $YTw() {
-            return const$YTw();
+        default Vector2.Accessible $wYT() {
+            return const$wYT();
         }
 
-        default Vector2.Accessible $ZTw() {
-            return const$ZTw();
+        default Vector2.Accessible $wZT() {
+            return const$wZT();
         }
 
-        default Vector3.Accessible $XYZw() {
-            return const$XYZw();
+        default Vector3.Accessible $wXYZ() {
+            return const$wXYZ();
         }
 
-        default Vector3.Accessible $XYTw() {
-            return const$XYTw();
+        default Vector3.Accessible $wXYT() {
+            return const$wXYT();
         }
 
-        default Vector3.Accessible $XZTw() {
-            return const$XZTw();
+        default Vector3.Accessible $wXZT() {
+            return const$wXZT();
         }
 
-        default Vector3.Accessible $YZTw() {
-            return const$YZTw();
+        default Vector3.Accessible $wYZT() {
+            return const$wYZT();
         }
 
-        default Vector4.Accessible $XYZTw() {
-            return const$XYZTw();
+        default Vector4.Accessible $wXYZT() {
+            return const$wXYZT();
         }
 
         default Vector2.Accessible $Dxy() {
@@ -1350,16 +1448,44 @@ public final class Matrix4x4 {
             return const$Dxyzw();
         }
 
-        default Matrix3x3.Accessible $rotation3x3() {
-            return const$rotation3x3();
+        default Matrix3x3.Accessible $XYZxyz() {
+            return const$XYZxyz();
         }
 
-        default Matrix4x4.Accessible $4x4() {
+        default Matrix3x3.Accessible $xyzXYZ() {
+            return const$xyzXYZ();
+        }
+
+        default Matrix3x3.Accessible $XYZyzw() {
+            return const$XYZyzw();
+        }
+
+        default Matrix3x3.Accessible $yzwXYZ() {
+            return const$yzwXYZ();
+        }
+
+        default Matrix3x3.Accessible $YZTxyz() {
+            return const$YZTxyz();
+        }
+
+        default Matrix3x3.Accessible $xyzYZT() {
+            return const$xyzYZT();
+        }
+
+        default Matrix3x3.Accessible $YZTyzw() {
+            return const$YZTyzw();
+        }
+
+        default Matrix3x3.Accessible $yzwYZT() {
+            return const$yzwYZT();
+        }
+
+        default Matrix4x4.Accessible $XYZTxyzw() {
             return this;
         }
 
-        default Matrix4x4.Accessible $transposed4x4() {
-            return const$transposed4x4();
+        default Matrix4x4.Accessible $xyzwXYZT() {
+            return const$xyzwXYZT();
         }
 
         default <R> R Xx(Value.Factory<R> factory) {
@@ -1602,179 +1728,179 @@ public final class Matrix4x4 {
             return factory.create(Tx(), Ty(), Tz(), Tw());
         }
 
-        default <R> R XYx(Vector2.Factory<R> factory) {
+        default <R> R xXY(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Yx());
         }
 
-        default <R> R XZx(Vector2.Factory<R> factory) {
+        default <R> R xXZ(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Zx());
         }
 
-        default <R> R XTx(Vector2.Factory<R> factory) {
+        default <R> R xXT(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Tx());
         }
 
-        default <R> R YZx(Vector2.Factory<R> factory) {
+        default <R> R xYZ(Vector2.Factory<R> factory) {
             return factory.create(Yx(), Zx());
         }
 
-        default <R> R YTx(Vector2.Factory<R> factory) {
+        default <R> R xYT(Vector2.Factory<R> factory) {
             return factory.create(Yx(), Tx());
         }
 
-        default <R> R ZTx(Vector2.Factory<R> factory) {
+        default <R> R xZT(Vector2.Factory<R> factory) {
             return factory.create(Zx(), Tx());
         }
 
-        default <R> R XYZx(Vector3.Factory<R> factory) {
+        default <R> R xXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx());
         }
 
-        default <R> R XYTx(Vector3.Factory<R> factory) {
+        default <R> R xXYT(Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Tx());
         }
 
-        default <R> R XZTx(Vector3.Factory<R> factory) {
+        default <R> R xXZT(Vector3.Factory<R> factory) {
             return factory.create(Xx(), Zx(), Tx());
         }
 
-        default <R> R YZTx(Vector3.Factory<R> factory) {
+        default <R> R xYZT(Vector3.Factory<R> factory) {
             return factory.create(Yx(), Zx(), Tx());
         }
 
-        default <R> R XYZTx(Vector4.Factory<R> factory) {
+        default <R> R xXYZT(Vector4.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Tx());
         }
 
-        default <R> R XYy(Vector2.Factory<R> factory) {
+        default <R> R yXY(Vector2.Factory<R> factory) {
             return factory.create(Xy(), Yy());
         }
 
-        default <R> R XZy(Vector2.Factory<R> factory) {
+        default <R> R yXZ(Vector2.Factory<R> factory) {
             return factory.create(Xy(), Zy());
         }
 
-        default <R> R XTy(Vector2.Factory<R> factory) {
+        default <R> R yXT(Vector2.Factory<R> factory) {
             return factory.create(Xy(), Ty());
         }
 
-        default <R> R YZy(Vector2.Factory<R> factory) {
+        default <R> R yYZ(Vector2.Factory<R> factory) {
             return factory.create(Yy(), Zy());
         }
 
-        default <R> R YTy(Vector2.Factory<R> factory) {
+        default <R> R yYT(Vector2.Factory<R> factory) {
             return factory.create(Yy(), Ty());
         }
 
-        default <R> R ZTy(Vector2.Factory<R> factory) {
+        default <R> R yZT(Vector2.Factory<R> factory) {
             return factory.create(Zy(), Ty());
         }
 
-        default <R> R XYZy(Vector3.Factory<R> factory) {
+        default <R> R yXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Zy());
         }
 
-        default <R> R XYTy(Vector3.Factory<R> factory) {
+        default <R> R yXYT(Vector3.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Ty());
         }
 
-        default <R> R XZTy(Vector3.Factory<R> factory) {
+        default <R> R yXZT(Vector3.Factory<R> factory) {
             return factory.create(Xy(), Zy(), Ty());
         }
 
-        default <R> R YZTy(Vector3.Factory<R> factory) {
+        default <R> R yYZT(Vector3.Factory<R> factory) {
             return factory.create(Yy(), Zy(), Ty());
         }
 
-        default <R> R XYZTy(Vector4.Factory<R> factory) {
+        default <R> R yXYZT(Vector4.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Zy(), Ty());
         }
 
-        default <R> R XYz(Vector2.Factory<R> factory) {
+        default <R> R zXY(Vector2.Factory<R> factory) {
             return factory.create(Xz(), Yz());
         }
 
-        default <R> R XZz(Vector2.Factory<R> factory) {
+        default <R> R zXZ(Vector2.Factory<R> factory) {
             return factory.create(Xz(), Zz());
         }
 
-        default <R> R XTz(Vector2.Factory<R> factory) {
+        default <R> R zXT(Vector2.Factory<R> factory) {
             return factory.create(Xz(), Tz());
         }
 
-        default <R> R YZz(Vector2.Factory<R> factory) {
+        default <R> R zYZ(Vector2.Factory<R> factory) {
             return factory.create(Yz(), Zz());
         }
 
-        default <R> R YTz(Vector2.Factory<R> factory) {
+        default <R> R zYT(Vector2.Factory<R> factory) {
             return factory.create(Yz(), Tz());
         }
 
-        default <R> R ZTz(Vector2.Factory<R> factory) {
+        default <R> R zZT(Vector2.Factory<R> factory) {
             return factory.create(Zz(), Tz());
         }
 
-        default <R> R XYZz(Vector3.Factory<R> factory) {
+        default <R> R zXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Zz());
         }
 
-        default <R> R XYTz(Vector3.Factory<R> factory) {
+        default <R> R zXYT(Vector3.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Tz());
         }
 
-        default <R> R XZTz(Vector3.Factory<R> factory) {
+        default <R> R zXZT(Vector3.Factory<R> factory) {
             return factory.create(Xz(), Zz(), Tz());
         }
 
-        default <R> R YZTz(Vector3.Factory<R> factory) {
+        default <R> R zYZT(Vector3.Factory<R> factory) {
             return factory.create(Yz(), Zz(), Tz());
         }
 
-        default <R> R XYZTz(Vector4.Factory<R> factory) {
+        default <R> R zXYZT(Vector4.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Zz(), Tz());
         }
 
-        default <R> R XYw(Vector2.Factory<R> factory) {
+        default <R> R wXY(Vector2.Factory<R> factory) {
             return factory.create(Xw(), Yw());
         }
 
-        default <R> R XZw(Vector2.Factory<R> factory) {
+        default <R> R wXZ(Vector2.Factory<R> factory) {
             return factory.create(Xw(), Zw());
         }
 
-        default <R> R XTw(Vector2.Factory<R> factory) {
+        default <R> R wXT(Vector2.Factory<R> factory) {
             return factory.create(Xw(), Tw());
         }
 
-        default <R> R YZw(Vector2.Factory<R> factory) {
+        default <R> R wYZ(Vector2.Factory<R> factory) {
             return factory.create(Yw(), Zw());
         }
 
-        default <R> R YTw(Vector2.Factory<R> factory) {
+        default <R> R wYT(Vector2.Factory<R> factory) {
             return factory.create(Yw(), Tw());
         }
 
-        default <R> R ZTw(Vector2.Factory<R> factory) {
+        default <R> R wZT(Vector2.Factory<R> factory) {
             return factory.create(Zw(), Tw());
         }
 
-        default <R> R XYZw(Vector3.Factory<R> factory) {
+        default <R> R wXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xw(), Yw(), Zw());
         }
 
-        default <R> R XYTw(Vector3.Factory<R> factory) {
+        default <R> R wXYT(Vector3.Factory<R> factory) {
             return factory.create(Xw(), Yw(), Tw());
         }
 
-        default <R> R XZTw(Vector3.Factory<R> factory) {
+        default <R> R wXZT(Vector3.Factory<R> factory) {
             return factory.create(Xw(), Zw(), Tw());
         }
 
-        default <R> R YZTw(Vector3.Factory<R> factory) {
+        default <R> R wYZT(Vector3.Factory<R> factory) {
             return factory.create(Yw(), Zw(), Tw());
         }
 
-        default <R> R XYZTw(Vector4.Factory<R> factory) {
+        default <R> R wXYZT(Vector4.Factory<R> factory) {
             return factory.create(Xw(), Yw(), Zw(), Tw());
         }
 
@@ -1822,15 +1948,43 @@ public final class Matrix4x4 {
             return factory.create(Xx(), Yy(), Zz(), Tw());
         }
 
-        default <R> R rotation3x3(Matrix3x3.Factory<R> factory) {
+        default <R> R XYZxyz(Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default <R> R get4x4(Matrix4x4.Factory<R> factory) {
+        default <R> R xyzXYZ(Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
+        }
+
+        default <R> R XYZyzw(Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Zy(), Zz(), Zw());
+        }
+
+        default <R> R yzwXYZ(Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        }
+
+        default <R> R YZTxyz(Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Yy(), Yz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
+        }
+
+        default <R> R xyzYZT(Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
+        }
+
+        default <R> R YZTyzw(Matrix3x3.Factory<R> factory) {
+            return factory.create(Yy(), Yz(), Yw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
+        }
+
+        default <R> R yzwYZT(Matrix3x3.Factory<R> factory) {
+            return factory.create(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
+        }
+
+        default <R> R XYZTxyzw(Matrix4x4.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
         }
 
-        default <R> R transposed4x4(Matrix4x4.Factory<R> factory) {
+        default <R> R xyzwXYZT(Matrix4x4.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Tx(), Xy(), Yy(), Zy(), Ty(), Xz(), Yz(), Zz(), Tz(), Xw(), Yw(), Zw(), Tw());
         }
 
@@ -2074,179 +2228,179 @@ public final class Matrix4x4 {
             consumer.xyzw(Tx(), Ty(), Tz(), Tw());
         }
 
-        default void XYxTo(Vector2.Consumer consumer) {
+        default void xXYto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yx());
         }
 
-        default void XZxTo(Vector2.Consumer consumer) {
+        default void xXZto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Zx());
         }
 
-        default void XTxTo(Vector2.Consumer consumer) {
+        default void xXTto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Tx());
         }
 
-        default void YZxTo(Vector2.Consumer consumer) {
+        default void xYZto(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Zx());
         }
 
-        default void YTxTo(Vector2.Consumer consumer) {
+        default void xYTto(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Tx());
         }
 
-        default void ZTxTo(Vector2.Consumer consumer) {
+        default void xZTto(Vector2.Consumer consumer) {
             consumer.xy(Zx(), Tx());
         }
 
-        default void XYZxTo(Vector3.Consumer consumer) {
+        default void xXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yx(), Zx());
         }
 
-        default void XYTxTo(Vector3.Consumer consumer) {
+        default void xXYTto(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yx(), Tx());
         }
 
-        default void XZTxTo(Vector3.Consumer consumer) {
+        default void xXZTto(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Zx(), Tx());
         }
 
-        default void YZTxTo(Vector3.Consumer consumer) {
+        default void xYZTto(Vector3.Consumer consumer) {
             consumer.xyz(Yx(), Zx(), Tx());
         }
 
-        default void XYZTxTo(Vector4.Consumer consumer) {
+        default void xXYZTto(Vector4.Consumer consumer) {
             consumer.xyzw(Xx(), Yx(), Zx(), Tx());
         }
 
-        default void XYyTo(Vector2.Consumer consumer) {
+        default void yXYto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Yy());
         }
 
-        default void XZyTo(Vector2.Consumer consumer) {
+        default void yXZto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Zy());
         }
 
-        default void XTyTo(Vector2.Consumer consumer) {
+        default void yXTto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Ty());
         }
 
-        default void YZyTo(Vector2.Consumer consumer) {
+        default void yYZto(Vector2.Consumer consumer) {
             consumer.xy(Yy(), Zy());
         }
 
-        default void YTyTo(Vector2.Consumer consumer) {
+        default void yYTto(Vector2.Consumer consumer) {
             consumer.xy(Yy(), Ty());
         }
 
-        default void ZTyTo(Vector2.Consumer consumer) {
+        default void yZTto(Vector2.Consumer consumer) {
             consumer.xy(Zy(), Ty());
         }
 
-        default void XYZyTo(Vector3.Consumer consumer) {
+        default void yXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Yy(), Zy());
         }
 
-        default void XYTyTo(Vector3.Consumer consumer) {
+        default void yXYTto(Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Yy(), Ty());
         }
 
-        default void XZTyTo(Vector3.Consumer consumer) {
+        default void yXZTto(Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Zy(), Ty());
         }
 
-        default void YZTyTo(Vector3.Consumer consumer) {
+        default void yYZTto(Vector3.Consumer consumer) {
             consumer.xyz(Yy(), Zy(), Ty());
         }
 
-        default void XYZTyTo(Vector4.Consumer consumer) {
+        default void yXYZTto(Vector4.Consumer consumer) {
             consumer.xyzw(Xy(), Yy(), Zy(), Ty());
         }
 
-        default void XYzTo(Vector2.Consumer consumer) {
+        default void zXYto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Yz());
         }
 
-        default void XZzTo(Vector2.Consumer consumer) {
+        default void zXZto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Zz());
         }
 
-        default void XTzTo(Vector2.Consumer consumer) {
+        default void zXTto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Tz());
         }
 
-        default void YZzTo(Vector2.Consumer consumer) {
+        default void zYZto(Vector2.Consumer consumer) {
             consumer.xy(Yz(), Zz());
         }
 
-        default void YTzTo(Vector2.Consumer consumer) {
+        default void zYTto(Vector2.Consumer consumer) {
             consumer.xy(Yz(), Tz());
         }
 
-        default void ZTzTo(Vector2.Consumer consumer) {
+        default void zZTto(Vector2.Consumer consumer) {
             consumer.xy(Zz(), Tz());
         }
 
-        default void XYZzTo(Vector3.Consumer consumer) {
+        default void zXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Yz(), Zz());
         }
 
-        default void XYTzTo(Vector3.Consumer consumer) {
+        default void zXYTto(Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Yz(), Tz());
         }
 
-        default void XZTzTo(Vector3.Consumer consumer) {
+        default void zXZTto(Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Zz(), Tz());
         }
 
-        default void YZTzTo(Vector3.Consumer consumer) {
+        default void zYZTto(Vector3.Consumer consumer) {
             consumer.xyz(Yz(), Zz(), Tz());
         }
 
-        default void XYZTzTo(Vector4.Consumer consumer) {
+        default void zXYZTto(Vector4.Consumer consumer) {
             consumer.xyzw(Xz(), Yz(), Zz(), Tz());
         }
 
-        default void XYwTo(Vector2.Consumer consumer) {
+        default void wXYto(Vector2.Consumer consumer) {
             consumer.xy(Xw(), Yw());
         }
 
-        default void XZwTo(Vector2.Consumer consumer) {
+        default void wXZto(Vector2.Consumer consumer) {
             consumer.xy(Xw(), Zw());
         }
 
-        default void XTwTo(Vector2.Consumer consumer) {
+        default void wXTto(Vector2.Consumer consumer) {
             consumer.xy(Xw(), Tw());
         }
 
-        default void YZwTo(Vector2.Consumer consumer) {
+        default void wYZto(Vector2.Consumer consumer) {
             consumer.xy(Yw(), Zw());
         }
 
-        default void YTwTo(Vector2.Consumer consumer) {
+        default void wYTto(Vector2.Consumer consumer) {
             consumer.xy(Yw(), Tw());
         }
 
-        default void ZTwTo(Vector2.Consumer consumer) {
+        default void wZTto(Vector2.Consumer consumer) {
             consumer.xy(Zw(), Tw());
         }
 
-        default void XYZwTo(Vector3.Consumer consumer) {
+        default void wXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xw(), Yw(), Zw());
         }
 
-        default void XYTwTo(Vector3.Consumer consumer) {
+        default void wXYTto(Vector3.Consumer consumer) {
             consumer.xyz(Xw(), Yw(), Tw());
         }
 
-        default void XZTwTo(Vector3.Consumer consumer) {
+        default void wXZTto(Vector3.Consumer consumer) {
             consumer.xyz(Xw(), Zw(), Tw());
         }
 
-        default void YZTwTo(Vector3.Consumer consumer) {
+        default void wYZTto(Vector3.Consumer consumer) {
             consumer.xyz(Yw(), Zw(), Tw());
         }
 
-        default void XYZTwTo(Vector4.Consumer consumer) {
+        default void wXYZTto(Vector4.Consumer consumer) {
             consumer.xyzw(Xw(), Yw(), Zw(), Tw());
         }
 
@@ -2294,16 +2448,44 @@ public final class Matrix4x4 {
             consumer.xyzw(Xx(), Yy(), Zz(), Tw());
         }
 
-        default void rotation3x3To(Matrix3x3.Consumer consumer) {
-            consumer.set3x3(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
+        default void XYZxyzTo(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default void put4x4To(Matrix4x4.Consumer consumer) {
-            consumer.set4x4(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
+        default void xyzXYZto(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
 
-        default void transposed4x4To(Matrix4x4.Consumer consumer) {
-            consumer.set4x4(Xx(), Yx(), Zx(), Tx(), Xy(), Yy(), Zy(), Ty(), Xz(), Yz(), Zz(), Tz(), Xw(), Yw(), Zw(), Tw());
+        default void XYZyzwTo(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Zy(), Zz(), Zw());
+        }
+
+        default void yzwXYZto(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        }
+
+        default void YZTxyzTo(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Yy(), Yz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
+        }
+
+        default void xyzYZTto(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
+        }
+
+        default void YZTyzwTo(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yy(), Yz(), Yw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
+        }
+
+        default void yzwYZTto(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
+        }
+
+        default void XYZTxyzwTo(Matrix4x4.Consumer consumer) {
+            consumer.XYZTxyzw(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
+        }
+
+        default void xyzwXYZTto(Matrix4x4.Consumer consumer) {
+            consumer.XYZTxyzw(Xx(), Yx(), Zx(), Tx(), Xy(), Yy(), Zy(), Ty(), Xz(), Yz(), Zz(), Tz(), Xw(), Yw(), Zw(), Tw());
         }
 
     }
@@ -2571,244 +2753,244 @@ public final class Matrix4x4 {
             Tw(v);
         }
 
-        default void XYx(double v) {
+        default void xXY(double v) {
             Xx(v);
             Yx(v);
         }
 
-        default void XZx(double v) {
+        default void xXZ(double v) {
             Xx(v);
             Zx(v);
         }
 
-        default void XTx(double v) {
+        default void xXT(double v) {
             Xx(v);
             Tx(v);
         }
 
-        default void YZx(double v) {
+        default void xYZ(double v) {
             Yx(v);
             Zx(v);
         }
 
-        default void YTx(double v) {
+        default void xYT(double v) {
             Yx(v);
             Tx(v);
         }
 
-        default void ZTx(double v) {
+        default void xZT(double v) {
             Zx(v);
             Tx(v);
         }
 
-        default void XYZx(double v) {
+        default void xXYZ(double v) {
             Xx(v);
             Yx(v);
             Zx(v);
         }
 
-        default void XYTx(double v) {
+        default void xXYT(double v) {
             Xx(v);
             Yx(v);
             Tx(v);
         }
 
-        default void XZTx(double v) {
+        default void xXZT(double v) {
             Xx(v);
             Zx(v);
             Tx(v);
         }
 
-        default void YZTx(double v) {
-            Yx(v);
-            Zx(v);
-            Tx(v);
-        }
-
-        default void XYZTx(double v) {
-            Xx(v);
+        default void xYZT(double v) {
             Yx(v);
             Zx(v);
             Tx(v);
         }
 
-        default void XYy(double v) {
+        default void xXYZT(double v) {
+            Xx(v);
+            Yx(v);
+            Zx(v);
+            Tx(v);
+        }
+
+        default void yXY(double v) {
             Xy(v);
             Yy(v);
         }
 
-        default void XZy(double v) {
+        default void yXZ(double v) {
             Xy(v);
             Zy(v);
         }
 
-        default void XTy(double v) {
+        default void yXT(double v) {
             Xy(v);
             Ty(v);
         }
 
-        default void YZy(double v) {
+        default void yYZ(double v) {
             Yy(v);
             Zy(v);
         }
 
-        default void YTy(double v) {
+        default void yYT(double v) {
             Yy(v);
             Ty(v);
         }
 
-        default void ZTy(double v) {
+        default void yZT(double v) {
             Zy(v);
             Ty(v);
         }
 
-        default void XYZy(double v) {
+        default void yXYZ(double v) {
             Xy(v);
             Yy(v);
             Zy(v);
         }
 
-        default void XYTy(double v) {
+        default void yXYT(double v) {
             Xy(v);
             Yy(v);
             Ty(v);
         }
 
-        default void XZTy(double v) {
+        default void yXZT(double v) {
             Xy(v);
             Zy(v);
             Ty(v);
         }
 
-        default void YZTy(double v) {
-            Yy(v);
-            Zy(v);
-            Ty(v);
-        }
-
-        default void XYZTy(double v) {
-            Xy(v);
+        default void yYZT(double v) {
             Yy(v);
             Zy(v);
             Ty(v);
         }
 
-        default void XYz(double v) {
+        default void yXYZT(double v) {
+            Xy(v);
+            Yy(v);
+            Zy(v);
+            Ty(v);
+        }
+
+        default void zXY(double v) {
             Xz(v);
             Yz(v);
         }
 
-        default void XZz(double v) {
+        default void zXZ(double v) {
             Xz(v);
             Zz(v);
         }
 
-        default void XTz(double v) {
+        default void zXT(double v) {
             Xz(v);
             Tz(v);
         }
 
-        default void YZz(double v) {
+        default void zYZ(double v) {
             Yz(v);
             Zz(v);
         }
 
-        default void YTz(double v) {
+        default void zYT(double v) {
             Yz(v);
             Tz(v);
         }
 
-        default void ZTz(double v) {
+        default void zZT(double v) {
             Zz(v);
             Tz(v);
         }
 
-        default void XYZz(double v) {
+        default void zXYZ(double v) {
             Xz(v);
             Yz(v);
             Zz(v);
         }
 
-        default void XYTz(double v) {
+        default void zXYT(double v) {
             Xz(v);
             Yz(v);
             Tz(v);
         }
 
-        default void XZTz(double v) {
+        default void zXZT(double v) {
             Xz(v);
             Zz(v);
             Tz(v);
         }
 
-        default void YZTz(double v) {
-            Yz(v);
-            Zz(v);
-            Tz(v);
-        }
-
-        default void XYZTz(double v) {
-            Xz(v);
+        default void zYZT(double v) {
             Yz(v);
             Zz(v);
             Tz(v);
         }
 
-        default void XYw(double v) {
+        default void zXYZT(double v) {
+            Xz(v);
+            Yz(v);
+            Zz(v);
+            Tz(v);
+        }
+
+        default void wXY(double v) {
             Xw(v);
             Yw(v);
         }
 
-        default void XZw(double v) {
+        default void wXZ(double v) {
             Xw(v);
             Zw(v);
         }
 
-        default void XTw(double v) {
+        default void wXT(double v) {
             Xw(v);
             Tw(v);
         }
 
-        default void YZw(double v) {
+        default void wYZ(double v) {
             Yw(v);
             Zw(v);
         }
 
-        default void YTw(double v) {
+        default void wYT(double v) {
             Yw(v);
             Tw(v);
         }
 
-        default void ZTw(double v) {
+        default void wZT(double v) {
             Zw(v);
             Tw(v);
         }
 
-        default void XYZw(double v) {
+        default void wXYZ(double v) {
             Xw(v);
             Yw(v);
             Zw(v);
         }
 
-        default void XYTw(double v) {
+        default void wXYT(double v) {
             Xw(v);
             Yw(v);
             Tw(v);
         }
 
-        default void XZTw(double v) {
+        default void wXZT(double v) {
             Xw(v);
             Zw(v);
             Tw(v);
         }
 
-        default void YZTw(double v) {
+        default void wYZT(double v) {
             Yw(v);
             Zw(v);
             Tw(v);
         }
 
-        default void XYZTw(double v) {
+        default void wXYZT(double v) {
             Xw(v);
             Yw(v);
             Zw(v);
@@ -2876,7 +3058,7 @@ public final class Matrix4x4 {
             Tw(v);
         }
 
-        default void rotation3x3(double v) {
+        default void XYZxyz(double v) {
             Xx(v);
             Xy(v);
             Xz(v);
@@ -2888,7 +3070,43 @@ public final class Matrix4x4 {
             Zz(v);
         }
 
-        default void set4x4(double v) {
+        default void XYZyzw(double v) {
+            Xy(v);
+            Xz(v);
+            Xw(v);
+            Yy(v);
+            Yz(v);
+            Yw(v);
+            Zy(v);
+            Zz(v);
+            Zw(v);
+        }
+
+        default void YZTxyz(double v) {
+            Yx(v);
+            Yy(v);
+            Yz(v);
+            Zx(v);
+            Zy(v);
+            Zz(v);
+            Tx(v);
+            Ty(v);
+            Tz(v);
+        }
+
+        default void YZTyzw(double v) {
+            Yy(v);
+            Yz(v);
+            Yw(v);
+            Zy(v);
+            Zz(v);
+            Zw(v);
+            Ty(v);
+            Tz(v);
+            Tw(v);
+        }
+
+        default void XYZTxyzw(double v) {
             Xx(v);
             Xy(v);
             Xz(v);
@@ -3151,244 +3369,244 @@ public final class Matrix4x4 {
             Tw(Tw);
         }
 
-        default void XYx(double Xx, double Yx) {
+        default void xXY(double Xx, double Yx) {
             Xx(Xx);
             Yx(Yx);
         }
 
-        default void XZx(double Xx, double Zx) {
+        default void xXZ(double Xx, double Zx) {
             Xx(Xx);
             Zx(Zx);
         }
 
-        default void XTx(double Xx, double Tx) {
+        default void xXT(double Xx, double Tx) {
             Xx(Xx);
             Tx(Tx);
         }
 
-        default void YZx(double Yx, double Zx) {
+        default void xYZ(double Yx, double Zx) {
             Yx(Yx);
             Zx(Zx);
         }
 
-        default void YTx(double Yx, double Tx) {
+        default void xYT(double Yx, double Tx) {
             Yx(Yx);
             Tx(Tx);
         }
 
-        default void ZTx(double Zx, double Tx) {
+        default void xZT(double Zx, double Tx) {
             Zx(Zx);
             Tx(Tx);
         }
 
-        default void XYZx(double Xx, double Yx, double Zx) {
+        default void xXYZ(double Xx, double Yx, double Zx) {
             Xx(Xx);
             Yx(Yx);
             Zx(Zx);
         }
 
-        default void XYTx(double Xx, double Yx, double Tx) {
+        default void xXYT(double Xx, double Yx, double Tx) {
             Xx(Xx);
             Yx(Yx);
             Tx(Tx);
         }
 
-        default void XZTx(double Xx, double Zx, double Tx) {
+        default void xXZT(double Xx, double Zx, double Tx) {
             Xx(Xx);
             Zx(Zx);
             Tx(Tx);
         }
 
-        default void YZTx(double Yx, double Zx, double Tx) {
-            Yx(Yx);
-            Zx(Zx);
-            Tx(Tx);
-        }
-
-        default void XYZTx(double Xx, double Yx, double Zx, double Tx) {
-            Xx(Xx);
+        default void xYZT(double Yx, double Zx, double Tx) {
             Yx(Yx);
             Zx(Zx);
             Tx(Tx);
         }
 
-        default void XYy(double Xy, double Yy) {
+        default void xXYZT(double Xx, double Yx, double Zx, double Tx) {
+            Xx(Xx);
+            Yx(Yx);
+            Zx(Zx);
+            Tx(Tx);
+        }
+
+        default void yXY(double Xy, double Yy) {
             Xy(Xy);
             Yy(Yy);
         }
 
-        default void XZy(double Xy, double Zy) {
+        default void yXZ(double Xy, double Zy) {
             Xy(Xy);
             Zy(Zy);
         }
 
-        default void XTy(double Xy, double Ty) {
+        default void yXT(double Xy, double Ty) {
             Xy(Xy);
             Ty(Ty);
         }
 
-        default void YZy(double Yy, double Zy) {
+        default void yYZ(double Yy, double Zy) {
             Yy(Yy);
             Zy(Zy);
         }
 
-        default void YTy(double Yy, double Ty) {
+        default void yYT(double Yy, double Ty) {
             Yy(Yy);
             Ty(Ty);
         }
 
-        default void ZTy(double Zy, double Ty) {
+        default void yZT(double Zy, double Ty) {
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void XYZy(double Xy, double Yy, double Zy) {
+        default void yXYZ(double Xy, double Yy, double Zy) {
             Xy(Xy);
             Yy(Yy);
             Zy(Zy);
         }
 
-        default void XYTy(double Xy, double Yy, double Ty) {
+        default void yXYT(double Xy, double Yy, double Ty) {
             Xy(Xy);
             Yy(Yy);
             Ty(Ty);
         }
 
-        default void XZTy(double Xy, double Zy, double Ty) {
+        default void yXZT(double Xy, double Zy, double Ty) {
             Xy(Xy);
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void YZTy(double Yy, double Zy, double Ty) {
-            Yy(Yy);
-            Zy(Zy);
-            Ty(Ty);
-        }
-
-        default void XYZTy(double Xy, double Yy, double Zy, double Ty) {
-            Xy(Xy);
+        default void yYZT(double Yy, double Zy, double Ty) {
             Yy(Yy);
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void XYz(double Xz, double Yz) {
+        default void yXYZT(double Xy, double Yy, double Zy, double Ty) {
+            Xy(Xy);
+            Yy(Yy);
+            Zy(Zy);
+            Ty(Ty);
+        }
+
+        default void zXY(double Xz, double Yz) {
             Xz(Xz);
             Yz(Yz);
         }
 
-        default void XZz(double Xz, double Zz) {
+        default void zXZ(double Xz, double Zz) {
             Xz(Xz);
             Zz(Zz);
         }
 
-        default void XTz(double Xz, double Tz) {
+        default void zXT(double Xz, double Tz) {
             Xz(Xz);
             Tz(Tz);
         }
 
-        default void YZz(double Yz, double Zz) {
+        default void zYZ(double Yz, double Zz) {
             Yz(Yz);
             Zz(Zz);
         }
 
-        default void YTz(double Yz, double Tz) {
+        default void zYT(double Yz, double Tz) {
             Yz(Yz);
             Tz(Tz);
         }
 
-        default void ZTz(double Zz, double Tz) {
+        default void zZT(double Zz, double Tz) {
             Zz(Zz);
             Tz(Tz);
         }
 
-        default void XYZz(double Xz, double Yz, double Zz) {
+        default void zXYZ(double Xz, double Yz, double Zz) {
             Xz(Xz);
             Yz(Yz);
             Zz(Zz);
         }
 
-        default void XYTz(double Xz, double Yz, double Tz) {
+        default void zXYT(double Xz, double Yz, double Tz) {
             Xz(Xz);
             Yz(Yz);
             Tz(Tz);
         }
 
-        default void XZTz(double Xz, double Zz, double Tz) {
+        default void zXZT(double Xz, double Zz, double Tz) {
             Xz(Xz);
             Zz(Zz);
             Tz(Tz);
         }
 
-        default void YZTz(double Yz, double Zz, double Tz) {
-            Yz(Yz);
-            Zz(Zz);
-            Tz(Tz);
-        }
-
-        default void XYZTz(double Xz, double Yz, double Zz, double Tz) {
-            Xz(Xz);
+        default void zYZT(double Yz, double Zz, double Tz) {
             Yz(Yz);
             Zz(Zz);
             Tz(Tz);
         }
 
-        default void XYw(double Xw, double Yw) {
+        default void zXYZT(double Xz, double Yz, double Zz, double Tz) {
+            Xz(Xz);
+            Yz(Yz);
+            Zz(Zz);
+            Tz(Tz);
+        }
+
+        default void wXY(double Xw, double Yw) {
             Xw(Xw);
             Yw(Yw);
         }
 
-        default void XZw(double Xw, double Zw) {
+        default void wXZ(double Xw, double Zw) {
             Xw(Xw);
             Zw(Zw);
         }
 
-        default void XTw(double Xw, double Tw) {
+        default void wXT(double Xw, double Tw) {
             Xw(Xw);
             Tw(Tw);
         }
 
-        default void YZw(double Yw, double Zw) {
+        default void wYZ(double Yw, double Zw) {
             Yw(Yw);
             Zw(Zw);
         }
 
-        default void YTw(double Yw, double Tw) {
+        default void wYT(double Yw, double Tw) {
             Yw(Yw);
             Tw(Tw);
         }
 
-        default void ZTw(double Zw, double Tw) {
+        default void wZT(double Zw, double Tw) {
             Zw(Zw);
             Tw(Tw);
         }
 
-        default void XYZw(double Xw, double Yw, double Zw) {
+        default void wXYZ(double Xw, double Yw, double Zw) {
             Xw(Xw);
             Yw(Yw);
             Zw(Zw);
         }
 
-        default void XYTw(double Xw, double Yw, double Tw) {
+        default void wXYT(double Xw, double Yw, double Tw) {
             Xw(Xw);
             Yw(Yw);
             Tw(Tw);
         }
 
-        default void XZTw(double Xw, double Zw, double Tw) {
+        default void wXZT(double Xw, double Zw, double Tw) {
             Xw(Xw);
             Zw(Zw);
             Tw(Tw);
         }
 
-        default void YZTw(double Yw, double Zw, double Tw) {
+        default void wYZT(double Yw, double Zw, double Tw) {
             Yw(Yw);
             Zw(Zw);
             Tw(Tw);
         }
 
-        default void XYZTw(double Xw, double Yw, double Zw, double Tw) {
+        default void wXYZT(double Xw, double Yw, double Zw, double Tw) {
             Xw(Xw);
             Yw(Yw);
             Zw(Zw);
@@ -3456,7 +3674,7 @@ public final class Matrix4x4 {
             Tw(Tw);
         }
 
-        default void rotation3x3(
+        default void XYZxyz(
                 double Xx, double Xy, double Xz,
                 double Yx, double Yy, double Yz,
                 double Zx, double Zy, double Zz
@@ -3472,7 +3690,119 @@ public final class Matrix4x4 {
             Zz(Zz);
         }
 
-        default void set4x4(
+        default void xyzXYZ(
+                double Xx, double Yx, double Zx,
+                double Xy, double Yy, double Zy,
+                double Xz, double Yz, double Zz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void XYZyzw(
+                double Xy, double Xz, double Xw,
+                double Yy, double Yz, double Yw,
+                double Zy, double Zz, double Zw
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void yzwXYZ(
+                double Xy, double Yy, double Zy,
+                double Xz, double Yz, double Zz,
+                double Xw, double Yw, double Zw
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void YZTxyz(
+                double Yx, double Yy, double Yz,
+                double Zx, double Zy, double Zz,
+                double Tx, double Ty, double Tz
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void xyzYZT(
+                double Yx, double Zx, double Tx,
+                double Yy, double Zy, double Ty,
+                double Yz, double Zz, double Tz
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void YZTyzw(
+                double Yy, double Yz, double Yw,
+                double Zy, double Zz, double Zw,
+                double Ty, double Tz, double Tw
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void yzwYZT(
+                double Yy, double Zy, double Ty,
+                double Yz, double Zz, double Tz,
+                double Yw, double Zw, double Tw
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void XYZTxyzw(
                 double Xx, double Xy, double Xz, double Xw,
                 double Yx, double Yy, double Yz, double Yw,
                 double Zx, double Zy, double Zz, double Zw,
@@ -3496,7 +3826,7 @@ public final class Matrix4x4 {
             Tw(Tw);
         }
 
-        default void transposed4x4(
+        default void xyzwXYZT(
                 double Xx, double Yx, double Zx, double Tx,
                 double Xy, double Yy, double Zy, double Ty,
                 double Xz, double Yz, double Zz, double Tz,
@@ -3760,180 +4090,180 @@ public final class Matrix4x4 {
             Txyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void XYx(Vector2.Accessible v) {
-            XYx(v.x(), v.y());
+        default void xXY(Vector2.Accessible v) {
+            xXY(v.x(), v.y());
         }
 
-        default void XZx(Vector2.Accessible v) {
-            XZx(v.x(), v.y());
+        default void xXZ(Vector2.Accessible v) {
+            xXZ(v.x(), v.y());
         }
 
-        default void XTx(Vector2.Accessible v) {
-            XTx(v.x(), v.y());
+        default void xXT(Vector2.Accessible v) {
+            xXT(v.x(), v.y());
         }
 
-        default void YZx(Vector2.Accessible v) {
-            YZx(v.x(), v.y());
+        default void xYZ(Vector2.Accessible v) {
+            xYZ(v.x(), v.y());
         }
 
-        default void YTx(Vector2.Accessible v) {
-            YTx(v.x(), v.y());
+        default void xYT(Vector2.Accessible v) {
+            xYT(v.x(), v.y());
         }
 
-        default void ZTx(Vector2.Accessible v) {
-            ZTx(v.x(), v.y());
+        default void xZT(Vector2.Accessible v) {
+            xZT(v.x(), v.y());
         }
 
-        default void XYZx(Vector3.Accessible v) {
-            XYZx(v.x(), v.y(), v.z());
+        default void xXYZ(Vector3.Accessible v) {
+            xXYZ(v.x(), v.y(), v.z());
         }
 
-        default void XYTx(Vector3.Accessible v) {
-            XYTx(v.x(), v.y(), v.z());
+        default void xXYT(Vector3.Accessible v) {
+            xXYT(v.x(), v.y(), v.z());
         }
 
-        default void XZTx(Vector3.Accessible v) {
-            XZTx(v.x(), v.y(), v.z());
+        default void xXZT(Vector3.Accessible v) {
+            xXZT(v.x(), v.y(), v.z());
         }
 
-        default void YZTx(Vector3.Accessible v) {
-            YZTx(v.x(), v.y(), v.z());
+        default void xYZT(Vector3.Accessible v) {
+            xYZT(v.x(), v.y(), v.z());
         }
 
-        default void XYZTx(Vector4.Accessible v) {
-            XYZTx(v.x(), v.y(), v.z(), v.w());
+        default void xXYZT(Vector4.Accessible v) {
+            xXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void XYy(Vector2.Accessible v) {
-            XYy(v.x(), v.y());
+        default void yXY(Vector2.Accessible v) {
+            yXY(v.x(), v.y());
         }
 
-        default void XZy(Vector2.Accessible v) {
-            XZy(v.x(), v.y());
+        default void yXZ(Vector2.Accessible v) {
+            yXZ(v.x(), v.y());
         }
 
-        default void XTy(Vector2.Accessible v) {
-            XTy(v.x(), v.y());
+        default void yXT(Vector2.Accessible v) {
+            yXT(v.x(), v.y());
         }
 
-        default void YZy(Vector2.Accessible v) {
-            YZy(v.x(), v.y());
+        default void yYZ(Vector2.Accessible v) {
+            yYZ(v.x(), v.y());
         }
 
-        default void YTy(Vector2.Accessible v) {
-            YTy(v.x(), v.y());
+        default void yYT(Vector2.Accessible v) {
+            yYT(v.x(), v.y());
         }
 
-        default void ZTy(Vector2.Accessible v) {
-            ZTy(v.x(), v.y());
+        default void yZT(Vector2.Accessible v) {
+            yZT(v.x(), v.y());
         }
 
-        default void XYZy(Vector3.Accessible v) {
-            XYZy(v.x(), v.y(), v.z());
+        default void yXYZ(Vector3.Accessible v) {
+            yXYZ(v.x(), v.y(), v.z());
         }
 
-        default void XYTy(Vector3.Accessible v) {
-            XYTy(v.x(), v.y(), v.z());
+        default void yXYT(Vector3.Accessible v) {
+            yXYT(v.x(), v.y(), v.z());
         }
 
-        default void XZTy(Vector3.Accessible v) {
-            XZTy(v.x(), v.y(), v.z());
+        default void yXZT(Vector3.Accessible v) {
+            yXZT(v.x(), v.y(), v.z());
         }
 
-        default void YZTy(Vector3.Accessible v) {
-            YZTy(v.x(), v.y(), v.z());
+        default void yYZT(Vector3.Accessible v) {
+            yYZT(v.x(), v.y(), v.z());
         }
 
-        default void XYZTy(Vector4.Accessible v) {
-            XYZTy(v.x(), v.y(), v.z(), v.w());
+        default void yXYZT(Vector4.Accessible v) {
+            yXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void XYz(Vector2.Accessible v) {
-            XYz(v.x(), v.y());
+        default void zXY(Vector2.Accessible v) {
+            zXY(v.x(), v.y());
         }
 
-        default void XZz(Vector2.Accessible v) {
-            XZz(v.x(), v.y());
+        default void zXZ(Vector2.Accessible v) {
+            zXZ(v.x(), v.y());
         }
 
-        default void XTz(Vector2.Accessible v) {
-            XTz(v.x(), v.y());
+        default void zXT(Vector2.Accessible v) {
+            zXT(v.x(), v.y());
         }
 
-        default void YZz(Vector2.Accessible v) {
-            YZz(v.x(), v.y());
+        default void zYZ(Vector2.Accessible v) {
+            zYZ(v.x(), v.y());
         }
 
-        default void YTz(Vector2.Accessible v) {
-            YTz(v.x(), v.y());
+        default void zYT(Vector2.Accessible v) {
+            zYT(v.x(), v.y());
         }
 
-        default void ZTz(Vector2.Accessible v) {
-            ZTz(v.x(), v.y());
+        default void zZT(Vector2.Accessible v) {
+            zZT(v.x(), v.y());
         }
 
-        default void XYZz(Vector3.Accessible v) {
-            XYZz(v.x(), v.y(), v.z());
+        default void zXYZ(Vector3.Accessible v) {
+            zXYZ(v.x(), v.y(), v.z());
         }
 
-        default void XYTz(Vector3.Accessible v) {
-            XYTz(v.x(), v.y(), v.z());
+        default void zXYT(Vector3.Accessible v) {
+            zXYT(v.x(), v.y(), v.z());
         }
 
-        default void XZTz(Vector3.Accessible v) {
-            XZTz(v.x(), v.y(), v.z());
+        default void zXZT(Vector3.Accessible v) {
+            zXZT(v.x(), v.y(), v.z());
         }
 
-        default void YZTz(Vector3.Accessible v) {
-            YZTz(v.x(), v.y(), v.z());
+        default void zYZT(Vector3.Accessible v) {
+            zYZT(v.x(), v.y(), v.z());
         }
 
-        default void XYZTz(Vector4.Accessible v) {
-            XYZTz(v.x(), v.y(), v.z(), v.w());
+        default void zXYZT(Vector4.Accessible v) {
+            zXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void XYw(Vector2.Accessible v) {
-            XYw(v.x(), v.y());
+        default void wXY(Vector2.Accessible v) {
+            wXY(v.x(), v.y());
         }
 
-        default void XZw(Vector2.Accessible v) {
-            XZw(v.x(), v.y());
+        default void wXZ(Vector2.Accessible v) {
+            wXZ(v.x(), v.y());
         }
 
-        default void XTw(Vector2.Accessible v) {
-            XTw(v.x(), v.y());
+        default void wXT(Vector2.Accessible v) {
+            wXT(v.x(), v.y());
         }
 
-        default void YZw(Vector2.Accessible v) {
-            YZw(v.x(), v.y());
+        default void wYZ(Vector2.Accessible v) {
+            wYZ(v.x(), v.y());
         }
 
-        default void YTw(Vector2.Accessible v) {
-            YTw(v.x(), v.y());
+        default void wYT(Vector2.Accessible v) {
+            wYT(v.x(), v.y());
         }
 
-        default void ZTw(Vector2.Accessible v) {
-            ZTw(v.x(), v.y());
+        default void wZT(Vector2.Accessible v) {
+            wZT(v.x(), v.y());
         }
 
-        default void XYZw(Vector3.Accessible v) {
-            XYZw(v.x(), v.y(), v.z());
+        default void wXYZ(Vector3.Accessible v) {
+            wXYZ(v.x(), v.y(), v.z());
         }
 
-        default void XYTw(Vector3.Accessible v) {
-            XYTw(v.x(), v.y(), v.z());
+        default void wXYT(Vector3.Accessible v) {
+            wXYT(v.x(), v.y(), v.z());
         }
 
-        default void XZTw(Vector3.Accessible v) {
-            XZTw(v.x(), v.y(), v.z());
+        default void wXZT(Vector3.Accessible v) {
+            wXZT(v.x(), v.y(), v.z());
         }
 
-        default void YZTw(Vector3.Accessible v) {
-            YZTw(v.x(), v.y(), v.z());
+        default void wYZT(Vector3.Accessible v) {
+            wYZT(v.x(), v.y(), v.z());
         }
 
-        default void XYZTw(Vector4.Accessible v) {
-            XYZTw(v.x(), v.y(), v.z(), v.w());
+        default void wXYZT(Vector4.Accessible v) {
+            wXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
         default void Dxy(Vector2.Accessible v) {
@@ -3980,16 +4310,44 @@ public final class Matrix4x4 {
             Dxyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void rotation3x3(Matrix3x3.Accessible m) {
-            rotation3x3(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        default void XYZxyz(Matrix3x3.Accessible m) {
+            XYZxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void set4x4(Matrix4x4.Accessible m) {
-            set4x4(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
+        default void xyzXYZ(Matrix3x3.Accessible m) {
+            xyzXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void transposed4x4(Matrix4x4.Accessible m) {
-            transposed4x4(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
+        default void XYZyzw(Matrix3x3.Accessible m) {
+            XYZyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void yzwXYZ(Matrix3x3.Accessible m) {
+            yzwXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void YZTxyz(Matrix3x3.Accessible m) {
+            YZTxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xyzYZT(Matrix3x3.Accessible m) {
+            xyzYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void YZTyzw(Matrix3x3.Accessible m) {
+            YZTyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void yzwYZT(Matrix3x3.Accessible m) {
+            yzwYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XYZTxyzw(Matrix4x4.Accessible m) {
+            XYZTxyzw(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
+        }
+
+        default void xyzwXYZT(Matrix4x4.Accessible m) {
+            xyzwXYZT(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
         }
 
         default Value.Mutable $Xx() {
@@ -4388,49 +4746,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Mutable $XYx() {
+        default Vector2.Mutable $xXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yx(y); }
             };
         }
 
-        default Vector2.Mutable $XZx() {
+        default Vector2.Mutable $xXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Zx(y); }
             };
         }
 
-        default Vector2.Mutable $XTx() {
+        default Vector2.Mutable $xXT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Tx(y); }
             };
         }
 
-        default Vector2.Mutable $YZx() {
+        default Vector2.Mutable $xYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yx(x); }
                 public void y(double y) { Mutable.this.Zx(y); }
             };
         }
 
-        default Vector2.Mutable $YTx() {
+        default Vector2.Mutable $xYT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yx(x); }
                 public void y(double y) { Mutable.this.Tx(y); }
             };
         }
 
-        default Vector2.Mutable $ZTx() {
+        default Vector2.Mutable $xZT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Zx(x); }
                 public void y(double y) { Mutable.this.Tx(y); }
             };
         }
 
-        default Vector3.Mutable $XYZx() {
+        default Vector3.Mutable $xXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yx(y); }
@@ -4438,7 +4796,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XYTx() {
+        default Vector3.Mutable $xXYT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yx(y); }
@@ -4446,7 +4804,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XZTx() {
+        default Vector3.Mutable $xXZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Zx(y); }
@@ -4454,7 +4812,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $YZTx() {
+        default Vector3.Mutable $xYZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Yx(x); }
                 public void y(double y) { Mutable.this.Zx(y); }
@@ -4462,7 +4820,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Mutable $XYZTx() {
+        default Vector4.Mutable $xXYZT() {
             return new Vector4.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yx(y); }
@@ -4471,49 +4829,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Mutable $XYy() {
+        default Vector2.Mutable $yXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
             };
         }
 
-        default Vector2.Mutable $XZy() {
+        default Vector2.Mutable $yXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Zy(y); }
             };
         }
 
-        default Vector2.Mutable $XTy() {
+        default Vector2.Mutable $yXT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Ty(y); }
             };
         }
 
-        default Vector2.Mutable $YZy() {
+        default Vector2.Mutable $yYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yy(x); }
                 public void y(double y) { Mutable.this.Zy(y); }
             };
         }
 
-        default Vector2.Mutable $YTy() {
+        default Vector2.Mutable $yYT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yy(x); }
                 public void y(double y) { Mutable.this.Ty(y); }
             };
         }
 
-        default Vector2.Mutable $ZTy() {
+        default Vector2.Mutable $yZT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Zy(x); }
                 public void y(double y) { Mutable.this.Ty(y); }
             };
         }
 
-        default Vector3.Mutable $XYZy() {
+        default Vector3.Mutable $yXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
@@ -4521,7 +4879,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XYTy() {
+        default Vector3.Mutable $yXYT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
@@ -4529,7 +4887,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XZTy() {
+        default Vector3.Mutable $yXZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Zy(y); }
@@ -4537,7 +4895,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $YZTy() {
+        default Vector3.Mutable $yYZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Yy(x); }
                 public void y(double y) { Mutable.this.Zy(y); }
@@ -4545,7 +4903,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Mutable $XYZTy() {
+        default Vector4.Mutable $yXYZT() {
             return new Vector4.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
@@ -4554,49 +4912,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Mutable $XYz() {
+        default Vector2.Mutable $zXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Yz(y); }
             };
         }
 
-        default Vector2.Mutable $XZz() {
+        default Vector2.Mutable $zXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Zz(y); }
             };
         }
 
-        default Vector2.Mutable $XTz() {
+        default Vector2.Mutable $zXT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Tz(y); }
             };
         }
 
-        default Vector2.Mutable $YZz() {
+        default Vector2.Mutable $zYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yz(x); }
                 public void y(double y) { Mutable.this.Zz(y); }
             };
         }
 
-        default Vector2.Mutable $YTz() {
+        default Vector2.Mutable $zYT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yz(x); }
                 public void y(double y) { Mutable.this.Tz(y); }
             };
         }
 
-        default Vector2.Mutable $ZTz() {
+        default Vector2.Mutable $zZT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Zz(x); }
                 public void y(double y) { Mutable.this.Tz(y); }
             };
         }
 
-        default Vector3.Mutable $XYZz() {
+        default Vector3.Mutable $zXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Yz(y); }
@@ -4604,7 +4962,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XYTz() {
+        default Vector3.Mutable $zXYT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Yz(y); }
@@ -4612,7 +4970,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XZTz() {
+        default Vector3.Mutable $zXZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Zz(y); }
@@ -4620,7 +4978,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $YZTz() {
+        default Vector3.Mutable $zYZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Yz(x); }
                 public void y(double y) { Mutable.this.Zz(y); }
@@ -4628,7 +4986,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Mutable $XYZTz() {
+        default Vector4.Mutable $zXYZT() {
             return new Vector4.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Yz(y); }
@@ -4637,49 +4995,49 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.Mutable $XYw() {
+        default Vector2.Mutable $wXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Yw(y); }
             };
         }
 
-        default Vector2.Mutable $XZw() {
+        default Vector2.Mutable $wXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Zw(y); }
             };
         }
 
-        default Vector2.Mutable $XTw() {
+        default Vector2.Mutable $wXT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Tw(y); }
             };
         }
 
-        default Vector2.Mutable $YZw() {
+        default Vector2.Mutable $wYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yw(x); }
                 public void y(double y) { Mutable.this.Zw(y); }
             };
         }
 
-        default Vector2.Mutable $YTw() {
+        default Vector2.Mutable $wYT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yw(x); }
                 public void y(double y) { Mutable.this.Tw(y); }
             };
         }
 
-        default Vector2.Mutable $ZTw() {
+        default Vector2.Mutable $wZT() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Zw(x); }
                 public void y(double y) { Mutable.this.Tw(y); }
             };
         }
 
-        default Vector3.Mutable $XYZw() {
+        default Vector3.Mutable $wXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Yw(y); }
@@ -4687,7 +5045,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XYTw() {
+        default Vector3.Mutable $wXYT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Yw(y); }
@@ -4695,7 +5053,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $XZTw() {
+        default Vector3.Mutable $wXZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Zw(y); }
@@ -4703,7 +5061,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.Mutable $YZTw() {
+        default Vector3.Mutable $wYZT() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Yw(x); }
                 public void y(double y) { Mutable.this.Zw(y); }
@@ -4711,7 +5069,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.Mutable $XYZTw() {
+        default Vector4.Mutable $wXYZT() {
             return new Vector4.Mutable() {
                 public void x(double x) { Mutable.this.Xw(x); }
                 public void y(double y) { Mutable.this.Yw(y); }
@@ -4803,7 +5161,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix3x3.Mutable $rotation3x3() {
+        default Matrix3x3.Mutable $XYZxyz() {
             return new Matrix3x3.Mutable() {
                 public void Xx(double Xx) { Mutable.this.Xx(Xx); }
                 public void Xy(double Xy) { Mutable.this.Xy(Xy); }
@@ -4817,11 +5175,109 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix4x4.Mutable $4x4() {
+        default Matrix3x3.Mutable $xyzXYZ() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yx(Xy); }
+                public void Xz(double Xz) { Mutable.this.Zx(Xz); }
+                public void Yx(double Yx) { Mutable.this.Xy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yy(Yy); }
+                public void Yz(double Yz) { Mutable.this.Zy(Yz); }
+                public void Zx(double Zx) { Mutable.this.Xz(Zx); }
+                public void Zy(double Zy) { Mutable.this.Yz(Zy); }
+                public void Zz(double Zz) { Mutable.this.Zz(Zz); }
+            };
+        }
+
+        default Matrix3x3.Mutable $XYZyzw() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Xz(Xy); }
+                public void Xz(double Xz) { Mutable.this.Xw(Xz); }
+                public void Yx(double Yx) { Mutable.this.Yy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yz(Yy); }
+                public void Yz(double Yz) { Mutable.this.Yw(Yz); }
+                public void Zx(double Zx) { Mutable.this.Zy(Zx); }
+                public void Zy(double Zy) { Mutable.this.Zz(Zy); }
+                public void Zz(double Zz) { Mutable.this.Zw(Zz); }
+            };
+        }
+
+        default Matrix3x3.Mutable $yzwXYZ() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yy(Xy); }
+                public void Xz(double Xz) { Mutable.this.Zy(Xz); }
+                public void Yx(double Yx) { Mutable.this.Xz(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yz(Yy); }
+                public void Yz(double Yz) { Mutable.this.Zz(Yz); }
+                public void Zx(double Zx) { Mutable.this.Xw(Zx); }
+                public void Zy(double Zy) { Mutable.this.Yw(Zy); }
+                public void Zz(double Zz) { Mutable.this.Zw(Zz); }
+            };
+        }
+
+        default Matrix3x3.Mutable $YZTxyz() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yy(Xy); }
+                public void Xz(double Xz) { Mutable.this.Yz(Xz); }
+                public void Yx(double Yx) { Mutable.this.Zx(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zy(Yy); }
+                public void Yz(double Yz) { Mutable.this.Zz(Yz); }
+                public void Zx(double Zx) { Mutable.this.Tx(Zx); }
+                public void Zy(double Zy) { Mutable.this.Ty(Zy); }
+                public void Zz(double Zz) { Mutable.this.Tz(Zz); }
+            };
+        }
+
+        default Matrix3x3.Mutable $xyzYZT() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Zx(Xy); }
+                public void Xz(double Xz) { Mutable.this.Tx(Xz); }
+                public void Yx(double Yx) { Mutable.this.Yy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zy(Yy); }
+                public void Yz(double Yz) { Mutable.this.Ty(Yz); }
+                public void Zx(double Zx) { Mutable.this.Yz(Zx); }
+                public void Zy(double Zy) { Mutable.this.Zz(Zy); }
+                public void Zz(double Zz) { Mutable.this.Tz(Zz); }
+            };
+        }
+
+        default Matrix3x3.Mutable $YZTyzw() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yz(Xy); }
+                public void Xz(double Xz) { Mutable.this.Yw(Xz); }
+                public void Yx(double Yx) { Mutable.this.Zy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zz(Yy); }
+                public void Yz(double Yz) { Mutable.this.Zw(Yz); }
+                public void Zx(double Zx) { Mutable.this.Ty(Zx); }
+                public void Zy(double Zy) { Mutable.this.Tz(Zy); }
+                public void Zz(double Zz) { Mutable.this.Tw(Zz); }
+            };
+        }
+
+        default Matrix3x3.Mutable $yzwYZT() {
+            return new Matrix3x3.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Zy(Xy); }
+                public void Xz(double Xz) { Mutable.this.Ty(Xz); }
+                public void Yx(double Yx) { Mutable.this.Yz(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zz(Yy); }
+                public void Yz(double Yz) { Mutable.this.Tz(Yz); }
+                public void Zx(double Zx) { Mutable.this.Yw(Zx); }
+                public void Zy(double Zy) { Mutable.this.Zw(Zy); }
+                public void Zz(double Zz) { Mutable.this.Tw(Zz); }
+            };
+        }
+
+        default Matrix4x4.Mutable $XYZTxyzw() {
             return this;
         }
 
-        default Matrix4x4.Mutable $transposed4x4() {
+        default Matrix4x4.Mutable $xyzwXYZT() {
             return new Matrix4x4.Mutable() {
                 public void Xx(double Xx) { Mutable.this.Xx(Xx); }
                 public void Xy(double Xy) { Mutable.this.Yx(Xy); }
@@ -5402,7 +5858,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYx() {
+        default Vector2.AccessibleAndMutable $xXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Yx(); }
@@ -5411,7 +5867,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZx() {
+        default Vector2.AccessibleAndMutable $xXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Zx(); }
@@ -5420,7 +5876,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XTx() {
+        default Vector2.AccessibleAndMutable $xXT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Tx(); }
@@ -5429,7 +5885,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZx() {
+        default Vector2.AccessibleAndMutable $xYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yx(); }
                 public double y() { return AccessibleAndMutable.this.Zx(); }
@@ -5438,7 +5894,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YTx() {
+        default Vector2.AccessibleAndMutable $xYT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yx(); }
                 public double y() { return AccessibleAndMutable.this.Tx(); }
@@ -5447,7 +5903,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $ZTx() {
+        default Vector2.AccessibleAndMutable $xZT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Zx(); }
                 public double y() { return AccessibleAndMutable.this.Tx(); }
@@ -5456,7 +5912,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZx() {
+        default Vector3.AccessibleAndMutable $xXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Yx(); }
@@ -5467,7 +5923,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYTx() {
+        default Vector3.AccessibleAndMutable $xXYT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Yx(); }
@@ -5478,7 +5934,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XZTx() {
+        default Vector3.AccessibleAndMutable $xXZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Zx(); }
@@ -5489,7 +5945,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $YZTx() {
+        default Vector3.AccessibleAndMutable $xYZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yx(); }
                 public double y() { return AccessibleAndMutable.this.Zx(); }
@@ -5500,7 +5956,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.AccessibleAndMutable $XYZTx() {
+        default Vector4.AccessibleAndMutable $xXYZT() {
             return new Vector4.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Yx(); }
@@ -5513,7 +5969,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYy() {
+        default Vector2.AccessibleAndMutable $yXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Yy(); }
@@ -5522,7 +5978,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZy() {
+        default Vector2.AccessibleAndMutable $yXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Zy(); }
@@ -5531,7 +5987,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XTy() {
+        default Vector2.AccessibleAndMutable $yXT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Ty(); }
@@ -5540,7 +5996,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZy() {
+        default Vector2.AccessibleAndMutable $yYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yy(); }
                 public double y() { return AccessibleAndMutable.this.Zy(); }
@@ -5549,7 +6005,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YTy() {
+        default Vector2.AccessibleAndMutable $yYT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yy(); }
                 public double y() { return AccessibleAndMutable.this.Ty(); }
@@ -5558,7 +6014,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $ZTy() {
+        default Vector2.AccessibleAndMutable $yZT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Zy(); }
                 public double y() { return AccessibleAndMutable.this.Ty(); }
@@ -5567,7 +6023,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZy() {
+        default Vector3.AccessibleAndMutable $yXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Yy(); }
@@ -5578,7 +6034,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYTy() {
+        default Vector3.AccessibleAndMutable $yXYT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Yy(); }
@@ -5589,7 +6045,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XZTy() {
+        default Vector3.AccessibleAndMutable $yXZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Zy(); }
@@ -5600,7 +6056,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $YZTy() {
+        default Vector3.AccessibleAndMutable $yYZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yy(); }
                 public double y() { return AccessibleAndMutable.this.Zy(); }
@@ -5611,7 +6067,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.AccessibleAndMutable $XYZTy() {
+        default Vector4.AccessibleAndMutable $yXYZT() {
             return new Vector4.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Yy(); }
@@ -5624,7 +6080,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYz() {
+        default Vector2.AccessibleAndMutable $zXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Yz(); }
@@ -5633,7 +6089,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZz() {
+        default Vector2.AccessibleAndMutable $zXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Zz(); }
@@ -5642,7 +6098,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XTz() {
+        default Vector2.AccessibleAndMutable $zXT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Tz(); }
@@ -5651,7 +6107,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZz() {
+        default Vector2.AccessibleAndMutable $zYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yz(); }
                 public double y() { return AccessibleAndMutable.this.Zz(); }
@@ -5660,7 +6116,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YTz() {
+        default Vector2.AccessibleAndMutable $zYT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yz(); }
                 public double y() { return AccessibleAndMutable.this.Tz(); }
@@ -5669,7 +6125,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $ZTz() {
+        default Vector2.AccessibleAndMutable $zZT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Zz(); }
                 public double y() { return AccessibleAndMutable.this.Tz(); }
@@ -5678,7 +6134,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZz() {
+        default Vector3.AccessibleAndMutable $zXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Yz(); }
@@ -5689,7 +6145,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYTz() {
+        default Vector3.AccessibleAndMutable $zXYT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Yz(); }
@@ -5700,7 +6156,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XZTz() {
+        default Vector3.AccessibleAndMutable $zXZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Zz(); }
@@ -5711,7 +6167,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $YZTz() {
+        default Vector3.AccessibleAndMutable $zYZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yz(); }
                 public double y() { return AccessibleAndMutable.this.Zz(); }
@@ -5722,7 +6178,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.AccessibleAndMutable $XYZTz() {
+        default Vector4.AccessibleAndMutable $zXYZT() {
             return new Vector4.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Yz(); }
@@ -5735,7 +6191,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYw() {
+        default Vector2.AccessibleAndMutable $wXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Yw(); }
@@ -5744,7 +6200,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZw() {
+        default Vector2.AccessibleAndMutable $wXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Zw(); }
@@ -5753,7 +6209,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XTw() {
+        default Vector2.AccessibleAndMutable $wXT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Tw(); }
@@ -5762,7 +6218,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZw() {
+        default Vector2.AccessibleAndMutable $wYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yw(); }
                 public double y() { return AccessibleAndMutable.this.Zw(); }
@@ -5771,7 +6227,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YTw() {
+        default Vector2.AccessibleAndMutable $wYT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yw(); }
                 public double y() { return AccessibleAndMutable.this.Tw(); }
@@ -5780,7 +6236,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $ZTw() {
+        default Vector2.AccessibleAndMutable $wZT() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Zw(); }
                 public double y() { return AccessibleAndMutable.this.Tw(); }
@@ -5789,7 +6245,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZw() {
+        default Vector3.AccessibleAndMutable $wXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Yw(); }
@@ -5800,7 +6256,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYTw() {
+        default Vector3.AccessibleAndMutable $wXYT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Yw(); }
@@ -5811,7 +6267,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XZTw() {
+        default Vector3.AccessibleAndMutable $wXZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Zw(); }
@@ -5822,7 +6278,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $YZTw() {
+        default Vector3.AccessibleAndMutable $wYZT() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yw(); }
                 public double y() { return AccessibleAndMutable.this.Zw(); }
@@ -5833,7 +6289,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Vector4.AccessibleAndMutable $XYZTw() {
+        default Vector4.AccessibleAndMutable $wXYZT() {
             return new Vector4.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xw(); }
                 public double y() { return AccessibleAndMutable.this.Yw(); }
@@ -5957,7 +6413,7 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix3x3.AccessibleAndMutable $rotation3x3() {
+        default Matrix3x3.AccessibleAndMutable $XYZxyz() {
             return new Matrix3x3.AccessibleAndMutable() {
                 public double Xx() { return AccessibleAndMutable.this.Xx(); }
                 public double Xy() { return AccessibleAndMutable.this.Xy(); }
@@ -5980,11 +6436,172 @@ public final class Matrix4x4 {
             };
         }
 
-        default Matrix4x4.AccessibleAndMutable $4x4() {
+        default Matrix3x3.AccessibleAndMutable $xyzXYZ() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xx(); }
+                public double Xy() { return AccessibleAndMutable.this.Yx(); }
+                public double Xz() { return AccessibleAndMutable.this.Zx(); }
+                public double Yx() { return AccessibleAndMutable.this.Xy(); }
+                public double Yy() { return AccessibleAndMutable.this.Yy(); }
+                public double Yz() { return AccessibleAndMutable.this.Zy(); }
+                public double Zx() { return AccessibleAndMutable.this.Xz(); }
+                public double Zy() { return AccessibleAndMutable.this.Yz(); }
+                public double Zz() { return AccessibleAndMutable.this.Zz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yx(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Zx(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Xy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yy(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Zy(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Xz(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Yz(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Zz(Zz); }
+            };
+        }
+
+        default Matrix3x3.AccessibleAndMutable $XYZyzw() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xy(); }
+                public double Xy() { return AccessibleAndMutable.this.Xz(); }
+                public double Xz() { return AccessibleAndMutable.this.Xw(); }
+                public double Yx() { return AccessibleAndMutable.this.Yy(); }
+                public double Yy() { return AccessibleAndMutable.this.Yz(); }
+                public double Yz() { return AccessibleAndMutable.this.Yw(); }
+                public double Zx() { return AccessibleAndMutable.this.Zy(); }
+                public double Zy() { return AccessibleAndMutable.this.Zz(); }
+                public double Zz() { return AccessibleAndMutable.this.Zw(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Xz(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Xw(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yz(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Yw(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Zy(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Zz(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Zw(Zz); }
+            };
+        }
+
+        default Matrix3x3.AccessibleAndMutable $yzwXYZ() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xy(); }
+                public double Xy() { return AccessibleAndMutable.this.Yy(); }
+                public double Xz() { return AccessibleAndMutable.this.Zy(); }
+                public double Yx() { return AccessibleAndMutable.this.Xz(); }
+                public double Yy() { return AccessibleAndMutable.this.Yz(); }
+                public double Yz() { return AccessibleAndMutable.this.Zz(); }
+                public double Zx() { return AccessibleAndMutable.this.Xw(); }
+                public double Zy() { return AccessibleAndMutable.this.Yw(); }
+                public double Zz() { return AccessibleAndMutable.this.Zw(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yy(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Zy(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Xz(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yz(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Zz(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Xw(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Yw(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Zw(Zz); }
+            };
+        }
+
+        default Matrix3x3.AccessibleAndMutable $YZTxyz() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yx(); }
+                public double Xy() { return AccessibleAndMutable.this.Yy(); }
+                public double Xz() { return AccessibleAndMutable.this.Yz(); }
+                public double Yx() { return AccessibleAndMutable.this.Zx(); }
+                public double Yy() { return AccessibleAndMutable.this.Zy(); }
+                public double Yz() { return AccessibleAndMutable.this.Zz(); }
+                public double Zx() { return AccessibleAndMutable.this.Tx(); }
+                public double Zy() { return AccessibleAndMutable.this.Ty(); }
+                public double Zz() { return AccessibleAndMutable.this.Tz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yy(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Yz(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Zx(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zy(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Zz(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Tx(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Ty(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Tz(Zz); }
+            };
+        }
+
+        default Matrix3x3.AccessibleAndMutable $xyzYZT() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yx(); }
+                public double Xy() { return AccessibleAndMutable.this.Zx(); }
+                public double Xz() { return AccessibleAndMutable.this.Tx(); }
+                public double Yx() { return AccessibleAndMutable.this.Yy(); }
+                public double Yy() { return AccessibleAndMutable.this.Zy(); }
+                public double Yz() { return AccessibleAndMutable.this.Ty(); }
+                public double Zx() { return AccessibleAndMutable.this.Yz(); }
+                public double Zy() { return AccessibleAndMutable.this.Zz(); }
+                public double Zz() { return AccessibleAndMutable.this.Tz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Zx(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Tx(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zy(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Ty(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Yz(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Zz(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Tz(Zz); }
+            };
+        }
+
+        default Matrix3x3.AccessibleAndMutable $YZTyzw() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yy(); }
+                public double Xy() { return AccessibleAndMutable.this.Yz(); }
+                public double Xz() { return AccessibleAndMutable.this.Yw(); }
+                public double Yx() { return AccessibleAndMutable.this.Zy(); }
+                public double Yy() { return AccessibleAndMutable.this.Zz(); }
+                public double Yz() { return AccessibleAndMutable.this.Zw(); }
+                public double Zx() { return AccessibleAndMutable.this.Ty(); }
+                public double Zy() { return AccessibleAndMutable.this.Tz(); }
+                public double Zz() { return AccessibleAndMutable.this.Tw(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yz(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Yw(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Zy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zz(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Zw(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Ty(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Tz(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Tw(Zz); }
+            };
+        }
+
+        default Matrix3x3.AccessibleAndMutable $yzwYZT() {
+            return new Matrix3x3.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yy(); }
+                public double Xy() { return AccessibleAndMutable.this.Zy(); }
+                public double Xz() { return AccessibleAndMutable.this.Ty(); }
+                public double Yx() { return AccessibleAndMutable.this.Yz(); }
+                public double Yy() { return AccessibleAndMutable.this.Zz(); }
+                public double Yz() { return AccessibleAndMutable.this.Tz(); }
+                public double Zx() { return AccessibleAndMutable.this.Yw(); }
+                public double Zy() { return AccessibleAndMutable.this.Zw(); }
+                public double Zz() { return AccessibleAndMutable.this.Tw(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Zy(Xy); }
+                public void Xz(double Xz) { AccessibleAndMutable.this.Ty(Xz); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yz(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zz(Yy); }
+                public void Yz(double Yz) { AccessibleAndMutable.this.Tz(Yz); }
+                public void Zx(double Zx) { AccessibleAndMutable.this.Yw(Zx); }
+                public void Zy(double Zy) { AccessibleAndMutable.this.Zw(Zy); }
+                public void Zz(double Zz) { AccessibleAndMutable.this.Tw(Zz); }
+            };
+        }
+
+        default Matrix4x4.AccessibleAndMutable $XYZTxyzw() {
             return this;
         }
 
-        default Matrix4x4.AccessibleAndMutable $transposed4x4() {
+        default Matrix4x4.AccessibleAndMutable $xyzwXYZT() {
             return new Matrix4x4.AccessibleAndMutable() {
                 public double Xx() { return AccessibleAndMutable.this.Xx(); }
                 public double Xy() { return AccessibleAndMutable.this.Yx(); }
@@ -6026,7 +6643,7 @@ public final class Matrix4x4 {
     @FunctionalInterface
     public interface Consumer {
 
-        void set4x4(
+        void XYZTxyzw(
                 double Xx, double Xy, double Xz, double Xw,
                 double Yx, double Yy, double Yz, double Yw,
                 double Zx, double Zy, double Zz, double Zw,

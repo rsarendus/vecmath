@@ -1304,7 +1304,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleUnaryOperator operator, Matrix3x3.Accessible operand) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(operand.Xx()),
                 operator.applyAsDouble(operand.Xy()),
                 operator.applyAsDouble(operand.Xz()),
@@ -1332,7 +1332,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleBinaryOperator operator, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left.Xx(), right.Xx()),
                 operator.applyAsDouble(left.Xy(), right.Xy()),
                 operator.applyAsDouble(left.Xz(), right.Xz()),
@@ -1360,7 +1360,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleBinaryOperator operator, Matrix3x3.Accessible left, double right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left.Xx(), right),
                 operator.applyAsDouble(left.Xy(), right),
                 operator.applyAsDouble(left.Xz(), right),
@@ -1388,7 +1388,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleBinaryOperator operator, double left, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left, right.Xx()),
                 operator.applyAsDouble(left, right.Xy()),
                 operator.applyAsDouble(left, right.Xz()),
@@ -1416,7 +1416,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix3x3.Accessible left, Matrix3x3.Accessible middle, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left.Xx(), middle.Xx(), right.Xx()),
                 operator.applyAsDouble(left.Xy(), middle.Xy(), right.Xy()),
                 operator.applyAsDouble(left.Xz(), middle.Xz(), right.Xz()),
@@ -1444,7 +1444,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix3x3.Accessible left, Matrix3x3.Accessible middle, double right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left.Xx(), middle.Xx(), right),
                 operator.applyAsDouble(left.Xy(), middle.Xy(), right),
                 operator.applyAsDouble(left.Xz(), middle.Xz(), right),
@@ -1472,7 +1472,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix3x3.Accessible left, double middle, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left.Xx(), middle, right.Xx()),
                 operator.applyAsDouble(left.Xy(), middle, right.Xy()),
                 operator.applyAsDouble(left.Xz(), middle, right.Xz()),
@@ -1500,7 +1500,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix3x3.Accessible left, double middle, double right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left.Xx(), middle, right),
                 operator.applyAsDouble(left.Xy(), middle, right),
                 operator.applyAsDouble(left.Xz(), middle, right),
@@ -1528,7 +1528,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, double left, Matrix3x3.Accessible middle, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left, middle.Xx(), right.Xx()),
                 operator.applyAsDouble(left, middle.Xy(), right.Xy()),
                 operator.applyAsDouble(left, middle.Xz(), right.Xz()),
@@ -1556,7 +1556,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, double left, Matrix3x3.Accessible middle, double right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left, middle.Xx(), right),
                 operator.applyAsDouble(left, middle.Xy(), right),
                 operator.applyAsDouble(left, middle.Xz(), right),
@@ -1584,7 +1584,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleTernaryOperator operator, double left, double middle, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(left, middle, right.Xx()),
                 operator.applyAsDouble(left, middle, right.Xy()),
                 operator.applyAsDouble(left, middle, right.Xz()),
@@ -1612,7 +1612,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, Matrix3x3.Accessible second, Matrix3x3.Accessible third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third.Xz(), fourth.Xz()),
@@ -1640,7 +1640,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, Matrix3x3.Accessible second, Matrix3x3.Accessible third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third.Xz(), fourth),
@@ -1668,7 +1668,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, Matrix3x3.Accessible second, double third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third, fourth.Xz()),
@@ -1696,7 +1696,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, Matrix3x3.Accessible second, double third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third, fourth),
@@ -1724,7 +1724,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, double second, Matrix3x3.Accessible third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second, third.Xz(), fourth.Xz()),
@@ -1752,7 +1752,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, double second, Matrix3x3.Accessible third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth),
                 operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth),
                 operator.applyAsDouble(first.Xz(), second, third.Xz(), fourth),
@@ -1780,7 +1780,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, double second, double third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second, third, fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second, third, fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second, third, fourth.Xz()),
@@ -1808,7 +1808,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix3x3.Accessible first, double second, double third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first.Xx(), second, third, fourth),
                 operator.applyAsDouble(first.Xy(), second, third, fourth),
                 operator.applyAsDouble(first.Xz(), second, third, fourth),
@@ -1836,7 +1836,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix3x3.Accessible second, Matrix3x3.Accessible third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first, second.Xz(), third.Xz(), fourth.Xz()),
@@ -1864,7 +1864,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix3x3.Accessible second, Matrix3x3.Accessible third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth),
                 operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth),
                 operator.applyAsDouble(first, second.Xz(), third.Xz(), fourth),
@@ -1892,7 +1892,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix3x3.Accessible second, double third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second.Xx(), third, fourth.Xx()),
                 operator.applyAsDouble(first, second.Xy(), third, fourth.Xy()),
                 operator.applyAsDouble(first, second.Xz(), third, fourth.Xz()),
@@ -1920,7 +1920,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix3x3.Accessible second, double third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second.Xx(), third, fourth),
                 operator.applyAsDouble(first, second.Xy(), third, fourth),
                 operator.applyAsDouble(first, second.Xz(), third, fourth),
@@ -1948,7 +1948,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, Matrix3x3.Accessible third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second, third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first, second, third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first, second, third.Xz(), fourth.Xz()),
@@ -1976,7 +1976,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, Matrix3x3.Accessible third, double fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second, third.Xx(), fourth),
                 operator.applyAsDouble(first, second, third.Xy(), fourth),
                 operator.applyAsDouble(first, second, third.Xz(), fourth),
@@ -2004,7 +2004,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix3x3.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, double third, Matrix3x3.Accessible fourth) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 operator.applyAsDouble(first, second, third, fourth.Xx()),
                 operator.applyAsDouble(first, second, third, fourth.Xy()),
                 operator.applyAsDouble(first, second, third, fourth.Xz()),
@@ -2039,7 +2039,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleUnaryOperator operator, Matrix4x4.Accessible operand) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(operand.Xx()),
                 operator.applyAsDouble(operand.Xy()),
                 operator.applyAsDouble(operand.Xz()),
@@ -2081,7 +2081,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleBinaryOperator operator, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left.Xx(), right.Xx()),
                 operator.applyAsDouble(left.Xy(), right.Xy()),
                 operator.applyAsDouble(left.Xz(), right.Xz()),
@@ -2123,7 +2123,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleBinaryOperator operator, Matrix4x4.Accessible left, double right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left.Xx(), right),
                 operator.applyAsDouble(left.Xy(), right),
                 operator.applyAsDouble(left.Xz(), right),
@@ -2165,7 +2165,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleBinaryOperator operator, double left, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left, right.Xx()),
                 operator.applyAsDouble(left, right.Xy()),
                 operator.applyAsDouble(left, right.Xz()),
@@ -2207,7 +2207,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix4x4.Accessible left, Matrix4x4.Accessible middle, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left.Xx(), middle.Xx(), right.Xx()),
                 operator.applyAsDouble(left.Xy(), middle.Xy(), right.Xy()),
                 operator.applyAsDouble(left.Xz(), middle.Xz(), right.Xz()),
@@ -2249,7 +2249,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix4x4.Accessible left, Matrix4x4.Accessible middle, double right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left.Xx(), middle.Xx(), right),
                 operator.applyAsDouble(left.Xy(), middle.Xy(), right),
                 operator.applyAsDouble(left.Xz(), middle.Xz(), right),
@@ -2291,7 +2291,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix4x4.Accessible left, double middle, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left.Xx(), middle, right.Xx()),
                 operator.applyAsDouble(left.Xy(), middle, right.Xy()),
                 operator.applyAsDouble(left.Xz(), middle, right.Xz()),
@@ -2333,7 +2333,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix4x4.Accessible left, double middle, double right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left.Xx(), middle, right),
                 operator.applyAsDouble(left.Xy(), middle, right),
                 operator.applyAsDouble(left.Xz(), middle, right),
@@ -2375,7 +2375,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, double left, Matrix4x4.Accessible middle, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left, middle.Xx(), right.Xx()),
                 operator.applyAsDouble(left, middle.Xy(), right.Xy()),
                 operator.applyAsDouble(left, middle.Xz(), right.Xz()),
@@ -2417,7 +2417,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, double left, Matrix4x4.Accessible middle, double right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left, middle.Xx(), right),
                 operator.applyAsDouble(left, middle.Xy(), right),
                 operator.applyAsDouble(left, middle.Xz(), right),
@@ -2459,7 +2459,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleTernaryOperator operator, double left, double middle, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(left, middle, right.Xx()),
                 operator.applyAsDouble(left, middle, right.Xy()),
                 operator.applyAsDouble(left, middle, right.Xz()),
@@ -2501,7 +2501,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, Matrix4x4.Accessible second, Matrix4x4.Accessible third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third.Xz(), fourth.Xz()),
@@ -2543,7 +2543,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, Matrix4x4.Accessible second, Matrix4x4.Accessible third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third.Xz(), fourth),
@@ -2585,7 +2585,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, Matrix4x4.Accessible second, double third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third, fourth.Xz()),
@@ -2627,7 +2627,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, Matrix4x4.Accessible second, double third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth),
                 operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth),
                 operator.applyAsDouble(first.Xz(), second.Xz(), third, fourth),
@@ -2669,7 +2669,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, double second, Matrix4x4.Accessible third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second, third.Xz(), fourth.Xz()),
@@ -2711,7 +2711,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, double second, Matrix4x4.Accessible third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth),
                 operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth),
                 operator.applyAsDouble(first.Xz(), second, third.Xz(), fourth),
@@ -2753,7 +2753,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, double second, double third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second, third, fourth.Xx()),
                 operator.applyAsDouble(first.Xy(), second, third, fourth.Xy()),
                 operator.applyAsDouble(first.Xz(), second, third, fourth.Xz()),
@@ -2795,7 +2795,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix4x4.Accessible first, double second, double third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first.Xx(), second, third, fourth),
                 operator.applyAsDouble(first.Xy(), second, third, fourth),
                 operator.applyAsDouble(first.Xz(), second, third, fourth),
@@ -2837,7 +2837,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix4x4.Accessible second, Matrix4x4.Accessible third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first, second.Xz(), third.Xz(), fourth.Xz()),
@@ -2879,7 +2879,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix4x4.Accessible second, Matrix4x4.Accessible third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth),
                 operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth),
                 operator.applyAsDouble(first, second.Xz(), third.Xz(), fourth),
@@ -2921,7 +2921,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix4x4.Accessible second, double third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second.Xx(), third, fourth.Xx()),
                 operator.applyAsDouble(first, second.Xy(), third, fourth.Xy()),
                 operator.applyAsDouble(first, second.Xz(), third, fourth.Xz()),
@@ -2963,7 +2963,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix4x4.Accessible second, double third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second.Xx(), third, fourth),
                 operator.applyAsDouble(first, second.Xy(), third, fourth),
                 operator.applyAsDouble(first, second.Xz(), third, fourth),
@@ -3005,7 +3005,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, Matrix4x4.Accessible third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second, third.Xx(), fourth.Xx()),
                 operator.applyAsDouble(first, second, third.Xy(), fourth.Xy()),
                 operator.applyAsDouble(first, second, third.Xz(), fourth.Xz()),
@@ -3047,7 +3047,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, Matrix4x4.Accessible third, double fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second, third.Xx(), fourth),
                 operator.applyAsDouble(first, second, third.Xy(), fourth),
                 operator.applyAsDouble(first, second, third.Xz(), fourth),
@@ -3089,7 +3089,7 @@ public final class VecOps {
     }
 
     public static void apply(Matrix4x4.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, double third, Matrix4x4.Accessible fourth) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 operator.applyAsDouble(first, second, third, fourth.Xx()),
                 operator.applyAsDouble(first, second, third, fourth.Xy()),
                 operator.applyAsDouble(first, second, third, fourth.Xz()),

@@ -139,28 +139,28 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.Accessible const$XYx() {
+        default Vector2.Accessible const$xXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Yx(); }
             };
         }
 
-        default Vector2.Accessible const$XZx() {
+        default Vector2.Accessible const$xXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Zx(); }
             };
         }
 
-        default Vector2.Accessible const$YZx() {
+        default Vector2.Accessible const$xYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yx(); }
                 public double y() { return Accessible.this.Zx(); }
             };
         }
 
-        default Vector3.Accessible const$XYZx() {
+        default Vector3.Accessible const$xXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xx(); }
                 public double y() { return Accessible.this.Yx(); }
@@ -168,28 +168,28 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.Accessible const$XYy() {
+        default Vector2.Accessible const$yXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Yy(); }
             };
         }
 
-        default Vector2.Accessible const$XZy() {
+        default Vector2.Accessible const$yXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Zy(); }
             };
         }
 
-        default Vector2.Accessible const$YZy() {
+        default Vector2.Accessible const$yYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yy(); }
                 public double y() { return Accessible.this.Zy(); }
             };
         }
 
-        default Vector3.Accessible const$XYZy() {
+        default Vector3.Accessible const$yXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xy(); }
                 public double y() { return Accessible.this.Yy(); }
@@ -197,28 +197,28 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.Accessible const$XYz() {
+        default Vector2.Accessible const$zXY() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Yz(); }
             };
         }
 
-        default Vector2.Accessible const$XZz() {
+        default Vector2.Accessible const$zXZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Zz(); }
             };
         }
 
-        default Vector2.Accessible const$YZz() {
+        default Vector2.Accessible const$zYZ() {
             return new Vector2.Accessible() {
                 public double x() { return Accessible.this.Yz(); }
                 public double y() { return Accessible.this.Zz(); }
             };
         }
 
-        default Vector3.Accessible const$XYZz() {
+        default Vector3.Accessible const$zXYZ() {
             return new Vector3.Accessible() {
                 public double x() { return Accessible.this.Xz(); }
                 public double y() { return Accessible.this.Yz(); }
@@ -255,7 +255,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Matrix3x3.Accessible const$3x3() {
+        default Matrix3x3.Accessible const$XYZxyz() {
             return new Matrix3x3.Accessible() {
                 public double Xx() { return Accessible.this.Xx(); }
                 public double Xy() { return Accessible.this.Xy(); }
@@ -269,7 +269,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Matrix3x3.Accessible const$transposed3x3() {
+        default Matrix3x3.Accessible const$xyzXYZ() {
             return new Matrix3x3.Accessible() {
                 public double Xx() { return Accessible.this.Xx(); }
                 public double Xy() { return Accessible.this.Yx(); }
@@ -367,52 +367,52 @@ public final class Matrix3x3 {
             return const$Zxyz();
         }
 
-        default Vector2.Accessible $XYx() {
-            return const$XYx();
+        default Vector2.Accessible $xXY() {
+            return const$xXY();
         }
 
-        default Vector2.Accessible $XZx() {
-            return const$XZx();
+        default Vector2.Accessible $xXZ() {
+            return const$xXZ();
         }
 
-        default Vector2.Accessible $YZx() {
-            return const$YZx();
+        default Vector2.Accessible $xYZ() {
+            return const$xYZ();
         }
 
-        default Vector3.Accessible $XYZx() {
-            return const$XYZx();
+        default Vector3.Accessible $xXYZ() {
+            return const$xXYZ();
         }
 
-        default Vector2.Accessible $XYy() {
-            return const$XYy();
+        default Vector2.Accessible $yXY() {
+            return const$yXY();
         }
 
-        default Vector2.Accessible $XZy() {
-            return const$XZy();
+        default Vector2.Accessible $yXZ() {
+            return const$yXZ();
         }
 
-        default Vector2.Accessible $YZy() {
-            return const$YZy();
+        default Vector2.Accessible $yYZ() {
+            return const$yYZ();
         }
 
-        default Vector3.Accessible $XYZy() {
-            return const$XYZy();
+        default Vector3.Accessible $yXYZ() {
+            return const$yXYZ();
         }
 
-        default Vector2.Accessible $XYz() {
-            return const$XYz();
+        default Vector2.Accessible $zXY() {
+            return const$zXY();
         }
 
-        default Vector2.Accessible $XZz() {
-            return const$XZz();
+        default Vector2.Accessible $zXZ() {
+            return const$zXZ();
         }
 
-        default Vector2.Accessible $YZz() {
-            return const$YZz();
+        default Vector2.Accessible $zYZ() {
+            return const$zYZ();
         }
 
-        default Vector3.Accessible $XYZz() {
-            return const$XYZz();
+        default Vector3.Accessible $zXYZ() {
+            return const$zXYZ();
         }
 
         default Vector2.Accessible $Dxy() {
@@ -431,12 +431,12 @@ public final class Matrix3x3 {
             return const$Dxyz();
         }
 
-        default Matrix3x3.Accessible $3x3() {
+        default Matrix3x3.Accessible $XYZxyz() {
             return this;
         }
 
-        default Matrix3x3.Accessible $transposed3x3() {
-            return const$transposed3x3();
+        default Matrix3x3.Accessible $xyzXYZ() {
+            return const$xyzXYZ();
         }
 
         default <R> R Xx(Value.Factory<R> factory) {
@@ -523,51 +523,51 @@ public final class Matrix3x3 {
             return factory.create(Zx(), Zy(), Zz());
         }
 
-        default <R> R XYx(Vector2.Factory<R> factory) {
+        default <R> R xXY(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Yx());
         }
 
-        default <R> R XZx(Vector2.Factory<R> factory) {
+        default <R> R xXZ(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Zx());
         }
 
-        default <R> R YZx(Vector2.Factory<R> factory) {
+        default <R> R xYZ(Vector2.Factory<R> factory) {
             return factory.create(Yx(), Zx());
         }
 
-        default <R> R XYZx(Vector3.Factory<R> factory) {
+        default <R> R xXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx());
         }
 
-        default <R> R XYy(Vector2.Factory<R> factory) {
+        default <R> R yXY(Vector2.Factory<R> factory) {
             return factory.create(Xy(), Yy());
         }
 
-        default <R> R XZy(Vector2.Factory<R> factory) {
+        default <R> R yXZ(Vector2.Factory<R> factory) {
             return factory.create(Xy(), Zy());
         }
 
-        default <R> R YZy(Vector2.Factory<R> factory) {
+        default <R> R yYZ(Vector2.Factory<R> factory) {
             return factory.create(Yy(), Zy());
         }
 
-        default <R> R XYZy(Vector3.Factory<R> factory) {
+        default <R> R yXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Zy());
         }
 
-        default <R> R XYz(Vector2.Factory<R> factory) {
+        default <R> R zXY(Vector2.Factory<R> factory) {
             return factory.create(Xz(), Yz());
         }
 
-        default <R> R XZz(Vector2.Factory<R> factory) {
+        default <R> R zXZ(Vector2.Factory<R> factory) {
             return factory.create(Xz(), Zz());
         }
 
-        default <R> R YZz(Vector2.Factory<R> factory) {
+        default <R> R zYZ(Vector2.Factory<R> factory) {
             return factory.create(Yz(), Zz());
         }
 
-        default <R> R XYZz(Vector3.Factory<R> factory) {
+        default <R> R zXYZ(Vector3.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Zz());
         }
 
@@ -587,11 +587,11 @@ public final class Matrix3x3 {
             return factory.create(Xx(), Yy(), Zz());
         }
 
-        default <R> R get3x3(Matrix3x3.Factory<R> factory) {
+        default <R> R XYZxyz(Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default <R> R transposed3x3(Matrix3x3.Factory<R> factory) {
+        default <R> R xyzXYZ(Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
 
@@ -679,51 +679,51 @@ public final class Matrix3x3 {
             consumer.xyz(Zx(), Zy(), Zz());
         }
 
-        default void XYxTo(Vector2.Consumer consumer) {
+        default void xXYto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yx());
         }
 
-        default void XZxTo(Vector2.Consumer consumer) {
+        default void xXZto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Zx());
         }
 
-        default void YZxTo(Vector2.Consumer consumer) {
+        default void xYZto(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Zx());
         }
 
-        default void XYZxTo(Vector3.Consumer consumer) {
+        default void xXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yx(), Zx());
         }
 
-        default void XYyTo(Vector2.Consumer consumer) {
+        default void yXYto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Yy());
         }
 
-        default void XZyTo(Vector2.Consumer consumer) {
+        default void yXZto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Zy());
         }
 
-        default void YZyTo(Vector2.Consumer consumer) {
+        default void yYZto(Vector2.Consumer consumer) {
             consumer.xy(Yy(), Zy());
         }
 
-        default void XYZyTo(Vector3.Consumer consumer) {
+        default void yXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Yy(), Zy());
         }
 
-        default void XYzTo(Vector2.Consumer consumer) {
+        default void zXYto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Yz());
         }
 
-        default void XZzTo(Vector2.Consumer consumer) {
+        default void zXZto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Zz());
         }
 
-        default void YZzTo(Vector2.Consumer consumer) {
+        default void zYZto(Vector2.Consumer consumer) {
             consumer.xy(Yz(), Zz());
         }
 
-        default void XYZzTo(Vector3.Consumer consumer) {
+        default void zXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Yz(), Zz());
         }
 
@@ -743,12 +743,12 @@ public final class Matrix3x3 {
             consumer.xyz(Xx(), Yy(), Zz());
         }
 
-        default void put3x3To(Matrix3x3.Consumer consumer) {
-            consumer.set3x3(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
+        default void XYZxyzTo(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default void transposed3x3To(Matrix3x3.Consumer consumer) {
-            consumer.set3x3(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
+        default void xyzXYZto(Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
 
     }
@@ -828,64 +828,64 @@ public final class Matrix3x3 {
             Zz(v);
         }
 
-        default void XYx(double v) {
+        default void xXY(double v) {
             Xx(v);
             Yx(v);
         }
 
-        default void XZx(double v) {
+        default void xXZ(double v) {
             Xx(v);
             Zx(v);
         }
 
-        default void YZx(double v) {
+        default void xYZ(double v) {
             Yx(v);
             Zx(v);
         }
 
-        default void XYZx(double v) {
+        default void xXYZ(double v) {
             Xx(v);
             Yx(v);
             Zx(v);
         }
 
-        default void XYy(double v) {
+        default void yXY(double v) {
             Xy(v);
             Yy(v);
         }
 
-        default void XZy(double v) {
+        default void yXZ(double v) {
             Xy(v);
             Zy(v);
         }
 
-        default void YZy(double v) {
+        default void yYZ(double v) {
             Yy(v);
             Zy(v);
         }
 
-        default void XYZy(double v) {
+        default void yXYZ(double v) {
             Xy(v);
             Yy(v);
             Zy(v);
         }
 
-        default void XYz(double v) {
+        default void zXY(double v) {
             Xz(v);
             Yz(v);
         }
 
-        default void XZz(double v) {
+        default void zXZ(double v) {
             Xz(v);
             Zz(v);
         }
 
-        default void YZz(double v) {
+        default void zYZ(double v) {
             Yz(v);
             Zz(v);
         }
 
-        default void XYZz(double v) {
+        default void zXYZ(double v) {
             Xz(v);
             Yz(v);
             Zz(v);
@@ -912,7 +912,7 @@ public final class Matrix3x3 {
             Zz(v);
         }
 
-        default void set3x3(double v) {
+        default void XYZxyz(double v) {
             Xx(v);
             Xy(v);
             Xz(v);
@@ -987,64 +987,64 @@ public final class Matrix3x3 {
             Zz(Zz);
         }
 
-        default void XYx(double Xx, double Yx) {
+        default void xXY(double Xx, double Yx) {
             Xx(Xx);
             Yx(Yx);
         }
 
-        default void XZx(double Xx, double Zx) {
+        default void xXZ(double Xx, double Zx) {
             Xx(Xx);
             Zx(Zx);
         }
 
-        default void YZx(double Yx, double Zx) {
+        default void xYZ(double Yx, double Zx) {
             Yx(Yx);
             Zx(Zx);
         }
 
-        default void XYZx(double Xx, double Yx, double Zx) {
+        default void xXYZ(double Xx, double Yx, double Zx) {
             Xx(Xx);
             Yx(Yx);
             Zx(Zx);
         }
 
-        default void XYy(double Xy, double Yy) {
+        default void yXY(double Xy, double Yy) {
             Xy(Xy);
             Yy(Yy);
         }
 
-        default void XZy(double Xy, double Zy) {
+        default void yXZ(double Xy, double Zy) {
             Xy(Xy);
             Zy(Zy);
         }
 
-        default void YZy(double Yy, double Zy) {
+        default void yYZ(double Yy, double Zy) {
             Yy(Yy);
             Zy(Zy);
         }
 
-        default void XYZy(double Xy, double Yy, double Zy) {
+        default void yXYZ(double Xy, double Yy, double Zy) {
             Xy(Xy);
             Yy(Yy);
             Zy(Zy);
         }
 
-        default void XYz(double Xz, double Yz) {
+        default void zXY(double Xz, double Yz) {
             Xz(Xz);
             Yz(Yz);
         }
 
-        default void XZz(double Xz, double Zz) {
+        default void zXZ(double Xz, double Zz) {
             Xz(Xz);
             Zz(Zz);
         }
 
-        default void YZz(double Yz, double Zz) {
+        default void zYZ(double Yz, double Zz) {
             Yz(Yz);
             Zz(Zz);
         }
 
-        default void XYZz(double Xz, double Yz, double Zz) {
+        default void zXYZ(double Xz, double Yz, double Zz) {
             Xz(Xz);
             Yz(Yz);
             Zz(Zz);
@@ -1071,7 +1071,7 @@ public final class Matrix3x3 {
             Zz(Zz);
         }
 
-        default void set3x3(
+        default void XYZxyz(
                 double Xx, double Xy, double Xz,
                 double Yx, double Yy, double Yz,
                 double Zx, double Zy, double Zz
@@ -1087,7 +1087,7 @@ public final class Matrix3x3 {
             Zz(Zz);
         }
 
-        default void transposed3x3(
+        default void xyzXYZ(
                 double Xx, double Yx, double Zx,
                 double Xy, double Yy, double Zy,
                 double Xz, double Yz, double Zz
@@ -1187,52 +1187,52 @@ public final class Matrix3x3 {
             Zxyz(v.x(), v.y(), v.z());
         }
 
-        default void XYx(Vector2.Accessible v) {
-            XYx(v.x(), v.y());
+        default void xXY(Vector2.Accessible v) {
+            xXY(v.x(), v.y());
         }
 
-        default void XZx(Vector2.Accessible v) {
-            XZx(v.x(), v.y());
+        default void xXZ(Vector2.Accessible v) {
+            xXZ(v.x(), v.y());
         }
 
-        default void YZx(Vector2.Accessible v) {
-            YZx(v.x(), v.y());
+        default void xYZ(Vector2.Accessible v) {
+            xYZ(v.x(), v.y());
         }
 
-        default void XYZx(Vector3.Accessible v) {
-            XYZx(v.x(), v.y(), v.z());
+        default void xXYZ(Vector3.Accessible v) {
+            xXYZ(v.x(), v.y(), v.z());
         }
 
-        default void XYy(Vector2.Accessible v) {
-            XYy(v.x(), v.y());
+        default void yXY(Vector2.Accessible v) {
+            yXY(v.x(), v.y());
         }
 
-        default void XZy(Vector2.Accessible v) {
-            XZy(v.x(), v.y());
+        default void yXZ(Vector2.Accessible v) {
+            yXZ(v.x(), v.y());
         }
 
-        default void YZy(Vector2.Accessible v) {
-            YZy(v.x(), v.y());
+        default void yYZ(Vector2.Accessible v) {
+            yYZ(v.x(), v.y());
         }
 
-        default void XYZy(Vector3.Accessible v) {
-            XYZy(v.x(), v.y(), v.z());
+        default void yXYZ(Vector3.Accessible v) {
+            yXYZ(v.x(), v.y(), v.z());
         }
 
-        default void XYz(Vector2.Accessible v) {
-            XYz(v.x(), v.y());
+        default void zXY(Vector2.Accessible v) {
+            zXY(v.x(), v.y());
         }
 
-        default void XZz(Vector2.Accessible v) {
-            XZz(v.x(), v.y());
+        default void zXZ(Vector2.Accessible v) {
+            zXZ(v.x(), v.y());
         }
 
-        default void YZz(Vector2.Accessible v) {
-            YZz(v.x(), v.y());
+        default void zYZ(Vector2.Accessible v) {
+            zYZ(v.x(), v.y());
         }
 
-        default void XYZz(Vector3.Accessible v) {
-            XYZz(v.x(), v.y(), v.z());
+        default void zXYZ(Vector3.Accessible v) {
+            zXYZ(v.x(), v.y(), v.z());
         }
 
         default void Dxy(Vector2.Accessible v) {
@@ -1251,12 +1251,12 @@ public final class Matrix3x3 {
             Dxyz(v.x(), v.y(), v.z());
         }
 
-        default void set3x3(Matrix3x3.Accessible m) {
-            set3x3(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        default void XYZxyz(Matrix3x3.Accessible m) {
+            XYZxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void transposed3x3(Matrix3x3.Accessible m) {
-            transposed3x3(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        default void xyzXYZ(Matrix3x3.Accessible m) {
+            xyzXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
         default Value.Mutable $Xx() {
@@ -1382,28 +1382,28 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.Mutable $XYx() {
+        default Vector2.Mutable $xXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yx(y); }
             };
         }
 
-        default Vector2.Mutable $XZx() {
+        default Vector2.Mutable $xXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Zx(y); }
             };
         }
 
-        default Vector2.Mutable $YZx() {
+        default Vector2.Mutable $xYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yx(x); }
                 public void y(double y) { Mutable.this.Zx(y); }
             };
         }
 
-        default Vector3.Mutable $XYZx() {
+        default Vector3.Mutable $xXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yx(y); }
@@ -1411,28 +1411,28 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.Mutable $XYy() {
+        default Vector2.Mutable $yXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
             };
         }
 
-        default Vector2.Mutable $XZy() {
+        default Vector2.Mutable $yXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Zy(y); }
             };
         }
 
-        default Vector2.Mutable $YZy() {
+        default Vector2.Mutable $yYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yy(x); }
                 public void y(double y) { Mutable.this.Zy(y); }
             };
         }
 
-        default Vector3.Mutable $XYZy() {
+        default Vector3.Mutable $yXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xy(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
@@ -1440,28 +1440,28 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.Mutable $XYz() {
+        default Vector2.Mutable $zXY() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Yz(y); }
             };
         }
 
-        default Vector2.Mutable $XZz() {
+        default Vector2.Mutable $zXZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Zz(y); }
             };
         }
 
-        default Vector2.Mutable $YZz() {
+        default Vector2.Mutable $zYZ() {
             return new Vector2.Mutable() {
                 public void x(double x) { Mutable.this.Yz(x); }
                 public void y(double y) { Mutable.this.Zz(y); }
             };
         }
 
-        default Vector3.Mutable $XYZz() {
+        default Vector3.Mutable $zXYZ() {
             return new Vector3.Mutable() {
                 public void x(double x) { Mutable.this.Xz(x); }
                 public void y(double y) { Mutable.this.Yz(y); }
@@ -1498,11 +1498,11 @@ public final class Matrix3x3 {
             };
         }
 
-        default Matrix3x3.Mutable $3x3() {
+        default Matrix3x3.Mutable $XYZxyz() {
             return this;
         }
 
-        default Matrix3x3.Mutable $transposed3x3() {
+        default Matrix3x3.Mutable $xyzXYZ() {
             return new Matrix3x3.Mutable() {
                 public void Xx(double Xx) { Mutable.this.Xx(Xx); }
                 public void Xy(double Xy) { Mutable.this.Yx(Xy); }
@@ -1697,7 +1697,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYx() {
+        default Vector2.AccessibleAndMutable $xXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Yx(); }
@@ -1706,7 +1706,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZx() {
+        default Vector2.AccessibleAndMutable $xXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Zx(); }
@@ -1715,7 +1715,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZx() {
+        default Vector2.AccessibleAndMutable $xYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yx(); }
                 public double y() { return AccessibleAndMutable.this.Zx(); }
@@ -1724,7 +1724,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZx() {
+        default Vector3.AccessibleAndMutable $xXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xx(); }
                 public double y() { return AccessibleAndMutable.this.Yx(); }
@@ -1735,7 +1735,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYy() {
+        default Vector2.AccessibleAndMutable $yXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Yy(); }
@@ -1744,7 +1744,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZy() {
+        default Vector2.AccessibleAndMutable $yXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Zy(); }
@@ -1753,7 +1753,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZy() {
+        default Vector2.AccessibleAndMutable $yYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yy(); }
                 public double y() { return AccessibleAndMutable.this.Zy(); }
@@ -1762,7 +1762,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZy() {
+        default Vector3.AccessibleAndMutable $yXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xy(); }
                 public double y() { return AccessibleAndMutable.this.Yy(); }
@@ -1773,7 +1773,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XYz() {
+        default Vector2.AccessibleAndMutable $zXY() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Yz(); }
@@ -1782,7 +1782,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $XZz() {
+        default Vector2.AccessibleAndMutable $zXZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Zz(); }
@@ -1791,7 +1791,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector2.AccessibleAndMutable $YZz() {
+        default Vector2.AccessibleAndMutable $zYZ() {
             return new Vector2.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Yz(); }
                 public double y() { return AccessibleAndMutable.this.Zz(); }
@@ -1800,7 +1800,7 @@ public final class Matrix3x3 {
             };
         }
 
-        default Vector3.AccessibleAndMutable $XYZz() {
+        default Vector3.AccessibleAndMutable $zXYZ() {
             return new Vector3.AccessibleAndMutable() {
                 public double x() { return AccessibleAndMutable.this.Xz(); }
                 public double y() { return AccessibleAndMutable.this.Yz(); }
@@ -1849,11 +1849,11 @@ public final class Matrix3x3 {
             };
         }
 
-        default Matrix3x3.AccessibleAndMutable $3x3() {
+        default Matrix3x3.AccessibleAndMutable $XYZxyz() {
             return this;
         }
 
-        default Matrix3x3.AccessibleAndMutable $transposed3x3() {
+        default Matrix3x3.AccessibleAndMutable $xyzXYZ() {
             return new Matrix3x3.AccessibleAndMutable() {
                 public double Xx() { return AccessibleAndMutable.this.Xx(); }
                 public double Xy() { return AccessibleAndMutable.this.Yx(); }
@@ -1881,7 +1881,7 @@ public final class Matrix3x3 {
     @FunctionalInterface
     public interface Consumer {
 
-        void set3x3(
+        void XYZxyz(
                 double Xx, double Xy, double Xz,
                 double Yx, double Yy, double Yz,
                 double Zx, double Zy, double Zz

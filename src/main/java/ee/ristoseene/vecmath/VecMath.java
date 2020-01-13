@@ -2139,7 +2139,7 @@ public final class VecMath {
     }
 
     public static void min(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 min(value1.Xx(), value2),
                 min(value1.Xy(), value2),
                 min(value1.Xz(), value2),
@@ -2167,7 +2167,7 @@ public final class VecMath {
     }
 
     public static void min(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 min(value1.Xx(), value2.Xx()),
                 min(value1.Xy(), value2.Xy()),
                 min(value1.Xz(), value2.Xz()),
@@ -2195,7 +2195,7 @@ public final class VecMath {
     }
 
     public static void max(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 max(value1.Xx(), value2),
                 max(value1.Xy(), value2),
                 max(value1.Xz(), value2),
@@ -2223,7 +2223,7 @@ public final class VecMath {
     }
 
     public static void max(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 max(value1.Xx(), value2.Xx()),
                 max(value1.Xy(), value2.Xy()),
                 max(value1.Xz(), value2.Xz()),
@@ -2251,7 +2251,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, double min, double max) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 clamp(value.Xx(), min, max),
                 clamp(value.Xy(), min, max),
                 clamp(value.Xz(), min, max),
@@ -2279,7 +2279,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, Matrix3x3.Accessible min, double max) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 clamp(value.Xx(), min.Xx(), max),
                 clamp(value.Xy(), min.Xy(), max),
                 clamp(value.Xz(), min.Xz(), max),
@@ -2307,7 +2307,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, double min, Matrix3x3.Accessible max) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 clamp(value.Xx(), min, max.Xx()),
                 clamp(value.Xy(), min, max.Xy()),
                 clamp(value.Xz(), min, max.Xz()),
@@ -2335,7 +2335,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 clamp(value.Xx(), min.Xx(), max.Xx()),
                 clamp(value.Xy(), min.Xy(), max.Xy()),
                 clamp(value.Xz(), min.Xz(), max.Xz()),
@@ -2363,7 +2363,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, double value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 clamp(value, min.Xx(), max.Xx()),
                 clamp(value, min.Xy(), max.Xy()),
                 clamp(value, min.Xz(), max.Xz()),
@@ -2395,7 +2395,7 @@ public final class VecMath {
     public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
                 value1.Xz() * oneMinusT + value2.Xz() * t,
@@ -2423,7 +2423,7 @@ public final class VecMath {
     }
 
     public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2, Matrix3x3.Accessible t) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 lerp(value1.Xx(), value2, t.Xx()),
                 lerp(value1.Xy(), value2, t.Xy()),
                 lerp(value1.Xz(), value2, t.Xz()),
@@ -2451,7 +2451,7 @@ public final class VecMath {
     }
 
     public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, Matrix3x3.Accessible t) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 lerp(value1.Xx(), value2.Xx(), t.Xx()),
                 lerp(value1.Xy(), value2.Xy(), t.Xy()),
                 lerp(value1.Xz(), value2.Xz(), t.Xz()),
@@ -2479,7 +2479,7 @@ public final class VecMath {
     }
 
     public static void negate(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 -value.Xx(),
                 -value.Xy(),
                 -value.Xz(),
@@ -2507,7 +2507,7 @@ public final class VecMath {
     }
 
     public static void add(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, double right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 left.Xx() + right,
                 left.Xy() + right,
                 left.Xz() + right,
@@ -2535,7 +2535,7 @@ public final class VecMath {
     }
 
     public static void add(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 left.Xx() + right.Xx(),
                 left.Xy() + right.Xy(),
                 left.Xz() + right.Xz(),
@@ -2563,7 +2563,7 @@ public final class VecMath {
     }
 
     public static void subtract(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, double right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 left.Xx() - right,
                 left.Xy() - right,
                 left.Xz() - right,
@@ -2591,7 +2591,7 @@ public final class VecMath {
     }
 
     public static void subtract(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible left, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 left.Xx() - right.Xx(),
                 left.Xy() - right.Xy(),
                 left.Xz() - right.Xz(),
@@ -2619,7 +2619,7 @@ public final class VecMath {
     }
 
     public static void subtract(Matrix3x3.Consumer resultConsumer, double left, Matrix3x3.Accessible right) {
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 left - right.Xx(),
                 left - right.Xy(),
                 left - right.Xz(),
@@ -2679,7 +2679,7 @@ public final class VecMath {
 
         final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
 
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 det01 * inverseDet,
                 (matrixXz * matrixZy - matrixZz * matrixXy) * inverseDet,
                 (matrixYz * matrixXy - matrixXz * matrixYy) * inverseDet,
@@ -2747,7 +2747,7 @@ public final class VecMath {
         final double rightZy = right.Zy();
         final double rightZz = right.Zz();
 
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 leftXx * rightXx + leftYx * rightXy + leftZx * rightXz,
                 leftXy * rightXx + leftYy * rightXy + leftZy * rightXz,
                 leftXz * rightXx + leftYz * rightXy + leftZz * rightXz,
@@ -2850,7 +2850,7 @@ public final class VecMath {
     }
 
     public static void min(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 min(value1.Xx(), value2),
                 min(value1.Xy(), value2),
                 min(value1.Xz(), value2),
@@ -2892,7 +2892,7 @@ public final class VecMath {
     }
 
     public static void min(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 min(value1.Xx(), value2.Xx()),
                 min(value1.Xy(), value2.Xy()),
                 min(value1.Xz(), value2.Xz()),
@@ -2934,7 +2934,7 @@ public final class VecMath {
     }
 
     public static void max(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 max(value1.Xx(), value2),
                 max(value1.Xy(), value2),
                 max(value1.Xz(), value2),
@@ -2976,7 +2976,7 @@ public final class VecMath {
     }
 
     public static void max(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 max(value1.Xx(), value2.Xx()),
                 max(value1.Xy(), value2.Xy()),
                 max(value1.Xz(), value2.Xz()),
@@ -3018,7 +3018,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, double min, double max) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 clamp(value.Xx(), min, max),
                 clamp(value.Xy(), min, max),
                 clamp(value.Xz(), min, max),
@@ -3060,7 +3060,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, Matrix4x4.Accessible min, double max) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 clamp(value.Xx(), min.Xx(), max),
                 clamp(value.Xy(), min.Xy(), max),
                 clamp(value.Xz(), min.Xz(), max),
@@ -3102,7 +3102,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, double min, Matrix4x4.Accessible max) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 clamp(value.Xx(), min, max.Xx()),
                 clamp(value.Xy(), min, max.Xy()),
                 clamp(value.Xz(), min, max.Xz()),
@@ -3144,7 +3144,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 clamp(value.Xx(), min.Xx(), max.Xx()),
                 clamp(value.Xy(), min.Xy(), max.Xy()),
                 clamp(value.Xz(), min.Xz(), max.Xz()),
@@ -3186,7 +3186,7 @@ public final class VecMath {
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, double value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 clamp(value, min.Xx(), max.Xx()),
                 clamp(value, min.Xy(), max.Xy()),
                 clamp(value, min.Xz(), max.Xz()),
@@ -3232,7 +3232,7 @@ public final class VecMath {
     public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, double t) {
         final double oneMinusT = 1.0D - t;
 
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 value1.Xx() * oneMinusT + value2.Xx() * t,
                 value1.Xy() * oneMinusT + value2.Xy() * t,
                 value1.Xz() * oneMinusT + value2.Xz() * t,
@@ -3274,7 +3274,7 @@ public final class VecMath {
     }
 
     public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2, Matrix4x4.Accessible t) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 lerp(value1.Xx(), value2, t.Xx()),
                 lerp(value1.Xy(), value2, t.Xy()),
                 lerp(value1.Xz(), value2, t.Xz()),
@@ -3316,7 +3316,7 @@ public final class VecMath {
     }
 
     public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, Matrix4x4.Accessible t) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 lerp(value1.Xx(), value2.Xx(), t.Xx()),
                 lerp(value1.Xy(), value2.Xy(), t.Xy()),
                 lerp(value1.Xz(), value2.Xz(), t.Xz()),
@@ -3358,7 +3358,7 @@ public final class VecMath {
     }
 
     public static void negate(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 -value.Xx(),
                 -value.Xy(),
                 -value.Xz(),
@@ -3400,7 +3400,7 @@ public final class VecMath {
     }
 
     public static void add(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, double right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 left.Xx() + right,
                 left.Xy() + right,
                 left.Xz() + right,
@@ -3442,7 +3442,7 @@ public final class VecMath {
     }
 
     public static void add(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 left.Xx() + right.Xx(),
                 left.Xy() + right.Xy(),
                 left.Xz() + right.Xz(),
@@ -3484,7 +3484,7 @@ public final class VecMath {
     }
 
     public static void subtract(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, double right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 left.Xx() - right,
                 left.Xy() - right,
                 left.Xz() - right,
@@ -3526,7 +3526,7 @@ public final class VecMath {
     }
 
     public static void subtract(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible left, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 left.Xx() - right.Xx(),
                 left.Xy() - right.Xy(),
                 left.Xz() - right.Xz(),
@@ -3568,7 +3568,7 @@ public final class VecMath {
     }
 
     public static void subtract(Matrix4x4.Consumer resultConsumer, double left, Matrix4x4.Accessible right) {
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 left - right.Xx(),
                 left - right.Xy(),
                 left - right.Xz(),
@@ -3674,7 +3674,7 @@ public final class VecMath {
 
         final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
 
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
                 (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * inverseDet,
                 (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * inverseDet,
@@ -3784,7 +3784,7 @@ public final class VecMath {
         final double rightTz = right.Tz();
         final double rightTw = right.Tw();
 
-        resultConsumer.set4x4(
+        resultConsumer.XYZTxyzw(
                 leftXx * rightXx + leftYx * rightXy + leftZx * rightXz + leftTx * rightXw,
                 leftXy * rightXx + leftYy * rightXy + leftZy * rightXz + leftTy * rightXw,
                 leftXz * rightXx + leftYz * rightXy + leftZz * rightXz + leftTz * rightXw,
@@ -4005,7 +4005,7 @@ public final class VecMath {
         final double cxz = oneMinusC * axisX * axisZ;
         final double cyz = oneMinusC * axisY * axisZ;
 
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 oneMinusC * axisX * axisX + cos,
                 cxy + zs,
                 cxz - ys,
@@ -4071,7 +4071,7 @@ public final class VecMath {
         final double wy2 = quaternionW * y2;
         final double wz2 = quaternionW * z2;
 
-        resultConsumer.set3x3(
+        resultConsumer.XYZxyz(
                 1.0D - yy2 - zz2,
                 yx2 + wz2,
                 zx2 - wy2,

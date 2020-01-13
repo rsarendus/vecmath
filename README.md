@@ -1,6 +1,6 @@
 # VecMath
 
-A simple GLSL inspired vector math library for 3D and computer graphics.
+A simple GLSL-inspired vector math library for 3D and computer graphics.
 
 
 ## Build
@@ -46,13 +46,15 @@ double x = vector.x();
 vector.y(1.0);
 ```
 
-Methods that interact with multiple components, combine in their name all the components they interact with:
+Methods that interact with multiple components are named after the combination of all the components they interact with:
 
 ```java
 vector.xy(1.0);
 vector.xy(2.0, 3.0);
 vector.xy(another2dVector);
 ```
+
+**Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties as regular vectors.
 
 **Matrix elements** are referred to by the combination of vector (**X**, **Y**, **Z**, **T**) and component names (**x**, **y**, **z**, **w**) in vector-major order.
 For example **Xx**, **Xy**, **Zx**, **Tw** and so on.<br>
@@ -65,9 +67,7 @@ double Xy = matrix.Xy();
 matrix.Yz(1.0);
 ```
 
-For more complex methods that interact with entire vectors or matrices, please refer to the source code.
-
-For all mathematical purposes, the base vectors of matrices are treated as columns and all other vectors as column vectors, thus post-multiplication is used for performing vector transformations:
+For all mathematical purposes, the base vectors of matrices are treated as columns and all other vectors which can interact with matrices as column vectors, thus post-multiplication is used for performing vector transformations:
 
 ```
  | Xx Yx Zx Tx |     | x |      | Xx * x + Yx * y + Zx * z + Tx * w |
@@ -76,7 +76,32 @@ For all mathematical purposes, the base vectors of matrices are treated as colum
  | Xw Yw Zw Tw |     | w |      | Xw * x + Yw * y + Zw * z + Tw * w |
 ```
 
-**Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties as regular vectors.
+Via the matrix interfaces, interaction is also possible with the base vectors (column vectors), vectors perpendicular to the base vectors (row vectors) and matrix diagonal:
+
+```java
+matrix.Xxyz(1.0);
+matrix.Yxyz(2.0, 3.0, 4.0);
+matrix.Zxyz(some3dVector);
+
+matrix.xXYZ(1.0);
+matrix.yXYZ(2.0, 3.0, 4.0);
+matrix.zXYZ(some3dVector);
+
+matrix.Dxyz(1.0);
+matrix.Dxyz(2.0, 3.0, 4.0);
+matrix.Dxyz(some3dVector);
+```
+
+Additionally, the matrix interfaces provide methods to interact with the whole matrix, as well as with the transpose of the matrix:
+
+```java
+matrix.XYZxyz(1.0);
+matrix.XYZxyz(2.0, 3.0, 4.0, ...);
+matrix.XYZxyz(someOther3x3Matrix);
+
+matrix.xyzXYZ(2.0, 3.0, 4.0, ...);
+matrix.xyzXYZ(someOther3x3Matrix);
+```
 
 
 ### "Reference" Methods
@@ -88,6 +113,15 @@ Vector3.AccessibleAndMutable original = ...
 
 Vector2.AccessibleAndMutable derived1 = original.$xy();
 Vector2.Accessible derived2 = original.const$yz();
+```
+
+Some matrices additionally provide access to partial matrices and transpose of partial matrices:
+
+```java
+Matrix4x4.AccessibleAndMutable original = ...;
+
+Matrix3x3.AccessibleAndMutable derived1 = original.$YZTyzw();
+Matrix3x3.Accessible derived2 = original.const$yzwYZT();
 ```
 
 Accessible references reflect all the changes made in the original, mutable references allow making changes in the original via the reference.
@@ -113,6 +147,8 @@ vector.yzx(another3dVector);
 vector.zy(some2dVector);
 ```
 
+Component swizzling and replication is not directly provided by any methods of the matrix interfaces!
+
 
 ### Output Direction
 
@@ -127,6 +163,7 @@ VecMath.add(result1, operand1, operand2);
 VecMath.add(result1::yzx, operand1, operand2);
 
 Vector4.Mutable result2 = ...
+VecMath.add(result2::xyz, operand1, operand2);
 VecMath.add((x, y, z) -> result2.xyzw(x, y, z, 0.0), operand1, operand2);
 
 Vector3.Accessible result3 = VecMath.add(operand1, operand2, ImmutableVector3::new);
@@ -143,6 +180,7 @@ source.yzxTo(destination1);
 source.xyzTo(destination1::yzx);
 
 Vector4.Mutable destination2 = ...
+source.xyzTo(destination2::xyz);
 source.xyzTo((x, y, z) -> destination2.xyzw(x, y, z, 0.0));
 
 Vector3.Accessible destination3 = source.xyz(ImmutableVector3::new);

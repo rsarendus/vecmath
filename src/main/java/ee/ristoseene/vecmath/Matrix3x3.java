@@ -255,6 +255,78 @@ public final class Matrix3x3 {
             };
         }
 
+        default Matrix2x2.Accessible const$XYxy() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Xx(); }
+                public double Xy() { return Accessible.this.Xy(); }
+                public double Yx() { return Accessible.this.Yx(); }
+                public double Yy() { return Accessible.this.Yy(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$xyXY() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Xx(); }
+                public double Xy() { return Accessible.this.Yx(); }
+                public double Yx() { return Accessible.this.Xy(); }
+                public double Yy() { return Accessible.this.Yy(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$XYyz() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Xy(); }
+                public double Xy() { return Accessible.this.Xz(); }
+                public double Yx() { return Accessible.this.Yy(); }
+                public double Yy() { return Accessible.this.Yz(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$yzXY() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Xy(); }
+                public double Xy() { return Accessible.this.Yy(); }
+                public double Yx() { return Accessible.this.Xz(); }
+                public double Yy() { return Accessible.this.Yz(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$YZxy() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Yx(); }
+                public double Xy() { return Accessible.this.Yy(); }
+                public double Yx() { return Accessible.this.Zx(); }
+                public double Yy() { return Accessible.this.Zy(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$xyYZ() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Yx(); }
+                public double Xy() { return Accessible.this.Zx(); }
+                public double Yx() { return Accessible.this.Yy(); }
+                public double Yy() { return Accessible.this.Zy(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$YZyz() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Yy(); }
+                public double Xy() { return Accessible.this.Yz(); }
+                public double Yx() { return Accessible.this.Zy(); }
+                public double Yy() { return Accessible.this.Zz(); }
+            };
+        }
+
+        default Matrix2x2.Accessible const$yzYZ() {
+            return new Matrix2x2.Accessible() {
+                public double Xx() { return Accessible.this.Yy(); }
+                public double Xy() { return Accessible.this.Zy(); }
+                public double Yx() { return Accessible.this.Yz(); }
+                public double Yy() { return Accessible.this.Zz(); }
+            };
+        }
+
         default Matrix3x3.Accessible const$XYZxyz() {
             return new Matrix3x3.Accessible() {
                 public double Xx() { return Accessible.this.Xx(); }
@@ -431,6 +503,38 @@ public final class Matrix3x3 {
             return const$Dxyz();
         }
 
+        default Matrix2x2.Accessible $XYxy() {
+            return const$XYxy();
+        }
+
+        default Matrix2x2.Accessible $xyXY() {
+            return const$xyXY();
+        }
+
+        default Matrix2x2.Accessible $XYyz() {
+            return const$XYyz();
+        }
+
+        default Matrix2x2.Accessible $yzXY() {
+            return const$yzXY();
+        }
+
+        default Matrix2x2.Accessible $YZxy() {
+            return const$YZxy();
+        }
+
+        default Matrix2x2.Accessible $xyYZ() {
+            return const$xyYZ();
+        }
+
+        default Matrix2x2.Accessible $YZyz() {
+            return const$YZyz();
+        }
+
+        default Matrix2x2.Accessible $yzYZ() {
+            return const$yzYZ();
+        }
+
         default Matrix3x3.Accessible $XYZxyz() {
             return this;
         }
@@ -587,6 +691,38 @@ public final class Matrix3x3 {
             return factory.create(Xx(), Yy(), Zz());
         }
 
+        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Yx(), Yy());
+        }
+
+        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xy(), Yy());
+        }
+
+        default <R> R XYyz(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Yy(), Yz());
+        }
+
+        default <R> R yzXY(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Xz(), Yz());
+        }
+
+        default <R> R YZxy(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yy(), Zx(), Zy());
+        }
+
+        default <R> R xyYZ(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Yy(), Zy());
+        }
+
+        default <R> R YZyz(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Yz(), Zy(), Zz());
+        }
+
+        default <R> R yzYZ(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Zy(), Yz(), Zz());
+        }
+
         default <R> R XYZxyz(Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
@@ -741,6 +877,38 @@ public final class Matrix3x3 {
 
         default void DxyzTo(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yy(), Zz());
+        }
+
+        default void XYxyTo(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xy(), Yx(), Yy());
+        }
+
+        default void xyXYto(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Yx(), Xy(), Yy());
+        }
+
+        default void XYyzTo(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Xz(), Yy(), Yz());
+        }
+
+        default void yzXYto(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Yy(), Xz(), Yz());
+        }
+
+        default void YZxyTo(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Yy(), Zx(), Zy());
+        }
+
+        default void xyYZto(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Zx(), Yy(), Zy());
+        }
+
+        default void YZyzTo(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Yz(), Zy(), Zz());
+        }
+
+        default void yzYZto(Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Zy(), Yz(), Zz());
         }
 
         default void XYZxyzTo(Matrix3x3.Consumer consumer) {
@@ -912,6 +1080,34 @@ public final class Matrix3x3 {
             Zz(v);
         }
 
+        default void XYxy(double v) {
+            Xx(v);
+            Xy(v);
+            Yx(v);
+            Yy(v);
+        }
+
+        default void XYyz(double v) {
+            Xy(v);
+            Xz(v);
+            Yy(v);
+            Yz(v);
+        }
+
+        default void YZxy(double v) {
+            Yx(v);
+            Yy(v);
+            Zx(v);
+            Zy(v);
+        }
+
+        default void YZyz(double v) {
+            Yy(v);
+            Yz(v);
+            Zy(v);
+            Zz(v);
+        }
+
         default void XYZxyz(double v) {
             Xx(v);
             Xy(v);
@@ -1068,6 +1264,86 @@ public final class Matrix3x3 {
         default void Dxyz(double Xx, double Yy, double Zz) {
             Xx(Xx);
             Yy(Yy);
+            Zz(Zz);
+        }
+
+        default void XYxy(
+                double Xx, double Xy,
+                double Yx, double Yy
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Yx(Yx);
+            Yy(Yy);
+        }
+
+        default void xyXY(
+                double Xx, double Yx,
+                double Xy, double Yy
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Yx(Yx);
+            Yy(Yy);
+        }
+
+        default void XYyz(
+                double Xy, double Xz,
+                double Yy, double Yz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Yy(Yy);
+            Yz(Yz);
+        }
+
+        default void yzXY(
+                double Xy, double Yy,
+                double Xz, double Yz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Yy(Yy);
+            Yz(Yz);
+        }
+
+        default void YZxy(
+                double Yx, double Yy,
+                double Zx, double Zy
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Zx(Zx);
+            Zy(Zy);
+        }
+
+        default void xyYZ(
+                double Yx, double Zx,
+                double Yy, double Zy
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Zx(Zx);
+            Zy(Zy);
+        }
+
+        default void YZyz(
+                double Yy, double Yz,
+                double Zy, double Zz
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void yzYZ(
+                double Yy, double Zy,
+                double Yz, double Zz
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Zy(Zy);
             Zz(Zz);
         }
 
@@ -1249,6 +1525,38 @@ public final class Matrix3x3 {
 
         default void Dxyz(Vector3.Accessible v) {
             Dxyz(v.x(), v.y(), v.z());
+        }
+
+        default void XYxy(Matrix2x2.Accessible m) {
+            XYxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyXY(Matrix2x2.Accessible m) {
+            xyXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XYyz(Matrix2x2.Accessible m) {
+            XYyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzXY(Matrix2x2.Accessible m) {
+            yzXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YZxy(Matrix2x2.Accessible m) {
+            YZxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyYZ(Matrix2x2.Accessible m) {
+            xyYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YZyz(Matrix2x2.Accessible m) {
+            YZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzYZ(Matrix2x2.Accessible m) {
+            yzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void XYZxyz(Matrix3x3.Accessible m) {
@@ -1495,6 +1803,78 @@ public final class Matrix3x3 {
                 public void x(double x) { Mutable.this.Xx(x); }
                 public void y(double y) { Mutable.this.Yy(y); }
                 public void z(double z) { Mutable.this.Zz(z); }
+            };
+        }
+
+        default Matrix2x2.Mutable $XYxy() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Xy(Xy); }
+                public void Yx(double Yx) { Mutable.this.Yx(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yy(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $xyXY() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yx(Xy); }
+                public void Yx(double Yx) { Mutable.this.Xy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yy(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $XYyz() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Xz(Xy); }
+                public void Yx(double Yx) { Mutable.this.Yy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yz(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $yzXY() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Xy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yy(Xy); }
+                public void Yx(double Yx) { Mutable.this.Xz(Yx); }
+                public void Yy(double Yy) { Mutable.this.Yz(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $YZxy() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yy(Xy); }
+                public void Yx(double Yx) { Mutable.this.Zx(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zy(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $xyYZ() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yx(Xx); }
+                public void Xy(double Xy) { Mutable.this.Zx(Xy); }
+                public void Yx(double Yx) { Mutable.this.Yy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zy(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $YZyz() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Yz(Xy); }
+                public void Yx(double Yx) { Mutable.this.Zy(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zz(Yy); }
+            };
+        }
+
+        default Matrix2x2.Mutable $yzYZ() {
+            return new Matrix2x2.Mutable() {
+                public void Xx(double Xx) { Mutable.this.Yy(Xx); }
+                public void Xy(double Xy) { Mutable.this.Zy(Xy); }
+                public void Yx(double Yx) { Mutable.this.Yz(Yx); }
+                public void Yy(double Yy) { Mutable.this.Zz(Yy); }
             };
         }
 
@@ -1846,6 +2226,110 @@ public final class Matrix3x3 {
                 public void x(double x) { AccessibleAndMutable.this.Xx(x); }
                 public void y(double y) { AccessibleAndMutable.this.Yy(y); }
                 public void z(double z) { AccessibleAndMutable.this.Zz(z); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $XYxy() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xx(); }
+                public double Xy() { return AccessibleAndMutable.this.Xy(); }
+                public double Yx() { return AccessibleAndMutable.this.Yx(); }
+                public double Yy() { return AccessibleAndMutable.this.Yy(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Xy(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yx(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yy(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $xyXY() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xx(); }
+                public double Xy() { return AccessibleAndMutable.this.Yx(); }
+                public double Yx() { return AccessibleAndMutable.this.Xy(); }
+                public double Yy() { return AccessibleAndMutable.this.Yy(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yx(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Xy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yy(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $XYyz() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xy(); }
+                public double Xy() { return AccessibleAndMutable.this.Xz(); }
+                public double Yx() { return AccessibleAndMutable.this.Yy(); }
+                public double Yy() { return AccessibleAndMutable.this.Yz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Xz(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yz(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $yzXY() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Xy(); }
+                public double Xy() { return AccessibleAndMutable.this.Yy(); }
+                public double Yx() { return AccessibleAndMutable.this.Xz(); }
+                public double Yy() { return AccessibleAndMutable.this.Yz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Xy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yy(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Xz(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Yz(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $YZxy() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yx(); }
+                public double Xy() { return AccessibleAndMutable.this.Yy(); }
+                public double Yx() { return AccessibleAndMutable.this.Zx(); }
+                public double Yy() { return AccessibleAndMutable.this.Zy(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yy(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Zx(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zy(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $xyYZ() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yx(); }
+                public double Xy() { return AccessibleAndMutable.this.Zx(); }
+                public double Yx() { return AccessibleAndMutable.this.Yy(); }
+                public double Yy() { return AccessibleAndMutable.this.Zy(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yx(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Zx(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zy(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $YZyz() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yy(); }
+                public double Xy() { return AccessibleAndMutable.this.Yz(); }
+                public double Yx() { return AccessibleAndMutable.this.Zy(); }
+                public double Yy() { return AccessibleAndMutable.this.Zz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Yz(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Zy(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zz(Yy); }
+            };
+        }
+
+        default Matrix2x2.AccessibleAndMutable $yzYZ() {
+            return new Matrix2x2.AccessibleAndMutable() {
+                public double Xx() { return AccessibleAndMutable.this.Yy(); }
+                public double Xy() { return AccessibleAndMutable.this.Zy(); }
+                public double Yx() { return AccessibleAndMutable.this.Yz(); }
+                public double Yy() { return AccessibleAndMutable.this.Zz(); }
+                public void Xx(double Xx) { AccessibleAndMutable.this.Yy(Xx); }
+                public void Xy(double Xy) { AccessibleAndMutable.this.Zy(Xy); }
+                public void Yx(double Yx) { AccessibleAndMutable.this.Yz(Yx); }
+                public void Yy(double Yy) { AccessibleAndMutable.this.Zz(Yy); }
             };
         }
 

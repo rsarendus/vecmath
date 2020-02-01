@@ -2094,6 +2094,444 @@ public final class VecMath {
         );
     }
 
+    public static double min(Matrix2x2.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) < result) result = tmp;
+        if ((tmp = matrix.Yx()) < result) result = tmp;
+        if ((tmp = matrix.Yy()) < result) result = tmp;
+
+        return result;
+    }
+
+    public static double max(Matrix2x2.Accessible matrix) {
+        double tmp, result = matrix.Xx();
+
+        if ((tmp = matrix.Xy()) > result) result = tmp;
+        if ((tmp = matrix.Yx()) > result) result = tmp;
+        if ((tmp = matrix.Yy()) > result) result = tmp;
+
+        return result;
+    }
+
+    public static <R> R min(Matrix2x2.Accessible value1, double value2, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                min(value1.Xx(), value2),
+                min(value1.Xy(), value2),
+                min(value1.Yx(), value2),
+                min(value1.Yy(), value2)
+        );
+    }
+
+    public static void min(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, double value2) {
+        resultConsumer.XYxy(
+                min(value1.Xx(), value2),
+                min(value1.Xy(), value2),
+                min(value1.Yx(), value2),
+                min(value1.Yy(), value2)
+        );
+    }
+
+    public static <R> R min(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                min(value1.Xx(), value2.Xx()),
+                min(value1.Xy(), value2.Xy()),
+                min(value1.Yx(), value2.Yx()),
+                min(value1.Yy(), value2.Yy())
+        );
+    }
+
+    public static void min(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, Matrix2x2.Accessible value2) {
+        resultConsumer.XYxy(
+                min(value1.Xx(), value2.Xx()),
+                min(value1.Xy(), value2.Xy()),
+                min(value1.Yx(), value2.Yx()),
+                min(value1.Yy(), value2.Yy())
+        );
+    }
+
+    public static <R> R max(Matrix2x2.Accessible value1, double value2, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                max(value1.Xx(), value2),
+                max(value1.Xy(), value2),
+                max(value1.Yx(), value2),
+                max(value1.Yy(), value2)
+        );
+    }
+
+    public static void max(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, double value2) {
+        resultConsumer.XYxy(
+                max(value1.Xx(), value2),
+                max(value1.Xy(), value2),
+                max(value1.Yx(), value2),
+                max(value1.Yy(), value2)
+        );
+    }
+
+    public static <R> R max(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                max(value1.Xx(), value2.Xx()),
+                max(value1.Xy(), value2.Xy()),
+                max(value1.Yx(), value2.Yx()),
+                max(value1.Yy(), value2.Yy())
+        );
+    }
+
+    public static void max(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, Matrix2x2.Accessible value2) {
+        resultConsumer.XYxy(
+                max(value1.Xx(), value2.Xx()),
+                max(value1.Xy(), value2.Xy()),
+                max(value1.Yx(), value2.Yx()),
+                max(value1.Yy(), value2.Yy())
+        );
+    }
+
+    public static <R> R clamp(Matrix2x2.Accessible value, double min, double max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value.Xx(), min, max),
+                clamp(value.Xy(), min, max),
+                clamp(value.Yx(), min, max),
+                clamp(value.Yy(), min, max)
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, double min, double max) {
+        resultConsumer.XYxy(
+                clamp(value.Xx(), min, max),
+                clamp(value.Xy(), min, max),
+                clamp(value.Yx(), min, max),
+                clamp(value.Yy(), min, max)
+        );
+    }
+
+    public static <R> R clamp(Matrix2x2.Accessible value, Matrix2x2.Accessible min, double max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value.Xx(), min.Xx(), max),
+                clamp(value.Xy(), min.Xy(), max),
+                clamp(value.Yx(), min.Yx(), max),
+                clamp(value.Yy(), min.Yy(), max)
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, Matrix2x2.Accessible min, double max) {
+        resultConsumer.XYxy(
+                clamp(value.Xx(), min.Xx(), max),
+                clamp(value.Xy(), min.Xy(), max),
+                clamp(value.Yx(), min.Yx(), max),
+                clamp(value.Yy(), min.Yy(), max)
+        );
+    }
+
+    public static <R> R clamp(Matrix2x2.Accessible value, double min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value.Xx(), min, max.Xx()),
+                clamp(value.Xy(), min, max.Xy()),
+                clamp(value.Yx(), min, max.Yx()),
+                clamp(value.Yy(), min, max.Yy())
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, double min, Matrix2x2.Accessible max) {
+        resultConsumer.XYxy(
+                clamp(value.Xx(), min, max.Xx()),
+                clamp(value.Xy(), min, max.Xy()),
+                clamp(value.Yx(), min, max.Yx()),
+                clamp(value.Yy(), min, max.Yy())
+        );
+    }
+
+    public static <R> R clamp(Matrix2x2.Accessible value, Matrix2x2.Accessible min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value.Xx(), min.Xx(), max.Xx()),
+                clamp(value.Xy(), min.Xy(), max.Xy()),
+                clamp(value.Yx(), min.Yx(), max.Yx()),
+                clamp(value.Yy(), min.Yy(), max.Yy())
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, Matrix2x2.Accessible min, Matrix2x2.Accessible max) {
+        resultConsumer.XYxy(
+                clamp(value.Xx(), min.Xx(), max.Xx()),
+                clamp(value.Xy(), min.Xy(), max.Xy()),
+                clamp(value.Yx(), min.Yx(), max.Yx()),
+                clamp(value.Yy(), min.Yy(), max.Yy())
+        );
+    }
+
+    public static <R> R clamp(double value, Matrix2x2.Accessible min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.Xx(), max.Xx()),
+                clamp(value, min.Xy(), max.Xy()),
+                clamp(value, min.Yx(), max.Yx()),
+                clamp(value, min.Yy(), max.Yy())
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, double value, Matrix2x2.Accessible min, Matrix2x2.Accessible max) {
+        resultConsumer.XYxy(
+                clamp(value, min.Xx(), max.Xx()),
+                clamp(value, min.Xy(), max.Xy()),
+                clamp(value, min.Yx(), max.Yx()),
+                clamp(value, min.Yy(), max.Yy())
+        );
+    }
+
+    public static <R> R lerp(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, double t, Matrix2x2.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+
+        return resultFactory.create(
+                value1.Xx() * oneMinusT + value2.Xx() * t,
+                value1.Xy() * oneMinusT + value2.Xy() * t,
+                value1.Yx() * oneMinusT + value2.Yx() * t,
+                value1.Yy() * oneMinusT + value2.Yy() * t
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, double t) {
+        final double oneMinusT = 1.0D - t;
+
+        resultConsumer.XYxy(
+                value1.Xx() * oneMinusT + value2.Xx() * t,
+                value1.Xy() * oneMinusT + value2.Xy() * t,
+                value1.Yx() * oneMinusT + value2.Yx() * t,
+                value1.Yy() * oneMinusT + value2.Yy() * t
+        );
+    }
+
+    public static <R> R lerp(Matrix2x2.Accessible value1, double value2, Matrix2x2.Accessible t, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1.Xx(), value2, t.Xx()),
+                lerp(value1.Xy(), value2, t.Xy()),
+                lerp(value1.Yx(), value2, t.Yx()),
+                lerp(value1.Yy(), value2, t.Yy())
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, double value2, Matrix2x2.Accessible t) {
+        resultConsumer.XYxy(
+                lerp(value1.Xx(), value2, t.Xx()),
+                lerp(value1.Xy(), value2, t.Xy()),
+                lerp(value1.Yx(), value2, t.Yx()),
+                lerp(value1.Yy(), value2, t.Yy())
+        );
+    }
+
+    public static <R> R lerp(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, Matrix2x2.Accessible t, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1.Xx(), value2.Xx(), t.Xx()),
+                lerp(value1.Xy(), value2.Xy(), t.Xy()),
+                lerp(value1.Yx(), value2.Yx(), t.Yx()),
+                lerp(value1.Yy(), value2.Yy(), t.Yy())
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, Matrix2x2.Accessible t) {
+        resultConsumer.XYxy(
+                lerp(value1.Xx(), value2.Xx(), t.Xx()),
+                lerp(value1.Xy(), value2.Xy(), t.Xy()),
+                lerp(value1.Yx(), value2.Yx(), t.Yx()),
+                lerp(value1.Yy(), value2.Yy(), t.Yy())
+        );
+    }
+
+    public static <R> R negate(Matrix2x2.Accessible value, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                -value.Xx(),
+                -value.Xy(),
+                -value.Yx(),
+                -value.Yy()
+        );
+    }
+
+    public static void negate(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value) {
+        resultConsumer.XYxy(
+                -value.Xx(),
+                -value.Xy(),
+                -value.Yx(),
+                -value.Yy()
+        );
+    }
+
+    public static <R> R add(Matrix2x2.Accessible left, double right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                left.Xx() + right,
+                left.Xy() + right,
+                left.Yx() + right,
+                left.Yy() + right
+        );
+    }
+
+    public static void add(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible left, double right) {
+        resultConsumer.XYxy(
+                left.Xx() + right,
+                left.Xy() + right,
+                left.Yx() + right,
+                left.Yy() + right
+        );
+    }
+
+    public static <R> R add(Matrix2x2.Accessible left, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                left.Xx() + right.Xx(),
+                left.Xy() + right.Xy(),
+                left.Yx() + right.Yx(),
+                left.Yy() + right.Yy()
+        );
+    }
+
+    public static void add(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible left, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                left.Xx() + right.Xx(),
+                left.Xy() + right.Xy(),
+                left.Yx() + right.Yx(),
+                left.Yy() + right.Yy()
+        );
+    }
+
+    public static <R> R subtract(Matrix2x2.Accessible left, double right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                left.Xx() - right,
+                left.Xy() - right,
+                left.Yx() - right,
+                left.Yy() - right
+        );
+    }
+
+    public static void subtract(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible left, double right) {
+        resultConsumer.XYxy(
+                left.Xx() - right,
+                left.Xy() - right,
+                left.Yx() - right,
+                left.Yy() - right
+        );
+    }
+
+    public static <R> R subtract(Matrix2x2.Accessible left, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                left.Xx() - right.Xx(),
+                left.Xy() - right.Xy(),
+                left.Yx() - right.Yx(),
+                left.Yy() - right.Yy()
+        );
+    }
+
+    public static void subtract(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible left, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                left.Xx() - right.Xx(),
+                left.Xy() - right.Xy(),
+                left.Yx() - right.Yx(),
+                left.Yy() - right.Yy()
+        );
+    }
+
+    public static <R> R subtract(double left, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                left - right.Xx(),
+                left - right.Xy(),
+                left - right.Yx(),
+                left - right.Yy()
+        );
+    }
+
+    public static void subtract(Matrix2x2.Consumer resultConsumer, double left, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                left - right.Xx(),
+                left - right.Xy(),
+                left - right.Yx(),
+                left - right.Yy()
+        );
+    }
+
+    public static <R> R inverse(Matrix2x2.Accessible matrix, Matrix2x2.Factory<R> resultFactory) {
+        final double matrixXx = matrix.Xx();
+        final double matrixXy = matrix.Xy();
+        final double matrixYx = matrix.Yx();
+        final double matrixYy = matrix.Yy();
+
+        final double inverseDet = 1.0D / (matrixXx * matrixYy - matrixYx * matrixXy);
+
+        return resultFactory.create(
+                matrixYy * inverseDet,
+                -matrixXy * inverseDet,
+                -matrixYx * inverseDet,
+                matrixXx * inverseDet
+        );
+    }
+
+    public static void inverse(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible matrix) {
+        final double matrixXx = matrix.Xx();
+        final double matrixXy = matrix.Xy();
+        final double matrixYx = matrix.Yx();
+        final double matrixYy = matrix.Yy();
+
+        final double inverseDet = 1.0D / (matrixXx * matrixYy - matrixYx * matrixXy);
+
+        resultConsumer.XYxy(
+                matrixYy * inverseDet,
+                -matrixXy * inverseDet,
+                -matrixYx * inverseDet,
+                matrixXx * inverseDet
+        );
+    }
+
+    public static <R> R multiply(Matrix2x2.Accessible left, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        final double leftXx = left.Xx();
+        final double leftXy = left.Xy();
+        final double leftYx = left.Yx();
+        final double leftYy = left.Yy();
+
+        final double rightXx = right.Xx();
+        final double rightXy = right.Xy();
+        final double rightYx = right.Yx();
+        final double rightYy = right.Yy();
+
+        return resultFactory.create(
+                leftXx * rightXx + leftYx * rightXy,
+                leftXy * rightXx + leftYy * rightXy,
+                leftXx * rightYx + leftYx * rightYy,
+                leftXy * rightYx + leftYy * rightYy
+        );
+    }
+
+    public static void multiply(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible left, Matrix2x2.Accessible right) {
+        final double leftXx = left.Xx();
+        final double leftXy = left.Xy();
+        final double leftYx = left.Yx();
+        final double leftYy = left.Yy();
+
+        final double rightXx = right.Xx();
+        final double rightXy = right.Xy();
+        final double rightYx = right.Yx();
+        final double rightYy = right.Yy();
+
+        resultConsumer.XYxy(
+                leftXx * rightXx + leftYx * rightXy,
+                leftXy * rightXx + leftYy * rightXy,
+                leftXx * rightYx + leftYx * rightYy,
+                leftXy * rightYx + leftYy * rightYy
+        );
+    }
+
+    public static <R> R multiply(Matrix2x2.Accessible left, Vector2.Accessible right, Vector2.Factory<R> resultFactory) {
+        final double rightX = right.x();
+        final double rightY = right.y();
+
+        return resultFactory.create(
+                left.Xx() * rightX + left.Yx() * rightY,
+                left.Xy() * rightX + left.Yy() * rightY
+        );
+    }
+
+    public static void multiply(Vector2.Consumer resultConsumer, Matrix2x2.Accessible left, Vector2.Accessible right) {
+        final double rightX = right.x();
+        final double rightY = right.y();
+
+        resultConsumer.xy(
+                left.Xx() * rightX + left.Yx() * rightY,
+                left.Xy() * rightX + left.Yy() * rightY
+        );
+    }
+
     public static double min(Matrix3x3.Accessible matrix) {
         double tmp, result = matrix.Xx();
 
@@ -3931,6 +4369,30 @@ public final class VecMath {
                 (transformationMatrix.Xx() * positionX + transformationMatrix.Yx() * positionY + transformationMatrix.Zx() * positionZ + transformationMatrix.Tx()) * inverseDivisor,
                 (transformationMatrix.Xy() * positionX + transformationMatrix.Yy() * positionY + transformationMatrix.Zy() * positionZ + transformationMatrix.Ty()) * inverseDivisor,
                 (transformationMatrix.Xz() * positionX + transformationMatrix.Yz() * positionY + transformationMatrix.Zz() * positionZ + transformationMatrix.Tz()) * inverseDivisor
+        );
+    }
+
+    public static <R> R toRotation(double angle, Matrix2x2.Factory<R> resultFactory) {
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+
+        return resultFactory.create(
+                cos,
+                sin,
+                -sin,
+                cos
+        );
+    }
+
+    public static void toRotation(Matrix2x2.Consumer resultConsumer, double angle) {
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+
+        resultConsumer.XYxy(
+                cos,
+                sin,
+                -sin,
+                cos
         );
     }
 

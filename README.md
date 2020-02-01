@@ -26,7 +26,7 @@ The library currently offers the following types:
 
 - **Value** - a single value (1-dimensional vector)
 - **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
-- **Matrix3x3** and **Matrix4x4** - 3 x 3 and 4 x 4 matrices
+- **Matrix2x2**, **Matrix3x3** and **Matrix4x4** - 2x2, 3x3 and 4x4 matrices
 - **Quaternion** - a representation of spatial rotation
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.

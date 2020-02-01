@@ -1272,6 +1272,13 @@ public final class VecOps {
         );
     }
 
+    public static double apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible matrix) {
+        return operator.applyAsDouble(
+                matrix.Xx(), matrix.Xy(),
+                matrix.Yx(), matrix.Yy()
+        );
+    }
+
     public static double apply(DoubleNovenaryOperator operator, Matrix3x3.Accessible matrix) {
         return operator.applyAsDouble(
                 matrix.Xx(), matrix.Xy(), matrix.Xz(),
@@ -1286,6 +1293,474 @@ public final class VecOps {
                 matrix.Yx(), matrix.Yy(), matrix.Yz(), matrix.Yw(),
                 matrix.Zx(), matrix.Zy(), matrix.Zz(), matrix.Zw(),
                 matrix.Tx(), matrix.Ty(), matrix.Tz(), matrix.Tw()
+        );
+    }
+
+    public static <R> R apply(DoubleUnaryOperator operator, Matrix2x2.Accessible operand, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(operand.Xx()),
+                operator.applyAsDouble(operand.Xy()),
+                operator.applyAsDouble(operand.Yx()),
+                operator.applyAsDouble(operand.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleUnaryOperator operator, Matrix2x2.Accessible operand) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(operand.Xx()),
+                operator.applyAsDouble(operand.Xy()),
+                operator.applyAsDouble(operand.Yx()),
+                operator.applyAsDouble(operand.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleBinaryOperator operator, Matrix2x2.Accessible left, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left.Xx(), right.Xx()),
+                operator.applyAsDouble(left.Xy(), right.Xy()),
+                operator.applyAsDouble(left.Yx(), right.Yx()),
+                operator.applyAsDouble(left.Yy(), right.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleBinaryOperator operator, Matrix2x2.Accessible left, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left.Xx(), right.Xx()),
+                operator.applyAsDouble(left.Xy(), right.Xy()),
+                operator.applyAsDouble(left.Yx(), right.Yx()),
+                operator.applyAsDouble(left.Yy(), right.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleBinaryOperator operator, Matrix2x2.Accessible left, double right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left.Xx(), right),
+                operator.applyAsDouble(left.Xy(), right),
+                operator.applyAsDouble(left.Yx(), right),
+                operator.applyAsDouble(left.Yy(), right)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleBinaryOperator operator, Matrix2x2.Accessible left, double right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left.Xx(), right),
+                operator.applyAsDouble(left.Xy(), right),
+                operator.applyAsDouble(left.Yx(), right),
+                operator.applyAsDouble(left.Yy(), right)
+        );
+    }
+
+    public static <R> R apply(DoubleBinaryOperator operator, double left, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left, right.Xx()),
+                operator.applyAsDouble(left, right.Xy()),
+                operator.applyAsDouble(left, right.Yx()),
+                operator.applyAsDouble(left, right.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleBinaryOperator operator, double left, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left, right.Xx()),
+                operator.applyAsDouble(left, right.Xy()),
+                operator.applyAsDouble(left, right.Yx()),
+                operator.applyAsDouble(left, right.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, Matrix2x2.Accessible left, Matrix2x2.Accessible middle, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left.Xx(), middle.Xx(), right.Xx()),
+                operator.applyAsDouble(left.Xy(), middle.Xy(), right.Xy()),
+                operator.applyAsDouble(left.Yx(), middle.Yx(), right.Yx()),
+                operator.applyAsDouble(left.Yy(), middle.Yy(), right.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix2x2.Accessible left, Matrix2x2.Accessible middle, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left.Xx(), middle.Xx(), right.Xx()),
+                operator.applyAsDouble(left.Xy(), middle.Xy(), right.Xy()),
+                operator.applyAsDouble(left.Yx(), middle.Yx(), right.Yx()),
+                operator.applyAsDouble(left.Yy(), middle.Yy(), right.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, Matrix2x2.Accessible left, Matrix2x2.Accessible middle, double right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left.Xx(), middle.Xx(), right),
+                operator.applyAsDouble(left.Xy(), middle.Xy(), right),
+                operator.applyAsDouble(left.Yx(), middle.Yx(), right),
+                operator.applyAsDouble(left.Yy(), middle.Yy(), right)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix2x2.Accessible left, Matrix2x2.Accessible middle, double right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left.Xx(), middle.Xx(), right),
+                operator.applyAsDouble(left.Xy(), middle.Xy(), right),
+                operator.applyAsDouble(left.Yx(), middle.Yx(), right),
+                operator.applyAsDouble(left.Yy(), middle.Yy(), right)
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, Matrix2x2.Accessible left, double middle, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left.Xx(), middle, right.Xx()),
+                operator.applyAsDouble(left.Xy(), middle, right.Xy()),
+                operator.applyAsDouble(left.Yx(), middle, right.Yx()),
+                operator.applyAsDouble(left.Yy(), middle, right.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix2x2.Accessible left, double middle, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left.Xx(), middle, right.Xx()),
+                operator.applyAsDouble(left.Xy(), middle, right.Xy()),
+                operator.applyAsDouble(left.Yx(), middle, right.Yx()),
+                operator.applyAsDouble(left.Yy(), middle, right.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, Matrix2x2.Accessible left, double middle, double right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left.Xx(), middle, right),
+                operator.applyAsDouble(left.Xy(), middle, right),
+                operator.applyAsDouble(left.Yx(), middle, right),
+                operator.applyAsDouble(left.Yy(), middle, right)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, Matrix2x2.Accessible left, double middle, double right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left.Xx(), middle, right),
+                operator.applyAsDouble(left.Xy(), middle, right),
+                operator.applyAsDouble(left.Yx(), middle, right),
+                operator.applyAsDouble(left.Yy(), middle, right)
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, double left, Matrix2x2.Accessible middle, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left, middle.Xx(), right.Xx()),
+                operator.applyAsDouble(left, middle.Xy(), right.Xy()),
+                operator.applyAsDouble(left, middle.Yx(), right.Yx()),
+                operator.applyAsDouble(left, middle.Yy(), right.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, double left, Matrix2x2.Accessible middle, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left, middle.Xx(), right.Xx()),
+                operator.applyAsDouble(left, middle.Xy(), right.Xy()),
+                operator.applyAsDouble(left, middle.Yx(), right.Yx()),
+                operator.applyAsDouble(left, middle.Yy(), right.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, double left, Matrix2x2.Accessible middle, double right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left, middle.Xx(), right),
+                operator.applyAsDouble(left, middle.Xy(), right),
+                operator.applyAsDouble(left, middle.Yx(), right),
+                operator.applyAsDouble(left, middle.Yy(), right)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, double left, Matrix2x2.Accessible middle, double right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left, middle.Xx(), right),
+                operator.applyAsDouble(left, middle.Xy(), right),
+                operator.applyAsDouble(left, middle.Yx(), right),
+                operator.applyAsDouble(left, middle.Yy(), right)
+        );
+    }
+
+    public static <R> R apply(DoubleTernaryOperator operator, double left, double middle, Matrix2x2.Accessible right, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(left, middle, right.Xx()),
+                operator.applyAsDouble(left, middle, right.Xy()),
+                operator.applyAsDouble(left, middle, right.Yx()),
+                operator.applyAsDouble(left, middle, right.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleTernaryOperator operator, double left, double middle, Matrix2x2.Accessible right) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(left, middle, right.Xx()),
+                operator.applyAsDouble(left, middle, right.Xy()),
+                operator.applyAsDouble(left, middle, right.Yx()),
+                operator.applyAsDouble(left, middle, right.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third.Yx(), fourth),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third.Yy(), fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third.Xx(), fourth),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third.Xy(), fourth),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third.Yx(), fourth),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third.Yy(), fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, double third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third, fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third, fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, double third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third, fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third, fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, double third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third, fourth),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third, fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, Matrix2x2.Accessible second, double third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second.Xx(), third, fourth),
+                operator.applyAsDouble(first.Xy(), second.Xy(), third, fourth),
+                operator.applyAsDouble(first.Yx(), second.Yx(), third, fourth),
+                operator.applyAsDouble(first.Yy(), second.Yy(), third, fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second, third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second, third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second, third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second, third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, Matrix2x2.Accessible third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth),
+                operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth),
+                operator.applyAsDouble(first.Yx(), second, third.Yx(), fourth),
+                operator.applyAsDouble(first.Yy(), second, third.Yy(), fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, Matrix2x2.Accessible third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second, third.Xx(), fourth),
+                operator.applyAsDouble(first.Xy(), second, third.Xy(), fourth),
+                operator.applyAsDouble(first.Yx(), second, third.Yx(), fourth),
+                operator.applyAsDouble(first.Yy(), second, third.Yy(), fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, double third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second, third, fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second, third, fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second, third, fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second, third, fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, double third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second, third, fourth.Xx()),
+                operator.applyAsDouble(first.Xy(), second, third, fourth.Xy()),
+                operator.applyAsDouble(first.Yx(), second, third, fourth.Yx()),
+                operator.applyAsDouble(first.Yy(), second, third, fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, double third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first.Xx(), second, third, fourth),
+                operator.applyAsDouble(first.Xy(), second, third, fourth),
+                operator.applyAsDouble(first.Yx(), second, third, fourth),
+                operator.applyAsDouble(first.Yy(), second, third, fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, Matrix2x2.Accessible first, double second, double third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first.Xx(), second, third, fourth),
+                operator.applyAsDouble(first.Xy(), second, third, fourth),
+                operator.applyAsDouble(first.Yx(), second, third, fourth),
+                operator.applyAsDouble(first.Yy(), second, third, fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first, second.Yx(), third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first, second.Yy(), third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first, second.Yx(), third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first, second.Yy(), third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth),
+                operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth),
+                operator.applyAsDouble(first, second.Yx(), third.Yx(), fourth),
+                operator.applyAsDouble(first, second.Yy(), third.Yy(), fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, Matrix2x2.Accessible third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second.Xx(), third.Xx(), fourth),
+                operator.applyAsDouble(first, second.Xy(), third.Xy(), fourth),
+                operator.applyAsDouble(first, second.Yx(), third.Yx(), fourth),
+                operator.applyAsDouble(first, second.Yy(), third.Yy(), fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, double third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second.Xx(), third, fourth.Xx()),
+                operator.applyAsDouble(first, second.Xy(), third, fourth.Xy()),
+                operator.applyAsDouble(first, second.Yx(), third, fourth.Yx()),
+                operator.applyAsDouble(first, second.Yy(), third, fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, double third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second.Xx(), third, fourth.Xx()),
+                operator.applyAsDouble(first, second.Xy(), third, fourth.Xy()),
+                operator.applyAsDouble(first, second.Yx(), third, fourth.Yx()),
+                operator.applyAsDouble(first, second.Yy(), third, fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, double third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second.Xx(), third, fourth),
+                operator.applyAsDouble(first, second.Xy(), third, fourth),
+                operator.applyAsDouble(first, second.Yx(), third, fourth),
+                operator.applyAsDouble(first, second.Yy(), third, fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, Matrix2x2.Accessible second, double third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second.Xx(), third, fourth),
+                operator.applyAsDouble(first, second.Xy(), third, fourth),
+                operator.applyAsDouble(first, second.Yx(), third, fourth),
+                operator.applyAsDouble(first, second.Yy(), third, fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, double second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second, third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first, second, third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first, second, third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first, second, third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, Matrix2x2.Accessible third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second, third.Xx(), fourth.Xx()),
+                operator.applyAsDouble(first, second, third.Xy(), fourth.Xy()),
+                operator.applyAsDouble(first, second, third.Yx(), fourth.Yx()),
+                operator.applyAsDouble(first, second, third.Yy(), fourth.Yy())
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, double second, Matrix2x2.Accessible third, double fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second, third.Xx(), fourth),
+                operator.applyAsDouble(first, second, third.Xy(), fourth),
+                operator.applyAsDouble(first, second, third.Yx(), fourth),
+                operator.applyAsDouble(first, second, third.Yy(), fourth)
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, Matrix2x2.Accessible third, double fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second, third.Xx(), fourth),
+                operator.applyAsDouble(first, second, third.Xy(), fourth),
+                operator.applyAsDouble(first, second, third.Yx(), fourth),
+                operator.applyAsDouble(first, second, third.Yy(), fourth)
+        );
+    }
+
+    public static <R> R apply(DoubleQuaternaryOperator operator, double first, double second, double third, Matrix2x2.Accessible fourth, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                operator.applyAsDouble(first, second, third, fourth.Xx()),
+                operator.applyAsDouble(first, second, third, fourth.Xy()),
+                operator.applyAsDouble(first, second, third, fourth.Yx()),
+                operator.applyAsDouble(first, second, third, fourth.Yy())
+        );
+    }
+
+    public static void apply(Matrix2x2.Consumer resultConsumer, DoubleQuaternaryOperator operator, double first, double second, double third, Matrix2x2.Accessible fourth) {
+        resultConsumer.XYxy(
+                operator.applyAsDouble(first, second, third, fourth.Xx()),
+                operator.applyAsDouble(first, second, third, fourth.Xy()),
+                operator.applyAsDouble(first, second, third, fourth.Yx()),
+                operator.applyAsDouble(first, second, third, fourth.Yy())
         );
     }
 

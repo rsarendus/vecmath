@@ -5,11 +5,57 @@ public final class VecMath {
     private VecMath() {}
 
     public static double min(double value1, double value2) {
-        return (value1 <= value2) ? value1 : value2;
+        double result = value1;
+
+        if (value2 < result) result = value2;
+
+        return result;
     }
 
     public static double max(double value1, double value2) {
-        return (value1 >= value2) ? value1 : value2;
+        double result = value1;
+
+        if (value2 > result) result = value2;
+
+        return result;
+    }
+
+    public static double min(double value1, double value2, double value3) {
+        double result = value1;
+
+        if (value2 < result) result = value2;
+        if (value3 < result) result = value3;
+
+        return result;
+    }
+
+    public static double max(double value1, double value2, double value3) {
+        double result = value1;
+
+        if (value2 > result) result = value2;
+        if (value3 > result) result = value3;
+
+        return result;
+    }
+
+    public static double min(double value1, double value2, double value3, double value4) {
+        double result = value1;
+
+        if (value2 < result) result = value2;
+        if (value3 < result) result = value3;
+        if (value4 < result) result = value4;
+
+        return result;
+    }
+
+    public static double max(double value1, double value2, double value3, double value4) {
+        double result = value1;
+
+        if (value2 > result) result = value2;
+        if (value3 > result) result = value3;
+        if (value4 > result) result = value4;
+
+        return result;
     }
 
     public static double clamp(double value, double min, double max) {

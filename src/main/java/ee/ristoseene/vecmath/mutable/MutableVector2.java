@@ -1,4 +1,4 @@
-package ee.ristoseene.vecmath.vector2;
+package ee.ristoseene.vecmath.mutable;
 
 import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector2;

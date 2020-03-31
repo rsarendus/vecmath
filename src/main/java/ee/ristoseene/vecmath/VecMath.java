@@ -557,6 +557,13 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y);
     }
 
+    public static double dotSelf(Vector2.Accessible vector) {
+        final double x = vector.x();
+        final double y = vector.y();
+
+        return x * x + y * y;
+    }
+
     public static double dot(Vector2.Accessible a, double b) {
         return a.x() * b + a.y() * b;
     }
@@ -1218,6 +1225,14 @@ public final class VecMath {
         final double z = a.z() - b.z();
 
         return Math.sqrt(x * x + y * y + z * z);
+    }
+
+    public static double dotSelf(Vector3.Accessible vector) {
+        final double x = vector.x();
+        final double y = vector.y();
+        final double z = vector.z();
+
+        return x * x + y * y + z * z;
     }
 
     public static double dot(Vector3.Accessible a, double b) {
@@ -1997,6 +2012,15 @@ public final class VecMath {
         final double w = a.w() - b.w();
 
         return Math.sqrt(x * x + y * y + z * z + w * w);
+    }
+
+    public static double dotSelf(Vector4.Accessible vector) {
+        final double x = vector.x();
+        final double y = vector.y();
+        final double z = vector.z();
+        final double w = vector.w();
+
+        return x * x + y * y + z * z + w * w;
     }
 
     public static double dot(Vector4.Accessible a, double b) {

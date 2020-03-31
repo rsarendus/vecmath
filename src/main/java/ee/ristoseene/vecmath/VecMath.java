@@ -515,21 +515,21 @@ public final class VecMath {
         );
     }
 
-    public static double lengthSqr(Vector2.Accessible vector) {
+    public static double lengthSquared(Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
 
         return x * x + y * y;
     }
 
-    public static double distanceSqr(Vector2.Accessible a, double b) {
+    public static double distanceSquared(Vector2.Accessible a, double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
 
         return x * x + y * y;
     }
 
-    public static double distanceSqr(Vector2.Accessible a, Vector2.Accessible b) {
+    public static double distanceSquared(Vector2.Accessible a, Vector2.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
 
@@ -1172,7 +1172,7 @@ public final class VecMath {
         );
     }
 
-    public static double lengthSqr(Vector3.Accessible vector) {
+    public static double lengthSquared(Vector3.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1180,7 +1180,7 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
-    public static double distanceSqr(Vector3.Accessible a, double b) {
+    public static double distanceSquared(Vector3.Accessible a, double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
@@ -1188,7 +1188,7 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
-    public static double distanceSqr(Vector3.Accessible a, Vector3.Accessible b) {
+    public static double distanceSquared(Vector3.Accessible a, Vector3.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
@@ -1945,7 +1945,7 @@ public final class VecMath {
         );
     }
 
-    public static double lengthSqr(Vector4.Accessible vector) {
+    public static double lengthSquared(Vector4.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1954,7 +1954,7 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
-    public static double distanceSqr(Vector4.Accessible a, double b) {
+    public static double distanceSquared(Vector4.Accessible a, double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
@@ -1963,7 +1963,7 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
-    public static double distanceSqr(Vector4.Accessible a, Vector4.Accessible b) {
+    public static double distanceSquared(Vector4.Accessible a, Vector4.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();

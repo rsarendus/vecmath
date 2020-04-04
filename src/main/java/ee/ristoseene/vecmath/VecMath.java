@@ -213,6 +213,54 @@ public final class VecMath {
         );
     }
 
+    public static <R> R clamp(double value, Vector2.Accessible min, double max, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.x(), max),
+                clamp(value, min.y(), max)
+        );
+    }
+
+    public static void clamp(Vector2.Consumer resultConsumer, double value, Vector2.Accessible min, double max) {
+        resultConsumer.xy(
+                clamp(value, min.x(), max),
+                clamp(value, min.y(), max)
+        );
+    }
+
+    public static <R> R clamp(double value, double min, Vector2.Accessible max, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min, max.x()),
+                clamp(value, min, max.y())
+        );
+    }
+
+    public static void clamp(Vector2.Consumer resultConsumer, double value, double min, Vector2.Accessible max) {
+        resultConsumer.xy(
+                clamp(value, min, max.x()),
+                clamp(value, min, max.y())
+        );
+    }
+
+    public static <R> R lerp(Vector2.Accessible value1, double value2, double t, Vector2.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        return resultFactory.create(
+                value1.x() * oneMinusT + value2T,
+                value1.y() * oneMinusT + value2T
+        );
+    }
+
+    public static void lerp(Vector2.Consumer resultConsumer, Vector2.Accessible value1, double value2, double t) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        resultConsumer.xy(
+                value1.x() * oneMinusT + value2T,
+                value1.y() * oneMinusT + value2T
+        );
+    }
+
     public static <R> R lerp(Vector2.Accessible value1, Vector2.Accessible value2, double t, Vector2.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
 
@@ -228,6 +276,24 @@ public final class VecMath {
         resultConsumer.xy(
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t
+        );
+    }
+
+    public static <R> R lerp(double value1, Vector2.Accessible value2, double t, Vector2.Factory<R> resultFactory) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        return resultFactory.create(
+                value1OneMinusT + value2.x() * t,
+                value1OneMinusT + value2.y() * t
+        );
+    }
+
+    public static void lerp(Vector2.Consumer resultConsumer, double value1, Vector2.Accessible value2, double t) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        resultConsumer.xy(
+                value1OneMinusT + value2.x() * t,
+                value1OneMinusT + value2.y() * t
         );
     }
 
@@ -256,6 +322,34 @@ public final class VecMath {
         resultConsumer.xy(
                 lerp(value1.x(), value2.x(), t.x()),
                 lerp(value1.y(), value2.y(), t.y())
+        );
+    }
+
+    public static <R> R lerp(double value1, Vector2.Accessible value2, Vector2.Accessible t, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2.x(), t.x()),
+                lerp(value1, value2.y(), t.y())
+        );
+    }
+
+    public static void lerp(Vector2.Consumer resultConsumer, double value1, Vector2.Accessible value2, Vector2.Accessible t) {
+        resultConsumer.xy(
+                lerp(value1, value2.x(), t.x()),
+                lerp(value1, value2.y(), t.y())
+        );
+    }
+
+    public static <R> R lerp(double value1, double value2, Vector2.Accessible t, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2, t.x()),
+                lerp(value1, value2, t.y())
+        );
+    }
+
+    public static void lerp(Vector2.Consumer resultConsumer, double value1, double value2, Vector2.Accessible t) {
+        resultConsumer.xy(
+                lerp(value1, value2, t.x()),
+                lerp(value1, value2, t.y())
         );
     }
 
@@ -487,20 +581,6 @@ public final class VecMath {
         );
     }
 
-    public static <R> R power(double base, Vector2.Accessible exponent, Vector2.Factory<R> resultFactory) {
-        return resultFactory.create(
-                Math.pow(base, exponent.x()),
-                Math.pow(base, exponent.y())
-        );
-    }
-
-    public static void power(Vector2.Consumer resultConsumer, double base, Vector2.Accessible exponent) {
-        resultConsumer.xy(
-                Math.pow(base, exponent.x()),
-                Math.pow(base, exponent.y())
-        );
-    }
-
     public static <R> R power(Vector2.Accessible base, Vector2.Accessible exponent, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
                 Math.pow(base.x(), exponent.x()),
@@ -512,6 +592,20 @@ public final class VecMath {
         resultConsumer.xy(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y())
+        );
+    }
+
+    public static <R> R power(double base, Vector2.Accessible exponent, Vector2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y())
+        );
+    }
+
+    public static void power(Vector2.Consumer resultConsumer, double base, Vector2.Accessible exponent) {
+        resultConsumer.xy(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y())
         );
     }
 
@@ -835,6 +929,60 @@ public final class VecMath {
         );
     }
 
+    public static <R> R clamp(double value, Vector3.Accessible min, double max, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.x(), max),
+                clamp(value, min.y(), max),
+                clamp(value, min.z(), max)
+        );
+    }
+
+    public static void clamp(Vector3.Consumer resultConsumer, double value, Vector3.Accessible min, double max) {
+        resultConsumer.xyz(
+                clamp(value, min.x(), max),
+                clamp(value, min.y(), max),
+                clamp(value, min.z(), max)
+        );
+    }
+
+    public static <R> R clamp(double value, double min, Vector3.Accessible max, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min, max.x()),
+                clamp(value, min, max.y()),
+                clamp(value, min, max.z())
+        );
+    }
+
+    public static void clamp(Vector3.Consumer resultConsumer, double value, double min, Vector3.Accessible max) {
+        resultConsumer.xyz(
+                clamp(value, min, max.x()),
+                clamp(value, min, max.y()),
+                clamp(value, min, max.z())
+        );
+    }
+
+    public static <R> R lerp(Vector3.Accessible value1, double value2, double t, Vector3.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        return resultFactory.create(
+                value1.x() * oneMinusT + value2T,
+                value1.y() * oneMinusT + value2T,
+                value1.z() * oneMinusT + value2T
+        );
+    }
+
+    public static void lerp(Vector3.Consumer resultConsumer, Vector3.Accessible value1, double value2, double t) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        resultConsumer.xyz(
+                value1.x() * oneMinusT + value2T,
+                value1.y() * oneMinusT + value2T,
+                value1.z() * oneMinusT + value2T
+        );
+    }
+
     public static <R> R lerp(Vector3.Accessible value1, Vector3.Accessible value2, double t, Vector3.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
 
@@ -852,6 +1000,26 @@ public final class VecMath {
                 value1.x() * oneMinusT + value2.x() * t,
                 value1.y() * oneMinusT + value2.y() * t,
                 value1.z() * oneMinusT + value2.z() * t
+        );
+    }
+
+    public static <R> R lerp(double value1, Vector3.Accessible value2, double t, Vector3.Factory<R> resultFactory) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        return resultFactory.create(
+                value1OneMinusT + value2.x() * t,
+                value1OneMinusT + value2.y() * t,
+                value1OneMinusT + value2.z() * t
+        );
+    }
+
+    public static void lerp(Vector3.Consumer resultConsumer, double value1, Vector3.Accessible value2, double t) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        resultConsumer.xyz(
+                value1OneMinusT + value2.x() * t,
+                value1OneMinusT + value2.y() * t,
+                value1OneMinusT + value2.z() * t
         );
     }
 
@@ -884,6 +1052,38 @@ public final class VecMath {
                 lerp(value1.x(), value2.x(), t.x()),
                 lerp(value1.y(), value2.y(), t.y()),
                 lerp(value1.z(), value2.z(), t.z())
+        );
+    }
+
+    public static <R> R lerp(double value1, Vector3.Accessible value2, Vector3.Accessible t, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2.x(), t.x()),
+                lerp(value1, value2.y(), t.y()),
+                lerp(value1, value2.z(), t.z())
+        );
+    }
+
+    public static void lerp(Vector3.Consumer resultConsumer, double value1, Vector3.Accessible value2, Vector3.Accessible t) {
+        resultConsumer.xyz(
+                lerp(value1, value2.x(), t.x()),
+                lerp(value1, value2.y(), t.y()),
+                lerp(value1, value2.z(), t.z())
+        );
+    }
+
+    public static <R> R lerp(double value1, double value2, Vector3.Accessible t, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2, t.x()),
+                lerp(value1, value2, t.y()),
+                lerp(value1, value2, t.z())
+        );
+    }
+
+    public static void lerp(Vector3.Consumer resultConsumer, double value1, double value2, Vector3.Accessible t) {
+        resultConsumer.xyz(
+                lerp(value1, value2, t.x()),
+                lerp(value1, value2, t.y()),
+                lerp(value1, value2, t.z())
         );
     }
 
@@ -1147,22 +1347,6 @@ public final class VecMath {
         );
     }
 
-    public static <R> R power(double base, Vector3.Accessible exponent, Vector3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                Math.pow(base, exponent.x()),
-                Math.pow(base, exponent.y()),
-                Math.pow(base, exponent.z())
-        );
-    }
-
-    public static void power(Vector3.Consumer resultConsumer, double base, Vector3.Accessible exponent) {
-        resultConsumer.xyz(
-                Math.pow(base, exponent.x()),
-                Math.pow(base, exponent.y()),
-                Math.pow(base, exponent.z())
-        );
-    }
-
     public static <R> R power(Vector3.Accessible base, Vector3.Accessible exponent, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
                 Math.pow(base.x(), exponent.x()),
@@ -1176,6 +1360,22 @@ public final class VecMath {
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
                 Math.pow(base.z(), exponent.z())
+        );
+    }
+
+    public static <R> R power(double base, Vector3.Accessible exponent, Vector3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z())
+        );
+    }
+
+    public static void power(Vector3.Consumer resultConsumer, double base, Vector3.Accessible exponent) {
+        resultConsumer.xyz(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z())
         );
     }
 
@@ -1574,6 +1774,66 @@ public final class VecMath {
         );
     }
 
+    public static <R> R clamp(double value, Vector4.Accessible min, double max, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.x(), max),
+                clamp(value, min.y(), max),
+                clamp(value, min.z(), max),
+                clamp(value, min.w(), max)
+        );
+    }
+
+    public static void clamp(Vector4.Consumer resultConsumer, double value, Vector4.Accessible min, double max) {
+        resultConsumer.xyzw(
+                clamp(value, min.x(), max),
+                clamp(value, min.y(), max),
+                clamp(value, min.z(), max),
+                clamp(value, min.w(), max)
+        );
+    }
+
+    public static <R> R clamp(double value, double min, Vector4.Accessible max, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min, max.x()),
+                clamp(value, min, max.y()),
+                clamp(value, min, max.z()),
+                clamp(value, min, max.w())
+        );
+    }
+
+    public static void clamp(Vector4.Consumer resultConsumer, double value, double min, Vector4.Accessible max) {
+        resultConsumer.xyzw(
+                clamp(value, min, max.x()),
+                clamp(value, min, max.y()),
+                clamp(value, min, max.z()),
+                clamp(value, min, max.w())
+        );
+    }
+
+    public static <R> R lerp(Vector4.Accessible value1, double value2, double t, Vector4.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        return resultFactory.create(
+                value1.x() * oneMinusT + value2T,
+                value1.y() * oneMinusT + value2T,
+                value1.z() * oneMinusT + value2T,
+                value1.w() * oneMinusT + value2T
+        );
+    }
+
+    public static void lerp(Vector4.Consumer resultConsumer, Vector4.Accessible value1, double value2, double t) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        resultConsumer.xyzw(
+                value1.x() * oneMinusT + value2T,
+                value1.y() * oneMinusT + value2T,
+                value1.z() * oneMinusT + value2T,
+                value1.w() * oneMinusT + value2T
+        );
+    }
+
     public static <R> R lerp(Vector4.Accessible value1, Vector4.Accessible value2, double t, Vector4.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
 
@@ -1593,6 +1853,28 @@ public final class VecMath {
                 value1.y() * oneMinusT + value2.y() * t,
                 value1.z() * oneMinusT + value2.z() * t,
                 value1.w() * oneMinusT + value2.w() * t
+        );
+    }
+
+    public static <R> R lerp(double value1, Vector4.Accessible value2, double t, Vector4.Factory<R> resultFactory) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        return resultFactory.create(
+                value1OneMinusT + value2.x() * t,
+                value1OneMinusT + value2.y() * t,
+                value1OneMinusT + value2.z() * t,
+                value1OneMinusT + value2.w() * t
+        );
+    }
+
+    public static void lerp(Vector4.Consumer resultConsumer, double value1, Vector4.Accessible value2, double t) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        resultConsumer.xyzw(
+                value1OneMinusT + value2.x() * t,
+                value1OneMinusT + value2.y() * t,
+                value1OneMinusT + value2.z() * t,
+                value1OneMinusT + value2.w() * t
         );
     }
 
@@ -1629,6 +1911,42 @@ public final class VecMath {
                 lerp(value1.y(), value2.y(), t.y()),
                 lerp(value1.z(), value2.z(), t.z()),
                 lerp(value1.w(), value2.w(), t.w())
+        );
+    }
+
+    public static <R> R lerp(double value1, Vector4.Accessible value2, Vector4.Accessible t, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2.x(), t.x()),
+                lerp(value1, value2.y(), t.y()),
+                lerp(value1, value2.z(), t.z()),
+                lerp(value1, value2.w(), t.w())
+        );
+    }
+
+    public static void lerp(Vector4.Consumer resultConsumer, double value1, Vector4.Accessible value2, Vector4.Accessible t) {
+        resultConsumer.xyzw(
+                lerp(value1, value2.x(), t.x()),
+                lerp(value1, value2.y(), t.y()),
+                lerp(value1, value2.z(), t.z()),
+                lerp(value1, value2.w(), t.w())
+        );
+    }
+
+    public static <R> R lerp(double value1, double value2, Vector4.Accessible t, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2, t.x()),
+                lerp(value1, value2, t.y()),
+                lerp(value1, value2, t.z()),
+                lerp(value1, value2, t.w())
+        );
+    }
+
+    public static void lerp(Vector4.Consumer resultConsumer, double value1, double value2, Vector4.Accessible t) {
+        resultConsumer.xyzw(
+                lerp(value1, value2, t.x()),
+                lerp(value1, value2, t.y()),
+                lerp(value1, value2, t.z()),
+                lerp(value1, value2, t.w())
         );
     }
 
@@ -1924,24 +2242,6 @@ public final class VecMath {
         );
     }
 
-    public static <R> R power(double base, Vector4.Accessible exponent, Vector4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                Math.pow(base, exponent.x()),
-                Math.pow(base, exponent.y()),
-                Math.pow(base, exponent.z()),
-                Math.pow(base, exponent.w())
-        );
-    }
-
-    public static void power(Vector4.Consumer resultConsumer, double base, Vector4.Accessible exponent) {
-        resultConsumer.xyzw(
-                Math.pow(base, exponent.x()),
-                Math.pow(base, exponent.y()),
-                Math.pow(base, exponent.z()),
-                Math.pow(base, exponent.w())
-        );
-    }
-
     public static <R> R power(Vector4.Accessible base, Vector4.Accessible exponent, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
                 Math.pow(base.x(), exponent.x()),
@@ -1957,6 +2257,24 @@ public final class VecMath {
                 Math.pow(base.y(), exponent.y()),
                 Math.pow(base.z(), exponent.z()),
                 Math.pow(base.w(), exponent.w())
+        );
+    }
+
+    public static <R> R power(double base, Vector4.Accessible exponent, Vector4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z()),
+                Math.pow(base, exponent.w())
+        );
+    }
+
+    public static void power(Vector4.Consumer resultConsumer, double base, Vector4.Accessible exponent) {
+        resultConsumer.xyzw(
+                Math.pow(base, exponent.x()),
+                Math.pow(base, exponent.y()),
+                Math.pow(base, exponent.z()),
+                Math.pow(base, exponent.w())
         );
     }
 
@@ -2346,6 +2664,66 @@ public final class VecMath {
         );
     }
 
+    public static <R> R clamp(double value, Matrix2x2.Accessible min, double max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.Xx(), max),
+                clamp(value, min.Xy(), max),
+                clamp(value, min.Yx(), max),
+                clamp(value, min.Yy(), max)
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, double value, Matrix2x2.Accessible min, double max) {
+        resultConsumer.XYxy(
+                clamp(value, min.Xx(), max),
+                clamp(value, min.Xy(), max),
+                clamp(value, min.Yx(), max),
+                clamp(value, min.Yy(), max)
+        );
+    }
+
+    public static <R> R clamp(double value, double min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min, max.Xx()),
+                clamp(value, min, max.Xy()),
+                clamp(value, min, max.Yx()),
+                clamp(value, min, max.Yy())
+        );
+    }
+
+    public static void clamp(Matrix2x2.Consumer resultConsumer, double value, double min, Matrix2x2.Accessible max) {
+        resultConsumer.XYxy(
+                clamp(value, min, max.Xx()),
+                clamp(value, min, max.Xy()),
+                clamp(value, min, max.Yx()),
+                clamp(value, min, max.Yy())
+        );
+    }
+
+    public static <R> R lerp(Matrix2x2.Accessible value1, double value2, double t, Matrix2x2.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        return resultFactory.create(
+                value1.Xx() * oneMinusT + value2T,
+                value1.Xy() * oneMinusT + value2T,
+                value1.Yx() * oneMinusT + value2T,
+                value1.Yy() * oneMinusT + value2T
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, double value2, double t) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        resultConsumer.XYxy(
+                value1.Xx() * oneMinusT + value2T,
+                value1.Xy() * oneMinusT + value2T,
+                value1.Yx() * oneMinusT + value2T,
+                value1.Yy() * oneMinusT + value2T
+        );
+    }
+
     public static <R> R lerp(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, double t, Matrix2x2.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
 
@@ -2365,6 +2743,28 @@ public final class VecMath {
                 value1.Xy() * oneMinusT + value2.Xy() * t,
                 value1.Yx() * oneMinusT + value2.Yx() * t,
                 value1.Yy() * oneMinusT + value2.Yy() * t
+        );
+    }
+
+    public static <R> R lerp(double value1, Matrix2x2.Accessible value2, double t, Matrix2x2.Factory<R> resultFactory) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        return resultFactory.create(
+                value1OneMinusT + value2.Xx() * t,
+                value1OneMinusT + value2.Xy() * t,
+                value1OneMinusT + value2.Yx() * t,
+                value1OneMinusT + value2.Yy() * t
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, double value1, Matrix2x2.Accessible value2, double t) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        resultConsumer.XYxy(
+                value1OneMinusT + value2.Xx() * t,
+                value1OneMinusT + value2.Xy() * t,
+                value1OneMinusT + value2.Yx() * t,
+                value1OneMinusT + value2.Yy() * t
         );
     }
 
@@ -2401,6 +2801,42 @@ public final class VecMath {
                 lerp(value1.Xy(), value2.Xy(), t.Xy()),
                 lerp(value1.Yx(), value2.Yx(), t.Yx()),
                 lerp(value1.Yy(), value2.Yy(), t.Yy())
+        );
+    }
+
+    public static <R> R lerp(double value1, Matrix2x2.Accessible value2, Matrix2x2.Accessible t, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2.Xx(), t.Xx()),
+                lerp(value1, value2.Xy(), t.Xy()),
+                lerp(value1, value2.Yx(), t.Yx()),
+                lerp(value1, value2.Yy(), t.Yy())
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, double value1, Matrix2x2.Accessible value2, Matrix2x2.Accessible t) {
+        resultConsumer.XYxy(
+                lerp(value1, value2.Xx(), t.Xx()),
+                lerp(value1, value2.Xy(), t.Xy()),
+                lerp(value1, value2.Yx(), t.Yx()),
+                lerp(value1, value2.Yy(), t.Yy())
+        );
+    }
+
+    public static <R> R lerp(double value1, double value2, Matrix2x2.Accessible t, Matrix2x2.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2, t.Xx()),
+                lerp(value1, value2, t.Xy()),
+                lerp(value1, value2, t.Yx()),
+                lerp(value1, value2, t.Yy())
+        );
+    }
+
+    public static void lerp(Matrix2x2.Consumer resultConsumer, double value1, double value2, Matrix2x2.Accessible t) {
+        resultConsumer.XYxy(
+                lerp(value1, value2, t.Xx()),
+                lerp(value1, value2, t.Xy()),
+                lerp(value1, value2, t.Yx()),
+                lerp(value1, value2, t.Yy())
         );
     }
 
@@ -2884,6 +3320,96 @@ public final class VecMath {
         );
     }
 
+    public static <R> R clamp(double value, Matrix3x3.Accessible min, double max, Matrix3x3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.Xx(), max),
+                clamp(value, min.Xy(), max),
+                clamp(value, min.Xz(), max),
+                clamp(value, min.Yx(), max),
+                clamp(value, min.Yy(), max),
+                clamp(value, min.Yz(), max),
+                clamp(value, min.Zx(), max),
+                clamp(value, min.Zy(), max),
+                clamp(value, min.Zz(), max)
+        );
+    }
+
+    public static void clamp(Matrix3x3.Consumer resultConsumer, double value, Matrix3x3.Accessible min, double max) {
+        resultConsumer.XYZxyz(
+                clamp(value, min.Xx(), max),
+                clamp(value, min.Xy(), max),
+                clamp(value, min.Xz(), max),
+                clamp(value, min.Yx(), max),
+                clamp(value, min.Yy(), max),
+                clamp(value, min.Yz(), max),
+                clamp(value, min.Zx(), max),
+                clamp(value, min.Zy(), max),
+                clamp(value, min.Zz(), max)
+        );
+    }
+
+    public static <R> R clamp(double value, double min, Matrix3x3.Accessible max, Matrix3x3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min, max.Xx()),
+                clamp(value, min, max.Xy()),
+                clamp(value, min, max.Xz()),
+                clamp(value, min, max.Yx()),
+                clamp(value, min, max.Yy()),
+                clamp(value, min, max.Yz()),
+                clamp(value, min, max.Zx()),
+                clamp(value, min, max.Zy()),
+                clamp(value, min, max.Zz())
+        );
+    }
+
+    public static void clamp(Matrix3x3.Consumer resultConsumer, double value, double min, Matrix3x3.Accessible max) {
+        resultConsumer.XYZxyz(
+                clamp(value, min, max.Xx()),
+                clamp(value, min, max.Xy()),
+                clamp(value, min, max.Xz()),
+                clamp(value, min, max.Yx()),
+                clamp(value, min, max.Yy()),
+                clamp(value, min, max.Yz()),
+                clamp(value, min, max.Zx()),
+                clamp(value, min, max.Zy()),
+                clamp(value, min, max.Zz())
+        );
+    }
+
+    public static <R> R lerp(Matrix3x3.Accessible value1, double value2, double t, Matrix3x3.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        return resultFactory.create(
+                value1.Xx() * oneMinusT + value2T,
+                value1.Xy() * oneMinusT + value2T,
+                value1.Xz() * oneMinusT + value2T,
+                value1.Yx() * oneMinusT + value2T,
+                value1.Yy() * oneMinusT + value2T,
+                value1.Yz() * oneMinusT + value2T,
+                value1.Zx() * oneMinusT + value2T,
+                value1.Zy() * oneMinusT + value2T,
+                value1.Zz() * oneMinusT + value2T
+        );
+    }
+
+    public static void lerp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2, double t) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        resultConsumer.XYZxyz(
+                value1.Xx() * oneMinusT + value2T,
+                value1.Xy() * oneMinusT + value2T,
+                value1.Xz() * oneMinusT + value2T,
+                value1.Yx() * oneMinusT + value2T,
+                value1.Yy() * oneMinusT + value2T,
+                value1.Yz() * oneMinusT + value2T,
+                value1.Zx() * oneMinusT + value2T,
+                value1.Zy() * oneMinusT + value2T,
+                value1.Zz() * oneMinusT + value2T
+        );
+    }
+
     public static <R> R lerp(Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, double t, Matrix3x3.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
 
@@ -2913,6 +3439,38 @@ public final class VecMath {
                 value1.Zx() * oneMinusT + value2.Zx() * t,
                 value1.Zy() * oneMinusT + value2.Zy() * t,
                 value1.Zz() * oneMinusT + value2.Zz() * t
+        );
+    }
+
+    public static <R> R lerp(double value1, Matrix3x3.Accessible value2, double t, Matrix3x3.Factory<R> resultFactory) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        return resultFactory.create(
+                value1OneMinusT + value2.Xx() * t,
+                value1OneMinusT + value2.Xy() * t,
+                value1OneMinusT + value2.Xz() * t,
+                value1OneMinusT + value2.Yx() * t,
+                value1OneMinusT + value2.Yy() * t,
+                value1OneMinusT + value2.Yz() * t,
+                value1OneMinusT + value2.Zx() * t,
+                value1OneMinusT + value2.Zy() * t,
+                value1OneMinusT + value2.Zz() * t
+        );
+    }
+
+    public static void lerp(Matrix3x3.Consumer resultConsumer, double value1, Matrix3x3.Accessible value2, double t) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        resultConsumer.XYZxyz(
+                value1OneMinusT + value2.Xx() * t,
+                value1OneMinusT + value2.Xy() * t,
+                value1OneMinusT + value2.Xz() * t,
+                value1OneMinusT + value2.Yx() * t,
+                value1OneMinusT + value2.Yy() * t,
+                value1OneMinusT + value2.Yz() * t,
+                value1OneMinusT + value2.Zx() * t,
+                value1OneMinusT + value2.Zy() * t,
+                value1OneMinusT + value2.Zz() * t
         );
     }
 
@@ -2969,6 +3527,62 @@ public final class VecMath {
                 lerp(value1.Zx(), value2.Zx(), t.Zx()),
                 lerp(value1.Zy(), value2.Zy(), t.Zy()),
                 lerp(value1.Zz(), value2.Zz(), t.Zz())
+        );
+    }
+
+    public static <R> R lerp(double value1, Matrix3x3.Accessible value2, Matrix3x3.Accessible t, Matrix3x3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2.Xx(), t.Xx()),
+                lerp(value1, value2.Xy(), t.Xy()),
+                lerp(value1, value2.Xz(), t.Xz()),
+                lerp(value1, value2.Yx(), t.Yx()),
+                lerp(value1, value2.Yy(), t.Yy()),
+                lerp(value1, value2.Yz(), t.Yz()),
+                lerp(value1, value2.Zx(), t.Zx()),
+                lerp(value1, value2.Zy(), t.Zy()),
+                lerp(value1, value2.Zz(), t.Zz())
+        );
+    }
+
+    public static void lerp(Matrix3x3.Consumer resultConsumer, double value1, Matrix3x3.Accessible value2, Matrix3x3.Accessible t) {
+        resultConsumer.XYZxyz(
+                lerp(value1, value2.Xx(), t.Xx()),
+                lerp(value1, value2.Xy(), t.Xy()),
+                lerp(value1, value2.Xz(), t.Xz()),
+                lerp(value1, value2.Yx(), t.Yx()),
+                lerp(value1, value2.Yy(), t.Yy()),
+                lerp(value1, value2.Yz(), t.Yz()),
+                lerp(value1, value2.Zx(), t.Zx()),
+                lerp(value1, value2.Zy(), t.Zy()),
+                lerp(value1, value2.Zz(), t.Zz())
+        );
+    }
+
+    public static <R> R lerp(double value1, double value2, Matrix3x3.Accessible t, Matrix3x3.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2, t.Xx()),
+                lerp(value1, value2, t.Xy()),
+                lerp(value1, value2, t.Xz()),
+                lerp(value1, value2, t.Yx()),
+                lerp(value1, value2, t.Yy()),
+                lerp(value1, value2, t.Yz()),
+                lerp(value1, value2, t.Zx()),
+                lerp(value1, value2, t.Zy()),
+                lerp(value1, value2, t.Zz())
+        );
+    }
+
+    public static void lerp(Matrix3x3.Consumer resultConsumer, double value1, double value2, Matrix3x3.Accessible t) {
+        resultConsumer.XYZxyz(
+                lerp(value1, value2, t.Xx()),
+                lerp(value1, value2, t.Xy()),
+                lerp(value1, value2, t.Xz()),
+                lerp(value1, value2, t.Yx()),
+                lerp(value1, value2, t.Yy()),
+                lerp(value1, value2, t.Yz()),
+                lerp(value1, value2, t.Zx()),
+                lerp(value1, value2, t.Zy()),
+                lerp(value1, value2, t.Zz())
         );
     }
 
@@ -3714,6 +4328,138 @@ public final class VecMath {
         );
     }
 
+    public static <R> R clamp(double value, Matrix4x4.Accessible min, double max, Matrix4x4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min.Xx(), max),
+                clamp(value, min.Xy(), max),
+                clamp(value, min.Xz(), max),
+                clamp(value, min.Xw(), max),
+                clamp(value, min.Yx(), max),
+                clamp(value, min.Yy(), max),
+                clamp(value, min.Yz(), max),
+                clamp(value, min.Yw(), max),
+                clamp(value, min.Zx(), max),
+                clamp(value, min.Zy(), max),
+                clamp(value, min.Zz(), max),
+                clamp(value, min.Zw(), max),
+                clamp(value, min.Tx(), max),
+                clamp(value, min.Ty(), max),
+                clamp(value, min.Tz(), max),
+                clamp(value, min.Tw(), max)
+        );
+    }
+
+    public static void clamp(Matrix4x4.Consumer resultConsumer, double value, Matrix4x4.Accessible min, double max) {
+        resultConsumer.XYZTxyzw(
+                clamp(value, min.Xx(), max),
+                clamp(value, min.Xy(), max),
+                clamp(value, min.Xz(), max),
+                clamp(value, min.Xw(), max),
+                clamp(value, min.Yx(), max),
+                clamp(value, min.Yy(), max),
+                clamp(value, min.Yz(), max),
+                clamp(value, min.Yw(), max),
+                clamp(value, min.Zx(), max),
+                clamp(value, min.Zy(), max),
+                clamp(value, min.Zz(), max),
+                clamp(value, min.Zw(), max),
+                clamp(value, min.Tx(), max),
+                clamp(value, min.Ty(), max),
+                clamp(value, min.Tz(), max),
+                clamp(value, min.Tw(), max)
+        );
+    }
+
+    public static <R> R clamp(double value, double min, Matrix4x4.Accessible max, Matrix4x4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                clamp(value, min, max.Xx()),
+                clamp(value, min, max.Xy()),
+                clamp(value, min, max.Xz()),
+                clamp(value, min, max.Xw()),
+                clamp(value, min, max.Yx()),
+                clamp(value, min, max.Yy()),
+                clamp(value, min, max.Yz()),
+                clamp(value, min, max.Yw()),
+                clamp(value, min, max.Zx()),
+                clamp(value, min, max.Zy()),
+                clamp(value, min, max.Zz()),
+                clamp(value, min, max.Zw()),
+                clamp(value, min, max.Tx()),
+                clamp(value, min, max.Ty()),
+                clamp(value, min, max.Tz()),
+                clamp(value, min, max.Tw())
+        );
+    }
+
+    public static void clamp(Matrix4x4.Consumer resultConsumer, double value, double min, Matrix4x4.Accessible max) {
+        resultConsumer.XYZTxyzw(
+                clamp(value, min, max.Xx()),
+                clamp(value, min, max.Xy()),
+                clamp(value, min, max.Xz()),
+                clamp(value, min, max.Xw()),
+                clamp(value, min, max.Yx()),
+                clamp(value, min, max.Yy()),
+                clamp(value, min, max.Yz()),
+                clamp(value, min, max.Yw()),
+                clamp(value, min, max.Zx()),
+                clamp(value, min, max.Zy()),
+                clamp(value, min, max.Zz()),
+                clamp(value, min, max.Zw()),
+                clamp(value, min, max.Tx()),
+                clamp(value, min, max.Ty()),
+                clamp(value, min, max.Tz()),
+                clamp(value, min, max.Tw())
+        );
+    }
+
+    public static <R> R lerp(Matrix4x4.Accessible value1, double value2, double t, Matrix4x4.Factory<R> resultFactory) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        return resultFactory.create(
+                value1.Xx() * oneMinusT + value2T,
+                value1.Xy() * oneMinusT + value2T,
+                value1.Xz() * oneMinusT + value2T,
+                value1.Xw() * oneMinusT + value2T,
+                value1.Yx() * oneMinusT + value2T,
+                value1.Yy() * oneMinusT + value2T,
+                value1.Yz() * oneMinusT + value2T,
+                value1.Yw() * oneMinusT + value2T,
+                value1.Zx() * oneMinusT + value2T,
+                value1.Zy() * oneMinusT + value2T,
+                value1.Zz() * oneMinusT + value2T,
+                value1.Zw() * oneMinusT + value2T,
+                value1.Tx() * oneMinusT + value2T,
+                value1.Ty() * oneMinusT + value2T,
+                value1.Tz() * oneMinusT + value2T,
+                value1.Tw() * oneMinusT + value2T
+        );
+    }
+
+    public static void lerp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2, double t) {
+        final double oneMinusT = 1.0D - t;
+        final double value2T = value2 * t;
+
+        resultConsumer.XYZTxyzw(
+                value1.Xx() * oneMinusT + value2T,
+                value1.Xy() * oneMinusT + value2T,
+                value1.Xz() * oneMinusT + value2T,
+                value1.Xw() * oneMinusT + value2T,
+                value1.Yx() * oneMinusT + value2T,
+                value1.Yy() * oneMinusT + value2T,
+                value1.Yz() * oneMinusT + value2T,
+                value1.Yw() * oneMinusT + value2T,
+                value1.Zx() * oneMinusT + value2T,
+                value1.Zy() * oneMinusT + value2T,
+                value1.Zz() * oneMinusT + value2T,
+                value1.Zw() * oneMinusT + value2T,
+                value1.Tx() * oneMinusT + value2T,
+                value1.Ty() * oneMinusT + value2T,
+                value1.Tz() * oneMinusT + value2T,
+                value1.Tw() * oneMinusT + value2T
+        );
+    }
+
     public static <R> R lerp(Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, double t, Matrix4x4.Factory<R> resultFactory) {
         final double oneMinusT = 1.0D - t;
 
@@ -3757,6 +4503,52 @@ public final class VecMath {
                 value1.Ty() * oneMinusT + value2.Ty() * t,
                 value1.Tz() * oneMinusT + value2.Tz() * t,
                 value1.Tw() * oneMinusT + value2.Tw() * t
+        );
+    }
+
+    public static <R> R lerp(double value1, Matrix4x4.Accessible value2, double t, Matrix4x4.Factory<R> resultFactory) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        return resultFactory.create(
+                value1OneMinusT + value2.Xx() * t,
+                value1OneMinusT + value2.Xy() * t,
+                value1OneMinusT + value2.Xz() * t,
+                value1OneMinusT + value2.Xw() * t,
+                value1OneMinusT + value2.Yx() * t,
+                value1OneMinusT + value2.Yy() * t,
+                value1OneMinusT + value2.Yz() * t,
+                value1OneMinusT + value2.Yw() * t,
+                value1OneMinusT + value2.Zx() * t,
+                value1OneMinusT + value2.Zy() * t,
+                value1OneMinusT + value2.Zz() * t,
+                value1OneMinusT + value2.Zw() * t,
+                value1OneMinusT + value2.Tx() * t,
+                value1OneMinusT + value2.Ty() * t,
+                value1OneMinusT + value2.Tz() * t,
+                value1OneMinusT + value2.Tw() * t
+        );
+    }
+
+    public static void lerp(Matrix4x4.Consumer resultConsumer, double value1, Matrix4x4.Accessible value2, double t) {
+        final double value1OneMinusT = value1 * (1.0D - t);
+
+        resultConsumer.XYZTxyzw(
+                value1OneMinusT + value2.Xx() * t,
+                value1OneMinusT + value2.Xy() * t,
+                value1OneMinusT + value2.Xz() * t,
+                value1OneMinusT + value2.Xw() * t,
+                value1OneMinusT + value2.Yx() * t,
+                value1OneMinusT + value2.Yy() * t,
+                value1OneMinusT + value2.Yz() * t,
+                value1OneMinusT + value2.Yw() * t,
+                value1OneMinusT + value2.Zx() * t,
+                value1OneMinusT + value2.Zy() * t,
+                value1OneMinusT + value2.Zz() * t,
+                value1OneMinusT + value2.Zw() * t,
+                value1OneMinusT + value2.Tx() * t,
+                value1OneMinusT + value2.Ty() * t,
+                value1OneMinusT + value2.Tz() * t,
+                value1OneMinusT + value2.Tw() * t
         );
     }
 
@@ -3841,6 +4633,90 @@ public final class VecMath {
                 lerp(value1.Ty(), value2.Ty(), t.Ty()),
                 lerp(value1.Tz(), value2.Tz(), t.Tz()),
                 lerp(value1.Tw(), value2.Tw(), t.Tw())
+        );
+    }
+
+    public static <R> R lerp(double value1, Matrix4x4.Accessible value2, Matrix4x4.Accessible t, Matrix4x4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2.Xx(), t.Xx()),
+                lerp(value1, value2.Xy(), t.Xy()),
+                lerp(value1, value2.Xz(), t.Xz()),
+                lerp(value1, value2.Xw(), t.Xw()),
+                lerp(value1, value2.Yx(), t.Yx()),
+                lerp(value1, value2.Yy(), t.Yy()),
+                lerp(value1, value2.Yz(), t.Yz()),
+                lerp(value1, value2.Yw(), t.Yw()),
+                lerp(value1, value2.Zx(), t.Zx()),
+                lerp(value1, value2.Zy(), t.Zy()),
+                lerp(value1, value2.Zz(), t.Zz()),
+                lerp(value1, value2.Zw(), t.Zw()),
+                lerp(value1, value2.Tx(), t.Tx()),
+                lerp(value1, value2.Ty(), t.Ty()),
+                lerp(value1, value2.Tz(), t.Tz()),
+                lerp(value1, value2.Tw(), t.Tw())
+        );
+    }
+
+    public static void lerp(Matrix4x4.Consumer resultConsumer, double value1, Matrix4x4.Accessible value2, Matrix4x4.Accessible t) {
+        resultConsumer.XYZTxyzw(
+                lerp(value1, value2.Xx(), t.Xx()),
+                lerp(value1, value2.Xy(), t.Xy()),
+                lerp(value1, value2.Xz(), t.Xz()),
+                lerp(value1, value2.Xw(), t.Xw()),
+                lerp(value1, value2.Yx(), t.Yx()),
+                lerp(value1, value2.Yy(), t.Yy()),
+                lerp(value1, value2.Yz(), t.Yz()),
+                lerp(value1, value2.Yw(), t.Yw()),
+                lerp(value1, value2.Zx(), t.Zx()),
+                lerp(value1, value2.Zy(), t.Zy()),
+                lerp(value1, value2.Zz(), t.Zz()),
+                lerp(value1, value2.Zw(), t.Zw()),
+                lerp(value1, value2.Tx(), t.Tx()),
+                lerp(value1, value2.Ty(), t.Ty()),
+                lerp(value1, value2.Tz(), t.Tz()),
+                lerp(value1, value2.Tw(), t.Tw())
+        );
+    }
+
+    public static <R> R lerp(double value1, double value2, Matrix4x4.Accessible t, Matrix4x4.Factory<R> resultFactory) {
+        return resultFactory.create(
+                lerp(value1, value2, t.Xx()),
+                lerp(value1, value2, t.Xy()),
+                lerp(value1, value2, t.Xz()),
+                lerp(value1, value2, t.Xw()),
+                lerp(value1, value2, t.Yx()),
+                lerp(value1, value2, t.Yy()),
+                lerp(value1, value2, t.Yz()),
+                lerp(value1, value2, t.Yw()),
+                lerp(value1, value2, t.Zx()),
+                lerp(value1, value2, t.Zy()),
+                lerp(value1, value2, t.Zz()),
+                lerp(value1, value2, t.Zw()),
+                lerp(value1, value2, t.Tx()),
+                lerp(value1, value2, t.Ty()),
+                lerp(value1, value2, t.Tz()),
+                lerp(value1, value2, t.Tw())
+        );
+    }
+
+    public static void lerp(Matrix4x4.Consumer resultConsumer, double value1, double value2, Matrix4x4.Accessible t) {
+        resultConsumer.XYZTxyzw(
+                lerp(value1, value2, t.Xx()),
+                lerp(value1, value2, t.Xy()),
+                lerp(value1, value2, t.Xz()),
+                lerp(value1, value2, t.Xw()),
+                lerp(value1, value2, t.Yx()),
+                lerp(value1, value2, t.Yy()),
+                lerp(value1, value2, t.Yz()),
+                lerp(value1, value2, t.Yw()),
+                lerp(value1, value2, t.Zx()),
+                lerp(value1, value2, t.Zy()),
+                lerp(value1, value2, t.Zz()),
+                lerp(value1, value2, t.Zw()),
+                lerp(value1, value2, t.Tx()),
+                lerp(value1, value2, t.Ty()),
+                lerp(value1, value2, t.Tz()),
+                lerp(value1, value2, t.Tw())
         );
     }
 

@@ -1,4 +1,4 @@
-package ee.ristoseene.vecmath.matrix4x4;
+package ee.ristoseene.vecmath.mutable;
 
 import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector4;

@@ -1,24 +1,22 @@
-package ee.ristoseene.vecmath.matrix3x3;
+package ee.ristoseene.vecmath.immutable;
 
 import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector3;
 import ee.ristoseene.vecmath.Matrix3x3;
 
-public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
+public class ImmutableMatrix3x3 implements Matrix3x3.Accessible {
 
-    private double Xx;
-    private double Xy;
-    private double Xz;
-    private double Yx;
-    private double Yy;
-    private double Yz;
-    private double Zx;
-    private double Zy;
-    private double Zz;
+    private final double Xx;
+    private final double Xy;
+    private final double Xz;
+    private final double Yx;
+    private final double Yy;
+    private final double Yz;
+    private final double Zx;
+    private final double Zy;
+    private final double Zz;
 
-    public MutableMatrix3x3() {}
-
-    public MutableMatrix3x3(double v) {
+    public ImmutableMatrix3x3(double v) {
         this.Xx = v;
         this.Xy = v;
         this.Xz = v;
@@ -30,7 +28,7 @@ public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
         this.Zz = v;
     }
 
-    public MutableMatrix3x3(double Xx, double Yy, double Zz) {
+    public ImmutableMatrix3x3(double Xx, double Yy, double Zz) {
         this.Xx = Xx;
         this.Xy = 0.0D;
         this.Xz = 0.0D;
@@ -42,7 +40,7 @@ public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
         this.Zz = Zz;
     }
 
-    public MutableMatrix3x3(
+    public ImmutableMatrix3x3(
             double Xx, double Xy, double Xz,
             double Yx, double Yy, double Yz,
             double Zx, double Zy, double Zz
@@ -58,19 +56,19 @@ public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
         this.Zz = Zz;
     }
 
-    public MutableMatrix3x3(Value.Accessible v) {
+    public ImmutableMatrix3x3(Value.Accessible v) {
         this(v.get());
     }
 
-    public MutableMatrix3x3(Value.Accessible Xx, Value.Accessible Yy, Value.Accessible Zz) {
+    public ImmutableMatrix3x3(Value.Accessible Xx, Value.Accessible Yy, Value.Accessible Zz) {
         this(Xx.get(), Yy.get(), Zz.get());
     }
 
-    public MutableMatrix3x3(Vector3.Accessible diagonal) {
+    public ImmutableMatrix3x3(Vector3.Accessible diagonal) {
         this(diagonal.x(), diagonal.y(), diagonal.z());
     }
 
-    public MutableMatrix3x3(
+    public ImmutableMatrix3x3(
             Value.Accessible Xx, Value.Accessible Xy, Value.Accessible Xz,
             Value.Accessible Yx, Value.Accessible Yy, Value.Accessible Yz,
             Value.Accessible Zx, Value.Accessible Zy, Value.Accessible Zz
@@ -82,7 +80,7 @@ public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
         );
     }
 
-    public MutableMatrix3x3(
+    public ImmutableMatrix3x3(
             Vector3.Accessible X3,
             Vector3.Accessible Y3,
             Vector3.Accessible Z3
@@ -94,7 +92,7 @@ public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
         );
     }
 
-    public MutableMatrix3x3(Matrix3x3.Accessible m) {
+    public ImmutableMatrix3x3(Matrix3x3.Accessible m) {
         this(
                 m.Xx(), m.Xy(), m.Xz(),
                 m.Yx(), m.Yy(), m.Yz(),
@@ -145,51 +143,6 @@ public class MutableMatrix3x3 implements Matrix3x3.AccessibleAndMutable {
     @Override
     public double Zz() {
         return this.Zz;
-    }
-
-    @Override
-    public void Xx(double Xx) {
-        this.Xx = Xx;
-    }
-
-    @Override
-    public void Xy(double Xy) {
-        this.Xy = Xy;
-    }
-
-    @Override
-    public void Xz(double Xz) {
-        this.Xz = Xz;
-    }
-
-    @Override
-    public void Yx(double Yx) {
-        this.Yx = Yx;
-    }
-
-    @Override
-    public void Yy(double Yy) {
-        this.Yy = Yy;
-    }
-
-    @Override
-    public void Yz(double Yz) {
-        this.Yz = Yz;
-    }
-
-    @Override
-    public void Zx(double Zx) {
-        this.Zx = Zx;
-    }
-
-    @Override
-    public void Zy(double Zy) {
-        this.Zy = Zy;
-    }
-
-    @Override
-    public void Zz(double Zz) {
-        this.Zz = Zz;
     }
 
 }

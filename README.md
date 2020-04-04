@@ -39,7 +39,7 @@ The library also provides concrete implementations of each type (excluding *Valu
 
 ### Naming Conventions and Notations
 
-**Vector components** are named using single characters: **x**, **y**, **z** and **w** (in that particular order).<br>
+**Vector components** are named using single characters: **x**, **y**, **z** and **w** (in that particular order).
 The same naming is followed by accessor and mutator methods:
 
 ```java
@@ -60,7 +60,7 @@ vector.xy(another2dVector);
 **Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties as regular vectors.
 
 **Matrix elements** are referred to by the combination of vector (**X**, **Y**, **Z**, **T**) and component names (**x**, **y**, **z**, **w**) in vector-major order.
-For example **Xx**, **Xy**, **Zx**, **Tw** and so on.<br>
+For example **Xx**, **Xy**, **Zx**, **Tw** and so on.
 The same naming is followed by single-element accessor and mutator methods:
 
 ```java
@@ -196,3 +196,14 @@ Vector4.Accessible destination4 = source.xyz((x, y, z) -> new ImmutableVector4(x
 Operations that can take the same object (or partial or swizzled references of the same object) as both the source of input and destination for output, are guaranteed to perform all the read operations from the source before any write operations to the destination take place.
 
 The same is expected from any implementing or extending classes. For example, when overriding default mutator methods, then operations like `vector.zyx(vector);`, `vector.xyz(vector.$yzx());` or `vector.zyx(vector.$yzx());` must not cause undefined behaviour.
+
+### Extendability
+
+Although concrete implementations of some of the types provided by this library exist for convenience, all the various types (vectors, matrices, etc...) offered and operated on by this library, are provided as interfaces.
+These interfaces require their implementors to implement only a handful of accessor and/or mutator methods (e.g. accessor methods of the `x` and `y` component of an immutable 2-dimensional vector).
+The vast amount of all the other methods for accessing and mutating the components in various ways, are provided by the interfaces themselves as `default` methods - which, of course, may be overridden as well if needed.
+
+The types (e.g vectors, matrices) themselves don't (and shouldn't) know about what kind of mathematical and other kinds of operations can be performed on them - except, of course, the read and write operations of their components.
+The ability to perform all mathematical and other complicated operations are provided by separate utility classes, like `VecMath` and `VecOps`, which operate only on the interfaces of the offered types.
+
+This allows both to add custom concrete implementations and to extend the capabilities of performing mathematical and other kinds of operations on all types, without breaking compatibility with this library or any future implementations or extensions that might emerge.

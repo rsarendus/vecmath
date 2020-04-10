@@ -7,18 +7,18 @@ A simple GLSL-inspired high-performance vector math library for 3D and computer 
 
 Building the project requires at least **JDK 8**.
 
-1. Fetch from GitHub:
+1. Fetch the project from GitHub:
 <br>`git clone https://github.com/rsarendus/vecmath.git`
 
 2. Navigate into the project's root directory:
 <br>`cd vecmath`
 
-3. Build:
+3. Build the project using [Apache Maven](https://maven.apache.org/):
    * Compile and package as a JAR into the project's `target` directory:
    <br>`mvn clean package`
-   * Or compile, package and install into the local repository:
+   * Or compile, package and install into your local repository:
    <br>`mvn clean install`
-   * Or for more options see [Maven Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
+   * Or for more options read about [Maven Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
 Or alternatively, since the library uses no external dependencies, one could copy-paste any relevant source files into their own project's source directory.
 

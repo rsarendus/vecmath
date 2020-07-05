@@ -70,7 +70,7 @@ double Xx = matrix.Xx();
 matrix.Xy(1.0);
 ```
 
-For all mathematical purposes, the base vectors of matrices are treated as columns and all other vectors which can interact with matrices as column vectors, thus post-multiplication is used for performing vector transformations:
+For all mathematical purposes, the base vectors of matrices are treated as columns and all vectors that interact with matrices as column vectors - thus vector transformations are performed by pre-multiplying the said vectors by transformation operators (i.e. transformation matrices):
 
 ```
  | Xx Yx Zx Tx |     | x |      | Xx * x + Yx * y + Zx * z + Tx * w |

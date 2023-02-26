@@ -107,52 +107,6 @@ matrix.xyXY(someOther2x2Matrix);
 ```
 
 
-### "Reference" Methods
-
-Instance methods with `$` in their names, return objects that interact with the components of the original. For example, only partial references to the original vector can be obtained:
-
-```java
-Vector3.AccessibleAndMutable original = ...
-
-Vector2.AccessibleAndMutable derived1 = original.$xy();
-Vector2.Accessible derived2 = original.const$yz();
-```
-
-Some matrices additionally provide access to partial matrices and transpose of partial matrices:
-
-```java
-Matrix3x3.AccessibleAndMutable original = ...;
-
-Matrix2x2.AccessibleAndMutable derived1 = original.$XYxy();
-Matrix2x2.Accessible derived2 = original.const$yzYZ();
-```
-
-Accessible references reflect all the changes made in the original, mutable references allow making changes in the original via the reference.
-
-
-### Component Swizzling and Replication
-
-Derived objects can reference the components of their original in any order. In case of accessible-only references, the same component can be repeated multiple times.
-
-```java
-Vector3.AccessibleAndMutable original = ...
-
-Vector3.AccessibleAndMutable derived1 = original.$yzx();
-Vector3.Accessible derived2 = original.const$yyy();
-```
-
-The same applies to mutator methods, except mutators cannot interact with the same component more than once.
-
-```java
-Vector3.Mutable vector = ...
-
-vector.yzx(another3dVector);
-vector.zy(some2dVector);
-```
-
-Component swizzling and replication is not directly provided by any methods of the matrix interfaces!
-
-
 ### Output Direction
 
 The output of various operations can be directed either to existing objects or to newly constructed ones:
@@ -193,9 +147,9 @@ Vector4.Accessible destination4 = source.xyz((x, y, z) -> new ImmutableVector4(x
 
 ### Segregation of Read and Write Operations
 
-Operations that can take the same object (or partial or swizzled references of the same object) as both the source of input and destination for output, are guaranteed to perform all the read operations from the source before any write operations to the destination take place.
+Operations that can take the same object as both the source of input and destination for output, are guaranteed to perform all the read operations from the source before any write operations to the destination take place.
 
-The same is expected from any implementing or extending classes. For example, when overriding default mutator methods, then operations like `vector.zyx(vector);`, `vector.xyz(vector.$yzx());` or `vector.zyx(vector.$yzx());` must not cause undefined behaviour.
+The same is expected from any implementing or extending classes. For example, when overriding default mutator methods, then operations like `vector.zyx(vector);` must not cause undefined behaviour.
 
 ### Extendability
 

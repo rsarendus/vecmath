@@ -8,14 +8,6 @@ public final class Value {
 
         double get();
 
-        default Value.Accessible const$() {
-            return this::get;
-        }
-
-        default Value.Accessible $() {
-            return this;
-        }
-
         default <R> R get(Value.Factory<R> factory) {
             return factory.create(get());
         }
@@ -34,19 +26,9 @@ public final class Value {
             set(v.get());
         }
 
-        default Value.Mutable $() {
-            return this;
-        }
-
     }
 
-    public interface AccessibleAndMutable extends Accessible, Mutable {
-
-        default Value.AccessibleAndMutable $() {
-            return this;
-        }
-
-    }
+    public interface AccessibleAndMutable extends Accessible, Mutable {}
 
     @FunctionalInterface
     public interface Consumer {

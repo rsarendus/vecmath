@@ -16,42 +16,6 @@ public final class Matrix3x3 {
         double Zy();
         double Zz();
 
-        default <R> R Xx(Value.Factory<R> factory) {
-            return factory.create(Xx());
-        }
-
-        default <R> R Xy(Value.Factory<R> factory) {
-            return factory.create(Xy());
-        }
-
-        default <R> R Xz(Value.Factory<R> factory) {
-            return factory.create(Xz());
-        }
-
-        default <R> R Yx(Value.Factory<R> factory) {
-            return factory.create(Yx());
-        }
-
-        default <R> R Yy(Value.Factory<R> factory) {
-            return factory.create(Yy());
-        }
-
-        default <R> R Yz(Value.Factory<R> factory) {
-            return factory.create(Yz());
-        }
-
-        default <R> R Zx(Value.Factory<R> factory) {
-            return factory.create(Zx());
-        }
-
-        default <R> R Zy(Value.Factory<R> factory) {
-            return factory.create(Zy());
-        }
-
-        default <R> R Zz(Value.Factory<R> factory) {
-            return factory.create(Zz());
-        }
-
         default <R> R Xxy(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Xy());
         }
@@ -202,42 +166,6 @@ public final class Matrix3x3 {
 
         default <R> R xyzXYZ(Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
-        }
-
-        default void XxTo(Value.Consumer consumer) {
-            consumer.set(Xx());
-        }
-
-        default void XyTo(Value.Consumer consumer) {
-            consumer.set(Xy());
-        }
-
-        default void XzTo(Value.Consumer consumer) {
-            consumer.set(Xz());
-        }
-
-        default void YxTo(Value.Consumer consumer) {
-            consumer.set(Yx());
-        }
-
-        default void YyTo(Value.Consumer consumer) {
-            consumer.set(Yy());
-        }
-
-        default void YzTo(Value.Consumer consumer) {
-            consumer.set(Yz());
-        }
-
-        default void ZxTo(Value.Consumer consumer) {
-            consumer.set(Zx());
-        }
-
-        default void ZyTo(Value.Consumer consumer) {
-            consumer.set(Zy());
-        }
-
-        default void ZzTo(Value.Consumer consumer) {
-            consumer.set(Zz());
         }
 
         default void XxyTo(Vector2.Consumer consumer) {
@@ -850,42 +778,6 @@ public final class Matrix3x3 {
             Zx(Zx);
             Zy(Zy);
             Zz(Zz);
-        }
-
-        default void Xx(Value.Accessible Xx) {
-            Xx(Xx.get());
-        }
-
-        default void Xy(Value.Accessible Xy) {
-            Xy(Xy.get());
-        }
-
-        default void Xz(Value.Accessible Xz) {
-            Xz(Xz.get());
-        }
-
-        default void Yx(Value.Accessible Yx) {
-            Yx(Yx.get());
-        }
-
-        default void Yy(Value.Accessible Yy) {
-            Yy(Yy.get());
-        }
-
-        default void Yz(Value.Accessible Yz) {
-            Yz(Yz.get());
-        }
-
-        default void Zx(Value.Accessible Zx) {
-            Zx(Zx.get());
-        }
-
-        default void Zy(Value.Accessible Zy) {
-            Zy(Zy.get());
-        }
-
-        default void Zz(Value.Accessible Zz) {
-            Zz(Zz.get());
         }
 
         default void Xxy(Vector2.Accessible v) {

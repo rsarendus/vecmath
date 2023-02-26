@@ -1,6 +1,5 @@
 package ee.ristoseene.vecmath.mutable;
 
-import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector2;
 
 public class MutableVector2 implements Vector2.AccessibleAndMutable {
@@ -18,14 +17,6 @@ public class MutableVector2 implements Vector2.AccessibleAndMutable {
     public MutableVector2(double x, double y) {
         this.x = x;
         this.y = y;
-    }
-
-    public MutableVector2(Value.Accessible v) {
-        this(v.get());
-    }
-
-    public MutableVector2(Value.Accessible x, Value.Accessible y) {
-        this(x.get(), y.get());
     }
 
     public MutableVector2(Vector2.Accessible xy) {

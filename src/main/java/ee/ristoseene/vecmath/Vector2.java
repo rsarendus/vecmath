@@ -9,14 +9,6 @@ public final class Vector2 {
         double x();
         double y();
 
-        default <R> R x(Value.Factory<R> factory) {
-            return factory.create(x());
-        }
-
-        default <R> R y(Value.Factory<R> factory) {
-            return factory.create(y());
-        }
-
         default <R> R xx(Vector2.Factory<R> factory) {
             return factory.create(x(), x());
         }
@@ -127,14 +119,6 @@ public final class Vector2 {
 
         default <R> R yyyy(Vector4.Factory<R> factory) {
             return factory.create(y(), y(), y(), y());
-        }
-
-        default void xTo(Value.Consumer consumer) {
-            consumer.set(x());
-        }
-
-        default void yTo(Value.Consumer consumer) {
-            consumer.set(y());
         }
 
         default void xxTo(Vector2.Consumer consumer) {
@@ -269,14 +253,6 @@ public final class Vector2 {
         default void yx(double y, double x) {
             x(x);
             y(y);
-        }
-
-        default void x(Value.Accessible x) {
-            x(x.get());
-        }
-
-        default void y(Value.Accessible y) {
-            y(y.get());
         }
 
         default void xy(Vector2.Accessible v) {

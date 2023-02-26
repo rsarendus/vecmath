@@ -1,6 +1,5 @@
 package ee.ristoseene.vecmath.immutable;
 
-import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector3;
 import ee.ristoseene.vecmath.Matrix3x3;
 
@@ -56,28 +55,8 @@ public class ImmutableMatrix3x3 implements Matrix3x3.Accessible {
         this.Zz = Zz;
     }
 
-    public ImmutableMatrix3x3(Value.Accessible v) {
-        this(v.get());
-    }
-
-    public ImmutableMatrix3x3(Value.Accessible Xx, Value.Accessible Yy, Value.Accessible Zz) {
-        this(Xx.get(), Yy.get(), Zz.get());
-    }
-
     public ImmutableMatrix3x3(Vector3.Accessible diagonal) {
         this(diagonal.x(), diagonal.y(), diagonal.z());
-    }
-
-    public ImmutableMatrix3x3(
-            Value.Accessible Xx, Value.Accessible Xy, Value.Accessible Xz,
-            Value.Accessible Yx, Value.Accessible Yy, Value.Accessible Yz,
-            Value.Accessible Zx, Value.Accessible Zy, Value.Accessible Zz
-    ) {
-        this(
-                Xx.get(), Xy.get(), Xz.get(),
-                Yx.get(), Yy.get(), Yz.get(),
-                Zx.get(), Zy.get(), Zz.get()
-        );
     }
 
     public ImmutableMatrix3x3(

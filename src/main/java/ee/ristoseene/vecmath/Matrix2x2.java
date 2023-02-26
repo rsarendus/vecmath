@@ -11,22 +11,6 @@ public final class Matrix2x2 {
         double Yx();
         double Yy();
 
-        default <R> R Xx(Value.Factory<R> factory) {
-            return factory.create(Xx());
-        }
-
-        default <R> R Xy(Value.Factory<R> factory) {
-            return factory.create(Xy());
-        }
-
-        default <R> R Yx(Value.Factory<R> factory) {
-            return factory.create(Yx());
-        }
-
-        default <R> R Yy(Value.Factory<R> factory) {
-            return factory.create(Yy());
-        }
-
         default <R> R Xxy(Vector2.Factory<R> factory) {
             return factory.create(Xx(), Xy());
         }
@@ -53,22 +37,6 @@ public final class Matrix2x2 {
 
         default <R> R xyXY(Matrix2x2.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Xy(), Yy());
-        }
-
-        default void XxTo(Value.Consumer consumer) {
-            consumer.set(Xx());
-        }
-
-        default void XyTo(Value.Consumer consumer) {
-            consumer.set(Xy());
-        }
-
-        default void YxTo(Value.Consumer consumer) {
-            consumer.set(Yx());
-        }
-
-        default void YyTo(Value.Consumer consumer) {
-            consumer.set(Yy());
         }
 
         default void XxyTo(Vector2.Consumer consumer) {
@@ -183,22 +151,6 @@ public final class Matrix2x2 {
             Xy(Xy);
             Yx(Yx);
             Yy(Yy);
-        }
-
-        default void Xx(Value.Accessible Xx) {
-            Xx(Xx.get());
-        }
-
-        default void Xy(Value.Accessible Xy) {
-            Xy(Xy.get());
-        }
-
-        default void Yx(Value.Accessible Yx) {
-            Yx(Yx.get());
-        }
-
-        default void Yy(Value.Accessible Yy) {
-            Yy(Yy.get());
         }
 
         default void Xxy(Vector2.Accessible v) {

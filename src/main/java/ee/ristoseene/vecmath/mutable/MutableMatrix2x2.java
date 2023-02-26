@@ -1,6 +1,5 @@
 package ee.ristoseene.vecmath.mutable;
 
-import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector2;
 import ee.ristoseene.vecmath.Matrix2x2;
 
@@ -37,26 +36,8 @@ public class MutableMatrix2x2 implements Matrix2x2.AccessibleAndMutable {
         this.Yy = Yy;
     }
 
-    public MutableMatrix2x2(Value.Accessible v) {
-        this(v.get());
-    }
-
-    public MutableMatrix2x2(Value.Accessible Xx, Value.Accessible Yy) {
-        this(Xx.get(), Yy.get());
-    }
-
     public MutableMatrix2x2(Vector2.Accessible diagonal) {
         this(diagonal.x(), diagonal.y());
-    }
-
-    public MutableMatrix2x2(
-            Value.Accessible Xx, Value.Accessible Xy,
-            Value.Accessible Yx, Value.Accessible Yy
-    ) {
-        this(
-                Xx.get(), Xy.get(),
-                Yx.get(), Yy.get()
-        );
     }
 
     public MutableMatrix2x2(

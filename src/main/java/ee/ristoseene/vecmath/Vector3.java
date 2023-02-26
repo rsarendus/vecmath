@@ -10,18 +10,6 @@ public final class Vector3 {
         double y();
         double z();
 
-        default <R> R x(Value.Factory<R> factory) {
-            return factory.create(x());
-        }
-
-        default <R> R y(Value.Factory<R> factory) {
-            return factory.create(y());
-        }
-
-        default <R> R z(Value.Factory<R> factory) {
-            return factory.create(z());
-        }
-
         default <R> R xx(Vector2.Factory<R> factory) {
             return factory.create(x(), x());
         }
@@ -488,18 +476,6 @@ public final class Vector3 {
 
         default <R> R zzzz(Vector4.Factory<R> factory) {
             return factory.create(z(), z(), z(), z());
-        }
-
-        default void xTo(Value.Consumer consumer) {
-            consumer.set(x());
-        }
-
-        default void yTo(Value.Consumer consumer) {
-            consumer.set(y());
-        }
-
-        default void zTo(Value.Consumer consumer) {
-            consumer.set(z());
         }
 
         default void xxTo(Vector2.Consumer consumer) {
@@ -1063,18 +1039,6 @@ public final class Vector3 {
             x(x);
             y(y);
             z(z);
-        }
-
-        default void x(Value.Accessible x) {
-            x(x.get());
-        }
-
-        default void y(Value.Accessible y) {
-            y(y.get());
-        }
-
-        default void z(Value.Accessible z) {
-            z(z.get());
         }
 
         default void xy(Vector2.Accessible v) {

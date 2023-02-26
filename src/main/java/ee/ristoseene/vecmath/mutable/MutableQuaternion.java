@@ -1,6 +1,5 @@
 package ee.ristoseene.vecmath.mutable;
 
-import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Quaternion;
 
 public class MutableQuaternion extends MutableVector4 implements Quaternion.AccessibleAndMutable {
@@ -8,10 +7,6 @@ public class MutableQuaternion extends MutableVector4 implements Quaternion.Acce
     public MutableQuaternion() {}
 
     public MutableQuaternion(double x, double y, double z, double w) {
-        super(x, y, z, w);
-    }
-
-    public MutableQuaternion(Value.Accessible x, Value.Accessible y, Value.Accessible z, Value.Accessible w) {
         super(x, y, z, w);
     }
 

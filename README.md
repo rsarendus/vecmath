@@ -27,14 +27,13 @@ Or alternatively, since the library uses no external dependencies, one could cop
 
 The library currently offers the following types:
 
-- **Value** - a single value (1-dimensional vector)
 - **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
 - **Matrix2x2**, **Matrix3x3** and **Matrix4x4** - 2x2, 3x3 and 4x4 matrices
 - **Quaternion** - a representation of spatial rotation
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
 
-The library also provides concrete implementations of each type (excluding *Value*) in both mutable and immutable variety.
+The library also provides concrete implementations of each type in both mutable and immutable variety.
 
 
 ### Naming Conventions and Notations
@@ -153,7 +152,7 @@ The same is expected from any implementing or extending classes. For example, wh
 
 ### Extendability
 
-Although concrete implementations of some of the types provided by this library exist for convenience, all the various types (vectors, matrices, etc...) offered and operated on by this library, are provided as interfaces.
+Although some concrete implementations of the types provided by this library exist for convenience, all the various types (vectors, matrices, etc...) offered and operated on by this library, are provided as interfaces.
 These interfaces require their implementors to implement only a handful of accessor and/or mutator methods (e.g. accessor methods of the `x` and `y` component of an immutable 2-dimensional vector).
 The vast amount of all the other methods for accessing and mutating the components in various ways, are provided by the interfaces themselves as `default` methods - which, of course, may be overridden as well if needed.
 

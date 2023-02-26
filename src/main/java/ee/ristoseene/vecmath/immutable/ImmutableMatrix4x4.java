@@ -1,6 +1,5 @@
 package ee.ristoseene.vecmath.immutable;
 
-import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector4;
 import ee.ristoseene.vecmath.Matrix4x4;
 
@@ -85,30 +84,8 @@ public class ImmutableMatrix4x4 implements Matrix4x4.Accessible {
         this.Tw = Tw;
     }
 
-    public ImmutableMatrix4x4(Value.Accessible v) {
-        this(v.get());
-    }
-
-    public ImmutableMatrix4x4(Value.Accessible Xx, Value.Accessible Yy, Value.Accessible Zz, Value.Accessible Tw) {
-        this(Xx.get(), Yy.get(), Zz.get(), Tw.get());
-    }
-
     public ImmutableMatrix4x4(Vector4.Accessible diagonal) {
         this(diagonal.x(), diagonal.y(), diagonal.z(), diagonal.w());
-    }
-
-    public ImmutableMatrix4x4(
-            Value.Accessible Xx, Value.Accessible Xy, Value.Accessible Xz, Value.Accessible Xw,
-            Value.Accessible Yx, Value.Accessible Yy, Value.Accessible Yz, Value.Accessible Yw,
-            Value.Accessible Zx, Value.Accessible Zy, Value.Accessible Zz, Value.Accessible Zw,
-            Value.Accessible Tx, Value.Accessible Ty, Value.Accessible Tz, Value.Accessible Tw
-    ) {
-        this(
-                Xx.get(), Xy.get(), Xz.get(), Xw.get(),
-                Yx.get(), Yy.get(), Yz.get(), Yw.get(),
-                Zx.get(), Zy.get(), Zz.get(), Zw.get(),
-                Tx.get(), Ty.get(), Tz.get(), Tw.get()
-        );
     }
 
     public ImmutableMatrix4x4(

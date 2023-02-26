@@ -1,6 +1,5 @@
 package ee.ristoseene.vecmath.mutable;
 
-import ee.ristoseene.vecmath.Value;
 import ee.ristoseene.vecmath.Vector2;
 import ee.ristoseene.vecmath.Vector3;
 
@@ -24,28 +23,12 @@ public class MutableVector3 implements Vector3.AccessibleAndMutable {
         this.z = z;
     }
 
-    public MutableVector3(Value.Accessible v) {
-        this(v.get());
-    }
-
-    public MutableVector3(Value.Accessible x, Value.Accessible y, Value.Accessible z) {
-        this(x.get(), y.get(), z.get());
-    }
-
     public MutableVector3(double x, Vector2.Accessible yz) {
         this(x, yz.x(), yz.y());
     }
 
-    public MutableVector3(Value.Accessible x, Vector2.Accessible yz) {
-        this(x.get(), yz.x(), yz.y());
-    }
-
     public MutableVector3(Vector2.Accessible xy, double z) {
         this(xy.x(), xy.y(), z);
-    }
-
-    public MutableVector3(Vector2.Accessible xy, Value.Accessible z) {
-        this(xy.x(), xy.y(), z.get());
     }
 
     public MutableVector3(Vector3.Accessible xyz) {

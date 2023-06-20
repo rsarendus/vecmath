@@ -157,6 +157,6 @@ These interfaces require their implementors to implement only a handful of acces
 The vast amount of all the other methods for accessing and mutating the components in various ways, are provided by the interfaces themselves as `default` methods - which, of course, may be overridden as well if needed.
 
 The types (e.g vectors, matrices) themselves don't (and shouldn't) know about what kind of mathematical and other kinds of operations can be performed on them - except, of course, the read and write operations of their components.
-The ability to perform all mathematical and other complicated operations are provided by separate utility classes, like `VecMath` and `VecOps`, which operate only on the interfaces of the offered types.
+The ability to perform all mathematical and other complicated operations are provided by separate utility classes, like `VecMath`, which operate only on the interfaces of the offered types.
 
 This allows both to add custom concrete implementations and to extend the capabilities of performing mathematical and other kinds of operations on all types, without breaking compatibility with this library or any future implementations or extensions that might emerge.

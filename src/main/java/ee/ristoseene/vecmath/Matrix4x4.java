@@ -4,6 +4,30 @@ public final class Matrix4x4 {
 
     private Matrix4x4() {}
 
+    @FunctionalInterface
+    public interface Consumer {
+
+        void XYZTxyzw(
+                double Xx, double Xy, double Xz, double Xw,
+                double Yx, double Yy, double Yz, double Yw,
+                double Zx, double Zy, double Zz, double Zw,
+                double Tx, double Ty, double Tz, double Tw
+        );
+
+    }
+
+    @FunctionalInterface
+    public interface Factory<R> {
+
+        R create(
+                double Xx, double Xy, double Xz, double Xw,
+                double Yx, double Yy, double Yz, double Yw,
+                double Zx, double Zy, double Zz, double Zw,
+                double Tx, double Ty, double Tz, double Tw
+        );
+
+    }
+
     public interface Accessible {
 
         double Xx();
@@ -3155,29 +3179,5 @@ public final class Matrix4x4 {
     }
 
     public interface AccessibleAndMutable extends Accessible, Mutable {}
-
-    @FunctionalInterface
-    public interface Consumer {
-
-        void XYZTxyzw(
-                double Xx, double Xy, double Xz, double Xw,
-                double Yx, double Yy, double Yz, double Yw,
-                double Zx, double Zy, double Zz, double Zw,
-                double Tx, double Ty, double Tz, double Tw
-        );
-
-    }
-
-    @FunctionalInterface
-    public interface Factory<R> {
-
-        R create(
-                double Xx, double Xy, double Xz, double Xw,
-                double Yx, double Yy, double Yz, double Yw,
-                double Zx, double Zy, double Zz, double Zw,
-                double Tx, double Ty, double Tz, double Tw
-        );
-
-    }
 
 }

@@ -4,6 +4,20 @@ public final class Vector3 {
 
     private Vector3() {}
 
+    @FunctionalInterface
+    public interface Consumer {
+
+        void xyz(double x, double y, double z);
+
+    }
+
+    @FunctionalInterface
+    public interface Factory<R> {
+
+        R create(double x, double y, double z);
+
+    }
+
     public interface Accessible {
 
         double x();
@@ -1092,19 +1106,5 @@ public final class Vector3 {
     }
 
     public interface AccessibleAndMutable extends Accessible, Mutable {}
-
-    @FunctionalInterface
-    public interface Consumer {
-
-        void xyz(double x, double y, double z);
-
-    }
-
-    @FunctionalInterface
-    public interface Factory<R> {
-
-        R create(double x, double y, double z);
-
-    }
 
 }

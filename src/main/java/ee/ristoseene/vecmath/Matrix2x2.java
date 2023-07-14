@@ -4,6 +4,26 @@ public final class Matrix2x2 {
 
     private Matrix2x2() {}
 
+    @FunctionalInterface
+    public interface Consumer {
+
+        void XYxy(
+                double Xx, double Xy,
+                double Yx, double Yy
+        );
+
+    }
+
+    @FunctionalInterface
+    public interface Factory<R> {
+
+        R create(
+                double Xx, double Xy,
+                double Yx, double Yy
+        );
+
+    }
+
     public interface Accessible {
 
         double Xx();
@@ -184,25 +204,5 @@ public final class Matrix2x2 {
     }
 
     public interface AccessibleAndMutable extends Accessible, Mutable {}
-
-    @FunctionalInterface
-    public interface Consumer {
-
-        void XYxy(
-                double Xx, double Xy,
-                double Yx, double Yy
-        );
-
-    }
-
-    @FunctionalInterface
-    public interface Factory<R> {
-
-        R create(
-                double Xx, double Xy,
-                double Yx, double Yy
-        );
-
-    }
 
 }

@@ -4,6 +4,28 @@ public final class Matrix3x3 {
 
     private Matrix3x3() {}
 
+    @FunctionalInterface
+    public interface Consumer {
+
+        void XYZxyz(
+                double Xx, double Xy, double Xz,
+                double Yx, double Yy, double Yz,
+                double Zx, double Zy, double Zz
+        );
+
+    }
+
+    @FunctionalInterface
+    public interface Factory<R> {
+
+        R create(
+                double Xx, double Xy, double Xz,
+                double Yx, double Yy, double Yz,
+                double Zx, double Zy, double Zz
+        );
+
+    }
+
     public interface Accessible {
 
         double Xx();
@@ -935,27 +957,5 @@ public final class Matrix3x3 {
     }
 
     public interface AccessibleAndMutable extends Accessible, Mutable {}
-
-    @FunctionalInterface
-    public interface Consumer {
-
-        void XYZxyz(
-                double Xx, double Xy, double Xz,
-                double Yx, double Yy, double Yz,
-                double Zx, double Zy, double Zz
-        );
-
-    }
-
-    @FunctionalInterface
-    public interface Factory<R> {
-
-        R create(
-                double Xx, double Xy, double Xz,
-                double Yx, double Yy, double Yz,
-                double Zx, double Zy, double Zz
-        );
-
-    }
 
 }

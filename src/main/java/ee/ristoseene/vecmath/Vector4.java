@@ -4,6 +4,20 @@ public final class Vector4 {
 
     private Vector4() {}
 
+    @FunctionalInterface
+    public interface Consumer {
+
+        void xyzw(double x, double y, double z, double w);
+
+    }
+
+    @FunctionalInterface
+    public interface Factory<R> {
+
+        R create(double x, double y, double z, double w);
+
+    }
+
     public interface Accessible {
 
         double x();
@@ -3384,19 +3398,5 @@ public final class Vector4 {
     }
 
     public interface AccessibleAndMutable extends Accessible, Mutable {}
-
-    @FunctionalInterface
-    public interface Consumer {
-
-        void xyzw(double x, double y, double z, double w);
-
-    }
-
-    @FunctionalInterface
-    public interface Factory<R> {
-
-        R create(double x, double y, double z, double w);
-
-    }
 
 }

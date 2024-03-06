@@ -33,8 +33,6 @@ The library currently offers the following types:
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
 
-The library also provides concrete implementations of each type in both mutable and immutable variety.
-
 
 ### Naming Conventions and Notations
 
@@ -122,8 +120,8 @@ Vector4.Mutable result2 = ...
 VecMath.add(result2::xyz, operand1, operand2);
 VecMath.add((x, y, z) -> result2.xyzw(x, y, z, 0.0), operand1, operand2);
 
-Vector3.Accessible result3 = VecMath.add(operand1, operand2, ImmutableVector3::new);
-Vector4.Accessible result4 = VecMath.add(operand1, operand2, (x, y, z) -> new ImmutableVector4(x, y, z, 0.0));
+Vector3.Accessible result3 = VecMath.add(operand1, operand2, SomeVector3Impl::new);
+Vector4.Accessible result4 = VecMath.add(operand1, operand2, (x, y, z) -> new SomeVector4Impl(x, y, z, 0.0));
 ```
 
 Accessible types can also output their contents the same way:
@@ -139,8 +137,8 @@ Vector4.Mutable destination2 = ...
 source.xyzTo(destination2::xyz);
 source.xyzTo((x, y, z) -> destination2.xyzw(x, y, z, 0.0));
 
-Vector3.Accessible destination3 = source.xyz(ImmutableVector3::new);
-Vector4.Accessible destination4 = source.xyz((x, y, z) -> new ImmutableVector4(x, y, z, 0.0));
+Vector3.Accessible destination3 = source.xyz(SomeVector3Impl::new);
+Vector4.Accessible destination4 = source.xyz((x, y, z) -> new SomeVector4Impl(x, y, z, 0.0));
 ```
 
 
@@ -152,7 +150,7 @@ The same is expected from any implementing or extending classes. For example, wh
 
 ### Extendability
 
-Although some concrete implementations of the types provided by this library exist for convenience, all the various types (vectors, matrices, etc...) offered and operated on by this library, are provided as interfaces.
+All the various data types (vectors, matrices, etc...) offered and operated on by this library, are provided as interfaces.
 These interfaces require their implementors to implement only a handful of accessor and/or mutator methods (e.g. accessor methods of the `x` and `y` component of an immutable 2-dimensional vector).
 The vast amount of all the other methods for accessing and mutating the components in various ways, are provided by the interfaces themselves as `default` methods - which, of course, may be overridden as well if needed.
 

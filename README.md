@@ -29,7 +29,6 @@ The library currently offers the following types:
 
 - **Vector2**, **Vector3** and **Vector4** - 2, 3 and 4-dimensional vectors
 - **Matrix2x2**, **Matrix3x3** and **Matrix4x4** - 2x2, 3x3 and 4x4 matrices
-- **Quaternion** - a representation of spatial rotation
 
 Each type is exposed via **Accessible**, **Mutable** and **AccessibleAndMutable** interfaces that enable read-only, write-only and read-write operations to be performed on the objects they represent.
 
@@ -53,8 +52,6 @@ vector.xy(1.0);
 vector.xy(2.0, 3.0);
 vector.xy(another2dVector);
 ```
-
-**Quaternions** are just specialized 4-dimensional vectors and thus have all the same properties as regular vectors.
 
 **Matrix elements** are referred to by the combination of vector (**X**, **Y**, **Z**, **T**) and component names (**x**, **y**, **z**, **w**) in vector-major order.
 For example **Xx**, **Xy**, **Zx**, **Tw** and so on.

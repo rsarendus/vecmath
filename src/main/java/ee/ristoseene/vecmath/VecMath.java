@@ -5342,7 +5342,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R toRotation(Vector3.Accessible axis, double angle, Quaternion.Factory<R> resultFactory) {
+    public static <R> R toRotation(Vector3.Accessible axis, double angle, Vector4.Factory<R> resultFactory) {
         final double halfAngle = angle * 0.5D;
         final double sin = Math.sin(halfAngle);
 
@@ -5354,7 +5354,7 @@ public final class VecMath {
         );
     }
 
-    public static void toRotation(Quaternion.Consumer resultConsumer, Vector3.Accessible axis, double angle) {
+    public static void toRotation(Vector4.Consumer resultConsumer, Vector3.Accessible axis, double angle) {
         final double halfAngle = angle * 0.5D;
         final double sin = Math.sin(halfAngle);
 
@@ -5426,7 +5426,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R toRotation(Quaternion.Accessible quaternion, Matrix3x3.Factory<R> resultFactory) {
+    public static <R> R toRotation(Vector4.Accessible quaternion, Matrix3x3.Factory<R> resultFactory) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -5459,7 +5459,7 @@ public final class VecMath {
         );
     }
 
-    public static void toRotation(Matrix3x3.Consumer resultConsumer, Quaternion.Accessible quaternion) {
+    public static void toRotation(Matrix3x3.Consumer resultConsumer, Vector4.Accessible quaternion) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -5492,7 +5492,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R slerp(Quaternion.Accessible value1, Quaternion.Accessible value2, double t, Quaternion.Factory<R> resultFactory) {
+    public static <R> R quaternionSlerp(Vector4.Accessible value1, Vector4.Accessible value2, double t, Vector4.Factory<R> resultFactory) {
         final double value1X = value1.x();
         final double value1Y = value1.y();
         final double value1Z = value1.z();
@@ -5526,7 +5526,7 @@ public final class VecMath {
         );
     }
 
-    public static void slerp(Quaternion.Consumer resultConsumer, Quaternion.Accessible value1, Quaternion.Accessible value2, double t) {
+    public static void quaternionSlerp(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2, double t) {
         final double value1X = value1.x();
         final double value1Y = value1.y();
         final double value1Z = value1.z();
@@ -5560,7 +5560,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R inverse(Quaternion.Accessible quaternion, Quaternion.Factory<R> resultFactory) {
+    public static <R> R quaternionInverse(Vector4.Accessible quaternion, Vector4.Factory<R> resultFactory) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -5576,7 +5576,7 @@ public final class VecMath {
         );
     }
 
-    public static void inverse(Quaternion.Consumer resultConsumer, Quaternion.Accessible quaternion) {
+    public static void quaternionInverse(Vector4.Consumer resultConsumer, Vector4.Accessible quaternion) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -5592,7 +5592,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R multiply(Quaternion.Accessible left, Quaternion.Accessible right, Quaternion.Factory<R> resultFactory) {
+    public static <R> R quaternionMultiply(Vector4.Accessible left, Vector4.Accessible right, Vector4.Factory<R> resultFactory) {
         final double leftX = left.x();
         final double leftY = left.y();
         final double leftZ = left.z();
@@ -5611,7 +5611,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiply(Quaternion.Consumer resultConsumer, Quaternion.Accessible left, Quaternion.Accessible right) {
+    public static void quaternionMultiply(Vector4.Consumer resultConsumer, Vector4.Accessible left, Vector4.Accessible right) {
         final double leftX = left.x();
         final double leftY = left.y();
         final double leftZ = left.z();
@@ -5630,7 +5630,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R transformVector(Quaternion.Accessible quaternion, Vector3.Accessible vector, Vector3.Factory<R> resultFactory) {
+    public static <R> R quaternionTransformVector(Vector4.Accessible quaternion, Vector3.Accessible vector, Vector3.Factory<R> resultFactory) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();
@@ -5651,7 +5651,7 @@ public final class VecMath {
         );
     }
 
-    public static void transformVector(Vector3.Consumer resultConsumer, Quaternion.Accessible quaternion, Vector3.Accessible vector) {
+    public static void quaternionTransformVector(Vector3.Consumer resultConsumer, Vector4.Accessible quaternion, Vector3.Accessible vector) {
         final double quaternionX = quaternion.x();
         final double quaternionY = quaternion.y();
         final double quaternionZ = quaternion.z();

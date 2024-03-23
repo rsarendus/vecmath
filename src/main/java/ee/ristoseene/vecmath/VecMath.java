@@ -4,240 +4,145 @@ public final class VecMath {
 
     private VecMath() {}
 
-    public static double min(double value1, double value2) {
-        double result = value1;
-
-        if (value2 < result) result = value2;
-
-        return result;
-    }
-
-    public static double max(double value1, double value2) {
-        double result = value1;
-
-        if (value2 > result) result = value2;
-
-        return result;
-    }
-
-    public static double min(double value1, double value2, double value3) {
-        double result = value1;
-
-        if (value2 < result) result = value2;
-        if (value3 < result) result = value3;
-
-        return result;
-    }
-
-    public static double max(double value1, double value2, double value3) {
-        double result = value1;
-
-        if (value2 > result) result = value2;
-        if (value3 > result) result = value3;
-
-        return result;
-    }
-
-    public static double min(double value1, double value2, double value3, double value4) {
-        double result = value1;
-
-        if (value2 < result) result = value2;
-        if (value3 < result) result = value3;
-        if (value4 < result) result = value4;
-
-        return result;
-    }
-
-    public static double max(double value1, double value2, double value3, double value4) {
-        double result = value1;
-
-        if (value2 > result) result = value2;
-        if (value3 > result) result = value3;
-        if (value4 > result) result = value4;
-
-        return result;
-    }
-
     public static double clamp(double value, double min, double max) {
-        double result = value;
-
-        if (result < min) result = min;
-        if (result > max) result = max;
-
-        return result;
+        return Math.min(Math.max(value, min), max);
     }
 
-    public static double lerp(double value1, double value2, double t) {
-        return value1 * (1.0D - t) + value2 * t;
+    public static double lerp(double a, double b, double t) {
+        return a * (1.0D - t) + b * t;
     }
 
     public static double min(Vector2.Accessible vector) {
-        double tmp, result = vector.x();
-
-        if ((tmp = vector.y()) < result) result = tmp;
-
-        return result;
+        return Math.min(vector.x(), vector.y());
     }
 
     public static double max(Vector2.Accessible vector) {
-        double tmp, result = vector.x();
-
-        if ((tmp = vector.y()) > result) result = tmp;
-
-        return result;
+        return Math.max(vector.x(), vector.y());
     }
 
     public static <R> R min(Vector2.Accessible value1, double value2, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.x(), value2),
-                min(value1.y(), value2)
+                Math.min(value1.x(), value2),
+                Math.min(value1.y(), value2)
         );
     }
 
     public static void min(Vector2.Consumer resultConsumer, Vector2.Accessible value1, double value2) {
         resultConsumer.xy(
-                min(value1.x(), value2),
-                min(value1.y(), value2)
+                Math.min(value1.x(), value2),
+                Math.min(value1.y(), value2)
         );
     }
 
     public static <R> R min(Vector2.Accessible value1, Vector2.Accessible value2, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.x(), value2.x()),
-                min(value1.y(), value2.y())
+                Math.min(value1.x(), value2.x()),
+                Math.min(value1.y(), value2.y())
         );
     }
 
     public static void min(Vector2.Consumer resultConsumer, Vector2.Accessible value1, Vector2.Accessible value2) {
         resultConsumer.xy(
-                min(value1.x(), value2.x()),
-                min(value1.y(), value2.y())
+                Math.min(value1.x(), value2.x()),
+                Math.min(value1.y(), value2.y())
         );
     }
 
     public static <R> R max(Vector2.Accessible value1, double value2, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.x(), value2),
-                max(value1.y(), value2)
+                Math.max(value1.x(), value2),
+                Math.max(value1.y(), value2)
         );
     }
 
     public static void max(Vector2.Consumer resultConsumer, Vector2.Accessible value1, double value2) {
         resultConsumer.xy(
-                max(value1.x(), value2),
-                max(value1.y(), value2)
+                Math.max(value1.x(), value2),
+                Math.max(value1.y(), value2)
         );
     }
 
     public static <R> R max(Vector2.Accessible value1, Vector2.Accessible value2, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.x(), value2.x()),
-                max(value1.y(), value2.y())
+                Math.max(value1.x(), value2.x()),
+                Math.max(value1.y(), value2.y())
         );
     }
 
     public static void max(Vector2.Consumer resultConsumer, Vector2.Accessible value1, Vector2.Accessible value2) {
         resultConsumer.xy(
-                max(value1.x(), value2.x()),
-                max(value1.y(), value2.y())
+                Math.max(value1.x(), value2.x()),
+                Math.max(value1.y(), value2.y())
         );
     }
 
     public static <R> R clamp(Vector2.Accessible value, double min, double max, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min, max),
-                clamp(value.y(), min, max)
+                Math.min(Math.max(value.x(), min), max),
+                Math.min(Math.max(value.y(), min), max)
         );
     }
 
     public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, double min, double max) {
         resultConsumer.xy(
-                clamp(value.x(), min, max),
-                clamp(value.y(), min, max)
+                Math.min(Math.max(value.x(), min), max),
+                Math.min(Math.max(value.y(), min), max)
         );
     }
 
     public static <R> R clamp(Vector2.Accessible value, Vector2.Accessible min, double max, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min.x(), max),
-                clamp(value.y(), min.y(), max)
+                Math.min(Math.max(value.x(), min.x()), max),
+                Math.min(Math.max(value.y(), min.y()), max)
         );
     }
 
     public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, Vector2.Accessible min, double max) {
         resultConsumer.xy(
-                clamp(value.x(), min.x(), max),
-                clamp(value.y(), min.y(), max)
+                Math.min(Math.max(value.x(), min.x()), max),
+                Math.min(Math.max(value.y(), min.y()), max)
         );
     }
 
     public static <R> R clamp(Vector2.Accessible value, double min, Vector2.Accessible max, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min, max.x()),
-                clamp(value.y(), min, max.y())
+                Math.min(Math.max(value.x(), min), max.x()),
+                Math.min(Math.max(value.y(), min), max.y())
         );
     }
 
     public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, double min, Vector2.Accessible max) {
         resultConsumer.xy(
-                clamp(value.x(), min, max.x()),
-                clamp(value.y(), min, max.y())
+                Math.min(Math.max(value.x(), min), max.x()),
+                Math.min(Math.max(value.y(), min), max.y())
         );
     }
 
     public static <R> R clamp(Vector2.Accessible value, Vector2.Accessible min, Vector2.Accessible max, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min.x(), max.x()),
-                clamp(value.y(), min.y(), max.y())
+                Math.min(Math.max(value.x(), min.x()), max.x()),
+                Math.min(Math.max(value.y(), min.y()), max.y())
         );
     }
 
     public static void clamp(Vector2.Consumer resultConsumer, Vector2.Accessible value, Vector2.Accessible min, Vector2.Accessible max) {
         resultConsumer.xy(
-                clamp(value.x(), min.x(), max.x()),
-                clamp(value.y(), min.y(), max.y())
+                Math.min(Math.max(value.x(), min.x()), max.x()),
+                Math.min(Math.max(value.y(), min.y()), max.y())
         );
     }
 
     public static <R> R clamp(double value, Vector2.Accessible min, Vector2.Accessible max, Vector2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value, min.x(), max.x()),
-                clamp(value, min.y(), max.y())
+                Math.min(Math.max(value, min.x()), max.x()),
+                Math.min(Math.max(value, min.y()), max.y())
         );
     }
 
     public static void clamp(Vector2.Consumer resultConsumer, double value, Vector2.Accessible min, Vector2.Accessible max) {
         resultConsumer.xy(
-                clamp(value, min.x(), max.x()),
-                clamp(value, min.y(), max.y())
-        );
-    }
-
-    public static <R> R clamp(double value, Vector2.Accessible min, double max, Vector2.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min.x(), max),
-                clamp(value, min.y(), max)
-        );
-    }
-
-    public static void clamp(Vector2.Consumer resultConsumer, double value, Vector2.Accessible min, double max) {
-        resultConsumer.xy(
-                clamp(value, min.x(), max),
-                clamp(value, min.y(), max)
-        );
-    }
-
-    public static <R> R clamp(double value, double min, Vector2.Accessible max, Vector2.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min, max.x()),
-                clamp(value, min, max.y())
-        );
-    }
-
-    public static void clamp(Vector2.Consumer resultConsumer, double value, double min, Vector2.Accessible max) {
-        resultConsumer.xy(
-                clamp(value, min, max.x()),
-                clamp(value, min, max.y())
+                Math.min(Math.max(value, min.x()), max.x()),
+                Math.min(Math.max(value, min.y()), max.y())
         );
     }
 
@@ -768,196 +673,168 @@ public final class VecMath {
     }
 
     public static double min(Vector3.Accessible vector) {
-        double tmp, result = vector.x();
+        return Math.min(
+                Math.min(vector.x(), vector.y()),
+                vector.z()
+        );
+    }
 
-        if ((tmp = vector.y()) < result) result = tmp;
-        if ((tmp = vector.z()) < result) result = tmp;
-
-        return result;
+    public static double min(double x, double y, double z) {
+        return Math.min(Math.min(x, y), z);
     }
 
     public static double max(Vector3.Accessible vector) {
-        double tmp, result = vector.x();
+        return Math.max(
+                Math.max(vector.x(), vector.y()),
+                vector.z()
+        );
+    }
 
-        if ((tmp = vector.y()) > result) result = tmp;
-        if ((tmp = vector.z()) > result) result = tmp;
-
-        return result;
+    public static double max(double x, double y, double z) {
+        return Math.max(Math.max(x, y), z);
     }
 
     public static <R> R min(Vector3.Accessible value1, double value2, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.x(), value2),
-                min(value1.y(), value2),
-                min(value1.z(), value2)
+                Math.min(value1.x(), value2),
+                Math.min(value1.y(), value2),
+                Math.min(value1.z(), value2)
         );
     }
 
     public static void min(Vector3.Consumer resultConsumer, Vector3.Accessible value1, double value2) {
         resultConsumer.xyz(
-                min(value1.x(), value2),
-                min(value1.y(), value2),
-                min(value1.z(), value2)
+                Math.min(value1.x(), value2),
+                Math.min(value1.y(), value2),
+                Math.min(value1.z(), value2)
         );
     }
 
     public static <R> R min(Vector3.Accessible value1, Vector3.Accessible value2, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.x(), value2.x()),
-                min(value1.y(), value2.y()),
-                min(value1.z(), value2.z())
+                Math.min(value1.x(), value2.x()),
+                Math.min(value1.y(), value2.y()),
+                Math.min(value1.z(), value2.z())
         );
     }
 
     public static void min(Vector3.Consumer resultConsumer, Vector3.Accessible value1, Vector3.Accessible value2) {
         resultConsumer.xyz(
-                min(value1.x(), value2.x()),
-                min(value1.y(), value2.y()),
-                min(value1.z(), value2.z())
+                Math.min(value1.x(), value2.x()),
+                Math.min(value1.y(), value2.y()),
+                Math.min(value1.z(), value2.z())
         );
     }
 
     public static <R> R max(Vector3.Accessible value1, double value2, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.x(), value2),
-                max(value1.y(), value2),
-                max(value1.z(), value2)
+                Math.max(value1.x(), value2),
+                Math.max(value1.y(), value2),
+                Math.max(value1.z(), value2)
         );
     }
 
     public static void max(Vector3.Consumer resultConsumer, Vector3.Accessible value1, double value2) {
         resultConsumer.xyz(
-                max(value1.x(), value2),
-                max(value1.y(), value2),
-                max(value1.z(), value2)
+                Math.max(value1.x(), value2),
+                Math.max(value1.y(), value2),
+                Math.max(value1.z(), value2)
         );
     }
 
     public static <R> R max(Vector3.Accessible value1, Vector3.Accessible value2, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.x(), value2.x()),
-                max(value1.y(), value2.y()),
-                max(value1.z(), value2.z())
+                Math.max(value1.x(), value2.x()),
+                Math.max(value1.y(), value2.y()),
+                Math.max(value1.z(), value2.z())
         );
     }
 
     public static void max(Vector3.Consumer resultConsumer, Vector3.Accessible value1, Vector3.Accessible value2) {
         resultConsumer.xyz(
-                max(value1.x(), value2.x()),
-                max(value1.y(), value2.y()),
-                max(value1.z(), value2.z())
+                Math.max(value1.x(), value2.x()),
+                Math.max(value1.y(), value2.y()),
+                Math.max(value1.z(), value2.z())
         );
     }
 
     public static <R> R clamp(Vector3.Accessible value, double min, double max, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min, max),
-                clamp(value.y(), min, max),
-                clamp(value.z(), min, max)
+                Math.min(Math.max(value.x(), min), max),
+                Math.min(Math.max(value.y(), min), max),
+                Math.min(Math.max(value.z(), min), max)
         );
     }
 
     public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, double min, double max) {
         resultConsumer.xyz(
-                clamp(value.x(), min, max),
-                clamp(value.y(), min, max),
-                clamp(value.z(), min, max)
+                Math.min(Math.max(value.x(), min), max),
+                Math.min(Math.max(value.y(), min), max),
+                Math.min(Math.max(value.z(), min), max)
         );
     }
 
     public static <R> R clamp(Vector3.Accessible value, Vector3.Accessible min, double max, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min.x(), max),
-                clamp(value.y(), min.y(), max),
-                clamp(value.z(), min.z(), max)
+                Math.min(Math.max(value.x(), min.x()), max),
+                Math.min(Math.max(value.y(), min.y()), max),
+                Math.min(Math.max(value.z(), min.z()), max)
         );
     }
 
     public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, Vector3.Accessible min, double max) {
         resultConsumer.xyz(
-                clamp(value.x(), min.x(), max),
-                clamp(value.y(), min.y(), max),
-                clamp(value.z(), min.z(), max)
+                Math.min(Math.max(value.x(), min.x()), max),
+                Math.min(Math.max(value.y(), min.y()), max),
+                Math.min(Math.max(value.z(), min.z()), max)
         );
     }
 
     public static <R> R clamp(Vector3.Accessible value, double min, Vector3.Accessible max, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min, max.x()),
-                clamp(value.y(), min, max.y()),
-                clamp(value.z(), min, max.z())
+                Math.min(Math.max(value.x(), min), max.x()),
+                Math.min(Math.max(value.y(), min), max.y()),
+                Math.min(Math.max(value.z(), min), max.z())
         );
     }
 
     public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, double min, Vector3.Accessible max) {
         resultConsumer.xyz(
-                clamp(value.x(), min, max.x()),
-                clamp(value.y(), min, max.y()),
-                clamp(value.z(), min, max.z())
+                Math.min(Math.max(value.x(), min), max.x()),
+                Math.min(Math.max(value.y(), min), max.y()),
+                Math.min(Math.max(value.z(), min), max.z())
         );
     }
 
     public static <R> R clamp(Vector3.Accessible value, Vector3.Accessible min, Vector3.Accessible max, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min.x(), max.x()),
-                clamp(value.y(), min.y(), max.y()),
-                clamp(value.z(), min.z(), max.z())
+                Math.min(Math.max(value.x(), min.x()), max.x()),
+                Math.min(Math.max(value.y(), min.y()), max.y()),
+                Math.min(Math.max(value.z(), min.z()), max.z())
         );
     }
 
     public static void clamp(Vector3.Consumer resultConsumer, Vector3.Accessible value, Vector3.Accessible min, Vector3.Accessible max) {
         resultConsumer.xyz(
-                clamp(value.x(), min.x(), max.x()),
-                clamp(value.y(), min.y(), max.y()),
-                clamp(value.z(), min.z(), max.z())
+                Math.min(Math.max(value.x(), min.x()), max.x()),
+                Math.min(Math.max(value.y(), min.y()), max.y()),
+                Math.min(Math.max(value.z(), min.z()), max.z())
         );
     }
 
     public static <R> R clamp(double value, Vector3.Accessible min, Vector3.Accessible max, Vector3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value, min.x(), max.x()),
-                clamp(value, min.y(), max.y()),
-                clamp(value, min.z(), max.z())
+                Math.min(Math.max(value, min.x()), max.x()),
+                Math.min(Math.max(value, min.y()), max.y()),
+                Math.min(Math.max(value, min.z()), max.z())
         );
     }
 
     public static void clamp(Vector3.Consumer resultConsumer, double value, Vector3.Accessible min, Vector3.Accessible max) {
         resultConsumer.xyz(
-                clamp(value, min.x(), max.x()),
-                clamp(value, min.y(), max.y()),
-                clamp(value, min.z(), max.z())
-        );
-    }
-
-    public static <R> R clamp(double value, Vector3.Accessible min, double max, Vector3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min.x(), max),
-                clamp(value, min.y(), max),
-                clamp(value, min.z(), max)
-        );
-    }
-
-    public static void clamp(Vector3.Consumer resultConsumer, double value, Vector3.Accessible min, double max) {
-        resultConsumer.xyz(
-                clamp(value, min.x(), max),
-                clamp(value, min.y(), max),
-                clamp(value, min.z(), max)
-        );
-    }
-
-    public static <R> R clamp(double value, double min, Vector3.Accessible max, Vector3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min, max.x()),
-                clamp(value, min, max.y()),
-                clamp(value, min, max.z())
-        );
-    }
-
-    public static void clamp(Vector3.Consumer resultConsumer, double value, double min, Vector3.Accessible max) {
-        resultConsumer.xyz(
-                clamp(value, min, max.x()),
-                clamp(value, min, max.y()),
-                clamp(value, min, max.z())
+                Math.min(Math.max(value, min.x()), max.x()),
+                Math.min(Math.max(value, min.y()), max.y()),
+                Math.min(Math.max(value, min.z()), max.z())
         );
     }
 
@@ -1593,220 +1470,186 @@ public final class VecMath {
     }
 
     public static double min(Vector4.Accessible vector) {
-        double tmp, result = vector.x();
+        return Math.min(
+                Math.min(vector.x(), vector.y()),
+                Math.min(vector.z(), vector.w())
+        );
+    }
 
-        if ((tmp = vector.y()) < result) result = tmp;
-        if ((tmp = vector.z()) < result) result = tmp;
-        if ((tmp = vector.w()) < result) result = tmp;
-
-        return result;
+    public static double min(double x, double y, double z, double w) {
+        return Math.min(Math.min(x, y), Math.min(z, w));
     }
 
     public static double max(Vector4.Accessible vector) {
-        double tmp, result = vector.x();
+        return Math.max(
+                Math.max(vector.x(), vector.y()),
+                Math.max(vector.z(), vector.w())
+        );
+    }
 
-        if ((tmp = vector.y()) > result) result = tmp;
-        if ((tmp = vector.z()) > result) result = tmp;
-        if ((tmp = vector.w()) > result) result = tmp;
-
-        return result;
+    public static double max(double x, double y, double z, double w) {
+        return Math.max(Math.max(x, y), Math.max(z, w));
     }
 
     public static <R> R min(Vector4.Accessible value1, double value2, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.x(), value2),
-                min(value1.y(), value2),
-                min(value1.z(), value2),
-                min(value1.w(), value2)
+                Math.min(value1.x(), value2),
+                Math.min(value1.y(), value2),
+                Math.min(value1.z(), value2),
+                Math.min(value1.w(), value2)
         );
     }
 
     public static void min(Vector4.Consumer resultConsumer, Vector4.Accessible value1, double value2) {
         resultConsumer.xyzw(
-                min(value1.x(), value2),
-                min(value1.y(), value2),
-                min(value1.z(), value2),
-                min(value1.w(), value2)
+                Math.min(value1.x(), value2),
+                Math.min(value1.y(), value2),
+                Math.min(value1.z(), value2),
+                Math.min(value1.w(), value2)
         );
     }
 
     public static <R> R min(Vector4.Accessible value1, Vector4.Accessible value2, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.x(), value2.x()),
-                min(value1.y(), value2.y()),
-                min(value1.z(), value2.z()),
-                min(value1.w(), value2.w())
+                Math.min(value1.x(), value2.x()),
+                Math.min(value1.y(), value2.y()),
+                Math.min(value1.z(), value2.z()),
+                Math.min(value1.w(), value2.w())
         );
     }
 
     public static void min(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2) {
         resultConsumer.xyzw(
-                min(value1.x(), value2.x()),
-                min(value1.y(), value2.y()),
-                min(value1.z(), value2.z()),
-                min(value1.w(), value2.w())
+                Math.min(value1.x(), value2.x()),
+                Math.min(value1.y(), value2.y()),
+                Math.min(value1.z(), value2.z()),
+                Math.min(value1.w(), value2.w())
         );
     }
 
     public static <R> R max(Vector4.Accessible value1, double value2, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.x(), value2),
-                max(value1.y(), value2),
-                max(value1.z(), value2),
-                max(value1.w(), value2)
+                Math.max(value1.x(), value2),
+                Math.max(value1.y(), value2),
+                Math.max(value1.z(), value2),
+                Math.max(value1.w(), value2)
         );
     }
 
     public static void max(Vector4.Consumer resultConsumer, Vector4.Accessible value1, double value2) {
         resultConsumer.xyzw(
-                max(value1.x(), value2),
-                max(value1.y(), value2),
-                max(value1.z(), value2),
-                max(value1.w(), value2)
+                Math.max(value1.x(), value2),
+                Math.max(value1.y(), value2),
+                Math.max(value1.z(), value2),
+                Math.max(value1.w(), value2)
         );
     }
 
     public static <R> R max(Vector4.Accessible value1, Vector4.Accessible value2, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.x(), value2.x()),
-                max(value1.y(), value2.y()),
-                max(value1.z(), value2.z()),
-                max(value1.w(), value2.w())
+                Math.max(value1.x(), value2.x()),
+                Math.max(value1.y(), value2.y()),
+                Math.max(value1.z(), value2.z()),
+                Math.max(value1.w(), value2.w())
         );
     }
 
     public static void max(Vector4.Consumer resultConsumer, Vector4.Accessible value1, Vector4.Accessible value2) {
         resultConsumer.xyzw(
-                max(value1.x(), value2.x()),
-                max(value1.y(), value2.y()),
-                max(value1.z(), value2.z()),
-                max(value1.w(), value2.w())
+                Math.max(value1.x(), value2.x()),
+                Math.max(value1.y(), value2.y()),
+                Math.max(value1.z(), value2.z()),
+                Math.max(value1.w(), value2.w())
         );
     }
 
     public static <R> R clamp(Vector4.Accessible value, double min, double max, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min, max),
-                clamp(value.y(), min, max),
-                clamp(value.z(), min, max),
-                clamp(value.w(), min, max)
+                Math.min(Math.max(value.x(), min), max),
+                Math.min(Math.max(value.y(), min), max),
+                Math.min(Math.max(value.z(), min), max),
+                Math.min(Math.max(value.w(), min), max)
         );
     }
 
     public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, double min, double max) {
         resultConsumer.xyzw(
-                clamp(value.x(), min, max),
-                clamp(value.y(), min, max),
-                clamp(value.z(), min, max),
-                clamp(value.w(), min, max)
+                Math.min(Math.max(value.x(), min), max),
+                Math.min(Math.max(value.y(), min), max),
+                Math.min(Math.max(value.z(), min), max),
+                Math.min(Math.max(value.w(), min), max)
         );
     }
 
     public static <R> R clamp(Vector4.Accessible value, Vector4.Accessible min, double max, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min.x(), max),
-                clamp(value.y(), min.y(), max),
-                clamp(value.z(), min.z(), max),
-                clamp(value.w(), min.w(), max)
+                Math.min(Math.max(value.x(), min.x()), max),
+                Math.min(Math.max(value.y(), min.y()), max),
+                Math.min(Math.max(value.z(), min.z()), max),
+                Math.min(Math.max(value.w(), min.w()), max)
         );
     }
 
     public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, Vector4.Accessible min, double max) {
         resultConsumer.xyzw(
-                clamp(value.x(), min.x(), max),
-                clamp(value.y(), min.y(), max),
-                clamp(value.z(), min.z(), max),
-                clamp(value.w(), min.w(), max)
+                Math.min(Math.max(value.x(), min.x()), max),
+                Math.min(Math.max(value.y(), min.y()), max),
+                Math.min(Math.max(value.z(), min.z()), max),
+                Math.min(Math.max(value.w(), min.w()), max)
         );
     }
 
     public static <R> R clamp(Vector4.Accessible value, double min, Vector4.Accessible max, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min, max.x()),
-                clamp(value.y(), min, max.y()),
-                clamp(value.z(), min, max.z()),
-                clamp(value.w(), min, max.w())
+                Math.min(Math.max(value.x(), min), max.x()),
+                Math.min(Math.max(value.y(), min), max.y()),
+                Math.min(Math.max(value.z(), min), max.z()),
+                Math.min(Math.max(value.w(), min), max.w())
         );
     }
 
     public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, double min, Vector4.Accessible max) {
         resultConsumer.xyzw(
-                clamp(value.x(), min, max.x()),
-                clamp(value.y(), min, max.y()),
-                clamp(value.z(), min, max.z()),
-                clamp(value.w(), min, max.w())
+                Math.min(Math.max(value.x(), min), max.x()),
+                Math.min(Math.max(value.y(), min), max.y()),
+                Math.min(Math.max(value.z(), min), max.z()),
+                Math.min(Math.max(value.w(), min), max.w())
         );
     }
 
     public static <R> R clamp(Vector4.Accessible value, Vector4.Accessible min, Vector4.Accessible max, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.x(), min.x(), max.x()),
-                clamp(value.y(), min.y(), max.y()),
-                clamp(value.z(), min.z(), max.z()),
-                clamp(value.w(), min.w(), max.w())
+                Math.min(Math.max(value.x(), min.x()), max.x()),
+                Math.min(Math.max(value.y(), min.y()), max.y()),
+                Math.min(Math.max(value.z(), min.z()), max.z()),
+                Math.min(Math.max(value.w(), min.w()), max.w())
         );
     }
 
     public static void clamp(Vector4.Consumer resultConsumer, Vector4.Accessible value, Vector4.Accessible min, Vector4.Accessible max) {
         resultConsumer.xyzw(
-                clamp(value.x(), min.x(), max.x()),
-                clamp(value.y(), min.y(), max.y()),
-                clamp(value.z(), min.z(), max.z()),
-                clamp(value.w(), min.w(), max.w())
+                Math.min(Math.max(value.x(), min.x()), max.x()),
+                Math.min(Math.max(value.y(), min.y()), max.y()),
+                Math.min(Math.max(value.z(), min.z()), max.z()),
+                Math.min(Math.max(value.w(), min.w()), max.w())
         );
     }
 
     public static <R> R clamp(double value, Vector4.Accessible min, Vector4.Accessible max, Vector4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value, min.x(), max.x()),
-                clamp(value, min.y(), max.y()),
-                clamp(value, min.z(), max.z()),
-                clamp(value, min.w(), max.w())
+                Math.min(Math.max(value, min.x()), max.x()),
+                Math.min(Math.max(value, min.y()), max.y()),
+                Math.min(Math.max(value, min.z()), max.z()),
+                Math.min(Math.max(value, min.w()), max.w())
         );
     }
 
     public static void clamp(Vector4.Consumer resultConsumer, double value, Vector4.Accessible min, Vector4.Accessible max) {
         resultConsumer.xyzw(
-                clamp(value, min.x(), max.x()),
-                clamp(value, min.y(), max.y()),
-                clamp(value, min.z(), max.z()),
-                clamp(value, min.w(), max.w())
-        );
-    }
-
-    public static <R> R clamp(double value, Vector4.Accessible min, double max, Vector4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min.x(), max),
-                clamp(value, min.y(), max),
-                clamp(value, min.z(), max),
-                clamp(value, min.w(), max)
-        );
-    }
-
-    public static void clamp(Vector4.Consumer resultConsumer, double value, Vector4.Accessible min, double max) {
-        resultConsumer.xyzw(
-                clamp(value, min.x(), max),
-                clamp(value, min.y(), max),
-                clamp(value, min.z(), max),
-                clamp(value, min.w(), max)
-        );
-    }
-
-    public static <R> R clamp(double value, double min, Vector4.Accessible max, Vector4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min, max.x()),
-                clamp(value, min, max.y()),
-                clamp(value, min, max.z()),
-                clamp(value, min, max.w())
-        );
-    }
-
-    public static void clamp(Vector4.Consumer resultConsumer, double value, double min, Vector4.Accessible max) {
-        resultConsumer.xyzw(
-                clamp(value, min, max.x()),
-                clamp(value, min, max.y()),
-                clamp(value, min, max.z()),
-                clamp(value, min, max.w())
+                Math.min(Math.max(value, min.x()), max.x()),
+                Math.min(Math.max(value, min.y()), max.y()),
+                Math.min(Math.max(value, min.z()), max.z()),
+                Math.min(Math.max(value, min.w()), max.w())
         );
     }
 
@@ -2483,220 +2326,178 @@ public final class VecMath {
     }
 
     public static double min(Matrix2x2.Accessible matrix) {
-        double tmp, result = matrix.Xx();
-
-        if ((tmp = matrix.Xy()) < result) result = tmp;
-        if ((tmp = matrix.Yx()) < result) result = tmp;
-        if ((tmp = matrix.Yy()) < result) result = tmp;
-
-        return result;
+        return Math.min(
+                Math.min(matrix.Xx(), matrix.Xy()),
+                Math.min(matrix.Yx(), matrix.Yy())
+        );
     }
 
     public static double max(Matrix2x2.Accessible matrix) {
-        double tmp, result = matrix.Xx();
-
-        if ((tmp = matrix.Xy()) > result) result = tmp;
-        if ((tmp = matrix.Yx()) > result) result = tmp;
-        if ((tmp = matrix.Yy()) > result) result = tmp;
-
-        return result;
+        return Math.max(
+                Math.max(matrix.Xx(), matrix.Xy()),
+                Math.max(matrix.Yx(), matrix.Yy())
+        );
     }
 
     public static <R> R min(Matrix2x2.Accessible value1, double value2, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.Xx(), value2),
-                min(value1.Xy(), value2),
-                min(value1.Yx(), value2),
-                min(value1.Yy(), value2)
+                Math.min(value1.Xx(), value2),
+                Math.min(value1.Xy(), value2),
+                Math.min(value1.Yx(), value2),
+                Math.min(value1.Yy(), value2)
         );
     }
 
     public static void min(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, double value2) {
         resultConsumer.XYxy(
-                min(value1.Xx(), value2),
-                min(value1.Xy(), value2),
-                min(value1.Yx(), value2),
-                min(value1.Yy(), value2)
+                Math.min(value1.Xx(), value2),
+                Math.min(value1.Xy(), value2),
+                Math.min(value1.Yx(), value2),
+                Math.min(value1.Yy(), value2)
         );
     }
 
     public static <R> R min(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.Xx(), value2.Xx()),
-                min(value1.Xy(), value2.Xy()),
-                min(value1.Yx(), value2.Yx()),
-                min(value1.Yy(), value2.Yy())
+                Math.min(value1.Xx(), value2.Xx()),
+                Math.min(value1.Xy(), value2.Xy()),
+                Math.min(value1.Yx(), value2.Yx()),
+                Math.min(value1.Yy(), value2.Yy())
         );
     }
 
     public static void min(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, Matrix2x2.Accessible value2) {
         resultConsumer.XYxy(
-                min(value1.Xx(), value2.Xx()),
-                min(value1.Xy(), value2.Xy()),
-                min(value1.Yx(), value2.Yx()),
-                min(value1.Yy(), value2.Yy())
+                Math.min(value1.Xx(), value2.Xx()),
+                Math.min(value1.Xy(), value2.Xy()),
+                Math.min(value1.Yx(), value2.Yx()),
+                Math.min(value1.Yy(), value2.Yy())
         );
     }
 
     public static <R> R max(Matrix2x2.Accessible value1, double value2, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.Xx(), value2),
-                max(value1.Xy(), value2),
-                max(value1.Yx(), value2),
-                max(value1.Yy(), value2)
+                Math.max(value1.Xx(), value2),
+                Math.max(value1.Xy(), value2),
+                Math.max(value1.Yx(), value2),
+                Math.max(value1.Yy(), value2)
         );
     }
 
     public static void max(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, double value2) {
         resultConsumer.XYxy(
-                max(value1.Xx(), value2),
-                max(value1.Xy(), value2),
-                max(value1.Yx(), value2),
-                max(value1.Yy(), value2)
+                Math.max(value1.Xx(), value2),
+                Math.max(value1.Xy(), value2),
+                Math.max(value1.Yx(), value2),
+                Math.max(value1.Yy(), value2)
         );
     }
 
     public static <R> R max(Matrix2x2.Accessible value1, Matrix2x2.Accessible value2, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.Xx(), value2.Xx()),
-                max(value1.Xy(), value2.Xy()),
-                max(value1.Yx(), value2.Yx()),
-                max(value1.Yy(), value2.Yy())
+                Math.max(value1.Xx(), value2.Xx()),
+                Math.max(value1.Xy(), value2.Xy()),
+                Math.max(value1.Yx(), value2.Yx()),
+                Math.max(value1.Yy(), value2.Yy())
         );
     }
 
     public static void max(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value1, Matrix2x2.Accessible value2) {
         resultConsumer.XYxy(
-                max(value1.Xx(), value2.Xx()),
-                max(value1.Xy(), value2.Xy()),
-                max(value1.Yx(), value2.Yx()),
-                max(value1.Yy(), value2.Yy())
+                Math.max(value1.Xx(), value2.Xx()),
+                Math.max(value1.Xy(), value2.Xy()),
+                Math.max(value1.Yx(), value2.Yx()),
+                Math.max(value1.Yy(), value2.Yy())
         );
     }
 
     public static <R> R clamp(Matrix2x2.Accessible value, double min, double max, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min, max),
-                clamp(value.Xy(), min, max),
-                clamp(value.Yx(), min, max),
-                clamp(value.Yy(), min, max)
+                Math.min(Math.max(value.Xx(), min), max),
+                Math.min(Math.max(value.Xy(), min), max),
+                Math.min(Math.max(value.Yx(), min), max),
+                Math.min(Math.max(value.Yy(), min), max)
         );
     }
 
     public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, double min, double max) {
         resultConsumer.XYxy(
-                clamp(value.Xx(), min, max),
-                clamp(value.Xy(), min, max),
-                clamp(value.Yx(), min, max),
-                clamp(value.Yy(), min, max)
+                Math.min(Math.max(value.Xx(), min), max),
+                Math.min(Math.max(value.Xy(), min), max),
+                Math.min(Math.max(value.Yx(), min), max),
+                Math.min(Math.max(value.Yy(), min), max)
         );
     }
 
     public static <R> R clamp(Matrix2x2.Accessible value, Matrix2x2.Accessible min, double max, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min.Xx(), max),
-                clamp(value.Xy(), min.Xy(), max),
-                clamp(value.Yx(), min.Yx(), max),
-                clamp(value.Yy(), min.Yy(), max)
+                Math.min(Math.max(value.Xx(), min.Xx()), max),
+                Math.min(Math.max(value.Xy(), min.Xy()), max),
+                Math.min(Math.max(value.Yx(), min.Yx()), max),
+                Math.min(Math.max(value.Yy(), min.Yy()), max)
         );
     }
 
     public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, Matrix2x2.Accessible min, double max) {
         resultConsumer.XYxy(
-                clamp(value.Xx(), min.Xx(), max),
-                clamp(value.Xy(), min.Xy(), max),
-                clamp(value.Yx(), min.Yx(), max),
-                clamp(value.Yy(), min.Yy(), max)
+                Math.min(Math.max(value.Xx(), min.Xx()), max),
+                Math.min(Math.max(value.Xy(), min.Xy()), max),
+                Math.min(Math.max(value.Yx(), min.Yx()), max),
+                Math.min(Math.max(value.Yy(), min.Yy()), max)
         );
     }
 
     public static <R> R clamp(Matrix2x2.Accessible value, double min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min, max.Xx()),
-                clamp(value.Xy(), min, max.Xy()),
-                clamp(value.Yx(), min, max.Yx()),
-                clamp(value.Yy(), min, max.Yy())
+                Math.min(Math.max(value.Xx(), min), max.Xx()),
+                Math.min(Math.max(value.Xy(), min), max.Xy()),
+                Math.min(Math.max(value.Yx(), min), max.Yx()),
+                Math.min(Math.max(value.Yy(), min), max.Yy())
         );
     }
 
     public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, double min, Matrix2x2.Accessible max) {
         resultConsumer.XYxy(
-                clamp(value.Xx(), min, max.Xx()),
-                clamp(value.Xy(), min, max.Xy()),
-                clamp(value.Yx(), min, max.Yx()),
-                clamp(value.Yy(), min, max.Yy())
+                Math.min(Math.max(value.Xx(), min), max.Xx()),
+                Math.min(Math.max(value.Xy(), min), max.Xy()),
+                Math.min(Math.max(value.Yx(), min), max.Yx()),
+                Math.min(Math.max(value.Yy(), min), max.Yy())
         );
     }
 
     public static <R> R clamp(Matrix2x2.Accessible value, Matrix2x2.Accessible min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min.Xx(), max.Xx()),
-                clamp(value.Xy(), min.Xy(), max.Xy()),
-                clamp(value.Yx(), min.Yx(), max.Yx()),
-                clamp(value.Yy(), min.Yy(), max.Yy())
+                Math.min(Math.max(value.Xx(), min.Xx()), max.Xx()),
+                Math.min(Math.max(value.Xy(), min.Xy()), max.Xy()),
+                Math.min(Math.max(value.Yx(), min.Yx()), max.Yx()),
+                Math.min(Math.max(value.Yy(), min.Yy()), max.Yy())
         );
     }
 
     public static void clamp(Matrix2x2.Consumer resultConsumer, Matrix2x2.Accessible value, Matrix2x2.Accessible min, Matrix2x2.Accessible max) {
         resultConsumer.XYxy(
-                clamp(value.Xx(), min.Xx(), max.Xx()),
-                clamp(value.Xy(), min.Xy(), max.Xy()),
-                clamp(value.Yx(), min.Yx(), max.Yx()),
-                clamp(value.Yy(), min.Yy(), max.Yy())
+                Math.min(Math.max(value.Xx(), min.Xx()), max.Xx()),
+                Math.min(Math.max(value.Xy(), min.Xy()), max.Xy()),
+                Math.min(Math.max(value.Yx(), min.Yx()), max.Yx()),
+                Math.min(Math.max(value.Yy(), min.Yy()), max.Yy())
         );
     }
 
     public static <R> R clamp(double value, Matrix2x2.Accessible min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value, min.Xx(), max.Xx()),
-                clamp(value, min.Xy(), max.Xy()),
-                clamp(value, min.Yx(), max.Yx()),
-                clamp(value, min.Yy(), max.Yy())
+                Math.min(Math.max(value, min.Xx()), max.Xx()),
+                Math.min(Math.max(value, min.Xy()), max.Xy()),
+                Math.min(Math.max(value, min.Yx()), max.Yx()),
+                Math.min(Math.max(value, min.Yy()), max.Yy())
         );
     }
 
     public static void clamp(Matrix2x2.Consumer resultConsumer, double value, Matrix2x2.Accessible min, Matrix2x2.Accessible max) {
         resultConsumer.XYxy(
-                clamp(value, min.Xx(), max.Xx()),
-                clamp(value, min.Xy(), max.Xy()),
-                clamp(value, min.Yx(), max.Yx()),
-                clamp(value, min.Yy(), max.Yy())
-        );
-    }
-
-    public static <R> R clamp(double value, Matrix2x2.Accessible min, double max, Matrix2x2.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min.Xx(), max),
-                clamp(value, min.Xy(), max),
-                clamp(value, min.Yx(), max),
-                clamp(value, min.Yy(), max)
-        );
-    }
-
-    public static void clamp(Matrix2x2.Consumer resultConsumer, double value, Matrix2x2.Accessible min, double max) {
-        resultConsumer.XYxy(
-                clamp(value, min.Xx(), max),
-                clamp(value, min.Xy(), max),
-                clamp(value, min.Yx(), max),
-                clamp(value, min.Yy(), max)
-        );
-    }
-
-    public static <R> R clamp(double value, double min, Matrix2x2.Accessible max, Matrix2x2.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min, max.Xx()),
-                clamp(value, min, max.Xy()),
-                clamp(value, min, max.Yx()),
-                clamp(value, min, max.Yy())
-        );
-    }
-
-    public static void clamp(Matrix2x2.Consumer resultConsumer, double value, double min, Matrix2x2.Accessible max) {
-        resultConsumer.XYxy(
-                clamp(value, min, max.Xx()),
-                clamp(value, min, max.Xy()),
-                clamp(value, min, max.Yx()),
-                clamp(value, min, max.Yy())
+                Math.min(Math.max(value, min.Xx()), max.Xx()),
+                Math.min(Math.max(value, min.Xy()), max.Xy()),
+                Math.min(Math.max(value, min.Yx()), max.Yx()),
+                Math.min(Math.max(value, min.Yy()), max.Yy())
         );
     }
 
@@ -3039,340 +2840,286 @@ public final class VecMath {
     }
 
     public static double min(Matrix3x3.Accessible matrix) {
-        double tmp, result = matrix.Xx();
-
-        if ((tmp = matrix.Xy()) < result) result = tmp;
-        if ((tmp = matrix.Xz()) < result) result = tmp;
-        if ((tmp = matrix.Yx()) < result) result = tmp;
-        if ((tmp = matrix.Yy()) < result) result = tmp;
-        if ((tmp = matrix.Yz()) < result) result = tmp;
-        if ((tmp = matrix.Zx()) < result) result = tmp;
-        if ((tmp = matrix.Zy()) < result) result = tmp;
-        if ((tmp = matrix.Zz()) < result) result = tmp;
-
-        return result;
+        return Math.min(
+                Math.min(
+                        Math.min(
+                                Math.min(matrix.Xx(), matrix.Xy()),
+                                Math.min(matrix.Xz(), matrix.Yx())
+                        ),
+                        Math.min(
+                                Math.min(matrix.Yy(), matrix.Yz()),
+                                Math.min(matrix.Zx(), matrix.Zy())
+                        )
+                ),
+                matrix.Zz()
+        );
     }
 
     public static double max(Matrix3x3.Accessible matrix) {
-        double tmp, result = matrix.Xx();
-
-        if ((tmp = matrix.Xy()) > result) result = tmp;
-        if ((tmp = matrix.Xz()) > result) result = tmp;
-        if ((tmp = matrix.Yx()) > result) result = tmp;
-        if ((tmp = matrix.Yy()) > result) result = tmp;
-        if ((tmp = matrix.Yz()) > result) result = tmp;
-        if ((tmp = matrix.Zx()) > result) result = tmp;
-        if ((tmp = matrix.Zy()) > result) result = tmp;
-        if ((tmp = matrix.Zz()) > result) result = tmp;
-
-        return result;
+        return Math.max(
+                Math.max(
+                        Math.max(
+                                Math.max(matrix.Xx(), matrix.Xy()),
+                                Math.max(matrix.Xz(), matrix.Yx())
+                        ),
+                        Math.max(
+                                Math.max(matrix.Yy(), matrix.Yz()),
+                                Math.max(matrix.Zx(), matrix.Zy())
+                        )
+                ),
+                matrix.Zz()
+        );
     }
 
     public static <R> R min(Matrix3x3.Accessible value1, double value2, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.Xx(), value2),
-                min(value1.Xy(), value2),
-                min(value1.Xz(), value2),
-                min(value1.Yx(), value2),
-                min(value1.Yy(), value2),
-                min(value1.Yz(), value2),
-                min(value1.Zx(), value2),
-                min(value1.Zy(), value2),
-                min(value1.Zz(), value2)
+                Math.min(value1.Xx(), value2),
+                Math.min(value1.Xy(), value2),
+                Math.min(value1.Xz(), value2),
+                Math.min(value1.Yx(), value2),
+                Math.min(value1.Yy(), value2),
+                Math.min(value1.Yz(), value2),
+                Math.min(value1.Zx(), value2),
+                Math.min(value1.Zy(), value2),
+                Math.min(value1.Zz(), value2)
         );
     }
 
     public static void min(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2) {
         resultConsumer.XYZxyz(
-                min(value1.Xx(), value2),
-                min(value1.Xy(), value2),
-                min(value1.Xz(), value2),
-                min(value1.Yx(), value2),
-                min(value1.Yy(), value2),
-                min(value1.Yz(), value2),
-                min(value1.Zx(), value2),
-                min(value1.Zy(), value2),
-                min(value1.Zz(), value2)
+                Math.min(value1.Xx(), value2),
+                Math.min(value1.Xy(), value2),
+                Math.min(value1.Xz(), value2),
+                Math.min(value1.Yx(), value2),
+                Math.min(value1.Yy(), value2),
+                Math.min(value1.Yz(), value2),
+                Math.min(value1.Zx(), value2),
+                Math.min(value1.Zy(), value2),
+                Math.min(value1.Zz(), value2)
         );
     }
 
     public static <R> R min(Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.Xx(), value2.Xx()),
-                min(value1.Xy(), value2.Xy()),
-                min(value1.Xz(), value2.Xz()),
-                min(value1.Yx(), value2.Yx()),
-                min(value1.Yy(), value2.Yy()),
-                min(value1.Yz(), value2.Yz()),
-                min(value1.Zx(), value2.Zx()),
-                min(value1.Zy(), value2.Zy()),
-                min(value1.Zz(), value2.Zz())
+                Math.min(value1.Xx(), value2.Xx()),
+                Math.min(value1.Xy(), value2.Xy()),
+                Math.min(value1.Xz(), value2.Xz()),
+                Math.min(value1.Yx(), value2.Yx()),
+                Math.min(value1.Yy(), value2.Yy()),
+                Math.min(value1.Yz(), value2.Yz()),
+                Math.min(value1.Zx(), value2.Zx()),
+                Math.min(value1.Zy(), value2.Zy()),
+                Math.min(value1.Zz(), value2.Zz())
         );
     }
 
     public static void min(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
         resultConsumer.XYZxyz(
-                min(value1.Xx(), value2.Xx()),
-                min(value1.Xy(), value2.Xy()),
-                min(value1.Xz(), value2.Xz()),
-                min(value1.Yx(), value2.Yx()),
-                min(value1.Yy(), value2.Yy()),
-                min(value1.Yz(), value2.Yz()),
-                min(value1.Zx(), value2.Zx()),
-                min(value1.Zy(), value2.Zy()),
-                min(value1.Zz(), value2.Zz())
+                Math.min(value1.Xx(), value2.Xx()),
+                Math.min(value1.Xy(), value2.Xy()),
+                Math.min(value1.Xz(), value2.Xz()),
+                Math.min(value1.Yx(), value2.Yx()),
+                Math.min(value1.Yy(), value2.Yy()),
+                Math.min(value1.Yz(), value2.Yz()),
+                Math.min(value1.Zx(), value2.Zx()),
+                Math.min(value1.Zy(), value2.Zy()),
+                Math.min(value1.Zz(), value2.Zz())
         );
     }
 
     public static <R> R max(Matrix3x3.Accessible value1, double value2, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.Xx(), value2),
-                max(value1.Xy(), value2),
-                max(value1.Xz(), value2),
-                max(value1.Yx(), value2),
-                max(value1.Yy(), value2),
-                max(value1.Yz(), value2),
-                max(value1.Zx(), value2),
-                max(value1.Zy(), value2),
-                max(value1.Zz(), value2)
+                Math.max(value1.Xx(), value2),
+                Math.max(value1.Xy(), value2),
+                Math.max(value1.Xz(), value2),
+                Math.max(value1.Yx(), value2),
+                Math.max(value1.Yy(), value2),
+                Math.max(value1.Yz(), value2),
+                Math.max(value1.Zx(), value2),
+                Math.max(value1.Zy(), value2),
+                Math.max(value1.Zz(), value2)
         );
     }
 
     public static void max(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, double value2) {
         resultConsumer.XYZxyz(
-                max(value1.Xx(), value2),
-                max(value1.Xy(), value2),
-                max(value1.Xz(), value2),
-                max(value1.Yx(), value2),
-                max(value1.Yy(), value2),
-                max(value1.Yz(), value2),
-                max(value1.Zx(), value2),
-                max(value1.Zy(), value2),
-                max(value1.Zz(), value2)
+                Math.max(value1.Xx(), value2),
+                Math.max(value1.Xy(), value2),
+                Math.max(value1.Xz(), value2),
+                Math.max(value1.Yx(), value2),
+                Math.max(value1.Yy(), value2),
+                Math.max(value1.Yz(), value2),
+                Math.max(value1.Zx(), value2),
+                Math.max(value1.Zy(), value2),
+                Math.max(value1.Zz(), value2)
         );
     }
 
     public static <R> R max(Matrix3x3.Accessible value1, Matrix3x3.Accessible value2, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.Xx(), value2.Xx()),
-                max(value1.Xy(), value2.Xy()),
-                max(value1.Xz(), value2.Xz()),
-                max(value1.Yx(), value2.Yx()),
-                max(value1.Yy(), value2.Yy()),
-                max(value1.Yz(), value2.Yz()),
-                max(value1.Zx(), value2.Zx()),
-                max(value1.Zy(), value2.Zy()),
-                max(value1.Zz(), value2.Zz())
+                Math.max(value1.Xx(), value2.Xx()),
+                Math.max(value1.Xy(), value2.Xy()),
+                Math.max(value1.Xz(), value2.Xz()),
+                Math.max(value1.Yx(), value2.Yx()),
+                Math.max(value1.Yy(), value2.Yy()),
+                Math.max(value1.Yz(), value2.Yz()),
+                Math.max(value1.Zx(), value2.Zx()),
+                Math.max(value1.Zy(), value2.Zy()),
+                Math.max(value1.Zz(), value2.Zz())
         );
     }
 
     public static void max(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value1, Matrix3x3.Accessible value2) {
         resultConsumer.XYZxyz(
-                max(value1.Xx(), value2.Xx()),
-                max(value1.Xy(), value2.Xy()),
-                max(value1.Xz(), value2.Xz()),
-                max(value1.Yx(), value2.Yx()),
-                max(value1.Yy(), value2.Yy()),
-                max(value1.Yz(), value2.Yz()),
-                max(value1.Zx(), value2.Zx()),
-                max(value1.Zy(), value2.Zy()),
-                max(value1.Zz(), value2.Zz())
+                Math.max(value1.Xx(), value2.Xx()),
+                Math.max(value1.Xy(), value2.Xy()),
+                Math.max(value1.Xz(), value2.Xz()),
+                Math.max(value1.Yx(), value2.Yx()),
+                Math.max(value1.Yy(), value2.Yy()),
+                Math.max(value1.Yz(), value2.Yz()),
+                Math.max(value1.Zx(), value2.Zx()),
+                Math.max(value1.Zy(), value2.Zy()),
+                Math.max(value1.Zz(), value2.Zz())
         );
     }
 
     public static <R> R clamp(Matrix3x3.Accessible value, double min, double max, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min, max),
-                clamp(value.Xy(), min, max),
-                clamp(value.Xz(), min, max),
-                clamp(value.Yx(), min, max),
-                clamp(value.Yy(), min, max),
-                clamp(value.Yz(), min, max),
-                clamp(value.Zx(), min, max),
-                clamp(value.Zy(), min, max),
-                clamp(value.Zz(), min, max)
+                Math.min(Math.max(value.Xx(), min), max),
+                Math.min(Math.max(value.Xy(), min), max),
+                Math.min(Math.max(value.Xz(), min), max),
+                Math.min(Math.max(value.Yx(), min), max),
+                Math.min(Math.max(value.Yy(), min), max),
+                Math.min(Math.max(value.Yz(), min), max),
+                Math.min(Math.max(value.Zx(), min), max),
+                Math.min(Math.max(value.Zy(), min), max),
+                Math.min(Math.max(value.Zz(), min), max)
         );
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, double min, double max) {
         resultConsumer.XYZxyz(
-                clamp(value.Xx(), min, max),
-                clamp(value.Xy(), min, max),
-                clamp(value.Xz(), min, max),
-                clamp(value.Yx(), min, max),
-                clamp(value.Yy(), min, max),
-                clamp(value.Yz(), min, max),
-                clamp(value.Zx(), min, max),
-                clamp(value.Zy(), min, max),
-                clamp(value.Zz(), min, max)
+                Math.min(Math.max(value.Xx(), min), max),
+                Math.min(Math.max(value.Xy(), min), max),
+                Math.min(Math.max(value.Xz(), min), max),
+                Math.min(Math.max(value.Yx(), min), max),
+                Math.min(Math.max(value.Yy(), min), max),
+                Math.min(Math.max(value.Yz(), min), max),
+                Math.min(Math.max(value.Zx(), min), max),
+                Math.min(Math.max(value.Zy(), min), max),
+                Math.min(Math.max(value.Zz(), min), max)
         );
     }
 
     public static <R> R clamp(Matrix3x3.Accessible value, Matrix3x3.Accessible min, double max, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min.Xx(), max),
-                clamp(value.Xy(), min.Xy(), max),
-                clamp(value.Xz(), min.Xz(), max),
-                clamp(value.Yx(), min.Yx(), max),
-                clamp(value.Yy(), min.Yy(), max),
-                clamp(value.Yz(), min.Yz(), max),
-                clamp(value.Zx(), min.Zx(), max),
-                clamp(value.Zy(), min.Zy(), max),
-                clamp(value.Zz(), min.Zz(), max)
+                Math.min(Math.max(value.Xx(), min.Xx()), max),
+                Math.min(Math.max(value.Xy(), min.Xy()), max),
+                Math.min(Math.max(value.Xz(), min.Xz()), max),
+                Math.min(Math.max(value.Yx(), min.Yx()), max),
+                Math.min(Math.max(value.Yy(), min.Yy()), max),
+                Math.min(Math.max(value.Yz(), min.Yz()), max),
+                Math.min(Math.max(value.Zx(), min.Zx()), max),
+                Math.min(Math.max(value.Zy(), min.Zy()), max),
+                Math.min(Math.max(value.Zz(), min.Zz()), max)
         );
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, Matrix3x3.Accessible min, double max) {
         resultConsumer.XYZxyz(
-                clamp(value.Xx(), min.Xx(), max),
-                clamp(value.Xy(), min.Xy(), max),
-                clamp(value.Xz(), min.Xz(), max),
-                clamp(value.Yx(), min.Yx(), max),
-                clamp(value.Yy(), min.Yy(), max),
-                clamp(value.Yz(), min.Yz(), max),
-                clamp(value.Zx(), min.Zx(), max),
-                clamp(value.Zy(), min.Zy(), max),
-                clamp(value.Zz(), min.Zz(), max)
+                Math.min(Math.max(value.Xx(), min.Xx()), max),
+                Math.min(Math.max(value.Xy(), min.Xy()), max),
+                Math.min(Math.max(value.Xz(), min.Xz()), max),
+                Math.min(Math.max(value.Yx(), min.Yx()), max),
+                Math.min(Math.max(value.Yy(), min.Yy()), max),
+                Math.min(Math.max(value.Yz(), min.Yz()), max),
+                Math.min(Math.max(value.Zx(), min.Zx()), max),
+                Math.min(Math.max(value.Zy(), min.Zy()), max),
+                Math.min(Math.max(value.Zz(), min.Zz()), max)
         );
     }
 
     public static <R> R clamp(Matrix3x3.Accessible value, double min, Matrix3x3.Accessible max, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min, max.Xx()),
-                clamp(value.Xy(), min, max.Xy()),
-                clamp(value.Xz(), min, max.Xz()),
-                clamp(value.Yx(), min, max.Yx()),
-                clamp(value.Yy(), min, max.Yy()),
-                clamp(value.Yz(), min, max.Yz()),
-                clamp(value.Zx(), min, max.Zx()),
-                clamp(value.Zy(), min, max.Zy()),
-                clamp(value.Zz(), min, max.Zz())
+                Math.min(Math.max(value.Xx(), min), max.Xx()),
+                Math.min(Math.max(value.Xy(), min), max.Xy()),
+                Math.min(Math.max(value.Xz(), min), max.Xz()),
+                Math.min(Math.max(value.Yx(), min), max.Yx()),
+                Math.min(Math.max(value.Yy(), min), max.Yy()),
+                Math.min(Math.max(value.Yz(), min), max.Yz()),
+                Math.min(Math.max(value.Zx(), min), max.Zx()),
+                Math.min(Math.max(value.Zy(), min), max.Zy()),
+                Math.min(Math.max(value.Zz(), min), max.Zz())
         );
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, double min, Matrix3x3.Accessible max) {
         resultConsumer.XYZxyz(
-                clamp(value.Xx(), min, max.Xx()),
-                clamp(value.Xy(), min, max.Xy()),
-                clamp(value.Xz(), min, max.Xz()),
-                clamp(value.Yx(), min, max.Yx()),
-                clamp(value.Yy(), min, max.Yy()),
-                clamp(value.Yz(), min, max.Yz()),
-                clamp(value.Zx(), min, max.Zx()),
-                clamp(value.Zy(), min, max.Zy()),
-                clamp(value.Zz(), min, max.Zz())
+                Math.min(Math.max(value.Xx(), min), max.Xx()),
+                Math.min(Math.max(value.Xy(), min), max.Xy()),
+                Math.min(Math.max(value.Xz(), min), max.Xz()),
+                Math.min(Math.max(value.Yx(), min), max.Yx()),
+                Math.min(Math.max(value.Yy(), min), max.Yy()),
+                Math.min(Math.max(value.Yz(), min), max.Yz()),
+                Math.min(Math.max(value.Zx(), min), max.Zx()),
+                Math.min(Math.max(value.Zy(), min), max.Zy()),
+                Math.min(Math.max(value.Zz(), min), max.Zz())
         );
     }
 
     public static <R> R clamp(Matrix3x3.Accessible value, Matrix3x3.Accessible min, Matrix3x3.Accessible max, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min.Xx(), max.Xx()),
-                clamp(value.Xy(), min.Xy(), max.Xy()),
-                clamp(value.Xz(), min.Xz(), max.Xz()),
-                clamp(value.Yx(), min.Yx(), max.Yx()),
-                clamp(value.Yy(), min.Yy(), max.Yy()),
-                clamp(value.Yz(), min.Yz(), max.Yz()),
-                clamp(value.Zx(), min.Zx(), max.Zx()),
-                clamp(value.Zy(), min.Zy(), max.Zy()),
-                clamp(value.Zz(), min.Zz(), max.Zz())
+                Math.min(Math.max(value.Xx(), min.Xx()), max.Xx()),
+                Math.min(Math.max(value.Xy(), min.Xy()), max.Xy()),
+                Math.min(Math.max(value.Xz(), min.Xz()), max.Xz()),
+                Math.min(Math.max(value.Yx(), min.Yx()), max.Yx()),
+                Math.min(Math.max(value.Yy(), min.Yy()), max.Yy()),
+                Math.min(Math.max(value.Yz(), min.Yz()), max.Yz()),
+                Math.min(Math.max(value.Zx(), min.Zx()), max.Zx()),
+                Math.min(Math.max(value.Zy(), min.Zy()), max.Zy()),
+                Math.min(Math.max(value.Zz(), min.Zz()), max.Zz())
         );
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, Matrix3x3.Accessible value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
         resultConsumer.XYZxyz(
-                clamp(value.Xx(), min.Xx(), max.Xx()),
-                clamp(value.Xy(), min.Xy(), max.Xy()),
-                clamp(value.Xz(), min.Xz(), max.Xz()),
-                clamp(value.Yx(), min.Yx(), max.Yx()),
-                clamp(value.Yy(), min.Yy(), max.Yy()),
-                clamp(value.Yz(), min.Yz(), max.Yz()),
-                clamp(value.Zx(), min.Zx(), max.Zx()),
-                clamp(value.Zy(), min.Zy(), max.Zy()),
-                clamp(value.Zz(), min.Zz(), max.Zz())
+                Math.min(Math.max(value.Xx(), min.Xx()), max.Xx()),
+                Math.min(Math.max(value.Xy(), min.Xy()), max.Xy()),
+                Math.min(Math.max(value.Xz(), min.Xz()), max.Xz()),
+                Math.min(Math.max(value.Yx(), min.Yx()), max.Yx()),
+                Math.min(Math.max(value.Yy(), min.Yy()), max.Yy()),
+                Math.min(Math.max(value.Yz(), min.Yz()), max.Yz()),
+                Math.min(Math.max(value.Zx(), min.Zx()), max.Zx()),
+                Math.min(Math.max(value.Zy(), min.Zy()), max.Zy()),
+                Math.min(Math.max(value.Zz(), min.Zz()), max.Zz())
         );
     }
 
     public static <R> R clamp(double value, Matrix3x3.Accessible min, Matrix3x3.Accessible max, Matrix3x3.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value, min.Xx(), max.Xx()),
-                clamp(value, min.Xy(), max.Xy()),
-                clamp(value, min.Xz(), max.Xz()),
-                clamp(value, min.Yx(), max.Yx()),
-                clamp(value, min.Yy(), max.Yy()),
-                clamp(value, min.Yz(), max.Yz()),
-                clamp(value, min.Zx(), max.Zx()),
-                clamp(value, min.Zy(), max.Zy()),
-                clamp(value, min.Zz(), max.Zz())
+                Math.min(Math.max(value, min.Xx()), max.Xx()),
+                Math.min(Math.max(value, min.Xy()), max.Xy()),
+                Math.min(Math.max(value, min.Xz()), max.Xz()),
+                Math.min(Math.max(value, min.Yx()), max.Yx()),
+                Math.min(Math.max(value, min.Yy()), max.Yy()),
+                Math.min(Math.max(value, min.Yz()), max.Yz()),
+                Math.min(Math.max(value, min.Zx()), max.Zx()),
+                Math.min(Math.max(value, min.Zy()), max.Zy()),
+                Math.min(Math.max(value, min.Zz()), max.Zz())
         );
     }
 
     public static void clamp(Matrix3x3.Consumer resultConsumer, double value, Matrix3x3.Accessible min, Matrix3x3.Accessible max) {
         resultConsumer.XYZxyz(
-                clamp(value, min.Xx(), max.Xx()),
-                clamp(value, min.Xy(), max.Xy()),
-                clamp(value, min.Xz(), max.Xz()),
-                clamp(value, min.Yx(), max.Yx()),
-                clamp(value, min.Yy(), max.Yy()),
-                clamp(value, min.Yz(), max.Yz()),
-                clamp(value, min.Zx(), max.Zx()),
-                clamp(value, min.Zy(), max.Zy()),
-                clamp(value, min.Zz(), max.Zz())
-        );
-    }
-
-    public static <R> R clamp(double value, Matrix3x3.Accessible min, double max, Matrix3x3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min.Xx(), max),
-                clamp(value, min.Xy(), max),
-                clamp(value, min.Xz(), max),
-                clamp(value, min.Yx(), max),
-                clamp(value, min.Yy(), max),
-                clamp(value, min.Yz(), max),
-                clamp(value, min.Zx(), max),
-                clamp(value, min.Zy(), max),
-                clamp(value, min.Zz(), max)
-        );
-    }
-
-    public static void clamp(Matrix3x3.Consumer resultConsumer, double value, Matrix3x3.Accessible min, double max) {
-        resultConsumer.XYZxyz(
-                clamp(value, min.Xx(), max),
-                clamp(value, min.Xy(), max),
-                clamp(value, min.Xz(), max),
-                clamp(value, min.Yx(), max),
-                clamp(value, min.Yy(), max),
-                clamp(value, min.Yz(), max),
-                clamp(value, min.Zx(), max),
-                clamp(value, min.Zy(), max),
-                clamp(value, min.Zz(), max)
-        );
-    }
-
-    public static <R> R clamp(double value, double min, Matrix3x3.Accessible max, Matrix3x3.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min, max.Xx()),
-                clamp(value, min, max.Xy()),
-                clamp(value, min, max.Xz()),
-                clamp(value, min, max.Yx()),
-                clamp(value, min, max.Yy()),
-                clamp(value, min, max.Yz()),
-                clamp(value, min, max.Zx()),
-                clamp(value, min, max.Zy()),
-                clamp(value, min, max.Zz())
-        );
-    }
-
-    public static void clamp(Matrix3x3.Consumer resultConsumer, double value, double min, Matrix3x3.Accessible max) {
-        resultConsumer.XYZxyz(
-                clamp(value, min, max.Xx()),
-                clamp(value, min, max.Xy()),
-                clamp(value, min, max.Xz()),
-                clamp(value, min, max.Yx()),
-                clamp(value, min, max.Yy()),
-                clamp(value, min, max.Yz()),
-                clamp(value, min, max.Zx()),
-                clamp(value, min, max.Zy()),
-                clamp(value, min, max.Zz())
+                Math.min(Math.max(value, min.Xx()), max.Xx()),
+                Math.min(Math.max(value, min.Xy()), max.Xy()),
+                Math.min(Math.max(value, min.Xz()), max.Xz()),
+                Math.min(Math.max(value, min.Yx()), max.Yx()),
+                Math.min(Math.max(value, min.Yy()), max.Yy()),
+                Math.min(Math.max(value, min.Yz()), max.Yz()),
+                Math.min(Math.max(value, min.Zx()), max.Zx()),
+                Math.min(Math.max(value, min.Zy()), max.Zy()),
+                Math.min(Math.max(value, min.Zz()), max.Zz())
         );
     }
 
@@ -3907,508 +3654,430 @@ public final class VecMath {
     }
 
     public static double min(Matrix4x4.Accessible matrix) {
-        double tmp, result = matrix.Xx();
-
-        if ((tmp = matrix.Xy()) < result) result = tmp;
-        if ((tmp = matrix.Xz()) < result) result = tmp;
-        if ((tmp = matrix.Xw()) < result) result = tmp;
-        if ((tmp = matrix.Yx()) < result) result = tmp;
-        if ((tmp = matrix.Yy()) < result) result = tmp;
-        if ((tmp = matrix.Yz()) < result) result = tmp;
-        if ((tmp = matrix.Yw()) < result) result = tmp;
-        if ((tmp = matrix.Zx()) < result) result = tmp;
-        if ((tmp = matrix.Zy()) < result) result = tmp;
-        if ((tmp = matrix.Zz()) < result) result = tmp;
-        if ((tmp = matrix.Zw()) < result) result = tmp;
-        if ((tmp = matrix.Tx()) < result) result = tmp;
-        if ((tmp = matrix.Ty()) < result) result = tmp;
-        if ((tmp = matrix.Tz()) < result) result = tmp;
-        if ((tmp = matrix.Tw()) < result) result = tmp;
-
-        return result;
+        return Math.min(
+                Math.min(
+                        Math.min(
+                                Math.min(matrix.Xx(), matrix.Xy()),
+                                Math.min(matrix.Xz(), matrix.Xw())
+                        ),
+                        Math.min(
+                                Math.min(matrix.Yx(), matrix.Yy()),
+                                Math.min(matrix.Yz(), matrix.Yw())
+                        )
+                ),
+                Math.min(
+                        Math.min(
+                                Math.min(matrix.Zx(), matrix.Zy()),
+                                Math.min(matrix.Zz(), matrix.Zw())
+                        ),
+                        Math.min(
+                                Math.min(matrix.Tx(), matrix.Ty()),
+                                Math.min(matrix.Tz(), matrix.Tw())
+                        )
+                )
+        );
     }
 
     public static double max(Matrix4x4.Accessible matrix) {
-        double tmp, result = matrix.Xx();
-
-        if ((tmp = matrix.Xy()) > result) result = tmp;
-        if ((tmp = matrix.Xz()) > result) result = tmp;
-        if ((tmp = matrix.Xw()) > result) result = tmp;
-        if ((tmp = matrix.Yx()) > result) result = tmp;
-        if ((tmp = matrix.Yy()) > result) result = tmp;
-        if ((tmp = matrix.Yz()) > result) result = tmp;
-        if ((tmp = matrix.Yw()) > result) result = tmp;
-        if ((tmp = matrix.Zx()) > result) result = tmp;
-        if ((tmp = matrix.Zy()) > result) result = tmp;
-        if ((tmp = matrix.Zz()) > result) result = tmp;
-        if ((tmp = matrix.Zw()) > result) result = tmp;
-        if ((tmp = matrix.Tx()) > result) result = tmp;
-        if ((tmp = matrix.Ty()) > result) result = tmp;
-        if ((tmp = matrix.Tz()) > result) result = tmp;
-        if ((tmp = matrix.Tw()) > result) result = tmp;
-
-        return result;
+        return Math.max(
+                Math.max(
+                        Math.max(
+                                Math.max(matrix.Xx(), matrix.Xy()),
+                                Math.max(matrix.Xz(), matrix.Xw())
+                        ),
+                        Math.max(
+                                Math.max(matrix.Yx(), matrix.Yy()),
+                                Math.max(matrix.Yz(), matrix.Yw())
+                        )
+                ),
+                Math.max(
+                        Math.max(
+                                Math.max(matrix.Zx(), matrix.Zy()),
+                                Math.max(matrix.Zz(), matrix.Zw())
+                        ),
+                        Math.max(
+                                Math.max(matrix.Tx(), matrix.Ty()),
+                                Math.max(matrix.Tz(), matrix.Tw())
+                        )
+                )
+        );
     }
 
     public static <R> R min(Matrix4x4.Accessible value1, double value2, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.Xx(), value2),
-                min(value1.Xy(), value2),
-                min(value1.Xz(), value2),
-                min(value1.Xw(), value2),
-                min(value1.Yx(), value2),
-                min(value1.Yy(), value2),
-                min(value1.Yz(), value2),
-                min(value1.Yw(), value2),
-                min(value1.Zx(), value2),
-                min(value1.Zy(), value2),
-                min(value1.Zz(), value2),
-                min(value1.Zw(), value2),
-                min(value1.Tx(), value2),
-                min(value1.Ty(), value2),
-                min(value1.Tz(), value2),
-                min(value1.Tw(), value2)
+                Math.min(value1.Xx(), value2),
+                Math.min(value1.Xy(), value2),
+                Math.min(value1.Xz(), value2),
+                Math.min(value1.Xw(), value2),
+                Math.min(value1.Yx(), value2),
+                Math.min(value1.Yy(), value2),
+                Math.min(value1.Yz(), value2),
+                Math.min(value1.Yw(), value2),
+                Math.min(value1.Zx(), value2),
+                Math.min(value1.Zy(), value2),
+                Math.min(value1.Zz(), value2),
+                Math.min(value1.Zw(), value2),
+                Math.min(value1.Tx(), value2),
+                Math.min(value1.Ty(), value2),
+                Math.min(value1.Tz(), value2),
+                Math.min(value1.Tw(), value2)
         );
     }
 
     public static void min(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2) {
         resultConsumer.XYZTxyzw(
-                min(value1.Xx(), value2),
-                min(value1.Xy(), value2),
-                min(value1.Xz(), value2),
-                min(value1.Xw(), value2),
-                min(value1.Yx(), value2),
-                min(value1.Yy(), value2),
-                min(value1.Yz(), value2),
-                min(value1.Yw(), value2),
-                min(value1.Zx(), value2),
-                min(value1.Zy(), value2),
-                min(value1.Zz(), value2),
-                min(value1.Zw(), value2),
-                min(value1.Tx(), value2),
-                min(value1.Ty(), value2),
-                min(value1.Tz(), value2),
-                min(value1.Tw(), value2)
+                Math.min(value1.Xx(), value2),
+                Math.min(value1.Xy(), value2),
+                Math.min(value1.Xz(), value2),
+                Math.min(value1.Xw(), value2),
+                Math.min(value1.Yx(), value2),
+                Math.min(value1.Yy(), value2),
+                Math.min(value1.Yz(), value2),
+                Math.min(value1.Yw(), value2),
+                Math.min(value1.Zx(), value2),
+                Math.min(value1.Zy(), value2),
+                Math.min(value1.Zz(), value2),
+                Math.min(value1.Zw(), value2),
+                Math.min(value1.Tx(), value2),
+                Math.min(value1.Ty(), value2),
+                Math.min(value1.Tz(), value2),
+                Math.min(value1.Tw(), value2)
         );
     }
 
     public static <R> R min(Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                min(value1.Xx(), value2.Xx()),
-                min(value1.Xy(), value2.Xy()),
-                min(value1.Xz(), value2.Xz()),
-                min(value1.Xw(), value2.Xw()),
-                min(value1.Yx(), value2.Yx()),
-                min(value1.Yy(), value2.Yy()),
-                min(value1.Yz(), value2.Yz()),
-                min(value1.Yw(), value2.Yw()),
-                min(value1.Zx(), value2.Zx()),
-                min(value1.Zy(), value2.Zy()),
-                min(value1.Zz(), value2.Zz()),
-                min(value1.Zw(), value2.Zw()),
-                min(value1.Tx(), value2.Tx()),
-                min(value1.Ty(), value2.Ty()),
-                min(value1.Tz(), value2.Tz()),
-                min(value1.Tw(), value2.Tw())
+                Math.min(value1.Xx(), value2.Xx()),
+                Math.min(value1.Xy(), value2.Xy()),
+                Math.min(value1.Xz(), value2.Xz()),
+                Math.min(value1.Xw(), value2.Xw()),
+                Math.min(value1.Yx(), value2.Yx()),
+                Math.min(value1.Yy(), value2.Yy()),
+                Math.min(value1.Yz(), value2.Yz()),
+                Math.min(value1.Yw(), value2.Yw()),
+                Math.min(value1.Zx(), value2.Zx()),
+                Math.min(value1.Zy(), value2.Zy()),
+                Math.min(value1.Zz(), value2.Zz()),
+                Math.min(value1.Zw(), value2.Zw()),
+                Math.min(value1.Tx(), value2.Tx()),
+                Math.min(value1.Ty(), value2.Ty()),
+                Math.min(value1.Tz(), value2.Tz()),
+                Math.min(value1.Tw(), value2.Tw())
         );
     }
 
     public static void min(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
         resultConsumer.XYZTxyzw(
-                min(value1.Xx(), value2.Xx()),
-                min(value1.Xy(), value2.Xy()),
-                min(value1.Xz(), value2.Xz()),
-                min(value1.Xw(), value2.Xw()),
-                min(value1.Yx(), value2.Yx()),
-                min(value1.Yy(), value2.Yy()),
-                min(value1.Yz(), value2.Yz()),
-                min(value1.Yw(), value2.Yw()),
-                min(value1.Zx(), value2.Zx()),
-                min(value1.Zy(), value2.Zy()),
-                min(value1.Zz(), value2.Zz()),
-                min(value1.Zw(), value2.Zw()),
-                min(value1.Tx(), value2.Tx()),
-                min(value1.Ty(), value2.Ty()),
-                min(value1.Tz(), value2.Tz()),
-                min(value1.Tw(), value2.Tw())
+                Math.min(value1.Xx(), value2.Xx()),
+                Math.min(value1.Xy(), value2.Xy()),
+                Math.min(value1.Xz(), value2.Xz()),
+                Math.min(value1.Xw(), value2.Xw()),
+                Math.min(value1.Yx(), value2.Yx()),
+                Math.min(value1.Yy(), value2.Yy()),
+                Math.min(value1.Yz(), value2.Yz()),
+                Math.min(value1.Yw(), value2.Yw()),
+                Math.min(value1.Zx(), value2.Zx()),
+                Math.min(value1.Zy(), value2.Zy()),
+                Math.min(value1.Zz(), value2.Zz()),
+                Math.min(value1.Zw(), value2.Zw()),
+                Math.min(value1.Tx(), value2.Tx()),
+                Math.min(value1.Ty(), value2.Ty()),
+                Math.min(value1.Tz(), value2.Tz()),
+                Math.min(value1.Tw(), value2.Tw())
         );
     }
 
     public static <R> R max(Matrix4x4.Accessible value1, double value2, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.Xx(), value2),
-                max(value1.Xy(), value2),
-                max(value1.Xz(), value2),
-                max(value1.Xw(), value2),
-                max(value1.Yx(), value2),
-                max(value1.Yy(), value2),
-                max(value1.Yz(), value2),
-                max(value1.Yw(), value2),
-                max(value1.Zx(), value2),
-                max(value1.Zy(), value2),
-                max(value1.Zz(), value2),
-                max(value1.Zw(), value2),
-                max(value1.Tx(), value2),
-                max(value1.Ty(), value2),
-                max(value1.Tz(), value2),
-                max(value1.Tw(), value2)
+                Math.max(value1.Xx(), value2),
+                Math.max(value1.Xy(), value2),
+                Math.max(value1.Xz(), value2),
+                Math.max(value1.Xw(), value2),
+                Math.max(value1.Yx(), value2),
+                Math.max(value1.Yy(), value2),
+                Math.max(value1.Yz(), value2),
+                Math.max(value1.Yw(), value2),
+                Math.max(value1.Zx(), value2),
+                Math.max(value1.Zy(), value2),
+                Math.max(value1.Zz(), value2),
+                Math.max(value1.Zw(), value2),
+                Math.max(value1.Tx(), value2),
+                Math.max(value1.Ty(), value2),
+                Math.max(value1.Tz(), value2),
+                Math.max(value1.Tw(), value2)
         );
     }
 
     public static void max(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, double value2) {
         resultConsumer.XYZTxyzw(
-                max(value1.Xx(), value2),
-                max(value1.Xy(), value2),
-                max(value1.Xz(), value2),
-                max(value1.Xw(), value2),
-                max(value1.Yx(), value2),
-                max(value1.Yy(), value2),
-                max(value1.Yz(), value2),
-                max(value1.Yw(), value2),
-                max(value1.Zx(), value2),
-                max(value1.Zy(), value2),
-                max(value1.Zz(), value2),
-                max(value1.Zw(), value2),
-                max(value1.Tx(), value2),
-                max(value1.Ty(), value2),
-                max(value1.Tz(), value2),
-                max(value1.Tw(), value2)
+                Math.max(value1.Xx(), value2),
+                Math.max(value1.Xy(), value2),
+                Math.max(value1.Xz(), value2),
+                Math.max(value1.Xw(), value2),
+                Math.max(value1.Yx(), value2),
+                Math.max(value1.Yy(), value2),
+                Math.max(value1.Yz(), value2),
+                Math.max(value1.Yw(), value2),
+                Math.max(value1.Zx(), value2),
+                Math.max(value1.Zy(), value2),
+                Math.max(value1.Zz(), value2),
+                Math.max(value1.Zw(), value2),
+                Math.max(value1.Tx(), value2),
+                Math.max(value1.Ty(), value2),
+                Math.max(value1.Tz(), value2),
+                Math.max(value1.Tw(), value2)
         );
     }
 
     public static <R> R max(Matrix4x4.Accessible value1, Matrix4x4.Accessible value2, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                max(value1.Xx(), value2.Xx()),
-                max(value1.Xy(), value2.Xy()),
-                max(value1.Xz(), value2.Xz()),
-                max(value1.Xw(), value2.Xw()),
-                max(value1.Yx(), value2.Yx()),
-                max(value1.Yy(), value2.Yy()),
-                max(value1.Yz(), value2.Yz()),
-                max(value1.Yw(), value2.Yw()),
-                max(value1.Zx(), value2.Zx()),
-                max(value1.Zy(), value2.Zy()),
-                max(value1.Zz(), value2.Zz()),
-                max(value1.Zw(), value2.Zw()),
-                max(value1.Tx(), value2.Tx()),
-                max(value1.Ty(), value2.Ty()),
-                max(value1.Tz(), value2.Tz()),
-                max(value1.Tw(), value2.Tw())
+                Math.max(value1.Xx(), value2.Xx()),
+                Math.max(value1.Xy(), value2.Xy()),
+                Math.max(value1.Xz(), value2.Xz()),
+                Math.max(value1.Xw(), value2.Xw()),
+                Math.max(value1.Yx(), value2.Yx()),
+                Math.max(value1.Yy(), value2.Yy()),
+                Math.max(value1.Yz(), value2.Yz()),
+                Math.max(value1.Yw(), value2.Yw()),
+                Math.max(value1.Zx(), value2.Zx()),
+                Math.max(value1.Zy(), value2.Zy()),
+                Math.max(value1.Zz(), value2.Zz()),
+                Math.max(value1.Zw(), value2.Zw()),
+                Math.max(value1.Tx(), value2.Tx()),
+                Math.max(value1.Ty(), value2.Ty()),
+                Math.max(value1.Tz(), value2.Tz()),
+                Math.max(value1.Tw(), value2.Tw())
         );
     }
 
     public static void max(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value1, Matrix4x4.Accessible value2) {
         resultConsumer.XYZTxyzw(
-                max(value1.Xx(), value2.Xx()),
-                max(value1.Xy(), value2.Xy()),
-                max(value1.Xz(), value2.Xz()),
-                max(value1.Xw(), value2.Xw()),
-                max(value1.Yx(), value2.Yx()),
-                max(value1.Yy(), value2.Yy()),
-                max(value1.Yz(), value2.Yz()),
-                max(value1.Yw(), value2.Yw()),
-                max(value1.Zx(), value2.Zx()),
-                max(value1.Zy(), value2.Zy()),
-                max(value1.Zz(), value2.Zz()),
-                max(value1.Zw(), value2.Zw()),
-                max(value1.Tx(), value2.Tx()),
-                max(value1.Ty(), value2.Ty()),
-                max(value1.Tz(), value2.Tz()),
-                max(value1.Tw(), value2.Tw())
+                Math.max(value1.Xx(), value2.Xx()),
+                Math.max(value1.Xy(), value2.Xy()),
+                Math.max(value1.Xz(), value2.Xz()),
+                Math.max(value1.Xw(), value2.Xw()),
+                Math.max(value1.Yx(), value2.Yx()),
+                Math.max(value1.Yy(), value2.Yy()),
+                Math.max(value1.Yz(), value2.Yz()),
+                Math.max(value1.Yw(), value2.Yw()),
+                Math.max(value1.Zx(), value2.Zx()),
+                Math.max(value1.Zy(), value2.Zy()),
+                Math.max(value1.Zz(), value2.Zz()),
+                Math.max(value1.Zw(), value2.Zw()),
+                Math.max(value1.Tx(), value2.Tx()),
+                Math.max(value1.Ty(), value2.Ty()),
+                Math.max(value1.Tz(), value2.Tz()),
+                Math.max(value1.Tw(), value2.Tw())
         );
     }
 
     public static <R> R clamp(Matrix4x4.Accessible value, double min, double max, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min, max),
-                clamp(value.Xy(), min, max),
-                clamp(value.Xz(), min, max),
-                clamp(value.Xw(), min, max),
-                clamp(value.Yx(), min, max),
-                clamp(value.Yy(), min, max),
-                clamp(value.Yz(), min, max),
-                clamp(value.Yw(), min, max),
-                clamp(value.Zx(), min, max),
-                clamp(value.Zy(), min, max),
-                clamp(value.Zz(), min, max),
-                clamp(value.Zw(), min, max),
-                clamp(value.Tx(), min, max),
-                clamp(value.Ty(), min, max),
-                clamp(value.Tz(), min, max),
-                clamp(value.Tw(), min, max)
+                Math.min(Math.max(value.Xx(), min), max),
+                Math.min(Math.max(value.Xy(), min), max),
+                Math.min(Math.max(value.Xz(), min), max),
+                Math.min(Math.max(value.Xw(), min), max),
+                Math.min(Math.max(value.Yx(), min), max),
+                Math.min(Math.max(value.Yy(), min), max),
+                Math.min(Math.max(value.Yz(), min), max),
+                Math.min(Math.max(value.Yw(), min), max),
+                Math.min(Math.max(value.Zx(), min), max),
+                Math.min(Math.max(value.Zy(), min), max),
+                Math.min(Math.max(value.Zz(), min), max),
+                Math.min(Math.max(value.Zw(), min), max),
+                Math.min(Math.max(value.Tx(), min), max),
+                Math.min(Math.max(value.Ty(), min), max),
+                Math.min(Math.max(value.Tz(), min), max),
+                Math.min(Math.max(value.Tw(), min), max)
         );
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, double min, double max) {
         resultConsumer.XYZTxyzw(
-                clamp(value.Xx(), min, max),
-                clamp(value.Xy(), min, max),
-                clamp(value.Xz(), min, max),
-                clamp(value.Xw(), min, max),
-                clamp(value.Yx(), min, max),
-                clamp(value.Yy(), min, max),
-                clamp(value.Yz(), min, max),
-                clamp(value.Yw(), min, max),
-                clamp(value.Zx(), min, max),
-                clamp(value.Zy(), min, max),
-                clamp(value.Zz(), min, max),
-                clamp(value.Zw(), min, max),
-                clamp(value.Tx(), min, max),
-                clamp(value.Ty(), min, max),
-                clamp(value.Tz(), min, max),
-                clamp(value.Tw(), min, max)
+                Math.min(Math.max(value.Xx(), min), max),
+                Math.min(Math.max(value.Xy(), min), max),
+                Math.min(Math.max(value.Xz(), min), max),
+                Math.min(Math.max(value.Xw(), min), max),
+                Math.min(Math.max(value.Yx(), min), max),
+                Math.min(Math.max(value.Yy(), min), max),
+                Math.min(Math.max(value.Yz(), min), max),
+                Math.min(Math.max(value.Yw(), min), max),
+                Math.min(Math.max(value.Zx(), min), max),
+                Math.min(Math.max(value.Zy(), min), max),
+                Math.min(Math.max(value.Zz(), min), max),
+                Math.min(Math.max(value.Zw(), min), max),
+                Math.min(Math.max(value.Tx(), min), max),
+                Math.min(Math.max(value.Ty(), min), max),
+                Math.min(Math.max(value.Tz(), min), max),
+                Math.min(Math.max(value.Tw(), min), max)
         );
     }
 
     public static <R> R clamp(Matrix4x4.Accessible value, Matrix4x4.Accessible min, double max, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min.Xx(), max),
-                clamp(value.Xy(), min.Xy(), max),
-                clamp(value.Xz(), min.Xz(), max),
-                clamp(value.Xw(), min.Xw(), max),
-                clamp(value.Yx(), min.Yx(), max),
-                clamp(value.Yy(), min.Yy(), max),
-                clamp(value.Yz(), min.Yz(), max),
-                clamp(value.Yw(), min.Yw(), max),
-                clamp(value.Zx(), min.Zx(), max),
-                clamp(value.Zy(), min.Zy(), max),
-                clamp(value.Zz(), min.Zz(), max),
-                clamp(value.Zw(), min.Zw(), max),
-                clamp(value.Tx(), min.Tx(), max),
-                clamp(value.Ty(), min.Ty(), max),
-                clamp(value.Tz(), min.Tz(), max),
-                clamp(value.Tw(), min.Tw(), max)
+                Math.min(Math.max(value.Xx(), min.Xx()), max),
+                Math.min(Math.max(value.Xy(), min.Xy()), max),
+                Math.min(Math.max(value.Xz(), min.Xz()), max),
+                Math.min(Math.max(value.Xw(), min.Xw()), max),
+                Math.min(Math.max(value.Yx(), min.Yx()), max),
+                Math.min(Math.max(value.Yy(), min.Yy()), max),
+                Math.min(Math.max(value.Yz(), min.Yz()), max),
+                Math.min(Math.max(value.Yw(), min.Yw()), max),
+                Math.min(Math.max(value.Zx(), min.Zx()), max),
+                Math.min(Math.max(value.Zy(), min.Zy()), max),
+                Math.min(Math.max(value.Zz(), min.Zz()), max),
+                Math.min(Math.max(value.Zw(), min.Zw()), max),
+                Math.min(Math.max(value.Tx(), min.Tx()), max),
+                Math.min(Math.max(value.Ty(), min.Ty()), max),
+                Math.min(Math.max(value.Tz(), min.Tz()), max),
+                Math.min(Math.max(value.Tw(), min.Tw()), max)
         );
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, Matrix4x4.Accessible min, double max) {
         resultConsumer.XYZTxyzw(
-                clamp(value.Xx(), min.Xx(), max),
-                clamp(value.Xy(), min.Xy(), max),
-                clamp(value.Xz(), min.Xz(), max),
-                clamp(value.Xw(), min.Xw(), max),
-                clamp(value.Yx(), min.Yx(), max),
-                clamp(value.Yy(), min.Yy(), max),
-                clamp(value.Yz(), min.Yz(), max),
-                clamp(value.Yw(), min.Yw(), max),
-                clamp(value.Zx(), min.Zx(), max),
-                clamp(value.Zy(), min.Zy(), max),
-                clamp(value.Zz(), min.Zz(), max),
-                clamp(value.Zw(), min.Zw(), max),
-                clamp(value.Tx(), min.Tx(), max),
-                clamp(value.Ty(), min.Ty(), max),
-                clamp(value.Tz(), min.Tz(), max),
-                clamp(value.Tw(), min.Tw(), max)
+                Math.min(Math.max(value.Xx(), min.Xx()), max),
+                Math.min(Math.max(value.Xy(), min.Xy()), max),
+                Math.min(Math.max(value.Xz(), min.Xz()), max),
+                Math.min(Math.max(value.Xw(), min.Xw()), max),
+                Math.min(Math.max(value.Yx(), min.Yx()), max),
+                Math.min(Math.max(value.Yy(), min.Yy()), max),
+                Math.min(Math.max(value.Yz(), min.Yz()), max),
+                Math.min(Math.max(value.Yw(), min.Yw()), max),
+                Math.min(Math.max(value.Zx(), min.Zx()), max),
+                Math.min(Math.max(value.Zy(), min.Zy()), max),
+                Math.min(Math.max(value.Zz(), min.Zz()), max),
+                Math.min(Math.max(value.Zw(), min.Zw()), max),
+                Math.min(Math.max(value.Tx(), min.Tx()), max),
+                Math.min(Math.max(value.Ty(), min.Ty()), max),
+                Math.min(Math.max(value.Tz(), min.Tz()), max),
+                Math.min(Math.max(value.Tw(), min.Tw()), max)
         );
     }
 
     public static <R> R clamp(Matrix4x4.Accessible value, double min, Matrix4x4.Accessible max, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min, max.Xx()),
-                clamp(value.Xy(), min, max.Xy()),
-                clamp(value.Xz(), min, max.Xz()),
-                clamp(value.Xw(), min, max.Xw()),
-                clamp(value.Yx(), min, max.Yx()),
-                clamp(value.Yy(), min, max.Yy()),
-                clamp(value.Yz(), min, max.Yz()),
-                clamp(value.Yw(), min, max.Yw()),
-                clamp(value.Zx(), min, max.Zx()),
-                clamp(value.Zy(), min, max.Zy()),
-                clamp(value.Zz(), min, max.Zz()),
-                clamp(value.Zw(), min, max.Zw()),
-                clamp(value.Tx(), min, max.Tx()),
-                clamp(value.Ty(), min, max.Ty()),
-                clamp(value.Tz(), min, max.Tz()),
-                clamp(value.Tw(), min, max.Tw())
+                Math.min(Math.max(value.Xx(), min), max.Xx()),
+                Math.min(Math.max(value.Xy(), min), max.Xy()),
+                Math.min(Math.max(value.Xz(), min), max.Xz()),
+                Math.min(Math.max(value.Xw(), min), max.Xw()),
+                Math.min(Math.max(value.Yx(), min), max.Yx()),
+                Math.min(Math.max(value.Yy(), min), max.Yy()),
+                Math.min(Math.max(value.Yz(), min), max.Yz()),
+                Math.min(Math.max(value.Yw(), min), max.Yw()),
+                Math.min(Math.max(value.Zx(), min), max.Zx()),
+                Math.min(Math.max(value.Zy(), min), max.Zy()),
+                Math.min(Math.max(value.Zz(), min), max.Zz()),
+                Math.min(Math.max(value.Zw(), min), max.Zw()),
+                Math.min(Math.max(value.Tx(), min), max.Tx()),
+                Math.min(Math.max(value.Ty(), min), max.Ty()),
+                Math.min(Math.max(value.Tz(), min), max.Tz()),
+                Math.min(Math.max(value.Tw(), min), max.Tw())
         );
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, double min, Matrix4x4.Accessible max) {
         resultConsumer.XYZTxyzw(
-                clamp(value.Xx(), min, max.Xx()),
-                clamp(value.Xy(), min, max.Xy()),
-                clamp(value.Xz(), min, max.Xz()),
-                clamp(value.Xw(), min, max.Xw()),
-                clamp(value.Yx(), min, max.Yx()),
-                clamp(value.Yy(), min, max.Yy()),
-                clamp(value.Yz(), min, max.Yz()),
-                clamp(value.Yw(), min, max.Yw()),
-                clamp(value.Zx(), min, max.Zx()),
-                clamp(value.Zy(), min, max.Zy()),
-                clamp(value.Zz(), min, max.Zz()),
-                clamp(value.Zw(), min, max.Zw()),
-                clamp(value.Tx(), min, max.Tx()),
-                clamp(value.Ty(), min, max.Ty()),
-                clamp(value.Tz(), min, max.Tz()),
-                clamp(value.Tw(), min, max.Tw())
+                Math.min(Math.max(value.Xx(), min), max.Xx()),
+                Math.min(Math.max(value.Xy(), min), max.Xy()),
+                Math.min(Math.max(value.Xz(), min), max.Xz()),
+                Math.min(Math.max(value.Xw(), min), max.Xw()),
+                Math.min(Math.max(value.Yx(), min), max.Yx()),
+                Math.min(Math.max(value.Yy(), min), max.Yy()),
+                Math.min(Math.max(value.Yz(), min), max.Yz()),
+                Math.min(Math.max(value.Yw(), min), max.Yw()),
+                Math.min(Math.max(value.Zx(), min), max.Zx()),
+                Math.min(Math.max(value.Zy(), min), max.Zy()),
+                Math.min(Math.max(value.Zz(), min), max.Zz()),
+                Math.min(Math.max(value.Zw(), min), max.Zw()),
+                Math.min(Math.max(value.Tx(), min), max.Tx()),
+                Math.min(Math.max(value.Ty(), min), max.Ty()),
+                Math.min(Math.max(value.Tz(), min), max.Tz()),
+                Math.min(Math.max(value.Tw(), min), max.Tw())
         );
     }
 
     public static <R> R clamp(Matrix4x4.Accessible value, Matrix4x4.Accessible min, Matrix4x4.Accessible max, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value.Xx(), min.Xx(), max.Xx()),
-                clamp(value.Xy(), min.Xy(), max.Xy()),
-                clamp(value.Xz(), min.Xz(), max.Xz()),
-                clamp(value.Xw(), min.Xw(), max.Xw()),
-                clamp(value.Yx(), min.Yx(), max.Yx()),
-                clamp(value.Yy(), min.Yy(), max.Yy()),
-                clamp(value.Yz(), min.Yz(), max.Yz()),
-                clamp(value.Yw(), min.Yw(), max.Yw()),
-                clamp(value.Zx(), min.Zx(), max.Zx()),
-                clamp(value.Zy(), min.Zy(), max.Zy()),
-                clamp(value.Zz(), min.Zz(), max.Zz()),
-                clamp(value.Zw(), min.Zw(), max.Zw()),
-                clamp(value.Tx(), min.Tx(), max.Tx()),
-                clamp(value.Ty(), min.Ty(), max.Ty()),
-                clamp(value.Tz(), min.Tz(), max.Tz()),
-                clamp(value.Tw(), min.Tw(), max.Tw())
+                Math.min(Math.max(value.Xx(), min.Xx()), max.Xx()),
+                Math.min(Math.max(value.Xy(), min.Xy()), max.Xy()),
+                Math.min(Math.max(value.Xz(), min.Xz()), max.Xz()),
+                Math.min(Math.max(value.Xw(), min.Xw()), max.Xw()),
+                Math.min(Math.max(value.Yx(), min.Yx()), max.Yx()),
+                Math.min(Math.max(value.Yy(), min.Yy()), max.Yy()),
+                Math.min(Math.max(value.Yz(), min.Yz()), max.Yz()),
+                Math.min(Math.max(value.Yw(), min.Yw()), max.Yw()),
+                Math.min(Math.max(value.Zx(), min.Zx()), max.Zx()),
+                Math.min(Math.max(value.Zy(), min.Zy()), max.Zy()),
+                Math.min(Math.max(value.Zz(), min.Zz()), max.Zz()),
+                Math.min(Math.max(value.Zw(), min.Zw()), max.Zw()),
+                Math.min(Math.max(value.Tx(), min.Tx()), max.Tx()),
+                Math.min(Math.max(value.Ty(), min.Ty()), max.Ty()),
+                Math.min(Math.max(value.Tz(), min.Tz()), max.Tz()),
+                Math.min(Math.max(value.Tw(), min.Tw()), max.Tw())
         );
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, Matrix4x4.Accessible value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
         resultConsumer.XYZTxyzw(
-                clamp(value.Xx(), min.Xx(), max.Xx()),
-                clamp(value.Xy(), min.Xy(), max.Xy()),
-                clamp(value.Xz(), min.Xz(), max.Xz()),
-                clamp(value.Xw(), min.Xw(), max.Xw()),
-                clamp(value.Yx(), min.Yx(), max.Yx()),
-                clamp(value.Yy(), min.Yy(), max.Yy()),
-                clamp(value.Yz(), min.Yz(), max.Yz()),
-                clamp(value.Yw(), min.Yw(), max.Yw()),
-                clamp(value.Zx(), min.Zx(), max.Zx()),
-                clamp(value.Zy(), min.Zy(), max.Zy()),
-                clamp(value.Zz(), min.Zz(), max.Zz()),
-                clamp(value.Zw(), min.Zw(), max.Zw()),
-                clamp(value.Tx(), min.Tx(), max.Tx()),
-                clamp(value.Ty(), min.Ty(), max.Ty()),
-                clamp(value.Tz(), min.Tz(), max.Tz()),
-                clamp(value.Tw(), min.Tw(), max.Tw())
+                Math.min(Math.max(value.Xx(), min.Xx()), max.Xx()),
+                Math.min(Math.max(value.Xy(), min.Xy()), max.Xy()),
+                Math.min(Math.max(value.Xz(), min.Xz()), max.Xz()),
+                Math.min(Math.max(value.Xw(), min.Xw()), max.Xw()),
+                Math.min(Math.max(value.Yx(), min.Yx()), max.Yx()),
+                Math.min(Math.max(value.Yy(), min.Yy()), max.Yy()),
+                Math.min(Math.max(value.Yz(), min.Yz()), max.Yz()),
+                Math.min(Math.max(value.Yw(), min.Yw()), max.Yw()),
+                Math.min(Math.max(value.Zx(), min.Zx()), max.Zx()),
+                Math.min(Math.max(value.Zy(), min.Zy()), max.Zy()),
+                Math.min(Math.max(value.Zz(), min.Zz()), max.Zz()),
+                Math.min(Math.max(value.Zw(), min.Zw()), max.Zw()),
+                Math.min(Math.max(value.Tx(), min.Tx()), max.Tx()),
+                Math.min(Math.max(value.Ty(), min.Ty()), max.Ty()),
+                Math.min(Math.max(value.Tz(), min.Tz()), max.Tz()),
+                Math.min(Math.max(value.Tw(), min.Tw()), max.Tw())
         );
     }
 
     public static <R> R clamp(double value, Matrix4x4.Accessible min, Matrix4x4.Accessible max, Matrix4x4.Factory<R> resultFactory) {
         return resultFactory.create(
-                clamp(value, min.Xx(), max.Xx()),
-                clamp(value, min.Xy(), max.Xy()),
-                clamp(value, min.Xz(), max.Xz()),
-                clamp(value, min.Xw(), max.Xw()),
-                clamp(value, min.Yx(), max.Yx()),
-                clamp(value, min.Yy(), max.Yy()),
-                clamp(value, min.Yz(), max.Yz()),
-                clamp(value, min.Yw(), max.Yw()),
-                clamp(value, min.Zx(), max.Zx()),
-                clamp(value, min.Zy(), max.Zy()),
-                clamp(value, min.Zz(), max.Zz()),
-                clamp(value, min.Zw(), max.Zw()),
-                clamp(value, min.Tx(), max.Tx()),
-                clamp(value, min.Ty(), max.Ty()),
-                clamp(value, min.Tz(), max.Tz()),
-                clamp(value, min.Tw(), max.Tw())
+                Math.min(Math.max(value, min.Xx()), max.Xx()),
+                Math.min(Math.max(value, min.Xy()), max.Xy()),
+                Math.min(Math.max(value, min.Xz()), max.Xz()),
+                Math.min(Math.max(value, min.Xw()), max.Xw()),
+                Math.min(Math.max(value, min.Yx()), max.Yx()),
+                Math.min(Math.max(value, min.Yy()), max.Yy()),
+                Math.min(Math.max(value, min.Yz()), max.Yz()),
+                Math.min(Math.max(value, min.Yw()), max.Yw()),
+                Math.min(Math.max(value, min.Zx()), max.Zx()),
+                Math.min(Math.max(value, min.Zy()), max.Zy()),
+                Math.min(Math.max(value, min.Zz()), max.Zz()),
+                Math.min(Math.max(value, min.Zw()), max.Zw()),
+                Math.min(Math.max(value, min.Tx()), max.Tx()),
+                Math.min(Math.max(value, min.Ty()), max.Ty()),
+                Math.min(Math.max(value, min.Tz()), max.Tz()),
+                Math.min(Math.max(value, min.Tw()), max.Tw())
         );
     }
 
     public static void clamp(Matrix4x4.Consumer resultConsumer, double value, Matrix4x4.Accessible min, Matrix4x4.Accessible max) {
         resultConsumer.XYZTxyzw(
-                clamp(value, min.Xx(), max.Xx()),
-                clamp(value, min.Xy(), max.Xy()),
-                clamp(value, min.Xz(), max.Xz()),
-                clamp(value, min.Xw(), max.Xw()),
-                clamp(value, min.Yx(), max.Yx()),
-                clamp(value, min.Yy(), max.Yy()),
-                clamp(value, min.Yz(), max.Yz()),
-                clamp(value, min.Yw(), max.Yw()),
-                clamp(value, min.Zx(), max.Zx()),
-                clamp(value, min.Zy(), max.Zy()),
-                clamp(value, min.Zz(), max.Zz()),
-                clamp(value, min.Zw(), max.Zw()),
-                clamp(value, min.Tx(), max.Tx()),
-                clamp(value, min.Ty(), max.Ty()),
-                clamp(value, min.Tz(), max.Tz()),
-                clamp(value, min.Tw(), max.Tw())
-        );
-    }
-
-    public static <R> R clamp(double value, Matrix4x4.Accessible min, double max, Matrix4x4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min.Xx(), max),
-                clamp(value, min.Xy(), max),
-                clamp(value, min.Xz(), max),
-                clamp(value, min.Xw(), max),
-                clamp(value, min.Yx(), max),
-                clamp(value, min.Yy(), max),
-                clamp(value, min.Yz(), max),
-                clamp(value, min.Yw(), max),
-                clamp(value, min.Zx(), max),
-                clamp(value, min.Zy(), max),
-                clamp(value, min.Zz(), max),
-                clamp(value, min.Zw(), max),
-                clamp(value, min.Tx(), max),
-                clamp(value, min.Ty(), max),
-                clamp(value, min.Tz(), max),
-                clamp(value, min.Tw(), max)
-        );
-    }
-
-    public static void clamp(Matrix4x4.Consumer resultConsumer, double value, Matrix4x4.Accessible min, double max) {
-        resultConsumer.XYZTxyzw(
-                clamp(value, min.Xx(), max),
-                clamp(value, min.Xy(), max),
-                clamp(value, min.Xz(), max),
-                clamp(value, min.Xw(), max),
-                clamp(value, min.Yx(), max),
-                clamp(value, min.Yy(), max),
-                clamp(value, min.Yz(), max),
-                clamp(value, min.Yw(), max),
-                clamp(value, min.Zx(), max),
-                clamp(value, min.Zy(), max),
-                clamp(value, min.Zz(), max),
-                clamp(value, min.Zw(), max),
-                clamp(value, min.Tx(), max),
-                clamp(value, min.Ty(), max),
-                clamp(value, min.Tz(), max),
-                clamp(value, min.Tw(), max)
-        );
-    }
-
-    public static <R> R clamp(double value, double min, Matrix4x4.Accessible max, Matrix4x4.Factory<R> resultFactory) {
-        return resultFactory.create(
-                clamp(value, min, max.Xx()),
-                clamp(value, min, max.Xy()),
-                clamp(value, min, max.Xz()),
-                clamp(value, min, max.Xw()),
-                clamp(value, min, max.Yx()),
-                clamp(value, min, max.Yy()),
-                clamp(value, min, max.Yz()),
-                clamp(value, min, max.Yw()),
-                clamp(value, min, max.Zx()),
-                clamp(value, min, max.Zy()),
-                clamp(value, min, max.Zz()),
-                clamp(value, min, max.Zw()),
-                clamp(value, min, max.Tx()),
-                clamp(value, min, max.Ty()),
-                clamp(value, min, max.Tz()),
-                clamp(value, min, max.Tw())
-        );
-    }
-
-    public static void clamp(Matrix4x4.Consumer resultConsumer, double value, double min, Matrix4x4.Accessible max) {
-        resultConsumer.XYZTxyzw(
-                clamp(value, min, max.Xx()),
-                clamp(value, min, max.Xy()),
-                clamp(value, min, max.Xz()),
-                clamp(value, min, max.Xw()),
-                clamp(value, min, max.Yx()),
-                clamp(value, min, max.Yy()),
-                clamp(value, min, max.Yz()),
-                clamp(value, min, max.Yw()),
-                clamp(value, min, max.Zx()),
-                clamp(value, min, max.Zy()),
-                clamp(value, min, max.Zz()),
-                clamp(value, min, max.Zw()),
-                clamp(value, min, max.Tx()),
-                clamp(value, min, max.Ty()),
-                clamp(value, min, max.Tz()),
-                clamp(value, min, max.Tw())
+                Math.min(Math.max(value, min.Xx()), max.Xx()),
+                Math.min(Math.max(value, min.Xy()), max.Xy()),
+                Math.min(Math.max(value, min.Xz()), max.Xz()),
+                Math.min(Math.max(value, min.Xw()), max.Xw()),
+                Math.min(Math.max(value, min.Yx()), max.Yx()),
+                Math.min(Math.max(value, min.Yy()), max.Yy()),
+                Math.min(Math.max(value, min.Yz()), max.Yz()),
+                Math.min(Math.max(value, min.Yw()), max.Yw()),
+                Math.min(Math.max(value, min.Zx()), max.Zx()),
+                Math.min(Math.max(value, min.Zy()), max.Zy()),
+                Math.min(Math.max(value, min.Zz()), max.Zz()),
+                Math.min(Math.max(value, min.Zw()), max.Zw()),
+                Math.min(Math.max(value, min.Tx()), max.Tx()),
+                Math.min(Math.max(value, min.Ty()), max.Ty()),
+                Math.min(Math.max(value, min.Tz()), max.Tz()),
+                Math.min(Math.max(value, min.Tw()), max.Tw())
         );
     }
 

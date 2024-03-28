@@ -110,12 +110,12 @@ Vector3.Accessible operand1 = ...
 Vector3.Accessible operand2 = ...
 
 Vector3.Mutable result1 = ...
-VecMath.add(result1, operand1, operand2);
-VecMath.add(result1::yzx, operand1, operand2);
+VecMath.addTo(operand1, operand2, result1);
+VecMath.addTo(operand1, operand2, result1::yzx);
 
 Vector4.Mutable result2 = ...
-VecMath.add(result2::xyz, operand1, operand2);
-VecMath.add((x, y, z) -> result2.xyzw(x, y, z, 0.0), operand1, operand2);
+VecMath.addTo(operand1, operand2, result2::xyz);
+VecMath.addTo(operand1, operand2, (x, y, z) -> result2.xyzw(x, y, z, 0.0));
 
 Vector3.Accessible result3 = VecMath.add(operand1, operand2, SomeVector3Impl::new);
 Vector4.Accessible result4 = VecMath.add(operand1, operand2, (x, y, z) -> new SomeVector4Impl(x, y, z, 0.0));

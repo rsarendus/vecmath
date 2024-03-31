@@ -42,300 +42,300 @@ public final class Matrix3x3 {
             return factory.create(Xx(), Xy());
         }
 
-        default <R> R Xxz(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Xz());
-        }
-
-        default <R> R Xyz(Vector2.Factory<R> factory) {
-            return factory.create(Xy(), Xz());
-        }
-
-        default <R> R Xxyz(Vector3.Factory<R> factory) {
-            return factory.create(Xx(), Xy(), Xz());
-        }
-
-        default <R> R Yxy(Vector2.Factory<R> factory) {
-            return factory.create(Yx(), Yy());
-        }
-
-        default <R> R Yxz(Vector2.Factory<R> factory) {
-            return factory.create(Yx(), Yz());
-        }
-
-        default <R> R Yyz(Vector2.Factory<R> factory) {
-            return factory.create(Yy(), Yz());
-        }
-
-        default <R> R Yxyz(Vector3.Factory<R> factory) {
-            return factory.create(Yx(), Yy(), Yz());
-        }
-
-        default <R> R Zxy(Vector2.Factory<R> factory) {
-            return factory.create(Zx(), Zy());
-        }
-
-        default <R> R Zxz(Vector2.Factory<R> factory) {
-            return factory.create(Zx(), Zz());
-        }
-
-        default <R> R Zyz(Vector2.Factory<R> factory) {
-            return factory.create(Zy(), Zz());
-        }
-
-        default <R> R Zxyz(Vector3.Factory<R> factory) {
-            return factory.create(Zx(), Zy(), Zz());
-        }
-
-        default <R> R xXY(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Yx());
-        }
-
-        default <R> R xXZ(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Zx());
-        }
-
-        default <R> R xYZ(Vector2.Factory<R> factory) {
-            return factory.create(Yx(), Zx());
-        }
-
-        default <R> R xXYZ(Vector3.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Zx());
-        }
-
-        default <R> R yXY(Vector2.Factory<R> factory) {
-            return factory.create(Xy(), Yy());
-        }
-
-        default <R> R yXZ(Vector2.Factory<R> factory) {
-            return factory.create(Xy(), Zy());
-        }
-
-        default <R> R yYZ(Vector2.Factory<R> factory) {
-            return factory.create(Yy(), Zy());
-        }
-
-        default <R> R yXYZ(Vector3.Factory<R> factory) {
-            return factory.create(Xy(), Yy(), Zy());
-        }
-
-        default <R> R zXY(Vector2.Factory<R> factory) {
-            return factory.create(Xz(), Yz());
-        }
-
-        default <R> R zXZ(Vector2.Factory<R> factory) {
-            return factory.create(Xz(), Zz());
-        }
-
-        default <R> R zYZ(Vector2.Factory<R> factory) {
-            return factory.create(Yz(), Zz());
-        }
-
-        default <R> R zXYZ(Vector3.Factory<R> factory) {
-            return factory.create(Xz(), Yz(), Zz());
-        }
-
-        default <R> R Dxy(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Yy());
-        }
-
-        default <R> R Dxz(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Zz());
-        }
-
-        default <R> R Dyz(Vector2.Factory<R> factory) {
-            return factory.create(Yy(), Zz());
-        }
-
-        default <R> R Dxyz(Vector3.Factory<R> factory) {
-            return factory.create(Xx(), Yy(), Zz());
-        }
-
-        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Xy(), Yx(), Yy());
-        }
-
-        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Xy(), Yy());
-        }
-
-        default <R> R XYyz(Matrix2x2.Factory<R> factory) {
-            return factory.create(Xy(), Xz(), Yy(), Yz());
-        }
-
-        default <R> R yzXY(Matrix2x2.Factory<R> factory) {
-            return factory.create(Xy(), Yy(), Xz(), Yz());
-        }
-
-        default <R> R YZxy(Matrix2x2.Factory<R> factory) {
-            return factory.create(Yx(), Yy(), Zx(), Zy());
-        }
-
-        default <R> R xyYZ(Matrix2x2.Factory<R> factory) {
-            return factory.create(Yx(), Zx(), Yy(), Zy());
-        }
-
-        default <R> R YZyz(Matrix2x2.Factory<R> factory) {
-            return factory.create(Yy(), Yz(), Zy(), Zz());
-        }
-
-        default <R> R yzYZ(Matrix2x2.Factory<R> factory) {
-            return factory.create(Yy(), Zy(), Yz(), Zz());
-        }
-
-        default <R> R XYZxyz(Matrix3x3.Factory<R> factory) {
-            return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
-        }
-
-        default <R> R xyzXYZ(Matrix3x3.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
-        }
-
         default void XxyTo(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xy());
+        }
+
+        default <R> R Xxz(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Xz());
         }
 
         default void XxzTo(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xz());
         }
 
+        default <R> R Xyz(Vector2.Factory<R> factory) {
+            return factory.create(Xy(), Xz());
+        }
+
         default void XyzTo(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Xz());
+        }
+
+        default <R> R Xxyz(Vector3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xz());
         }
 
         default void XxyzTo(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Xy(), Xz());
         }
 
+        default <R> R Yxy(Vector2.Factory<R> factory) {
+            return factory.create(Yx(), Yy());
+        }
+
         default void YxyTo(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yy());
+        }
+
+        default <R> R Yxz(Vector2.Factory<R> factory) {
+            return factory.create(Yx(), Yz());
         }
 
         default void YxzTo(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yz());
         }
 
+        default <R> R Yyz(Vector2.Factory<R> factory) {
+            return factory.create(Yy(), Yz());
+        }
+
         default void YyzTo(Vector2.Consumer consumer) {
             consumer.xy(Yy(), Yz());
+        }
+
+        default <R> R Yxyz(Vector3.Factory<R> factory) {
+            return factory.create(Yx(), Yy(), Yz());
         }
 
         default void YxyzTo(Vector3.Consumer consumer) {
             consumer.xyz(Yx(), Yy(), Yz());
         }
 
+        default <R> R Zxy(Vector2.Factory<R> factory) {
+            return factory.create(Zx(), Zy());
+        }
+
         default void ZxyTo(Vector2.Consumer consumer) {
             consumer.xy(Zx(), Zy());
+        }
+
+        default <R> R Zxz(Vector2.Factory<R> factory) {
+            return factory.create(Zx(), Zz());
         }
 
         default void ZxzTo(Vector2.Consumer consumer) {
             consumer.xy(Zx(), Zz());
         }
 
+        default <R> R Zyz(Vector2.Factory<R> factory) {
+            return factory.create(Zy(), Zz());
+        }
+
         default void ZyzTo(Vector2.Consumer consumer) {
             consumer.xy(Zy(), Zz());
+        }
+
+        default <R> R Zxyz(Vector3.Factory<R> factory) {
+            return factory.create(Zx(), Zy(), Zz());
         }
 
         default void ZxyzTo(Vector3.Consumer consumer) {
             consumer.xyz(Zx(), Zy(), Zz());
         }
 
+        default <R> R xXY(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Yx());
+        }
+
         default void xXYto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yx());
+        }
+
+        default <R> R xXZ(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Zx());
         }
 
         default void xXZto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Zx());
         }
 
+        default <R> R xYZ(Vector2.Factory<R> factory) {
+            return factory.create(Yx(), Zx());
+        }
+
         default void xYZto(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Zx());
+        }
+
+        default <R> R xXYZ(Vector3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx());
         }
 
         default void xXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yx(), Zx());
         }
 
+        default <R> R yXY(Vector2.Factory<R> factory) {
+            return factory.create(Xy(), Yy());
+        }
+
         default void yXYto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Yy());
+        }
+
+        default <R> R yXZ(Vector2.Factory<R> factory) {
+            return factory.create(Xy(), Zy());
         }
 
         default void yXZto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Zy());
         }
 
+        default <R> R yYZ(Vector2.Factory<R> factory) {
+            return factory.create(Yy(), Zy());
+        }
+
         default void yYZto(Vector2.Consumer consumer) {
             consumer.xy(Yy(), Zy());
+        }
+
+        default <R> R yXYZ(Vector3.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Zy());
         }
 
         default void yXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Yy(), Zy());
         }
 
+        default <R> R zXY(Vector2.Factory<R> factory) {
+            return factory.create(Xz(), Yz());
+        }
+
         default void zXYto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Yz());
+        }
+
+        default <R> R zXZ(Vector2.Factory<R> factory) {
+            return factory.create(Xz(), Zz());
         }
 
         default void zXZto(Vector2.Consumer consumer) {
             consumer.xy(Xz(), Zz());
         }
 
+        default <R> R zYZ(Vector2.Factory<R> factory) {
+            return factory.create(Yz(), Zz());
+        }
+
         default void zYZto(Vector2.Consumer consumer) {
             consumer.xy(Yz(), Zz());
+        }
+
+        default <R> R zXYZ(Vector3.Factory<R> factory) {
+            return factory.create(Xz(), Yz(), Zz());
         }
 
         default void zXYZto(Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Yz(), Zz());
         }
 
+        default <R> R Dxy(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Yy());
+        }
+
         default void DxyTo(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yy());
+        }
+
+        default <R> R Dxz(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Zz());
         }
 
         default void DxzTo(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Zz());
         }
 
+        default <R> R Dyz(Vector2.Factory<R> factory) {
+            return factory.create(Yy(), Zz());
+        }
+
         default void DyzTo(Vector2.Consumer consumer) {
             consumer.xy(Yy(), Zz());
+        }
+
+        default <R> R Dxyz(Vector3.Factory<R> factory) {
+            return factory.create(Xx(), Yy(), Zz());
         }
 
         default void DxyzTo(Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yy(), Zz());
         }
 
+        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Yx(), Yy());
+        }
+
         default void XYxyTo(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Xy(), Yx(), Yy());
+        }
+
+        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xy(), Yy());
         }
 
         default void xyXYto(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Yx(), Xy(), Yy());
         }
 
+        default <R> R XYyz(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Yy(), Yz());
+        }
+
         default void XYyzTo(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xy(), Xz(), Yy(), Yz());
+        }
+
+        default <R> R yzXY(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Xz(), Yz());
         }
 
         default void yzXYto(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xy(), Yy(), Xz(), Yz());
         }
 
+        default <R> R YZxy(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yy(), Zx(), Zy());
+        }
+
         default void YZxyTo(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yx(), Yy(), Zx(), Zy());
+        }
+
+        default <R> R xyYZ(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Yy(), Zy());
         }
 
         default void xyYZto(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yx(), Zx(), Yy(), Zy());
         }
 
+        default <R> R YZyz(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Yz(), Zy(), Zz());
+        }
+
         default void YZyzTo(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yy(), Yz(), Zy(), Zz());
+        }
+
+        default <R> R yzYZ(Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Zy(), Yz(), Zz());
         }
 
         default void yzYZto(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yy(), Zy(), Yz(), Zz());
         }
 
+        default <R> R XYZxyz(Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
+        }
+
         default void XYZxyzTo(Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
+        }
+
+        default <R> R xyzXYZ(Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
 
         default void xyzXYZto(Matrix3x3.Consumer consumer) {

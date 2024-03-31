@@ -35,52 +35,52 @@ public final class Matrix2x2 {
             return factory.create(Xx(), Xy());
         }
 
-        default <R> R Yxy(Vector2.Factory<R> factory) {
-            return factory.create(Yx(), Yy());
-        }
-
-        default <R> R xXY(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Yx());
-        }
-
-        default <R> R yXY(Vector2.Factory<R> factory) {
-            return factory.create(Xy(), Yy());
-        }
-
-        default <R> R Dxy(Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Yy());
-        }
-
-        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Xy(), Yx(), Yy());
-        }
-
-        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Xy(), Yy());
-        }
-
         default void XxyTo(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xy());
+        }
+
+        default <R> R Yxy(Vector2.Factory<R> factory) {
+            return factory.create(Yx(), Yy());
         }
 
         default void YxyTo(Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yy());
         }
 
+        default <R> R xXY(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Yx());
+        }
+
         default void xXYto(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yx());
+        }
+
+        default <R> R yXY(Vector2.Factory<R> factory) {
+            return factory.create(Xy(), Yy());
         }
 
         default void yXYto(Vector2.Consumer consumer) {
             consumer.xy(Xy(), Yy());
         }
 
+        default <R> R Dxy(Vector2.Factory<R> factory) {
+            return factory.create(Xx(), Yy());
+        }
+
         default void DxyTo(Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yy());
         }
 
+        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Yx(), Yy());
+        }
+
         default void XYxyTo(Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Xy(), Yx(), Yy());
+        }
+
+        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xy(), Yy());
         }
 
         default void xyXYto(Matrix2x2.Consumer consumer) {

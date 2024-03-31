@@ -47,1019 +47,1019 @@ public final class Matrix4x4 {
         double Tz();
         double Tw();
 
-        default <R> R Xxy(Vector2.Factory<R> factory) {
+        default <R> R Xxy(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Xy());
         }
 
-        default void XxyTo(Vector2.Consumer consumer) {
+        default void XxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xy());
         }
 
-        default <R> R Xxz(Vector2.Factory<R> factory) {
+        default <R> R Xxz(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Xz());
         }
 
-        default void XxzTo(Vector2.Consumer consumer) {
+        default void XxzTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xz());
         }
 
-        default <R> R Xxw(Vector2.Factory<R> factory) {
+        default <R> R Xxw(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Xw());
         }
 
-        default void XxwTo(Vector2.Consumer consumer) {
+        default void XxwTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xw());
         }
 
-        default <R> R Xyz(Vector2.Factory<R> factory) {
+        default <R> R Xyz(final Vector2.Factory<R> factory) {
             return factory.create(Xy(), Xz());
         }
 
-        default void XyzTo(Vector2.Consumer consumer) {
+        default void XyzTo(final Vector2.Consumer consumer) {
             consumer.xy(Xy(), Xz());
         }
 
-        default <R> R Xyw(Vector2.Factory<R> factory) {
+        default <R> R Xyw(final Vector2.Factory<R> factory) {
             return factory.create(Xy(), Xw());
         }
 
-        default void XywTo(Vector2.Consumer consumer) {
+        default void XywTo(final Vector2.Consumer consumer) {
             consumer.xy(Xy(), Xw());
         }
 
-        default <R> R Xzw(Vector2.Factory<R> factory) {
+        default <R> R Xzw(final Vector2.Factory<R> factory) {
             return factory.create(Xz(), Xw());
         }
 
-        default void XzwTo(Vector2.Consumer consumer) {
+        default void XzwTo(final Vector2.Consumer consumer) {
             consumer.xy(Xz(), Xw());
         }
 
-        default <R> R Xxyz(Vector3.Factory<R> factory) {
+        default <R> R Xxyz(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz());
         }
 
-        default void XxyzTo(Vector3.Consumer consumer) {
+        default void XxyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Xy(), Xz());
         }
 
-        default <R> R Xxyw(Vector3.Factory<R> factory) {
+        default <R> R Xxyw(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xw());
         }
 
-        default void XxywTo(Vector3.Consumer consumer) {
+        default void XxywTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Xy(), Xw());
         }
 
-        default <R> R Xxzw(Vector3.Factory<R> factory) {
+        default <R> R Xxzw(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Xz(), Xw());
         }
 
-        default void XxzwTo(Vector3.Consumer consumer) {
+        default void XxzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Xz(), Xw());
         }
 
-        default <R> R Xyzw(Vector3.Factory<R> factory) {
+        default <R> R Xyzw(final Vector3.Factory<R> factory) {
             return factory.create(Xy(), Xz(), Xw());
         }
 
-        default void XyzwTo(Vector3.Consumer consumer) {
+        default void XyzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Xz(), Xw());
         }
 
-        default <R> R Xxyzw(Vector4.Factory<R> factory) {
+        default <R> R Xxyzw(final Vector4.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Xw());
         }
 
-        default void XxyzwTo(Vector4.Consumer consumer) {
+        default void XxyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(Xx(), Xy(), Xz(), Xw());
         }
 
-        default <R> R Yxy(Vector2.Factory<R> factory) {
+        default <R> R Yxy(final Vector2.Factory<R> factory) {
             return factory.create(Yx(), Yy());
         }
 
-        default void YxyTo(Vector2.Consumer consumer) {
+        default void YxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yy());
         }
 
-        default <R> R Yxz(Vector2.Factory<R> factory) {
+        default <R> R Yxz(final Vector2.Factory<R> factory) {
             return factory.create(Yx(), Yz());
         }
 
-        default void YxzTo(Vector2.Consumer consumer) {
+        default void YxzTo(final Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yz());
         }
 
-        default <R> R Yxw(Vector2.Factory<R> factory) {
+        default <R> R Yxw(final Vector2.Factory<R> factory) {
             return factory.create(Yx(), Yw());
         }
 
-        default void YxwTo(Vector2.Consumer consumer) {
+        default void YxwTo(final Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yw());
         }
 
-        default <R> R Yyz(Vector2.Factory<R> factory) {
+        default <R> R Yyz(final Vector2.Factory<R> factory) {
             return factory.create(Yy(), Yz());
         }
 
-        default void YyzTo(Vector2.Consumer consumer) {
+        default void YyzTo(final Vector2.Consumer consumer) {
             consumer.xy(Yy(), Yz());
         }
 
-        default <R> R Yyw(Vector2.Factory<R> factory) {
+        default <R> R Yyw(final Vector2.Factory<R> factory) {
             return factory.create(Yy(), Yw());
         }
 
-        default void YywTo(Vector2.Consumer consumer) {
+        default void YywTo(final Vector2.Consumer consumer) {
             consumer.xy(Yy(), Yw());
         }
 
-        default <R> R Yzw(Vector2.Factory<R> factory) {
+        default <R> R Yzw(final Vector2.Factory<R> factory) {
             return factory.create(Yz(), Yw());
         }
 
-        default void YzwTo(Vector2.Consumer consumer) {
+        default void YzwTo(final Vector2.Consumer consumer) {
             consumer.xy(Yz(), Yw());
         }
 
-        default <R> R Yxyz(Vector3.Factory<R> factory) {
+        default <R> R Yxyz(final Vector3.Factory<R> factory) {
             return factory.create(Yx(), Yy(), Yz());
         }
 
-        default void YxyzTo(Vector3.Consumer consumer) {
+        default void YxyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(Yx(), Yy(), Yz());
         }
 
-        default <R> R Yxyw(Vector3.Factory<R> factory) {
+        default <R> R Yxyw(final Vector3.Factory<R> factory) {
             return factory.create(Yx(), Yy(), Yw());
         }
 
-        default void YxywTo(Vector3.Consumer consumer) {
+        default void YxywTo(final Vector3.Consumer consumer) {
             consumer.xyz(Yx(), Yy(), Yw());
         }
 
-        default <R> R Yxzw(Vector3.Factory<R> factory) {
+        default <R> R Yxzw(final Vector3.Factory<R> factory) {
             return factory.create(Yx(), Yz(), Yw());
         }
 
-        default void YxzwTo(Vector3.Consumer consumer) {
+        default void YxzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Yx(), Yz(), Yw());
         }
 
-        default <R> R Yyzw(Vector3.Factory<R> factory) {
+        default <R> R Yyzw(final Vector3.Factory<R> factory) {
             return factory.create(Yy(), Yz(), Yw());
         }
 
-        default void YyzwTo(Vector3.Consumer consumer) {
+        default void YyzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Yy(), Yz(), Yw());
         }
 
-        default <R> R Yxyzw(Vector4.Factory<R> factory) {
+        default <R> R Yxyzw(final Vector4.Factory<R> factory) {
             return factory.create(Yx(), Yy(), Yz(), Yw());
         }
 
-        default void YxyzwTo(Vector4.Consumer consumer) {
+        default void YxyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(Yx(), Yy(), Yz(), Yw());
         }
 
-        default <R> R Zxy(Vector2.Factory<R> factory) {
+        default <R> R Zxy(final Vector2.Factory<R> factory) {
             return factory.create(Zx(), Zy());
         }
 
-        default void ZxyTo(Vector2.Consumer consumer) {
+        default void ZxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Zx(), Zy());
         }
 
-        default <R> R Zxz(Vector2.Factory<R> factory) {
+        default <R> R Zxz(final Vector2.Factory<R> factory) {
             return factory.create(Zx(), Zz());
         }
 
-        default void ZxzTo(Vector2.Consumer consumer) {
+        default void ZxzTo(final Vector2.Consumer consumer) {
             consumer.xy(Zx(), Zz());
         }
 
-        default <R> R Zxw(Vector2.Factory<R> factory) {
+        default <R> R Zxw(final Vector2.Factory<R> factory) {
             return factory.create(Zx(), Zw());
         }
 
-        default void ZxwTo(Vector2.Consumer consumer) {
+        default void ZxwTo(final Vector2.Consumer consumer) {
             consumer.xy(Zx(), Zw());
         }
 
-        default <R> R Zyz(Vector2.Factory<R> factory) {
+        default <R> R Zyz(final Vector2.Factory<R> factory) {
             return factory.create(Zy(), Zz());
         }
 
-        default void ZyzTo(Vector2.Consumer consumer) {
+        default void ZyzTo(final Vector2.Consumer consumer) {
             consumer.xy(Zy(), Zz());
         }
 
-        default <R> R Zyw(Vector2.Factory<R> factory) {
+        default <R> R Zyw(final Vector2.Factory<R> factory) {
             return factory.create(Zy(), Zw());
         }
 
-        default void ZywTo(Vector2.Consumer consumer) {
+        default void ZywTo(final Vector2.Consumer consumer) {
             consumer.xy(Zy(), Zw());
         }
 
-        default <R> R Zzw(Vector2.Factory<R> factory) {
+        default <R> R Zzw(final Vector2.Factory<R> factory) {
             return factory.create(Zz(), Zw());
         }
 
-        default void ZzwTo(Vector2.Consumer consumer) {
+        default void ZzwTo(final Vector2.Consumer consumer) {
             consumer.xy(Zz(), Zw());
         }
 
-        default <R> R Zxyz(Vector3.Factory<R> factory) {
+        default <R> R Zxyz(final Vector3.Factory<R> factory) {
             return factory.create(Zx(), Zy(), Zz());
         }
 
-        default void ZxyzTo(Vector3.Consumer consumer) {
+        default void ZxyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(Zx(), Zy(), Zz());
         }
 
-        default <R> R Zxyw(Vector3.Factory<R> factory) {
+        default <R> R Zxyw(final Vector3.Factory<R> factory) {
             return factory.create(Zx(), Zy(), Zw());
         }
 
-        default void ZxywTo(Vector3.Consumer consumer) {
+        default void ZxywTo(final Vector3.Consumer consumer) {
             consumer.xyz(Zx(), Zy(), Zw());
         }
 
-        default <R> R Zxzw(Vector3.Factory<R> factory) {
+        default <R> R Zxzw(final Vector3.Factory<R> factory) {
             return factory.create(Zx(), Zz(), Zw());
         }
 
-        default void ZxzwTo(Vector3.Consumer consumer) {
+        default void ZxzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Zx(), Zz(), Zw());
         }
 
-        default <R> R Zyzw(Vector3.Factory<R> factory) {
+        default <R> R Zyzw(final Vector3.Factory<R> factory) {
             return factory.create(Zy(), Zz(), Zw());
         }
 
-        default void ZyzwTo(Vector3.Consumer consumer) {
+        default void ZyzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Zy(), Zz(), Zw());
         }
 
-        default <R> R Zxyzw(Vector4.Factory<R> factory) {
+        default <R> R Zxyzw(final Vector4.Factory<R> factory) {
             return factory.create(Zx(), Zy(), Zz(), Zw());
         }
 
-        default void ZxyzwTo(Vector4.Consumer consumer) {
+        default void ZxyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(Zx(), Zy(), Zz(), Zw());
         }
 
-        default <R> R Txy(Vector2.Factory<R> factory) {
+        default <R> R Txy(final Vector2.Factory<R> factory) {
             return factory.create(Tx(), Ty());
         }
 
-        default void TxyTo(Vector2.Consumer consumer) {
+        default void TxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Tx(), Ty());
         }
 
-        default <R> R Txz(Vector2.Factory<R> factory) {
+        default <R> R Txz(final Vector2.Factory<R> factory) {
             return factory.create(Tx(), Tz());
         }
 
-        default void TxzTo(Vector2.Consumer consumer) {
+        default void TxzTo(final Vector2.Consumer consumer) {
             consumer.xy(Tx(), Tz());
         }
 
-        default <R> R Txw(Vector2.Factory<R> factory) {
+        default <R> R Txw(final Vector2.Factory<R> factory) {
             return factory.create(Tx(), Tw());
         }
 
-        default void TxwTo(Vector2.Consumer consumer) {
+        default void TxwTo(final Vector2.Consumer consumer) {
             consumer.xy(Tx(), Tw());
         }
 
-        default <R> R Tyz(Vector2.Factory<R> factory) {
+        default <R> R Tyz(final Vector2.Factory<R> factory) {
             return factory.create(Ty(), Tz());
         }
 
-        default void TyzTo(Vector2.Consumer consumer) {
+        default void TyzTo(final Vector2.Consumer consumer) {
             consumer.xy(Ty(), Tz());
         }
 
-        default <R> R Tyw(Vector2.Factory<R> factory) {
+        default <R> R Tyw(final Vector2.Factory<R> factory) {
             return factory.create(Ty(), Tw());
         }
 
-        default void TywTo(Vector2.Consumer consumer) {
+        default void TywTo(final Vector2.Consumer consumer) {
             consumer.xy(Ty(), Tw());
         }
 
-        default <R> R Tzw(Vector2.Factory<R> factory) {
+        default <R> R Tzw(final Vector2.Factory<R> factory) {
             return factory.create(Tz(), Tw());
         }
 
-        default void TzwTo(Vector2.Consumer consumer) {
+        default void TzwTo(final Vector2.Consumer consumer) {
             consumer.xy(Tz(), Tw());
         }
 
-        default <R> R Txyz(Vector3.Factory<R> factory) {
+        default <R> R Txyz(final Vector3.Factory<R> factory) {
             return factory.create(Tx(), Ty(), Tz());
         }
 
-        default void TxyzTo(Vector3.Consumer consumer) {
+        default void TxyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(Tx(), Ty(), Tz());
         }
 
-        default <R> R Txyw(Vector3.Factory<R> factory) {
+        default <R> R Txyw(final Vector3.Factory<R> factory) {
             return factory.create(Tx(), Ty(), Tw());
         }
 
-        default void TxywTo(Vector3.Consumer consumer) {
+        default void TxywTo(final Vector3.Consumer consumer) {
             consumer.xyz(Tx(), Ty(), Tw());
         }
 
-        default <R> R Txzw(Vector3.Factory<R> factory) {
+        default <R> R Txzw(final Vector3.Factory<R> factory) {
             return factory.create(Tx(), Tz(), Tw());
         }
 
-        default void TxzwTo(Vector3.Consumer consumer) {
+        default void TxzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Tx(), Tz(), Tw());
         }
 
-        default <R> R Tyzw(Vector3.Factory<R> factory) {
+        default <R> R Tyzw(final Vector3.Factory<R> factory) {
             return factory.create(Ty(), Tz(), Tw());
         }
 
-        default void TyzwTo(Vector3.Consumer consumer) {
+        default void TyzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Ty(), Tz(), Tw());
         }
 
-        default <R> R Txyzw(Vector4.Factory<R> factory) {
+        default <R> R Txyzw(final Vector4.Factory<R> factory) {
             return factory.create(Tx(), Ty(), Tz(), Tw());
         }
 
-        default void TxyzwTo(Vector4.Consumer consumer) {
+        default void TxyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(Tx(), Ty(), Tz(), Tw());
         }
 
-        default <R> R xXY(Vector2.Factory<R> factory) {
+        default <R> R xXY(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Yx());
         }
 
-        default void xXYto(Vector2.Consumer consumer) {
+        default void xXYto(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yx());
         }
 
-        default <R> R xXZ(Vector2.Factory<R> factory) {
+        default <R> R xXZ(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Zx());
         }
 
-        default void xXZto(Vector2.Consumer consumer) {
+        default void xXZto(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Zx());
         }
 
-        default <R> R xXT(Vector2.Factory<R> factory) {
+        default <R> R xXT(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Tx());
         }
 
-        default void xXTto(Vector2.Consumer consumer) {
+        default void xXTto(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Tx());
         }
 
-        default <R> R xYZ(Vector2.Factory<R> factory) {
+        default <R> R xYZ(final Vector2.Factory<R> factory) {
             return factory.create(Yx(), Zx());
         }
 
-        default void xYZto(Vector2.Consumer consumer) {
+        default void xYZto(final Vector2.Consumer consumer) {
             consumer.xy(Yx(), Zx());
         }
 
-        default <R> R xYT(Vector2.Factory<R> factory) {
+        default <R> R xYT(final Vector2.Factory<R> factory) {
             return factory.create(Yx(), Tx());
         }
 
-        default void xYTto(Vector2.Consumer consumer) {
+        default void xYTto(final Vector2.Consumer consumer) {
             consumer.xy(Yx(), Tx());
         }
 
-        default <R> R xZT(Vector2.Factory<R> factory) {
+        default <R> R xZT(final Vector2.Factory<R> factory) {
             return factory.create(Zx(), Tx());
         }
 
-        default void xZTto(Vector2.Consumer consumer) {
+        default void xZTto(final Vector2.Consumer consumer) {
             consumer.xy(Zx(), Tx());
         }
 
-        default <R> R xXYZ(Vector3.Factory<R> factory) {
+        default <R> R xXYZ(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx());
         }
 
-        default void xXYZto(Vector3.Consumer consumer) {
+        default void xXYZto(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yx(), Zx());
         }
 
-        default <R> R xXYT(Vector3.Factory<R> factory) {
+        default <R> R xXYT(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Tx());
         }
 
-        default void xXYTto(Vector3.Consumer consumer) {
+        default void xXYTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yx(), Tx());
         }
 
-        default <R> R xXZT(Vector3.Factory<R> factory) {
+        default <R> R xXZT(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Zx(), Tx());
         }
 
-        default void xXZTto(Vector3.Consumer consumer) {
+        default void xXZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Zx(), Tx());
         }
 
-        default <R> R xYZT(Vector3.Factory<R> factory) {
+        default <R> R xYZT(final Vector3.Factory<R> factory) {
             return factory.create(Yx(), Zx(), Tx());
         }
 
-        default void xYZTto(Vector3.Consumer consumer) {
+        default void xYZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Yx(), Zx(), Tx());
         }
 
-        default <R> R xXYZT(Vector4.Factory<R> factory) {
+        default <R> R xXYZT(final Vector4.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Tx());
         }
 
-        default void xXYZTto(Vector4.Consumer consumer) {
+        default void xXYZTto(final Vector4.Consumer consumer) {
             consumer.xyzw(Xx(), Yx(), Zx(), Tx());
         }
 
-        default <R> R yXY(Vector2.Factory<R> factory) {
+        default <R> R yXY(final Vector2.Factory<R> factory) {
             return factory.create(Xy(), Yy());
         }
 
-        default void yXYto(Vector2.Consumer consumer) {
+        default void yXYto(final Vector2.Consumer consumer) {
             consumer.xy(Xy(), Yy());
         }
 
-        default <R> R yXZ(Vector2.Factory<R> factory) {
+        default <R> R yXZ(final Vector2.Factory<R> factory) {
             return factory.create(Xy(), Zy());
         }
 
-        default void yXZto(Vector2.Consumer consumer) {
+        default void yXZto(final Vector2.Consumer consumer) {
             consumer.xy(Xy(), Zy());
         }
 
-        default <R> R yXT(Vector2.Factory<R> factory) {
+        default <R> R yXT(final Vector2.Factory<R> factory) {
             return factory.create(Xy(), Ty());
         }
 
-        default void yXTto(Vector2.Consumer consumer) {
+        default void yXTto(final Vector2.Consumer consumer) {
             consumer.xy(Xy(), Ty());
         }
 
-        default <R> R yYZ(Vector2.Factory<R> factory) {
+        default <R> R yYZ(final Vector2.Factory<R> factory) {
             return factory.create(Yy(), Zy());
         }
 
-        default void yYZto(Vector2.Consumer consumer) {
+        default void yYZto(final Vector2.Consumer consumer) {
             consumer.xy(Yy(), Zy());
         }
 
-        default <R> R yYT(Vector2.Factory<R> factory) {
+        default <R> R yYT(final Vector2.Factory<R> factory) {
             return factory.create(Yy(), Ty());
         }
 
-        default void yYTto(Vector2.Consumer consumer) {
+        default void yYTto(final Vector2.Consumer consumer) {
             consumer.xy(Yy(), Ty());
         }
 
-        default <R> R yZT(Vector2.Factory<R> factory) {
+        default <R> R yZT(final Vector2.Factory<R> factory) {
             return factory.create(Zy(), Ty());
         }
 
-        default void yZTto(Vector2.Consumer consumer) {
+        default void yZTto(final Vector2.Consumer consumer) {
             consumer.xy(Zy(), Ty());
         }
 
-        default <R> R yXYZ(Vector3.Factory<R> factory) {
+        default <R> R yXYZ(final Vector3.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Zy());
         }
 
-        default void yXYZto(Vector3.Consumer consumer) {
+        default void yXYZto(final Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Yy(), Zy());
         }
 
-        default <R> R yXYT(Vector3.Factory<R> factory) {
+        default <R> R yXYT(final Vector3.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Ty());
         }
 
-        default void yXYTto(Vector3.Consumer consumer) {
+        default void yXYTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Yy(), Ty());
         }
 
-        default <R> R yXZT(Vector3.Factory<R> factory) {
+        default <R> R yXZT(final Vector3.Factory<R> factory) {
             return factory.create(Xy(), Zy(), Ty());
         }
 
-        default void yXZTto(Vector3.Consumer consumer) {
+        default void yXZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xy(), Zy(), Ty());
         }
 
-        default <R> R yYZT(Vector3.Factory<R> factory) {
+        default <R> R yYZT(final Vector3.Factory<R> factory) {
             return factory.create(Yy(), Zy(), Ty());
         }
 
-        default void yYZTto(Vector3.Consumer consumer) {
+        default void yYZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Yy(), Zy(), Ty());
         }
 
-        default <R> R yXYZT(Vector4.Factory<R> factory) {
+        default <R> R yXYZT(final Vector4.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Zy(), Ty());
         }
 
-        default void yXYZTto(Vector4.Consumer consumer) {
+        default void yXYZTto(final Vector4.Consumer consumer) {
             consumer.xyzw(Xy(), Yy(), Zy(), Ty());
         }
 
-        default <R> R zXY(Vector2.Factory<R> factory) {
+        default <R> R zXY(final Vector2.Factory<R> factory) {
             return factory.create(Xz(), Yz());
         }
 
-        default void zXYto(Vector2.Consumer consumer) {
+        default void zXYto(final Vector2.Consumer consumer) {
             consumer.xy(Xz(), Yz());
         }
 
-        default <R> R zXZ(Vector2.Factory<R> factory) {
+        default <R> R zXZ(final Vector2.Factory<R> factory) {
             return factory.create(Xz(), Zz());
         }
 
-        default void zXZto(Vector2.Consumer consumer) {
+        default void zXZto(final Vector2.Consumer consumer) {
             consumer.xy(Xz(), Zz());
         }
 
-        default <R> R zXT(Vector2.Factory<R> factory) {
+        default <R> R zXT(final Vector2.Factory<R> factory) {
             return factory.create(Xz(), Tz());
         }
 
-        default void zXTto(Vector2.Consumer consumer) {
+        default void zXTto(final Vector2.Consumer consumer) {
             consumer.xy(Xz(), Tz());
         }
 
-        default <R> R zYZ(Vector2.Factory<R> factory) {
+        default <R> R zYZ(final Vector2.Factory<R> factory) {
             return factory.create(Yz(), Zz());
         }
 
-        default void zYZto(Vector2.Consumer consumer) {
+        default void zYZto(final Vector2.Consumer consumer) {
             consumer.xy(Yz(), Zz());
         }
 
-        default <R> R zYT(Vector2.Factory<R> factory) {
+        default <R> R zYT(final Vector2.Factory<R> factory) {
             return factory.create(Yz(), Tz());
         }
 
-        default void zYTto(Vector2.Consumer consumer) {
+        default void zYTto(final Vector2.Consumer consumer) {
             consumer.xy(Yz(), Tz());
         }
 
-        default <R> R zZT(Vector2.Factory<R> factory) {
+        default <R> R zZT(final Vector2.Factory<R> factory) {
             return factory.create(Zz(), Tz());
         }
 
-        default void zZTto(Vector2.Consumer consumer) {
+        default void zZTto(final Vector2.Consumer consumer) {
             consumer.xy(Zz(), Tz());
         }
 
-        default <R> R zXYZ(Vector3.Factory<R> factory) {
+        default <R> R zXYZ(final Vector3.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Zz());
         }
 
-        default void zXYZto(Vector3.Consumer consumer) {
+        default void zXYZto(final Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Yz(), Zz());
         }
 
-        default <R> R zXYT(Vector3.Factory<R> factory) {
+        default <R> R zXYT(final Vector3.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Tz());
         }
 
-        default void zXYTto(Vector3.Consumer consumer) {
+        default void zXYTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Yz(), Tz());
         }
 
-        default <R> R zXZT(Vector3.Factory<R> factory) {
+        default <R> R zXZT(final Vector3.Factory<R> factory) {
             return factory.create(Xz(), Zz(), Tz());
         }
 
-        default void zXZTto(Vector3.Consumer consumer) {
+        default void zXZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xz(), Zz(), Tz());
         }
 
-        default <R> R zYZT(Vector3.Factory<R> factory) {
+        default <R> R zYZT(final Vector3.Factory<R> factory) {
             return factory.create(Yz(), Zz(), Tz());
         }
 
-        default void zYZTto(Vector3.Consumer consumer) {
+        default void zYZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Yz(), Zz(), Tz());
         }
 
-        default <R> R zXYZT(Vector4.Factory<R> factory) {
+        default <R> R zXYZT(final Vector4.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Zz(), Tz());
         }
 
-        default void zXYZTto(Vector4.Consumer consumer) {
+        default void zXYZTto(final Vector4.Consumer consumer) {
             consumer.xyzw(Xz(), Yz(), Zz(), Tz());
         }
 
-        default <R> R wXY(Vector2.Factory<R> factory) {
+        default <R> R wXY(final Vector2.Factory<R> factory) {
             return factory.create(Xw(), Yw());
         }
 
-        default void wXYto(Vector2.Consumer consumer) {
+        default void wXYto(final Vector2.Consumer consumer) {
             consumer.xy(Xw(), Yw());
         }
 
-        default <R> R wXZ(Vector2.Factory<R> factory) {
+        default <R> R wXZ(final Vector2.Factory<R> factory) {
             return factory.create(Xw(), Zw());
         }
 
-        default void wXZto(Vector2.Consumer consumer) {
+        default void wXZto(final Vector2.Consumer consumer) {
             consumer.xy(Xw(), Zw());
         }
 
-        default <R> R wXT(Vector2.Factory<R> factory) {
+        default <R> R wXT(final Vector2.Factory<R> factory) {
             return factory.create(Xw(), Tw());
         }
 
-        default void wXTto(Vector2.Consumer consumer) {
+        default void wXTto(final Vector2.Consumer consumer) {
             consumer.xy(Xw(), Tw());
         }
 
-        default <R> R wYZ(Vector2.Factory<R> factory) {
+        default <R> R wYZ(final Vector2.Factory<R> factory) {
             return factory.create(Yw(), Zw());
         }
 
-        default void wYZto(Vector2.Consumer consumer) {
+        default void wYZto(final Vector2.Consumer consumer) {
             consumer.xy(Yw(), Zw());
         }
 
-        default <R> R wYT(Vector2.Factory<R> factory) {
+        default <R> R wYT(final Vector2.Factory<R> factory) {
             return factory.create(Yw(), Tw());
         }
 
-        default void wYTto(Vector2.Consumer consumer) {
+        default void wYTto(final Vector2.Consumer consumer) {
             consumer.xy(Yw(), Tw());
         }
 
-        default <R> R wZT(Vector2.Factory<R> factory) {
+        default <R> R wZT(final Vector2.Factory<R> factory) {
             return factory.create(Zw(), Tw());
         }
 
-        default void wZTto(Vector2.Consumer consumer) {
+        default void wZTto(final Vector2.Consumer consumer) {
             consumer.xy(Zw(), Tw());
         }
 
-        default <R> R wXYZ(Vector3.Factory<R> factory) {
+        default <R> R wXYZ(final Vector3.Factory<R> factory) {
             return factory.create(Xw(), Yw(), Zw());
         }
 
-        default void wXYZto(Vector3.Consumer consumer) {
+        default void wXYZto(final Vector3.Consumer consumer) {
             consumer.xyz(Xw(), Yw(), Zw());
         }
 
-        default <R> R wXYT(Vector3.Factory<R> factory) {
+        default <R> R wXYT(final Vector3.Factory<R> factory) {
             return factory.create(Xw(), Yw(), Tw());
         }
 
-        default void wXYTto(Vector3.Consumer consumer) {
+        default void wXYTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xw(), Yw(), Tw());
         }
 
-        default <R> R wXZT(Vector3.Factory<R> factory) {
+        default <R> R wXZT(final Vector3.Factory<R> factory) {
             return factory.create(Xw(), Zw(), Tw());
         }
 
-        default void wXZTto(Vector3.Consumer consumer) {
+        default void wXZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Xw(), Zw(), Tw());
         }
 
-        default <R> R wYZT(Vector3.Factory<R> factory) {
+        default <R> R wYZT(final Vector3.Factory<R> factory) {
             return factory.create(Yw(), Zw(), Tw());
         }
 
-        default void wYZTto(Vector3.Consumer consumer) {
+        default void wYZTto(final Vector3.Consumer consumer) {
             consumer.xyz(Yw(), Zw(), Tw());
         }
 
-        default <R> R wXYZT(Vector4.Factory<R> factory) {
+        default <R> R wXYZT(final Vector4.Factory<R> factory) {
             return factory.create(Xw(), Yw(), Zw(), Tw());
         }
 
-        default void wXYZTto(Vector4.Consumer consumer) {
+        default void wXYZTto(final Vector4.Consumer consumer) {
             consumer.xyzw(Xw(), Yw(), Zw(), Tw());
         }
 
-        default <R> R Dxy(Vector2.Factory<R> factory) {
+        default <R> R Dxy(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Yy());
         }
 
-        default void DxyTo(Vector2.Consumer consumer) {
+        default void DxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yy());
         }
 
-        default <R> R Dxz(Vector2.Factory<R> factory) {
+        default <R> R Dxz(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Zz());
         }
 
-        default void DxzTo(Vector2.Consumer consumer) {
+        default void DxzTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Zz());
         }
 
-        default <R> R Dxw(Vector2.Factory<R> factory) {
+        default <R> R Dxw(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Tw());
         }
 
-        default void DxwTo(Vector2.Consumer consumer) {
+        default void DxwTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Tw());
         }
 
-        default <R> R Dyz(Vector2.Factory<R> factory) {
+        default <R> R Dyz(final Vector2.Factory<R> factory) {
             return factory.create(Yy(), Zz());
         }
 
-        default void DyzTo(Vector2.Consumer consumer) {
+        default void DyzTo(final Vector2.Consumer consumer) {
             consumer.xy(Yy(), Zz());
         }
 
-        default <R> R Dyw(Vector2.Factory<R> factory) {
+        default <R> R Dyw(final Vector2.Factory<R> factory) {
             return factory.create(Yy(), Tw());
         }
 
-        default void DywTo(Vector2.Consumer consumer) {
+        default void DywTo(final Vector2.Consumer consumer) {
             consumer.xy(Yy(), Tw());
         }
 
-        default <R> R Dzw(Vector2.Factory<R> factory) {
+        default <R> R Dzw(final Vector2.Factory<R> factory) {
             return factory.create(Zz(), Tw());
         }
 
-        default void DzwTo(Vector2.Consumer consumer) {
+        default void DzwTo(final Vector2.Consumer consumer) {
             consumer.xy(Zz(), Tw());
         }
 
-        default <R> R Dxyz(Vector3.Factory<R> factory) {
+        default <R> R Dxyz(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yy(), Zz());
         }
 
-        default void DxyzTo(Vector3.Consumer consumer) {
+        default void DxyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yy(), Zz());
         }
 
-        default <R> R Dxyw(Vector3.Factory<R> factory) {
+        default <R> R Dxyw(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Yy(), Tw());
         }
 
-        default void DxywTo(Vector3.Consumer consumer) {
+        default void DxywTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Yy(), Tw());
         }
 
-        default <R> R Dxzw(Vector3.Factory<R> factory) {
+        default <R> R Dxzw(final Vector3.Factory<R> factory) {
             return factory.create(Xx(), Zz(), Tw());
         }
 
-        default void DxzwTo(Vector3.Consumer consumer) {
+        default void DxzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Xx(), Zz(), Tw());
         }
 
-        default <R> R Dyzw(Vector3.Factory<R> factory) {
+        default <R> R Dyzw(final Vector3.Factory<R> factory) {
             return factory.create(Yy(), Zz(), Tw());
         }
 
-        default void DyzwTo(Vector3.Consumer consumer) {
+        default void DyzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(Yy(), Zz(), Tw());
         }
 
-        default <R> R Dxyzw(Vector4.Factory<R> factory) {
+        default <R> R Dxyzw(final Vector4.Factory<R> factory) {
             return factory.create(Xx(), Yy(), Zz(), Tw());
         }
 
-        default void DxyzwTo(Vector4.Consumer consumer) {
+        default void DxyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(Xx(), Yy(), Zz(), Tw());
         }
 
-        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
+        default <R> R XYxy(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Yx(), Yy());
         }
 
-        default void XYxyTo(Matrix2x2.Consumer consumer) {
+        default void XYxyTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Xy(), Yx(), Yy());
         }
 
-        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
+        default <R> R xyXY(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Xy(), Yy());
         }
 
-        default void xyXYto(Matrix2x2.Consumer consumer) {
+        default void xyXYto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Yx(), Xy(), Yy());
         }
 
-        default <R> R XYyz(Matrix2x2.Factory<R> factory) {
+        default <R> R XYyz(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xy(), Xz(), Yy(), Yz());
         }
 
-        default void XYyzTo(Matrix2x2.Consumer consumer) {
+        default void XYyzTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xy(), Xz(), Yy(), Yz());
         }
 
-        default <R> R yzXY(Matrix2x2.Factory<R> factory) {
+        default <R> R yzXY(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Xz(), Yz());
         }
 
-        default void yzXYto(Matrix2x2.Consumer consumer) {
+        default void yzXYto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xy(), Yy(), Xz(), Yz());
         }
 
-        default <R> R XYzw(Matrix2x2.Factory<R> factory) {
+        default <R> R XYzw(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xz(), Xw(), Yz(), Yw());
         }
 
-        default void XYzwTo(Matrix2x2.Consumer consumer) {
+        default void XYzwTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xz(), Xw(), Yz(), Yw());
         }
 
-        default <R> R zwXY(Matrix2x2.Factory<R> factory) {
+        default <R> R zwXY(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xz(), Yz(), Xw(), Yw());
         }
 
-        default void zwXYto(Matrix2x2.Consumer consumer) {
+        default void zwXYto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xz(), Yz(), Xw(), Yw());
         }
 
-        default <R> R YZxy(Matrix2x2.Factory<R> factory) {
+        default <R> R YZxy(final Matrix2x2.Factory<R> factory) {
             return factory.create(Yx(), Yy(), Zx(), Zy());
         }
 
-        default void YZxyTo(Matrix2x2.Consumer consumer) {
+        default void YZxyTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yx(), Yy(), Zx(), Zy());
         }
 
-        default <R> R xyYZ(Matrix2x2.Factory<R> factory) {
+        default <R> R xyYZ(final Matrix2x2.Factory<R> factory) {
             return factory.create(Yx(), Zx(), Yy(), Zy());
         }
 
-        default void xyYZto(Matrix2x2.Consumer consumer) {
+        default void xyYZto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yx(), Zx(), Yy(), Zy());
         }
 
-        default <R> R YZyz(Matrix2x2.Factory<R> factory) {
+        default <R> R YZyz(final Matrix2x2.Factory<R> factory) {
             return factory.create(Yy(), Yz(), Zy(), Zz());
         }
 
-        default void YZyzTo(Matrix2x2.Consumer consumer) {
+        default void YZyzTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yy(), Yz(), Zy(), Zz());
         }
 
-        default <R> R yzYZ(Matrix2x2.Factory<R> factory) {
+        default <R> R yzYZ(final Matrix2x2.Factory<R> factory) {
             return factory.create(Yy(), Zy(), Yz(), Zz());
         }
 
-        default void yzYZto(Matrix2x2.Consumer consumer) {
+        default void yzYZto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yy(), Zy(), Yz(), Zz());
         }
 
-        default <R> R YZzw(Matrix2x2.Factory<R> factory) {
+        default <R> R YZzw(final Matrix2x2.Factory<R> factory) {
             return factory.create(Yz(), Yw(), Zz(), Zw());
         }
 
-        default void YZzwTo(Matrix2x2.Consumer consumer) {
+        default void YZzwTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yz(), Yw(), Zz(), Zw());
         }
 
-        default <R> R zwYZ(Matrix2x2.Factory<R> factory) {
+        default <R> R zwYZ(final Matrix2x2.Factory<R> factory) {
             return factory.create(Yz(), Zz(), Yw(), Zw());
         }
 
-        default void zwYZto(Matrix2x2.Consumer consumer) {
+        default void zwYZto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Yz(), Zz(), Yw(), Zw());
         }
 
-        default <R> R ZTxy(Matrix2x2.Factory<R> factory) {
+        default <R> R ZTxy(final Matrix2x2.Factory<R> factory) {
             return factory.create(Zx(), Zy(), Tx(), Ty());
         }
 
-        default void ZTxyTo(Matrix2x2.Consumer consumer) {
+        default void ZTxyTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Zx(), Zy(), Tx(), Ty());
         }
 
-        default <R> R xyZT(Matrix2x2.Factory<R> factory) {
+        default <R> R xyZT(final Matrix2x2.Factory<R> factory) {
             return factory.create(Zx(), Tx(), Zy(), Ty());
         }
 
-        default void xyZTto(Matrix2x2.Consumer consumer) {
+        default void xyZTto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Zx(), Tx(), Zy(), Ty());
         }
 
-        default <R> R ZTyz(Matrix2x2.Factory<R> factory) {
+        default <R> R ZTyz(final Matrix2x2.Factory<R> factory) {
             return factory.create(Zy(), Zz(), Ty(), Tz());
         }
 
-        default void ZTyzTo(Matrix2x2.Consumer consumer) {
+        default void ZTyzTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Zy(), Zz(), Ty(), Tz());
         }
 
-        default <R> R yzZT(Matrix2x2.Factory<R> factory) {
+        default <R> R yzZT(final Matrix2x2.Factory<R> factory) {
             return factory.create(Zy(), Ty(), Zz(), Tz());
         }
 
-        default void yzZTto(Matrix2x2.Consumer consumer) {
+        default void yzZTto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Zy(), Ty(), Zz(), Tz());
         }
 
-        default <R> R ZTzw(Matrix2x2.Factory<R> factory) {
+        default <R> R ZTzw(final Matrix2x2.Factory<R> factory) {
             return factory.create(Zz(), Zw(), Tz(), Tw());
         }
 
-        default void ZTzwTo(Matrix2x2.Consumer consumer) {
+        default void ZTzwTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Zz(), Zw(), Tz(), Tw());
         }
 
-        default <R> R zwZT(Matrix2x2.Factory<R> factory) {
+        default <R> R zwZT(final Matrix2x2.Factory<R> factory) {
             return factory.create(Zz(), Tz(), Zw(), Tw());
         }
 
-        default void zwZTto(Matrix2x2.Consumer consumer) {
+        default void zwZTto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Zz(), Tz(), Zw(), Tw());
         }
 
-        default <R> R XYZxyz(Matrix3x3.Factory<R> factory) {
+        default <R> R XYZxyz(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default void XYZxyzTo(Matrix3x3.Consumer consumer) {
+        default void XYZxyzTo(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default <R> R xyzXYZ(Matrix3x3.Factory<R> factory) {
+        default <R> R xyzXYZ(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
 
-        default void xyzXYZto(Matrix3x3.Consumer consumer) {
+        default void xyzXYZto(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
 
-        default <R> R XYZyzw(Matrix3x3.Factory<R> factory) {
+        default <R> R XYZyzw(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Zy(), Zz(), Zw());
         }
 
-        default void XYZyzwTo(Matrix3x3.Consumer consumer) {
+        default void XYZyzwTo(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Zy(), Zz(), Zw());
         }
 
-        default <R> R yzwXYZ(Matrix3x3.Factory<R> factory) {
+        default <R> R yzwXYZ(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
         }
 
-        default void yzwXYZto(Matrix3x3.Consumer consumer) {
+        default void yzwXYZto(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
         }
 
-        default <R> R YZTxyz(Matrix3x3.Factory<R> factory) {
+        default <R> R YZTxyz(final Matrix3x3.Factory<R> factory) {
             return factory.create(Yx(), Yy(), Yz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
         }
 
-        default void YZTxyzTo(Matrix3x3.Consumer consumer) {
+        default void YZTxyzTo(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Yx(), Yy(), Yz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
         }
 
-        default <R> R xyzYZT(Matrix3x3.Factory<R> factory) {
+        default <R> R xyzYZT(final Matrix3x3.Factory<R> factory) {
             return factory.create(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
         }
 
-        default void xyzYZTto(Matrix3x3.Consumer consumer) {
+        default void xyzYZTto(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
         }
 
-        default <R> R YZTyzw(Matrix3x3.Factory<R> factory) {
+        default <R> R YZTyzw(final Matrix3x3.Factory<R> factory) {
             return factory.create(Yy(), Yz(), Yw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
         }
 
-        default void YZTyzwTo(Matrix3x3.Consumer consumer) {
+        default void YZTyzwTo(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Yy(), Yz(), Yw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
         }
 
-        default <R> R yzwYZT(Matrix3x3.Factory<R> factory) {
+        default <R> R yzwYZT(final Matrix3x3.Factory<R> factory) {
             return factory.create(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
         }
 
-        default void yzwYZTto(Matrix3x3.Consumer consumer) {
+        default void yzwYZTto(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
         }
 
-        default <R> R XYZTxyzw(Matrix4x4.Factory<R> factory) {
+        default <R> R XYZTxyzw(final Matrix4x4.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
         }
 
-        default void XYZTxyzwTo(Matrix4x4.Consumer consumer) {
+        default void XYZTxyzwTo(final Matrix4x4.Consumer consumer) {
             consumer.XYZTxyzw(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
         }
 
-        default <R> R xyzwXYZT(Matrix4x4.Factory<R> factory) {
+        default <R> R xyzwXYZT(final Matrix4x4.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Tx(), Xy(), Yy(), Zy(), Ty(), Xz(), Yz(), Zz(), Tz(), Xw(), Yw(), Zw(), Tw());
         }
 
-        default void xyzwXYZTto(Matrix4x4.Consumer consumer) {
+        default void xyzwXYZTto(final Matrix4x4.Consumer consumer) {
             consumer.XYZTxyzw(Xx(), Yx(), Zx(), Tx(), Xy(), Yy(), Zy(), Ty(), Xz(), Yz(), Zz(), Tz(), Xw(), Yw(), Zw(), Tw());
         }
 
@@ -1084,1001 +1084,1001 @@ public final class Matrix4x4 {
         void Tz(double Tz);
         void Tw(double Tw);
 
-        default void Xxy(double v) {
+        default void Xxy(final double v) {
             Xxy(v, v);
         }
 
-        default void Xxz(double v) {
+        default void Xxz(final double v) {
             Xxz(v, v);
         }
 
-        default void Xxw(double v) {
+        default void Xxw(final double v) {
             Xxw(v, v);
         }
 
-        default void Xyz(double v) {
+        default void Xyz(final double v) {
             Xyz(v, v);
         }
 
-        default void Xyw(double v) {
+        default void Xyw(final double v) {
             Xyw(v, v);
         }
 
-        default void Xzw(double v) {
+        default void Xzw(final double v) {
             Xzw(v, v);
         }
 
-        default void Xxyz(double v) {
+        default void Xxyz(final double v) {
             Xxyz(v, v, v);
         }
 
-        default void Xxyw(double v) {
+        default void Xxyw(final double v) {
             Xxyw(v, v, v);
         }
 
-        default void Xxzw(double v) {
+        default void Xxzw(final double v) {
             Xxzw(v, v, v);
         }
 
-        default void Xyzw(double v) {
+        default void Xyzw(final double v) {
             Xyzw(v, v, v);
         }
 
-        default void Xxyzw(double v) {
+        default void Xxyzw(final double v) {
             Xxyzw(v, v, v, v);
         }
 
-        default void Yxy(double v) {
+        default void Yxy(final double v) {
             Yxy(v, v);
         }
 
-        default void Yxz(double v) {
+        default void Yxz(final double v) {
             Yxz(v, v);
         }
 
-        default void Yxw(double v) {
+        default void Yxw(final double v) {
             Yxw(v, v);
         }
 
-        default void Yyz(double v) {
+        default void Yyz(final double v) {
             Yyz(v, v);
         }
 
-        default void Yyw(double v) {
+        default void Yyw(final double v) {
             Yyw(v, v);
         }
 
-        default void Yzw(double v) {
+        default void Yzw(final double v) {
             Yzw(v, v);
         }
 
-        default void Yxyz(double v) {
+        default void Yxyz(final double v) {
             Yxyz(v, v, v);
         }
 
-        default void Yxyw(double v) {
+        default void Yxyw(final double v) {
             Yxyw(v, v, v);
         }
 
-        default void Yxzw(double v) {
+        default void Yxzw(final double v) {
             Yxzw(v, v, v);
         }
 
-        default void Yyzw(double v) {
+        default void Yyzw(final double v) {
             Yyzw(v, v, v);
         }
 
-        default void Yxyzw(double v) {
+        default void Yxyzw(final double v) {
             Yxyzw(v, v, v, v);
         }
 
-        default void Zxy(double v) {
+        default void Zxy(final double v) {
             Zxy(v, v);
         }
 
-        default void Zxz(double v) {
+        default void Zxz(final double v) {
             Zxz(v, v);
         }
 
-        default void Zxw(double v) {
+        default void Zxw(final double v) {
             Zxw(v, v);
         }
 
-        default void Zyz(double v) {
+        default void Zyz(final double v) {
             Zyz(v, v);
         }
 
-        default void Zyw(double v) {
+        default void Zyw(final double v) {
             Zyw(v, v);
         }
 
-        default void Zzw(double v) {
+        default void Zzw(final double v) {
             Zzw(v, v);
         }
 
-        default void Zxyz(double v) {
+        default void Zxyz(final double v) {
             Zxyz(v, v, v);
         }
 
-        default void Zxyw(double v) {
+        default void Zxyw(final double v) {
             Zxyw(v, v, v);
         }
 
-        default void Zxzw(double v) {
+        default void Zxzw(final double v) {
             Zxzw(v, v, v);
         }
 
-        default void Zyzw(double v) {
+        default void Zyzw(final double v) {
             Zyzw(v, v, v);
         }
 
-        default void Zxyzw(double v) {
+        default void Zxyzw(final double v) {
             Zxyzw(v, v, v, v);
         }
 
-        default void Txy(double v) {
+        default void Txy(final double v) {
             Txy(v, v);
         }
 
-        default void Txz(double v) {
+        default void Txz(final double v) {
             Txz(v, v);
         }
 
-        default void Txw(double v) {
+        default void Txw(final double v) {
             Txw(v, v);
         }
 
-        default void Tyz(double v) {
+        default void Tyz(final double v) {
             Tyz(v, v);
         }
 
-        default void Tyw(double v) {
+        default void Tyw(final double v) {
             Tyw(v, v);
         }
 
-        default void Tzw(double v) {
+        default void Tzw(final double v) {
             Tzw(v, v);
         }
 
-        default void Txyz(double v) {
+        default void Txyz(final double v) {
             Txyz(v, v, v);
         }
 
-        default void Txyw(double v) {
+        default void Txyw(final double v) {
             Txyw(v, v, v);
         }
 
-        default void Txzw(double v) {
+        default void Txzw(final double v) {
             Txzw(v, v, v);
         }
 
-        default void Tyzw(double v) {
+        default void Tyzw(final double v) {
             Tyzw(v, v, v);
         }
 
-        default void Txyzw(double v) {
+        default void Txyzw(final double v) {
             Txyzw(v, v, v, v);
         }
 
-        default void xXY(double v) {
+        default void xXY(final double v) {
             xXY(v, v);
         }
 
-        default void xXZ(double v) {
+        default void xXZ(final double v) {
             xXZ(v, v);
         }
 
-        default void xXT(double v) {
+        default void xXT(final double v) {
             xXT(v, v);
         }
 
-        default void xYZ(double v) {
+        default void xYZ(final double v) {
             xYZ(v, v);
         }
 
-        default void xYT(double v) {
+        default void xYT(final double v) {
             xYT(v, v);
         }
 
-        default void xZT(double v) {
+        default void xZT(final double v) {
             xZT(v, v);
         }
 
-        default void xXYZ(double v) {
+        default void xXYZ(final double v) {
             xXYZ(v, v, v);
         }
 
-        default void xXYT(double v) {
+        default void xXYT(final double v) {
             xXYT(v, v, v);
         }
 
-        default void xXZT(double v) {
+        default void xXZT(final double v) {
             xXZT(v, v, v);
         }
 
-        default void xYZT(double v) {
+        default void xYZT(final double v) {
             xYZT(v, v, v);
         }
 
-        default void xXYZT(double v) {
+        default void xXYZT(final double v) {
             xXYZT(v, v, v, v);
         }
 
-        default void yXY(double v) {
+        default void yXY(final double v) {
             yXY(v, v);
         }
 
-        default void yXZ(double v) {
+        default void yXZ(final double v) {
             yXZ(v, v);
         }
 
-        default void yXT(double v) {
+        default void yXT(final double v) {
             yXT(v, v);
         }
 
-        default void yYZ(double v) {
+        default void yYZ(final double v) {
             yYZ(v, v);
         }
 
-        default void yYT(double v) {
+        default void yYT(final double v) {
             yYT(v, v);
         }
 
-        default void yZT(double v) {
+        default void yZT(final double v) {
             yZT(v, v);
         }
 
-        default void yXYZ(double v) {
+        default void yXYZ(final double v) {
             yXYZ(v, v, v);
         }
 
-        default void yXYT(double v) {
+        default void yXYT(final double v) {
             yXYT(v, v, v);
         }
 
-        default void yXZT(double v) {
+        default void yXZT(final double v) {
             yXZT(v, v, v);
         }
 
-        default void yYZT(double v) {
+        default void yYZT(final double v) {
             yYZT(v, v, v);
         }
 
-        default void yXYZT(double v) {
+        default void yXYZT(final double v) {
             yXYZT(v, v, v, v);
         }
 
-        default void zXY(double v) {
+        default void zXY(final double v) {
             zXY(v, v);
         }
 
-        default void zXZ(double v) {
+        default void zXZ(final double v) {
             zXZ(v, v);
         }
 
-        default void zXT(double v) {
+        default void zXT(final double v) {
             zXT(v, v);
         }
 
-        default void zYZ(double v) {
+        default void zYZ(final double v) {
             zYZ(v, v);
         }
 
-        default void zYT(double v) {
+        default void zYT(final double v) {
             zYT(v, v);
         }
 
-        default void zZT(double v) {
+        default void zZT(final double v) {
             zZT(v, v);
         }
 
-        default void zXYZ(double v) {
+        default void zXYZ(final double v) {
             zXYZ(v, v, v);
         }
 
-        default void zXYT(double v) {
+        default void zXYT(final double v) {
             zXYT(v, v, v);
         }
 
-        default void zXZT(double v) {
+        default void zXZT(final double v) {
             zXZT(v, v, v);
         }
 
-        default void zYZT(double v) {
+        default void zYZT(final double v) {
             zYZT(v, v, v);
         }
 
-        default void zXYZT(double v) {
+        default void zXYZT(final double v) {
             zXYZT(v, v, v, v);
         }
 
-        default void wXY(double v) {
+        default void wXY(final double v) {
             wXY(v, v);
         }
 
-        default void wXZ(double v) {
+        default void wXZ(final double v) {
             wXZ(v, v);
         }
 
-        default void wXT(double v) {
+        default void wXT(final double v) {
             wXT(v, v);
         }
 
-        default void wYZ(double v) {
+        default void wYZ(final double v) {
             wYZ(v, v);
         }
 
-        default void wYT(double v) {
+        default void wYT(final double v) {
             wYT(v, v);
         }
 
-        default void wZT(double v) {
+        default void wZT(final double v) {
             wZT(v, v);
         }
 
-        default void wXYZ(double v) {
+        default void wXYZ(final double v) {
             wXYZ(v, v, v);
         }
 
-        default void wXYT(double v) {
+        default void wXYT(final double v) {
             wXYT(v, v, v);
         }
 
-        default void wXZT(double v) {
+        default void wXZT(final double v) {
             wXZT(v, v, v);
         }
 
-        default void wYZT(double v) {
+        default void wYZT(final double v) {
             wYZT(v, v, v);
         }
 
-        default void wXYZT(double v) {
+        default void wXYZT(final double v) {
             wXYZT(v, v, v, v);
         }
 
-        default void Dxy(double v) {
+        default void Dxy(final double v) {
             Dxy(v, v);
         }
 
-        default void Dxz(double v) {
+        default void Dxz(final double v) {
             Dxz(v, v);
         }
 
-        default void Dxw(double v) {
+        default void Dxw(final double v) {
             Dxw(v, v);
         }
 
-        default void Dyz(double v) {
+        default void Dyz(final double v) {
             Dyz(v, v);
         }
 
-        default void Dyw(double v) {
+        default void Dyw(final double v) {
             Dyw(v, v);
         }
 
-        default void Dzw(double v) {
+        default void Dzw(final double v) {
             Dzw(v, v);
         }
 
-        default void Dxyz(double v) {
+        default void Dxyz(final double v) {
             Dxyz(v, v, v);
         }
 
-        default void Dxyw(double v) {
+        default void Dxyw(final double v) {
             Dxyw(v, v, v);
         }
 
-        default void Dxzw(double v) {
+        default void Dxzw(final double v) {
             Dxzw(v, v, v);
         }
 
-        default void Dyzw(double v) {
+        default void Dyzw(final double v) {
             Dyzw(v, v, v);
         }
 
-        default void Dxyzw(double v) {
+        default void Dxyzw(final double v) {
             Dxyzw(v, v, v, v);
         }
 
-        default void XYxy(double v) {
+        default void XYxy(final double v) {
             XYxy(v, v, v, v);
         }
 
-        default void XYyz(double v) {
+        default void XYyz(final double v) {
             XYyz(v, v, v, v);
         }
 
-        default void XYzw(double v) {
+        default void XYzw(final double v) {
             XYzw(v, v, v, v);
         }
 
-        default void YZxy(double v) {
+        default void YZxy(final double v) {
             YZxy(v, v, v, v);
         }
 
-        default void YZyz(double v) {
+        default void YZyz(final double v) {
             YZyz(v, v, v, v);
         }
 
-        default void YZzw(double v) {
+        default void YZzw(final double v) {
             YZzw(v, v, v, v);
         }
 
-        default void ZTxy(double v) {
+        default void ZTxy(final double v) {
             ZTxy(v, v, v, v);
         }
 
-        default void ZTyz(double v) {
+        default void ZTyz(final double v) {
             ZTyz(v, v, v, v);
         }
 
-        default void ZTzw(double v) {
+        default void ZTzw(final double v) {
             ZTzw(v, v, v, v);
         }
 
-        default void XYZxyz(double v) {
+        default void XYZxyz(final double v) {
             XYZxyz(v, v, v, v, v, v, v, v, v);
         }
 
-        default void XYZyzw(double v) {
+        default void XYZyzw(final double v) {
             XYZyzw(v, v, v, v, v, v, v, v, v);
         }
 
-        default void YZTxyz(double v) {
+        default void YZTxyz(final double v) {
             YZTxyz(v, v, v, v, v, v, v, v, v);
         }
 
-        default void YZTyzw(double v) {
+        default void YZTyzw(final double v) {
             YZTyzw(v, v, v, v, v, v, v, v, v);
         }
 
-        default void XYZTxyzw(double v) {
+        default void XYZTxyzw(final double v) {
             XYZTxyzw(v, v, v, v, v, v, v, v, v, v, v, v, v, v, v, v);
         }
 
-        default void Xxy(double Xx, double Xy) {
+        default void Xxy(final double Xx, final double Xy) {
             Xx(Xx);
             Xy(Xy);
         }
 
-        default void Xxz(double Xx, double Xz) {
+        default void Xxz(final double Xx, final double Xz) {
             Xx(Xx);
             Xz(Xz);
         }
 
-        default void Xxw(double Xx, double Xw) {
+        default void Xxw(final double Xx, final double Xw) {
             Xx(Xx);
             Xw(Xw);
         }
 
-        default void Xyz(double Xy, double Xz) {
+        default void Xyz(final double Xy, final double Xz) {
             Xy(Xy);
             Xz(Xz);
         }
 
-        default void Xyw(double Xy, double Xw) {
+        default void Xyw(final double Xy, final double Xw) {
             Xy(Xy);
             Xw(Xw);
         }
 
-        default void Xzw(double Xz, double Xw) {
+        default void Xzw(final double Xz, final double Xw) {
             Xz(Xz);
             Xw(Xw);
         }
 
-        default void Xxyz(double Xx, double Xy, double Xz) {
+        default void Xxyz(final double Xx, final double Xy, final double Xz) {
             Xx(Xx);
             Xy(Xy);
             Xz(Xz);
         }
 
-        default void Xxyw(double Xx, double Xy, double Xw) {
+        default void Xxyw(final double Xx, final double Xy, final double Xw) {
             Xx(Xx);
             Xy(Xy);
             Xw(Xw);
         }
 
-        default void Xxzw(double Xx, double Xz, double Xw) {
+        default void Xxzw(final double Xx, final double Xz, final double Xw) {
             Xx(Xx);
             Xz(Xz);
             Xw(Xw);
         }
 
-        default void Xyzw(double Xy, double Xz, double Xw) {
-            Xy(Xy);
-            Xz(Xz);
-            Xw(Xw);
-        }
-
-        default void Xxyzw(double Xx, double Xy, double Xz, double Xw) {
-            Xx(Xx);
+        default void Xyzw(final double Xy, final double Xz, final double Xw) {
             Xy(Xy);
             Xz(Xz);
             Xw(Xw);
         }
 
-        default void Yxy(double Yx, double Yy) {
+        default void Xxyzw(final double Xx, final double Xy, final double Xz, final double Xw) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
+        }
+
+        default void Yxy(final double Yx, final double Yy) {
             Yx(Yx);
             Yy(Yy);
         }
 
-        default void Yxz(double Yx, double Yz) {
+        default void Yxz(final double Yx, final double Yz) {
             Yx(Yx);
             Yz(Yz);
         }
 
-        default void Yxw(double Yx, double Yw) {
+        default void Yxw(final double Yx, final double Yw) {
             Yx(Yx);
             Yw(Yw);
         }
 
-        default void Yyz(double Yy, double Yz) {
+        default void Yyz(final double Yy, final double Yz) {
             Yy(Yy);
             Yz(Yz);
         }
 
-        default void Yyw(double Yy, double Yw) {
+        default void Yyw(final double Yy, final double Yw) {
             Yy(Yy);
             Yw(Yw);
         }
 
-        default void Yzw(double Yz, double Yw) {
+        default void Yzw(final double Yz, final double Yw) {
             Yz(Yz);
             Yw(Yw);
         }
 
-        default void Yxyz(double Yx, double Yy, double Yz) {
+        default void Yxyz(final double Yx, final double Yy, final double Yz) {
             Yx(Yx);
             Yy(Yy);
             Yz(Yz);
         }
 
-        default void Yxyw(double Yx, double Yy, double Yw) {
+        default void Yxyw(final double Yx, final double Yy, final double Yw) {
             Yx(Yx);
             Yy(Yy);
             Yw(Yw);
         }
 
-        default void Yxzw(double Yx, double Yz, double Yw) {
+        default void Yxzw(final double Yx, final double Yz, final double Yw) {
             Yx(Yx);
             Yz(Yz);
             Yw(Yw);
         }
 
-        default void Yyzw(double Yy, double Yz, double Yw) {
-            Yy(Yy);
-            Yz(Yz);
-            Yw(Yw);
-        }
-
-        default void Yxyzw(double Yx, double Yy, double Yz, double Yw) {
-            Yx(Yx);
+        default void Yyzw(final double Yy, final double Yz, final double Yw) {
             Yy(Yy);
             Yz(Yz);
             Yw(Yw);
         }
 
-        default void Zxy(double Zx, double Zy) {
+        default void Yxyzw(final double Yx, final double Yy, final double Yz, final double Yw) {
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+        }
+
+        default void Zxy(final double Zx, final double Zy) {
             Zx(Zx);
             Zy(Zy);
         }
 
-        default void Zxz(double Zx, double Zz) {
+        default void Zxz(final double Zx, final double Zz) {
             Zx(Zx);
             Zz(Zz);
         }
 
-        default void Zxw(double Zx, double Zw) {
+        default void Zxw(final double Zx, final double Zw) {
             Zx(Zx);
             Zw(Zw);
         }
 
-        default void Zyz(double Zy, double Zz) {
+        default void Zyz(final double Zy, final double Zz) {
             Zy(Zy);
             Zz(Zz);
         }
 
-        default void Zyw(double Zy, double Zw) {
+        default void Zyw(final double Zy, final double Zw) {
             Zy(Zy);
             Zw(Zw);
         }
 
-        default void Zzw(double Zz, double Zw) {
+        default void Zzw(final double Zz, final double Zw) {
             Zz(Zz);
             Zw(Zw);
         }
 
-        default void Zxyz(double Zx, double Zy, double Zz) {
+        default void Zxyz(final double Zx, final double Zy, final double Zz) {
             Zx(Zx);
             Zy(Zy);
             Zz(Zz);
         }
 
-        default void Zxyw(double Zx, double Zy, double Zw) {
+        default void Zxyw(final double Zx, final double Zy, final double Zw) {
             Zx(Zx);
             Zy(Zy);
             Zw(Zw);
         }
 
-        default void Zxzw(double Zx, double Zz, double Zw) {
+        default void Zxzw(final double Zx, final double Zz, final double Zw) {
             Zx(Zx);
             Zz(Zz);
             Zw(Zw);
         }
 
-        default void Zyzw(double Zy, double Zz, double Zw) {
-            Zy(Zy);
-            Zz(Zz);
-            Zw(Zw);
-        }
-
-        default void Zxyzw(double Zx, double Zy, double Zz, double Zw) {
-            Zx(Zx);
+        default void Zyzw(final double Zy, final double Zz, final double Zw) {
             Zy(Zy);
             Zz(Zz);
             Zw(Zw);
         }
 
-        default void Txy(double Tx, double Ty) {
+        default void Zxyzw(final double Zx, final double Zy, final double Zz, final double Zw) {
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void Txy(final double Tx, final double Ty) {
             Tx(Tx);
             Ty(Ty);
         }
 
-        default void Txz(double Tx, double Tz) {
+        default void Txz(final double Tx, final double Tz) {
             Tx(Tx);
             Tz(Tz);
         }
 
-        default void Txw(double Tx, double Tw) {
+        default void Txw(final double Tx, final double Tw) {
             Tx(Tx);
             Tw(Tw);
         }
 
-        default void Tyz(double Ty, double Tz) {
+        default void Tyz(final double Ty, final double Tz) {
             Ty(Ty);
             Tz(Tz);
         }
 
-        default void Tyw(double Ty, double Tw) {
+        default void Tyw(final double Ty, final double Tw) {
             Ty(Ty);
             Tw(Tw);
         }
 
-        default void Tzw(double Tz, double Tw) {
+        default void Tzw(final double Tz, final double Tw) {
             Tz(Tz);
             Tw(Tw);
         }
 
-        default void Txyz(double Tx, double Ty, double Tz) {
+        default void Txyz(final double Tx, final double Ty, final double Tz) {
             Tx(Tx);
             Ty(Ty);
             Tz(Tz);
         }
 
-        default void Txyw(double Tx, double Ty, double Tw) {
+        default void Txyw(final double Tx, final double Ty, final double Tw) {
             Tx(Tx);
             Ty(Ty);
             Tw(Tw);
         }
 
-        default void Txzw(double Tx, double Tz, double Tw) {
+        default void Txzw(final double Tx, final double Tz, final double Tw) {
             Tx(Tx);
             Tz(Tz);
             Tw(Tw);
         }
 
-        default void Tyzw(double Ty, double Tz, double Tw) {
-            Ty(Ty);
-            Tz(Tz);
-            Tw(Tw);
-        }
-
-        default void Txyzw(double Tx, double Ty, double Tz, double Tw) {
-            Tx(Tx);
+        default void Tyzw(final double Ty, final double Tz, final double Tw) {
             Ty(Ty);
             Tz(Tz);
             Tw(Tw);
         }
 
-        default void xXY(double Xx, double Yx) {
+        default void Txyzw(final double Tx, final double Ty, final double Tz, final double Tw) {
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void xXY(final double Xx, final double Yx) {
             Xx(Xx);
             Yx(Yx);
         }
 
-        default void xXZ(double Xx, double Zx) {
+        default void xXZ(final double Xx, final double Zx) {
             Xx(Xx);
             Zx(Zx);
         }
 
-        default void xXT(double Xx, double Tx) {
+        default void xXT(final double Xx, final double Tx) {
             Xx(Xx);
             Tx(Tx);
         }
 
-        default void xYZ(double Yx, double Zx) {
+        default void xYZ(final double Yx, final double Zx) {
             Yx(Yx);
             Zx(Zx);
         }
 
-        default void xYT(double Yx, double Tx) {
+        default void xYT(final double Yx, final double Tx) {
             Yx(Yx);
             Tx(Tx);
         }
 
-        default void xZT(double Zx, double Tx) {
+        default void xZT(final double Zx, final double Tx) {
             Zx(Zx);
             Tx(Tx);
         }
 
-        default void xXYZ(double Xx, double Yx, double Zx) {
+        default void xXYZ(final double Xx, final double Yx, final double Zx) {
             Xx(Xx);
             Yx(Yx);
             Zx(Zx);
         }
 
-        default void xXYT(double Xx, double Yx, double Tx) {
+        default void xXYT(final double Xx, final double Yx, final double Tx) {
             Xx(Xx);
             Yx(Yx);
             Tx(Tx);
         }
 
-        default void xXZT(double Xx, double Zx, double Tx) {
+        default void xXZT(final double Xx, final double Zx, final double Tx) {
             Xx(Xx);
             Zx(Zx);
             Tx(Tx);
         }
 
-        default void xYZT(double Yx, double Zx, double Tx) {
-            Yx(Yx);
-            Zx(Zx);
-            Tx(Tx);
-        }
-
-        default void xXYZT(double Xx, double Yx, double Zx, double Tx) {
-            Xx(Xx);
+        default void xYZT(final double Yx, final double Zx, final double Tx) {
             Yx(Yx);
             Zx(Zx);
             Tx(Tx);
         }
 
-        default void yXY(double Xy, double Yy) {
+        default void xXYZT(final double Xx, final double Yx, final double Zx, final double Tx) {
+            Xx(Xx);
+            Yx(Yx);
+            Zx(Zx);
+            Tx(Tx);
+        }
+
+        default void yXY(final double Xy, final double Yy) {
             Xy(Xy);
             Yy(Yy);
         }
 
-        default void yXZ(double Xy, double Zy) {
+        default void yXZ(final double Xy, final double Zy) {
             Xy(Xy);
             Zy(Zy);
         }
 
-        default void yXT(double Xy, double Ty) {
+        default void yXT(final double Xy, final double Ty) {
             Xy(Xy);
             Ty(Ty);
         }
 
-        default void yYZ(double Yy, double Zy) {
+        default void yYZ(final double Yy, final double Zy) {
             Yy(Yy);
             Zy(Zy);
         }
 
-        default void yYT(double Yy, double Ty) {
+        default void yYT(final double Yy, final double Ty) {
             Yy(Yy);
             Ty(Ty);
         }
 
-        default void yZT(double Zy, double Ty) {
+        default void yZT(final double Zy, final double Ty) {
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void yXYZ(double Xy, double Yy, double Zy) {
+        default void yXYZ(final double Xy, final double Yy, final double Zy) {
             Xy(Xy);
             Yy(Yy);
             Zy(Zy);
         }
 
-        default void yXYT(double Xy, double Yy, double Ty) {
+        default void yXYT(final double Xy, final double Yy, final double Ty) {
             Xy(Xy);
             Yy(Yy);
             Ty(Ty);
         }
 
-        default void yXZT(double Xy, double Zy, double Ty) {
+        default void yXZT(final double Xy, final double Zy, final double Ty) {
             Xy(Xy);
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void yYZT(double Yy, double Zy, double Ty) {
+        default void yYZT(final double Yy, final double Zy, final double Ty) {
             Yy(Yy);
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void yXYZT(double Xy, double Yy, double Zy, double Ty) {
+        default void yXYZT(final double Xy, final double Yy, final double Zy, final double Ty) {
             Xy(Xy);
             Yy(Yy);
             Zy(Zy);
             Ty(Ty);
         }
 
-        default void zXY(double Xz, double Yz) {
+        default void zXY(final double Xz, final double Yz) {
             Xz(Xz);
             Yz(Yz);
         }
 
-        default void zXZ(double Xz, double Zz) {
+        default void zXZ(final double Xz, final double Zz) {
             Xz(Xz);
             Zz(Zz);
         }
 
-        default void zXT(double Xz, double Tz) {
+        default void zXT(final double Xz, final double Tz) {
             Xz(Xz);
             Tz(Tz);
         }
 
-        default void zYZ(double Yz, double Zz) {
+        default void zYZ(final double Yz, final double Zz) {
             Yz(Yz);
             Zz(Zz);
         }
 
-        default void zYT(double Yz, double Tz) {
+        default void zYT(final double Yz, final double Tz) {
             Yz(Yz);
             Tz(Tz);
         }
 
-        default void zZT(double Zz, double Tz) {
+        default void zZT(final double Zz, final double Tz) {
             Zz(Zz);
             Tz(Tz);
         }
 
-        default void zXYZ(double Xz, double Yz, double Zz) {
+        default void zXYZ(final double Xz, final double Yz, final double Zz) {
             Xz(Xz);
             Yz(Yz);
             Zz(Zz);
         }
 
-        default void zXYT(double Xz, double Yz, double Tz) {
+        default void zXYT(final double Xz, final double Yz, final double Tz) {
             Xz(Xz);
             Yz(Yz);
             Tz(Tz);
         }
 
-        default void zXZT(double Xz, double Zz, double Tz) {
+        default void zXZT(final double Xz, final double Zz, final double Tz) {
             Xz(Xz);
             Zz(Zz);
             Tz(Tz);
         }
 
-        default void zYZT(double Yz, double Zz, double Tz) {
-            Yz(Yz);
-            Zz(Zz);
-            Tz(Tz);
-        }
-
-        default void zXYZT(double Xz, double Yz, double Zz, double Tz) {
-            Xz(Xz);
+        default void zYZT(final double Yz, final double Zz, final double Tz) {
             Yz(Yz);
             Zz(Zz);
             Tz(Tz);
         }
 
-        default void wXY(double Xw, double Yw) {
+        default void zXYZT(final double Xz, final double Yz, final double Zz, final double Tz) {
+            Xz(Xz);
+            Yz(Yz);
+            Zz(Zz);
+            Tz(Tz);
+        }
+
+        default void wXY(final double Xw, final double Yw) {
             Xw(Xw);
             Yw(Yw);
         }
 
-        default void wXZ(double Xw, double Zw) {
+        default void wXZ(final double Xw, final double Zw) {
             Xw(Xw);
             Zw(Zw);
         }
 
-        default void wXT(double Xw, double Tw) {
+        default void wXT(final double Xw, final double Tw) {
             Xw(Xw);
             Tw(Tw);
         }
 
-        default void wYZ(double Yw, double Zw) {
+        default void wYZ(final double Yw, final double Zw) {
             Yw(Yw);
             Zw(Zw);
         }
 
-        default void wYT(double Yw, double Tw) {
+        default void wYT(final double Yw, final double Tw) {
             Yw(Yw);
             Tw(Tw);
         }
 
-        default void wZT(double Zw, double Tw) {
+        default void wZT(final double Zw, final double Tw) {
             Zw(Zw);
             Tw(Tw);
         }
 
-        default void wXYZ(double Xw, double Yw, double Zw) {
+        default void wXYZ(final double Xw, final double Yw, final double Zw) {
             Xw(Xw);
             Yw(Yw);
             Zw(Zw);
         }
 
-        default void wXYT(double Xw, double Yw, double Tw) {
+        default void wXYT(final double Xw, final double Yw, final double Tw) {
             Xw(Xw);
             Yw(Yw);
             Tw(Tw);
         }
 
-        default void wXZT(double Xw, double Zw, double Tw) {
+        default void wXZT(final double Xw, final double Zw, final double Tw) {
             Xw(Xw);
             Zw(Zw);
             Tw(Tw);
         }
 
-        default void wYZT(double Yw, double Zw, double Tw) {
-            Yw(Yw);
-            Zw(Zw);
-            Tw(Tw);
-        }
-
-        default void wXYZT(double Xw, double Yw, double Zw, double Tw) {
-            Xw(Xw);
+        default void wYZT(final double Yw, final double Zw, final double Tw) {
             Yw(Yw);
             Zw(Zw);
             Tw(Tw);
         }
 
-        default void Dxy(double Xx, double Yy) {
+        default void wXYZT(final double Xw, final double Yw, final double Zw, final double Tw) {
+            Xw(Xw);
+            Yw(Yw);
+            Zw(Zw);
+            Tw(Tw);
+        }
+
+        default void Dxy(final double Xx, final double Yy) {
             Xx(Xx);
             Yy(Yy);
         }
 
-        default void Dxz(double Xx, double Zz) {
+        default void Dxz(final double Xx, final double Zz) {
             Xx(Xx);
             Zz(Zz);
         }
 
-        default void Dxw(double Xx, double Tw) {
+        default void Dxw(final double Xx, final double Tw) {
             Xx(Xx);
             Tw(Tw);
         }
 
-        default void Dyz(double Yy, double Zz) {
+        default void Dyz(final double Yy, final double Zz) {
             Yy(Yy);
             Zz(Zz);
         }
 
-        default void Dyw(double Yy, double Tw) {
+        default void Dyw(final double Yy, final double Tw) {
             Yy(Yy);
             Tw(Tw);
         }
 
-        default void Dzw(double Zz, double Tw) {
+        default void Dzw(final double Zz, final double Tw) {
             Zz(Zz);
             Tw(Tw);
         }
 
-        default void Dxyz(double Xx, double Yy, double Zz) {
+        default void Dxyz(final double Xx, final double Yy, final double Zz) {
             Xx(Xx);
             Yy(Yy);
             Zz(Zz);
         }
 
-        default void Dxyw(double Xx, double Yy, double Tw) {
+        default void Dxyw(final double Xx, final double Yy, final double Tw) {
             Xx(Xx);
             Yy(Yy);
             Tw(Tw);
         }
 
-        default void Dxzw(double Xx, double Zz, double Tw) {
+        default void Dxzw(final double Xx, final double Zz, final double Tw) {
             Xx(Xx);
             Zz(Zz);
             Tw(Tw);
         }
 
-        default void Dyzw(double Yy, double Zz, double Tw) {
+        default void Dyzw(final double Yy, final double Zz, final double Tw) {
             Yy(Yy);
             Zz(Zz);
             Tw(Tw);
         }
 
-        default void Dxyzw(double Xx, double Yy, double Zz, double Tw) {
+        default void Dxyzw(final double Xx, final double Yy, final double Zz, final double Tw) {
             Xx(Xx);
             Yy(Yy);
             Zz(Zz);
@@ -2086,8 +2086,8 @@ public final class Matrix4x4 {
         }
 
         default void XYxy(
-                double Xx, double Xy,
-                double Yx, double Yy
+                final double Xx, final double Xy,
+                final double Yx, final double Yy
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -2096,8 +2096,8 @@ public final class Matrix4x4 {
         }
 
         default void xyXY(
-                double Xx, double Yx,
-                double Xy, double Yy
+                final double Xx, final double Yx,
+                final double Xy, final double Yy
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -2106,8 +2106,8 @@ public final class Matrix4x4 {
         }
 
         default void XYyz(
-                double Xy, double Xz,
-                double Yy, double Yz
+                final double Xy, final double Xz,
+                final double Yy, final double Yz
         ) {
             Xy(Xy);
             Xz(Xz);
@@ -2116,8 +2116,8 @@ public final class Matrix4x4 {
         }
 
         default void yzXY(
-                double Xy, double Yy,
-                double Xz, double Yz
+                final double Xy, final double Yy,
+                final double Xz, final double Yz
         ) {
             Xy(Xy);
             Xz(Xz);
@@ -2126,8 +2126,8 @@ public final class Matrix4x4 {
         }
 
         default void XYzw(
-                double Xz, double Xw,
-                double Yz, double Yw
+                final double Xz, final double Xw,
+                final double Yz, final double Yw
         ) {
             Xz(Xz);
             Xw(Xw);
@@ -2136,8 +2136,8 @@ public final class Matrix4x4 {
         }
 
         default void zwXY(
-                double Xz, double Yz,
-                double Xw, double Yw
+                final double Xz, final double Yz,
+                final double Xw, final double Yw
         ) {
             Xz(Xz);
             Xw(Xw);
@@ -2146,8 +2146,8 @@ public final class Matrix4x4 {
         }
 
         default void YZxy(
-                double Yx, double Yy,
-                double Zx, double Zy
+                final double Yx, final double Yy,
+                final double Zx, final double Zy
         ) {
             Yx(Yx);
             Yy(Yy);
@@ -2156,8 +2156,8 @@ public final class Matrix4x4 {
         }
 
         default void xyYZ(
-                double Yx, double Zx,
-                double Yy, double Zy
+                final double Yx, final double Zx,
+                final double Yy, final double Zy
         ) {
             Yx(Yx);
             Yy(Yy);
@@ -2166,8 +2166,8 @@ public final class Matrix4x4 {
         }
 
         default void YZyz(
-                double Yy, double Yz,
-                double Zy, double Zz
+                final double Yy, final double Yz,
+                final double Zy, final double Zz
         ) {
             Yy(Yy);
             Yz(Yz);
@@ -2176,8 +2176,8 @@ public final class Matrix4x4 {
         }
 
         default void yzYZ(
-                double Yy, double Zy,
-                double Yz, double Zz
+                final double Yy, final double Zy,
+                final double Yz, final double Zz
         ) {
             Yy(Yy);
             Yz(Yz);
@@ -2186,8 +2186,8 @@ public final class Matrix4x4 {
         }
 
         default void YZzw(
-                double Yz, double Yw,
-                double Zz, double Zw
+                final double Yz, final double Yw,
+                final double Zz, final double Zw
         ) {
             Yz(Yz);
             Yw(Yw);
@@ -2196,8 +2196,8 @@ public final class Matrix4x4 {
         }
 
         default void zwYZ(
-                double Yz, double Zz,
-                double Yw, double Zw
+                final double Yz, final double Zz,
+                final double Yw, final double Zw
         ) {
             Yz(Yz);
             Yw(Yw);
@@ -2206,8 +2206,8 @@ public final class Matrix4x4 {
         }
 
         default void ZTxy(
-                double Zx, double Zy,
-                double Tx, double Ty
+                final double Zx, final double Zy,
+                final double Tx, final double Ty
         ) {
             Zx(Zx);
             Zy(Zy);
@@ -2216,8 +2216,8 @@ public final class Matrix4x4 {
         }
 
         default void xyZT(
-                double Zx, double Tx,
-                double Zy, double Ty
+                final double Zx, final double Tx,
+                final double Zy, final double Ty
         ) {
             Zx(Zx);
             Zy(Zy);
@@ -2226,8 +2226,8 @@ public final class Matrix4x4 {
         }
 
         default void ZTyz(
-                double Zy, double Zz,
-                double Ty, double Tz
+                final double Zy, final double Zz,
+                final double Ty, final double Tz
         ) {
             Zy(Zy);
             Zz(Zz);
@@ -2236,8 +2236,8 @@ public final class Matrix4x4 {
         }
 
         default void yzZT(
-                double Zy, double Ty,
-                double Zz, double Tz
+                final double Zy, final double Ty,
+                final double Zz, final double Tz
         ) {
             Zy(Zy);
             Zz(Zz);
@@ -2246,8 +2246,8 @@ public final class Matrix4x4 {
         }
 
         default void ZTzw(
-                double Zz, double Zw,
-                double Tz, double Tw
+                final double Zz, final double Zw,
+                final double Tz, final double Tw
         ) {
             Zz(Zz);
             Zw(Zw);
@@ -2256,8 +2256,8 @@ public final class Matrix4x4 {
         }
 
         default void zwZT(
-                double Zz, double Tz,
-                double Zw, double Tw
+                final double Zz, final double Tz,
+                final double Zw, final double Tw
         ) {
             Zz(Zz);
             Zw(Zw);
@@ -2266,9 +2266,9 @@ public final class Matrix4x4 {
         }
 
         default void XYZxyz(
-                double Xx, double Xy, double Xz,
-                double Yx, double Yy, double Yz,
-                double Zx, double Zy, double Zz
+                final double Xx, final double Xy, final double Xz,
+                final double Yx, final double Yy, final double Yz,
+                final double Zx, final double Zy, final double Zz
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -2282,9 +2282,9 @@ public final class Matrix4x4 {
         }
 
         default void xyzXYZ(
-                double Xx, double Yx, double Zx,
-                double Xy, double Yy, double Zy,
-                double Xz, double Yz, double Zz
+                final double Xx, final double Yx, final double Zx,
+                final double Xy, final double Yy, final double Zy,
+                final double Xz, final double Yz, final double Zz
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -2298,9 +2298,9 @@ public final class Matrix4x4 {
         }
 
         default void XYZyzw(
-                double Xy, double Xz, double Xw,
-                double Yy, double Yz, double Yw,
-                double Zy, double Zz, double Zw
+                final double Xy, final double Xz, final double Xw,
+                final double Yy, final double Yz, final double Yw,
+                final double Zy, final double Zz, final double Zw
         ) {
             Xy(Xy);
             Xz(Xz);
@@ -2314,9 +2314,9 @@ public final class Matrix4x4 {
         }
 
         default void yzwXYZ(
-                double Xy, double Yy, double Zy,
-                double Xz, double Yz, double Zz,
-                double Xw, double Yw, double Zw
+                final double Xy, final double Yy, final double Zy,
+                final double Xz, final double Yz, final double Zz,
+                final double Xw, final double Yw, final double Zw
         ) {
             Xy(Xy);
             Xz(Xz);
@@ -2330,9 +2330,9 @@ public final class Matrix4x4 {
         }
 
         default void YZTxyz(
-                double Yx, double Yy, double Yz,
-                double Zx, double Zy, double Zz,
-                double Tx, double Ty, double Tz
+                final double Yx, final double Yy, final double Yz,
+                final double Zx, final double Zy, final double Zz,
+                final double Tx, final double Ty, final double Tz
         ) {
             Yx(Yx);
             Yy(Yy);
@@ -2346,9 +2346,9 @@ public final class Matrix4x4 {
         }
 
         default void xyzYZT(
-                double Yx, double Zx, double Tx,
-                double Yy, double Zy, double Ty,
-                double Yz, double Zz, double Tz
+                final double Yx, final double Zx, final double Tx,
+                final double Yy, final double Zy, final double Ty,
+                final double Yz, final double Zz, final double Tz
         ) {
             Yx(Yx);
             Yy(Yy);
@@ -2362,9 +2362,9 @@ public final class Matrix4x4 {
         }
 
         default void YZTyzw(
-                double Yy, double Yz, double Yw,
-                double Zy, double Zz, double Zw,
-                double Ty, double Tz, double Tw
+                final double Yy, final double Yz, final double Yw,
+                final double Zy, final double Zz, final double Zw,
+                final double Ty, final double Tz, final double Tw
         ) {
             Yy(Yy);
             Yz(Yz);
@@ -2378,9 +2378,9 @@ public final class Matrix4x4 {
         }
 
         default void yzwYZT(
-                double Yy, double Zy, double Ty,
-                double Yz, double Zz, double Tz,
-                double Yw, double Zw, double Tw
+                final double Yy, final double Zy, final double Ty,
+                final double Yz, final double Zz, final double Tz,
+                final double Yw, final double Zw, final double Tw
         ) {
             Yy(Yy);
             Yz(Yz);
@@ -2395,10 +2395,10 @@ public final class Matrix4x4 {
 
         @Override
         default void XYZTxyzw(
-                double Xx, double Xy, double Xz, double Xw,
-                double Yx, double Yy, double Yz, double Yw,
-                double Zx, double Zy, double Zz, double Zw,
-                double Tx, double Ty, double Tz, double Tw
+                final double Xx, final double Xy, final double Xz, final double Xw,
+                final double Yx, final double Yy, final double Yz, final double Yw,
+                final double Zx, final double Zy, final double Zz, final double Zw,
+                final double Tx, final double Ty, final double Tz, final double Tw
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -2419,10 +2419,10 @@ public final class Matrix4x4 {
         }
 
         default void xyzwXYZT(
-                double Xx, double Yx, double Zx, double Tx,
-                double Xy, double Yy, double Zy, double Ty,
-                double Xz, double Yz, double Zz, double Tz,
-                double Xw, double Yw, double Zw, double Tw
+                final double Xx, final double Yx, final double Zx, final double Tx,
+                final double Xy, final double Yy, final double Zy, final double Ty,
+                final double Xz, final double Yz, final double Zz, final double Tz,
+                final double Xw, final double Yw, final double Zw, final double Tw
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -2442,511 +2442,511 @@ public final class Matrix4x4 {
             Tw(Tw);
         }
 
-        default void Xxy(Vector2.Accessible v) {
+        default void Xxy(final Vector2.Accessible v) {
             Xxy(v.x(), v.y());
         }
 
-        default void Xxz(Vector2.Accessible v) {
+        default void Xxz(final Vector2.Accessible v) {
             Xxz(v.x(), v.y());
         }
 
-        default void Xxw(Vector2.Accessible v) {
+        default void Xxw(final Vector2.Accessible v) {
             Xxw(v.x(), v.y());
         }
 
-        default void Xyz(Vector2.Accessible v) {
+        default void Xyz(final Vector2.Accessible v) {
             Xyz(v.x(), v.y());
         }
 
-        default void Xyw(Vector2.Accessible v) {
+        default void Xyw(final Vector2.Accessible v) {
             Xyw(v.x(), v.y());
         }
 
-        default void Xzw(Vector2.Accessible v) {
+        default void Xzw(final Vector2.Accessible v) {
             Xzw(v.x(), v.y());
         }
 
-        default void Xxyz(Vector3.Accessible v) {
+        default void Xxyz(final Vector3.Accessible v) {
             Xxyz(v.x(), v.y(), v.z());
         }
 
-        default void Xxyw(Vector3.Accessible v) {
+        default void Xxyw(final Vector3.Accessible v) {
             Xxyw(v.x(), v.y(), v.z());
         }
 
-        default void Xxzw(Vector3.Accessible v) {
+        default void Xxzw(final Vector3.Accessible v) {
             Xxzw(v.x(), v.y(), v.z());
         }
 
-        default void Xyzw(Vector3.Accessible v) {
+        default void Xyzw(final Vector3.Accessible v) {
             Xyzw(v.x(), v.y(), v.z());
         }
 
-        default void Xxyzw(Vector4.Accessible v) {
+        default void Xxyzw(final Vector4.Accessible v) {
             Xxyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void Yxy(Vector2.Accessible v) {
+        default void Yxy(final Vector2.Accessible v) {
             Yxy(v.x(), v.y());
         }
 
-        default void Yxz(Vector2.Accessible v) {
+        default void Yxz(final Vector2.Accessible v) {
             Yxz(v.x(), v.y());
         }
 
-        default void Yxw(Vector2.Accessible v) {
+        default void Yxw(final Vector2.Accessible v) {
             Yxw(v.x(), v.y());
         }
 
-        default void Yyz(Vector2.Accessible v) {
+        default void Yyz(final Vector2.Accessible v) {
             Yyz(v.x(), v.y());
         }
 
-        default void Yyw(Vector2.Accessible v) {
+        default void Yyw(final Vector2.Accessible v) {
             Yyw(v.x(), v.y());
         }
 
-        default void Yzw(Vector2.Accessible v) {
+        default void Yzw(final Vector2.Accessible v) {
             Yzw(v.x(), v.y());
         }
 
-        default void Yxyz(Vector3.Accessible v) {
+        default void Yxyz(final Vector3.Accessible v) {
             Yxyz(v.x(), v.y(), v.z());
         }
 
-        default void Yxyw(Vector3.Accessible v) {
+        default void Yxyw(final Vector3.Accessible v) {
             Yxyw(v.x(), v.y(), v.z());
         }
 
-        default void Yxzw(Vector3.Accessible v) {
+        default void Yxzw(final Vector3.Accessible v) {
             Yxzw(v.x(), v.y(), v.z());
         }
 
-        default void Yyzw(Vector3.Accessible v) {
+        default void Yyzw(final Vector3.Accessible v) {
             Yyzw(v.x(), v.y(), v.z());
         }
 
-        default void Yxyzw(Vector4.Accessible v) {
+        default void Yxyzw(final Vector4.Accessible v) {
             Yxyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void Zxy(Vector2.Accessible v) {
+        default void Zxy(final Vector2.Accessible v) {
             Zxy(v.x(), v.y());
         }
 
-        default void Zxz(Vector2.Accessible v) {
+        default void Zxz(final Vector2.Accessible v) {
             Zxz(v.x(), v.y());
         }
 
-        default void Zxw(Vector2.Accessible v) {
+        default void Zxw(final Vector2.Accessible v) {
             Zxw(v.x(), v.y());
         }
 
-        default void Zyz(Vector2.Accessible v) {
+        default void Zyz(final Vector2.Accessible v) {
             Zyz(v.x(), v.y());
         }
 
-        default void Zyw(Vector2.Accessible v) {
+        default void Zyw(final Vector2.Accessible v) {
             Zyw(v.x(), v.y());
         }
 
-        default void Zzw(Vector2.Accessible v) {
+        default void Zzw(final Vector2.Accessible v) {
             Zzw(v.x(), v.y());
         }
 
-        default void Zxyz(Vector3.Accessible v) {
+        default void Zxyz(final Vector3.Accessible v) {
             Zxyz(v.x(), v.y(), v.z());
         }
 
-        default void Zxyw(Vector3.Accessible v) {
+        default void Zxyw(final Vector3.Accessible v) {
             Zxyw(v.x(), v.y(), v.z());
         }
 
-        default void Zxzw(Vector3.Accessible v) {
+        default void Zxzw(final Vector3.Accessible v) {
             Zxzw(v.x(), v.y(), v.z());
         }
 
-        default void Zyzw(Vector3.Accessible v) {
+        default void Zyzw(final Vector3.Accessible v) {
             Zyzw(v.x(), v.y(), v.z());
         }
 
-        default void Zxyzw(Vector4.Accessible v) {
+        default void Zxyzw(final Vector4.Accessible v) {
             Zxyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void Txy(Vector2.Accessible v) {
+        default void Txy(final Vector2.Accessible v) {
             Txy(v.x(), v.y());
         }
 
-        default void Txz(Vector2.Accessible v) {
+        default void Txz(final Vector2.Accessible v) {
             Txz(v.x(), v.y());
         }
 
-        default void Txw(Vector2.Accessible v) {
+        default void Txw(final Vector2.Accessible v) {
             Txw(v.x(), v.y());
         }
 
-        default void Tyz(Vector2.Accessible v) {
+        default void Tyz(final Vector2.Accessible v) {
             Tyz(v.x(), v.y());
         }
 
-        default void Tyw(Vector2.Accessible v) {
+        default void Tyw(final Vector2.Accessible v) {
             Tyw(v.x(), v.y());
         }
 
-        default void Tzw(Vector2.Accessible v) {
+        default void Tzw(final Vector2.Accessible v) {
             Tzw(v.x(), v.y());
         }
 
-        default void Txyz(Vector3.Accessible v) {
+        default void Txyz(final Vector3.Accessible v) {
             Txyz(v.x(), v.y(), v.z());
         }
 
-        default void Txyw(Vector3.Accessible v) {
+        default void Txyw(final Vector3.Accessible v) {
             Txyw(v.x(), v.y(), v.z());
         }
 
-        default void Txzw(Vector3.Accessible v) {
+        default void Txzw(final Vector3.Accessible v) {
             Txzw(v.x(), v.y(), v.z());
         }
 
-        default void Tyzw(Vector3.Accessible v) {
+        default void Tyzw(final Vector3.Accessible v) {
             Tyzw(v.x(), v.y(), v.z());
         }
 
-        default void Txyzw(Vector4.Accessible v) {
+        default void Txyzw(final Vector4.Accessible v) {
             Txyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void xXY(Vector2.Accessible v) {
+        default void xXY(final Vector2.Accessible v) {
             xXY(v.x(), v.y());
         }
 
-        default void xXZ(Vector2.Accessible v) {
+        default void xXZ(final Vector2.Accessible v) {
             xXZ(v.x(), v.y());
         }
 
-        default void xXT(Vector2.Accessible v) {
+        default void xXT(final Vector2.Accessible v) {
             xXT(v.x(), v.y());
         }
 
-        default void xYZ(Vector2.Accessible v) {
+        default void xYZ(final Vector2.Accessible v) {
             xYZ(v.x(), v.y());
         }
 
-        default void xYT(Vector2.Accessible v) {
+        default void xYT(final Vector2.Accessible v) {
             xYT(v.x(), v.y());
         }
 
-        default void xZT(Vector2.Accessible v) {
+        default void xZT(final Vector2.Accessible v) {
             xZT(v.x(), v.y());
         }
 
-        default void xXYZ(Vector3.Accessible v) {
+        default void xXYZ(final Vector3.Accessible v) {
             xXYZ(v.x(), v.y(), v.z());
         }
 
-        default void xXYT(Vector3.Accessible v) {
+        default void xXYT(final Vector3.Accessible v) {
             xXYT(v.x(), v.y(), v.z());
         }
 
-        default void xXZT(Vector3.Accessible v) {
+        default void xXZT(final Vector3.Accessible v) {
             xXZT(v.x(), v.y(), v.z());
         }
 
-        default void xYZT(Vector3.Accessible v) {
+        default void xYZT(final Vector3.Accessible v) {
             xYZT(v.x(), v.y(), v.z());
         }
 
-        default void xXYZT(Vector4.Accessible v) {
+        default void xXYZT(final Vector4.Accessible v) {
             xXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void yXY(Vector2.Accessible v) {
+        default void yXY(final Vector2.Accessible v) {
             yXY(v.x(), v.y());
         }
 
-        default void yXZ(Vector2.Accessible v) {
+        default void yXZ(final Vector2.Accessible v) {
             yXZ(v.x(), v.y());
         }
 
-        default void yXT(Vector2.Accessible v) {
+        default void yXT(final Vector2.Accessible v) {
             yXT(v.x(), v.y());
         }
 
-        default void yYZ(Vector2.Accessible v) {
+        default void yYZ(final Vector2.Accessible v) {
             yYZ(v.x(), v.y());
         }
 
-        default void yYT(Vector2.Accessible v) {
+        default void yYT(final Vector2.Accessible v) {
             yYT(v.x(), v.y());
         }
 
-        default void yZT(Vector2.Accessible v) {
+        default void yZT(final Vector2.Accessible v) {
             yZT(v.x(), v.y());
         }
 
-        default void yXYZ(Vector3.Accessible v) {
+        default void yXYZ(final Vector3.Accessible v) {
             yXYZ(v.x(), v.y(), v.z());
         }
 
-        default void yXYT(Vector3.Accessible v) {
+        default void yXYT(final Vector3.Accessible v) {
             yXYT(v.x(), v.y(), v.z());
         }
 
-        default void yXZT(Vector3.Accessible v) {
+        default void yXZT(final Vector3.Accessible v) {
             yXZT(v.x(), v.y(), v.z());
         }
 
-        default void yYZT(Vector3.Accessible v) {
+        default void yYZT(final Vector3.Accessible v) {
             yYZT(v.x(), v.y(), v.z());
         }
 
-        default void yXYZT(Vector4.Accessible v) {
+        default void yXYZT(final Vector4.Accessible v) {
             yXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zXY(Vector2.Accessible v) {
+        default void zXY(final Vector2.Accessible v) {
             zXY(v.x(), v.y());
         }
 
-        default void zXZ(Vector2.Accessible v) {
+        default void zXZ(final Vector2.Accessible v) {
             zXZ(v.x(), v.y());
         }
 
-        default void zXT(Vector2.Accessible v) {
+        default void zXT(final Vector2.Accessible v) {
             zXT(v.x(), v.y());
         }
 
-        default void zYZ(Vector2.Accessible v) {
+        default void zYZ(final Vector2.Accessible v) {
             zYZ(v.x(), v.y());
         }
 
-        default void zYT(Vector2.Accessible v) {
+        default void zYT(final Vector2.Accessible v) {
             zYT(v.x(), v.y());
         }
 
-        default void zZT(Vector2.Accessible v) {
+        default void zZT(final Vector2.Accessible v) {
             zZT(v.x(), v.y());
         }
 
-        default void zXYZ(Vector3.Accessible v) {
+        default void zXYZ(final Vector3.Accessible v) {
             zXYZ(v.x(), v.y(), v.z());
         }
 
-        default void zXYT(Vector3.Accessible v) {
+        default void zXYT(final Vector3.Accessible v) {
             zXYT(v.x(), v.y(), v.z());
         }
 
-        default void zXZT(Vector3.Accessible v) {
+        default void zXZT(final Vector3.Accessible v) {
             zXZT(v.x(), v.y(), v.z());
         }
 
-        default void zYZT(Vector3.Accessible v) {
+        default void zYZT(final Vector3.Accessible v) {
             zYZT(v.x(), v.y(), v.z());
         }
 
-        default void zXYZT(Vector4.Accessible v) {
+        default void zXYZT(final Vector4.Accessible v) {
             zXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wXY(Vector2.Accessible v) {
+        default void wXY(final Vector2.Accessible v) {
             wXY(v.x(), v.y());
         }
 
-        default void wXZ(Vector2.Accessible v) {
+        default void wXZ(final Vector2.Accessible v) {
             wXZ(v.x(), v.y());
         }
 
-        default void wXT(Vector2.Accessible v) {
+        default void wXT(final Vector2.Accessible v) {
             wXT(v.x(), v.y());
         }
 
-        default void wYZ(Vector2.Accessible v) {
+        default void wYZ(final Vector2.Accessible v) {
             wYZ(v.x(), v.y());
         }
 
-        default void wYT(Vector2.Accessible v) {
+        default void wYT(final Vector2.Accessible v) {
             wYT(v.x(), v.y());
         }
 
-        default void wZT(Vector2.Accessible v) {
+        default void wZT(final Vector2.Accessible v) {
             wZT(v.x(), v.y());
         }
 
-        default void wXYZ(Vector3.Accessible v) {
+        default void wXYZ(final Vector3.Accessible v) {
             wXYZ(v.x(), v.y(), v.z());
         }
 
-        default void wXYT(Vector3.Accessible v) {
+        default void wXYT(final Vector3.Accessible v) {
             wXYT(v.x(), v.y(), v.z());
         }
 
-        default void wXZT(Vector3.Accessible v) {
+        default void wXZT(final Vector3.Accessible v) {
             wXZT(v.x(), v.y(), v.z());
         }
 
-        default void wYZT(Vector3.Accessible v) {
+        default void wYZT(final Vector3.Accessible v) {
             wYZT(v.x(), v.y(), v.z());
         }
 
-        default void wXYZT(Vector4.Accessible v) {
+        default void wXYZT(final Vector4.Accessible v) {
             wXYZT(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void Dxy(Vector2.Accessible v) {
+        default void Dxy(final Vector2.Accessible v) {
             Dxy(v.x(), v.y());
         }
 
-        default void Dxz(Vector2.Accessible v) {
+        default void Dxz(final Vector2.Accessible v) {
             Dxz(v.x(), v.y());
         }
 
-        default void Dxw(Vector2.Accessible v) {
+        default void Dxw(final Vector2.Accessible v) {
             Dxw(v.x(), v.y());
         }
 
-        default void Dyz(Vector2.Accessible v) {
+        default void Dyz(final Vector2.Accessible v) {
             Dyz(v.x(), v.y());
         }
 
-        default void Dyw(Vector2.Accessible v) {
+        default void Dyw(final Vector2.Accessible v) {
             Dyw(v.x(), v.y());
         }
 
-        default void Dzw(Vector2.Accessible v) {
+        default void Dzw(final Vector2.Accessible v) {
             Dzw(v.x(), v.y());
         }
 
-        default void Dxyz(Vector3.Accessible v) {
+        default void Dxyz(final Vector3.Accessible v) {
             Dxyz(v.x(), v.y(), v.z());
         }
 
-        default void Dxyw(Vector3.Accessible v) {
+        default void Dxyw(final Vector3.Accessible v) {
             Dxyw(v.x(), v.y(), v.z());
         }
 
-        default void Dxzw(Vector3.Accessible v) {
+        default void Dxzw(final Vector3.Accessible v) {
             Dxzw(v.x(), v.y(), v.z());
         }
 
-        default void Dyzw(Vector3.Accessible v) {
+        default void Dyzw(final Vector3.Accessible v) {
             Dyzw(v.x(), v.y(), v.z());
         }
 
-        default void Dxyzw(Vector4.Accessible v) {
+        default void Dxyzw(final Vector4.Accessible v) {
             Dxyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void XYxy(Matrix2x2.Accessible m) {
+        default void XYxy(final Matrix2x2.Accessible m) {
             XYxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyXY(Matrix2x2.Accessible m) {
+        default void xyXY(final Matrix2x2.Accessible m) {
             xyXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void XYyz(Matrix2x2.Accessible m) {
+        default void XYyz(final Matrix2x2.Accessible m) {
             XYyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void yzXY(Matrix2x2.Accessible m) {
+        default void yzXY(final Matrix2x2.Accessible m) {
             yzXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void XYzw(Matrix2x2.Accessible m) {
+        default void XYzw(final Matrix2x2.Accessible m) {
             XYzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void zwXY(Matrix2x2.Accessible m) {
+        default void zwXY(final Matrix2x2.Accessible m) {
             zwXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void YZxy(Matrix2x2.Accessible m) {
+        default void YZxy(final Matrix2x2.Accessible m) {
             YZxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyYZ(Matrix2x2.Accessible m) {
+        default void xyYZ(final Matrix2x2.Accessible m) {
             xyYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void YZyz(Matrix2x2.Accessible m) {
+        default void YZyz(final Matrix2x2.Accessible m) {
             YZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void yzYZ(Matrix2x2.Accessible m) {
+        default void yzYZ(final Matrix2x2.Accessible m) {
             yzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void YZzw(Matrix2x2.Accessible m) {
+        default void YZzw(final Matrix2x2.Accessible m) {
             YZzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void zwYZ(Matrix2x2.Accessible m) {
+        default void zwYZ(final Matrix2x2.Accessible m) {
             zwYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void ZTxy(Matrix2x2.Accessible m) {
+        default void ZTxy(final Matrix2x2.Accessible m) {
             ZTxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyZT(Matrix2x2.Accessible m) {
+        default void xyZT(final Matrix2x2.Accessible m) {
             xyZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void ZTyz(Matrix2x2.Accessible m) {
+        default void ZTyz(final Matrix2x2.Accessible m) {
             ZTyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void yzZT(Matrix2x2.Accessible m) {
+        default void yzZT(final Matrix2x2.Accessible m) {
             yzZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void ZTzw(Matrix2x2.Accessible m) {
+        default void ZTzw(final Matrix2x2.Accessible m) {
             ZTzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void zwZT(Matrix2x2.Accessible m) {
+        default void zwZT(final Matrix2x2.Accessible m) {
             zwZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void XYZxyz(Matrix3x3.Accessible m) {
+        default void XYZxyz(final Matrix3x3.Accessible m) {
             XYZxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void xyzXYZ(Matrix3x3.Accessible m) {
+        default void xyzXYZ(final Matrix3x3.Accessible m) {
             xyzXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void XYZyzw(Matrix3x3.Accessible m) {
+        default void XYZyzw(final Matrix3x3.Accessible m) {
             XYZyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void yzwXYZ(Matrix3x3.Accessible m) {
+        default void yzwXYZ(final Matrix3x3.Accessible m) {
             yzwXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void YZTxyz(Matrix3x3.Accessible m) {
+        default void YZTxyz(final Matrix3x3.Accessible m) {
             YZTxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void xyzYZT(Matrix3x3.Accessible m) {
+        default void xyzYZT(final Matrix3x3.Accessible m) {
             xyzYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void YZTyzw(Matrix3x3.Accessible m) {
+        default void YZTyzw(final Matrix3x3.Accessible m) {
             YZTyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void yzwYZT(Matrix3x3.Accessible m) {
+        default void yzwYZT(final Matrix3x3.Accessible m) {
             yzwYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void XYZTxyzw(Matrix4x4.Accessible m) {
+        default void XYZTxyzw(final Matrix4x4.Accessible m) {
             XYZTxyzw(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
         }
 
-        default void xyzwXYZT(Matrix4x4.Accessible m) {
+        default void xyzwXYZT(final Matrix4x4.Accessible m) {
             xyzwXYZT(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
         }
 

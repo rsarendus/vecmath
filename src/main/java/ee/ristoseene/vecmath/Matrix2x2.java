@@ -31,59 +31,59 @@ public final class Matrix2x2 {
         double Yx();
         double Yy();
 
-        default <R> R Xxy(Vector2.Factory<R> factory) {
+        default <R> R Xxy(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Xy());
         }
 
-        default void XxyTo(Vector2.Consumer consumer) {
+        default void XxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Xy());
         }
 
-        default <R> R Yxy(Vector2.Factory<R> factory) {
+        default <R> R Yxy(final Vector2.Factory<R> factory) {
             return factory.create(Yx(), Yy());
         }
 
-        default void YxyTo(Vector2.Consumer consumer) {
+        default void YxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Yx(), Yy());
         }
 
-        default <R> R xXY(Vector2.Factory<R> factory) {
+        default <R> R xXY(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Yx());
         }
 
-        default void xXYto(Vector2.Consumer consumer) {
+        default void xXYto(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yx());
         }
 
-        default <R> R yXY(Vector2.Factory<R> factory) {
+        default <R> R yXY(final Vector2.Factory<R> factory) {
             return factory.create(Xy(), Yy());
         }
 
-        default void yXYto(Vector2.Consumer consumer) {
+        default void yXYto(final Vector2.Consumer consumer) {
             consumer.xy(Xy(), Yy());
         }
 
-        default <R> R Dxy(Vector2.Factory<R> factory) {
+        default <R> R Dxy(final Vector2.Factory<R> factory) {
             return factory.create(Xx(), Yy());
         }
 
-        default void DxyTo(Vector2.Consumer consumer) {
+        default void DxyTo(final Vector2.Consumer consumer) {
             consumer.xy(Xx(), Yy());
         }
 
-        default <R> R XYxy(Matrix2x2.Factory<R> factory) {
+        default <R> R XYxy(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Yx(), Yy());
         }
 
-        default void XYxyTo(Matrix2x2.Consumer consumer) {
+        default void XYxyTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Xy(), Yx(), Yy());
         }
 
-        default <R> R xyXY(Matrix2x2.Factory<R> factory) {
+        default <R> R xyXY(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Xy(), Yy());
         }
 
-        default void xyXYto(Matrix2x2.Consumer consumer) {
+        default void xyXYto(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xx(), Yx(), Xy(), Yy());
         }
 
@@ -96,59 +96,59 @@ public final class Matrix2x2 {
         void Yx(double Yx);
         void Yy(double Yy);
 
-        default void Xxy(double v) {
+        default void Xxy(final double v) {
             Xxy(v, v);
         }
 
-        default void Yxy(double v) {
+        default void Yxy(final double v) {
             Yxy(v, v);
         }
 
-        default void xXY(double v) {
+        default void xXY(final double v) {
             xXY(v, v);
         }
 
-        default void yXY(double v) {
+        default void yXY(final double v) {
             yXY(v, v);
         }
 
-        default void Dxy(double v) {
+        default void Dxy(final double v) {
             Dxy(v, v);
         }
 
-        default void XYxy(double v) {
+        default void XYxy(final double v) {
             XYxy(v, v, v, v);
         }
 
-        default void Xxy(double Xx, double Xy) {
+        default void Xxy(final double Xx, final double Xy) {
             Xx(Xx);
             Xy(Xy);
         }
 
-        default void Yxy(double Yx, double Yy) {
+        default void Yxy(final double Yx, final double Yy) {
             Yx(Yx);
             Yy(Yy);
         }
 
-        default void xXY(double Xx, double Yx) {
+        default void xXY(final double Xx, final double Yx) {
             Xx(Xx);
             Yx(Yx);
         }
 
-        default void yXY(double Xy, double Yy) {
+        default void yXY(final double Xy, final double Yy) {
             Xy(Xy);
             Yy(Yy);
         }
 
-        default void Dxy(double Xx, double Yy) {
+        default void Dxy(final double Xx, final double Yy) {
             Xx(Xx);
             Yy(Yy);
         }
 
         @Override
         default void XYxy(
-                double Xx, double Xy,
-                double Yx, double Yy
+                final double Xx, final double Xy,
+                final double Yx, final double Yy
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -157,8 +157,8 @@ public final class Matrix2x2 {
         }
 
         default void xyXY(
-                double Xx, double Yx,
-                double Xy, double Yy
+                final double Xx, final double Yx,
+                final double Xy, final double Yy
         ) {
             Xx(Xx);
             Xy(Xy);
@@ -166,31 +166,31 @@ public final class Matrix2x2 {
             Yy(Yy);
         }
 
-        default void Xxy(Vector2.Accessible v) {
+        default void Xxy(final Vector2.Accessible v) {
             Xxy(v.x(), v.y());
         }
 
-        default void Yxy(Vector2.Accessible v) {
+        default void Yxy(final Vector2.Accessible v) {
             Yxy(v.x(), v.y());
         }
 
-        default void xXY(Vector2.Accessible v) {
+        default void xXY(final Vector2.Accessible v) {
             xXY(v.x(), v.y());
         }
 
-        default void yXY(Vector2.Accessible v) {
+        default void yXY(final Vector2.Accessible v) {
             yXY(v.x(), v.y());
         }
 
-        default void Dxy(Vector2.Accessible v) {
+        default void Dxy(final Vector2.Accessible v) {
             Dxy(v.x(), v.y());
         }
 
-        default void XYxy(Matrix2x2.Accessible m) {
+        default void XYxy(final Matrix2x2.Accessible m) {
             XYxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyXY(Matrix2x2.Accessible m) {
+        default void xyXY(final Matrix2x2.Accessible m) {
             xyXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 

@@ -25,2691 +25,2691 @@ public final class Vector4 {
         double z();
         double w();
 
-        default <R> R xx(Vector2.Factory<R> factory) {
+        default <R> R xx(final Vector2.Factory<R> factory) {
             return factory.create(x(), x());
         }
 
-        default void xxTo(Vector2.Consumer consumer) {
+        default void xxTo(final Vector2.Consumer consumer) {
             consumer.xy(x(), x());
         }
 
-        default <R> R xy(Vector2.Factory<R> factory) {
+        default <R> R xy(final Vector2.Factory<R> factory) {
             return factory.create(x(), y());
         }
 
-        default void xyTo(Vector2.Consumer consumer) {
+        default void xyTo(final Vector2.Consumer consumer) {
             consumer.xy(x(), y());
         }
 
-        default <R> R xz(Vector2.Factory<R> factory) {
+        default <R> R xz(final Vector2.Factory<R> factory) {
             return factory.create(x(), z());
         }
 
-        default void xzTo(Vector2.Consumer consumer) {
+        default void xzTo(final Vector2.Consumer consumer) {
             consumer.xy(x(), z());
         }
 
-        default <R> R xw(Vector2.Factory<R> factory) {
+        default <R> R xw(final Vector2.Factory<R> factory) {
             return factory.create(x(), w());
         }
 
-        default void xwTo(Vector2.Consumer consumer) {
+        default void xwTo(final Vector2.Consumer consumer) {
             consumer.xy(x(), w());
         }
 
-        default <R> R yx(Vector2.Factory<R> factory) {
+        default <R> R yx(final Vector2.Factory<R> factory) {
             return factory.create(y(), x());
         }
 
-        default void yxTo(Vector2.Consumer consumer) {
+        default void yxTo(final Vector2.Consumer consumer) {
             consumer.xy(y(), x());
         }
 
-        default <R> R yy(Vector2.Factory<R> factory) {
+        default <R> R yy(final Vector2.Factory<R> factory) {
             return factory.create(y(), y());
         }
 
-        default void yyTo(Vector2.Consumer consumer) {
+        default void yyTo(final Vector2.Consumer consumer) {
             consumer.xy(y(), y());
         }
 
-        default <R> R yz(Vector2.Factory<R> factory) {
+        default <R> R yz(final Vector2.Factory<R> factory) {
             return factory.create(y(), z());
         }
 
-        default void yzTo(Vector2.Consumer consumer) {
+        default void yzTo(final Vector2.Consumer consumer) {
             consumer.xy(y(), z());
         }
 
-        default <R> R yw(Vector2.Factory<R> factory) {
+        default <R> R yw(final Vector2.Factory<R> factory) {
             return factory.create(y(), w());
         }
 
-        default void ywTo(Vector2.Consumer consumer) {
+        default void ywTo(final Vector2.Consumer consumer) {
             consumer.xy(y(), w());
         }
 
-        default <R> R zx(Vector2.Factory<R> factory) {
+        default <R> R zx(final Vector2.Factory<R> factory) {
             return factory.create(z(), x());
         }
 
-        default void zxTo(Vector2.Consumer consumer) {
+        default void zxTo(final Vector2.Consumer consumer) {
             consumer.xy(z(), x());
         }
 
-        default <R> R zy(Vector2.Factory<R> factory) {
+        default <R> R zy(final Vector2.Factory<R> factory) {
             return factory.create(z(), y());
         }
 
-        default void zyTo(Vector2.Consumer consumer) {
+        default void zyTo(final Vector2.Consumer consumer) {
             consumer.xy(z(), y());
         }
 
-        default <R> R zz(Vector2.Factory<R> factory) {
+        default <R> R zz(final Vector2.Factory<R> factory) {
             return factory.create(z(), z());
         }
 
-        default void zzTo(Vector2.Consumer consumer) {
+        default void zzTo(final Vector2.Consumer consumer) {
             consumer.xy(z(), z());
         }
 
-        default <R> R zw(Vector2.Factory<R> factory) {
+        default <R> R zw(final Vector2.Factory<R> factory) {
             return factory.create(z(), w());
         }
 
-        default void zwTo(Vector2.Consumer consumer) {
+        default void zwTo(final Vector2.Consumer consumer) {
             consumer.xy(z(), w());
         }
 
-        default <R> R wx(Vector2.Factory<R> factory) {
+        default <R> R wx(final Vector2.Factory<R> factory) {
             return factory.create(w(), x());
         }
 
-        default void wxTo(Vector2.Consumer consumer) {
+        default void wxTo(final Vector2.Consumer consumer) {
             consumer.xy(w(), x());
         }
 
-        default <R> R wy(Vector2.Factory<R> factory) {
+        default <R> R wy(final Vector2.Factory<R> factory) {
             return factory.create(w(), y());
         }
 
-        default void wyTo(Vector2.Consumer consumer) {
+        default void wyTo(final Vector2.Consumer consumer) {
             consumer.xy(w(), y());
         }
 
-        default <R> R wz(Vector2.Factory<R> factory) {
+        default <R> R wz(final Vector2.Factory<R> factory) {
             return factory.create(w(), z());
         }
 
-        default void wzTo(Vector2.Consumer consumer) {
+        default void wzTo(final Vector2.Consumer consumer) {
             consumer.xy(w(), z());
         }
 
-        default <R> R ww(Vector2.Factory<R> factory) {
+        default <R> R ww(final Vector2.Factory<R> factory) {
             return factory.create(w(), w());
         }
 
-        default void wwTo(Vector2.Consumer consumer) {
+        default void wwTo(final Vector2.Consumer consumer) {
             consumer.xy(w(), w());
         }
 
-        default <R> R xxx(Vector3.Factory<R> factory) {
+        default <R> R xxx(final Vector3.Factory<R> factory) {
             return factory.create(x(), x(), x());
         }
 
-        default void xxxTo(Vector3.Consumer consumer) {
+        default void xxxTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), x(), x());
         }
 
-        default <R> R xxy(Vector3.Factory<R> factory) {
+        default <R> R xxy(final Vector3.Factory<R> factory) {
             return factory.create(x(), x(), y());
         }
 
-        default void xxyTo(Vector3.Consumer consumer) {
+        default void xxyTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), x(), y());
         }
 
-        default <R> R xxz(Vector3.Factory<R> factory) {
+        default <R> R xxz(final Vector3.Factory<R> factory) {
             return factory.create(x(), x(), z());
         }
 
-        default void xxzTo(Vector3.Consumer consumer) {
+        default void xxzTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), x(), z());
         }
 
-        default <R> R xxw(Vector3.Factory<R> factory) {
+        default <R> R xxw(final Vector3.Factory<R> factory) {
             return factory.create(x(), x(), w());
         }
 
-        default void xxwTo(Vector3.Consumer consumer) {
+        default void xxwTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), x(), w());
         }
 
-        default <R> R xyx(Vector3.Factory<R> factory) {
+        default <R> R xyx(final Vector3.Factory<R> factory) {
             return factory.create(x(), y(), x());
         }
 
-        default void xyxTo(Vector3.Consumer consumer) {
+        default void xyxTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), y(), x());
         }
 
-        default <R> R xyy(Vector3.Factory<R> factory) {
+        default <R> R xyy(final Vector3.Factory<R> factory) {
             return factory.create(x(), y(), y());
         }
 
-        default void xyyTo(Vector3.Consumer consumer) {
+        default void xyyTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), y(), y());
         }
 
-        default <R> R xyz(Vector3.Factory<R> factory) {
+        default <R> R xyz(final Vector3.Factory<R> factory) {
             return factory.create(x(), y(), z());
         }
 
-        default void xyzTo(Vector3.Consumer consumer) {
+        default void xyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), y(), z());
         }
 
-        default <R> R xyw(Vector3.Factory<R> factory) {
+        default <R> R xyw(final Vector3.Factory<R> factory) {
             return factory.create(x(), y(), w());
         }
 
-        default void xywTo(Vector3.Consumer consumer) {
+        default void xywTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), y(), w());
         }
 
-        default <R> R xzx(Vector3.Factory<R> factory) {
+        default <R> R xzx(final Vector3.Factory<R> factory) {
             return factory.create(x(), z(), x());
         }
 
-        default void xzxTo(Vector3.Consumer consumer) {
+        default void xzxTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), z(), x());
         }
 
-        default <R> R xzy(Vector3.Factory<R> factory) {
+        default <R> R xzy(final Vector3.Factory<R> factory) {
             return factory.create(x(), z(), y());
         }
 
-        default void xzyTo(Vector3.Consumer consumer) {
+        default void xzyTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), z(), y());
         }
 
-        default <R> R xzz(Vector3.Factory<R> factory) {
+        default <R> R xzz(final Vector3.Factory<R> factory) {
             return factory.create(x(), z(), z());
         }
 
-        default void xzzTo(Vector3.Consumer consumer) {
+        default void xzzTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), z(), z());
         }
 
-        default <R> R xzw(Vector3.Factory<R> factory) {
+        default <R> R xzw(final Vector3.Factory<R> factory) {
             return factory.create(x(), z(), w());
         }
 
-        default void xzwTo(Vector3.Consumer consumer) {
+        default void xzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), z(), w());
         }
 
-        default <R> R xwx(Vector3.Factory<R> factory) {
+        default <R> R xwx(final Vector3.Factory<R> factory) {
             return factory.create(x(), w(), x());
         }
 
-        default void xwxTo(Vector3.Consumer consumer) {
+        default void xwxTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), w(), x());
         }
 
-        default <R> R xwy(Vector3.Factory<R> factory) {
+        default <R> R xwy(final Vector3.Factory<R> factory) {
             return factory.create(x(), w(), y());
         }
 
-        default void xwyTo(Vector3.Consumer consumer) {
+        default void xwyTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), w(), y());
         }
 
-        default <R> R xwz(Vector3.Factory<R> factory) {
+        default <R> R xwz(final Vector3.Factory<R> factory) {
             return factory.create(x(), w(), z());
         }
 
-        default void xwzTo(Vector3.Consumer consumer) {
+        default void xwzTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), w(), z());
         }
 
-        default <R> R xww(Vector3.Factory<R> factory) {
+        default <R> R xww(final Vector3.Factory<R> factory) {
             return factory.create(x(), w(), w());
         }
 
-        default void xwwTo(Vector3.Consumer consumer) {
+        default void xwwTo(final Vector3.Consumer consumer) {
             consumer.xyz(x(), w(), w());
         }
 
-        default <R> R yxx(Vector3.Factory<R> factory) {
+        default <R> R yxx(final Vector3.Factory<R> factory) {
             return factory.create(y(), x(), x());
         }
 
-        default void yxxTo(Vector3.Consumer consumer) {
+        default void yxxTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), x(), x());
         }
 
-        default <R> R yxy(Vector3.Factory<R> factory) {
+        default <R> R yxy(final Vector3.Factory<R> factory) {
             return factory.create(y(), x(), y());
         }
 
-        default void yxyTo(Vector3.Consumer consumer) {
+        default void yxyTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), x(), y());
         }
 
-        default <R> R yxz(Vector3.Factory<R> factory) {
+        default <R> R yxz(final Vector3.Factory<R> factory) {
             return factory.create(y(), x(), z());
         }
 
-        default void yxzTo(Vector3.Consumer consumer) {
+        default void yxzTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), x(), z());
         }
 
-        default <R> R yxw(Vector3.Factory<R> factory) {
+        default <R> R yxw(final Vector3.Factory<R> factory) {
             return factory.create(y(), x(), w());
         }
 
-        default void yxwTo(Vector3.Consumer consumer) {
+        default void yxwTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), x(), w());
         }
 
-        default <R> R yyx(Vector3.Factory<R> factory) {
+        default <R> R yyx(final Vector3.Factory<R> factory) {
             return factory.create(y(), y(), x());
         }
 
-        default void yyxTo(Vector3.Consumer consumer) {
+        default void yyxTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), y(), x());
         }
 
-        default <R> R yyy(Vector3.Factory<R> factory) {
+        default <R> R yyy(final Vector3.Factory<R> factory) {
             return factory.create(y(), y(), y());
         }
 
-        default void yyyTo(Vector3.Consumer consumer) {
+        default void yyyTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), y(), y());
         }
 
-        default <R> R yyz(Vector3.Factory<R> factory) {
+        default <R> R yyz(final Vector3.Factory<R> factory) {
             return factory.create(y(), y(), z());
         }
 
-        default void yyzTo(Vector3.Consumer consumer) {
+        default void yyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), y(), z());
         }
 
-        default <R> R yyw(Vector3.Factory<R> factory) {
+        default <R> R yyw(final Vector3.Factory<R> factory) {
             return factory.create(y(), y(), w());
         }
 
-        default void yywTo(Vector3.Consumer consumer) {
+        default void yywTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), y(), w());
         }
 
-        default <R> R yzx(Vector3.Factory<R> factory) {
+        default <R> R yzx(final Vector3.Factory<R> factory) {
             return factory.create(y(), z(), x());
         }
 
-        default void yzxTo(Vector3.Consumer consumer) {
+        default void yzxTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), z(), x());
         }
 
-        default <R> R yzy(Vector3.Factory<R> factory) {
+        default <R> R yzy(final Vector3.Factory<R> factory) {
             return factory.create(y(), z(), y());
         }
 
-        default void yzyTo(Vector3.Consumer consumer) {
+        default void yzyTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), z(), y());
         }
 
-        default <R> R yzz(Vector3.Factory<R> factory) {
+        default <R> R yzz(final Vector3.Factory<R> factory) {
             return factory.create(y(), z(), z());
         }
 
-        default void yzzTo(Vector3.Consumer consumer) {
+        default void yzzTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), z(), z());
         }
 
-        default <R> R yzw(Vector3.Factory<R> factory) {
+        default <R> R yzw(final Vector3.Factory<R> factory) {
             return factory.create(y(), z(), w());
         }
 
-        default void yzwTo(Vector3.Consumer consumer) {
+        default void yzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), z(), w());
         }
 
-        default <R> R ywx(Vector3.Factory<R> factory) {
+        default <R> R ywx(final Vector3.Factory<R> factory) {
             return factory.create(y(), w(), x());
         }
 
-        default void ywxTo(Vector3.Consumer consumer) {
+        default void ywxTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), w(), x());
         }
 
-        default <R> R ywy(Vector3.Factory<R> factory) {
+        default <R> R ywy(final Vector3.Factory<R> factory) {
             return factory.create(y(), w(), y());
         }
 
-        default void ywyTo(Vector3.Consumer consumer) {
+        default void ywyTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), w(), y());
         }
 
-        default <R> R ywz(Vector3.Factory<R> factory) {
+        default <R> R ywz(final Vector3.Factory<R> factory) {
             return factory.create(y(), w(), z());
         }
 
-        default void ywzTo(Vector3.Consumer consumer) {
+        default void ywzTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), w(), z());
         }
 
-        default <R> R yww(Vector3.Factory<R> factory) {
+        default <R> R yww(final Vector3.Factory<R> factory) {
             return factory.create(y(), w(), w());
         }
 
-        default void ywwTo(Vector3.Consumer consumer) {
+        default void ywwTo(final Vector3.Consumer consumer) {
             consumer.xyz(y(), w(), w());
         }
 
-        default <R> R zxx(Vector3.Factory<R> factory) {
+        default <R> R zxx(final Vector3.Factory<R> factory) {
             return factory.create(z(), x(), x());
         }
 
-        default void zxxTo(Vector3.Consumer consumer) {
+        default void zxxTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), x(), x());
         }
 
-        default <R> R zxy(Vector3.Factory<R> factory) {
+        default <R> R zxy(final Vector3.Factory<R> factory) {
             return factory.create(z(), x(), y());
         }
 
-        default void zxyTo(Vector3.Consumer consumer) {
+        default void zxyTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), x(), y());
         }
 
-        default <R> R zxz(Vector3.Factory<R> factory) {
+        default <R> R zxz(final Vector3.Factory<R> factory) {
             return factory.create(z(), x(), z());
         }
 
-        default void zxzTo(Vector3.Consumer consumer) {
+        default void zxzTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), x(), z());
         }
 
-        default <R> R zxw(Vector3.Factory<R> factory) {
+        default <R> R zxw(final Vector3.Factory<R> factory) {
             return factory.create(z(), x(), w());
         }
 
-        default void zxwTo(Vector3.Consumer consumer) {
+        default void zxwTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), x(), w());
         }
 
-        default <R> R zyx(Vector3.Factory<R> factory) {
+        default <R> R zyx(final Vector3.Factory<R> factory) {
             return factory.create(z(), y(), x());
         }
 
-        default void zyxTo(Vector3.Consumer consumer) {
+        default void zyxTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), y(), x());
         }
 
-        default <R> R zyy(Vector3.Factory<R> factory) {
+        default <R> R zyy(final Vector3.Factory<R> factory) {
             return factory.create(z(), y(), y());
         }
 
-        default void zyyTo(Vector3.Consumer consumer) {
+        default void zyyTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), y(), y());
         }
 
-        default <R> R zyz(Vector3.Factory<R> factory) {
+        default <R> R zyz(final Vector3.Factory<R> factory) {
             return factory.create(z(), y(), z());
         }
 
-        default void zyzTo(Vector3.Consumer consumer) {
+        default void zyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), y(), z());
         }
 
-        default <R> R zyw(Vector3.Factory<R> factory) {
+        default <R> R zyw(final Vector3.Factory<R> factory) {
             return factory.create(z(), y(), w());
         }
 
-        default void zywTo(Vector3.Consumer consumer) {
+        default void zywTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), y(), w());
         }
 
-        default <R> R zzx(Vector3.Factory<R> factory) {
+        default <R> R zzx(final Vector3.Factory<R> factory) {
             return factory.create(z(), z(), x());
         }
 
-        default void zzxTo(Vector3.Consumer consumer) {
+        default void zzxTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), z(), x());
         }
 
-        default <R> R zzy(Vector3.Factory<R> factory) {
+        default <R> R zzy(final Vector3.Factory<R> factory) {
             return factory.create(z(), z(), y());
         }
 
-        default void zzyTo(Vector3.Consumer consumer) {
+        default void zzyTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), z(), y());
         }
 
-        default <R> R zzz(Vector3.Factory<R> factory) {
+        default <R> R zzz(final Vector3.Factory<R> factory) {
             return factory.create(z(), z(), z());
         }
 
-        default void zzzTo(Vector3.Consumer consumer) {
+        default void zzzTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), z(), z());
         }
 
-        default <R> R zzw(Vector3.Factory<R> factory) {
+        default <R> R zzw(final Vector3.Factory<R> factory) {
             return factory.create(z(), z(), w());
         }
 
-        default void zzwTo(Vector3.Consumer consumer) {
+        default void zzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), z(), w());
         }
 
-        default <R> R zwx(Vector3.Factory<R> factory) {
+        default <R> R zwx(final Vector3.Factory<R> factory) {
             return factory.create(z(), w(), x());
         }
 
-        default void zwxTo(Vector3.Consumer consumer) {
+        default void zwxTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), w(), x());
         }
 
-        default <R> R zwy(Vector3.Factory<R> factory) {
+        default <R> R zwy(final Vector3.Factory<R> factory) {
             return factory.create(z(), w(), y());
         }
 
-        default void zwyTo(Vector3.Consumer consumer) {
+        default void zwyTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), w(), y());
         }
 
-        default <R> R zwz(Vector3.Factory<R> factory) {
+        default <R> R zwz(final Vector3.Factory<R> factory) {
             return factory.create(z(), w(), z());
         }
 
-        default void zwzTo(Vector3.Consumer consumer) {
+        default void zwzTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), w(), z());
         }
 
-        default <R> R zww(Vector3.Factory<R> factory) {
+        default <R> R zww(final Vector3.Factory<R> factory) {
             return factory.create(z(), w(), w());
         }
 
-        default void zwwTo(Vector3.Consumer consumer) {
+        default void zwwTo(final Vector3.Consumer consumer) {
             consumer.xyz(z(), w(), w());
         }
 
-        default <R> R wxx(Vector3.Factory<R> factory) {
+        default <R> R wxx(final Vector3.Factory<R> factory) {
             return factory.create(w(), x(), x());
         }
 
-        default void wxxTo(Vector3.Consumer consumer) {
+        default void wxxTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), x(), x());
         }
 
-        default <R> R wxy(Vector3.Factory<R> factory) {
+        default <R> R wxy(final Vector3.Factory<R> factory) {
             return factory.create(w(), x(), y());
         }
 
-        default void wxyTo(Vector3.Consumer consumer) {
+        default void wxyTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), x(), y());
         }
 
-        default <R> R wxz(Vector3.Factory<R> factory) {
+        default <R> R wxz(final Vector3.Factory<R> factory) {
             return factory.create(w(), x(), z());
         }
 
-        default void wxzTo(Vector3.Consumer consumer) {
+        default void wxzTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), x(), z());
         }
 
-        default <R> R wxw(Vector3.Factory<R> factory) {
+        default <R> R wxw(final Vector3.Factory<R> factory) {
             return factory.create(w(), x(), w());
         }
 
-        default void wxwTo(Vector3.Consumer consumer) {
+        default void wxwTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), x(), w());
         }
 
-        default <R> R wyx(Vector3.Factory<R> factory) {
+        default <R> R wyx(final Vector3.Factory<R> factory) {
             return factory.create(w(), y(), x());
         }
 
-        default void wyxTo(Vector3.Consumer consumer) {
+        default void wyxTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), y(), x());
         }
 
-        default <R> R wyy(Vector3.Factory<R> factory) {
+        default <R> R wyy(final Vector3.Factory<R> factory) {
             return factory.create(w(), y(), y());
         }
 
-        default void wyyTo(Vector3.Consumer consumer) {
+        default void wyyTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), y(), y());
         }
 
-        default <R> R wyz(Vector3.Factory<R> factory) {
+        default <R> R wyz(final Vector3.Factory<R> factory) {
             return factory.create(w(), y(), z());
         }
 
-        default void wyzTo(Vector3.Consumer consumer) {
+        default void wyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), y(), z());
         }
 
-        default <R> R wyw(Vector3.Factory<R> factory) {
+        default <R> R wyw(final Vector3.Factory<R> factory) {
             return factory.create(w(), y(), w());
         }
 
-        default void wywTo(Vector3.Consumer consumer) {
+        default void wywTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), y(), w());
         }
 
-        default <R> R wzx(Vector3.Factory<R> factory) {
+        default <R> R wzx(final Vector3.Factory<R> factory) {
             return factory.create(w(), z(), x());
         }
 
-        default void wzxTo(Vector3.Consumer consumer) {
+        default void wzxTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), z(), x());
         }
 
-        default <R> R wzy(Vector3.Factory<R> factory) {
+        default <R> R wzy(final Vector3.Factory<R> factory) {
             return factory.create(w(), z(), y());
         }
 
-        default void wzyTo(Vector3.Consumer consumer) {
+        default void wzyTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), z(), y());
         }
 
-        default <R> R wzz(Vector3.Factory<R> factory) {
+        default <R> R wzz(final Vector3.Factory<R> factory) {
             return factory.create(w(), z(), z());
         }
 
-        default void wzzTo(Vector3.Consumer consumer) {
+        default void wzzTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), z(), z());
         }
 
-        default <R> R wzw(Vector3.Factory<R> factory) {
+        default <R> R wzw(final Vector3.Factory<R> factory) {
             return factory.create(w(), z(), w());
         }
 
-        default void wzwTo(Vector3.Consumer consumer) {
+        default void wzwTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), z(), w());
         }
 
-        default <R> R wwx(Vector3.Factory<R> factory) {
+        default <R> R wwx(final Vector3.Factory<R> factory) {
             return factory.create(w(), w(), x());
         }
 
-        default void wwxTo(Vector3.Consumer consumer) {
+        default void wwxTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), w(), x());
         }
 
-        default <R> R wwy(Vector3.Factory<R> factory) {
+        default <R> R wwy(final Vector3.Factory<R> factory) {
             return factory.create(w(), w(), y());
         }
 
-        default void wwyTo(Vector3.Consumer consumer) {
+        default void wwyTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), w(), y());
         }
 
-        default <R> R wwz(Vector3.Factory<R> factory) {
+        default <R> R wwz(final Vector3.Factory<R> factory) {
             return factory.create(w(), w(), z());
         }
 
-        default void wwzTo(Vector3.Consumer consumer) {
+        default void wwzTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), w(), z());
         }
 
-        default <R> R www(Vector3.Factory<R> factory) {
+        default <R> R www(final Vector3.Factory<R> factory) {
             return factory.create(w(), w(), w());
         }
 
-        default void wwwTo(Vector3.Consumer consumer) {
+        default void wwwTo(final Vector3.Consumer consumer) {
             consumer.xyz(w(), w(), w());
         }
 
-        default <R> R xxxx(Vector4.Factory<R> factory) {
+        default <R> R xxxx(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), x(), x());
         }
 
-        default void xxxxTo(Vector4.Consumer consumer) {
+        default void xxxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), x(), x());
         }
 
-        default <R> R xxxy(Vector4.Factory<R> factory) {
+        default <R> R xxxy(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), x(), y());
         }
 
-        default void xxxyTo(Vector4.Consumer consumer) {
+        default void xxxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), x(), y());
         }
 
-        default <R> R xxxz(Vector4.Factory<R> factory) {
+        default <R> R xxxz(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), x(), z());
         }
 
-        default void xxxzTo(Vector4.Consumer consumer) {
+        default void xxxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), x(), z());
         }
 
-        default <R> R xxxw(Vector4.Factory<R> factory) {
+        default <R> R xxxw(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), x(), w());
         }
 
-        default void xxxwTo(Vector4.Consumer consumer) {
+        default void xxxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), x(), w());
         }
 
-        default <R> R xxyx(Vector4.Factory<R> factory) {
+        default <R> R xxyx(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), y(), x());
         }
 
-        default void xxyxTo(Vector4.Consumer consumer) {
+        default void xxyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), y(), x());
         }
 
-        default <R> R xxyy(Vector4.Factory<R> factory) {
+        default <R> R xxyy(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), y(), y());
         }
 
-        default void xxyyTo(Vector4.Consumer consumer) {
+        default void xxyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), y(), y());
         }
 
-        default <R> R xxyz(Vector4.Factory<R> factory) {
+        default <R> R xxyz(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), y(), z());
         }
 
-        default void xxyzTo(Vector4.Consumer consumer) {
+        default void xxyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), y(), z());
         }
 
-        default <R> R xxyw(Vector4.Factory<R> factory) {
+        default <R> R xxyw(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), y(), w());
         }
 
-        default void xxywTo(Vector4.Consumer consumer) {
+        default void xxywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), y(), w());
         }
 
-        default <R> R xxzx(Vector4.Factory<R> factory) {
+        default <R> R xxzx(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), z(), x());
         }
 
-        default void xxzxTo(Vector4.Consumer consumer) {
+        default void xxzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), z(), x());
         }
 
-        default <R> R xxzy(Vector4.Factory<R> factory) {
+        default <R> R xxzy(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), z(), y());
         }
 
-        default void xxzyTo(Vector4.Consumer consumer) {
+        default void xxzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), z(), y());
         }
 
-        default <R> R xxzz(Vector4.Factory<R> factory) {
+        default <R> R xxzz(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), z(), z());
         }
 
-        default void xxzzTo(Vector4.Consumer consumer) {
+        default void xxzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), z(), z());
         }
 
-        default <R> R xxzw(Vector4.Factory<R> factory) {
+        default <R> R xxzw(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), z(), w());
         }
 
-        default void xxzwTo(Vector4.Consumer consumer) {
+        default void xxzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), z(), w());
         }
 
-        default <R> R xxwx(Vector4.Factory<R> factory) {
+        default <R> R xxwx(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), w(), x());
         }
 
-        default void xxwxTo(Vector4.Consumer consumer) {
+        default void xxwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), w(), x());
         }
 
-        default <R> R xxwy(Vector4.Factory<R> factory) {
+        default <R> R xxwy(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), w(), y());
         }
 
-        default void xxwyTo(Vector4.Consumer consumer) {
+        default void xxwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), w(), y());
         }
 
-        default <R> R xxwz(Vector4.Factory<R> factory) {
+        default <R> R xxwz(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), w(), z());
         }
 
-        default void xxwzTo(Vector4.Consumer consumer) {
+        default void xxwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), w(), z());
         }
 
-        default <R> R xxww(Vector4.Factory<R> factory) {
+        default <R> R xxww(final Vector4.Factory<R> factory) {
             return factory.create(x(), x(), w(), w());
         }
 
-        default void xxwwTo(Vector4.Consumer consumer) {
+        default void xxwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), x(), w(), w());
         }
 
-        default <R> R xyxx(Vector4.Factory<R> factory) {
+        default <R> R xyxx(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), x(), x());
         }
 
-        default void xyxxTo(Vector4.Consumer consumer) {
+        default void xyxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), x(), x());
         }
 
-        default <R> R xyxy(Vector4.Factory<R> factory) {
+        default <R> R xyxy(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), x(), y());
         }
 
-        default void xyxyTo(Vector4.Consumer consumer) {
+        default void xyxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), x(), y());
         }
 
-        default <R> R xyxz(Vector4.Factory<R> factory) {
+        default <R> R xyxz(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), x(), z());
         }
 
-        default void xyxzTo(Vector4.Consumer consumer) {
+        default void xyxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), x(), z());
         }
 
-        default <R> R xyxw(Vector4.Factory<R> factory) {
+        default <R> R xyxw(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), x(), w());
         }
 
-        default void xyxwTo(Vector4.Consumer consumer) {
+        default void xyxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), x(), w());
         }
 
-        default <R> R xyyx(Vector4.Factory<R> factory) {
+        default <R> R xyyx(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), y(), x());
         }
 
-        default void xyyxTo(Vector4.Consumer consumer) {
+        default void xyyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), y(), x());
         }
 
-        default <R> R xyyy(Vector4.Factory<R> factory) {
+        default <R> R xyyy(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), y(), y());
         }
 
-        default void xyyyTo(Vector4.Consumer consumer) {
+        default void xyyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), y(), y());
         }
 
-        default <R> R xyyz(Vector4.Factory<R> factory) {
+        default <R> R xyyz(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), y(), z());
         }
 
-        default void xyyzTo(Vector4.Consumer consumer) {
+        default void xyyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), y(), z());
         }
 
-        default <R> R xyyw(Vector4.Factory<R> factory) {
+        default <R> R xyyw(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), y(), w());
         }
 
-        default void xyywTo(Vector4.Consumer consumer) {
+        default void xyywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), y(), w());
         }
 
-        default <R> R xyzx(Vector4.Factory<R> factory) {
+        default <R> R xyzx(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), z(), x());
         }
 
-        default void xyzxTo(Vector4.Consumer consumer) {
+        default void xyzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), z(), x());
         }
 
-        default <R> R xyzy(Vector4.Factory<R> factory) {
+        default <R> R xyzy(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), z(), y());
         }
 
-        default void xyzyTo(Vector4.Consumer consumer) {
+        default void xyzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), z(), y());
         }
 
-        default <R> R xyzz(Vector4.Factory<R> factory) {
+        default <R> R xyzz(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), z(), z());
         }
 
-        default void xyzzTo(Vector4.Consumer consumer) {
+        default void xyzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), z(), z());
         }
 
-        default <R> R xyzw(Vector4.Factory<R> factory) {
+        default <R> R xyzw(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), z(), w());
         }
 
-        default void xyzwTo(Vector4.Consumer consumer) {
+        default void xyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), z(), w());
         }
 
-        default <R> R xywx(Vector4.Factory<R> factory) {
+        default <R> R xywx(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), w(), x());
         }
 
-        default void xywxTo(Vector4.Consumer consumer) {
+        default void xywxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), w(), x());
         }
 
-        default <R> R xywy(Vector4.Factory<R> factory) {
+        default <R> R xywy(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), w(), y());
         }
 
-        default void xywyTo(Vector4.Consumer consumer) {
+        default void xywyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), w(), y());
         }
 
-        default <R> R xywz(Vector4.Factory<R> factory) {
+        default <R> R xywz(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), w(), z());
         }
 
-        default void xywzTo(Vector4.Consumer consumer) {
+        default void xywzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), w(), z());
         }
 
-        default <R> R xyww(Vector4.Factory<R> factory) {
+        default <R> R xyww(final Vector4.Factory<R> factory) {
             return factory.create(x(), y(), w(), w());
         }
 
-        default void xywwTo(Vector4.Consumer consumer) {
+        default void xywwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), y(), w(), w());
         }
 
-        default <R> R xzxx(Vector4.Factory<R> factory) {
+        default <R> R xzxx(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), x(), x());
         }
 
-        default void xzxxTo(Vector4.Consumer consumer) {
+        default void xzxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), x(), x());
         }
 
-        default <R> R xzxy(Vector4.Factory<R> factory) {
+        default <R> R xzxy(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), x(), y());
         }
 
-        default void xzxyTo(Vector4.Consumer consumer) {
+        default void xzxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), x(), y());
         }
 
-        default <R> R xzxz(Vector4.Factory<R> factory) {
+        default <R> R xzxz(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), x(), z());
         }
 
-        default void xzxzTo(Vector4.Consumer consumer) {
+        default void xzxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), x(), z());
         }
 
-        default <R> R xzxw(Vector4.Factory<R> factory) {
+        default <R> R xzxw(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), x(), w());
         }
 
-        default void xzxwTo(Vector4.Consumer consumer) {
+        default void xzxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), x(), w());
         }
 
-        default <R> R xzyx(Vector4.Factory<R> factory) {
+        default <R> R xzyx(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), y(), x());
         }
 
-        default void xzyxTo(Vector4.Consumer consumer) {
+        default void xzyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), y(), x());
         }
 
-        default <R> R xzyy(Vector4.Factory<R> factory) {
+        default <R> R xzyy(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), y(), y());
         }
 
-        default void xzyyTo(Vector4.Consumer consumer) {
+        default void xzyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), y(), y());
         }
 
-        default <R> R xzyz(Vector4.Factory<R> factory) {
+        default <R> R xzyz(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), y(), z());
         }
 
-        default void xzyzTo(Vector4.Consumer consumer) {
+        default void xzyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), y(), z());
         }
 
-        default <R> R xzyw(Vector4.Factory<R> factory) {
+        default <R> R xzyw(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), y(), w());
         }
 
-        default void xzywTo(Vector4.Consumer consumer) {
+        default void xzywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), y(), w());
         }
 
-        default <R> R xzzx(Vector4.Factory<R> factory) {
+        default <R> R xzzx(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), z(), x());
         }
 
-        default void xzzxTo(Vector4.Consumer consumer) {
+        default void xzzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), z(), x());
         }
 
-        default <R> R xzzy(Vector4.Factory<R> factory) {
+        default <R> R xzzy(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), z(), y());
         }
 
-        default void xzzyTo(Vector4.Consumer consumer) {
+        default void xzzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), z(), y());
         }
 
-        default <R> R xzzz(Vector4.Factory<R> factory) {
+        default <R> R xzzz(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), z(), z());
         }
 
-        default void xzzzTo(Vector4.Consumer consumer) {
+        default void xzzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), z(), z());
         }
 
-        default <R> R xzzw(Vector4.Factory<R> factory) {
+        default <R> R xzzw(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), z(), w());
         }
 
-        default void xzzwTo(Vector4.Consumer consumer) {
+        default void xzzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), z(), w());
         }
 
-        default <R> R xzwx(Vector4.Factory<R> factory) {
+        default <R> R xzwx(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), w(), x());
         }
 
-        default void xzwxTo(Vector4.Consumer consumer) {
+        default void xzwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), w(), x());
         }
 
-        default <R> R xzwy(Vector4.Factory<R> factory) {
+        default <R> R xzwy(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), w(), y());
         }
 
-        default void xzwyTo(Vector4.Consumer consumer) {
+        default void xzwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), w(), y());
         }
 
-        default <R> R xzwz(Vector4.Factory<R> factory) {
+        default <R> R xzwz(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), w(), z());
         }
 
-        default void xzwzTo(Vector4.Consumer consumer) {
+        default void xzwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), w(), z());
         }
 
-        default <R> R xzww(Vector4.Factory<R> factory) {
+        default <R> R xzww(final Vector4.Factory<R> factory) {
             return factory.create(x(), z(), w(), w());
         }
 
-        default void xzwwTo(Vector4.Consumer consumer) {
+        default void xzwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), z(), w(), w());
         }
 
-        default <R> R xwxx(Vector4.Factory<R> factory) {
+        default <R> R xwxx(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), x(), x());
         }
 
-        default void xwxxTo(Vector4.Consumer consumer) {
+        default void xwxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), x(), x());
         }
 
-        default <R> R xwxy(Vector4.Factory<R> factory) {
+        default <R> R xwxy(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), x(), y());
         }
 
-        default void xwxyTo(Vector4.Consumer consumer) {
+        default void xwxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), x(), y());
         }
 
-        default <R> R xwxz(Vector4.Factory<R> factory) {
+        default <R> R xwxz(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), x(), z());
         }
 
-        default void xwxzTo(Vector4.Consumer consumer) {
+        default void xwxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), x(), z());
         }
 
-        default <R> R xwxw(Vector4.Factory<R> factory) {
+        default <R> R xwxw(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), x(), w());
         }
 
-        default void xwxwTo(Vector4.Consumer consumer) {
+        default void xwxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), x(), w());
         }
 
-        default <R> R xwyx(Vector4.Factory<R> factory) {
+        default <R> R xwyx(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), y(), x());
         }
 
-        default void xwyxTo(Vector4.Consumer consumer) {
+        default void xwyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), y(), x());
         }
 
-        default <R> R xwyy(Vector4.Factory<R> factory) {
+        default <R> R xwyy(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), y(), y());
         }
 
-        default void xwyyTo(Vector4.Consumer consumer) {
+        default void xwyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), y(), y());
         }
 
-        default <R> R xwyz(Vector4.Factory<R> factory) {
+        default <R> R xwyz(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), y(), z());
         }
 
-        default void xwyzTo(Vector4.Consumer consumer) {
+        default void xwyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), y(), z());
         }
 
-        default <R> R xwyw(Vector4.Factory<R> factory) {
+        default <R> R xwyw(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), y(), w());
         }
 
-        default void xwywTo(Vector4.Consumer consumer) {
+        default void xwywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), y(), w());
         }
 
-        default <R> R xwzx(Vector4.Factory<R> factory) {
+        default <R> R xwzx(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), z(), x());
         }
 
-        default void xwzxTo(Vector4.Consumer consumer) {
+        default void xwzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), z(), x());
         }
 
-        default <R> R xwzy(Vector4.Factory<R> factory) {
+        default <R> R xwzy(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), z(), y());
         }
 
-        default void xwzyTo(Vector4.Consumer consumer) {
+        default void xwzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), z(), y());
         }
 
-        default <R> R xwzz(Vector4.Factory<R> factory) {
+        default <R> R xwzz(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), z(), z());
         }
 
-        default void xwzzTo(Vector4.Consumer consumer) {
+        default void xwzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), z(), z());
         }
 
-        default <R> R xwzw(Vector4.Factory<R> factory) {
+        default <R> R xwzw(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), z(), w());
         }
 
-        default void xwzwTo(Vector4.Consumer consumer) {
+        default void xwzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), z(), w());
         }
 
-        default <R> R xwwx(Vector4.Factory<R> factory) {
+        default <R> R xwwx(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), w(), x());
         }
 
-        default void xwwxTo(Vector4.Consumer consumer) {
+        default void xwwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), w(), x());
         }
 
-        default <R> R xwwy(Vector4.Factory<R> factory) {
+        default <R> R xwwy(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), w(), y());
         }
 
-        default void xwwyTo(Vector4.Consumer consumer) {
+        default void xwwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), w(), y());
         }
 
-        default <R> R xwwz(Vector4.Factory<R> factory) {
+        default <R> R xwwz(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), w(), z());
         }
 
-        default void xwwzTo(Vector4.Consumer consumer) {
+        default void xwwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), w(), z());
         }
 
-        default <R> R xwww(Vector4.Factory<R> factory) {
+        default <R> R xwww(final Vector4.Factory<R> factory) {
             return factory.create(x(), w(), w(), w());
         }
 
-        default void xwwwTo(Vector4.Consumer consumer) {
+        default void xwwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(x(), w(), w(), w());
         }
 
-        default <R> R yxxx(Vector4.Factory<R> factory) {
+        default <R> R yxxx(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), x(), x());
         }
 
-        default void yxxxTo(Vector4.Consumer consumer) {
+        default void yxxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), x(), x());
         }
 
-        default <R> R yxxy(Vector4.Factory<R> factory) {
+        default <R> R yxxy(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), x(), y());
         }
 
-        default void yxxyTo(Vector4.Consumer consumer) {
+        default void yxxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), x(), y());
         }
 
-        default <R> R yxxz(Vector4.Factory<R> factory) {
+        default <R> R yxxz(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), x(), z());
         }
 
-        default void yxxzTo(Vector4.Consumer consumer) {
+        default void yxxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), x(), z());
         }
 
-        default <R> R yxxw(Vector4.Factory<R> factory) {
+        default <R> R yxxw(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), x(), w());
         }
 
-        default void yxxwTo(Vector4.Consumer consumer) {
+        default void yxxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), x(), w());
         }
 
-        default <R> R yxyx(Vector4.Factory<R> factory) {
+        default <R> R yxyx(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), y(), x());
         }
 
-        default void yxyxTo(Vector4.Consumer consumer) {
+        default void yxyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), y(), x());
         }
 
-        default <R> R yxyy(Vector4.Factory<R> factory) {
+        default <R> R yxyy(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), y(), y());
         }
 
-        default void yxyyTo(Vector4.Consumer consumer) {
+        default void yxyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), y(), y());
         }
 
-        default <R> R yxyz(Vector4.Factory<R> factory) {
+        default <R> R yxyz(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), y(), z());
         }
 
-        default void yxyzTo(Vector4.Consumer consumer) {
+        default void yxyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), y(), z());
         }
 
-        default <R> R yxyw(Vector4.Factory<R> factory) {
+        default <R> R yxyw(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), y(), w());
         }
 
-        default void yxywTo(Vector4.Consumer consumer) {
+        default void yxywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), y(), w());
         }
 
-        default <R> R yxzx(Vector4.Factory<R> factory) {
+        default <R> R yxzx(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), z(), x());
         }
 
-        default void yxzxTo(Vector4.Consumer consumer) {
+        default void yxzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), z(), x());
         }
 
-        default <R> R yxzy(Vector4.Factory<R> factory) {
+        default <R> R yxzy(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), z(), y());
         }
 
-        default void yxzyTo(Vector4.Consumer consumer) {
+        default void yxzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), z(), y());
         }
 
-        default <R> R yxzz(Vector4.Factory<R> factory) {
+        default <R> R yxzz(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), z(), z());
         }
 
-        default void yxzzTo(Vector4.Consumer consumer) {
+        default void yxzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), z(), z());
         }
 
-        default <R> R yxzw(Vector4.Factory<R> factory) {
+        default <R> R yxzw(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), z(), w());
         }
 
-        default void yxzwTo(Vector4.Consumer consumer) {
+        default void yxzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), z(), w());
         }
 
-        default <R> R yxwx(Vector4.Factory<R> factory) {
+        default <R> R yxwx(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), w(), x());
         }
 
-        default void yxwxTo(Vector4.Consumer consumer) {
+        default void yxwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), w(), x());
         }
 
-        default <R> R yxwy(Vector4.Factory<R> factory) {
+        default <R> R yxwy(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), w(), y());
         }
 
-        default void yxwyTo(Vector4.Consumer consumer) {
+        default void yxwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), w(), y());
         }
 
-        default <R> R yxwz(Vector4.Factory<R> factory) {
+        default <R> R yxwz(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), w(), z());
         }
 
-        default void yxwzTo(Vector4.Consumer consumer) {
+        default void yxwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), w(), z());
         }
 
-        default <R> R yxww(Vector4.Factory<R> factory) {
+        default <R> R yxww(final Vector4.Factory<R> factory) {
             return factory.create(y(), x(), w(), w());
         }
 
-        default void yxwwTo(Vector4.Consumer consumer) {
+        default void yxwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), x(), w(), w());
         }
 
-        default <R> R yyxx(Vector4.Factory<R> factory) {
+        default <R> R yyxx(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), x(), x());
         }
 
-        default void yyxxTo(Vector4.Consumer consumer) {
+        default void yyxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), x(), x());
         }
 
-        default <R> R yyxy(Vector4.Factory<R> factory) {
+        default <R> R yyxy(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), x(), y());
         }
 
-        default void yyxyTo(Vector4.Consumer consumer) {
+        default void yyxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), x(), y());
         }
 
-        default <R> R yyxz(Vector4.Factory<R> factory) {
+        default <R> R yyxz(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), x(), z());
         }
 
-        default void yyxzTo(Vector4.Consumer consumer) {
+        default void yyxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), x(), z());
         }
 
-        default <R> R yyxw(Vector4.Factory<R> factory) {
+        default <R> R yyxw(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), x(), w());
         }
 
-        default void yyxwTo(Vector4.Consumer consumer) {
+        default void yyxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), x(), w());
         }
 
-        default <R> R yyyx(Vector4.Factory<R> factory) {
+        default <R> R yyyx(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), y(), x());
         }
 
-        default void yyyxTo(Vector4.Consumer consumer) {
+        default void yyyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), y(), x());
         }
 
-        default <R> R yyyy(Vector4.Factory<R> factory) {
+        default <R> R yyyy(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), y(), y());
         }
 
-        default void yyyyTo(Vector4.Consumer consumer) {
+        default void yyyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), y(), y());
         }
 
-        default <R> R yyyz(Vector4.Factory<R> factory) {
+        default <R> R yyyz(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), y(), z());
         }
 
-        default void yyyzTo(Vector4.Consumer consumer) {
+        default void yyyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), y(), z());
         }
 
-        default <R> R yyyw(Vector4.Factory<R> factory) {
+        default <R> R yyyw(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), y(), w());
         }
 
-        default void yyywTo(Vector4.Consumer consumer) {
+        default void yyywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), y(), w());
         }
 
-        default <R> R yyzx(Vector4.Factory<R> factory) {
+        default <R> R yyzx(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), z(), x());
         }
 
-        default void yyzxTo(Vector4.Consumer consumer) {
+        default void yyzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), z(), x());
         }
 
-        default <R> R yyzy(Vector4.Factory<R> factory) {
+        default <R> R yyzy(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), z(), y());
         }
 
-        default void yyzyTo(Vector4.Consumer consumer) {
+        default void yyzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), z(), y());
         }
 
-        default <R> R yyzz(Vector4.Factory<R> factory) {
+        default <R> R yyzz(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), z(), z());
         }
 
-        default void yyzzTo(Vector4.Consumer consumer) {
+        default void yyzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), z(), z());
         }
 
-        default <R> R yyzw(Vector4.Factory<R> factory) {
+        default <R> R yyzw(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), z(), w());
         }
 
-        default void yyzwTo(Vector4.Consumer consumer) {
+        default void yyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), z(), w());
         }
 
-        default <R> R yywx(Vector4.Factory<R> factory) {
+        default <R> R yywx(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), w(), x());
         }
 
-        default void yywxTo(Vector4.Consumer consumer) {
+        default void yywxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), w(), x());
         }
 
-        default <R> R yywy(Vector4.Factory<R> factory) {
+        default <R> R yywy(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), w(), y());
         }
 
-        default void yywyTo(Vector4.Consumer consumer) {
+        default void yywyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), w(), y());
         }
 
-        default <R> R yywz(Vector4.Factory<R> factory) {
+        default <R> R yywz(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), w(), z());
         }
 
-        default void yywzTo(Vector4.Consumer consumer) {
+        default void yywzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), w(), z());
         }
 
-        default <R> R yyww(Vector4.Factory<R> factory) {
+        default <R> R yyww(final Vector4.Factory<R> factory) {
             return factory.create(y(), y(), w(), w());
         }
 
-        default void yywwTo(Vector4.Consumer consumer) {
+        default void yywwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), y(), w(), w());
         }
 
-        default <R> R yzxx(Vector4.Factory<R> factory) {
+        default <R> R yzxx(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), x(), x());
         }
 
-        default void yzxxTo(Vector4.Consumer consumer) {
+        default void yzxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), x(), x());
         }
 
-        default <R> R yzxy(Vector4.Factory<R> factory) {
+        default <R> R yzxy(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), x(), y());
         }
 
-        default void yzxyTo(Vector4.Consumer consumer) {
+        default void yzxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), x(), y());
         }
 
-        default <R> R yzxz(Vector4.Factory<R> factory) {
+        default <R> R yzxz(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), x(), z());
         }
 
-        default void yzxzTo(Vector4.Consumer consumer) {
+        default void yzxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), x(), z());
         }
 
-        default <R> R yzxw(Vector4.Factory<R> factory) {
+        default <R> R yzxw(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), x(), w());
         }
 
-        default void yzxwTo(Vector4.Consumer consumer) {
+        default void yzxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), x(), w());
         }
 
-        default <R> R yzyx(Vector4.Factory<R> factory) {
+        default <R> R yzyx(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), y(), x());
         }
 
-        default void yzyxTo(Vector4.Consumer consumer) {
+        default void yzyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), y(), x());
         }
 
-        default <R> R yzyy(Vector4.Factory<R> factory) {
+        default <R> R yzyy(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), y(), y());
         }
 
-        default void yzyyTo(Vector4.Consumer consumer) {
+        default void yzyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), y(), y());
         }
 
-        default <R> R yzyz(Vector4.Factory<R> factory) {
+        default <R> R yzyz(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), y(), z());
         }
 
-        default void yzyzTo(Vector4.Consumer consumer) {
+        default void yzyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), y(), z());
         }
 
-        default <R> R yzyw(Vector4.Factory<R> factory) {
+        default <R> R yzyw(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), y(), w());
         }
 
-        default void yzywTo(Vector4.Consumer consumer) {
+        default void yzywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), y(), w());
         }
 
-        default <R> R yzzx(Vector4.Factory<R> factory) {
+        default <R> R yzzx(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), z(), x());
         }
 
-        default void yzzxTo(Vector4.Consumer consumer) {
+        default void yzzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), z(), x());
         }
 
-        default <R> R yzzy(Vector4.Factory<R> factory) {
+        default <R> R yzzy(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), z(), y());
         }
 
-        default void yzzyTo(Vector4.Consumer consumer) {
+        default void yzzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), z(), y());
         }
 
-        default <R> R yzzz(Vector4.Factory<R> factory) {
+        default <R> R yzzz(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), z(), z());
         }
 
-        default void yzzzTo(Vector4.Consumer consumer) {
+        default void yzzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), z(), z());
         }
 
-        default <R> R yzzw(Vector4.Factory<R> factory) {
+        default <R> R yzzw(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), z(), w());
         }
 
-        default void yzzwTo(Vector4.Consumer consumer) {
+        default void yzzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), z(), w());
         }
 
-        default <R> R yzwx(Vector4.Factory<R> factory) {
+        default <R> R yzwx(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), w(), x());
         }
 
-        default void yzwxTo(Vector4.Consumer consumer) {
+        default void yzwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), w(), x());
         }
 
-        default <R> R yzwy(Vector4.Factory<R> factory) {
+        default <R> R yzwy(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), w(), y());
         }
 
-        default void yzwyTo(Vector4.Consumer consumer) {
+        default void yzwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), w(), y());
         }
 
-        default <R> R yzwz(Vector4.Factory<R> factory) {
+        default <R> R yzwz(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), w(), z());
         }
 
-        default void yzwzTo(Vector4.Consumer consumer) {
+        default void yzwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), w(), z());
         }
 
-        default <R> R yzww(Vector4.Factory<R> factory) {
+        default <R> R yzww(final Vector4.Factory<R> factory) {
             return factory.create(y(), z(), w(), w());
         }
 
-        default void yzwwTo(Vector4.Consumer consumer) {
+        default void yzwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), z(), w(), w());
         }
 
-        default <R> R ywxx(Vector4.Factory<R> factory) {
+        default <R> R ywxx(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), x(), x());
         }
 
-        default void ywxxTo(Vector4.Consumer consumer) {
+        default void ywxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), x(), x());
         }
 
-        default <R> R ywxy(Vector4.Factory<R> factory) {
+        default <R> R ywxy(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), x(), y());
         }
 
-        default void ywxyTo(Vector4.Consumer consumer) {
+        default void ywxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), x(), y());
         }
 
-        default <R> R ywxz(Vector4.Factory<R> factory) {
+        default <R> R ywxz(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), x(), z());
         }
 
-        default void ywxzTo(Vector4.Consumer consumer) {
+        default void ywxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), x(), z());
         }
 
-        default <R> R ywxw(Vector4.Factory<R> factory) {
+        default <R> R ywxw(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), x(), w());
         }
 
-        default void ywxwTo(Vector4.Consumer consumer) {
+        default void ywxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), x(), w());
         }
 
-        default <R> R ywyx(Vector4.Factory<R> factory) {
+        default <R> R ywyx(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), y(), x());
         }
 
-        default void ywyxTo(Vector4.Consumer consumer) {
+        default void ywyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), y(), x());
         }
 
-        default <R> R ywyy(Vector4.Factory<R> factory) {
+        default <R> R ywyy(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), y(), y());
         }
 
-        default void ywyyTo(Vector4.Consumer consumer) {
+        default void ywyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), y(), y());
         }
 
-        default <R> R ywyz(Vector4.Factory<R> factory) {
+        default <R> R ywyz(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), y(), z());
         }
 
-        default void ywyzTo(Vector4.Consumer consumer) {
+        default void ywyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), y(), z());
         }
 
-        default <R> R ywyw(Vector4.Factory<R> factory) {
+        default <R> R ywyw(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), y(), w());
         }
 
-        default void ywywTo(Vector4.Consumer consumer) {
+        default void ywywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), y(), w());
         }
 
-        default <R> R ywzx(Vector4.Factory<R> factory) {
+        default <R> R ywzx(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), z(), x());
         }
 
-        default void ywzxTo(Vector4.Consumer consumer) {
+        default void ywzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), z(), x());
         }
 
-        default <R> R ywzy(Vector4.Factory<R> factory) {
+        default <R> R ywzy(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), z(), y());
         }
 
-        default void ywzyTo(Vector4.Consumer consumer) {
+        default void ywzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), z(), y());
         }
 
-        default <R> R ywzz(Vector4.Factory<R> factory) {
+        default <R> R ywzz(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), z(), z());
         }
 
-        default void ywzzTo(Vector4.Consumer consumer) {
+        default void ywzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), z(), z());
         }
 
-        default <R> R ywzw(Vector4.Factory<R> factory) {
+        default <R> R ywzw(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), z(), w());
         }
 
-        default void ywzwTo(Vector4.Consumer consumer) {
+        default void ywzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), z(), w());
         }
 
-        default <R> R ywwx(Vector4.Factory<R> factory) {
+        default <R> R ywwx(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), w(), x());
         }
 
-        default void ywwxTo(Vector4.Consumer consumer) {
+        default void ywwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), w(), x());
         }
 
-        default <R> R ywwy(Vector4.Factory<R> factory) {
+        default <R> R ywwy(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), w(), y());
         }
 
-        default void ywwyTo(Vector4.Consumer consumer) {
+        default void ywwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), w(), y());
         }
 
-        default <R> R ywwz(Vector4.Factory<R> factory) {
+        default <R> R ywwz(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), w(), z());
         }
 
-        default void ywwzTo(Vector4.Consumer consumer) {
+        default void ywwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), w(), z());
         }
 
-        default <R> R ywww(Vector4.Factory<R> factory) {
+        default <R> R ywww(final Vector4.Factory<R> factory) {
             return factory.create(y(), w(), w(), w());
         }
 
-        default void ywwwTo(Vector4.Consumer consumer) {
+        default void ywwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(y(), w(), w(), w());
         }
 
-        default <R> R zxxx(Vector4.Factory<R> factory) {
+        default <R> R zxxx(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), x(), x());
         }
 
-        default void zxxxTo(Vector4.Consumer consumer) {
+        default void zxxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), x(), x());
         }
 
-        default <R> R zxxy(Vector4.Factory<R> factory) {
+        default <R> R zxxy(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), x(), y());
         }
 
-        default void zxxyTo(Vector4.Consumer consumer) {
+        default void zxxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), x(), y());
         }
 
-        default <R> R zxxz(Vector4.Factory<R> factory) {
+        default <R> R zxxz(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), x(), z());
         }
 
-        default void zxxzTo(Vector4.Consumer consumer) {
+        default void zxxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), x(), z());
         }
 
-        default <R> R zxxw(Vector4.Factory<R> factory) {
+        default <R> R zxxw(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), x(), w());
         }
 
-        default void zxxwTo(Vector4.Consumer consumer) {
+        default void zxxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), x(), w());
         }
 
-        default <R> R zxyx(Vector4.Factory<R> factory) {
+        default <R> R zxyx(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), y(), x());
         }
 
-        default void zxyxTo(Vector4.Consumer consumer) {
+        default void zxyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), y(), x());
         }
 
-        default <R> R zxyy(Vector4.Factory<R> factory) {
+        default <R> R zxyy(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), y(), y());
         }
 
-        default void zxyyTo(Vector4.Consumer consumer) {
+        default void zxyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), y(), y());
         }
 
-        default <R> R zxyz(Vector4.Factory<R> factory) {
+        default <R> R zxyz(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), y(), z());
         }
 
-        default void zxyzTo(Vector4.Consumer consumer) {
+        default void zxyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), y(), z());
         }
 
-        default <R> R zxyw(Vector4.Factory<R> factory) {
+        default <R> R zxyw(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), y(), w());
         }
 
-        default void zxywTo(Vector4.Consumer consumer) {
+        default void zxywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), y(), w());
         }
 
-        default <R> R zxzx(Vector4.Factory<R> factory) {
+        default <R> R zxzx(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), z(), x());
         }
 
-        default void zxzxTo(Vector4.Consumer consumer) {
+        default void zxzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), z(), x());
         }
 
-        default <R> R zxzy(Vector4.Factory<R> factory) {
+        default <R> R zxzy(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), z(), y());
         }
 
-        default void zxzyTo(Vector4.Consumer consumer) {
+        default void zxzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), z(), y());
         }
 
-        default <R> R zxzz(Vector4.Factory<R> factory) {
+        default <R> R zxzz(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), z(), z());
         }
 
-        default void zxzzTo(Vector4.Consumer consumer) {
+        default void zxzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), z(), z());
         }
 
-        default <R> R zxzw(Vector4.Factory<R> factory) {
+        default <R> R zxzw(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), z(), w());
         }
 
-        default void zxzwTo(Vector4.Consumer consumer) {
+        default void zxzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), z(), w());
         }
 
-        default <R> R zxwx(Vector4.Factory<R> factory) {
+        default <R> R zxwx(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), w(), x());
         }
 
-        default void zxwxTo(Vector4.Consumer consumer) {
+        default void zxwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), w(), x());
         }
 
-        default <R> R zxwy(Vector4.Factory<R> factory) {
+        default <R> R zxwy(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), w(), y());
         }
 
-        default void zxwyTo(Vector4.Consumer consumer) {
+        default void zxwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), w(), y());
         }
 
-        default <R> R zxwz(Vector4.Factory<R> factory) {
+        default <R> R zxwz(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), w(), z());
         }
 
-        default void zxwzTo(Vector4.Consumer consumer) {
+        default void zxwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), w(), z());
         }
 
-        default <R> R zxww(Vector4.Factory<R> factory) {
+        default <R> R zxww(final Vector4.Factory<R> factory) {
             return factory.create(z(), x(), w(), w());
         }
 
-        default void zxwwTo(Vector4.Consumer consumer) {
+        default void zxwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), x(), w(), w());
         }
 
-        default <R> R zyxx(Vector4.Factory<R> factory) {
+        default <R> R zyxx(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), x(), x());
         }
 
-        default void zyxxTo(Vector4.Consumer consumer) {
+        default void zyxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), x(), x());
         }
 
-        default <R> R zyxy(Vector4.Factory<R> factory) {
+        default <R> R zyxy(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), x(), y());
         }
 
-        default void zyxyTo(Vector4.Consumer consumer) {
+        default void zyxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), x(), y());
         }
 
-        default <R> R zyxz(Vector4.Factory<R> factory) {
+        default <R> R zyxz(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), x(), z());
         }
 
-        default void zyxzTo(Vector4.Consumer consumer) {
+        default void zyxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), x(), z());
         }
 
-        default <R> R zyxw(Vector4.Factory<R> factory) {
+        default <R> R zyxw(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), x(), w());
         }
 
-        default void zyxwTo(Vector4.Consumer consumer) {
+        default void zyxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), x(), w());
         }
 
-        default <R> R zyyx(Vector4.Factory<R> factory) {
+        default <R> R zyyx(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), y(), x());
         }
 
-        default void zyyxTo(Vector4.Consumer consumer) {
+        default void zyyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), y(), x());
         }
 
-        default <R> R zyyy(Vector4.Factory<R> factory) {
+        default <R> R zyyy(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), y(), y());
         }
 
-        default void zyyyTo(Vector4.Consumer consumer) {
+        default void zyyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), y(), y());
         }
 
-        default <R> R zyyz(Vector4.Factory<R> factory) {
+        default <R> R zyyz(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), y(), z());
         }
 
-        default void zyyzTo(Vector4.Consumer consumer) {
+        default void zyyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), y(), z());
         }
 
-        default <R> R zyyw(Vector4.Factory<R> factory) {
+        default <R> R zyyw(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), y(), w());
         }
 
-        default void zyywTo(Vector4.Consumer consumer) {
+        default void zyywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), y(), w());
         }
 
-        default <R> R zyzx(Vector4.Factory<R> factory) {
+        default <R> R zyzx(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), z(), x());
         }
 
-        default void zyzxTo(Vector4.Consumer consumer) {
+        default void zyzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), z(), x());
         }
 
-        default <R> R zyzy(Vector4.Factory<R> factory) {
+        default <R> R zyzy(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), z(), y());
         }
 
-        default void zyzyTo(Vector4.Consumer consumer) {
+        default void zyzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), z(), y());
         }
 
-        default <R> R zyzz(Vector4.Factory<R> factory) {
+        default <R> R zyzz(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), z(), z());
         }
 
-        default void zyzzTo(Vector4.Consumer consumer) {
+        default void zyzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), z(), z());
         }
 
-        default <R> R zyzw(Vector4.Factory<R> factory) {
+        default <R> R zyzw(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), z(), w());
         }
 
-        default void zyzwTo(Vector4.Consumer consumer) {
+        default void zyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), z(), w());
         }
 
-        default <R> R zywx(Vector4.Factory<R> factory) {
+        default <R> R zywx(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), w(), x());
         }
 
-        default void zywxTo(Vector4.Consumer consumer) {
+        default void zywxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), w(), x());
         }
 
-        default <R> R zywy(Vector4.Factory<R> factory) {
+        default <R> R zywy(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), w(), y());
         }
 
-        default void zywyTo(Vector4.Consumer consumer) {
+        default void zywyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), w(), y());
         }
 
-        default <R> R zywz(Vector4.Factory<R> factory) {
+        default <R> R zywz(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), w(), z());
         }
 
-        default void zywzTo(Vector4.Consumer consumer) {
+        default void zywzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), w(), z());
         }
 
-        default <R> R zyww(Vector4.Factory<R> factory) {
+        default <R> R zyww(final Vector4.Factory<R> factory) {
             return factory.create(z(), y(), w(), w());
         }
 
-        default void zywwTo(Vector4.Consumer consumer) {
+        default void zywwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), y(), w(), w());
         }
 
-        default <R> R zzxx(Vector4.Factory<R> factory) {
+        default <R> R zzxx(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), x(), x());
         }
 
-        default void zzxxTo(Vector4.Consumer consumer) {
+        default void zzxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), x(), x());
         }
 
-        default <R> R zzxy(Vector4.Factory<R> factory) {
+        default <R> R zzxy(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), x(), y());
         }
 
-        default void zzxyTo(Vector4.Consumer consumer) {
+        default void zzxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), x(), y());
         }
 
-        default <R> R zzxz(Vector4.Factory<R> factory) {
+        default <R> R zzxz(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), x(), z());
         }
 
-        default void zzxzTo(Vector4.Consumer consumer) {
+        default void zzxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), x(), z());
         }
 
-        default <R> R zzxw(Vector4.Factory<R> factory) {
+        default <R> R zzxw(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), x(), w());
         }
 
-        default void zzxwTo(Vector4.Consumer consumer) {
+        default void zzxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), x(), w());
         }
 
-        default <R> R zzyx(Vector4.Factory<R> factory) {
+        default <R> R zzyx(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), y(), x());
         }
 
-        default void zzyxTo(Vector4.Consumer consumer) {
+        default void zzyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), y(), x());
         }
 
-        default <R> R zzyy(Vector4.Factory<R> factory) {
+        default <R> R zzyy(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), y(), y());
         }
 
-        default void zzyyTo(Vector4.Consumer consumer) {
+        default void zzyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), y(), y());
         }
 
-        default <R> R zzyz(Vector4.Factory<R> factory) {
+        default <R> R zzyz(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), y(), z());
         }
 
-        default void zzyzTo(Vector4.Consumer consumer) {
+        default void zzyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), y(), z());
         }
 
-        default <R> R zzyw(Vector4.Factory<R> factory) {
+        default <R> R zzyw(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), y(), w());
         }
 
-        default void zzywTo(Vector4.Consumer consumer) {
+        default void zzywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), y(), w());
         }
 
-        default <R> R zzzx(Vector4.Factory<R> factory) {
+        default <R> R zzzx(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), z(), x());
         }
 
-        default void zzzxTo(Vector4.Consumer consumer) {
+        default void zzzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), z(), x());
         }
 
-        default <R> R zzzy(Vector4.Factory<R> factory) {
+        default <R> R zzzy(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), z(), y());
         }
 
-        default void zzzyTo(Vector4.Consumer consumer) {
+        default void zzzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), z(), y());
         }
 
-        default <R> R zzzz(Vector4.Factory<R> factory) {
+        default <R> R zzzz(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), z(), z());
         }
 
-        default void zzzzTo(Vector4.Consumer consumer) {
+        default void zzzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), z(), z());
         }
 
-        default <R> R zzzw(Vector4.Factory<R> factory) {
+        default <R> R zzzw(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), z(), w());
         }
 
-        default void zzzwTo(Vector4.Consumer consumer) {
+        default void zzzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), z(), w());
         }
 
-        default <R> R zzwx(Vector4.Factory<R> factory) {
+        default <R> R zzwx(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), w(), x());
         }
 
-        default void zzwxTo(Vector4.Consumer consumer) {
+        default void zzwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), w(), x());
         }
 
-        default <R> R zzwy(Vector4.Factory<R> factory) {
+        default <R> R zzwy(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), w(), y());
         }
 
-        default void zzwyTo(Vector4.Consumer consumer) {
+        default void zzwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), w(), y());
         }
 
-        default <R> R zzwz(Vector4.Factory<R> factory) {
+        default <R> R zzwz(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), w(), z());
         }
 
-        default void zzwzTo(Vector4.Consumer consumer) {
+        default void zzwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), w(), z());
         }
 
-        default <R> R zzww(Vector4.Factory<R> factory) {
+        default <R> R zzww(final Vector4.Factory<R> factory) {
             return factory.create(z(), z(), w(), w());
         }
 
-        default void zzwwTo(Vector4.Consumer consumer) {
+        default void zzwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), z(), w(), w());
         }
 
-        default <R> R zwxx(Vector4.Factory<R> factory) {
+        default <R> R zwxx(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), x(), x());
         }
 
-        default void zwxxTo(Vector4.Consumer consumer) {
+        default void zwxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), x(), x());
         }
 
-        default <R> R zwxy(Vector4.Factory<R> factory) {
+        default <R> R zwxy(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), x(), y());
         }
 
-        default void zwxyTo(Vector4.Consumer consumer) {
+        default void zwxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), x(), y());
         }
 
-        default <R> R zwxz(Vector4.Factory<R> factory) {
+        default <R> R zwxz(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), x(), z());
         }
 
-        default void zwxzTo(Vector4.Consumer consumer) {
+        default void zwxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), x(), z());
         }
 
-        default <R> R zwxw(Vector4.Factory<R> factory) {
+        default <R> R zwxw(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), x(), w());
         }
 
-        default void zwxwTo(Vector4.Consumer consumer) {
+        default void zwxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), x(), w());
         }
 
-        default <R> R zwyx(Vector4.Factory<R> factory) {
+        default <R> R zwyx(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), y(), x());
         }
 
-        default void zwyxTo(Vector4.Consumer consumer) {
+        default void zwyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), y(), x());
         }
 
-        default <R> R zwyy(Vector4.Factory<R> factory) {
+        default <R> R zwyy(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), y(), y());
         }
 
-        default void zwyyTo(Vector4.Consumer consumer) {
+        default void zwyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), y(), y());
         }
 
-        default <R> R zwyz(Vector4.Factory<R> factory) {
+        default <R> R zwyz(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), y(), z());
         }
 
-        default void zwyzTo(Vector4.Consumer consumer) {
+        default void zwyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), y(), z());
         }
 
-        default <R> R zwyw(Vector4.Factory<R> factory) {
+        default <R> R zwyw(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), y(), w());
         }
 
-        default void zwywTo(Vector4.Consumer consumer) {
+        default void zwywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), y(), w());
         }
 
-        default <R> R zwzx(Vector4.Factory<R> factory) {
+        default <R> R zwzx(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), z(), x());
         }
 
-        default void zwzxTo(Vector4.Consumer consumer) {
+        default void zwzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), z(), x());
         }
 
-        default <R> R zwzy(Vector4.Factory<R> factory) {
+        default <R> R zwzy(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), z(), y());
         }
 
-        default void zwzyTo(Vector4.Consumer consumer) {
+        default void zwzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), z(), y());
         }
 
-        default <R> R zwzz(Vector4.Factory<R> factory) {
+        default <R> R zwzz(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), z(), z());
         }
 
-        default void zwzzTo(Vector4.Consumer consumer) {
+        default void zwzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), z(), z());
         }
 
-        default <R> R zwzw(Vector4.Factory<R> factory) {
+        default <R> R zwzw(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), z(), w());
         }
 
-        default void zwzwTo(Vector4.Consumer consumer) {
+        default void zwzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), z(), w());
         }
 
-        default <R> R zwwx(Vector4.Factory<R> factory) {
+        default <R> R zwwx(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), w(), x());
         }
 
-        default void zwwxTo(Vector4.Consumer consumer) {
+        default void zwwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), w(), x());
         }
 
-        default <R> R zwwy(Vector4.Factory<R> factory) {
+        default <R> R zwwy(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), w(), y());
         }
 
-        default void zwwyTo(Vector4.Consumer consumer) {
+        default void zwwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), w(), y());
         }
 
-        default <R> R zwwz(Vector4.Factory<R> factory) {
+        default <R> R zwwz(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), w(), z());
         }
 
-        default void zwwzTo(Vector4.Consumer consumer) {
+        default void zwwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), w(), z());
         }
 
-        default <R> R zwww(Vector4.Factory<R> factory) {
+        default <R> R zwww(final Vector4.Factory<R> factory) {
             return factory.create(z(), w(), w(), w());
         }
 
-        default void zwwwTo(Vector4.Consumer consumer) {
+        default void zwwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(z(), w(), w(), w());
         }
 
-        default <R> R wxxx(Vector4.Factory<R> factory) {
+        default <R> R wxxx(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), x(), x());
         }
 
-        default void wxxxTo(Vector4.Consumer consumer) {
+        default void wxxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), x(), x());
         }
 
-        default <R> R wxxy(Vector4.Factory<R> factory) {
+        default <R> R wxxy(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), x(), y());
         }
 
-        default void wxxyTo(Vector4.Consumer consumer) {
+        default void wxxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), x(), y());
         }
 
-        default <R> R wxxz(Vector4.Factory<R> factory) {
+        default <R> R wxxz(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), x(), z());
         }
 
-        default void wxxzTo(Vector4.Consumer consumer) {
+        default void wxxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), x(), z());
         }
 
-        default <R> R wxxw(Vector4.Factory<R> factory) {
+        default <R> R wxxw(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), x(), w());
         }
 
-        default void wxxwTo(Vector4.Consumer consumer) {
+        default void wxxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), x(), w());
         }
 
-        default <R> R wxyx(Vector4.Factory<R> factory) {
+        default <R> R wxyx(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), y(), x());
         }
 
-        default void wxyxTo(Vector4.Consumer consumer) {
+        default void wxyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), y(), x());
         }
 
-        default <R> R wxyy(Vector4.Factory<R> factory) {
+        default <R> R wxyy(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), y(), y());
         }
 
-        default void wxyyTo(Vector4.Consumer consumer) {
+        default void wxyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), y(), y());
         }
 
-        default <R> R wxyz(Vector4.Factory<R> factory) {
+        default <R> R wxyz(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), y(), z());
         }
 
-        default void wxyzTo(Vector4.Consumer consumer) {
+        default void wxyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), y(), z());
         }
 
-        default <R> R wxyw(Vector4.Factory<R> factory) {
+        default <R> R wxyw(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), y(), w());
         }
 
-        default void wxywTo(Vector4.Consumer consumer) {
+        default void wxywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), y(), w());
         }
 
-        default <R> R wxzx(Vector4.Factory<R> factory) {
+        default <R> R wxzx(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), z(), x());
         }
 
-        default void wxzxTo(Vector4.Consumer consumer) {
+        default void wxzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), z(), x());
         }
 
-        default <R> R wxzy(Vector4.Factory<R> factory) {
+        default <R> R wxzy(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), z(), y());
         }
 
-        default void wxzyTo(Vector4.Consumer consumer) {
+        default void wxzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), z(), y());
         }
 
-        default <R> R wxzz(Vector4.Factory<R> factory) {
+        default <R> R wxzz(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), z(), z());
         }
 
-        default void wxzzTo(Vector4.Consumer consumer) {
+        default void wxzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), z(), z());
         }
 
-        default <R> R wxzw(Vector4.Factory<R> factory) {
+        default <R> R wxzw(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), z(), w());
         }
 
-        default void wxzwTo(Vector4.Consumer consumer) {
+        default void wxzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), z(), w());
         }
 
-        default <R> R wxwx(Vector4.Factory<R> factory) {
+        default <R> R wxwx(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), w(), x());
         }
 
-        default void wxwxTo(Vector4.Consumer consumer) {
+        default void wxwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), w(), x());
         }
 
-        default <R> R wxwy(Vector4.Factory<R> factory) {
+        default <R> R wxwy(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), w(), y());
         }
 
-        default void wxwyTo(Vector4.Consumer consumer) {
+        default void wxwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), w(), y());
         }
 
-        default <R> R wxwz(Vector4.Factory<R> factory) {
+        default <R> R wxwz(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), w(), z());
         }
 
-        default void wxwzTo(Vector4.Consumer consumer) {
+        default void wxwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), w(), z());
         }
 
-        default <R> R wxww(Vector4.Factory<R> factory) {
+        default <R> R wxww(final Vector4.Factory<R> factory) {
             return factory.create(w(), x(), w(), w());
         }
 
-        default void wxwwTo(Vector4.Consumer consumer) {
+        default void wxwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), x(), w(), w());
         }
 
-        default <R> R wyxx(Vector4.Factory<R> factory) {
+        default <R> R wyxx(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), x(), x());
         }
 
-        default void wyxxTo(Vector4.Consumer consumer) {
+        default void wyxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), x(), x());
         }
 
-        default <R> R wyxy(Vector4.Factory<R> factory) {
+        default <R> R wyxy(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), x(), y());
         }
 
-        default void wyxyTo(Vector4.Consumer consumer) {
+        default void wyxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), x(), y());
         }
 
-        default <R> R wyxz(Vector4.Factory<R> factory) {
+        default <R> R wyxz(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), x(), z());
         }
 
-        default void wyxzTo(Vector4.Consumer consumer) {
+        default void wyxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), x(), z());
         }
 
-        default <R> R wyxw(Vector4.Factory<R> factory) {
+        default <R> R wyxw(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), x(), w());
         }
 
-        default void wyxwTo(Vector4.Consumer consumer) {
+        default void wyxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), x(), w());
         }
 
-        default <R> R wyyx(Vector4.Factory<R> factory) {
+        default <R> R wyyx(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), y(), x());
         }
 
-        default void wyyxTo(Vector4.Consumer consumer) {
+        default void wyyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), y(), x());
         }
 
-        default <R> R wyyy(Vector4.Factory<R> factory) {
+        default <R> R wyyy(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), y(), y());
         }
 
-        default void wyyyTo(Vector4.Consumer consumer) {
+        default void wyyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), y(), y());
         }
 
-        default <R> R wyyz(Vector4.Factory<R> factory) {
+        default <R> R wyyz(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), y(), z());
         }
 
-        default void wyyzTo(Vector4.Consumer consumer) {
+        default void wyyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), y(), z());
         }
 
-        default <R> R wyyw(Vector4.Factory<R> factory) {
+        default <R> R wyyw(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), y(), w());
         }
 
-        default void wyywTo(Vector4.Consumer consumer) {
+        default void wyywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), y(), w());
         }
 
-        default <R> R wyzx(Vector4.Factory<R> factory) {
+        default <R> R wyzx(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), z(), x());
         }
 
-        default void wyzxTo(Vector4.Consumer consumer) {
+        default void wyzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), z(), x());
         }
 
-        default <R> R wyzy(Vector4.Factory<R> factory) {
+        default <R> R wyzy(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), z(), y());
         }
 
-        default void wyzyTo(Vector4.Consumer consumer) {
+        default void wyzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), z(), y());
         }
 
-        default <R> R wyzz(Vector4.Factory<R> factory) {
+        default <R> R wyzz(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), z(), z());
         }
 
-        default void wyzzTo(Vector4.Consumer consumer) {
+        default void wyzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), z(), z());
         }
 
-        default <R> R wyzw(Vector4.Factory<R> factory) {
+        default <R> R wyzw(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), z(), w());
         }
 
-        default void wyzwTo(Vector4.Consumer consumer) {
+        default void wyzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), z(), w());
         }
 
-        default <R> R wywx(Vector4.Factory<R> factory) {
+        default <R> R wywx(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), w(), x());
         }
 
-        default void wywxTo(Vector4.Consumer consumer) {
+        default void wywxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), w(), x());
         }
 
-        default <R> R wywy(Vector4.Factory<R> factory) {
+        default <R> R wywy(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), w(), y());
         }
 
-        default void wywyTo(Vector4.Consumer consumer) {
+        default void wywyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), w(), y());
         }
 
-        default <R> R wywz(Vector4.Factory<R> factory) {
+        default <R> R wywz(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), w(), z());
         }
 
-        default void wywzTo(Vector4.Consumer consumer) {
+        default void wywzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), w(), z());
         }
 
-        default <R> R wyww(Vector4.Factory<R> factory) {
+        default <R> R wyww(final Vector4.Factory<R> factory) {
             return factory.create(w(), y(), w(), w());
         }
 
-        default void wywwTo(Vector4.Consumer consumer) {
+        default void wywwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), y(), w(), w());
         }
 
-        default <R> R wzxx(Vector4.Factory<R> factory) {
+        default <R> R wzxx(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), x(), x());
         }
 
-        default void wzxxTo(Vector4.Consumer consumer) {
+        default void wzxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), x(), x());
         }
 
-        default <R> R wzxy(Vector4.Factory<R> factory) {
+        default <R> R wzxy(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), x(), y());
         }
 
-        default void wzxyTo(Vector4.Consumer consumer) {
+        default void wzxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), x(), y());
         }
 
-        default <R> R wzxz(Vector4.Factory<R> factory) {
+        default <R> R wzxz(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), x(), z());
         }
 
-        default void wzxzTo(Vector4.Consumer consumer) {
+        default void wzxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), x(), z());
         }
 
-        default <R> R wzxw(Vector4.Factory<R> factory) {
+        default <R> R wzxw(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), x(), w());
         }
 
-        default void wzxwTo(Vector4.Consumer consumer) {
+        default void wzxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), x(), w());
         }
 
-        default <R> R wzyx(Vector4.Factory<R> factory) {
+        default <R> R wzyx(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), y(), x());
         }
 
-        default void wzyxTo(Vector4.Consumer consumer) {
+        default void wzyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), y(), x());
         }
 
-        default <R> R wzyy(Vector4.Factory<R> factory) {
+        default <R> R wzyy(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), y(), y());
         }
 
-        default void wzyyTo(Vector4.Consumer consumer) {
+        default void wzyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), y(), y());
         }
 
-        default <R> R wzyz(Vector4.Factory<R> factory) {
+        default <R> R wzyz(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), y(), z());
         }
 
-        default void wzyzTo(Vector4.Consumer consumer) {
+        default void wzyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), y(), z());
         }
 
-        default <R> R wzyw(Vector4.Factory<R> factory) {
+        default <R> R wzyw(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), y(), w());
         }
 
-        default void wzywTo(Vector4.Consumer consumer) {
+        default void wzywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), y(), w());
         }
 
-        default <R> R wzzx(Vector4.Factory<R> factory) {
+        default <R> R wzzx(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), z(), x());
         }
 
-        default void wzzxTo(Vector4.Consumer consumer) {
+        default void wzzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), z(), x());
         }
 
-        default <R> R wzzy(Vector4.Factory<R> factory) {
+        default <R> R wzzy(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), z(), y());
         }
 
-        default void wzzyTo(Vector4.Consumer consumer) {
+        default void wzzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), z(), y());
         }
 
-        default <R> R wzzz(Vector4.Factory<R> factory) {
+        default <R> R wzzz(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), z(), z());
         }
 
-        default void wzzzTo(Vector4.Consumer consumer) {
+        default void wzzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), z(), z());
         }
 
-        default <R> R wzzw(Vector4.Factory<R> factory) {
+        default <R> R wzzw(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), z(), w());
         }
 
-        default void wzzwTo(Vector4.Consumer consumer) {
+        default void wzzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), z(), w());
         }
 
-        default <R> R wzwx(Vector4.Factory<R> factory) {
+        default <R> R wzwx(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), w(), x());
         }
 
-        default void wzwxTo(Vector4.Consumer consumer) {
+        default void wzwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), w(), x());
         }
 
-        default <R> R wzwy(Vector4.Factory<R> factory) {
+        default <R> R wzwy(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), w(), y());
         }
 
-        default void wzwyTo(Vector4.Consumer consumer) {
+        default void wzwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), w(), y());
         }
 
-        default <R> R wzwz(Vector4.Factory<R> factory) {
+        default <R> R wzwz(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), w(), z());
         }
 
-        default void wzwzTo(Vector4.Consumer consumer) {
+        default void wzwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), w(), z());
         }
 
-        default <R> R wzww(Vector4.Factory<R> factory) {
+        default <R> R wzww(final Vector4.Factory<R> factory) {
             return factory.create(w(), z(), w(), w());
         }
 
-        default void wzwwTo(Vector4.Consumer consumer) {
+        default void wzwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), z(), w(), w());
         }
 
-        default <R> R wwxx(Vector4.Factory<R> factory) {
+        default <R> R wwxx(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), x(), x());
         }
 
-        default void wwxxTo(Vector4.Consumer consumer) {
+        default void wwxxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), x(), x());
         }
 
-        default <R> R wwxy(Vector4.Factory<R> factory) {
+        default <R> R wwxy(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), x(), y());
         }
 
-        default void wwxyTo(Vector4.Consumer consumer) {
+        default void wwxyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), x(), y());
         }
 
-        default <R> R wwxz(Vector4.Factory<R> factory) {
+        default <R> R wwxz(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), x(), z());
         }
 
-        default void wwxzTo(Vector4.Consumer consumer) {
+        default void wwxzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), x(), z());
         }
 
-        default <R> R wwxw(Vector4.Factory<R> factory) {
+        default <R> R wwxw(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), x(), w());
         }
 
-        default void wwxwTo(Vector4.Consumer consumer) {
+        default void wwxwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), x(), w());
         }
 
-        default <R> R wwyx(Vector4.Factory<R> factory) {
+        default <R> R wwyx(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), y(), x());
         }
 
-        default void wwyxTo(Vector4.Consumer consumer) {
+        default void wwyxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), y(), x());
         }
 
-        default <R> R wwyy(Vector4.Factory<R> factory) {
+        default <R> R wwyy(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), y(), y());
         }
 
-        default void wwyyTo(Vector4.Consumer consumer) {
+        default void wwyyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), y(), y());
         }
 
-        default <R> R wwyz(Vector4.Factory<R> factory) {
+        default <R> R wwyz(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), y(), z());
         }
 
-        default void wwyzTo(Vector4.Consumer consumer) {
+        default void wwyzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), y(), z());
         }
 
-        default <R> R wwyw(Vector4.Factory<R> factory) {
+        default <R> R wwyw(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), y(), w());
         }
 
-        default void wwywTo(Vector4.Consumer consumer) {
+        default void wwywTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), y(), w());
         }
 
-        default <R> R wwzx(Vector4.Factory<R> factory) {
+        default <R> R wwzx(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), z(), x());
         }
 
-        default void wwzxTo(Vector4.Consumer consumer) {
+        default void wwzxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), z(), x());
         }
 
-        default <R> R wwzy(Vector4.Factory<R> factory) {
+        default <R> R wwzy(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), z(), y());
         }
 
-        default void wwzyTo(Vector4.Consumer consumer) {
+        default void wwzyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), z(), y());
         }
 
-        default <R> R wwzz(Vector4.Factory<R> factory) {
+        default <R> R wwzz(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), z(), z());
         }
 
-        default void wwzzTo(Vector4.Consumer consumer) {
+        default void wwzzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), z(), z());
         }
 
-        default <R> R wwzw(Vector4.Factory<R> factory) {
+        default <R> R wwzw(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), z(), w());
         }
 
-        default void wwzwTo(Vector4.Consumer consumer) {
+        default void wwzwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), z(), w());
         }
 
-        default <R> R wwwx(Vector4.Factory<R> factory) {
+        default <R> R wwwx(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), w(), x());
         }
 
-        default void wwwxTo(Vector4.Consumer consumer) {
+        default void wwwxTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), w(), x());
         }
 
-        default <R> R wwwy(Vector4.Factory<R> factory) {
+        default <R> R wwwy(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), w(), y());
         }
 
-        default void wwwyTo(Vector4.Consumer consumer) {
+        default void wwwyTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), w(), y());
         }
 
-        default <R> R wwwz(Vector4.Factory<R> factory) {
+        default <R> R wwwz(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), w(), z());
         }
 
-        default void wwwzTo(Vector4.Consumer consumer) {
+        default void wwwzTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), w(), z());
         }
 
-        default <R> R wwww(Vector4.Factory<R> factory) {
+        default <R> R wwww(final Vector4.Factory<R> factory) {
             return factory.create(w(), w(), w(), w());
         }
 
-        default void wwwwTo(Vector4.Consumer consumer) {
+        default void wwwwTo(final Vector4.Consumer consumer) {
             consumer.xyzw(w(), w(), w(), w());
         }
 
@@ -2722,660 +2722,660 @@ public final class Vector4 {
         void z(double z);
         void w(double w);
 
-        default void xy(double v) {
+        default void xy(final double v) {
             xy(v, v);
         }
 
-        default void xz(double v) {
+        default void xz(final double v) {
             xz(v, v);
         }
 
-        default void xw(double v) {
+        default void xw(final double v) {
             xw(v, v);
         }
 
-        default void yz(double v) {
+        default void yz(final double v) {
             yz(v, v);
         }
 
-        default void yw(double v) {
+        default void yw(final double v) {
             yw(v, v);
         }
 
-        default void zw(double v) {
+        default void zw(final double v) {
             zw(v, v);
         }
 
-        default void xyz(double v) {
+        default void xyz(final double v) {
             xyz(v, v, v);
         }
 
-        default void xyw(double v) {
+        default void xyw(final double v) {
             xyw(v, v, v);
         }
 
-        default void xzw(double v) {
+        default void xzw(final double v) {
             xzw(v, v, v);
         }
 
-        default void yzw(double v) {
+        default void yzw(final double v) {
             yzw(v, v, v);
         }
 
-        default void xyzw(double v) {
+        default void xyzw(final double v) {
             xyzw(v, v, v, v);
         }
 
-        default void xy(double x, double y) {
+        default void xy(final double x, final double y) {
             x(x);
             y(y);
         }
 
-        default void xz(double x, double z) {
-            x(x);
-            z(z);
-        }
-
-        default void xw(double x, double w) {
-            x(x);
-            w(w);
-        }
-
-        default void yx(double y, double x) {
-            x(x);
-            y(y);
-        }
-
-        default void yz(double y, double z) {
-            y(y);
-            z(z);
-        }
-
-        default void yw(double y, double w) {
-            y(y);
-            w(w);
-        }
-
-        default void zx(double z, double x) {
+        default void xz(final double x, final double z) {
             x(x);
             z(z);
         }
 
-        default void zy(double z, double y) {
-            y(y);
-            z(z);
-        }
-
-        default void zw(double z, double w) {
-            z(z);
-            w(w);
-        }
-
-        default void wx(double w, double x) {
+        default void xw(final double x, final double w) {
             x(x);
             w(w);
         }
 
-        default void wy(double w, double y) {
-            y(y);
-            w(w);
-        }
-
-        default void wz(double w, double z) {
-            z(z);
-            w(w);
-        }
-
-        default void xyz(double x, double y, double z) {
+        default void yx(final double y, final double x) {
             x(x);
+            y(y);
+        }
+
+        default void yz(final double y, final double z) {
             y(y);
             z(z);
         }
 
-        default void xyw(double x, double y, double w) {
-            x(x);
+        default void yw(final double y, final double w) {
             y(y);
             w(w);
         }
 
-        default void xzy(double x, double z, double y) {
+        default void zx(final double z, final double x) {
+            x(x);
+            z(z);
+        }
+
+        default void zy(final double z, final double y) {
+            y(y);
+            z(z);
+        }
+
+        default void zw(final double z, final double w) {
+            z(z);
+            w(w);
+        }
+
+        default void wx(final double w, final double x) {
+            x(x);
+            w(w);
+        }
+
+        default void wy(final double w, final double y) {
+            y(y);
+            w(w);
+        }
+
+        default void wz(final double w, final double z) {
+            z(z);
+            w(w);
+        }
+
+        default void xyz(final double x, final double y, final double z) {
             x(x);
             y(y);
             z(z);
         }
 
-        default void xzw(double x, double z, double w) {
-            x(x);
-            z(z);
-            w(w);
-        }
-
-        default void xwy(double x, double w, double y) {
+        default void xyw(final double x, final double y, final double w) {
             x(x);
             y(y);
             w(w);
         }
 
-        default void xwz(double x, double w, double z) {
-            x(x);
-            z(z);
-            w(w);
-        }
-
-        default void yxz(double y, double x, double z) {
+        default void xzy(final double x, final double z, final double y) {
             x(x);
             y(y);
             z(z);
         }
 
-        default void yxw(double y, double x, double w) {
-            x(x);
-            y(y);
-            w(w);
-        }
-
-        default void yzx(double y, double z, double x) {
-            x(x);
-            y(y);
-            z(z);
-        }
-
-        default void yzw(double y, double z, double w) {
-            y(y);
-            z(z);
-            w(w);
-        }
-
-        default void ywx(double y, double w, double x) {
-            x(x);
-            y(y);
-            w(w);
-        }
-
-        default void ywz(double y, double w, double z) {
-            y(y);
-            z(z);
-            w(w);
-        }
-
-        default void zxy(double z, double x, double y) {
-            x(x);
-            y(y);
-            z(z);
-        }
-
-        default void zxw(double z, double x, double w) {
+        default void xzw(final double x, final double z, final double w) {
             x(x);
             z(z);
             w(w);
         }
 
-        default void zyx(double z, double y, double x) {
-            x(x);
-            y(y);
-            z(z);
-        }
-
-        default void zyw(double z, double y, double w) {
-            y(y);
-            z(z);
-            w(w);
-        }
-
-        default void zwx(double z, double w, double x) {
-            x(x);
-            z(z);
-            w(w);
-        }
-
-        default void zwy(double z, double w, double y) {
-            y(y);
-            z(z);
-            w(w);
-        }
-
-        default void wxy(double w, double x, double y) {
+        default void xwy(final double x, final double w, final double y) {
             x(x);
             y(y);
             w(w);
         }
 
-        default void wxz(double w, double x, double z) {
+        default void xwz(final double x, final double w, final double z) {
             x(x);
             z(z);
             w(w);
         }
 
-        default void wyx(double w, double y, double x) {
+        default void yxz(final double y, final double x, final double z) {
+            x(x);
+            y(y);
+            z(z);
+        }
+
+        default void yxw(final double y, final double x, final double w) {
             x(x);
             y(y);
             w(w);
         }
 
-        default void wyz(double w, double y, double z) {
+        default void yzx(final double y, final double z, final double x) {
+            x(x);
+            y(y);
+            z(z);
+        }
+
+        default void yzw(final double y, final double z, final double w) {
             y(y);
             z(z);
             w(w);
         }
 
-        default void wzx(double w, double z, double x) {
+        default void ywx(final double y, final double w, final double x) {
+            x(x);
+            y(y);
+            w(w);
+        }
+
+        default void ywz(final double y, final double w, final double z) {
+            y(y);
+            z(z);
+            w(w);
+        }
+
+        default void zxy(final double z, final double x, final double y) {
+            x(x);
+            y(y);
+            z(z);
+        }
+
+        default void zxw(final double z, final double x, final double w) {
             x(x);
             z(z);
             w(w);
         }
 
-        default void wzy(double w, double z, double y) {
+        default void zyx(final double z, final double y, final double x) {
+            x(x);
+            y(y);
+            z(z);
+        }
+
+        default void zyw(final double z, final double y, final double w) {
+            y(y);
+            z(z);
+            w(w);
+        }
+
+        default void zwx(final double z, final double w, final double x) {
+            x(x);
+            z(z);
+            w(w);
+        }
+
+        default void zwy(final double z, final double w, final double y) {
+            y(y);
+            z(z);
+            w(w);
+        }
+
+        default void wxy(final double w, final double x, final double y) {
+            x(x);
+            y(y);
+            w(w);
+        }
+
+        default void wxz(final double w, final double x, final double z) {
+            x(x);
+            z(z);
+            w(w);
+        }
+
+        default void wyx(final double w, final double y, final double x) {
+            x(x);
+            y(y);
+            w(w);
+        }
+
+        default void wyz(final double w, final double y, final double z) {
+            y(y);
+            z(z);
+            w(w);
+        }
+
+        default void wzx(final double w, final double z, final double x) {
+            x(x);
+            z(z);
+            w(w);
+        }
+
+        default void wzy(final double w, final double z, final double y) {
             y(y);
             z(z);
             w(w);
         }
 
         @Override
-        default void xyzw(double x, double y, double z, double w) {
+        default void xyzw(final double x, final double y, final double z, final double w) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void xywz(double x, double y, double w, double z) {
+        default void xywz(final double x, final double y, final double w, final double z) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void xzyw(double x, double z, double y, double w) {
+        default void xzyw(final double x, final double z, final double y, final double w) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void xzwy(double x, double z, double w, double y) {
+        default void xzwy(final double x, final double z, final double w, final double y) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void xwyz(double x, double w, double y, double z) {
+        default void xwyz(final double x, final double w, final double y, final double z) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void xwzy(double x, double w, double z, double y) {
+        default void xwzy(final double x, final double w, final double z, final double y) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void yxzw(double y, double x, double z, double w) {
+        default void yxzw(final double y, final double x, final double z, final double w) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void yxwz(double y, double x, double w, double z) {
+        default void yxwz(final double y, final double x, final double w, final double z) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void yzxw(double y, double z, double x, double w) {
+        default void yzxw(final double y, final double z, final double x, final double w) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void yzwx(double y, double z, double w, double x) {
+        default void yzwx(final double y, final double z, final double w, final double x) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void ywxz(double y, double w, double x, double z) {
+        default void ywxz(final double y, final double w, final double x, final double z) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void ywzx(double y, double w, double z, double x) {
+        default void ywzx(final double y, final double w, final double z, final double x) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void zxyw(double z, double x, double y, double w) {
+        default void zxyw(final double z, final double x, final double y, final double w) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void zxwy(double z, double x, double w, double y) {
+        default void zxwy(final double z, final double x, final double w, final double y) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void zyxw(double z, double y, double x, double w) {
+        default void zyxw(final double z, final double y, final double x, final double w) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void zywx(double z, double y, double w, double x) {
+        default void zywx(final double z, final double y, final double w, final double x) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void zwxy(double z, double w, double x, double y) {
+        default void zwxy(final double z, final double w, final double x, final double y) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void zwyx(double z, double w, double y, double x) {
+        default void zwyx(final double z, final double w, final double y, final double x) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void wxyz(double w, double x, double y, double z) {
+        default void wxyz(final double w, final double x, final double y, final double z) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void wxzy(double w, double x, double z, double y) {
+        default void wxzy(final double w, final double x, final double z, final double y) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void wyxz(double w, double y, double x, double z) {
+        default void wyxz(final double w, final double y, final double x, final double z) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void wyzx(double w, double y, double z, double x) {
+        default void wyzx(final double w, final double y, final double z, final double x) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void wzxy(double w, double z, double x, double y) {
+        default void wzxy(final double w, final double z, final double x, final double y) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void wzyx(double w, double z, double y, double x) {
+        default void wzyx(final double w, final double z, final double y, final double x) {
             x(x);
             y(y);
             z(z);
             w(w);
         }
 
-        default void xy(Vector2.Accessible v) {
+        default void xy(final Vector2.Accessible v) {
             xy(v.x(), v.y());
         }
 
-        default void xz(Vector2.Accessible v) {
+        default void xz(final Vector2.Accessible v) {
             xz(v.x(), v.y());
         }
 
-        default void xw(Vector2.Accessible v) {
+        default void xw(final Vector2.Accessible v) {
             xw(v.x(), v.y());
         }
 
-        default void yx(Vector2.Accessible v) {
+        default void yx(final Vector2.Accessible v) {
             yx(v.x(), v.y());
         }
 
-        default void yz(Vector2.Accessible v) {
+        default void yz(final Vector2.Accessible v) {
             yz(v.x(), v.y());
         }
 
-        default void yw(Vector2.Accessible v) {
+        default void yw(final Vector2.Accessible v) {
             yw(v.x(), v.y());
         }
 
-        default void zx(Vector2.Accessible v) {
+        default void zx(final Vector2.Accessible v) {
             zx(v.x(), v.y());
         }
 
-        default void zy(Vector2.Accessible v) {
+        default void zy(final Vector2.Accessible v) {
             zy(v.x(), v.y());
         }
 
-        default void zw(Vector2.Accessible v) {
+        default void zw(final Vector2.Accessible v) {
             zw(v.x(), v.y());
         }
 
-        default void wx(Vector2.Accessible v) {
+        default void wx(final Vector2.Accessible v) {
             wx(v.x(), v.y());
         }
 
-        default void wy(Vector2.Accessible v) {
+        default void wy(final Vector2.Accessible v) {
             wy(v.x(), v.y());
         }
 
-        default void wz(Vector2.Accessible v) {
+        default void wz(final Vector2.Accessible v) {
             wz(v.x(), v.y());
         }
 
-        default void xyz(Vector3.Accessible v) {
+        default void xyz(final Vector3.Accessible v) {
             xyz(v.x(), v.y(), v.z());
         }
 
-        default void xyw(Vector3.Accessible v) {
+        default void xyw(final Vector3.Accessible v) {
             xyw(v.x(), v.y(), v.z());
         }
 
-        default void xzy(Vector3.Accessible v) {
+        default void xzy(final Vector3.Accessible v) {
             xzy(v.x(), v.y(), v.z());
         }
 
-        default void xzw(Vector3.Accessible v) {
+        default void xzw(final Vector3.Accessible v) {
             xzw(v.x(), v.y(), v.z());
         }
 
-        default void xwy(Vector3.Accessible v) {
+        default void xwy(final Vector3.Accessible v) {
             xwy(v.x(), v.y(), v.z());
         }
 
-        default void xwz(Vector3.Accessible v) {
+        default void xwz(final Vector3.Accessible v) {
             xwz(v.x(), v.y(), v.z());
         }
 
-        default void yxz(Vector3.Accessible v) {
+        default void yxz(final Vector3.Accessible v) {
             yxz(v.x(), v.y(), v.z());
         }
 
-        default void yxw(Vector3.Accessible v) {
+        default void yxw(final Vector3.Accessible v) {
             yxw(v.x(), v.y(), v.z());
         }
 
-        default void yzx(Vector3.Accessible v) {
+        default void yzx(final Vector3.Accessible v) {
             yzx(v.x(), v.y(), v.z());
         }
 
-        default void yzw(Vector3.Accessible v) {
+        default void yzw(final Vector3.Accessible v) {
             yzw(v.x(), v.y(), v.z());
         }
 
-        default void ywx(Vector3.Accessible v) {
+        default void ywx(final Vector3.Accessible v) {
             ywx(v.x(), v.y(), v.z());
         }
 
-        default void ywz(Vector3.Accessible v) {
+        default void ywz(final Vector3.Accessible v) {
             ywz(v.x(), v.y(), v.z());
         }
 
-        default void zxy(Vector3.Accessible v) {
+        default void zxy(final Vector3.Accessible v) {
             zxy(v.x(), v.y(), v.z());
         }
 
-        default void zxw(Vector3.Accessible v) {
+        default void zxw(final Vector3.Accessible v) {
             zxw(v.x(), v.y(), v.z());
         }
 
-        default void zyx(Vector3.Accessible v) {
+        default void zyx(final Vector3.Accessible v) {
             zyx(v.x(), v.y(), v.z());
         }
 
-        default void zyw(Vector3.Accessible v) {
+        default void zyw(final Vector3.Accessible v) {
             zyw(v.x(), v.y(), v.z());
         }
 
-        default void zwx(Vector3.Accessible v) {
+        default void zwx(final Vector3.Accessible v) {
             zwx(v.x(), v.y(), v.z());
         }
 
-        default void zwy(Vector3.Accessible v) {
+        default void zwy(final Vector3.Accessible v) {
             zwy(v.x(), v.y(), v.z());
         }
 
-        default void wxy(Vector3.Accessible v) {
+        default void wxy(final Vector3.Accessible v) {
             wxy(v.x(), v.y(), v.z());
         }
 
-        default void wxz(Vector3.Accessible v) {
+        default void wxz(final Vector3.Accessible v) {
             wxz(v.x(), v.y(), v.z());
         }
 
-        default void wyx(Vector3.Accessible v) {
+        default void wyx(final Vector3.Accessible v) {
             wyx(v.x(), v.y(), v.z());
         }
 
-        default void wyz(Vector3.Accessible v) {
+        default void wyz(final Vector3.Accessible v) {
             wyz(v.x(), v.y(), v.z());
         }
 
-        default void wzx(Vector3.Accessible v) {
+        default void wzx(final Vector3.Accessible v) {
             wzx(v.x(), v.y(), v.z());
         }
 
-        default void wzy(Vector3.Accessible v) {
+        default void wzy(final Vector3.Accessible v) {
             wzy(v.x(), v.y(), v.z());
         }
 
-        default void xyzw(Vector4.Accessible v) {
+        default void xyzw(final Vector4.Accessible v) {
             xyzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void xywz(Vector4.Accessible v) {
+        default void xywz(final Vector4.Accessible v) {
             xywz(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void xzyw(Vector4.Accessible v) {
+        default void xzyw(final Vector4.Accessible v) {
             xzyw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void xzwy(Vector4.Accessible v) {
+        default void xzwy(final Vector4.Accessible v) {
             xzwy(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void xwyz(Vector4.Accessible v) {
+        default void xwyz(final Vector4.Accessible v) {
             xwyz(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void xwzy(Vector4.Accessible v) {
+        default void xwzy(final Vector4.Accessible v) {
             xwzy(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void yxzw(Vector4.Accessible v) {
+        default void yxzw(final Vector4.Accessible v) {
             yxzw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void yxwz(Vector4.Accessible v) {
+        default void yxwz(final Vector4.Accessible v) {
             yxwz(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void yzxw(Vector4.Accessible v) {
+        default void yzxw(final Vector4.Accessible v) {
             yzxw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void yzwx(Vector4.Accessible v) {
+        default void yzwx(final Vector4.Accessible v) {
             yzwx(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void ywxz(Vector4.Accessible v) {
+        default void ywxz(final Vector4.Accessible v) {
             ywxz(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void ywzx(Vector4.Accessible v) {
+        default void ywzx(final Vector4.Accessible v) {
             ywzx(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zxyw(Vector4.Accessible v) {
+        default void zxyw(final Vector4.Accessible v) {
             zxyw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zxwy(Vector4.Accessible v) {
+        default void zxwy(final Vector4.Accessible v) {
             zxwy(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zyxw(Vector4.Accessible v) {
+        default void zyxw(final Vector4.Accessible v) {
             zyxw(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zywx(Vector4.Accessible v) {
+        default void zywx(final Vector4.Accessible v) {
             zywx(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zwxy(Vector4.Accessible v) {
+        default void zwxy(final Vector4.Accessible v) {
             zwxy(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void zwyx(Vector4.Accessible v) {
+        default void zwyx(final Vector4.Accessible v) {
             zwyx(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wxyz(Vector4.Accessible v) {
+        default void wxyz(final Vector4.Accessible v) {
             wxyz(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wxzy(Vector4.Accessible v) {
+        default void wxzy(final Vector4.Accessible v) {
             wxzy(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wyxz(Vector4.Accessible v) {
+        default void wyxz(final Vector4.Accessible v) {
             wyxz(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wyzx(Vector4.Accessible v) {
+        default void wyzx(final Vector4.Accessible v) {
             wyzx(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wzxy(Vector4.Accessible v) {
+        default void wzxy(final Vector4.Accessible v) {
             wzxy(v.x(), v.y(), v.z(), v.w());
         }
 
-        default void wzyx(Vector4.Accessible v) {
+        default void wzyx(final Vector4.Accessible v) {
             wzyx(v.x(), v.y(), v.z(), v.w());
         }
 

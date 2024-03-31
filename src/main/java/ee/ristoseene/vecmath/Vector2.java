@@ -258,6 +258,7 @@ public final class Vector2 {
             xy(v, v);
         }
 
+        @Override
         default void xy(double x, double y) {
             x(x);
             y(y);

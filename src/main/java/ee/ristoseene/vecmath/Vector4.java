@@ -2970,6 +2970,7 @@ public final class Vector4 {
             w(w);
         }
 
+        @Override
         default void xyzw(double x, double y, double z, double w) {
             x(x);
             y(y);

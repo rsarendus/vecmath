@@ -1014,6 +1014,7 @@ public final class Vector3 {
             z(z);
         }
 
+        @Override
         default void xyz(double x, double y, double z) {
             x(x);
             y(y);

@@ -357,190 +357,135 @@ public final class Matrix3x3 {
         void Zz(double Zz);
 
         default void Xxy(double v) {
-            Xx(v);
-            Xy(v);
+            Xxy(v, v);
         }
 
         default void Xxz(double v) {
-            Xx(v);
-            Xz(v);
+            Xxz(v, v);
         }
 
         default void Xyz(double v) {
-            Xy(v);
-            Xz(v);
+            Xyz(v, v);
         }
 
         default void Xxyz(double v) {
-            Xx(v);
-            Xy(v);
-            Xz(v);
+            Xxyz(v, v, v);
         }
 
         default void Yxy(double v) {
-            Yx(v);
-            Yy(v);
+            Yxy(v, v);
         }
 
         default void Yxz(double v) {
-            Yx(v);
-            Yz(v);
+            Yxz(v, v);
         }
 
         default void Yyz(double v) {
-            Yy(v);
-            Yz(v);
+            Yyz(v, v);
         }
 
         default void Yxyz(double v) {
-            Yx(v);
-            Yy(v);
-            Yz(v);
+            Yxyz(v, v, v);
         }
 
         default void Zxy(double v) {
-            Zx(v);
-            Zy(v);
+            Zxy(v, v);
         }
 
         default void Zxz(double v) {
-            Zx(v);
-            Zz(v);
+            Zxz(v, v);
         }
 
         default void Zyz(double v) {
-            Zy(v);
-            Zz(v);
+            Zyz(v, v);
         }
 
         default void Zxyz(double v) {
-            Zx(v);
-            Zy(v);
-            Zz(v);
+            Zxyz(v, v, v);
         }
 
         default void xXY(double v) {
-            Xx(v);
-            Yx(v);
+            xXY(v, v);
         }
 
         default void xXZ(double v) {
-            Xx(v);
-            Zx(v);
+            xXZ(v, v);
         }
 
         default void xYZ(double v) {
-            Yx(v);
-            Zx(v);
+            xYZ(v, v);
         }
 
         default void xXYZ(double v) {
-            Xx(v);
-            Yx(v);
-            Zx(v);
+            xXYZ(v, v, v);
         }
 
         default void yXY(double v) {
-            Xy(v);
-            Yy(v);
+            yXY(v, v);
         }
 
         default void yXZ(double v) {
-            Xy(v);
-            Zy(v);
+            yXZ(v, v);
         }
 
         default void yYZ(double v) {
-            Yy(v);
-            Zy(v);
+            yYZ(v, v);
         }
 
         default void yXYZ(double v) {
-            Xy(v);
-            Yy(v);
-            Zy(v);
+            yXYZ(v, v, v);
         }
 
         default void zXY(double v) {
-            Xz(v);
-            Yz(v);
+            zXY(v, v);
         }
 
         default void zXZ(double v) {
-            Xz(v);
-            Zz(v);
+            zXZ(v, v);
         }
 
         default void zYZ(double v) {
-            Yz(v);
-            Zz(v);
+            zYZ(v, v);
         }
 
         default void zXYZ(double v) {
-            Xz(v);
-            Yz(v);
-            Zz(v);
+            zXYZ(v, v, v);
         }
 
         default void Dxy(double v) {
-            Xx(v);
-            Yy(v);
+            Dxy(v, v);
         }
 
         default void Dxz(double v) {
-            Xx(v);
-            Zz(v);
+            Dxz(v, v);
         }
 
         default void Dyz(double v) {
-            Yy(v);
-            Zz(v);
+            Dyz(v, v);
         }
 
         default void Dxyz(double v) {
-            Xx(v);
-            Yy(v);
-            Zz(v);
+            Dxyz(v, v, v);
         }
 
         default void XYxy(double v) {
-            Xx(v);
-            Xy(v);
-            Yx(v);
-            Yy(v);
+            XYxy(v, v, v, v);
         }
 
         default void XYyz(double v) {
-            Xy(v);
-            Xz(v);
-            Yy(v);
-            Yz(v);
+            XYyz(v, v, v, v);
         }
 
         default void YZxy(double v) {
-            Yx(v);
-            Yy(v);
-            Zx(v);
-            Zy(v);
+            YZxy(v, v, v, v);
         }
 
         default void YZyz(double v) {
-            Yy(v);
-            Yz(v);
-            Zy(v);
-            Zz(v);
+            YZyz(v, v, v, v);
         }
 
         default void XYZxyz(double v) {
-            Xx(v);
-            Xy(v);
-            Xz(v);
-            Yx(v);
-            Yy(v);
-            Yz(v);
-            Zx(v);
-            Zy(v);
-            Zz(v);
+            XYZxyz(v, v, v, v, v, v, v, v, v);
         }
 
         default void Xxy(double Xx, double Xy) {

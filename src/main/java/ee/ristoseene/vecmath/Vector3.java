@@ -969,24 +969,19 @@ public final class Vector3 {
         void z(double z);
 
         default void xy(double v) {
-            x(v);
-            y(v);
+            xy(v, v);
         }
 
         default void xz(double v) {
-            x(v);
-            z(v);
+            xz(v, v);
         }
 
         default void yz(double v) {
-            y(v);
-            z(v);
+            yz(v, v);
         }
 
         default void xyz(double v) {
-            x(v);
-            y(v);
-            z(v);
+            xyz(v, v, v);
         }
 
         default void xy(double x, double y) {

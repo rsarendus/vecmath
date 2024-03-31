@@ -97,35 +97,27 @@ public final class Matrix2x2 {
         void Yy(double Yy);
 
         default void Xxy(double v) {
-            Xx(v);
-            Xy(v);
+            Xxy(v, v);
         }
 
         default void Yxy(double v) {
-            Yx(v);
-            Yy(v);
+            Yxy(v, v);
         }
 
         default void xXY(double v) {
-            Xx(v);
-            Yx(v);
+            xXY(v, v);
         }
 
         default void yXY(double v) {
-            Xy(v);
-            Yy(v);
+            yXY(v, v);
         }
 
         default void Dxy(double v) {
-            Xx(v);
-            Yy(v);
+            Dxy(v, v);
         }
 
         default void XYxy(double v) {
-            Xx(v);
-            Xy(v);
-            Yx(v);
-            Yy(v);
+            XYxy(v, v, v, v);
         }
 
         default void Xxy(double Xx, double Xy) {

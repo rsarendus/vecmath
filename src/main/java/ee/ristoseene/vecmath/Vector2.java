@@ -255,8 +255,7 @@ public final class Vector2 {
         void y(double y);
 
         default void xy(double v) {
-            x(v);
-            y(v);
+            xy(v, v);
         }
 
         default void xy(double x, double y) {

@@ -2723,64 +2723,47 @@ public final class Vector4 {
         void w(double w);
 
         default void xy(double v) {
-            x(v);
-            y(v);
+            xy(v, v);
         }
 
         default void xz(double v) {
-            x(v);
-            z(v);
+            xz(v, v);
         }
 
         default void xw(double v) {
-            x(v);
-            w(v);
+            xw(v, v);
         }
 
         default void yz(double v) {
-            y(v);
-            z(v);
+            yz(v, v);
         }
 
         default void yw(double v) {
-            y(v);
-            w(v);
+            yw(v, v);
         }
 
         default void zw(double v) {
-            z(v);
-            w(v);
+            zw(v, v);
         }
 
         default void xyz(double v) {
-            x(v);
-            y(v);
-            z(v);
+            xyz(v, v, v);
         }
 
         default void xyw(double v) {
-            x(v);
-            y(v);
-            w(v);
+            xyw(v, v, v);
         }
 
         default void xzw(double v) {
-            x(v);
-            z(v);
-            w(v);
+            xzw(v, v, v);
         }
 
         default void yzw(double v) {
-            y(v);
-            z(v);
-            w(v);
+            yzw(v, v, v);
         }
 
         default void xyzw(double v) {
-            x(v);
-            y(v);
-            z(v);
-            w(v);
+            xyzw(v, v, v, v);
         }
 
         default void xy(double x, double y) {

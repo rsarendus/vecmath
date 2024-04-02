@@ -3387,32 +3387,6 @@ public final class VecMath {
         );
     }
 
-    public static <R> R transformPosition(final Matrix4x4.Accessible transformationMatrix, final Vector3.Accessible position, final Vector4.Factory<R> factory) {
-        final double x = position.x();
-        final double y = position.y();
-        final double z = position.z();
-
-        return factory.create(
-                transformationMatrix.Xx() * x + transformationMatrix.Yx() * y + transformationMatrix.Zx() * z + transformationMatrix.Tx(),
-                transformationMatrix.Xy() * x + transformationMatrix.Yy() * y + transformationMatrix.Zy() * z + transformationMatrix.Ty(),
-                transformationMatrix.Xz() * x + transformationMatrix.Yz() * y + transformationMatrix.Zz() * z + transformationMatrix.Tz(),
-                transformationMatrix.Xw() * x + transformationMatrix.Yw() * y + transformationMatrix.Zw() * z + transformationMatrix.Tw()
-        );
-    }
-
-    public static void transformPositionTo(final Matrix4x4.Accessible transformationMatrix, final Vector3.Accessible position, final Vector4.Consumer consumer) {
-        final double x = position.x();
-        final double y = position.y();
-        final double z = position.z();
-
-        consumer.xyzw(
-                transformationMatrix.Xx() * x + transformationMatrix.Yx() * y + transformationMatrix.Zx() * z + transformationMatrix.Tx(),
-                transformationMatrix.Xy() * x + transformationMatrix.Yy() * y + transformationMatrix.Zy() * z + transformationMatrix.Ty(),
-                transformationMatrix.Xz() * x + transformationMatrix.Yz() * y + transformationMatrix.Zz() * z + transformationMatrix.Tz(),
-                transformationMatrix.Xw() * x + transformationMatrix.Yw() * y + transformationMatrix.Zw() * z + transformationMatrix.Tw()
-        );
-    }
-
     public static <R> R project(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();

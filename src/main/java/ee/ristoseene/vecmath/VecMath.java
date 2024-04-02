@@ -2325,6 +2325,30 @@ public final class VecMath {
         );
     }
 
+    public static <R> R asMatrix(final double angle, final Matrix2x2.Factory<R> factory) {
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+
+        return factory.create(
+                cos,
+                sin,
+                -sin,
+                cos
+        );
+    }
+
+    public static void asMatrixTo(final double angle, final Matrix2x2.Consumer consumer) {
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+
+        consumer.XYxy(
+                cos,
+                sin,
+                -sin,
+                cos
+        );
+    }
+
     public static <R> R negate(final Matrix2x2.Accessible matrix, final Matrix2x2.Factory<R> factory) {
         return factory.create(
                 -matrix.Xx(),
@@ -2520,6 +2544,132 @@ public final class VecMath {
         consumer.xy(
                 m.Xx() * x + m.Yx() * y,
                 m.Xy() * x + m.Yy() * y
+        );
+    }
+
+    public static <R> R asMatrix(final Vector3.Accessible axis, final double angle, final Matrix3x3.Factory<R> factory) {
+        final double x = axis.x();
+        final double y = axis.y();
+        final double z = axis.z();
+
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+        final double oneMinusCos = 1.0D - cos;
+
+        final double xSin = x * sin;
+        final double ySin = y * sin;
+        final double zSin = z * sin;
+
+        final double cxy = oneMinusCos * x * y;
+        final double cxz = oneMinusCos * x * z;
+        final double cyz = oneMinusCos * y * z;
+
+        return factory.create(
+                oneMinusCos * x * x + cos,
+                cxy + zSin,
+                cxz - ySin,
+                cxy - zSin,
+                oneMinusCos * y * y + cos,
+                cyz + xSin,
+                cxz + ySin,
+                cyz - xSin,
+                oneMinusCos * z * z + cos
+        );
+    }
+
+    public static void asMatrixTo(final Vector3.Accessible axis, final double angle, final Matrix3x3.Consumer consumer) {
+        final double x = axis.x();
+        final double y = axis.y();
+        final double z = axis.z();
+
+        final double cos = Math.cos(angle);
+        final double sin = Math.sin(angle);
+        final double oneMinusCos = 1.0D - cos;
+
+        final double xSin = x * sin;
+        final double ySin = y * sin;
+        final double zSin = z * sin;
+
+        final double cxy = oneMinusCos * x * y;
+        final double cxz = oneMinusCos * x * z;
+        final double cyz = oneMinusCos * y * z;
+
+        consumer.XYZxyz(
+                oneMinusCos * x * x + cos,
+                cxy + zSin,
+                cxz - ySin,
+                cxy - zSin,
+                oneMinusCos * y * y + cos,
+                cyz + xSin,
+                cxz + ySin,
+                cyz - xSin,
+                oneMinusCos * z * z + cos
+        );
+    }
+
+    public static <R> R asMatrix(final Vector4.Accessible quaternion, final Matrix3x3.Factory<R> factory) {
+        final double x = quaternion.x();
+        final double y = quaternion.y();
+        final double z = quaternion.z();
+        final double w = quaternion.w();
+
+        final double x2 = x + x;
+        final double y2 = y + y;
+        final double z2 = z + z;
+
+        final double xx2 = x * x2;
+        final double yx2 = y * x2;
+        final double yy2 = y * y2;
+        final double zx2 = z * x2;
+        final double zy2 = z * y2;
+        final double zz2 = z * z2;
+        final double wx2 = w * x2;
+        final double wy2 = w * y2;
+        final double wz2 = w * z2;
+
+        return factory.create(
+                1.0D - yy2 - zz2,
+                yx2 + wz2,
+                zx2 - wy2,
+                yx2 - wz2,
+                1.0D - xx2 - zz2,
+                zy2 + wx2,
+                zx2 + wy2,
+                zy2 - wx2,
+                1.0D - xx2 - yy2
+        );
+    }
+
+    public static void asMatrixTo(final Vector4.Accessible quaternion, final Matrix3x3.Consumer consumer) {
+        final double x = quaternion.x();
+        final double y = quaternion.y();
+        final double z = quaternion.z();
+        final double w = quaternion.w();
+
+        final double x2 = x + x;
+        final double y2 = y + y;
+        final double z2 = z + z;
+
+        final double xx2 = x * x2;
+        final double yx2 = y * x2;
+        final double yy2 = y * y2;
+        final double zx2 = z * x2;
+        final double zy2 = z * y2;
+        final double zz2 = z * z2;
+        final double wx2 = w * x2;
+        final double wy2 = w * y2;
+        final double wz2 = w * z2;
+
+        consumer.XYZxyz(
+                1.0D - yy2 - zz2,
+                yx2 + wz2,
+                zx2 - wy2,
+                yx2 - wz2,
+                1.0D - xx2 - zz2,
+                zy2 + wx2,
+                zx2 + wy2,
+                zy2 - wx2,
+                1.0D - xx2 - yy2
         );
     }
 
@@ -3415,30 +3565,6 @@ public final class VecMath {
         );
     }
 
-    public static <R> R asMatrix(final double angle, final Matrix2x2.Factory<R> factory) {
-        final double cos = Math.cos(angle);
-        final double sin = Math.sin(angle);
-
-        return factory.create(
-                cos,
-                sin,
-                -sin,
-                cos
-        );
-    }
-
-    public static void asMatrixTo(final double angle, final Matrix2x2.Consumer consumer) {
-        final double cos = Math.cos(angle);
-        final double sin = Math.sin(angle);
-
-        consumer.XYxy(
-                cos,
-                sin,
-                -sin,
-                cos
-        );
-    }
-
     public static <R> R asQuaternion(final Vector3.Accessible axis, final double angle, final Vector4.Factory<R> factory) {
         final double halfAngle = angle * 0.5D;
         final double sin = Math.sin(halfAngle);
@@ -3460,132 +3586,6 @@ public final class VecMath {
                 axis.y() * sin,
                 axis.z() * sin,
                 Math.cos(halfAngle)
-        );
-    }
-
-    public static <R> R asMatrix(final Vector3.Accessible axis, final double angle, final Matrix3x3.Factory<R> factory) {
-        final double x = axis.x();
-        final double y = axis.y();
-        final double z = axis.z();
-
-        final double cos = Math.cos(angle);
-        final double sin = Math.sin(angle);
-        final double oneMinusCos = 1.0D - cos;
-
-        final double xSin = x * sin;
-        final double ySin = y * sin;
-        final double zSin = z * sin;
-
-        final double cxy = oneMinusCos * x * y;
-        final double cxz = oneMinusCos * x * z;
-        final double cyz = oneMinusCos * y * z;
-
-        return factory.create(
-                oneMinusCos * x * x + cos,
-                cxy + zSin,
-                cxz - ySin,
-                cxy - zSin,
-                oneMinusCos * y * y + cos,
-                cyz + xSin,
-                cxz + ySin,
-                cyz - xSin,
-                oneMinusCos * z * z + cos
-        );
-    }
-
-    public static void asMatrixTo(final Vector3.Accessible axis, final double angle, final Matrix3x3.Consumer consumer) {
-        final double x = axis.x();
-        final double y = axis.y();
-        final double z = axis.z();
-
-        final double cos = Math.cos(angle);
-        final double sin = Math.sin(angle);
-        final double oneMinusCos = 1.0D - cos;
-
-        final double xSin = x * sin;
-        final double ySin = y * sin;
-        final double zSin = z * sin;
-
-        final double cxy = oneMinusCos * x * y;
-        final double cxz = oneMinusCos * x * z;
-        final double cyz = oneMinusCos * y * z;
-
-        consumer.XYZxyz(
-                oneMinusCos * x * x + cos,
-                cxy + zSin,
-                cxz - ySin,
-                cxy - zSin,
-                oneMinusCos * y * y + cos,
-                cyz + xSin,
-                cxz + ySin,
-                cyz - xSin,
-                oneMinusCos * z * z + cos
-        );
-    }
-
-    public static <R> R asMatrix(final Vector4.Accessible quaternion, final Matrix3x3.Factory<R> factory) {
-        final double x = quaternion.x();
-        final double y = quaternion.y();
-        final double z = quaternion.z();
-        final double w = quaternion.w();
-
-        final double x2 = x + x;
-        final double y2 = y + y;
-        final double z2 = z + z;
-
-        final double xx2 = x * x2;
-        final double yx2 = y * x2;
-        final double yy2 = y * y2;
-        final double zx2 = z * x2;
-        final double zy2 = z * y2;
-        final double zz2 = z * z2;
-        final double wx2 = w * x2;
-        final double wy2 = w * y2;
-        final double wz2 = w * z2;
-
-        return factory.create(
-                1.0D - yy2 - zz2,
-                yx2 + wz2,
-                zx2 - wy2,
-                yx2 - wz2,
-                1.0D - xx2 - zz2,
-                zy2 + wx2,
-                zx2 + wy2,
-                zy2 - wx2,
-                1.0D - xx2 - yy2
-        );
-    }
-
-    public static void asMatrixTo(final Vector4.Accessible quaternion, final Matrix3x3.Consumer consumer) {
-        final double x = quaternion.x();
-        final double y = quaternion.y();
-        final double z = quaternion.z();
-        final double w = quaternion.w();
-
-        final double x2 = x + x;
-        final double y2 = y + y;
-        final double z2 = z + z;
-
-        final double xx2 = x * x2;
-        final double yx2 = y * x2;
-        final double yy2 = y * y2;
-        final double zx2 = z * x2;
-        final double zy2 = z * y2;
-        final double zz2 = z * z2;
-        final double wx2 = w * x2;
-        final double wy2 = w * y2;
-        final double wz2 = w * z2;
-
-        consumer.XYZxyz(
-                1.0D - yy2 - zz2,
-                yx2 + wz2,
-                zx2 - wy2,
-                yx2 - wz2,
-                1.0D - xx2 - zz2,
-                zy2 + wx2,
-                zx2 + wy2,
-                zy2 - wx2,
-                1.0D - xx2 - yy2
         );
     }
 

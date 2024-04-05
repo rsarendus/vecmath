@@ -847,12 +847,20 @@ public final class Matrix4x4 {
             consumer.XYxy(Xx(), Xy(), Yx(), Yy());
         }
 
-        default <R> R xyXY(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Xy(), Yy());
+        default <R> R XYxz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Yx(), Yz());
         }
 
-        default void xyXYto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Xx(), Yx(), Xy(), Yy());
+        default void XYxzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xz(), Yx(), Yz());
+        }
+
+        default <R> R XYxw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xw(), Yx(), Yw());
+        }
+
+        default void XYxwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xw(), Yx(), Yw());
         }
 
         default <R> R XYyz(final Matrix2x2.Factory<R> factory) {
@@ -863,12 +871,12 @@ public final class Matrix4x4 {
             consumer.XYxy(Xy(), Xz(), Yy(), Yz());
         }
 
-        default <R> R yzXY(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Xy(), Yy(), Xz(), Yz());
+        default <R> R XYyw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xw(), Yy(), Yw());
         }
 
-        default void yzXYto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Xy(), Yy(), Xz(), Yz());
+        default void XYywTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Xw(), Yy(), Yw());
         }
 
         default <R> R XYzw(final Matrix2x2.Factory<R> factory) {
@@ -879,12 +887,100 @@ public final class Matrix4x4 {
             consumer.XYxy(Xz(), Xw(), Yz(), Yw());
         }
 
-        default <R> R zwXY(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Xz(), Yz(), Xw(), Yw());
+        default <R> R XZxy(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Zx(), Zy());
         }
 
-        default void zwXYto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Xz(), Yz(), Xw(), Yw());
+        default void XZxyTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xy(), Zx(), Zy());
+        }
+
+        default <R> R XZxz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Zx(), Zz());
+        }
+
+        default void XZxzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xz(), Zx(), Zz());
+        }
+
+        default <R> R XZxw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xw(), Zx(), Zw());
+        }
+
+        default void XZxwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xw(), Zx(), Zw());
+        }
+
+        default <R> R XZyz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Zy(), Zz());
+        }
+
+        default void XZyzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Xz(), Zy(), Zz());
+        }
+
+        default <R> R XZyw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xw(), Zy(), Zw());
+        }
+
+        default void XZywTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Xw(), Zy(), Zw());
+        }
+
+        default <R> R XZzw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xz(), Xw(), Zz(), Zw());
+        }
+
+        default void XZzwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xz(), Xw(), Zz(), Zw());
+        }
+
+        default <R> R XTxy(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Tx(), Ty());
+        }
+
+        default void XTxyTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xy(), Tx(), Ty());
+        }
+
+        default <R> R XTxz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Tx(), Tz());
+        }
+
+        default void XTxzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xz(), Tx(), Tz());
+        }
+
+        default <R> R XTxw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Xw(), Tx(), Tw());
+        }
+
+        default void XTxwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Xw(), Tx(), Tw());
+        }
+
+        default <R> R XTyz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Ty(), Tz());
+        }
+
+        default void XTyzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Xz(), Ty(), Tz());
+        }
+
+        default <R> R XTyw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Xw(), Ty(), Tw());
+        }
+
+        default void XTywTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Xw(), Ty(), Tw());
+        }
+
+        default <R> R XTzw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xz(), Xw(), Tz(), Tw());
+        }
+
+        default void XTzwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xz(), Xw(), Tz(), Tw());
         }
 
         default <R> R YZxy(final Matrix2x2.Factory<R> factory) {
@@ -895,12 +991,20 @@ public final class Matrix4x4 {
             consumer.XYxy(Yx(), Yy(), Zx(), Zy());
         }
 
-        default <R> R xyYZ(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Yx(), Zx(), Yy(), Zy());
+        default <R> R YZxz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yz(), Zx(), Zz());
         }
 
-        default void xyYZto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Yx(), Zx(), Yy(), Zy());
+        default void YZxzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Yz(), Zx(), Zz());
+        }
+
+        default <R> R YZxw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yw(), Zx(), Zw());
+        }
+
+        default void YZxwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Yw(), Zx(), Zw());
         }
 
         default <R> R YZyz(final Matrix2x2.Factory<R> factory) {
@@ -911,12 +1015,12 @@ public final class Matrix4x4 {
             consumer.XYxy(Yy(), Yz(), Zy(), Zz());
         }
 
-        default <R> R yzYZ(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Yy(), Zy(), Yz(), Zz());
+        default <R> R YZyw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Yw(), Zy(), Zw());
         }
 
-        default void yzYZto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Yy(), Zy(), Yz(), Zz());
+        default void YZywTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Yw(), Zy(), Zw());
         }
 
         default <R> R YZzw(final Matrix2x2.Factory<R> factory) {
@@ -927,12 +1031,52 @@ public final class Matrix4x4 {
             consumer.XYxy(Yz(), Yw(), Zz(), Zw());
         }
 
-        default <R> R zwYZ(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Yz(), Zz(), Yw(), Zw());
+        default <R> R YTxy(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yy(), Tx(), Ty());
         }
 
-        default void zwYZto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Yz(), Zz(), Yw(), Zw());
+        default void YTxyTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Yy(), Tx(), Ty());
+        }
+
+        default <R> R YTxz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yz(), Tx(), Tz());
+        }
+
+        default void YTxzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Yz(), Tx(), Tz());
+        }
+
+        default <R> R YTxw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Yw(), Tx(), Tw());
+        }
+
+        default void YTxwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Yw(), Tx(), Tw());
+        }
+
+        default <R> R YTyz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Yz(), Ty(), Tz());
+        }
+
+        default void YTyzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Yz(), Ty(), Tz());
+        }
+
+        default <R> R YTyw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Yw(), Ty(), Tw());
+        }
+
+        default void YTywTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Yw(), Ty(), Tw());
+        }
+
+        default <R> R YTzw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yz(), Yw(), Tz(), Tw());
+        }
+
+        default void YTzwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yz(), Yw(), Tz(), Tw());
         }
 
         default <R> R ZTxy(final Matrix2x2.Factory<R> factory) {
@@ -943,12 +1087,20 @@ public final class Matrix4x4 {
             consumer.XYxy(Zx(), Zy(), Tx(), Ty());
         }
 
-        default <R> R xyZT(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Zx(), Tx(), Zy(), Ty());
+        default <R> R ZTxz(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zx(), Zz(), Tx(), Tz());
         }
 
-        default void xyZTto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Zx(), Tx(), Zy(), Ty());
+        default void ZTxzTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zx(), Zz(), Tx(), Tz());
+        }
+
+        default <R> R ZTxw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zx(), Zw(), Tx(), Tw());
+        }
+
+        default void ZTxwTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zx(), Zw(), Tx(), Tw());
         }
 
         default <R> R ZTyz(final Matrix2x2.Factory<R> factory) {
@@ -959,12 +1111,12 @@ public final class Matrix4x4 {
             consumer.XYxy(Zy(), Zz(), Ty(), Tz());
         }
 
-        default <R> R yzZT(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Zy(), Ty(), Zz(), Tz());
+        default <R> R ZTyw(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zy(), Zw(), Ty(), Tw());
         }
 
-        default void yzZTto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Zy(), Ty(), Zz(), Tz());
+        default void ZTywTo(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zy(), Zw(), Ty(), Tw());
         }
 
         default <R> R ZTzw(final Matrix2x2.Factory<R> factory) {
@@ -975,14 +1127,6 @@ public final class Matrix4x4 {
             consumer.XYxy(Zz(), Zw(), Tz(), Tw());
         }
 
-        default <R> R zwZT(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Zz(), Tz(), Zw(), Tw());
-        }
-
-        default void zwZTto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Zz(), Tz(), Zw(), Tw());
-        }
-
         default <R> R XYZxyz(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
@@ -991,12 +1135,20 @@ public final class Matrix4x4 {
             consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
-        default <R> R xyzXYZ(final Matrix3x3.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
+        default <R> R XYZxyw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xw(), Yx(), Yy(), Yw(), Zx(), Zy(), Zw());
         }
 
-        default void xyzXYZto(final Matrix3x3.Consumer consumer) {
-            consumer.XYZxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
+        default void XYZxywTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xw(), Yx(), Yy(), Yw(), Zx(), Zy(), Zw());
+        }
+
+        default <R> R XYZxzw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Xw(), Yx(), Yz(), Yw(), Zx(), Zz(), Zw());
+        }
+
+        default void XYZxzwTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xz(), Xw(), Yx(), Yz(), Yw(), Zx(), Zz(), Zw());
         }
 
         default <R> R XYZyzw(final Matrix3x3.Factory<R> factory) {
@@ -1007,12 +1159,68 @@ public final class Matrix4x4 {
             consumer.XYZxyz(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Zy(), Zz(), Zw());
         }
 
-        default <R> R yzwXYZ(final Matrix3x3.Factory<R> factory) {
-            return factory.create(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        default <R> R XYTxyz(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Tx(), Ty(), Tz());
         }
 
-        default void yzwXYZto(final Matrix3x3.Consumer consumer) {
-            consumer.XYZxyz(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        default void XYTxyzTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Tx(), Ty(), Tz());
+        }
+
+        default <R> R XYTxyw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xw(), Yx(), Yy(), Yw(), Tx(), Ty(), Tw());
+        }
+
+        default void XYTxywTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xw(), Yx(), Yy(), Yw(), Tx(), Ty(), Tw());
+        }
+
+        default <R> R XYTxzw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Xw(), Yx(), Yz(), Yw(), Tx(), Tz(), Tw());
+        }
+
+        default void XYTxzwTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xz(), Xw(), Yx(), Yz(), Yw(), Tx(), Tz(), Tw());
+        }
+
+        default <R> R XYTyzw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Ty(), Tz(), Tw());
+        }
+
+        default void XYTyzwTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Xz(), Xw(), Yy(), Yz(), Yw(), Ty(), Tz(), Tw());
+        }
+
+        default <R> R XZTxyz(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
+        }
+
+        default void XZTxyzTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
+        }
+
+        default <R> R XZTxyw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xy(), Xw(), Zx(), Zy(), Zw(), Tx(), Ty(), Tw());
+        }
+
+        default void XZTxywTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xy(), Xw(), Zx(), Zy(), Zw(), Tx(), Ty(), Tw());
+        }
+
+        default <R> R XZTxzw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Xw(), Zx(), Zz(), Zw(), Tx(), Tz(), Tw());
+        }
+
+        default void XZTxzwTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Xz(), Xw(), Zx(), Zz(), Zw(), Tx(), Tz(), Tw());
+        }
+
+        default <R> R XZTyzw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Xw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
+        }
+
+        default void XZTyzwTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Xz(), Xw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
         }
 
         default <R> R YZTxyz(final Matrix3x3.Factory<R> factory) {
@@ -1023,12 +1231,20 @@ public final class Matrix4x4 {
             consumer.XYZxyz(Yx(), Yy(), Yz(), Zx(), Zy(), Zz(), Tx(), Ty(), Tz());
         }
 
-        default <R> R xyzYZT(final Matrix3x3.Factory<R> factory) {
-            return factory.create(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
+        default <R> R YZTxyw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Yy(), Yw(), Zx(), Zy(), Zw(), Tx(), Ty(), Tw());
         }
 
-        default void xyzYZTto(final Matrix3x3.Consumer consumer) {
-            consumer.XYZxyz(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
+        default void YZTxywTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Yy(), Yw(), Zx(), Zy(), Zw(), Tx(), Ty(), Tw());
+        }
+
+        default <R> R YZTxzw(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Yz(), Yw(), Zx(), Zz(), Zw(), Tx(), Tz(), Tw());
+        }
+
+        default void YZTxzwTo(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Yz(), Yw(), Zx(), Zz(), Zw(), Tx(), Tz(), Tw());
         }
 
         default <R> R YZTyzw(final Matrix3x3.Factory<R> factory) {
@@ -1039,20 +1255,428 @@ public final class Matrix4x4 {
             consumer.XYZxyz(Yy(), Yz(), Yw(), Zy(), Zz(), Zw(), Ty(), Tz(), Tw());
         }
 
-        default <R> R yzwYZT(final Matrix3x3.Factory<R> factory) {
-            return factory.create(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
-        }
-
-        default void yzwYZTto(final Matrix3x3.Consumer consumer) {
-            consumer.XYZxyz(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
-        }
-
         default <R> R XYZTxyzw(final Matrix4x4.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
         }
 
         default void XYZTxyzwTo(final Matrix4x4.Consumer consumer) {
             consumer.XYZTxyzw(Xx(), Xy(), Xz(), Xw(), Yx(), Yy(), Yz(), Yw(), Zx(), Zy(), Zz(), Zw(), Tx(), Ty(), Tz(), Tw());
+        }
+
+        default <R> R xyXY(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xy(), Yy());
+        }
+
+        default void xyXYto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Yx(), Xy(), Yy());
+        }
+
+        default <R> R xyXZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Xy(), Zy());
+        }
+
+        default void xyXZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Zx(), Xy(), Zy());
+        }
+
+        default <R> R xyXT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Tx(), Xy(), Ty());
+        }
+
+        default void xyXTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Tx(), Xy(), Ty());
+        }
+
+        default <R> R xyYZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Yy(), Zy());
+        }
+
+        default void xyYZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Zx(), Yy(), Zy());
+        }
+
+        default <R> R xyYT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Tx(), Yy(), Ty());
+        }
+
+        default void xyYTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Tx(), Yy(), Ty());
+        }
+
+        default <R> R xyZT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zx(), Tx(), Zy(), Ty());
+        }
+
+        default void xyZTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zx(), Tx(), Zy(), Ty());
+        }
+
+        default <R> R xzXY(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xz(), Yz());
+        }
+
+        default void xzXYto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Yx(), Xz(), Yz());
+        }
+
+        default <R> R xzXZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Xz(), Zz());
+        }
+
+        default void xzXZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Zx(), Xz(), Zz());
+        }
+
+        default <R> R xzXT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Tx(), Xz(), Tz());
+        }
+
+        default void xzXTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Tx(), Xz(), Tz());
+        }
+
+        default <R> R xzYZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Yz(), Zz());
+        }
+
+        default void xzYZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Zx(), Yz(), Zz());
+        }
+
+        default <R> R xzYT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Tx(), Yz(), Tz());
+        }
+
+        default void xzYTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Tx(), Yz(), Tz());
+        }
+
+        default <R> R xzZT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zx(), Tx(), Zz(), Tz());
+        }
+
+        default void xzZTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zx(), Tx(), Zz(), Tz());
+        }
+
+        default <R> R xwXY(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xw(), Yw());
+        }
+
+        default void xwXYto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Yx(), Xw(), Yw());
+        }
+
+        default <R> R xwXZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Xw(), Zw());
+        }
+
+        default void xwXZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Zx(), Xw(), Zw());
+        }
+
+        default <R> R xwXT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xx(), Tx(), Xw(), Tw());
+        }
+
+        default void xwXTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xx(), Tx(), Xw(), Tw());
+        }
+
+        default <R> R xwYZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Yw(), Zw());
+        }
+
+        default void xwYZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Zx(), Yw(), Zw());
+        }
+
+        default <R> R xwYT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yx(), Tx(), Yw(), Tw());
+        }
+
+        default void xwYTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yx(), Tx(), Yw(), Tw());
+        }
+
+        default <R> R xwZT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zx(), Tx(), Zw(), Tw());
+        }
+
+        default void xwZTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zx(), Tx(), Zw(), Tw());
+        }
+
+        default <R> R yzXY(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Xz(), Yz());
+        }
+
+        default void yzXYto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Yy(), Xz(), Yz());
+        }
+
+        default <R> R yzXZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Zy(), Xz(), Zz());
+        }
+
+        default void yzXZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Zy(), Xz(), Zz());
+        }
+
+        default <R> R yzXT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Ty(), Xz(), Tz());
+        }
+
+        default void yzXTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Ty(), Xz(), Tz());
+        }
+
+        default <R> R yzYZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Zy(), Yz(), Zz());
+        }
+
+        default void yzYZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Zy(), Yz(), Zz());
+        }
+
+        default <R> R yzYT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Ty(), Yz(), Tz());
+        }
+
+        default void yzYTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Ty(), Yz(), Tz());
+        }
+
+        default <R> R yzZT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zy(), Ty(), Zz(), Tz());
+        }
+
+        default void yzZTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zy(), Ty(), Zz(), Tz());
+        }
+
+        default <R> R ywXY(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Xw(), Yw());
+        }
+
+        default void ywXYto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Yy(), Xw(), Yw());
+        }
+
+        default <R> R ywXZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Zy(), Xw(), Zw());
+        }
+
+        default void ywXZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Zy(), Xw(), Zw());
+        }
+
+        default <R> R ywXT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xy(), Ty(), Xw(), Tw());
+        }
+
+        default void ywXTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xy(), Ty(), Xw(), Tw());
+        }
+
+        default <R> R ywYZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Zy(), Yw(), Zw());
+        }
+
+        default void ywYZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Zy(), Yw(), Zw());
+        }
+
+        default <R> R ywYT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yy(), Ty(), Yw(), Tw());
+        }
+
+        default void ywYTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yy(), Ty(), Yw(), Tw());
+        }
+
+        default <R> R ywZT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zy(), Ty(), Zw(), Tw());
+        }
+
+        default void ywZTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zy(), Ty(), Zw(), Tw());
+        }
+
+        default <R> R zwXY(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xz(), Yz(), Xw(), Yw());
+        }
+
+        default void zwXYto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xz(), Yz(), Xw(), Yw());
+        }
+
+        default <R> R zwXZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xz(), Zz(), Xw(), Zw());
+        }
+
+        default void zwXZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xz(), Zz(), Xw(), Zw());
+        }
+
+        default <R> R zwXT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Xz(), Tz(), Xw(), Tw());
+        }
+
+        default void zwXTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Xz(), Tz(), Xw(), Tw());
+        }
+
+        default <R> R zwYZ(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yz(), Zz(), Yw(), Zw());
+        }
+
+        default void zwYZto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yz(), Zz(), Yw(), Zw());
+        }
+
+        default <R> R zwYT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Yz(), Tz(), Yw(), Tw());
+        }
+
+        default void zwYTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Yz(), Tz(), Yw(), Tw());
+        }
+
+        default <R> R zwZT(final Matrix2x2.Factory<R> factory) {
+            return factory.create(Zz(), Tz(), Zw(), Tw());
+        }
+
+        default void zwZTto(final Matrix2x2.Consumer consumer) {
+            consumer.XYxy(Zz(), Tz(), Zw(), Tw());
+        }
+
+        default <R> R xyzXYZ(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
+        }
+
+        default void xyzXYZto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
+        }
+
+        default <R> R xyzXYT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Tx(), Xy(), Yy(), Ty(), Xz(), Yz(), Tz());
+        }
+
+        default void xyzXYTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Tx(), Xy(), Yy(), Ty(), Xz(), Yz(), Tz());
+        }
+
+        default <R> R xyzXZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Tx(), Xy(), Zy(), Ty(), Xz(), Zz(), Tz());
+        }
+
+        default void xyzXZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Zx(), Tx(), Xy(), Zy(), Ty(), Xz(), Zz(), Tz());
+        }
+
+        default <R> R xyzYZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
+        }
+
+        default void xyzYZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yz(), Zz(), Tz());
+        }
+
+        default <R> R xywXYZ(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xw(), Yw(), Zw());
+        }
+
+        default void xywXYZto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xw(), Yw(), Zw());
+        }
+
+        default <R> R xywXYT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Tx(), Xy(), Yy(), Ty(), Xw(), Yw(), Tw());
+        }
+
+        default void xywXYTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Tx(), Xy(), Yy(), Ty(), Xw(), Yw(), Tw());
+        }
+
+        default <R> R xywXZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Tx(), Xy(), Zy(), Ty(), Xw(), Zw(), Tw());
+        }
+
+        default void xywXZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Zx(), Tx(), Xy(), Zy(), Ty(), Xw(), Zw(), Tw());
+        }
+
+        default <R> R xywYZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yw(), Zw(), Tw());
+        }
+
+        default void xywYZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Zx(), Tx(), Yy(), Zy(), Ty(), Yw(), Zw(), Tw());
+        }
+
+        default <R> R xzwXYZ(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        }
+
+        default void xzwXYZto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Zx(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        }
+
+        default <R> R xzwXYT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Tx(), Xz(), Yz(), Tz(), Xw(), Yw(), Tw());
+        }
+
+        default void xzwXYTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Yx(), Tx(), Xz(), Yz(), Tz(), Xw(), Yw(), Tw());
+        }
+
+        default <R> R xzwXZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Tx(), Xz(), Zz(), Tz(), Xw(), Zw(), Tw());
+        }
+
+        default void xzwXZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xx(), Zx(), Tx(), Xz(), Zz(), Tz(), Xw(), Zw(), Tw());
+        }
+
+        default <R> R xzwYZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Tx(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
+        }
+
+        default void xzwYZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yx(), Zx(), Tx(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
+        }
+
+        default <R> R yzwXYZ(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        }
+
+        default void yzwXYZto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Yy(), Zy(), Xz(), Yz(), Zz(), Xw(), Yw(), Zw());
+        }
+
+        default <R> R yzwXYT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Yy(), Ty(), Xz(), Yz(), Tz(), Xw(), Yw(), Tw());
+        }
+
+        default void yzwXYTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Yy(), Ty(), Xz(), Yz(), Tz(), Xw(), Yw(), Tw());
+        }
+
+        default <R> R yzwXZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Xy(), Zy(), Ty(), Xz(), Zz(), Tz(), Xw(), Zw(), Tw());
+        }
+
+        default void yzwXZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Xy(), Zy(), Ty(), Xz(), Zz(), Tz(), Xw(), Zw(), Tw());
+        }
+
+        default <R> R yzwYZT(final Matrix3x3.Factory<R> factory) {
+            return factory.create(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
+        }
+
+        default void yzwYZTto(final Matrix3x3.Consumer consumer) {
+            consumer.XYZxyz(Yy(), Zy(), Ty(), Yz(), Zz(), Tz(), Yw(), Zw(), Tw());
         }
 
         default <R> R xyzwXYZT(final Matrix4x4.Factory<R> factory) {
@@ -1484,32 +2108,140 @@ public final class Matrix4x4 {
             XYxy(v, v, v, v);
         }
 
+        default void XYxz(final double v) {
+            XYxz(v, v, v, v);
+        }
+
+        default void XYxw(final double v) {
+            XYxw(v, v, v, v);
+        }
+
         default void XYyz(final double v) {
             XYyz(v, v, v, v);
+        }
+
+        default void XYyw(final double v) {
+            XYyw(v, v, v, v);
         }
 
         default void XYzw(final double v) {
             XYzw(v, v, v, v);
         }
 
+        default void XZxy(final double v) {
+            XZxy(v, v, v, v);
+        }
+
+        default void XZxz(final double v) {
+            XZxz(v, v, v, v);
+        }
+
+        default void XZxw(final double v) {
+            XZxw(v, v, v, v);
+        }
+
+        default void XZyz(final double v) {
+            XZyz(v, v, v, v);
+        }
+
+        default void XZyw(final double v) {
+            XZyw(v, v, v, v);
+        }
+
+        default void XZzw(final double v) {
+            XZzw(v, v, v, v);
+        }
+
+        default void XTxy(final double v) {
+            XTxy(v, v, v, v);
+        }
+
+        default void XTxz(final double v) {
+            XTxz(v, v, v, v);
+        }
+
+        default void XTxw(final double v) {
+            XTxw(v, v, v, v);
+        }
+
+        default void XTyz(final double v) {
+            XTyz(v, v, v, v);
+        }
+
+        default void XTyw(final double v) {
+            XTyw(v, v, v, v);
+        }
+
+        default void XTzw(final double v) {
+            XTzw(v, v, v, v);
+        }
+
         default void YZxy(final double v) {
             YZxy(v, v, v, v);
+        }
+
+        default void YZxz(final double v) {
+            YZxz(v, v, v, v);
+        }
+
+        default void YZxw(final double v) {
+            YZxw(v, v, v, v);
         }
 
         default void YZyz(final double v) {
             YZyz(v, v, v, v);
         }
 
+        default void YZyw(final double v) {
+            YZyw(v, v, v, v);
+        }
+
         default void YZzw(final double v) {
             YZzw(v, v, v, v);
+        }
+
+        default void YTxy(final double v) {
+            YTxy(v, v, v, v);
+        }
+
+        default void YTxz(final double v) {
+            YTxz(v, v, v, v);
+        }
+
+        default void YTxw(final double v) {
+            YTxw(v, v, v, v);
+        }
+
+        default void YTyz(final double v) {
+            YTyz(v, v, v, v);
+        }
+
+        default void YTyw(final double v) {
+            YTyw(v, v, v, v);
+        }
+
+        default void YTzw(final double v) {
+            YTzw(v, v, v, v);
         }
 
         default void ZTxy(final double v) {
             ZTxy(v, v, v, v);
         }
 
+        default void ZTxz(final double v) {
+            ZTxz(v, v, v, v);
+        }
+
+        default void ZTxw(final double v) {
+            ZTxw(v, v, v, v);
+        }
+
         default void ZTyz(final double v) {
             ZTyz(v, v, v, v);
+        }
+
+        default void ZTyw(final double v) {
+            ZTyw(v, v, v, v);
         }
 
         default void ZTzw(final double v) {
@@ -1520,12 +2252,60 @@ public final class Matrix4x4 {
             XYZxyz(v, v, v, v, v, v, v, v, v);
         }
 
+        default void XYZxyw(final double v) {
+            XYZxyw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XYZxzw(final double v) {
+            XYZxzw(v, v, v, v, v, v, v, v, v);
+        }
+
         default void XYZyzw(final double v) {
             XYZyzw(v, v, v, v, v, v, v, v, v);
         }
 
+        default void XYTxyz(final double v) {
+            XYTxyz(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XYTxyw(final double v) {
+            XYTxyw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XYTxzw(final double v) {
+            XYTxzw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XYTyzw(final double v) {
+            XYTyzw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XZTxyz(final double v) {
+            XZTxyz(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XZTxyw(final double v) {
+            XZTxyw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XZTxzw(final double v) {
+            XZTxzw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void XZTyzw(final double v) {
+            XZTyzw(v, v, v, v, v, v, v, v, v);
+        }
+
         default void YZTxyz(final double v) {
             YZTxyz(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void YZTxyw(final double v) {
+            YZTxyw(v, v, v, v, v, v, v, v, v);
+        }
+
+        default void YZTxzw(final double v) {
+            YZTxzw(v, v, v, v, v, v, v, v, v);
         }
 
         default void YZTyzw(final double v) {
@@ -2095,14 +2875,24 @@ public final class Matrix4x4 {
             Yy(Yy);
         }
 
-        default void xyXY(
-                final double Xx, final double Yx,
-                final double Xy, final double Yy
+        default void XYxz(
+                final double Xx, final double Xz,
+                final double Yx, final double Yz
         ) {
             Xx(Xx);
-            Xy(Xy);
+            Xz(Xz);
             Yx(Yx);
-            Yy(Yy);
+            Yz(Yz);
+        }
+
+        default void XYxw(
+                final double Xx, final double Xw,
+                final double Yx, final double Yw
+        ) {
+            Xx(Xx);
+            Xw(Xw);
+            Yx(Yx);
+            Yw(Yw);
         }
 
         default void XYyz(
@@ -2115,14 +2905,14 @@ public final class Matrix4x4 {
             Yz(Yz);
         }
 
-        default void yzXY(
-                final double Xy, final double Yy,
-                final double Xz, final double Yz
+        default void XYyw(
+                final double Xy, final double Xw,
+                final double Yy, final double Yw
         ) {
             Xy(Xy);
-            Xz(Xz);
+            Xw(Xw);
             Yy(Yy);
-            Yz(Yz);
+            Yw(Yw);
         }
 
         default void XYzw(
@@ -2135,14 +2925,124 @@ public final class Matrix4x4 {
             Yw(Yw);
         }
 
-        default void zwXY(
-                final double Xz, final double Yz,
-                final double Xw, final double Yw
+        default void XZxy(
+                final double Xx, final double Xy,
+                final double Zx, final double Zy
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Zx(Zx);
+            Zy(Zy);
+        }
+
+        default void XZxz(
+                final double Xx, final double Xz,
+                final double Zx, final double Zz
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Zx(Zx);
+            Zz(Zz);
+        }
+
+        default void XZxw(
+                final double Xx, final double Xw,
+                final double Zx, final double Zw
+        ) {
+            Xx(Xx);
+            Xw(Xw);
+            Zx(Zx);
+            Zw(Zw);
+        }
+
+        default void XZyz(
+                final double Xy, final double Xz,
+                final double Zy, final double Zz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void XZyw(
+                final double Xy, final double Xw,
+                final double Zy, final double Zw
+        ) {
+            Xy(Xy);
+            Xw(Xw);
+            Zy(Zy);
+            Zw(Zw);
+        }
+
+        default void XZzw(
+                final double Xz, final double Xw,
+                final double Zz, final double Zw
         ) {
             Xz(Xz);
             Xw(Xw);
-            Yz(Yz);
-            Yw(Yw);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void XTxy(
+                final double Xx, final double Xy,
+                final double Tx, final double Ty
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Tx(Tx);
+            Ty(Ty);
+        }
+
+        default void XTxz(
+                final double Xx, final double Xz,
+                final double Tx, final double Tz
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Tx(Tx);
+            Tz(Tz);
+        }
+
+        default void XTxw(
+                final double Xx, final double Xw,
+                final double Tx, final double Tw
+        ) {
+            Xx(Xx);
+            Xw(Xw);
+            Tx(Tx);
+            Tw(Tw);
+        }
+
+        default void XTyz(
+                final double Xy, final double Xz,
+                final double Ty, final double Tz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void XTyw(
+                final double Xy, final double Xw,
+                final double Ty, final double Tw
+        ) {
+            Xy(Xy);
+            Xw(Xw);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void XTzw(
+                final double Xz, final double Xw,
+                final double Tz, final double Tw
+        ) {
+            Xz(Xz);
+            Xw(Xw);
+            Tz(Tz);
+            Tw(Tw);
         }
 
         default void YZxy(
@@ -2155,14 +3055,24 @@ public final class Matrix4x4 {
             Zy(Zy);
         }
 
-        default void xyYZ(
-                final double Yx, final double Zx,
-                final double Yy, final double Zy
+        default void YZxz(
+                final double Yx, final double Yz,
+                final double Zx, final double Zz
         ) {
             Yx(Yx);
-            Yy(Yy);
+            Yz(Yz);
             Zx(Zx);
-            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void YZxw(
+                final double Yx, final double Yw,
+                final double Zx, final double Zw
+        ) {
+            Yx(Yx);
+            Yw(Yw);
+            Zx(Zx);
+            Zw(Zw);
         }
 
         default void YZyz(
@@ -2175,14 +3085,14 @@ public final class Matrix4x4 {
             Zz(Zz);
         }
 
-        default void yzYZ(
-                final double Yy, final double Zy,
-                final double Yz, final double Zz
+        default void YZyw(
+                final double Yy, final double Yw,
+                final double Zy, final double Zw
         ) {
             Yy(Yy);
-            Yz(Yz);
+            Yw(Yw);
             Zy(Zy);
-            Zz(Zz);
+            Zw(Zw);
         }
 
         default void YZzw(
@@ -2195,14 +3105,64 @@ public final class Matrix4x4 {
             Zw(Zw);
         }
 
-        default void zwYZ(
-                final double Yz, final double Zz,
-                final double Yw, final double Zw
+        default void YTxy(
+                final double Yx, final double Yy,
+                final double Tx, final double Ty
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Tx(Tx);
+            Ty(Ty);
+        }
+
+        default void YTxz(
+                final double Yx, final double Yz,
+                final double Tx, final double Tz
+        ) {
+            Yx(Yx);
+            Yz(Yz);
+            Tx(Tx);
+            Tz(Tz);
+        }
+
+        default void YTxw(
+                final double Yx, final double Yw,
+                final double Tx, final double Tw
+        ) {
+            Yx(Yx);
+            Yw(Yw);
+            Tx(Tx);
+            Tw(Tw);
+        }
+
+        default void YTyz(
+                final double Yy, final double Yz,
+                final double Ty, final double Tz
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void YTyw(
+                final double Yy, final double Yw,
+                final double Ty, final double Tw
+        ) {
+            Yy(Yy);
+            Yw(Yw);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void YTzw(
+                final double Yz, final double Yw,
+                final double Tz, final double Tw
         ) {
             Yz(Yz);
             Yw(Yw);
-            Zz(Zz);
-            Zw(Zw);
+            Tz(Tz);
+            Tw(Tw);
         }
 
         default void ZTxy(
@@ -2215,14 +3175,24 @@ public final class Matrix4x4 {
             Ty(Ty);
         }
 
-        default void xyZT(
-                final double Zx, final double Tx,
-                final double Zy, final double Ty
+        default void ZTxz(
+                final double Zx, final double Zz,
+                final double Tx, final double Tz
         ) {
             Zx(Zx);
-            Zy(Zy);
+            Zz(Zz);
             Tx(Tx);
-            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void ZTxw(
+                final double Zx, final double Zw,
+                final double Tx, final double Tw
+        ) {
+            Zx(Zx);
+            Zw(Zw);
+            Tx(Tx);
+            Tw(Tw);
         }
 
         default void ZTyz(
@@ -2235,29 +3205,19 @@ public final class Matrix4x4 {
             Tz(Tz);
         }
 
-        default void yzZT(
-                final double Zy, final double Ty,
-                final double Zz, final double Tz
+        default void ZTyw(
+                final double Zy, final double Zw,
+                final double Ty, final double Tw
         ) {
             Zy(Zy);
-            Zz(Zz);
+            Zw(Zw);
             Ty(Ty);
-            Tz(Tz);
+            Tw(Tw);
         }
 
         default void ZTzw(
                 final double Zz, final double Zw,
                 final double Tz, final double Tw
-        ) {
-            Zz(Zz);
-            Zw(Zw);
-            Tz(Tz);
-            Tw(Tw);
-        }
-
-        default void zwZT(
-                final double Zz, final double Tz,
-                final double Zw, final double Tw
         ) {
             Zz(Zz);
             Zw(Zw);
@@ -2281,20 +3241,36 @@ public final class Matrix4x4 {
             Zz(Zz);
         }
 
-        default void xyzXYZ(
-                final double Xx, final double Yx, final double Zx,
-                final double Xy, final double Yy, final double Zy,
-                final double Xz, final double Yz, final double Zz
+        default void XYZxyw(
+                final double Xx, final double Xy, final double Xw,
+                final double Yx, final double Yy, final double Yw,
+                final double Zx, final double Zy, final double Zw
         ) {
             Xx(Xx);
             Xy(Xy);
-            Xz(Xz);
+            Xw(Xw);
             Yx(Yx);
             Yy(Yy);
-            Yz(Yz);
+            Yw(Yw);
             Zx(Zx);
             Zy(Zy);
+            Zw(Zw);
+        }
+
+        default void XYZxzw(
+                final double Xx, final double Xz, final double Xw,
+                final double Yx, final double Yz, final double Yw,
+                final double Zx, final double Zz, final double Zw
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Xw(Xw);
+            Yx(Yx);
+            Yz(Yz);
+            Yw(Yw);
+            Zx(Zx);
             Zz(Zz);
+            Zw(Zw);
         }
 
         default void XYZyzw(
@@ -2313,10 +3289,58 @@ public final class Matrix4x4 {
             Zw(Zw);
         }
 
-        default void yzwXYZ(
-                final double Xy, final double Yy, final double Zy,
-                final double Xz, final double Yz, final double Zz,
-                final double Xw, final double Yw, final double Zw
+        default void XYTxyz(
+                final double Xx, final double Xy, final double Xz,
+                final double Yx, final double Yy, final double Yz,
+                final double Tx, final double Ty, final double Tz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void XYTxyw(
+                final double Xx, final double Xy, final double Xw,
+                final double Yx, final double Yy, final double Yw,
+                final double Tx, final double Ty, final double Tw
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xw(Xw);
+            Yx(Yx);
+            Yy(Yy);
+            Yw(Yw);
+            Tx(Tx);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void XYTxzw(
+                final double Xx, final double Xz, final double Xw,
+                final double Yx, final double Yz, final double Yw,
+                final double Tx, final double Tz, final double Tw
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Xw(Xw);
+            Yx(Yx);
+            Yz(Yz);
+            Yw(Yw);
+            Tx(Tx);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void XYTyzw(
+                final double Xy, final double Xz, final double Xw,
+                final double Yy, final double Yz, final double Yw,
+                final double Ty, final double Tz, final double Tw
         ) {
             Xy(Xy);
             Xz(Xz);
@@ -2324,9 +3348,73 @@ public final class Matrix4x4 {
             Yy(Yy);
             Yz(Yz);
             Yw(Yw);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void XZTxyz(
+                final double Xx, final double Xy, final double Xz,
+                final double Zx, final double Zy, final double Zz,
+                final double Tx, final double Ty, final double Tz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void XZTxyw(
+                final double Xx, final double Xy, final double Xw,
+                final double Zx, final double Zy, final double Zw,
+                final double Tx, final double Ty, final double Tw
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xw(Xw);
+            Zx(Zx);
+            Zy(Zy);
+            Zw(Zw);
+            Tx(Tx);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void XZTxzw(
+                final double Xx, final double Xz, final double Xw,
+                final double Zx, final double Zz, final double Zw,
+                final double Tx, final double Tz, final double Tw
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Xw(Xw);
+            Zx(Zx);
+            Zz(Zz);
+            Zw(Zw);
+            Tx(Tx);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void XZTyzw(
+                final double Xy, final double Xz, final double Xw,
+                final double Zy, final double Zz, final double Zw,
+                final double Ty, final double Tz, final double Tw
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
             Zy(Zy);
             Zz(Zz);
             Zw(Zw);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
         }
 
         default void YZTxyz(
@@ -2345,42 +3433,42 @@ public final class Matrix4x4 {
             Tz(Tz);
         }
 
-        default void xyzYZT(
-                final double Yx, final double Zx, final double Tx,
-                final double Yy, final double Zy, final double Ty,
-                final double Yz, final double Zz, final double Tz
+        default void YZTxyw(
+                final double Yx, final double Yy, final double Yw,
+                final double Zx, final double Zy, final double Zw,
+                final double Tx, final double Ty, final double Tw
         ) {
             Yx(Yx);
             Yy(Yy);
-            Yz(Yz);
+            Yw(Yw);
             Zx(Zx);
             Zy(Zy);
-            Zz(Zz);
+            Zw(Zw);
             Tx(Tx);
             Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void YZTxzw(
+                final double Yx, final double Yz, final double Yw,
+                final double Zx, final double Zz, final double Zw,
+                final double Tx, final double Tz, final double Tw
+        ) {
+            Yx(Yx);
+            Yz(Yz);
+            Yw(Yw);
+            Zx(Zx);
+            Zz(Zz);
+            Zw(Zw);
+            Tx(Tx);
             Tz(Tz);
+            Tw(Tw);
         }
 
         default void YZTyzw(
                 final double Yy, final double Yz, final double Yw,
                 final double Zy, final double Zz, final double Zw,
                 final double Ty, final double Tz, final double Tw
-        ) {
-            Yy(Yy);
-            Yz(Yz);
-            Yw(Yw);
-            Zy(Zy);
-            Zz(Zz);
-            Zw(Zw);
-            Ty(Ty);
-            Tz(Tz);
-            Tw(Tw);
-        }
-
-        default void yzwYZT(
-                final double Yy, final double Zy, final double Ty,
-                final double Yz, final double Zz, final double Tz,
-                final double Yw, final double Zw, final double Tw
         ) {
             Yy(Yy);
             Yz(Yz);
@@ -2413,6 +3501,622 @@ public final class Matrix4x4 {
             Zz(Zz);
             Zw(Zw);
             Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void xyXY(
+                final double Xx, final double Yx,
+                final double Xy, final double Yy
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Yx(Yx);
+            Yy(Yy);
+        }
+
+        default void xyXZ(
+                final double Xx, final double Zx,
+                final double Xy, final double Zy
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Zx(Zx);
+            Zy(Zy);
+        }
+
+        default void xyXT(
+                final double Xx, final double Tx,
+                final double Xy, final double Ty
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Tx(Tx);
+            Ty(Ty);
+        }
+
+        default void xyYZ(
+                final double Yx, final double Zx,
+                final double Yy, final double Zy
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Zx(Zx);
+            Zy(Zy);
+        }
+
+        default void xyYT(
+                final double Yx, final double Tx,
+                final double Yy, final double Ty
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Tx(Tx);
+            Ty(Ty);
+        }
+
+        default void xyZT(
+                final double Zx, final double Tx,
+                final double Zy, final double Ty
+        ) {
+            Zx(Zx);
+            Zy(Zy);
+            Tx(Tx);
+            Ty(Ty);
+        }
+
+        default void xzXY(
+                final double Xx, final double Yx,
+                final double Xz, final double Yz
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Yx(Yx);
+            Yz(Yz);
+        }
+
+        default void xzXZ(
+                final double Xx, final double Zx,
+                final double Xz, final double Zz
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Zx(Zx);
+            Zz(Zz);
+        }
+
+        default void xzXT(
+                final double Xx, final double Tx,
+                final double Xz, final double Tz
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Tx(Tx);
+            Tz(Tz);
+        }
+
+        default void xzYZ(
+                final double Yx, final double Zx,
+                final double Yz, final double Zz
+        ) {
+            Yx(Yx);
+            Yz(Yz);
+            Zx(Zx);
+            Zz(Zz);
+        }
+
+        default void xzYT(
+                final double Yx, final double Tx,
+                final double Yz, final double Tz
+        ) {
+            Yx(Yx);
+            Yz(Yz);
+            Tx(Tx);
+            Tz(Tz);
+        }
+
+        default void xzZT(
+                final double Zx, final double Tx,
+                final double Zz, final double Tz
+        ) {
+            Zx(Zx);
+            Zz(Zz);
+            Tx(Tx);
+            Tz(Tz);
+        }
+
+        default void xwXY(
+                final double Xx, final double Yx,
+                final double Xw, final double Yw
+        ) {
+            Xx(Xx);
+            Xw(Xw);
+            Yx(Yx);
+            Yw(Yw);
+        }
+
+        default void xwXZ(
+                final double Xx, final double Zx,
+                final double Xw, final double Zw
+        ) {
+            Xx(Xx);
+            Xw(Xw);
+            Zx(Zx);
+            Zw(Zw);
+        }
+
+        default void xwXT(
+                final double Xx, final double Tx,
+                final double Xw, final double Tw
+        ) {
+            Xx(Xx);
+            Xw(Xw);
+            Tx(Tx);
+            Tw(Tw);
+        }
+
+        default void xwYZ(
+                final double Yx, final double Zx,
+                final double Yw, final double Zw
+        ) {
+            Yx(Yx);
+            Yw(Yw);
+            Zx(Zx);
+            Zw(Zw);
+        }
+
+        default void xwYT(
+                final double Yx, final double Tx,
+                final double Yw, final double Tw
+        ) {
+            Yx(Yx);
+            Yw(Yw);
+            Tx(Tx);
+            Tw(Tw);
+        }
+
+        default void xwZT(
+                final double Zx, final double Tx,
+                final double Zw, final double Tw
+        ) {
+            Zx(Zx);
+            Zw(Zw);
+            Tx(Tx);
+            Tw(Tw);
+        }
+
+        default void yzXY(
+                final double Xy, final double Yy,
+                final double Xz, final double Yz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Yy(Yy);
+            Yz(Yz);
+        }
+
+        default void yzXZ(
+                final double Xy, final double Zy,
+                final double Xz, final double Zz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void yzXT(
+                final double Xy, final double Ty,
+                final double Xz, final double Tz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void yzYZ(
+                final double Yy, final double Zy,
+                final double Yz, final double Zz
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void yzYT(
+                final double Yy, final double Ty,
+                final double Yz, final double Tz
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void yzZT(
+                final double Zy, final double Ty,
+                final double Zz, final double Tz
+        ) {
+            Zy(Zy);
+            Zz(Zz);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void ywXY(
+                final double Xy, final double Yy,
+                final double Xw, final double Yw
+        ) {
+            Xy(Xy);
+            Xw(Xw);
+            Yy(Yy);
+            Yw(Yw);
+        }
+
+        default void ywXZ(
+                final double Xy, final double Zy,
+                final double Xw, final double Zw
+        ) {
+            Xy(Xy);
+            Xw(Xw);
+            Zy(Zy);
+            Zw(Zw);
+        }
+
+        default void ywXT(
+                final double Xy, final double Ty,
+                final double Xw, final double Tw
+        ) {
+            Xy(Xy);
+            Xw(Xw);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void ywYZ(
+                final double Yy, final double Zy,
+                final double Yw, final double Zw
+        ) {
+            Yy(Yy);
+            Yw(Yw);
+            Zy(Zy);
+            Zw(Zw);
+        }
+
+        default void ywYT(
+                final double Yy, final double Ty,
+                final double Yw, final double Tw
+        ) {
+            Yy(Yy);
+            Yw(Yw);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void ywZT(
+                final double Zy, final double Ty,
+                final double Zw, final double Tw
+        ) {
+            Zy(Zy);
+            Zw(Zw);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void zwXY(
+                final double Xz, final double Yz,
+                final double Xw, final double Yw
+        ) {
+            Xz(Xz);
+            Xw(Xw);
+            Yz(Yz);
+            Yw(Yw);
+        }
+
+        default void zwXZ(
+                final double Xz, final double Zz,
+                final double Xw, final double Zw
+        ) {
+            Xz(Xz);
+            Xw(Xw);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void zwXT(
+                final double Xz, final double Tz,
+                final double Xw, final double Tw
+        ) {
+            Xz(Xz);
+            Xw(Xw);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void zwYZ(
+                final double Yz, final double Zz,
+                final double Yw, final double Zw
+        ) {
+            Yz(Yz);
+            Yw(Yw);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void zwYT(
+                final double Yz, final double Tz,
+                final double Yw, final double Tw
+        ) {
+            Yz(Yz);
+            Yw(Yw);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void zwZT(
+                final double Zz, final double Tz,
+                final double Zw, final double Tw
+        ) {
+            Zz(Zz);
+            Zw(Zw);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void xyzXYZ(
+                final double Xx, final double Yx, final double Zx,
+                final double Xy, final double Yy, final double Zy,
+                final double Xz, final double Yz, final double Zz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void xyzXYT(
+                final double Xx, final double Yx, final double Tx,
+                final double Xy, final double Yy, final double Ty,
+                final double Xz, final double Yz, final double Tz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void xyzXZT(
+                final double Xx, final double Zx, final double Tx,
+                final double Xy, final double Zy, final double Ty,
+                final double Xz, final double Zz, final double Tz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void xyzYZT(
+                final double Yx, final double Zx, final double Tx,
+                final double Yy, final double Zy, final double Ty,
+                final double Yz, final double Zz, final double Tz
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+            Tx(Tx);
+            Ty(Ty);
+            Tz(Tz);
+        }
+
+        default void xywXYZ(
+                final double Xx, final double Yx, final double Zx,
+                final double Xy, final double Yy, final double Zy,
+                final double Xw, final double Yw, final double Zw
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xw(Xw);
+            Yx(Yx);
+            Yy(Yy);
+            Yw(Yw);
+            Zx(Zx);
+            Zy(Zy);
+            Zw(Zw);
+        }
+
+        default void xywXYT(
+                final double Xx, final double Yx, final double Tx,
+                final double Xy, final double Yy, final double Ty,
+                final double Xw, final double Yw, final double Tw
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xw(Xw);
+            Yx(Yx);
+            Yy(Yy);
+            Yw(Yw);
+            Tx(Tx);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void xywXZT(
+                final double Xx, final double Zx, final double Tx,
+                final double Xy, final double Zy, final double Ty,
+                final double Xw, final double Zw, final double Tw
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xw(Xw);
+            Zx(Zx);
+            Zy(Zy);
+            Zw(Zw);
+            Tx(Tx);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void xywYZT(
+                final double Yx, final double Zx, final double Tx,
+                final double Yy, final double Zy, final double Ty,
+                final double Yw, final double Zw, final double Tw
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Yw(Yw);
+            Zx(Zx);
+            Zy(Zy);
+            Zw(Zw);
+            Tx(Tx);
+            Ty(Ty);
+            Tw(Tw);
+        }
+
+        default void xzwXYZ(
+                final double Xx, final double Yx, final double Zx,
+                final double Xz, final double Yz, final double Zz,
+                final double Xw, final double Yw, final double Zw
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Xw(Xw);
+            Yx(Yx);
+            Yz(Yz);
+            Yw(Yw);
+            Zx(Zx);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void xzwXYT(
+                final double Xx, final double Yx, final double Tx,
+                final double Xz, final double Yz, final double Tz,
+                final double Xw, final double Yw, final double Tw
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Xw(Xw);
+            Yx(Yx);
+            Yz(Yz);
+            Yw(Yw);
+            Tx(Tx);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void xzwXZT(
+                final double Xx, final double Zx, final double Tx,
+                final double Xz, final double Zz, final double Tz,
+                final double Xw, final double Zw, final double Tw
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Xw(Xw);
+            Zx(Zx);
+            Zz(Zz);
+            Zw(Zw);
+            Tx(Tx);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void xzwYZT(
+                final double Yx, final double Zx, final double Tx,
+                final double Yz, final double Zz, final double Tz,
+                final double Yw, final double Zw, final double Tw
+        ) {
+            Yx(Yx);
+            Yz(Yz);
+            Yw(Yw);
+            Zx(Zx);
+            Zz(Zz);
+            Zw(Zw);
+            Tx(Tx);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void yzwXYZ(
+                final double Xy, final double Yy, final double Zy,
+                final double Xz, final double Yz, final double Zz,
+                final double Xw, final double Yw, final double Zw
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+        }
+
+        default void yzwXYT(
+                final double Xy, final double Yy, final double Ty,
+                final double Xz, final double Yz, final double Tz,
+                final double Xw, final double Yw, final double Tw
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void yzwXZT(
+                final double Xy, final double Zy, final double Ty,
+                final double Xz, final double Zz, final double Tz,
+                final double Xw, final double Zw, final double Tw
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Xw(Xw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
+            Ty(Ty);
+            Tz(Tz);
+            Tw(Tw);
+        }
+
+        default void yzwYZT(
+                final double Yy, final double Zy, final double Ty,
+                final double Yz, final double Zz, final double Tz,
+                final double Yw, final double Zw, final double Tw
+        ) {
+            Yy(Yy);
+            Yz(Yz);
+            Yw(Yw);
+            Zy(Zy);
+            Zz(Zz);
+            Zw(Zw);
             Ty(Ty);
             Tz(Tz);
             Tw(Tw);
@@ -2842,108 +4546,420 @@ public final class Matrix4x4 {
             XYxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyXY(final Matrix2x2.Accessible m) {
-            xyXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void XYxz(final Matrix2x2.Accessible m) {
+            XYxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XYxw(final Matrix2x2.Accessible m) {
+            XYxw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void XYyz(final Matrix2x2.Accessible m) {
             XYyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void yzXY(final Matrix2x2.Accessible m) {
-            yzXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void XYyw(final Matrix2x2.Accessible m) {
+            XYyw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void XYzw(final Matrix2x2.Accessible m) {
             XYzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void zwXY(final Matrix2x2.Accessible m) {
-            zwXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void XZxy(final Matrix2x2.Accessible m) {
+            XZxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XZxz(final Matrix2x2.Accessible m) {
+            XZxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XZxw(final Matrix2x2.Accessible m) {
+            XZxw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XZyz(final Matrix2x2.Accessible m) {
+            XZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XZyw(final Matrix2x2.Accessible m) {
+            XZyw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XZzw(final Matrix2x2.Accessible m) {
+            XZzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XTxy(final Matrix2x2.Accessible m) {
+            XTxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XTxz(final Matrix2x2.Accessible m) {
+            XTxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XTxw(final Matrix2x2.Accessible m) {
+            XTxw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XTyz(final Matrix2x2.Accessible m) {
+            XTyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XTyw(final Matrix2x2.Accessible m) {
+            XTyw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void XTzw(final Matrix2x2.Accessible m) {
+            XTzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void YZxy(final Matrix2x2.Accessible m) {
             YZxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyYZ(final Matrix2x2.Accessible m) {
-            xyYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void YZxz(final Matrix2x2.Accessible m) {
+            YZxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YZxw(final Matrix2x2.Accessible m) {
+            YZxw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void YZyz(final Matrix2x2.Accessible m) {
             YZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void yzYZ(final Matrix2x2.Accessible m) {
-            yzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void YZyw(final Matrix2x2.Accessible m) {
+            YZyw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void YZzw(final Matrix2x2.Accessible m) {
             YZzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void zwYZ(final Matrix2x2.Accessible m) {
-            zwYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void YTxy(final Matrix2x2.Accessible m) {
+            YTxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YTxz(final Matrix2x2.Accessible m) {
+            YTxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YTxw(final Matrix2x2.Accessible m) {
+            YTxw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YTyz(final Matrix2x2.Accessible m) {
+            YTyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YTyw(final Matrix2x2.Accessible m) {
+            YTyw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void YTzw(final Matrix2x2.Accessible m) {
+            YTzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void ZTxy(final Matrix2x2.Accessible m) {
             ZTxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void xyZT(final Matrix2x2.Accessible m) {
-            xyZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void ZTxz(final Matrix2x2.Accessible m) {
+            ZTxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ZTxw(final Matrix2x2.Accessible m) {
+            ZTxw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void ZTyz(final Matrix2x2.Accessible m) {
             ZTyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void yzZT(final Matrix2x2.Accessible m) {
-            yzZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        default void ZTyw(final Matrix2x2.Accessible m) {
+            ZTyw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void ZTzw(final Matrix2x2.Accessible m) {
             ZTzw(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void zwZT(final Matrix2x2.Accessible m) {
-            zwZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
-        }
-
         default void XYZxyz(final Matrix3x3.Accessible m) {
             XYZxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void xyzXYZ(final Matrix3x3.Accessible m) {
-            xyzXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        default void XYZxyw(final Matrix3x3.Accessible m) {
+            XYZxyw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XYZxzw(final Matrix3x3.Accessible m) {
+            XYZxzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
         default void XYZyzw(final Matrix3x3.Accessible m) {
             XYZyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void yzwXYZ(final Matrix3x3.Accessible m) {
-            yzwXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        default void XYTxyz(final Matrix3x3.Accessible m) {
+            XYTxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XYTxyw(final Matrix3x3.Accessible m) {
+            XYTxyw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XYTxzw(final Matrix3x3.Accessible m) {
+            XYTxzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XYTyzw(final Matrix3x3.Accessible m) {
+            XYTyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XZTxyz(final Matrix3x3.Accessible m) {
+            XZTxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XZTxyw(final Matrix3x3.Accessible m) {
+            XZTxyw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XZTxzw(final Matrix3x3.Accessible m) {
+            XZTxzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void XZTyzw(final Matrix3x3.Accessible m) {
+            XZTyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
         default void YZTxyz(final Matrix3x3.Accessible m) {
             YZTxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void xyzYZT(final Matrix3x3.Accessible m) {
-            xyzYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        default void YZTxyw(final Matrix3x3.Accessible m) {
+            YZTxyw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void YZTxzw(final Matrix3x3.Accessible m) {
+            YZTxzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
         default void YZTyzw(final Matrix3x3.Accessible m) {
             YZTyzw(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
-        default void yzwYZT(final Matrix3x3.Accessible m) {
-            yzwYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
-        }
-
         default void XYZTxyzw(final Matrix4x4.Accessible m) {
             XYZTxyzw(m.Xx(), m.Xy(), m.Xz(), m.Xw(), m.Yx(), m.Yy(), m.Yz(), m.Yw(), m.Zx(), m.Zy(), m.Zz(), m.Zw(), m.Tx(), m.Ty(), m.Tz(), m.Tw());
+        }
+
+        default void xyXY(final Matrix2x2.Accessible m) {
+            xyXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyXZ(final Matrix2x2.Accessible m) {
+            xyXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyXT(final Matrix2x2.Accessible m) {
+            xyXT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyYZ(final Matrix2x2.Accessible m) {
+            xyYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyYT(final Matrix2x2.Accessible m) {
+            xyYT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyZT(final Matrix2x2.Accessible m) {
+            xyZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xzXY(final Matrix2x2.Accessible m) {
+            xzXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xzXZ(final Matrix2x2.Accessible m) {
+            xzXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xzXT(final Matrix2x2.Accessible m) {
+            xzXT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xzYZ(final Matrix2x2.Accessible m) {
+            xzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xzYT(final Matrix2x2.Accessible m) {
+            xzYT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xzZT(final Matrix2x2.Accessible m) {
+            xzZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xwXY(final Matrix2x2.Accessible m) {
+            xwXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xwXZ(final Matrix2x2.Accessible m) {
+            xwXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xwXT(final Matrix2x2.Accessible m) {
+            xwXT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xwYZ(final Matrix2x2.Accessible m) {
+            xwYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xwYT(final Matrix2x2.Accessible m) {
+            xwYT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xwZT(final Matrix2x2.Accessible m) {
+            xwZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzXY(final Matrix2x2.Accessible m) {
+            yzXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzXZ(final Matrix2x2.Accessible m) {
+            yzXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzXT(final Matrix2x2.Accessible m) {
+            yzXT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzYZ(final Matrix2x2.Accessible m) {
+            yzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzYT(final Matrix2x2.Accessible m) {
+            yzYT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void yzZT(final Matrix2x2.Accessible m) {
+            yzZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ywXY(final Matrix2x2.Accessible m) {
+            ywXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ywXZ(final Matrix2x2.Accessible m) {
+            ywXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ywXT(final Matrix2x2.Accessible m) {
+            ywXT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ywYZ(final Matrix2x2.Accessible m) {
+            ywYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ywYT(final Matrix2x2.Accessible m) {
+            ywYT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void ywZT(final Matrix2x2.Accessible m) {
+            ywZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void zwXY(final Matrix2x2.Accessible m) {
+            zwXY(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void zwXZ(final Matrix2x2.Accessible m) {
+            zwXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void zwXT(final Matrix2x2.Accessible m) {
+            zwXT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void zwYZ(final Matrix2x2.Accessible m) {
+            zwYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void zwYT(final Matrix2x2.Accessible m) {
+            zwYT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void zwZT(final Matrix2x2.Accessible m) {
+            zwZT(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyzXYZ(final Matrix3x3.Accessible m) {
+            xyzXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xyzXYT(final Matrix3x3.Accessible m) {
+            xyzXYT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xyzXZT(final Matrix3x3.Accessible m) {
+            xyzXZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xyzYZT(final Matrix3x3.Accessible m) {
+            xyzYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xywXYZ(final Matrix3x3.Accessible m) {
+            xywXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xywXYT(final Matrix3x3.Accessible m) {
+            xywXYT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xywXZT(final Matrix3x3.Accessible m) {
+            xywXZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xywYZT(final Matrix3x3.Accessible m) {
+            xywYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xzwXYZ(final Matrix3x3.Accessible m) {
+            xzwXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xzwXYT(final Matrix3x3.Accessible m) {
+            xzwXYT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xzwXZT(final Matrix3x3.Accessible m) {
+            xzwXZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void xzwYZT(final Matrix3x3.Accessible m) {
+            xzwYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void yzwXYZ(final Matrix3x3.Accessible m) {
+            yzwXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void yzwXYT(final Matrix3x3.Accessible m) {
+            yzwXYT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void yzwXZT(final Matrix3x3.Accessible m) {
+            yzwXZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
+        }
+
+        default void yzwYZT(final Matrix3x3.Accessible m) {
+            yzwYZT(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
         default void xyzwXYZT(final Matrix4x4.Accessible m) {

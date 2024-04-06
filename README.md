@@ -110,15 +110,15 @@ Vector3.Accessible operand1 = ...
 Vector3.Accessible operand2 = ...
 
 Vector3.Mutable result1 = ...
-VecMath.addTo(operand1, operand2, result1);
-VecMath.addTo(operand1, operand2, result1::yzx);
+VecMath.add3To(operand1, operand2, result1);
+VecMath.add3To(operand1, operand2, result1::yzx);
 
 Vector4.Mutable result2 = ...
-VecMath.addTo(operand1, operand2, result2::xyz);
-VecMath.addTo(operand1, operand2, (x, y, z) -> result2.xyzw(x, y, z, 0.0));
+VecMath.add3To(operand1, operand2, result2::xyz);
+VecMath.add3To(operand1, operand2, (x, y, z) -> result2.xyzw(x, y, z, 0.0));
 
-Vector3.Accessible result3 = VecMath.add(operand1, operand2, SomeVector3Impl::new);
-Vector4.Accessible result4 = VecMath.add(operand1, operand2, (x, y, z) -> new SomeVector4Impl(x, y, z, 0.0));
+Vector3.Accessible result3 = VecMath.add3(operand1, operand2, SomeVector3Impl::new);
+Vector4.Accessible result4 = VecMath.add3(operand1, operand2, (x, y, z) -> new SomeVector4Impl(x, y, z, 0.0));
 ```
 
 Accessible types can also output their contents the same way:

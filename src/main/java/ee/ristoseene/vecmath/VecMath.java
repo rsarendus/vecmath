@@ -12,141 +12,141 @@ public final class VecMath {
         return a * (1.0D - t) + b * t;
     }
 
-    public static double min(final Vector2.Accessible vector) {
+    public static double min2(final Vector2.Accessible vector) {
         return Math.min(vector.x(), vector.y());
     }
 
-    public static double max(final Vector2.Accessible vector) {
+    public static double max2(final Vector2.Accessible vector) {
         return Math.max(vector.x(), vector.y());
     }
 
-    public static <R> R min(final Vector2.Accessible a, final double b, final Vector2.Factory<R> factory) {
+    public static <R> R min2(final Vector2.Accessible a, final double b, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(a.x(), b),
                 Math.min(a.y(), b)
         );
     }
 
-    public static void minTo(final Vector2.Accessible a, final double b, final Vector2.Consumer consumer) {
+    public static void min2To(final Vector2.Accessible a, final double b, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(a.x(), b),
                 Math.min(a.y(), b)
         );
     }
 
-    public static <R> R min(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Factory<R> factory) {
+    public static <R> R min2(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(a.x(), b.x()),
                 Math.min(a.y(), b.y())
         );
     }
 
-    public static void minTo(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Consumer consumer) {
+    public static void min2To(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(a.x(), b.x()),
                 Math.min(a.y(), b.y())
         );
     }
 
-    public static <R> R max(final Vector2.Accessible a, final double b, final Vector2.Factory<R> factory) {
+    public static <R> R max2(final Vector2.Accessible a, final double b, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.max(a.x(), b),
                 Math.max(a.y(), b)
         );
     }
 
-    public static void maxTo(final Vector2.Accessible a, final double b, final Vector2.Consumer consumer) {
+    public static void max2To(final Vector2.Accessible a, final double b, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.max(a.x(), b),
                 Math.max(a.y(), b)
         );
     }
 
-    public static <R> R max(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Factory<R> factory) {
+    public static <R> R max2(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.max(a.x(), b.x()),
                 Math.max(a.y(), b.y())
         );
     }
 
-    public static void maxTo(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Consumer consumer) {
+    public static void max2To(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.max(a.x(), b.x()),
                 Math.max(a.y(), b.y())
         );
     }
 
-    public static <R> R clamp(final Vector2.Accessible value, final double min, final double max, final Vector2.Factory<R> factory) {
+    public static <R> R clamp2(final Vector2.Accessible value, final double min, final double max, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min), max),
                 Math.min(Math.max(value.y(), min), max)
         );
     }
 
-    public static void clampTo(final Vector2.Accessible value, final double min, final double max, final Vector2.Consumer consumer) {
+    public static void clamp2To(final Vector2.Accessible value, final double min, final double max, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(Math.max(value.x(), min), max),
                 Math.min(Math.max(value.y(), min), max)
         );
     }
 
-    public static <R> R clamp(final Vector2.Accessible value, final Vector2.Accessible min, final double max, final Vector2.Factory<R> factory) {
+    public static <R> R clamp2(final Vector2.Accessible value, final Vector2.Accessible min, final double max, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min.x()), max),
                 Math.min(Math.max(value.y(), min.y()), max)
         );
     }
 
-    public static void clampTo(final Vector2.Accessible value, final Vector2.Accessible min, final double max, final Vector2.Consumer consumer) {
+    public static void clamp2To(final Vector2.Accessible value, final Vector2.Accessible min, final double max, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(Math.max(value.x(), min.x()), max),
                 Math.min(Math.max(value.y(), min.y()), max)
         );
     }
 
-    public static <R> R clamp(final Vector2.Accessible value, final double min, final Vector2.Accessible max, final Vector2.Factory<R> factory) {
+    public static <R> R clamp2(final Vector2.Accessible value, final double min, final Vector2.Accessible max, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min), max.x()),
                 Math.min(Math.max(value.y(), min), max.y())
         );
     }
 
-    public static void clampTo(final Vector2.Accessible value, final double min, final Vector2.Accessible max, final Vector2.Consumer consumer) {
+    public static void clamp2To(final Vector2.Accessible value, final double min, final Vector2.Accessible max, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(Math.max(value.x(), min), max.x()),
                 Math.min(Math.max(value.y(), min), max.y())
         );
     }
 
-    public static <R> R clamp(final Vector2.Accessible value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Factory<R> factory) {
+    public static <R> R clamp2(final Vector2.Accessible value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min.x()), max.x()),
                 Math.min(Math.max(value.y(), min.y()), max.y())
         );
     }
 
-    public static void clampTo(final Vector2.Accessible value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Consumer consumer) {
+    public static void clamp2To(final Vector2.Accessible value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(Math.max(value.x(), min.x()), max.x()),
                 Math.min(Math.max(value.y(), min.y()), max.y())
         );
     }
 
-    public static <R> R clamp(final double value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Factory<R> factory) {
+    public static <R> R clamp2(final double value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value, min.x()), max.x()),
                 Math.min(Math.max(value, min.y()), max.y())
         );
     }
 
-    public static void clampTo(final double value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Consumer consumer) {
+    public static void clamp2To(final double value, final Vector2.Accessible min, final Vector2.Accessible max, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.min(Math.max(value, min.x()), max.x()),
                 Math.min(Math.max(value, min.y()), max.y())
         );
     }
 
-    public static <R> R lerp(final Vector2.Accessible a, final double b, final double t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final Vector2.Accessible a, final double b, final double t, final Vector2.Factory<R> factory) {
         final double oneMinusT = 1.0D - t;
         final double bT = b * t;
 
@@ -156,7 +156,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector2.Accessible a, final double b, final double t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final Vector2.Accessible a, final double b, final double t, final Vector2.Consumer consumer) {
         final double oneMinusT = 1.0D - t;
         final double bT = b * t;
 
@@ -166,7 +166,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector2.Accessible a, final Vector2.Accessible b, final double t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final Vector2.Accessible a, final Vector2.Accessible b, final double t, final Vector2.Factory<R> factory) {
         final double oneMinusT = 1.0D - t;
 
         return factory.create(
@@ -175,7 +175,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector2.Accessible a, final Vector2.Accessible b, final double t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final Vector2.Accessible a, final Vector2.Accessible b, final double t, final Vector2.Consumer consumer) {
         final double oneMinusT = 1.0D - t;
 
         consumer.xy(
@@ -184,7 +184,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final Vector2.Accessible b, final double t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final double a, final Vector2.Accessible b, final double t, final Vector2.Factory<R> factory) {
         final double aOneMinusT = a * (1.0D - t);
 
         return factory.create(
@@ -193,7 +193,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final Vector2.Accessible b, final double t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final double a, final Vector2.Accessible b, final double t, final Vector2.Consumer consumer) {
         final double aOneMinusT = a * (1.0D - t);
 
         consumer.xy(
@@ -202,175 +202,175 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector2.Accessible a, final double b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final Vector2.Accessible a, final double b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
         return factory.create(
                 lerp(a.x(), b, t.x()),
                 lerp(a.y(), b, t.y())
         );
     }
 
-    public static void lerpTo(final Vector2.Accessible a, final double b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final Vector2.Accessible a, final double b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
         consumer.xy(
                 lerp(a.x(), b, t.x()),
                 lerp(a.y(), b, t.y())
         );
     }
 
-    public static <R> R lerp(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
         return factory.create(
                 lerp(a.x(), b.x(), t.x()),
                 lerp(a.y(), b.y(), t.y())
         );
     }
 
-    public static void lerpTo(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final Vector2.Accessible a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
         consumer.xy(
                 lerp(a.x(), b.x(), t.x()),
                 lerp(a.y(), b.y(), t.y())
         );
     }
 
-    public static <R> R lerp(final double a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final double a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
         return factory.create(
                 lerp(a, b.x(), t.x()),
                 lerp(a, b.y(), t.y())
         );
     }
 
-    public static void lerpTo(final double a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final double a, final Vector2.Accessible b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
         consumer.xy(
                 lerp(a, b.x(), t.x()),
                 lerp(a, b.y(), t.y())
         );
     }
 
-    public static <R> R lerp(final double a, final double b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
+    public static <R> R lerp2(final double a, final double b, final Vector2.Accessible t, final Vector2.Factory<R> factory) {
         return factory.create(
                 lerp(a, b, t.x()),
                 lerp(a, b, t.y())
         );
     }
 
-    public static void lerpTo(final double a, final double b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
+    public static void lerp2To(final double a, final double b, final Vector2.Accessible t, final Vector2.Consumer consumer) {
         consumer.xy(
                 lerp(a, b, t.x()),
                 lerp(a, b, t.y())
         );
     }
 
-    public static <R> R negate(final Vector2.Accessible vector, final Vector2.Factory<R> factory) {
+    public static <R> R negate2(final Vector2.Accessible vector, final Vector2.Factory<R> factory) {
         return factory.create(
                 -vector.x(),
                 -vector.y()
         );
     }
 
-    public static void negateTo(final Vector2.Accessible vector, final Vector2.Consumer consumer) {
+    public static void negate2To(final Vector2.Accessible vector, final Vector2.Consumer consumer) {
         consumer.xy(
                 -vector.x(),
                 -vector.y()
         );
     }
 
-    public static <R> R add(final Vector2.Accessible augend, final double addend, final Vector2.Factory<R> factory) {
+    public static <R> R add2(final Vector2.Accessible augend, final double addend, final Vector2.Factory<R> factory) {
         return factory.create(
                 augend.x() + addend,
                 augend.y() + addend
         );
     }
 
-    public static void addTo(final Vector2.Accessible augend, final double addend, final Vector2.Consumer consumer) {
+    public static void add2To(final Vector2.Accessible augend, final double addend, final Vector2.Consumer consumer) {
         consumer.xy(
                 augend.x() + addend,
                 augend.y() + addend
         );
     }
 
-    public static <R> R add(final Vector2.Accessible augend, final Vector2.Accessible addend, final Vector2.Factory<R> factory) {
+    public static <R> R add2(final Vector2.Accessible augend, final Vector2.Accessible addend, final Vector2.Factory<R> factory) {
         return factory.create(
                 augend.x() + addend.x(),
                 augend.y() + addend.y()
         );
     }
 
-    public static void addTo(final Vector2.Accessible augend, final Vector2.Accessible addend, final Vector2.Consumer consumer) {
+    public static void add2To(final Vector2.Accessible augend, final Vector2.Accessible addend, final Vector2.Consumer consumer) {
         consumer.xy(
                 augend.x() + addend.x(),
                 augend.y() + addend.y()
         );
     }
 
-    public static <R> R subtract(final Vector2.Accessible minuend, final double subtrahend, final Vector2.Factory<R> factory) {
+    public static <R> R subtract2(final Vector2.Accessible minuend, final double subtrahend, final Vector2.Factory<R> factory) {
         return factory.create(
                 minuend.x() - subtrahend,
                 minuend.y() - subtrahend
         );
     }
 
-    public static void subtractTo(final Vector2.Accessible minuend, final double subtrahend, final Vector2.Consumer consumer) {
+    public static void subtract2To(final Vector2.Accessible minuend, final double subtrahend, final Vector2.Consumer consumer) {
         consumer.xy(
                 minuend.x() - subtrahend,
                 minuend.y() - subtrahend
         );
     }
 
-    public static <R> R subtract(final Vector2.Accessible minuend, final Vector2.Accessible subtrahend, final Vector2.Factory<R> factory) {
+    public static <R> R subtract2(final Vector2.Accessible minuend, final Vector2.Accessible subtrahend, final Vector2.Factory<R> factory) {
         return factory.create(
                 minuend.x() - subtrahend.x(),
                 minuend.y() - subtrahend.y()
         );
     }
 
-    public static void subtractTo(final Vector2.Accessible minuend, final Vector2.Accessible subtrahend, final Vector2.Consumer consumer) {
+    public static void subtract2To(final Vector2.Accessible minuend, final Vector2.Accessible subtrahend, final Vector2.Consumer consumer) {
         consumer.xy(
                 minuend.x() - subtrahend.x(),
                 minuend.y() - subtrahend.y()
         );
     }
 
-    public static <R> R subtract(final double minuend, final Vector2.Accessible subtrahend, final Vector2.Factory<R> factory) {
+    public static <R> R subtract2(final double minuend, final Vector2.Accessible subtrahend, final Vector2.Factory<R> factory) {
         return factory.create(
                 minuend - subtrahend.x(),
                 minuend - subtrahend.y()
         );
     }
 
-    public static void subtractTo(final double minuend, final Vector2.Accessible subtrahend, final Vector2.Consumer consumer) {
+    public static void subtract2To(final double minuend, final Vector2.Accessible subtrahend, final Vector2.Consumer consumer) {
         consumer.xy(
                 minuend - subtrahend.x(),
                 minuend - subtrahend.y()
         );
     }
 
-    public static <R> R multiply(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Factory<R> factory) {
+    public static <R> R multiply2(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier,
                 multiplicand.y() * multiplier
         );
     }
 
-    public static void multiplyTo(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Consumer consumer) {
+    public static void multiply2To(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Consumer consumer) {
         consumer.xy(
                 multiplicand.x() * multiplier,
                 multiplicand.y() * multiplier
         );
     }
 
-    public static <R> R multiply(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Factory<R> factory) {
+    public static <R> R multiply2(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x(),
                 multiplicand.y() * multiplier.y()
         );
     }
 
-    public static void multiplyTo(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Consumer consumer) {
+    public static void multiply2To(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Consumer consumer) {
         consumer.xy(
                 multiplicand.x() * multiplier.x(),
                 multiplicand.y() * multiplier.y()
         );
     }
 
-    public static <R> R divide(final Vector2.Accessible dividend, final double divisor, final Vector2.Factory<R> factory) {
+    public static <R> R divide2(final Vector2.Accessible dividend, final double divisor, final Vector2.Factory<R> factory) {
         final double inverseDivisor = 1.0D / divisor;
 
         return factory.create(
@@ -379,7 +379,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final Vector2.Accessible dividend, final double divisor, final Vector2.Consumer consumer) {
+    public static void divide2To(final Vector2.Accessible dividend, final double divisor, final Vector2.Consumer consumer) {
         final double inverseDivisor = 1.0D / divisor;
 
         consumer.xy(
@@ -388,190 +388,190 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final Vector2.Accessible dividend, final Vector2.Accessible divisor, final Vector2.Factory<R> factory) {
+    public static <R> R divide2(final Vector2.Accessible dividend, final Vector2.Accessible divisor, final Vector2.Factory<R> factory) {
         return factory.create(
                 dividend.x() / divisor.x(),
                 dividend.y() / divisor.y()
         );
     }
 
-    public static void divideTo(final Vector2.Accessible dividend, final Vector2.Accessible divisor, final Vector2.Consumer consumer) {
+    public static void divide2To(final Vector2.Accessible dividend, final Vector2.Accessible divisor, final Vector2.Consumer consumer) {
         consumer.xy(
                 dividend.x() / divisor.x(),
                 dividend.y() / divisor.y()
         );
     }
 
-    public static <R> R divide(final double dividend, final Vector2.Accessible divisor, final Vector2.Factory<R> factory) {
+    public static <R> R divide2(final double dividend, final Vector2.Accessible divisor, final Vector2.Factory<R> factory) {
         return factory.create(
                 dividend / divisor.x(),
                 dividend / divisor.y()
         );
     }
 
-    public static void divideTo(final double dividend, final Vector2.Accessible divisor, final Vector2.Consumer consumer) {
+    public static void divide2To(final double dividend, final Vector2.Accessible divisor, final Vector2.Consumer consumer) {
         consumer.xy(
                 dividend / divisor.x(),
                 dividend / divisor.y()
         );
     }
 
-    public static <R> R fma(final Vector2.Accessible multiplicand, final double multiplier, final double addend, final Vector2.Factory<R> factory) {
+    public static <R> R fma2(final Vector2.Accessible multiplicand, final double multiplier, final double addend, final Vector2.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier + addend,
                 multiplicand.y() * multiplier + addend
         );
     }
 
-    public static void fmaTo(final Vector2.Accessible multiplicand, final double multiplier, final double addend, final Vector2.Consumer consumer) {
+    public static void fma2To(final Vector2.Accessible multiplicand, final double multiplier, final double addend, final Vector2.Consumer consumer) {
         consumer.xy(
                 multiplicand.x() * multiplier + addend,
                 multiplicand.y() * multiplier + addend
         );
     }
 
-    public static <R> R fma(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final double addend, final Vector2.Factory<R> factory) {
+    public static <R> R fma2(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final double addend, final Vector2.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x() + addend,
                 multiplicand.y() * multiplier.y() + addend
         );
     }
 
-    public static void fmaTo(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final double addend, final Vector2.Consumer consumer) {
+    public static void fma2To(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final double addend, final Vector2.Consumer consumer) {
         consumer.xy(
                 multiplicand.x() * multiplier.x() + addend,
                 multiplicand.y() * multiplier.y() + addend
         );
     }
 
-    public static <R> R fma(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Accessible addend, final Vector2.Factory<R> factory) {
+    public static <R> R fma2(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Accessible addend, final Vector2.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier + addend.x(),
                 multiplicand.y() * multiplier + addend.y()
         );
     }
 
-    public static void fmaTo(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Accessible addend, final Vector2.Consumer consumer) {
+    public static void fma2To(final Vector2.Accessible multiplicand, final double multiplier, final Vector2.Accessible addend, final Vector2.Consumer consumer) {
         consumer.xy(
                 multiplicand.x() * multiplier + addend.x(),
                 multiplicand.y() * multiplier + addend.y()
         );
     }
 
-    public static <R> R fma(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Accessible addend, final Vector2.Factory<R> factory) {
+    public static <R> R fma2(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Accessible addend, final Vector2.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x() + addend.x(),
                 multiplicand.y() * multiplier.y() + addend.y()
         );
     }
 
-    public static void fmaTo(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Accessible addend, final Vector2.Consumer consumer) {
+    public static void fma2To(final Vector2.Accessible multiplicand, final Vector2.Accessible multiplier, final Vector2.Accessible addend, final Vector2.Consumer consumer) {
         consumer.xy(
                 multiplicand.x() * multiplier.x() + addend.x(),
                 multiplicand.y() * multiplier.y() + addend.y()
         );
     }
 
-    public static <R> R pow(final Vector2.Accessible base, final double exponent, final Vector2.Factory<R> factory) {
+    public static <R> R pow2(final Vector2.Accessible base, final double exponent, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent)
         );
     }
 
-    public static void powTo(final Vector2.Accessible base, final double exponent, final Vector2.Consumer consumer) {
+    public static void pow2To(final Vector2.Accessible base, final double exponent, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent)
         );
     }
 
-    public static <R> R pow(final Vector2.Accessible base, final Vector2.Accessible exponent, final Vector2.Factory<R> factory) {
+    public static <R> R pow2(final Vector2.Accessible base, final Vector2.Accessible exponent, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y())
         );
     }
 
-    public static void powTo(final Vector2.Accessible base, final Vector2.Accessible exponent, final Vector2.Consumer consumer) {
+    public static void pow2To(final Vector2.Accessible base, final Vector2.Accessible exponent, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y())
         );
     }
 
-    public static <R> R pow(final double base, final Vector2.Accessible exponent, final Vector2.Factory<R> factory) {
+    public static <R> R pow2(final double base, final Vector2.Accessible exponent, final Vector2.Factory<R> factory) {
         return factory.create(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y())
         );
     }
 
-    public static void powTo(final double base, final Vector2.Accessible exponent, final Vector2.Consumer consumer) {
+    public static void pow2To(final double base, final Vector2.Accessible exponent, final Vector2.Consumer consumer) {
         consumer.xy(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y())
         );
     }
 
-    public static double squaredLength(final Vector2.Accessible vector) {
+    public static double squaredLength2(final Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
 
         return x * x + y * y;
     }
 
-    public static double squaredDistance(final Vector2.Accessible a, final double b) {
+    public static double squaredDistance2(final Vector2.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
 
         return x * x + y * y;
     }
 
-    public static double squaredDistance(final Vector2.Accessible a, final Vector2.Accessible b) {
+    public static double squaredDistance2(final Vector2.Accessible a, final Vector2.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
 
         return x * x + y * y;
     }
 
-    public static double length(final Vector2.Accessible vector) {
+    public static double length2(final Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
 
         return Math.sqrt(x * x + y * y);
     }
 
-    public static double distance(final Vector2.Accessible a, final double b) {
+    public static double distance2(final Vector2.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
 
         return Math.sqrt(x * x + y * y);
     }
 
-    public static double distance(final Vector2.Accessible a, final Vector2.Accessible b) {
+    public static double distance2(final Vector2.Accessible a, final Vector2.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
 
         return Math.sqrt(x * x + y * y);
     }
 
-    public static double dot(final Vector2.Accessible vector) {
+    public static double dot2(final Vector2.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
 
         return x * x + y * y;
     }
 
-    public static double dot(final Vector2.Accessible a, final double b) {
+    public static double dot2(final Vector2.Accessible a, final double b) {
         return a.x() * b + a.y() * b;
     }
 
-    public static double dot(final Vector2.Accessible a, final Vector2.Accessible b) {
+    public static double dot2(final Vector2.Accessible a, final Vector2.Accessible b) {
         return a.x() * b.x() + a.y() * b.y();
     }
 
-    public static <R> R normalize(final Vector2.Accessible vector, final Vector2.Factory<R> factory) {
+    public static <R> R normalize2(final Vector2.Accessible vector, final Vector2.Factory<R> factory) {
         final double x = vector.x();
         final double y = vector.y();
 
@@ -584,7 +584,7 @@ public final class VecMath {
         );
     }
 
-    public static void normalizeTo(final Vector2.Accessible vector, final Vector2.Consumer consumer) {
+    public static void normalize2To(final Vector2.Accessible vector, final Vector2.Consumer consumer) {
         final double x = vector.x();
         final double y = vector.y();
 
@@ -597,7 +597,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R reflect(final Vector2.Accessible incident, final Vector2.Accessible normal, final Vector2.Factory<R> factory) {
+    public static <R> R reflect2(final Vector2.Accessible incident, final Vector2.Accessible normal, final Vector2.Factory<R> factory) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
 
@@ -612,7 +612,7 @@ public final class VecMath {
         );
     }
 
-    public static void reflectTo(final Vector2.Accessible incident, final Vector2.Accessible normal, final Vector2.Consumer consumer) {
+    public static void reflect2To(final Vector2.Accessible incident, final Vector2.Accessible normal, final Vector2.Consumer consumer) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
 
@@ -627,7 +627,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R refract(final Vector2.Accessible incident, final Vector2.Accessible normal, final double eta, final Vector2.Factory<R> factory) {
+    public static <R> R refract2(final Vector2.Accessible incident, final Vector2.Accessible normal, final double eta, final Vector2.Factory<R> factory) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
 
@@ -649,7 +649,7 @@ public final class VecMath {
         );
     }
 
-    public static void refractTo(final Vector2.Accessible incident, final Vector2.Accessible normal, final double eta, final Vector2.Consumer consumer) {
+    public static void refract2To(final Vector2.Accessible incident, final Vector2.Accessible normal, final double eta, final Vector2.Consumer consumer) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
 
@@ -672,29 +672,29 @@ public final class VecMath {
         );
     }
 
-    public static double min(final Vector3.Accessible vector) {
+    public static double min3(final Vector3.Accessible vector) {
         return Math.min(
                 Math.min(vector.x(), vector.y()),
                 vector.z()
         );
     }
 
-    public static double min(final double x, final double y, final double z) {
+    public static double min3(final double x, final double y, final double z) {
         return Math.min(Math.min(x, y), z);
     }
 
-    public static double max(final Vector3.Accessible vector) {
+    public static double max3(final Vector3.Accessible vector) {
         return Math.max(
                 Math.max(vector.x(), vector.y()),
                 vector.z()
         );
     }
 
-    public static double max(final double x, final double y, final double z) {
+    public static double max3(final double x, final double y, final double z) {
         return Math.max(Math.max(x, y), z);
     }
 
-    public static <R> R min(final Vector3.Accessible a, final double b, final Vector3.Factory<R> factory) {
+    public static <R> R min3(final Vector3.Accessible a, final double b, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(a.x(), b),
                 Math.min(a.y(), b),
@@ -702,7 +702,7 @@ public final class VecMath {
         );
     }
 
-    public static void minTo(final Vector3.Accessible a, final double b, final Vector3.Consumer consumer) {
+    public static void min3To(final Vector3.Accessible a, final double b, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(a.x(), b),
                 Math.min(a.y(), b),
@@ -710,7 +710,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R min(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Factory<R> factory) {
+    public static <R> R min3(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(a.x(), b.x()),
                 Math.min(a.y(), b.y()),
@@ -718,7 +718,7 @@ public final class VecMath {
         );
     }
 
-    public static void minTo(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Consumer consumer) {
+    public static void min3To(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(a.x(), b.x()),
                 Math.min(a.y(), b.y()),
@@ -726,7 +726,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R max(final Vector3.Accessible a, final double b, final Vector3.Factory<R> factory) {
+    public static <R> R max3(final Vector3.Accessible a, final double b, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.max(a.x(), b),
                 Math.max(a.y(), b),
@@ -734,7 +734,7 @@ public final class VecMath {
         );
     }
 
-    public static void maxTo(final Vector3.Accessible a, final double b, final Vector3.Consumer consumer) {
+    public static void max3To(final Vector3.Accessible a, final double b, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.max(a.x(), b),
                 Math.max(a.y(), b),
@@ -742,7 +742,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R max(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Factory<R> factory) {
+    public static <R> R max3(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.max(a.x(), b.x()),
                 Math.max(a.y(), b.y()),
@@ -750,7 +750,7 @@ public final class VecMath {
         );
     }
 
-    public static void maxTo(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Consumer consumer) {
+    public static void max3To(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.max(a.x(), b.x()),
                 Math.max(a.y(), b.y()),
@@ -758,7 +758,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector3.Accessible value, final double min, final double max, final Vector3.Factory<R> factory) {
+    public static <R> R clamp3(final Vector3.Accessible value, final double min, final double max, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min), max),
                 Math.min(Math.max(value.y(), min), max),
@@ -766,7 +766,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector3.Accessible value, final double min, final double max, final Vector3.Consumer consumer) {
+    public static void clamp3To(final Vector3.Accessible value, final double min, final double max, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(Math.max(value.x(), min), max),
                 Math.min(Math.max(value.y(), min), max),
@@ -774,7 +774,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector3.Accessible value, final Vector3.Accessible min, final double max, final Vector3.Factory<R> factory) {
+    public static <R> R clamp3(final Vector3.Accessible value, final Vector3.Accessible min, final double max, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min.x()), max),
                 Math.min(Math.max(value.y(), min.y()), max),
@@ -782,7 +782,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector3.Accessible value, final Vector3.Accessible min, final double max, final Vector3.Consumer consumer) {
+    public static void clamp3To(final Vector3.Accessible value, final Vector3.Accessible min, final double max, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(Math.max(value.x(), min.x()), max),
                 Math.min(Math.max(value.y(), min.y()), max),
@@ -790,7 +790,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector3.Accessible value, final double min, final Vector3.Accessible max, final Vector3.Factory<R> factory) {
+    public static <R> R clamp3(final Vector3.Accessible value, final double min, final Vector3.Accessible max, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min), max.x()),
                 Math.min(Math.max(value.y(), min), max.y()),
@@ -798,7 +798,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector3.Accessible value, final double min, final Vector3.Accessible max, final Vector3.Consumer consumer) {
+    public static void clamp3To(final Vector3.Accessible value, final double min, final Vector3.Accessible max, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(Math.max(value.x(), min), max.x()),
                 Math.min(Math.max(value.y(), min), max.y()),
@@ -806,7 +806,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector3.Accessible value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Factory<R> factory) {
+    public static <R> R clamp3(final Vector3.Accessible value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min.x()), max.x()),
                 Math.min(Math.max(value.y(), min.y()), max.y()),
@@ -814,7 +814,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector3.Accessible value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Consumer consumer) {
+    public static void clamp3To(final Vector3.Accessible value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(Math.max(value.x(), min.x()), max.x()),
                 Math.min(Math.max(value.y(), min.y()), max.y()),
@@ -822,7 +822,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final double value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Factory<R> factory) {
+    public static <R> R clamp3(final double value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value, min.x()), max.x()),
                 Math.min(Math.max(value, min.y()), max.y()),
@@ -830,7 +830,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final double value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Consumer consumer) {
+    public static void clamp3To(final double value, final Vector3.Accessible min, final Vector3.Accessible max, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.min(Math.max(value, min.x()), max.x()),
                 Math.min(Math.max(value, min.y()), max.y()),
@@ -838,7 +838,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector3.Accessible a, final double b, final double t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final Vector3.Accessible a, final double b, final double t, final Vector3.Factory<R> factory) {
         final double oneMinusT = 1.0D - t;
         final double bT = b * t;
 
@@ -849,7 +849,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector3.Accessible a, final double b, final double t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final Vector3.Accessible a, final double b, final double t, final Vector3.Consumer consumer) {
         final double oneMinusT = 1.0D - t;
         final double bT = b * t;
 
@@ -860,7 +860,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector3.Accessible a, final Vector3.Accessible b, final double t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final Vector3.Accessible a, final Vector3.Accessible b, final double t, final Vector3.Factory<R> factory) {
         final double oneMinusT = 1.0D - t;
 
         return factory.create(
@@ -870,7 +870,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector3.Accessible a, final Vector3.Accessible b, final double t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final Vector3.Accessible a, final Vector3.Accessible b, final double t, final Vector3.Consumer consumer) {
         final double oneMinusT = 1.0D - t;
 
         consumer.xyz(
@@ -880,7 +880,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final Vector3.Accessible b, final double t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final double a, final Vector3.Accessible b, final double t, final Vector3.Factory<R> factory) {
         final double aOneMinusT = a * (1.0D - t);
 
         return factory.create(
@@ -890,7 +890,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final Vector3.Accessible b, final double t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final double a, final Vector3.Accessible b, final double t, final Vector3.Consumer consumer) {
         final double aOneMinusT = a * (1.0D - t);
 
         consumer.xyz(
@@ -900,7 +900,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector3.Accessible a, final double b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final Vector3.Accessible a, final double b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
         return factory.create(
                 lerp(a.x(), b, t.x()),
                 lerp(a.y(), b, t.y()),
@@ -908,7 +908,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector3.Accessible a, final double b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final Vector3.Accessible a, final double b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
         consumer.xyz(
                 lerp(a.x(), b, t.x()),
                 lerp(a.y(), b, t.y()),
@@ -916,7 +916,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
         return factory.create(
                 lerp(a.x(), b.x(), t.x()),
                 lerp(a.y(), b.y(), t.y()),
@@ -924,7 +924,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
         consumer.xyz(
                 lerp(a.x(), b.x(), t.x()),
                 lerp(a.y(), b.y(), t.y()),
@@ -932,7 +932,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final double a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
         return factory.create(
                 lerp(a, b.x(), t.x()),
                 lerp(a, b.y(), t.y()),
@@ -940,7 +940,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final double a, final Vector3.Accessible b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
         consumer.xyz(
                 lerp(a, b.x(), t.x()),
                 lerp(a, b.y(), t.y()),
@@ -948,7 +948,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final double b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
+    public static <R> R lerp3(final double a, final double b, final Vector3.Accessible t, final Vector3.Factory<R> factory) {
         return factory.create(
                 lerp(a, b, t.x()),
                 lerp(a, b, t.y()),
@@ -956,7 +956,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final double b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
+    public static void lerp3To(final double a, final double b, final Vector3.Accessible t, final Vector3.Consumer consumer) {
         consumer.xyz(
                 lerp(a, b, t.x()),
                 lerp(a, b, t.y()),
@@ -964,7 +964,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R negate(final Vector3.Accessible vector, final Vector3.Factory<R> factory) {
+    public static <R> R negate3(final Vector3.Accessible vector, final Vector3.Factory<R> factory) {
         return factory.create(
                 -vector.x(),
                 -vector.y(),
@@ -972,7 +972,7 @@ public final class VecMath {
         );
     }
 
-    public static void negateTo(final Vector3.Accessible vector, final Vector3.Consumer consumer) {
+    public static void negate3To(final Vector3.Accessible vector, final Vector3.Consumer consumer) {
         consumer.xyz(
                 -vector.x(),
                 -vector.y(),
@@ -980,7 +980,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R add(final Vector3.Accessible augend, final double addend, final Vector3.Factory<R> factory) {
+    public static <R> R add3(final Vector3.Accessible augend, final double addend, final Vector3.Factory<R> factory) {
         return factory.create(
                 augend.x() + addend,
                 augend.y() + addend,
@@ -988,7 +988,7 @@ public final class VecMath {
         );
     }
 
-    public static void addTo(final Vector3.Accessible augend, final double addend, final Vector3.Consumer consumer) {
+    public static void add3To(final Vector3.Accessible augend, final double addend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 augend.x() + addend,
                 augend.y() + addend,
@@ -996,7 +996,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R add(final Vector3.Accessible augend, final Vector3.Accessible addend, final Vector3.Factory<R> factory) {
+    public static <R> R add3(final Vector3.Accessible augend, final Vector3.Accessible addend, final Vector3.Factory<R> factory) {
         return factory.create(
                 augend.x() + addend.x(),
                 augend.y() + addend.y(),
@@ -1004,7 +1004,7 @@ public final class VecMath {
         );
     }
 
-    public static void addTo(final Vector3.Accessible augend, final Vector3.Accessible addend, final Vector3.Consumer consumer) {
+    public static void add3To(final Vector3.Accessible augend, final Vector3.Accessible addend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 augend.x() + addend.x(),
                 augend.y() + addend.y(),
@@ -1012,7 +1012,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R subtract(final Vector3.Accessible minuend, final double subtrahend, final Vector3.Factory<R> factory) {
+    public static <R> R subtract3(final Vector3.Accessible minuend, final double subtrahend, final Vector3.Factory<R> factory) {
         return factory.create(
                 minuend.x() - subtrahend,
                 minuend.y() - subtrahend,
@@ -1020,7 +1020,7 @@ public final class VecMath {
         );
     }
 
-    public static void subtractTo(final Vector3.Accessible minuend, final double subtrahend, final Vector3.Consumer consumer) {
+    public static void subtract3To(final Vector3.Accessible minuend, final double subtrahend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 minuend.x() - subtrahend,
                 minuend.y() - subtrahend,
@@ -1028,7 +1028,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R subtract(final Vector3.Accessible minuend, final Vector3.Accessible subtrahend, final Vector3.Factory<R> factory) {
+    public static <R> R subtract3(final Vector3.Accessible minuend, final Vector3.Accessible subtrahend, final Vector3.Factory<R> factory) {
         return factory.create(
                 minuend.x() - subtrahend.x(),
                 minuend.y() - subtrahend.y(),
@@ -1036,7 +1036,7 @@ public final class VecMath {
         );
     }
 
-    public static void subtractTo(final Vector3.Accessible minuend, final Vector3.Accessible subtrahend, final Vector3.Consumer consumer) {
+    public static void subtract3To(final Vector3.Accessible minuend, final Vector3.Accessible subtrahend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 minuend.x() - subtrahend.x(),
                 minuend.y() - subtrahend.y(),
@@ -1044,7 +1044,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R subtract(final double minuend, final Vector3.Accessible subtrahend, final Vector3.Factory<R> factory) {
+    public static <R> R subtract3(final double minuend, final Vector3.Accessible subtrahend, final Vector3.Factory<R> factory) {
         return factory.create(
                 minuend - subtrahend.x(),
                 minuend - subtrahend.y(),
@@ -1052,7 +1052,7 @@ public final class VecMath {
         );
     }
 
-    public static void subtractTo(final double minuend, final Vector3.Accessible subtrahend, final Vector3.Consumer consumer) {
+    public static void subtract3To(final double minuend, final Vector3.Accessible subtrahend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 minuend - subtrahend.x(),
                 minuend - subtrahend.y(),
@@ -1060,7 +1060,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R multiply(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Factory<R> factory) {
+    public static <R> R multiply3(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier,
                 multiplicand.y() * multiplier,
@@ -1068,7 +1068,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyTo(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Consumer consumer) {
+    public static void multiply3To(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Consumer consumer) {
         consumer.xyz(
                 multiplicand.x() * multiplier,
                 multiplicand.y() * multiplier,
@@ -1076,7 +1076,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R multiply(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Factory<R> factory) {
+    public static <R> R multiply3(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x(),
                 multiplicand.y() * multiplier.y(),
@@ -1084,7 +1084,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyTo(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Consumer consumer) {
+    public static void multiply3To(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Consumer consumer) {
         consumer.xyz(
                 multiplicand.x() * multiplier.x(),
                 multiplicand.y() * multiplier.y(),
@@ -1092,7 +1092,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final Vector3.Accessible dividend, final double divisor, final Vector3.Factory<R> factory) {
+    public static <R> R divide3(final Vector3.Accessible dividend, final double divisor, final Vector3.Factory<R> factory) {
         final double inverseDivisor = 1.0D / divisor;
 
         return factory.create(
@@ -1102,7 +1102,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final Vector3.Accessible dividend, final double divisor, final Vector3.Consumer consumer) {
+    public static void divide3To(final Vector3.Accessible dividend, final double divisor, final Vector3.Consumer consumer) {
         final double inverseDivisor = 1.0D / divisor;
 
         consumer.xyz(
@@ -1112,7 +1112,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final Vector3.Accessible dividend, final Vector3.Accessible divisor, final Vector3.Factory<R> factory) {
+    public static <R> R divide3(final Vector3.Accessible dividend, final Vector3.Accessible divisor, final Vector3.Factory<R> factory) {
         return factory.create(
                 dividend.x() / divisor.x(),
                 dividend.y() / divisor.y(),
@@ -1120,7 +1120,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final Vector3.Accessible dividend, final Vector3.Accessible divisor, final Vector3.Consumer consumer) {
+    public static void divide3To(final Vector3.Accessible dividend, final Vector3.Accessible divisor, final Vector3.Consumer consumer) {
         consumer.xyz(
                 dividend.x() / divisor.x(),
                 dividend.y() / divisor.y(),
@@ -1128,7 +1128,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final double dividend, final Vector3.Accessible divisor, final Vector3.Factory<R> factory) {
+    public static <R> R divide3(final double dividend, final Vector3.Accessible divisor, final Vector3.Factory<R> factory) {
         return factory.create(
                 dividend / divisor.x(),
                 dividend / divisor.y(),
@@ -1136,7 +1136,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final double dividend, final Vector3.Accessible divisor, final Vector3.Consumer consumer) {
+    public static void divide3To(final double dividend, final Vector3.Accessible divisor, final Vector3.Consumer consumer) {
         consumer.xyz(
                 dividend / divisor.x(),
                 dividend / divisor.y(),
@@ -1144,7 +1144,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector3.Accessible multiplicand, final double multiplier, final double addend, final Vector3.Factory<R> factory) {
+    public static <R> R fma3(final Vector3.Accessible multiplicand, final double multiplier, final double addend, final Vector3.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier + addend,
                 multiplicand.y() * multiplier + addend,
@@ -1152,7 +1152,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector3.Accessible multiplicand, final double multiplier, final double addend, final Vector3.Consumer consumer) {
+    public static void fma3To(final Vector3.Accessible multiplicand, final double multiplier, final double addend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 multiplicand.x() * multiplier + addend,
                 multiplicand.y() * multiplier + addend,
@@ -1160,7 +1160,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final double addend, final Vector3.Factory<R> factory) {
+    public static <R> R fma3(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final double addend, final Vector3.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x() + addend,
                 multiplicand.y() * multiplier.y() + addend,
@@ -1168,7 +1168,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final double addend, final Vector3.Consumer consumer) {
+    public static void fma3To(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final double addend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 multiplicand.x() * multiplier.x() + addend,
                 multiplicand.y() * multiplier.y() + addend,
@@ -1176,7 +1176,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Accessible addend, final Vector3.Factory<R> factory) {
+    public static <R> R fma3(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Accessible addend, final Vector3.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier + addend.x(),
                 multiplicand.y() * multiplier + addend.y(),
@@ -1184,7 +1184,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Accessible addend, final Vector3.Consumer consumer) {
+    public static void fma3To(final Vector3.Accessible multiplicand, final double multiplier, final Vector3.Accessible addend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 multiplicand.x() * multiplier + addend.x(),
                 multiplicand.y() * multiplier + addend.y(),
@@ -1192,7 +1192,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Accessible addend, final Vector3.Factory<R> factory) {
+    public static <R> R fma3(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Accessible addend, final Vector3.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x() + addend.x(),
                 multiplicand.y() * multiplier.y() + addend.y(),
@@ -1200,7 +1200,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Accessible addend, final Vector3.Consumer consumer) {
+    public static void fma3To(final Vector3.Accessible multiplicand, final Vector3.Accessible multiplier, final Vector3.Accessible addend, final Vector3.Consumer consumer) {
         consumer.xyz(
                 multiplicand.x() * multiplier.x() + addend.x(),
                 multiplicand.y() * multiplier.y() + addend.y(),
@@ -1208,7 +1208,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R pow(final Vector3.Accessible base, final double exponent, final Vector3.Factory<R> factory) {
+    public static <R> R pow3(final Vector3.Accessible base, final double exponent, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent),
@@ -1216,7 +1216,7 @@ public final class VecMath {
         );
     }
 
-    public static void powTo(final Vector3.Accessible base, final double exponent, final Vector3.Consumer consumer) {
+    public static void pow3To(final Vector3.Accessible base, final double exponent, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent),
@@ -1224,7 +1224,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R pow(final Vector3.Accessible base, final Vector3.Accessible exponent, final Vector3.Factory<R> factory) {
+    public static <R> R pow3(final Vector3.Accessible base, final Vector3.Accessible exponent, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
@@ -1232,7 +1232,7 @@ public final class VecMath {
         );
     }
 
-    public static void powTo(final Vector3.Accessible base, final Vector3.Accessible exponent, final Vector3.Consumer consumer) {
+    public static void pow3To(final Vector3.Accessible base, final Vector3.Accessible exponent, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
@@ -1240,7 +1240,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R pow(final double base, final Vector3.Accessible exponent, final Vector3.Factory<R> factory) {
+    public static <R> R pow3(final double base, final Vector3.Accessible exponent, final Vector3.Factory<R> factory) {
         return factory.create(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y()),
@@ -1248,7 +1248,7 @@ public final class VecMath {
         );
     }
 
-    public static void powTo(final double base, final Vector3.Accessible exponent, final Vector3.Consumer consumer) {
+    public static void pow3To(final double base, final Vector3.Accessible exponent, final Vector3.Consumer consumer) {
         consumer.xyz(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y()),
@@ -1256,7 +1256,7 @@ public final class VecMath {
         );
     }
 
-    public static double squaredLength(final Vector3.Accessible vector) {
+    public static double squaredLength3(final Vector3.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1264,7 +1264,7 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
-    public static double squaredDistance(final Vector3.Accessible a, final double b) {
+    public static double squaredDistance3(final Vector3.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
@@ -1272,7 +1272,7 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
-    public static double squaredDistance(final Vector3.Accessible a, final Vector3.Accessible b) {
+    public static double squaredDistance3(final Vector3.Accessible a, final Vector3.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
@@ -1280,7 +1280,7 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
-    public static double length(final Vector3.Accessible vector) {
+    public static double length3(final Vector3.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1288,7 +1288,7 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
-    public static double distance(final Vector3.Accessible a, final double b) {
+    public static double distance3(final Vector3.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
@@ -1296,7 +1296,7 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
-    public static double distance(final Vector3.Accessible a, final Vector3.Accessible b) {
+    public static double distance3(final Vector3.Accessible a, final Vector3.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
@@ -1304,7 +1304,7 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
-    public static double dot(final Vector3.Accessible vector) {
+    public static double dot3(final Vector3.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1312,15 +1312,15 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
-    public static double dot(final Vector3.Accessible a, final double b) {
+    public static double dot3(final Vector3.Accessible a, final double b) {
         return a.x() * b + a.y() * b + a.z() * b;
     }
 
-    public static double dot(final Vector3.Accessible a, final Vector3.Accessible b) {
+    public static double dot3(final Vector3.Accessible a, final Vector3.Accessible b) {
         return a.x() * b.x() + a.y() * b.y() + a.z() * b.z();
     }
 
-    public static <R> R cross(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Factory<R> factory) {
+    public static <R> R cross3(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Factory<R> factory) {
         final double aX = a.x();
         final double aY = a.y();
         final double aZ = a.z();
@@ -1336,7 +1336,7 @@ public final class VecMath {
         );
     }
 
-    public static void crossTo(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Consumer consumer) {
+    public static void cross3To(final Vector3.Accessible a, final Vector3.Accessible b, final Vector3.Consumer consumer) {
         final double aX = a.x();
         final double aY = a.y();
         final double aZ = a.z();
@@ -1352,7 +1352,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R normalize(final Vector3.Accessible vector, final Vector3.Factory<R> factory) {
+    public static <R> R normalize3(final Vector3.Accessible vector, final Vector3.Factory<R> factory) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1367,7 +1367,7 @@ public final class VecMath {
         );
     }
 
-    public static void normalizeTo(final Vector3.Accessible vector, final Vector3.Consumer consumer) {
+    public static void normalize3To(final Vector3.Accessible vector, final Vector3.Consumer consumer) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -1382,7 +1382,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R reflect(final Vector3.Accessible incident, final Vector3.Accessible normal, final Vector3.Factory<R> factory) {
+    public static <R> R reflect3(final Vector3.Accessible incident, final Vector3.Accessible normal, final Vector3.Factory<R> factory) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1400,7 +1400,7 @@ public final class VecMath {
         );
     }
 
-    public static void reflectTo(final Vector3.Accessible incident, final Vector3.Accessible normal, final Vector3.Consumer consumer) {
+    public static void reflect3To(final Vector3.Accessible incident, final Vector3.Accessible normal, final Vector3.Consumer consumer) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1418,7 +1418,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R refract(final Vector3.Accessible incident, final Vector3.Accessible normal, final double eta, final Vector3.Factory<R> factory) {
+    public static <R> R refract3(final Vector3.Accessible incident, final Vector3.Accessible normal, final double eta, final Vector3.Factory<R> factory) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1443,7 +1443,7 @@ public final class VecMath {
         );
     }
 
-    public static void refractTo(final Vector3.Accessible incident, final Vector3.Accessible normal, final double eta, final Vector3.Consumer consumer) {
+    public static void refract3To(final Vector3.Accessible incident, final Vector3.Accessible normal, final double eta, final Vector3.Consumer consumer) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -1469,29 +1469,29 @@ public final class VecMath {
         );
     }
 
-    public static double min(final Vector4.Accessible vector) {
+    public static double min4(final Vector4.Accessible vector) {
         return Math.min(
                 Math.min(vector.x(), vector.y()),
                 Math.min(vector.z(), vector.w())
         );
     }
 
-    public static double min(final double x, final double y, final double z, final double w) {
+    public static double min4(final double x, final double y, final double z, final double w) {
         return Math.min(Math.min(x, y), Math.min(z, w));
     }
 
-    public static double max(final Vector4.Accessible vector) {
+    public static double max4(final Vector4.Accessible vector) {
         return Math.max(
                 Math.max(vector.x(), vector.y()),
                 Math.max(vector.z(), vector.w())
         );
     }
 
-    public static double max(final double x, final double y, final double z, final double w) {
+    public static double max4(final double x, final double y, final double z, final double w) {
         return Math.max(Math.max(x, y), Math.max(z, w));
     }
 
-    public static <R> R min(final Vector4.Accessible a, final double b, final Vector4.Factory<R> factory) {
+    public static <R> R min4(final Vector4.Accessible a, final double b, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(a.x(), b),
                 Math.min(a.y(), b),
@@ -1500,7 +1500,7 @@ public final class VecMath {
         );
     }
 
-    public static void minTo(final Vector4.Accessible a, final double b, final Vector4.Consumer consumer) {
+    public static void min4To(final Vector4.Accessible a, final double b, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(a.x(), b),
                 Math.min(a.y(), b),
@@ -1509,7 +1509,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R min(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Factory<R> factory) {
+    public static <R> R min4(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(a.x(), b.x()),
                 Math.min(a.y(), b.y()),
@@ -1518,7 +1518,7 @@ public final class VecMath {
         );
     }
 
-    public static void minTo(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Consumer consumer) {
+    public static void min4To(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(a.x(), b.x()),
                 Math.min(a.y(), b.y()),
@@ -1527,7 +1527,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R max(final Vector4.Accessible a, final double b, final Vector4.Factory<R> factory) {
+    public static <R> R max4(final Vector4.Accessible a, final double b, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.max(a.x(), b),
                 Math.max(a.y(), b),
@@ -1536,7 +1536,7 @@ public final class VecMath {
         );
     }
 
-    public static void maxTo(final Vector4.Accessible a, final double b, final Vector4.Consumer consumer) {
+    public static void max4To(final Vector4.Accessible a, final double b, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.max(a.x(), b),
                 Math.max(a.y(), b),
@@ -1545,7 +1545,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R max(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Factory<R> factory) {
+    public static <R> R max4(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.max(a.x(), b.x()),
                 Math.max(a.y(), b.y()),
@@ -1554,7 +1554,7 @@ public final class VecMath {
         );
     }
 
-    public static void maxTo(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Consumer consumer) {
+    public static void max4To(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.max(a.x(), b.x()),
                 Math.max(a.y(), b.y()),
@@ -1563,7 +1563,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector4.Accessible value, final double min, final double max, final Vector4.Factory<R> factory) {
+    public static <R> R clamp4(final Vector4.Accessible value, final double min, final double max, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min), max),
                 Math.min(Math.max(value.y(), min), max),
@@ -1572,7 +1572,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector4.Accessible value, final double min, final double max, final Vector4.Consumer consumer) {
+    public static void clamp4To(final Vector4.Accessible value, final double min, final double max, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(Math.max(value.x(), min), max),
                 Math.min(Math.max(value.y(), min), max),
@@ -1581,7 +1581,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector4.Accessible value, final Vector4.Accessible min, final double max, final Vector4.Factory<R> factory) {
+    public static <R> R clamp4(final Vector4.Accessible value, final Vector4.Accessible min, final double max, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min.x()), max),
                 Math.min(Math.max(value.y(), min.y()), max),
@@ -1590,7 +1590,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector4.Accessible value, final Vector4.Accessible min, final double max, final Vector4.Consumer consumer) {
+    public static void clamp4To(final Vector4.Accessible value, final Vector4.Accessible min, final double max, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(Math.max(value.x(), min.x()), max),
                 Math.min(Math.max(value.y(), min.y()), max),
@@ -1599,7 +1599,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector4.Accessible value, final double min, final Vector4.Accessible max, final Vector4.Factory<R> factory) {
+    public static <R> R clamp4(final Vector4.Accessible value, final double min, final Vector4.Accessible max, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min), max.x()),
                 Math.min(Math.max(value.y(), min), max.y()),
@@ -1608,7 +1608,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector4.Accessible value, final double min, final Vector4.Accessible max, final Vector4.Consumer consumer) {
+    public static void clamp4To(final Vector4.Accessible value, final double min, final Vector4.Accessible max, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(Math.max(value.x(), min), max.x()),
                 Math.min(Math.max(value.y(), min), max.y()),
@@ -1617,7 +1617,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final Vector4.Accessible value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Factory<R> factory) {
+    public static <R> R clamp4(final Vector4.Accessible value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value.x(), min.x()), max.x()),
                 Math.min(Math.max(value.y(), min.y()), max.y()),
@@ -1626,7 +1626,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final Vector4.Accessible value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Consumer consumer) {
+    public static void clamp4To(final Vector4.Accessible value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(Math.max(value.x(), min.x()), max.x()),
                 Math.min(Math.max(value.y(), min.y()), max.y()),
@@ -1635,7 +1635,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R clamp(final double value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Factory<R> factory) {
+    public static <R> R clamp4(final double value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.min(Math.max(value, min.x()), max.x()),
                 Math.min(Math.max(value, min.y()), max.y()),
@@ -1644,7 +1644,7 @@ public final class VecMath {
         );
     }
 
-    public static void clampTo(final double value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Consumer consumer) {
+    public static void clamp4To(final double value, final Vector4.Accessible min, final Vector4.Accessible max, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.min(Math.max(value, min.x()), max.x()),
                 Math.min(Math.max(value, min.y()), max.y()),
@@ -1653,7 +1653,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector4.Accessible a, final double b, final double t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final Vector4.Accessible a, final double b, final double t, final Vector4.Factory<R> factory) {
         final double oneMinusT = 1.0D - t;
         final double bT = b * t;
 
@@ -1665,7 +1665,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector4.Accessible a, final double b, final double t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final Vector4.Accessible a, final double b, final double t, final Vector4.Consumer consumer) {
         final double oneMinusT = 1.0D - t;
         final double bT = b * t;
 
@@ -1677,7 +1677,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector4.Accessible a, final Vector4.Accessible b, final double t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final Vector4.Accessible a, final Vector4.Accessible b, final double t, final Vector4.Factory<R> factory) {
         final double oneMinusT = 1.0D - t;
 
         return factory.create(
@@ -1688,7 +1688,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector4.Accessible a, final Vector4.Accessible b, final double t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final Vector4.Accessible a, final Vector4.Accessible b, final double t, final Vector4.Consumer consumer) {
         final double oneMinusT = 1.0D - t;
 
         consumer.xyzw(
@@ -1699,7 +1699,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final Vector4.Accessible b, final double t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final double a, final Vector4.Accessible b, final double t, final Vector4.Factory<R> factory) {
         final double aOneMinusT = a * (1.0D - t);
 
         return factory.create(
@@ -1710,7 +1710,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final Vector4.Accessible b, final double t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final double a, final Vector4.Accessible b, final double t, final Vector4.Consumer consumer) {
         final double aOneMinusT = a * (1.0D - t);
 
         consumer.xyzw(
@@ -1721,7 +1721,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector4.Accessible a, final double b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final Vector4.Accessible a, final double b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
         return factory.create(
                 lerp(a.x(), b, t.x()),
                 lerp(a.y(), b, t.y()),
@@ -1730,7 +1730,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector4.Accessible a, final double b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final Vector4.Accessible a, final double b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 lerp(a.x(), b, t.x()),
                 lerp(a.y(), b, t.y()),
@@ -1739,7 +1739,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
         return factory.create(
                 lerp(a.x(), b.x(), t.x()),
                 lerp(a.y(), b.y(), t.y()),
@@ -1748,7 +1748,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final Vector4.Accessible a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 lerp(a.x(), b.x(), t.x()),
                 lerp(a.y(), b.y(), t.y()),
@@ -1757,7 +1757,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final double a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
         return factory.create(
                 lerp(a, b.x(), t.x()),
                 lerp(a, b.y(), t.y()),
@@ -1766,7 +1766,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final double a, final Vector4.Accessible b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 lerp(a, b.x(), t.x()),
                 lerp(a, b.y(), t.y()),
@@ -1775,7 +1775,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R lerp(final double a, final double b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
+    public static <R> R lerp4(final double a, final double b, final Vector4.Accessible t, final Vector4.Factory<R> factory) {
         return factory.create(
                 lerp(a, b, t.x()),
                 lerp(a, b, t.y()),
@@ -1784,7 +1784,7 @@ public final class VecMath {
         );
     }
 
-    public static void lerpTo(final double a, final double b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
+    public static void lerp4To(final double a, final double b, final Vector4.Accessible t, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 lerp(a, b, t.x()),
                 lerp(a, b, t.y()),
@@ -1793,7 +1793,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R negate(final Vector4.Accessible vector, final Vector4.Factory<R> factory) {
+    public static <R> R negate4(final Vector4.Accessible vector, final Vector4.Factory<R> factory) {
         return factory.create(
                 -vector.x(),
                 -vector.y(),
@@ -1802,7 +1802,7 @@ public final class VecMath {
         );
     }
 
-    public static void negateTo(final Vector4.Accessible vector, final Vector4.Consumer consumer) {
+    public static void negate4To(final Vector4.Accessible vector, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 -vector.x(),
                 -vector.y(),
@@ -1811,7 +1811,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R add(final Vector4.Accessible augend, final double addend, final Vector4.Factory<R> factory) {
+    public static <R> R add4(final Vector4.Accessible augend, final double addend, final Vector4.Factory<R> factory) {
         return factory.create(
                 augend.x() + addend,
                 augend.y() + addend,
@@ -1820,7 +1820,7 @@ public final class VecMath {
         );
     }
 
-    public static void addTo(final Vector4.Accessible augend, final double addend, final Vector4.Consumer consumer) {
+    public static void add4To(final Vector4.Accessible augend, final double addend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 augend.x() + addend,
                 augend.y() + addend,
@@ -1829,7 +1829,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R add(final Vector4.Accessible augend, final Vector4.Accessible addend, final Vector4.Factory<R> factory) {
+    public static <R> R add4(final Vector4.Accessible augend, final Vector4.Accessible addend, final Vector4.Factory<R> factory) {
         return factory.create(
                 augend.x() + addend.x(),
                 augend.y() + addend.y(),
@@ -1838,7 +1838,7 @@ public final class VecMath {
         );
     }
 
-    public static void addTo(final Vector4.Accessible augend, final Vector4.Accessible addend, final Vector4.Consumer consumer) {
+    public static void add4To(final Vector4.Accessible augend, final Vector4.Accessible addend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 augend.x() + addend.x(),
                 augend.y() + addend.y(),
@@ -1847,7 +1847,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R subtract(final Vector4.Accessible minuend, final double subtrahend, final Vector4.Factory<R> factory) {
+    public static <R> R subtract4(final Vector4.Accessible minuend, final double subtrahend, final Vector4.Factory<R> factory) {
         return factory.create(
                 minuend.x() - subtrahend,
                 minuend.y() - subtrahend,
@@ -1856,7 +1856,7 @@ public final class VecMath {
         );
     }
 
-    public static void subtractTo(final Vector4.Accessible minuend, final double subtrahend, final Vector4.Consumer consumer) {
+    public static void subtract4To(final Vector4.Accessible minuend, final double subtrahend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 minuend.x() - subtrahend,
                 minuend.y() - subtrahend,
@@ -1865,7 +1865,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R subtract(final Vector4.Accessible minuend, final Vector4.Accessible subtrahend, final Vector4.Factory<R> factory) {
+    public static <R> R subtract4(final Vector4.Accessible minuend, final Vector4.Accessible subtrahend, final Vector4.Factory<R> factory) {
         return factory.create(
                 minuend.x() - subtrahend.x(),
                 minuend.y() - subtrahend.y(),
@@ -1874,7 +1874,7 @@ public final class VecMath {
         );
     }
 
-    public static void subtractTo(final Vector4.Accessible minuend, final Vector4.Accessible subtrahend, final Vector4.Consumer consumer) {
+    public static void subtract4To(final Vector4.Accessible minuend, final Vector4.Accessible subtrahend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 minuend.x() - subtrahend.x(),
                 minuend.y() - subtrahend.y(),
@@ -1883,7 +1883,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R subtract(final double minuend, final Vector4.Accessible subtrahend, final Vector4.Factory<R> factory) {
+    public static <R> R subtract4(final double minuend, final Vector4.Accessible subtrahend, final Vector4.Factory<R> factory) {
         return factory.create(
                 minuend - subtrahend.x(),
                 minuend - subtrahend.y(),
@@ -1892,7 +1892,7 @@ public final class VecMath {
         );
     }
 
-    public static void subtractTo(final double minuend, final Vector4.Accessible subtrahend, final Vector4.Consumer consumer) {
+    public static void subtract4To(final double minuend, final Vector4.Accessible subtrahend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 minuend - subtrahend.x(),
                 minuend - subtrahend.y(),
@@ -1901,7 +1901,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R multiply(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Factory<R> factory) {
+    public static <R> R multiply4(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier,
                 multiplicand.y() * multiplier,
@@ -1910,7 +1910,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyTo(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Consumer consumer) {
+    public static void multiply4To(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 multiplicand.x() * multiplier,
                 multiplicand.y() * multiplier,
@@ -1919,7 +1919,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R multiply(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Factory<R> factory) {
+    public static <R> R multiply4(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x(),
                 multiplicand.y() * multiplier.y(),
@@ -1928,7 +1928,7 @@ public final class VecMath {
         );
     }
 
-    public static void multiplyTo(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Consumer consumer) {
+    public static void multiply4To(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 multiplicand.x() * multiplier.x(),
                 multiplicand.y() * multiplier.y(),
@@ -1937,7 +1937,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final Vector4.Accessible dividend, final double divisor, final Vector4.Factory<R> factory) {
+    public static <R> R divide4(final Vector4.Accessible dividend, final double divisor, final Vector4.Factory<R> factory) {
         final double inverseDivisor = 1.0D / divisor;
 
         return factory.create(
@@ -1948,7 +1948,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final Vector4.Accessible dividend, final double divisor, final Vector4.Consumer consumer) {
+    public static void divide4To(final Vector4.Accessible dividend, final double divisor, final Vector4.Consumer consumer) {
         final double inverseDivisor = 1.0D / divisor;
 
         consumer.xyzw(
@@ -1959,7 +1959,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final Vector4.Accessible dividend, final Vector4.Accessible divisor, final Vector4.Factory<R> factory) {
+    public static <R> R divide4(final Vector4.Accessible dividend, final Vector4.Accessible divisor, final Vector4.Factory<R> factory) {
         return factory.create(
                 dividend.x() / divisor.x(),
                 dividend.y() / divisor.y(),
@@ -1968,7 +1968,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final Vector4.Accessible dividend, final Vector4.Accessible divisor, final Vector4.Consumer consumer) {
+    public static void divide4To(final Vector4.Accessible dividend, final Vector4.Accessible divisor, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 dividend.x() / divisor.x(),
                 dividend.y() / divisor.y(),
@@ -1977,7 +1977,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R divide(final double dividend, final Vector4.Accessible divisor, final Vector4.Factory<R> factory) {
+    public static <R> R divide4(final double dividend, final Vector4.Accessible divisor, final Vector4.Factory<R> factory) {
         return factory.create(
                 dividend / divisor.x(),
                 dividend / divisor.y(),
@@ -1986,7 +1986,7 @@ public final class VecMath {
         );
     }
 
-    public static void divideTo(final double dividend, final Vector4.Accessible divisor, final Vector4.Consumer consumer) {
+    public static void divide4To(final double dividend, final Vector4.Accessible divisor, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 dividend / divisor.x(),
                 dividend / divisor.y(),
@@ -1995,7 +1995,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector4.Accessible multiplicand, final double multiplier, final double addend, final Vector4.Factory<R> factory) {
+    public static <R> R fma4(final Vector4.Accessible multiplicand, final double multiplier, final double addend, final Vector4.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier + addend,
                 multiplicand.y() * multiplier + addend,
@@ -2004,7 +2004,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector4.Accessible multiplicand, final double multiplier, final double addend, final Vector4.Consumer consumer) {
+    public static void fma4To(final Vector4.Accessible multiplicand, final double multiplier, final double addend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 multiplicand.x() * multiplier + addend,
                 multiplicand.y() * multiplier + addend,
@@ -2013,7 +2013,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final double addend, final Vector4.Factory<R> factory) {
+    public static <R> R fma4(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final double addend, final Vector4.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x() + addend,
                 multiplicand.y() * multiplier.y() + addend,
@@ -2022,7 +2022,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final double addend, final Vector4.Consumer consumer) {
+    public static void fma4To(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final double addend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 multiplicand.x() * multiplier.x() + addend,
                 multiplicand.y() * multiplier.y() + addend,
@@ -2031,7 +2031,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Accessible addend, final Vector4.Factory<R> factory) {
+    public static <R> R fma4(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Accessible addend, final Vector4.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier + addend.x(),
                 multiplicand.y() * multiplier + addend.y(),
@@ -2040,7 +2040,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Accessible addend, final Vector4.Consumer consumer) {
+    public static void fma4To(final Vector4.Accessible multiplicand, final double multiplier, final Vector4.Accessible addend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 multiplicand.x() * multiplier + addend.x(),
                 multiplicand.y() * multiplier + addend.y(),
@@ -2049,7 +2049,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R fma(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Accessible addend, final Vector4.Factory<R> factory) {
+    public static <R> R fma4(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Accessible addend, final Vector4.Factory<R> factory) {
         return factory.create(
                 multiplicand.x() * multiplier.x() + addend.x(),
                 multiplicand.y() * multiplier.y() + addend.y(),
@@ -2058,7 +2058,7 @@ public final class VecMath {
         );
     }
 
-    public static void fmaTo(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Accessible addend, final Vector4.Consumer consumer) {
+    public static void fma4To(final Vector4.Accessible multiplicand, final Vector4.Accessible multiplier, final Vector4.Accessible addend, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 multiplicand.x() * multiplier.x() + addend.x(),
                 multiplicand.y() * multiplier.y() + addend.y(),
@@ -2067,7 +2067,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R pow(final Vector4.Accessible base, final double exponent, final Vector4.Factory<R> factory) {
+    public static <R> R pow4(final Vector4.Accessible base, final double exponent, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent),
@@ -2076,7 +2076,7 @@ public final class VecMath {
         );
     }
 
-    public static void powTo(final Vector4.Accessible base, final double exponent, final Vector4.Consumer consumer) {
+    public static void pow4To(final Vector4.Accessible base, final double exponent, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.pow(base.x(), exponent),
                 Math.pow(base.y(), exponent),
@@ -2085,7 +2085,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R pow(final Vector4.Accessible base, final Vector4.Accessible exponent, final Vector4.Factory<R> factory) {
+    public static <R> R pow4(final Vector4.Accessible base, final Vector4.Accessible exponent, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
@@ -2094,7 +2094,7 @@ public final class VecMath {
         );
     }
 
-    public static void powTo(final Vector4.Accessible base, final Vector4.Accessible exponent, final Vector4.Consumer consumer) {
+    public static void pow4To(final Vector4.Accessible base, final Vector4.Accessible exponent, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.pow(base.x(), exponent.x()),
                 Math.pow(base.y(), exponent.y()),
@@ -2103,7 +2103,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R pow(final double base, final Vector4.Accessible exponent, final Vector4.Factory<R> factory) {
+    public static <R> R pow4(final double base, final Vector4.Accessible exponent, final Vector4.Factory<R> factory) {
         return factory.create(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y()),
@@ -2112,7 +2112,7 @@ public final class VecMath {
         );
     }
 
-    public static void powTo(final double base, final Vector4.Accessible exponent, final Vector4.Consumer consumer) {
+    public static void pow4To(final double base, final Vector4.Accessible exponent, final Vector4.Consumer consumer) {
         consumer.xyzw(
                 Math.pow(base, exponent.x()),
                 Math.pow(base, exponent.y()),
@@ -2121,7 +2121,7 @@ public final class VecMath {
         );
     }
 
-    public static double squaredLength(final Vector4.Accessible vector) {
+    public static double squaredLength4(final Vector4.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -2130,7 +2130,7 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
-    public static double squaredDistance(final Vector4.Accessible a, final double b) {
+    public static double squaredDistance4(final Vector4.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
@@ -2139,7 +2139,7 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
-    public static double squaredDistance(final Vector4.Accessible a, final Vector4.Accessible b) {
+    public static double squaredDistance4(final Vector4.Accessible a, final Vector4.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
@@ -2148,7 +2148,7 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
-    public static double length(final Vector4.Accessible vector) {
+    public static double length4(final Vector4.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -2157,7 +2157,7 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 
-    public static double distance(final Vector4.Accessible a, final double b) {
+    public static double distance4(final Vector4.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
         final double z = a.z() - b;
@@ -2166,7 +2166,7 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 
-    public static double distance(final Vector4.Accessible a, final Vector4.Accessible b) {
+    public static double distance4(final Vector4.Accessible a, final Vector4.Accessible b) {
         final double x = a.x() - b.x();
         final double y = a.y() - b.y();
         final double z = a.z() - b.z();
@@ -2175,7 +2175,7 @@ public final class VecMath {
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 
-    public static double dot(final Vector4.Accessible vector) {
+    public static double dot4(final Vector4.Accessible vector) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -2184,15 +2184,15 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
-    public static double dot(final Vector4.Accessible a, final double b) {
+    public static double dot4(final Vector4.Accessible a, final double b) {
         return a.x() * b + a.y() * b + a.z() * b + a.w() * b;
     }
 
-    public static double dot(final Vector4.Accessible a, final Vector4.Accessible b) {
+    public static double dot4(final Vector4.Accessible a, final Vector4.Accessible b) {
         return a.x() * b.x() + a.y() * b.y() + a.z() * b.z() + a.w() * b.w();
     }
 
-    public static <R> R normalize(final Vector4.Accessible vector, final Vector4.Factory<R> factory) {
+    public static <R> R normalize4(final Vector4.Accessible vector, final Vector4.Factory<R> factory) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -2209,7 +2209,7 @@ public final class VecMath {
         );
     }
 
-    public static void normalizeTo(final Vector4.Accessible vector, final Vector4.Consumer consumer) {
+    public static void normalize4To(final Vector4.Accessible vector, final Vector4.Consumer consumer) {
         final double x = vector.x();
         final double y = vector.y();
         final double z = vector.z();
@@ -2226,7 +2226,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R reflect(final Vector4.Accessible incident, final Vector4.Accessible normal, final Vector4.Factory<R> factory) {
+    public static <R> R reflect4(final Vector4.Accessible incident, final Vector4.Accessible normal, final Vector4.Factory<R> factory) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -2247,7 +2247,7 @@ public final class VecMath {
         );
     }
 
-    public static void reflectTo(final Vector4.Accessible incident, final Vector4.Accessible normal, final Vector4.Consumer consumer) {
+    public static void reflect4To(final Vector4.Accessible incident, final Vector4.Accessible normal, final Vector4.Consumer consumer) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -2268,7 +2268,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R refract(final Vector4.Accessible incident, final Vector4.Accessible normal, final double eta, final Vector4.Factory<R> factory) {
+    public static <R> R refract4(final Vector4.Accessible incident, final Vector4.Accessible normal, final double eta, final Vector4.Factory<R> factory) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();
@@ -2296,7 +2296,7 @@ public final class VecMath {
         );
     }
 
-    public static void refractTo(final Vector4.Accessible incident, final Vector4.Accessible normal, final double eta, final Vector4.Consumer consumer) {
+    public static void refract4To(final Vector4.Accessible incident, final Vector4.Accessible normal, final double eta, final Vector4.Consumer consumer) {
         final double incidentX = incident.x();
         final double incidentY = incident.y();
         final double incidentZ = incident.z();

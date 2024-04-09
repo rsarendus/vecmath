@@ -26,12 +26,10 @@ public final class Matrix3x3 {
 
     }
 
-    public interface Accessible extends Matrix2x2.Accessible {
+    public interface Accessible extends Matrix3x2.Accessible {
 
         double Xz();
         double Yz();
-        double Zx();
-        double Zy();
         double Zz();
 
         default <R> R Xxz(final Vector2.Factory<R> factory) {
@@ -82,14 +80,6 @@ public final class Matrix3x3 {
             consumer.xyz(Yx(), Yy(), Yz());
         }
 
-        default <R> R Zxy(final Vector2.Factory<R> factory) {
-            return factory.create(Zx(), Zy());
-        }
-
-        default void ZxyTo(final Vector2.Consumer consumer) {
-            consumer.xy(Zx(), Zy());
-        }
-
         default <R> R Zxz(final Vector2.Factory<R> factory) {
             return factory.create(Zx(), Zz());
         }
@@ -112,54 +102,6 @@ public final class Matrix3x3 {
 
         default void ZxyzTo(final Vector3.Consumer consumer) {
             consumer.xyz(Zx(), Zy(), Zz());
-        }
-
-        default <R> R xXZ(final Vector2.Factory<R> factory) {
-            return factory.create(Xx(), Zx());
-        }
-
-        default void xXZto(final Vector2.Consumer consumer) {
-            consumer.xy(Xx(), Zx());
-        }
-
-        default <R> R xYZ(final Vector2.Factory<R> factory) {
-            return factory.create(Yx(), Zx());
-        }
-
-        default void xYZto(final Vector2.Consumer consumer) {
-            consumer.xy(Yx(), Zx());
-        }
-
-        default <R> R xXYZ(final Vector3.Factory<R> factory) {
-            return factory.create(Xx(), Yx(), Zx());
-        }
-
-        default void xXYZto(final Vector3.Consumer consumer) {
-            consumer.xyz(Xx(), Yx(), Zx());
-        }
-
-        default <R> R yXZ(final Vector2.Factory<R> factory) {
-            return factory.create(Xy(), Zy());
-        }
-
-        default void yXZto(final Vector2.Consumer consumer) {
-            consumer.xy(Xy(), Zy());
-        }
-
-        default <R> R yYZ(final Vector2.Factory<R> factory) {
-            return factory.create(Yy(), Zy());
-        }
-
-        default void yYZto(final Vector2.Consumer consumer) {
-            consumer.xy(Yy(), Zy());
-        }
-
-        default <R> R yXYZ(final Vector3.Factory<R> factory) {
-            return factory.create(Xy(), Yy(), Zy());
-        }
-
-        default void yXYZto(final Vector3.Consumer consumer) {
-            consumer.xyz(Xy(), Yy(), Zy());
         }
 
         default <R> R zXY(final Vector2.Factory<R> factory) {
@@ -234,14 +176,6 @@ public final class Matrix3x3 {
             consumer.XYxy(Xy(), Xz(), Yy(), Yz());
         }
 
-        default <R> R XZxy(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Xy(), Zx(), Zy());
-        }
-
-        default void XZxyTo(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Xx(), Xy(), Zx(), Zy());
-        }
-
         default <R> R XZxz(final Matrix2x2.Factory<R> factory) {
             return factory.create(Xx(), Xz(), Zx(), Zz());
         }
@@ -256,14 +190,6 @@ public final class Matrix3x3 {
 
         default void XZyzTo(final Matrix2x2.Consumer consumer) {
             consumer.XYxy(Xy(), Xz(), Zy(), Zz());
-        }
-
-        default <R> R YZxy(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Yx(), Yy(), Zx(), Zy());
-        }
-
-        default void YZxyTo(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Yx(), Yy(), Zx(), Zy());
         }
 
         default <R> R YZxz(final Matrix2x2.Factory<R> factory) {
@@ -282,28 +208,28 @@ public final class Matrix3x3 {
             consumer.XYxy(Yy(), Yz(), Zy(), Zz());
         }
 
+        default <R> R XYZxz(final Matrix3x2.Factory<R> factory) {
+            return factory.create(Xx(), Xz(), Yx(), Yz(), Zx(), Zz());
+        }
+
+        default void XYZxzTo(final Matrix3x2.Consumer consumer) {
+            consumer.XYZxy(Xx(), Xz(), Yx(), Yz(), Zx(), Zz());
+        }
+
+        default <R> R XYZyz(final Matrix3x2.Factory<R> factory) {
+            return factory.create(Xy(), Xz(), Yy(), Yz(), Zy(), Zz());
+        }
+
+        default void XYZyzTo(final Matrix3x2.Consumer consumer) {
+            consumer.XYZxy(Xy(), Xz(), Yy(), Yz(), Zy(), Zz());
+        }
+
         default <R> R XYZxyz(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
         }
 
         default void XYZxyzTo(final Matrix3x3.Consumer consumer) {
             consumer.XYZxyz(Xx(), Xy(), Xz(), Yx(), Yy(), Yz(), Zx(), Zy(), Zz());
-        }
-
-        default <R> R xyXZ(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Xx(), Zx(), Xy(), Zy());
-        }
-
-        default void xyXZto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Xx(), Zx(), Xy(), Zy());
-        }
-
-        default <R> R xyYZ(final Matrix2x2.Factory<R> factory) {
-            return factory.create(Yx(), Zx(), Yy(), Zy());
-        }
-
-        default void xyYZto(final Matrix2x2.Consumer consumer) {
-            consumer.XYxy(Yx(), Zx(), Yy(), Zy());
         }
 
         default <R> R xzXY(final Matrix2x2.Factory<R> factory) {
@@ -354,6 +280,30 @@ public final class Matrix3x3 {
             consumer.XYxy(Yy(), Zy(), Yz(), Zz());
         }
 
+        default <R> R xyzXY(final Matrix3x2.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Xy(), Yy(), Xz(), Yz());
+        }
+
+        default void xyzXYto(final Matrix3x2.Consumer consumer) {
+            consumer.XYZxy(Xx(), Yx(), Xy(), Yy(), Xz(), Yz());
+        }
+
+        default <R> R xyzXZ(final Matrix3x2.Factory<R> factory) {
+            return factory.create(Xx(), Zx(), Xy(), Zy(), Xz(), Zz());
+        }
+
+        default void xyzXZto(final Matrix3x2.Consumer consumer) {
+            consumer.XYZxy(Xx(), Zx(), Xy(), Zy(), Xz(), Zz());
+        }
+
+        default <R> R xyzYZ(final Matrix3x2.Factory<R> factory) {
+            return factory.create(Yx(), Zx(), Yy(), Zy(), Yz(), Zz());
+        }
+
+        default void xyzYZto(final Matrix3x2.Consumer consumer) {
+            consumer.XYZxy(Yx(), Zx(), Yy(), Zy(), Yz(), Zz());
+        }
+
         default <R> R xyzXYZ(final Matrix3x3.Factory<R> factory) {
             return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy(), Xz(), Yz(), Zz());
         }
@@ -364,12 +314,10 @@ public final class Matrix3x3 {
 
     }
 
-    public interface Mutable extends Consumer, Matrix2x2.Mutable {
+    public interface Mutable extends Consumer, Matrix3x2.Mutable {
 
         void Xz(double Xz);
         void Yz(double Yz);
-        void Zx(double Zx);
-        void Zy(double Zy);
         void Zz(double Zz);
 
         default void Xxz(final double v) {
@@ -396,10 +344,6 @@ public final class Matrix3x3 {
             Yxyz(v, v, v);
         }
 
-        default void Zxy(final double v) {
-            Zxy(v, v);
-        }
-
         default void Zxz(final double v) {
             Zxz(v, v);
         }
@@ -410,30 +354,6 @@ public final class Matrix3x3 {
 
         default void Zxyz(final double v) {
             Zxyz(v, v, v);
-        }
-
-        default void xXZ(final double v) {
-            xXZ(v, v);
-        }
-
-        default void xYZ(final double v) {
-            xYZ(v, v);
-        }
-
-        default void xXYZ(final double v) {
-            xXYZ(v, v, v);
-        }
-
-        default void yXZ(final double v) {
-            yXZ(v, v);
-        }
-
-        default void yYZ(final double v) {
-            yYZ(v, v);
-        }
-
-        default void yXYZ(final double v) {
-            yXYZ(v, v, v);
         }
 
         default void zXY(final double v) {
@@ -472,10 +392,6 @@ public final class Matrix3x3 {
             XYyz(v, v, v, v);
         }
 
-        default void XZxy(final double v) {
-            XZxy(v, v, v, v);
-        }
-
         default void XZxz(final double v) {
             XZxz(v, v, v, v);
         }
@@ -484,16 +400,20 @@ public final class Matrix3x3 {
             XZyz(v, v, v, v);
         }
 
-        default void YZxy(final double v) {
-            YZxy(v, v, v, v);
-        }
-
         default void YZxz(final double v) {
             YZxz(v, v, v, v);
         }
 
         default void YZyz(final double v) {
             YZyz(v, v, v, v);
+        }
+
+        default void XYZxz(final double v) {
+            XYZxz(v, v, v, v, v, v);
+        }
+
+        default void XYZyz(final double v) {
+            XYZyz(v, v, v, v, v, v);
         }
 
         default void XYZxyz(final double v) {
@@ -532,11 +452,6 @@ public final class Matrix3x3 {
             Yz(Yz);
         }
 
-        default void Zxy(final double Zx, final double Zy) {
-            Zx(Zx);
-            Zy(Zy);
-        }
-
         default void Zxz(final double Zx, final double Zz) {
             Zx(Zx);
             Zz(Zz);
@@ -551,38 +466,6 @@ public final class Matrix3x3 {
             Zx(Zx);
             Zy(Zy);
             Zz(Zz);
-        }
-
-        default void xXZ(final double Xx, final double Zx) {
-            Xx(Xx);
-            Zx(Zx);
-        }
-
-        default void xYZ(final double Yx, final double Zx) {
-            Yx(Yx);
-            Zx(Zx);
-        }
-
-        default void xXYZ(final double Xx, final double Yx, final double Zx) {
-            Xx(Xx);
-            Yx(Yx);
-            Zx(Zx);
-        }
-
-        default void yXZ(final double Xy, final double Zy) {
-            Xy(Xy);
-            Zy(Zy);
-        }
-
-        default void yYZ(final double Yy, final double Zy) {
-            Yy(Yy);
-            Zy(Zy);
-        }
-
-        default void yXYZ(final double Xy, final double Yy, final double Zy) {
-            Xy(Xy);
-            Yy(Yy);
-            Zy(Zy);
         }
 
         default void zXY(final double Xz, final double Yz) {
@@ -642,16 +525,6 @@ public final class Matrix3x3 {
             Yz(Yz);
         }
 
-        default void XZxy(
-                final double Xx, final double Xy,
-                final double Zx, final double Zy
-        ) {
-            Xx(Xx);
-            Xy(Xy);
-            Zx(Zx);
-            Zy(Zy);
-        }
-
         default void XZxz(
                 final double Xx, final double Xz,
                 final double Zx, final double Zz
@@ -670,16 +543,6 @@ public final class Matrix3x3 {
             Xz(Xz);
             Zy(Zy);
             Zz(Zz);
-        }
-
-        default void YZxy(
-                final double Yx, final double Yy,
-                final double Zx, final double Zy
-        ) {
-            Yx(Yx);
-            Yy(Yy);
-            Zx(Zx);
-            Zy(Zy);
         }
 
         default void YZxz(
@@ -702,6 +565,32 @@ public final class Matrix3x3 {
             Zz(Zz);
         }
 
+        default void XYZxz(
+                final double Xx, final double Xz,
+                final double Yx, final double Yz,
+                final double Zx, final double Zz
+        ) {
+            Xx(Xx);
+            Xz(Xz);
+            Yx(Yx);
+            Yz(Yz);
+            Zx(Zx);
+            Zz(Zz);
+        }
+
+        default void XYZyz(
+                final double Xy, final double Xz,
+                final double Yy, final double Yz,
+                final double Zy, final double Zz
+        ) {
+            Xy(Xy);
+            Xz(Xz);
+            Yy(Yy);
+            Yz(Yz);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
         @Override
         default void XYZxyz(
                 final double Xx, final double Xy, final double Xz,
@@ -717,26 +606,6 @@ public final class Matrix3x3 {
             Zx(Zx);
             Zy(Zy);
             Zz(Zz);
-        }
-
-        default void xyXZ(
-                final double Xx, final double Zx,
-                final double Xy, final double Zy
-        ) {
-            Xx(Xx);
-            Xy(Xy);
-            Zx(Zx);
-            Zy(Zy);
-        }
-
-        default void xyYZ(
-                final double Yx, final double Zx,
-                final double Yy, final double Zy
-        ) {
-            Yx(Yx);
-            Yy(Yy);
-            Zx(Zx);
-            Zy(Zy);
         }
 
         default void xzXY(
@@ -799,6 +668,45 @@ public final class Matrix3x3 {
             Zz(Zz);
         }
 
+        default void xyzXY(
+                final double Xx, final double Yx,
+                final double Xy, final double Yy,
+                final double Xz, final double Yz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+        }
+
+        default void xyzXZ(
+                final double Xx, final double Zx,
+                final double Xy, final double Zy,
+                final double Xz, final double Zz
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Xz(Xz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
+        default void xyzYZ(
+                final double Yx, final double Zx,
+                final double Yy, final double Zy,
+                final double Yz, final double Zz
+        ) {
+            Yx(Yx);
+            Yy(Yy);
+            Yz(Yz);
+            Zx(Zx);
+            Zy(Zy);
+            Zz(Zz);
+        }
+
         default void xyzXYZ(
                 final double Xx, final double Yx, final double Zx,
                 final double Xy, final double Yy, final double Zy,
@@ -839,10 +747,6 @@ public final class Matrix3x3 {
             Yxyz(v.x(), v.y(), v.z());
         }
 
-        default void Zxy(final Vector2.Accessible v) {
-            Zxy(v.x(), v.y());
-        }
-
         default void Zxz(final Vector2.Accessible v) {
             Zxz(v.x(), v.y());
         }
@@ -853,30 +757,6 @@ public final class Matrix3x3 {
 
         default void Zxyz(final Vector3.Accessible v) {
             Zxyz(v.x(), v.y(), v.z());
-        }
-
-        default void xXZ(final Vector2.Accessible v) {
-            xXZ(v.x(), v.y());
-        }
-
-        default void xYZ(final Vector2.Accessible v) {
-            xYZ(v.x(), v.y());
-        }
-
-        default void xXYZ(final Vector3.Accessible v) {
-            xXYZ(v.x(), v.y(), v.z());
-        }
-
-        default void yXZ(final Vector2.Accessible v) {
-            yXZ(v.x(), v.y());
-        }
-
-        default void yYZ(final Vector2.Accessible v) {
-            yYZ(v.x(), v.y());
-        }
-
-        default void yXYZ(final Vector3.Accessible v) {
-            yXYZ(v.x(), v.y(), v.z());
         }
 
         default void zXY(final Vector2.Accessible v) {
@@ -915,20 +795,12 @@ public final class Matrix3x3 {
             XYyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
-        default void XZxy(final Matrix2x2.Accessible m) {
-            XZxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
-        }
-
         default void XZxz(final Matrix2x2.Accessible m) {
             XZxz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void XZyz(final Matrix2x2.Accessible m) {
             XZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
-        }
-
-        default void YZxy(final Matrix2x2.Accessible m) {
-            YZxy(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void YZxz(final Matrix2x2.Accessible m) {
@@ -939,16 +811,16 @@ public final class Matrix3x3 {
             YZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
+        default void XYZxz(final Matrix3x2.Accessible m) {
+            XYZxz(m.Xx(), m.Xy(), m.Yx(), m.Yy(), m.Zx(), m.Zy());
+        }
+
+        default void XYZyz(final Matrix3x2.Accessible m) {
+            XYZyz(m.Xx(), m.Xy(), m.Yx(), m.Yy(), m.Zx(), m.Zy());
+        }
+
         default void XYZxyz(final Matrix3x3.Accessible m) {
             XYZxyz(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
-        }
-
-        default void xyXZ(final Matrix2x2.Accessible m) {
-            xyXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
-        }
-
-        default void xyYZ(final Matrix2x2.Accessible m) {
-            xyYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
         default void xzXY(final Matrix2x2.Accessible m) {
@@ -975,12 +847,24 @@ public final class Matrix3x3 {
             yzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
         }
 
+        default void xyzXY(final Matrix3x2.Accessible m) {
+            xyzXY(m.Xx(), m.Xy(), m.Yx(), m.Yy(), m.Zx(), m.Zy());
+        }
+
+        default void xyzXZ(final Matrix3x2.Accessible m) {
+            xyzXZ(m.Xx(), m.Xy(), m.Yx(), m.Yy(), m.Zx(), m.Zy());
+        }
+
+        default void xyzYZ(final Matrix3x2.Accessible m) {
+            xyzYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy(), m.Zx(), m.Zy());
+        }
+
         default void xyzXYZ(final Matrix3x3.Accessible m) {
             xyzXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz(), m.Zx(), m.Zy(), m.Zz());
         }
 
     }
 
-    public interface AccessibleAndMutable extends Accessible, Mutable, Matrix2x2.AccessibleAndMutable {}
+    public interface AccessibleAndMutable extends Accessible, Mutable, Matrix3x2.AccessibleAndMutable {}
 
 }

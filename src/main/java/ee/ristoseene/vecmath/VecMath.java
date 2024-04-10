@@ -3225,7 +3225,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform2By3x2(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
+    public static <R> R matrixTransform3x2And2(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
 
@@ -3235,7 +3235,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform2By3x2To(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
+    public static void matrixTransform3x2And2To(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
 
@@ -3915,7 +3915,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixProject2By3x3(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
+    public static <R> R matrixProject3x3And2(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
 
@@ -3927,7 +3927,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixProject2By3x3To(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
+    public static void matrixProject3x3And2To(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
 
@@ -4775,7 +4775,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform3By4x3(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
+    public static <R> R matrixTransform4x3And3(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();
@@ -4787,7 +4787,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform3By4x3To(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
+    public static void matrixTransform4x3And3To(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();
@@ -5509,7 +5509,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixProject3By4x4(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
+    public static <R> R matrixProject4x4And3(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();
@@ -5523,7 +5523,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixProject3By4x4To(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
+    public static void matrixProject4x4And3To(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();

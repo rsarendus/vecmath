@@ -40,8 +40,10 @@ The library currently offers the following types:
   - `Vector4` - 4-dimensional vectors
 * Matrix types:
   - `Matrix2x2` - 2x2 matrices
+  - `Matrix2x3` - 2x3 matrices
   - `Matrix3x2` - 3x2 matrices
   - `Matrix3x3` - 3x3 matrices
+  - `Matrix3x4` - 3x4 matrices
   - `Matrix4x3` - 4x3 matrices
   - `Matrix4x4` - 4x4 matrices
 

@@ -127,6 +127,14 @@ public final class Matrix3x2 {
             consumer.XYxy(Yx(), Zx(), Yy(), Zy());
         }
 
+        default <R> R xyXYZ(final Matrix2x3.Factory<R> factory) {
+            return factory.create(Xx(), Yx(), Zx(), Xy(), Yy(), Zy());
+        }
+
+        default void xyXYZto(final Matrix2x3.Consumer consumer) {
+            consumer.XYxyz(Xx(), Yx(), Zx(), Xy(), Yy(), Zy());
+        }
+
     }
 
     public interface Mutable extends Consumer, Matrix2x2.Mutable {
@@ -265,6 +273,18 @@ public final class Matrix3x2 {
             Zy(Zy);
         }
 
+        default void xyXYZ(
+                final double Xx, final double Yx, final double Zx,
+                final double Xy, final double Yy, final double Zy
+        ) {
+            Xx(Xx);
+            Xy(Xy);
+            Yx(Yx);
+            Yy(Yy);
+            Zx(Zx);
+            Zy(Zy);
+        }
+
         default void Zxy(final Vector2.Accessible v) {
             Zxy(v.x(), v.y());
         }
@@ -311,6 +331,10 @@ public final class Matrix3x2 {
 
         default void xyYZ(final Matrix2x2.Accessible m) {
             xyYZ(m.Xx(), m.Xy(), m.Yx(), m.Yy());
+        }
+
+        default void xyXYZ(final Matrix2x3.Accessible m) {
+            xyXYZ(m.Xx(), m.Xy(), m.Xz(), m.Yx(), m.Yy(), m.Yz());
         }
 
     }

@@ -2687,6 +2687,298 @@ public final class VecMath {
         );
     }
 
+    public static <R> R neg2x3(final Matrix2x3.Accessible mat, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                -mat.Xx(),
+                -mat.Xy(),
+                -mat.Xz(),
+                -mat.Yx(),
+                -mat.Yy(),
+                -mat.Yz()
+        );
+    }
+
+    public static void neg2x3To(final Matrix2x3.Accessible mat, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                -mat.Xx(),
+                -mat.Xy(),
+                -mat.Xz(),
+                -mat.Yx(),
+                -mat.Yy(),
+                -mat.Yz()
+        );
+    }
+
+    public static <R> R add2x3(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() + b,
+                a.Xy() + b,
+                a.Xz() + b,
+                a.Yx() + b,
+                a.Yy() + b,
+                a.Yz() + b
+        );
+    }
+
+    public static void add2x3To(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() + b,
+                a.Xy() + b,
+                a.Xz() + b,
+                a.Yx() + b,
+                a.Yy() + b,
+                a.Yz() + b
+        );
+    }
+
+    public static <R> R add2x3(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() + b.Xx(),
+                a.Xy() + b.Xy(),
+                a.Xz() + b.Xz(),
+                a.Yx() + b.Yx(),
+                a.Yy() + b.Yy(),
+                a.Yz() + b.Yz()
+        );
+    }
+
+    public static void add2x3To(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() + b.Xx(),
+                a.Xy() + b.Xy(),
+                a.Xz() + b.Xz(),
+                a.Yx() + b.Yx(),
+                a.Yy() + b.Yy(),
+                a.Yz() + b.Yz()
+        );
+    }
+
+    public static <R> R sub2x3(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() - b,
+                a.Xy() - b,
+                a.Xz() - b,
+                a.Yx() - b,
+                a.Yy() - b,
+                a.Yz() - b
+        );
+    }
+
+    public static void sub2x3To(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() - b,
+                a.Xy() - b,
+                a.Xz() - b,
+                a.Yx() - b,
+                a.Yy() - b,
+                a.Yz() - b
+        );
+    }
+
+    public static <R> R sub2x3(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() - b.Xx(),
+                a.Xy() - b.Xy(),
+                a.Xz() - b.Xz(),
+                a.Yx() - b.Yx(),
+                a.Yy() - b.Yy(),
+                a.Yz() - b.Yz()
+        );
+    }
+
+    public static void sub2x3To(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() - b.Xx(),
+                a.Xy() - b.Xy(),
+                a.Xz() - b.Xz(),
+                a.Yx() - b.Yx(),
+                a.Yy() - b.Yy(),
+                a.Yz() - b.Yz()
+        );
+    }
+
+    public static <R> R sub2x3(final double a, final Matrix2x3.Accessible b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a - b.Xx(),
+                a - b.Xy(),
+                a - b.Xz(),
+                a - b.Yx(),
+                a - b.Yy(),
+                a - b.Yz()
+        );
+    }
+
+    public static void sub2x3To(final double a, final Matrix2x3.Accessible b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a - b.Xx(),
+                a - b.Xy(),
+                a - b.Xz(),
+                a - b.Yx(),
+                a - b.Yy(),
+                a - b.Yz()
+        );
+    }
+
+    public static <R> R mul2x3(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() * b,
+                a.Xy() * b,
+                a.Xz() * b,
+                a.Yx() * b,
+                a.Yy() * b,
+                a.Yz() * b
+        );
+    }
+
+    public static void mul2x3To(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() * b,
+                a.Xy() * b,
+                a.Xz() * b,
+                a.Yx() * b,
+                a.Yy() * b,
+                a.Yz() * b
+        );
+    }
+
+    public static <R> R mul2x3(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() * b.Xx(),
+                a.Xy() * b.Xy(),
+                a.Xz() * b.Xz(),
+                a.Yx() * b.Yx(),
+                a.Yy() * b.Yy(),
+                a.Yz() * b.Yz()
+        );
+    }
+
+    public static void mul2x3To(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() * b.Xx(),
+                a.Xy() * b.Xy(),
+                a.Xz() * b.Xz(),
+                a.Yx() * b.Yx(),
+                a.Yy() * b.Yy(),
+                a.Yz() * b.Yz()
+        );
+    }
+
+    public static <R> R div2x3(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Factory<R> factory) {
+        final double inverseB = 1.0D / b;
+
+        return factory.create(
+                a.Xx() * inverseB,
+                a.Xy() * inverseB,
+                a.Xz() * inverseB,
+                a.Yx() * inverseB,
+                a.Yy() * inverseB,
+                a.Yz() * inverseB
+        );
+    }
+
+    public static void div2x3To(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Consumer consumer) {
+        final double inverseB = 1.0D / b;
+
+        consumer.XYxyz(
+                a.Xx() * inverseB,
+                a.Xy() * inverseB,
+                a.Xz() * inverseB,
+                a.Yx() * inverseB,
+                a.Yy() * inverseB,
+                a.Yz() * inverseB
+        );
+    }
+
+    public static <R> R div2x3(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a.Xx() / b.Xx(),
+                a.Xy() / b.Xy(),
+                a.Xz() / b.Xz(),
+                a.Yx() / b.Yx(),
+                a.Yy() / b.Yy(),
+                a.Yz() / b.Yz()
+        );
+    }
+
+    public static void div2x3To(final Matrix2x3.Accessible a, final Matrix2x3.Accessible b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a.Xx() / b.Xx(),
+                a.Xy() / b.Xy(),
+                a.Xz() / b.Xz(),
+                a.Yx() / b.Yx(),
+                a.Yy() / b.Yy(),
+                a.Yz() / b.Yz()
+        );
+    }
+
+    public static <R> R div2x3(final double a, final Matrix2x3.Accessible b, final Matrix2x3.Factory<R> factory) {
+        return factory.create(
+                a / b.Xx(),
+                a / b.Xy(),
+                a / b.Xz(),
+                a / b.Yx(),
+                a / b.Yy(),
+                a / b.Yz()
+        );
+    }
+
+    public static void div2x3To(final double a, final Matrix2x3.Accessible b, final Matrix2x3.Consumer consumer) {
+        consumer.XYxyz(
+                a / b.Xx(),
+                a / b.Xy(),
+                a / b.Xz(),
+                a / b.Yx(),
+                a / b.Yy(),
+                a / b.Yz()
+        );
+    }
+
+    public static <R> R matrixProduct2x3And2x2(final Matrix2x3.Accessible a, final Matrix2x2.Accessible b, final Matrix2x3.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy,
+                aXy * bXx + aYy * bXy,
+                aXz * bXx + aYz * bXy,
+                aXx * bYx + aYx * bYy,
+                aXy * bYx + aYy * bYy,
+                aXz * bYx + aYz * bYy
+        );
+    }
+
+    public static void matrixProduct2x3And2x2To(final Matrix2x3.Accessible a, final Matrix2x2.Accessible b, final Matrix2x3.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+
+        consumer.XYxyz(
+                aXx * bXx + aYx * bXy,
+                aXy * bXx + aYy * bXy,
+                aXz * bXx + aYz * bXy,
+                aXx * bYx + aYx * bYy,
+                aXy * bYx + aYy * bYy,
+                aXz * bYx + aYz * bYy
+        );
+    }
+
     public static <R> R neg3x2(final Matrix3x2.Accessible mat, final Matrix3x2.Factory<R> factory) {
         return factory.create(
                 -mat.Xx(),
@@ -3644,6 +3936,464 @@ public final class VecMath {
         consumer.xy(
                 (m.Xx() * x + m.Yx() * y + m.Zx()) * inverseDivisor,
                 (m.Xy() * x + m.Yy() * y + m.Zy()) * inverseDivisor
+        );
+    }
+
+    public static <R> R neg3x4(final Matrix3x4.Accessible mat, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                -mat.Xx(),
+                -mat.Xy(),
+                -mat.Xz(),
+                -mat.Xw(),
+                -mat.Yx(),
+                -mat.Yy(),
+                -mat.Yz(),
+                -mat.Yw(),
+                -mat.Zx(),
+                -mat.Zy(),
+                -mat.Zz(),
+                -mat.Zw()
+        );
+    }
+
+    public static void neg3x4To(final Matrix3x4.Accessible mat, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                -mat.Xx(),
+                -mat.Xy(),
+                -mat.Xz(),
+                -mat.Xw(),
+                -mat.Yx(),
+                -mat.Yy(),
+                -mat.Yz(),
+                -mat.Yw(),
+                -mat.Zx(),
+                -mat.Zy(),
+                -mat.Zz(),
+                -mat.Zw()
+        );
+    }
+
+    public static <R> R add3x4(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() + b,
+                a.Xy() + b,
+                a.Xz() + b,
+                a.Xw() + b,
+                a.Yx() + b,
+                a.Yy() + b,
+                a.Yz() + b,
+                a.Yw() + b,
+                a.Zx() + b,
+                a.Zy() + b,
+                a.Zz() + b,
+                a.Zw() + b
+        );
+    }
+
+    public static void add3x4To(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() + b,
+                a.Xy() + b,
+                a.Xz() + b,
+                a.Xw() + b,
+                a.Yx() + b,
+                a.Yy() + b,
+                a.Yz() + b,
+                a.Yw() + b,
+                a.Zx() + b,
+                a.Zy() + b,
+                a.Zz() + b,
+                a.Zw() + b
+        );
+    }
+
+    public static <R> R add3x4(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() + b.Xx(),
+                a.Xy() + b.Xy(),
+                a.Xz() + b.Xz(),
+                a.Xw() + b.Xw(),
+                a.Yx() + b.Yx(),
+                a.Yy() + b.Yy(),
+                a.Yz() + b.Yz(),
+                a.Yw() + b.Yw(),
+                a.Zx() + b.Zx(),
+                a.Zy() + b.Zy(),
+                a.Zz() + b.Zz(),
+                a.Zw() + b.Zw()
+        );
+    }
+
+    public static void add3x4To(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() + b.Xx(),
+                a.Xy() + b.Xy(),
+                a.Xz() + b.Xz(),
+                a.Xw() + b.Xw(),
+                a.Yx() + b.Yx(),
+                a.Yy() + b.Yy(),
+                a.Yz() + b.Yz(),
+                a.Yw() + b.Yw(),
+                a.Zx() + b.Zx(),
+                a.Zy() + b.Zy(),
+                a.Zz() + b.Zz(),
+                a.Zw() + b.Zw()
+        );
+    }
+
+    public static <R> R sub3x4(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() - b,
+                a.Xy() - b,
+                a.Xz() - b,
+                a.Xw() - b,
+                a.Yx() - b,
+                a.Yy() - b,
+                a.Yz() - b,
+                a.Yw() - b,
+                a.Zx() - b,
+                a.Zy() - b,
+                a.Zz() - b,
+                a.Zw() - b
+        );
+    }
+
+    public static void sub3x4To(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() - b,
+                a.Xy() - b,
+                a.Xz() - b,
+                a.Xw() - b,
+                a.Yx() - b,
+                a.Yy() - b,
+                a.Yz() - b,
+                a.Yw() - b,
+                a.Zx() - b,
+                a.Zy() - b,
+                a.Zz() - b,
+                a.Zw() - b
+        );
+    }
+
+    public static <R> R sub3x4(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() - b.Xx(),
+                a.Xy() - b.Xy(),
+                a.Xz() - b.Xz(),
+                a.Xw() - b.Xw(),
+                a.Yx() - b.Yx(),
+                a.Yy() - b.Yy(),
+                a.Yz() - b.Yz(),
+                a.Yw() - b.Yw(),
+                a.Zx() - b.Zx(),
+                a.Zy() - b.Zy(),
+                a.Zz() - b.Zz(),
+                a.Zw() - b.Zw()
+        );
+    }
+
+    public static void sub3x4To(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() - b.Xx(),
+                a.Xy() - b.Xy(),
+                a.Xz() - b.Xz(),
+                a.Xw() - b.Xw(),
+                a.Yx() - b.Yx(),
+                a.Yy() - b.Yy(),
+                a.Yz() - b.Yz(),
+                a.Yw() - b.Yw(),
+                a.Zx() - b.Zx(),
+                a.Zy() - b.Zy(),
+                a.Zz() - b.Zz(),
+                a.Zw() - b.Zw()
+        );
+    }
+
+    public static <R> R sub3x4(final double a, final Matrix3x4.Accessible b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a - b.Xx(),
+                a - b.Xy(),
+                a - b.Xz(),
+                a - b.Xw(),
+                a - b.Yx(),
+                a - b.Yy(),
+                a - b.Yz(),
+                a - b.Yw(),
+                a - b.Zx(),
+                a - b.Zy(),
+                a - b.Zz(),
+                a - b.Zw()
+        );
+    }
+
+    public static void sub3x4To(final double a, final Matrix3x4.Accessible b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a - b.Xx(),
+                a - b.Xy(),
+                a - b.Xz(),
+                a - b.Xw(),
+                a - b.Yx(),
+                a - b.Yy(),
+                a - b.Yz(),
+                a - b.Yw(),
+                a - b.Zx(),
+                a - b.Zy(),
+                a - b.Zz(),
+                a - b.Zw()
+        );
+    }
+
+    public static <R> R mul3x4(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() * b,
+                a.Xy() * b,
+                a.Xz() * b,
+                a.Xw() * b,
+                a.Yx() * b,
+                a.Yy() * b,
+                a.Yz() * b,
+                a.Yw() * b,
+                a.Zx() * b,
+                a.Zy() * b,
+                a.Zz() * b,
+                a.Zw() * b
+        );
+    }
+
+    public static void mul3x4To(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() * b,
+                a.Xy() * b,
+                a.Xz() * b,
+                a.Xw() * b,
+                a.Yx() * b,
+                a.Yy() * b,
+                a.Yz() * b,
+                a.Yw() * b,
+                a.Zx() * b,
+                a.Zy() * b,
+                a.Zz() * b,
+                a.Zw() * b
+        );
+    }
+
+    public static <R> R mul3x4(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() * b.Xx(),
+                a.Xy() * b.Xy(),
+                a.Xz() * b.Xz(),
+                a.Xw() * b.Xw(),
+                a.Yx() * b.Yx(),
+                a.Yy() * b.Yy(),
+                a.Yz() * b.Yz(),
+                a.Yw() * b.Yw(),
+                a.Zx() * b.Zx(),
+                a.Zy() * b.Zy(),
+                a.Zz() * b.Zz(),
+                a.Zw() * b.Zw()
+        );
+    }
+
+    public static void mul3x4To(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() * b.Xx(),
+                a.Xy() * b.Xy(),
+                a.Xz() * b.Xz(),
+                a.Xw() * b.Xw(),
+                a.Yx() * b.Yx(),
+                a.Yy() * b.Yy(),
+                a.Yz() * b.Yz(),
+                a.Yw() * b.Yw(),
+                a.Zx() * b.Zx(),
+                a.Zy() * b.Zy(),
+                a.Zz() * b.Zz(),
+                a.Zw() * b.Zw()
+        );
+    }
+
+    public static <R> R div3x4(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Factory<R> factory) {
+        final double inverseB = 1.0D / b;
+
+        return factory.create(
+                a.Xx() * inverseB,
+                a.Xy() * inverseB,
+                a.Xz() * inverseB,
+                a.Xw() * inverseB,
+                a.Yx() * inverseB,
+                a.Yy() * inverseB,
+                a.Yz() * inverseB,
+                a.Yw() * inverseB,
+                a.Zx() * inverseB,
+                a.Zy() * inverseB,
+                a.Zz() * inverseB,
+                a.Zw() * inverseB
+        );
+    }
+
+    public static void div3x4To(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Consumer consumer) {
+        final double inverseB = 1.0D / b;
+
+        consumer.XYZxyzw(
+                a.Xx() * inverseB,
+                a.Xy() * inverseB,
+                a.Xz() * inverseB,
+                a.Xw() * inverseB,
+                a.Yx() * inverseB,
+                a.Yy() * inverseB,
+                a.Yz() * inverseB,
+                a.Yw() * inverseB,
+                a.Zx() * inverseB,
+                a.Zy() * inverseB,
+                a.Zz() * inverseB,
+                a.Zw() * inverseB
+        );
+    }
+
+    public static <R> R div3x4(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a.Xx() / b.Xx(),
+                a.Xy() / b.Xy(),
+                a.Xz() / b.Xz(),
+                a.Xw() / b.Xw(),
+                a.Yx() / b.Yx(),
+                a.Yy() / b.Yy(),
+                a.Yz() / b.Yz(),
+                a.Yw() / b.Yw(),
+                a.Zx() / b.Zx(),
+                a.Zy() / b.Zy(),
+                a.Zz() / b.Zz(),
+                a.Zw() / b.Zw()
+        );
+    }
+
+    public static void div3x4To(final Matrix3x4.Accessible a, final Matrix3x4.Accessible b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a.Xx() / b.Xx(),
+                a.Xy() / b.Xy(),
+                a.Xz() / b.Xz(),
+                a.Xw() / b.Xw(),
+                a.Yx() / b.Yx(),
+                a.Yy() / b.Yy(),
+                a.Yz() / b.Yz(),
+                a.Yw() / b.Yw(),
+                a.Zx() / b.Zx(),
+                a.Zy() / b.Zy(),
+                a.Zz() / b.Zz(),
+                a.Zw() / b.Zw()
+        );
+    }
+
+    public static <R> R div3x4(final double a, final Matrix3x4.Accessible b, final Matrix3x4.Factory<R> factory) {
+        return factory.create(
+                a / b.Xx(),
+                a / b.Xy(),
+                a / b.Xz(),
+                a / b.Xw(),
+                a / b.Yx(),
+                a / b.Yy(),
+                a / b.Yz(),
+                a / b.Yw(),
+                a / b.Zx(),
+                a / b.Zy(),
+                a / b.Zz(),
+                a / b.Zw()
+        );
+    }
+
+    public static void div3x4To(final double a, final Matrix3x4.Accessible b, final Matrix3x4.Consumer consumer) {
+        consumer.XYZxyzw(
+                a / b.Xx(),
+                a / b.Xy(),
+                a / b.Xz(),
+                a / b.Xw(),
+                a / b.Yx(),
+                a / b.Yy(),
+                a / b.Yz(),
+                a / b.Yw(),
+                a / b.Zx(),
+                a / b.Zy(),
+                a / b.Zz(),
+                a / b.Zw()
+        );
+    }
+
+    public static <R> R matrixProduct3x4And3x3(final Matrix3x4.Accessible a, final Matrix3x3.Accessible b, final Matrix3x4.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aXw = a.Xw();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aYw = a.Yw();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+        final double aZw = a.Zw();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                aXz * bXx + aYz * bXy + aZz * bXz,
+                aXw * bXx + aYw * bXy + aZw * bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                aXz * bYx + aYz * bYy + aZz * bYz,
+                aXw * bYx + aYw * bYy + aZw * bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                aXz * bZx + aYz * bZy + aZz * bZz,
+                aXw * bZx + aYw * bZy + aZw * bZz
+        );
+    }
+
+    public static void matrixProduct3x4And3x3To(final Matrix3x4.Accessible a, final Matrix3x3.Accessible b, final Matrix3x4.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aXw = a.Xw();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aYw = a.Yw();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+        final double aZw = a.Zw();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+
+        consumer.XYZxyzw(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                aXz * bXx + aYz * bXy + aZz * bXz,
+                aXw * bXx + aYw * bXy + aZw * bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                aXz * bYx + aYz * bYy + aZz * bYz,
+                aXw * bYx + aYw * bYy + aZw * bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                aXz * bZx + aYz * bZy + aZz * bZz,
+                aXw * bZx + aYw * bZy + aZw * bZz
         );
     }
 

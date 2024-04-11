@@ -3225,6 +3225,114 @@ public final class VecMath {
         );
     }
 
+    public static <R> R matrixTransform3x2(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy,
+                aXy * bXx + aYy * bXy,
+                aXx * bYx + aYx * bYy,
+                aXy * bYx + aYy * bYy,
+                aXx * bZx + aYx * bZy + a.Zx(), 
+                aXy * bZx + aYy * bZy + a.Zy()
+        );
+    }
+
+    public static void matrixTransform3x2To(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+
+        consumer.XYZxy(
+                aXx * bXx + aYx * bXy,
+                aXy * bXx + aYy * bXy,
+                aXx * bYx + aYx * bYy,
+                aXy * bYx + aYy * bYy,
+                aXx * bZx + aYx * bZy + a.Zx(), 
+                aXy * bZx + aYy * bZy + a.Zy()
+        );
+    }
+
+    public static <R> R matrixTransform3x2And3x3(final Matrix3x2.Accessible a, final Matrix3x3.Accessible b, final Matrix3x3.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                bZz
+        );
+    }
+
+    public static void matrixTransform3x2And3x3To(final Matrix3x2.Accessible a, final Matrix3x3.Accessible b, final Matrix3x3.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+
+        consumer.XYZxyz(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                bZz
+        );
+    }
+
     public static <R> R matrixTransform3x2And2(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
@@ -3888,6 +3996,62 @@ public final class VecMath {
                 aXx * bTx + aYx * bTy + aZx * bTz,
                 aXy * bTx + aYy * bTy + aZy * bTz,
                 aXz * bTx + aYz * bTy + aZz * bTz
+        );
+    }
+
+    public static <R> R matrixTransform3x3And3x2(final Matrix3x3.Accessible a, final Matrix3x2.Accessible b, final Matrix3x3.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy,
+                aXy * bXx + aYy * bXy,
+                aXz * bXx + aYz * bXy,
+                aXx * bYx + aYx * bYy,
+                aXy * bYx + aYy * bYy,
+                aXz * bYx + aYz * bYy,
+                aXx * bZx + aYx * bZy + a.Zx(), 
+                aXy * bZx + aYy * bZy + a.Zy(), 
+                aXz * bZx + aYz * bZy + a.Zz()
+        );
+    }
+
+    public static void matrixTransform3x3And3x2To(final Matrix3x3.Accessible a, final Matrix3x2.Accessible b, final Matrix3x3.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+
+        consumer.XYZxyz(
+                aXx * bXx + aYx * bXy,
+                aXy * bXx + aYy * bXy,
+                aXz * bXx + aYz * bXy,
+                aXx * bYx + aYx * bYy,
+                aXy * bYx + aYy * bYy,
+                aXz * bYx + aYz * bYy,
+                aXx * bZx + aYx * bZy + a.Zx(), 
+                aXy * bZx + aYy * bZy + a.Zy(), 
+                aXz * bZx + aYz * bZy + a.Zz()
         );
     }
 
@@ -4775,6 +4939,188 @@ public final class VecMath {
         );
     }
 
+    public static <R> R matrixTransform4x3(final Matrix4x3.Accessible a, final Matrix4x3.Accessible b, final Matrix4x3.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+        final double bTx = b.Tx();
+        final double bTy = b.Ty();
+        final double bTz = b.Tz();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                aXz * bXx + aYz * bXy + aZz * bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                aXz * bYx + aYz * bYy + aZz * bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                aXz * bZx + aYz * bZy + aZz * bZz,
+                aXx * bTx + aYx * bTy + aZx * bTz + a.Tx(), 
+                aXy * bTx + aYy * bTy + aZy * bTz + a.Ty(), 
+                aXz * bTx + aYz * bTy + aZz * bTz + a.Tz()
+        );
+    }
+
+    public static void matrixTransform4x3To(final Matrix4x3.Accessible a, final Matrix4x3.Accessible b, final Matrix4x3.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+        final double bTx = b.Tx();
+        final double bTy = b.Ty();
+        final double bTz = b.Tz();
+
+        consumer.XYZTxyz(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                aXz * bXx + aYz * bXy + aZz * bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                aXz * bYx + aYz * bYy + aZz * bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                aXz * bZx + aYz * bZy + aZz * bZz,
+                aXx * bTx + aYx * bTy + aZx * bTz + a.Tx(), 
+                aXy * bTx + aYy * bTy + aZy * bTz + a.Ty(), 
+                aXz * bTx + aYz * bTy + aZz * bTz + a.Tz()
+        );
+    }
+
+    public static <R> R matrixTransform4x3And4x4(final Matrix4x3.Accessible a, final Matrix4x4.Accessible b, final Matrix4x4.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+        final double aTx = a.Tx();
+        final double aTy = a.Ty();
+        final double aTz = a.Tz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bXw = b.Xw();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bYw = b.Yw();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+        final double bZw = b.Zw();
+        final double bTx = b.Tx();
+        final double bTy = b.Ty();
+        final double bTz = b.Tz();
+        final double bTw = b.Tw();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy + aZx * bXz + aTx * bXw,
+                aXy * bXx + aYy * bXy + aZy * bXz + aTy * bXw,
+                aXz * bXx + aYz * bXy + aZz * bXz + aTz * bXw,
+                bXw,
+                aXx * bYx + aYx * bYy + aZx * bYz + aTx * bYw,
+                aXy * bYx + aYy * bYy + aZy * bYz + aTy * bYw,
+                aXz * bYx + aYz * bYy + aZz * bYz + aTz * bYw,
+                bYw,
+                aXx * bZx + aYx * bZy + aZx * bZz + aTx * bZw,
+                aXy * bZx + aYy * bZy + aZy * bZz + aTy * bZw,
+                aXz * bZx + aYz * bZy + aZz * bZz + aTz * bZw,
+                bZw,
+                aXx * bTx + aYx * bTy + aZx * bTz + aTx * bTw,
+                aXy * bTx + aYy * bTy + aZy * bTz + aTy * bTw,
+                aXz * bTx + aYz * bTy + aZz * bTz + aTz * bTw,
+                bTw
+        );
+    }
+
+    public static void matrixTransform4x3And4x4To(final Matrix4x3.Accessible a, final Matrix4x4.Accessible b, final Matrix4x4.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+        final double aTx = a.Tx();
+        final double aTy = a.Ty();
+        final double aTz = a.Tz();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bXw = b.Xw();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bYw = b.Yw();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+        final double bZw = b.Zw();
+        final double bTx = b.Tx();
+        final double bTy = b.Ty();
+        final double bTz = b.Tz();
+        final double bTw = b.Tw();
+
+        consumer.XYZTxyzw(
+                aXx * bXx + aYx * bXy + aZx * bXz + aTx * bXw,
+                aXy * bXx + aYy * bXy + aZy * bXz + aTy * bXw,
+                aXz * bXx + aYz * bXy + aZz * bXz + aTz * bXw,
+                bXw,
+                aXx * bYx + aYx * bYy + aZx * bYz + aTx * bYw,
+                aXy * bYx + aYy * bYy + aZy * bYz + aTy * bYw,
+                aXz * bYx + aYz * bYy + aZz * bYz + aTz * bYw,
+                bYw,
+                aXx * bZx + aYx * bZy + aZx * bZz + aTx * bZw,
+                aXy * bZx + aYy * bZy + aZy * bZz + aTy * bZw,
+                aXz * bZx + aYz * bZy + aZz * bZz + aTz * bZw,
+                bZw,
+                aXx * bTx + aYx * bTy + aZx * bTz + aTx * bTw,
+                aXy * bTx + aYy * bTy + aZy * bTz + aTy * bTw,
+                aXz * bTx + aYz * bTy + aZz * bTz + aTz * bTw,
+                bTw
+        );
+    }
+
     public static <R> R matrixTransform4x3And3(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
@@ -5478,6 +5824,100 @@ public final class VecMath {
                 aXy * bTx + aYy * bTy + aZy * bTz + aTy * bTw,
                 aXz * bTx + aYz * bTy + aZz * bTz + aTz * bTw,
                 aXw * bTx + aYw * bTy + aZw * bTz + aTw * bTw
+        );
+    }
+
+    public static <R> R matrixTransform4x4And4x3(final Matrix4x4.Accessible a, final Matrix4x3.Accessible b, final Matrix4x4.Factory<R> factory) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aXw = a.Xw();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aYw = a.Yw();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+        final double aZw = a.Zw();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+        final double bTx = b.Tx();
+        final double bTy = b.Ty();
+        final double bTz = b.Tz();
+
+        return factory.create(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                aXz * bXx + aYz * bXy + aZz * bXz,
+                aXw * bXx + aYw * bXy + aZw * bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                aXz * bYx + aYz * bYy + aZz * bYz,
+                aXw * bYx + aYw * bYy + aZw * bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                aXz * bZx + aYz * bZy + aZz * bZz,
+                aXw * bZx + aYw * bZy + aZw * bZz,
+                aXx * bTx + aYx * bTy + aZx * bTz + a.Tx(), 
+                aXy * bTx + aYy * bTy + aZy * bTz + a.Ty(), 
+                aXz * bTx + aYz * bTy + aZz * bTz + a.Tz(), 
+                aXw * bTx + aYw * bTy + aZw * bTz + a.Tw()
+        );
+    }
+
+    public static void matrixTransform4x4And4x3To(final Matrix4x4.Accessible a, final Matrix4x3.Accessible b, final Matrix4x4.Consumer consumer) {
+        final double aXx = a.Xx();
+        final double aXy = a.Xy();
+        final double aXz = a.Xz();
+        final double aXw = a.Xw();
+        final double aYx = a.Yx();
+        final double aYy = a.Yy();
+        final double aYz = a.Yz();
+        final double aYw = a.Yw();
+        final double aZx = a.Zx();
+        final double aZy = a.Zy();
+        final double aZz = a.Zz();
+        final double aZw = a.Zw();
+
+        final double bXx = b.Xx();
+        final double bXy = b.Xy();
+        final double bXz = b.Xz();
+        final double bYx = b.Yx();
+        final double bYy = b.Yy();
+        final double bYz = b.Yz();
+        final double bZx = b.Zx();
+        final double bZy = b.Zy();
+        final double bZz = b.Zz();
+        final double bTx = b.Tx();
+        final double bTy = b.Ty();
+        final double bTz = b.Tz();
+
+        consumer.XYZTxyzw(
+                aXx * bXx + aYx * bXy + aZx * bXz,
+                aXy * bXx + aYy * bXy + aZy * bXz,
+                aXz * bXx + aYz * bXy + aZz * bXz,
+                aXw * bXx + aYw * bXy + aZw * bXz,
+                aXx * bYx + aYx * bYy + aZx * bYz,
+                aXy * bYx + aYy * bYy + aZy * bYz,
+                aXz * bYx + aYz * bYy + aZz * bYz,
+                aXw * bYx + aYw * bYy + aZw * bYz,
+                aXx * bZx + aYx * bZy + aZx * bZz,
+                aXy * bZx + aYy * bZy + aZy * bZz,
+                aXz * bZx + aYz * bZy + aZz * bZz,
+                aXw * bZx + aYw * bZy + aZw * bZz,
+                aXx * bTx + aYx * bTy + aZx * bTz + a.Tx(), 
+                aXy * bTx + aYy * bTy + aZy * bTz + a.Ty(), 
+                aXz * bTx + aYz * bTy + aZz * bTz + a.Tz(), 
+                aXw * bTx + aYw * bTy + aZw * bTz + a.Tw()
         );
     }
 

@@ -521,6 +521,10 @@ public final class VecMath {
         return x * x + y * y;
     }
 
+    public static double squaredLength2(final double x, final double y) {
+        return x * x + y * y;
+    }
+
     public static double squaredDistance2(final Vector2.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
@@ -539,6 +543,10 @@ public final class VecMath {
         final double x = vec.x();
         final double y = vec.y();
 
+        return Math.sqrt(x * x + y * y);
+    }
+
+    public static double length2(final double x, final double y) {
         return Math.sqrt(x * x + y * y);
     }
 
@@ -1264,6 +1272,10 @@ public final class VecMath {
         return x * x + y * y + z * z;
     }
 
+    public static double squaredLength3(final double x, final double y, final double z) {
+        return x * x + y * y + z * z;
+    }
+
     public static double squaredDistance3(final Vector3.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
@@ -1285,6 +1297,10 @@ public final class VecMath {
         final double y = vec.y();
         final double z = vec.z();
 
+        return Math.sqrt(x * x + y * y + z * z);
+    }
+
+    public static double length3(final double x, final double y, final double z) {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
@@ -2130,6 +2146,10 @@ public final class VecMath {
         return x * x + y * y + z * z + w * w;
     }
 
+    public static double squaredLength4(final double x, final double y, final double z, final double w) {
+        return x * x + y * y + z * z + w * w;
+    }
+
     public static double squaredDistance4(final Vector4.Accessible a, final double b) {
         final double x = a.x() - b;
         final double y = a.y() - b;
@@ -2154,6 +2174,10 @@ public final class VecMath {
         final double z = vec.z();
         final double w = vec.w();
 
+        return Math.sqrt(x * x + y * y + z * z + w * w);
+    }
+
+    public static double length4(final double x, final double y, final double z, final double w) {
         return Math.sqrt(x * x + y * y + z * z + w * w);
     }
 

@@ -371,20 +371,16 @@ public final class VecMath {
     }
 
     public static <R> R div2(final Vector2.Accessible a, final double b, final Vector2.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.x() * inverseB,
-                a.y() * inverseB
+                a.x() / b,
+                a.y() / b
         );
     }
 
     public static void div2To(final Vector2.Accessible a, final double b, final Vector2.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.xy(
-                a.x() * inverseB,
-                a.y() * inverseB
+                a.x() / b,
+                a.y() / b
         );
     }
 
@@ -1101,22 +1097,18 @@ public final class VecMath {
     }
 
     public static <R> R div3(final Vector3.Accessible a, final double b, final Vector3.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.x() * inverseB,
-                a.y() * inverseB,
-                a.z() * inverseB
+                a.x() / b,
+                a.y() / b,
+                a.z() / b
         );
     }
 
     public static void div3To(final Vector3.Accessible a, final double b, final Vector3.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.xyz(
-                a.x() * inverseB,
-                a.y() * inverseB,
-                a.z() * inverseB
+                a.x() / b,
+                a.y() / b,
+                a.z() / b
         );
     }
 
@@ -1954,24 +1946,20 @@ public final class VecMath {
     }
 
     public static <R> R div4(final Vector4.Accessible a, final double b, final Vector4.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.x() * inverseB,
-                a.y() * inverseB,
-                a.z() * inverseB,
-                a.w() * inverseB
+                a.x() / b,
+                a.y() / b,
+                a.z() / b,
+                a.w() / b
         );
     }
 
     public static void div4To(final Vector4.Accessible a, final double b, final Vector4.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.xyzw(
-                a.x() * inverseB,
-                a.y() * inverseB,
-                a.z() * inverseB,
-                a.w() * inverseB
+                a.x() / b,
+                a.y() / b,
+                a.z() / b,
+                a.w() / b
         );
     }
 
@@ -2518,24 +2506,20 @@ public final class VecMath {
     }
 
     public static <R> R div2x2(final Matrix2x2.Accessible a, final double b, final Matrix2x2.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Yx() / b,
+                a.Yy() / b
         );
     }
 
     public static void div2x2To(final Matrix2x2.Accessible a, final double b, final Matrix2x2.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYxy(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Yx() / b,
+                a.Yy() / b
         );
     }
 
@@ -2888,28 +2872,24 @@ public final class VecMath {
     }
 
     public static <R> R div2x3(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b
         );
     }
 
     public static void div2x3To(final Matrix2x3.Accessible a, final double b, final Matrix2x3.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYxyz(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b
         );
     }
 
@@ -3180,28 +3160,24 @@ public final class VecMath {
     }
 
     public static <R> R div3x2(final Matrix3x2.Accessible a, final double b, final Matrix3x2.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Zx() / b,
+                a.Zy() / b
         );
     }
 
     public static void div3x2To(final Matrix3x2.Accessible a, final double b, final Matrix3x2.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYZxy(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Zx() / b,
+                a.Zy() / b
         );
     }
 
@@ -3728,34 +3704,30 @@ public final class VecMath {
     }
 
     public static <R> R div3x3(final Matrix3x3.Accessible a, final double b, final Matrix3x3.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b
         );
     }
 
     public static void div3x3To(final Matrix3x3.Accessible a, final double b, final Matrix3x3.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYZxyz(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b
         );
     }
 
@@ -4400,40 +4372,36 @@ public final class VecMath {
     }
 
     public static <R> R div3x4(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Xw() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Yw() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB,
-                a.Zw() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Xw() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Yw() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b,
+                a.Zw() / b
         );
     }
 
     public static void div3x4To(final Matrix3x4.Accessible a, final double b, final Matrix3x4.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYZxyzw(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Xw() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Yw() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB,
-                a.Zw() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Xw() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Yw() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b,
+                a.Zw() / b
         );
     }
 
@@ -4858,40 +4826,36 @@ public final class VecMath {
     }
 
     public static <R> R div4x3(final Matrix4x3.Accessible a, final double b, final Matrix4x3.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB,
-                a.Tx() * inverseB,
-                a.Ty() * inverseB,
-                a.Tz() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b,
+                a.Tx() / b,
+                a.Ty() / b,
+                a.Tz() / b
         );
     }
 
     public static void div4x3To(final Matrix4x3.Accessible a, final double b, final Matrix4x3.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYZTxyz(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB,
-                a.Tx() * inverseB,
-                a.Ty() * inverseB,
-                a.Tz() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b,
+                a.Tx() / b,
+                a.Ty() / b,
+                a.Tz() / b
         );
     }
 
@@ -5506,48 +5470,44 @@ public final class VecMath {
     }
 
     public static <R> R div4x4(final Matrix4x4.Accessible a, final double b, final Matrix4x4.Factory<R> factory) {
-        final double inverseB = 1.0D / b;
-
         return factory.create(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Xw() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Yw() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB,
-                a.Zw() * inverseB,
-                a.Tx() * inverseB,
-                a.Ty() * inverseB,
-                a.Tz() * inverseB,
-                a.Tw() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Xw() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Yw() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b,
+                a.Zw() / b,
+                a.Tx() / b,
+                a.Ty() / b,
+                a.Tz() / b,
+                a.Tw() / b
         );
     }
 
     public static void div4x4To(final Matrix4x4.Accessible a, final double b, final Matrix4x4.Consumer consumer) {
-        final double inverseB = 1.0D / b;
-
         consumer.XYZTxyzw(
-                a.Xx() * inverseB,
-                a.Xy() * inverseB,
-                a.Xz() * inverseB,
-                a.Xw() * inverseB,
-                a.Yx() * inverseB,
-                a.Yy() * inverseB,
-                a.Yz() * inverseB,
-                a.Yw() * inverseB,
-                a.Zx() * inverseB,
-                a.Zy() * inverseB,
-                a.Zz() * inverseB,
-                a.Zw() * inverseB,
-                a.Tx() * inverseB,
-                a.Ty() * inverseB,
-                a.Tz() * inverseB,
-                a.Tw() * inverseB
+                a.Xx() / b,
+                a.Xy() / b,
+                a.Xz() / b,
+                a.Xw() / b,
+                a.Yx() / b,
+                a.Yy() / b,
+                a.Yz() / b,
+                a.Yw() / b,
+                a.Zx() / b,
+                a.Zy() / b,
+                a.Zz() / b,
+                a.Zw() / b,
+                a.Tx() / b,
+                a.Ty() / b,
+                a.Tz() / b,
+                a.Tw() / b
         );
     }
 

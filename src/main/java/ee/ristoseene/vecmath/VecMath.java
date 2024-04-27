@@ -2559,6 +2559,18 @@ public final class VecMath {
         );
     }
 
+    public static double determinant2x2(final Matrix2x2.Accessible mat) {
+        return mat.Xx() * mat.Yy() - mat.Xy() * mat.Yx();
+    }
+
+    public static <R> R matrixAdjugate2x2(final Matrix2x2.Accessible mat, final Matrix2x2.Factory<R> factory) {
+        return factory.create(mat.Yy(), -mat.Xy(), -mat.Yx(), mat.Xx());
+    }
+
+    public static void matrixAdjugate2x2To(final Matrix2x2.Accessible mat, final Matrix2x2.Consumer consumer) {
+        consumer.XYxy(mat.Yy(), -mat.Xy(), -mat.Yx(), mat.Xx());
+    }
+
     public static <R> R matrixInverse2x2(final Matrix2x2.Accessible mat, final Matrix2x2.Factory<R> factory) {
         final double matXx = mat.Xx();
         final double matXy = mat.Xy();
@@ -3784,6 +3796,67 @@ public final class VecMath {
                 a / b.Zx(),
                 a / b.Zy(),
                 a / b.Zz()
+        );
+    }
+
+    public static double determinant3x3(final Matrix3x3.Accessible mat) {
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+
+        return mat.Xx() * (matYy * matZz - matYz * matZy) +
+                mat.Xy() * (matYz * matZx - matYx * matZz) +
+                mat.Xz() * (matYx * matZy - matYy * matZx);
+    }
+
+    public static <R> R matrixAdjugate3x3(final Matrix3x3.Accessible mat, final Matrix3x3.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+
+        return factory.create(
+                matYy * matZz - matYz * matZy,
+                matXz * matZy - matXy * matZz,
+                matXy * matYz - matXz * matYy,
+                matYz * matZx - matYx * matZz,
+                matXx * matZz - matXz * matZx,
+                matXz * matYx - matXx * matYz,
+                matYx * matZy - matYy * matZx,
+                matXy * matZx - matXx * matZy,
+                matXx * matYy - matXy * matYx
+        );
+    }
+
+    public static void matrixAdjugate3x3To(final Matrix3x3.Accessible mat, final Matrix3x3.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+
+        consumer.XYZxyz(
+                matYy * matZz - matYz * matZy,
+                matXz * matZy - matXy * matZz,
+                matXy * matYz - matXz * matYy,
+                matYz * matZx - matYx * matZz,
+                matXx * matZz - matXz * matZx,
+                matXz * matYx - matXx * matYz,
+                matYx * matZy - matYy * matZx,
+                matXy * matZx - matXx * matZy,
+                matXx * matYy - matXy * matYx
         );
     }
 
@@ -5592,6 +5665,134 @@ public final class VecMath {
                 a / b.Ty(),
                 a / b.Tz(),
                 a / b.Tw()
+        );
+    }
+
+    public static double determinant4x4(final Matrix4x4.Accessible mat) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matXw = mat.Xw();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matYw = mat.Yw();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matZw = mat.Zw();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+        final double matTw = mat.Tw();
+
+        return (matXx * matYy - matXy * matYx) * (matZz * matTw - matZw * matTz) -
+                (matXx * matYz - matXz * matYx) * (matZy * matTw - matZw * matTy) +
+                (matXx * matYw - matXw * matYx) * (matZy * matTz - matZz * matTy) +
+                (matXy * matYz - matXz * matYy) * (matZx * matTw - matZw * matTx) -
+                (matXy * matYw - matXw * matYy) * (matZx * matTz - matZz * matTx) +
+                (matXz * matYw - matXw * matYz) * (matZx * matTy - matZy * matTx);
+    }
+
+    public static <R> R matrixAdjugate4x4(final Matrix4x4.Accessible mat, final Matrix4x4.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matXw = mat.Xw();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matYw = mat.Yw();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matZw = mat.Zw();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+        final double matTw = mat.Tw();
+
+        final double detXYxy = matXx * matYy - matXy * matYx;
+        final double detXYxz = matXx * matYz - matXz * matYx;
+        final double detXYxw = matXx * matYw - matXw * matYx;
+        final double detXYyz = matXy * matYz - matXz * matYy;
+        final double detXYyw = matXy * matYw - matXw * matYy;
+        final double detXYzw = matXz * matYw - matXw * matYz;
+        final double detZTxy = matZx * matTy - matZy * matTx;
+        final double detZTxz = matZx * matTz - matZz * matTx;
+        final double detZTxw = matZx * matTw - matZw * matTx;
+        final double detZTyz = matZy * matTz - matZz * matTy;
+        final double detZTyw = matZy * matTw - matZw * matTy;
+        final double detZTzw = matZz * matTw - matZw * matTz;
+
+        return factory.create(
+                matYy * detZTzw - matYz * detZTyw + matYw * detZTyz,
+                matXz * detZTyw - matXy * detZTzw - matXw * detZTyz,
+                matTy * detXYzw - matTz * detXYyw + matTw * detXYyz,
+                matZz * detXYyw - matZy * detXYzw - matZw * detXYyz,
+                matYz * detZTxw - matYx * detZTzw - matYw * detZTxz,
+                matXx * detZTzw - matXz * detZTxw + matXw * detZTxz,
+                matTz * detXYxw - matTx * detXYzw - matTw * detXYxz,
+                matZx * detXYzw - matZz * detXYxw + matZw * detXYxz,
+                matYx * detZTyw - matYy * detZTxw + matYw * detZTxy,
+                matXy * detZTxw - matXx * detZTyw - matXw * detZTxy,
+                matTx * detXYyw - matTy * detXYxw + matTw * detXYxy,
+                matZy * detXYxw - matZx * detXYyw - matZw * detXYxy,
+                matYy * detZTxz - matYx * detZTyz - matYz * detZTxy,
+                matXx * detZTyz - matXy * detZTxz + matXz * detZTxy,
+                matTy * detXYxz - matTx * detXYyz - matTz * detXYxy,
+                matZx * detXYyz - matZy * detXYxz + matZz * detXYxy
+        );
+    }
+
+    public static void matrixAdjugate4x4To(final Matrix4x4.Accessible mat, final Matrix4x4.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matXw = mat.Xw();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matYw = mat.Yw();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matZw = mat.Zw();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+        final double matTw = mat.Tw();
+
+        final double detXYxy = matXx * matYy - matXy * matYx;
+        final double detXYxz = matXx * matYz - matXz * matYx;
+        final double detXYxw = matXx * matYw - matXw * matYx;
+        final double detXYyz = matXy * matYz - matXz * matYy;
+        final double detXYyw = matXy * matYw - matXw * matYy;
+        final double detXYzw = matXz * matYw - matXw * matYz;
+        final double detZTxy = matZx * matTy - matZy * matTx;
+        final double detZTxz = matZx * matTz - matZz * matTx;
+        final double detZTxw = matZx * matTw - matZw * matTx;
+        final double detZTyz = matZy * matTz - matZz * matTy;
+        final double detZTyw = matZy * matTw - matZw * matTy;
+        final double detZTzw = matZz * matTw - matZw * matTz;
+
+        consumer.XYZTxyzw(
+                matYy * detZTzw - matYz * detZTyw + matYw * detZTyz,
+                matXz * detZTyw - matXy * detZTzw - matXw * detZTyz,
+                matTy * detXYzw - matTz * detXYyw + matTw * detXYyz,
+                matZz * detXYyw - matZy * detXYzw - matZw * detXYyz,
+                matYz * detZTxw - matYx * detZTzw - matYw * detZTxz,
+                matXx * detZTzw - matXz * detZTxw + matXw * detZTxz,
+                matTz * detXYxw - matTx * detXYzw - matTw * detXYxz,
+                matZx * detXYzw - matZz * detXYxw + matZw * detXYxz,
+                matYx * detZTyw - matYy * detZTxw + matYw * detZTxy,
+                matXy * detZTxw - matXx * detZTyw - matXw * detZTxy,
+                matTx * detXYyw - matTy * detXYxw + matTw * detXYxy,
+                matZy * detXYxw - matZx * detXYyw - matZw * detXYxy,
+                matYy * detZTxz - matYx * detZTyz - matYz * detZTxy,
+                matXx * detZTyz - matXy * detZTxz + matXz * detZTxy,
+                matTy * detXYxz - matTx * detXYyz - matTz * detXYxy,
+                matZx * detXYyz - matZy * detXYxz + matZz * detXYxy
         );
     }
 

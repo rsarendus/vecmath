@@ -2559,35 +2559,35 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixInverse2x2(final Matrix2x2.Accessible matrix, final Matrix2x2.Factory<R> factory) {
-        final double matrixXx = matrix.Xx();
-        final double matrixXy = matrix.Xy();
-        final double matrixYx = matrix.Yx();
-        final double matrixYy = matrix.Yy();
+    public static <R> R matrixInverse2x2(final Matrix2x2.Accessible mat, final Matrix2x2.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
 
-        final double inverseDet = 1.0D / (matrixXx * matrixYy - matrixYx * matrixXy);
+        final double inverseDet = 1.0D / (matXx * matYy - matXy * matYx);
 
         return factory.create(
-                matrixYy * inverseDet,
-                -matrixXy * inverseDet,
-                -matrixYx * inverseDet,
-                matrixXx * inverseDet
+                matYy * inverseDet,
+                -matXy * inverseDet,
+                -matYx * inverseDet,
+                matXx * inverseDet
         );
     }
 
-    public static void matrixInverse2x2To(final Matrix2x2.Accessible matrix, final Matrix2x2.Consumer consumer) {
-        final double matrixXx = matrix.Xx();
-        final double matrixXy = matrix.Xy();
-        final double matrixYx = matrix.Yx();
-        final double matrixYy = matrix.Yy();
+    public static void matrixInverse2x2To(final Matrix2x2.Accessible mat, final Matrix2x2.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
 
-        final double inverseDet = 1.0D / (matrixXx * matrixYy - matrixYx * matrixXy);
+        final double inverseDet = 1.0D / (matXx * matYy - matXy * matYx);
 
         consumer.XYxy(
-                matrixYy * inverseDet,
-                -matrixXy * inverseDet,
-                -matrixYx * inverseDet,
-                matrixXx * inverseDet
+                matYy * inverseDet,
+                -matXy * inverseDet,
+                -matYx * inverseDet,
+                matXx * inverseDet
         );
     }
 
@@ -3787,63 +3787,63 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixInverse3x3(final Matrix3x3.Accessible matrix, final Matrix3x3.Factory<R> factory) {
-        final double matrixXx = matrix.Xx();
-        final double matrixXy = matrix.Xy();
-        final double matrixXz = matrix.Xz();
-        final double matrixYx = matrix.Yx();
-        final double matrixYy = matrix.Yy();
-        final double matrixYz = matrix.Yz();
-        final double matrixZx = matrix.Zx();
-        final double matrixZy = matrix.Zy();
-        final double matrixZz = matrix.Zz();
+    public static <R> R matrixInverse3x3(final Matrix3x3.Accessible mat, final Matrix3x3.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
 
-        final double det01 = matrixZz * matrixYy - matrixYz * matrixZy;
-        final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
-        final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
+        final double cofactorXx = matYy * matZz - matYz * matZy;
+        final double cofactorXy = matYz * matZx - matYx * matZz;
+        final double cofactorXz = matYx * matZy - matYy * matZx;
 
-        final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
+        final double inverseDet = 1.0D / (matXx * cofactorXx + matXy * cofactorXy + matXz * cofactorXz);
 
         return factory.create(
-                det01 * inverseDet,
-                (matrixXz * matrixZy - matrixZz * matrixXy) * inverseDet,
-                (matrixYz * matrixXy - matrixXz * matrixYy) * inverseDet,
-                det11 * inverseDet,
-                (matrixZz * matrixXx - matrixXz * matrixZx) * inverseDet,
-                (matrixXz * matrixYx - matrixYz * matrixXx) * inverseDet,
-                det21 * inverseDet,
-                (matrixXy * matrixZx - matrixZy * matrixXx) * inverseDet,
-                (matrixYy * matrixXx - matrixXy * matrixYx) * inverseDet
+                cofactorXx * inverseDet,
+                (matXz * matZy - matXy * matZz) * inverseDet,
+                (matXy * matYz - matXz * matYy) * inverseDet,
+                cofactorXy * inverseDet,
+                (matXx * matZz - matXz * matZx) * inverseDet,
+                (matXz * matYx - matXx * matYz) * inverseDet,
+                cofactorXz * inverseDet,
+                (matXy * matZx - matXx * matZy) * inverseDet,
+                (matXx * matYy - matXy * matYx) * inverseDet
         );
     }
 
-    public static void matrixInverse3x3To(final Matrix3x3.Accessible matrix, final Matrix3x3.Consumer consumer) {
-        final double matrixXx = matrix.Xx();
-        final double matrixXy = matrix.Xy();
-        final double matrixXz = matrix.Xz();
-        final double matrixYx = matrix.Yx();
-        final double matrixYy = matrix.Yy();
-        final double matrixYz = matrix.Yz();
-        final double matrixZx = matrix.Zx();
-        final double matrixZy = matrix.Zy();
-        final double matrixZz = matrix.Zz();
+    public static void matrixInverse3x3To(final Matrix3x3.Accessible mat, final Matrix3x3.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
 
-        final double det01 = matrixZz * matrixYy - matrixYz * matrixZy;
-        final double det11 = matrixYz * matrixZx - matrixZz * matrixYx;
-        final double det21 = matrixZy * matrixYx - matrixYy * matrixZx;
+        final double cofactorXx = matYy * matZz - matYz * matZy;
+        final double cofactorXy = matYz * matZx - matYx * matZz;
+        final double cofactorXz = matYx * matZy - matYy * matZx;
 
-        final double inverseDet = 1.0D / (matrixXx * det01 + matrixXy * det11 + matrixXz * det21);
+        final double inverseDet = 1.0D / (matXx * cofactorXx + matXy * cofactorXy + matXz * cofactorXz);
 
         consumer.XYZxyz(
-                det01 * inverseDet,
-                (matrixXz * matrixZy - matrixZz * matrixXy) * inverseDet,
-                (matrixYz * matrixXy - matrixXz * matrixYy) * inverseDet,
-                det11 * inverseDet,
-                (matrixZz * matrixXx - matrixXz * matrixZx) * inverseDet,
-                (matrixXz * matrixYx - matrixYz * matrixXx) * inverseDet,
-                det21 * inverseDet,
-                (matrixXy * matrixZx - matrixZy * matrixXx) * inverseDet,
-                (matrixYy * matrixXx - matrixXy * matrixYx) * inverseDet
+                cofactorXx * inverseDet,
+                (matXz * matZy - matXy * matZz) * inverseDet,
+                (matXy * matYz - matXz * matYy) * inverseDet,
+                cofactorXy * inverseDet,
+                (matXx * matZz - matXz * matZx) * inverseDet,
+                (matXz * matYx - matXx * matYz) * inverseDet,
+                cofactorXz * inverseDet,
+                (matXy * matZx - matXx * matZy) * inverseDet,
+                (matXx * matYy - matXy * matYx) * inverseDet
         );
     }
 
@@ -5595,109 +5595,109 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixInverse4x4(final Matrix4x4.Accessible matrix, final Matrix4x4.Factory<R> factory) {
-        final double matrixXx = matrix.Xx();
-        final double matrixXy = matrix.Xy();
-        final double matrixXz = matrix.Xz();
-        final double matrixXw = matrix.Xw();
-        final double matrixYx = matrix.Yx();
-        final double matrixYy = matrix.Yy();
-        final double matrixYz = matrix.Yz();
-        final double matrixYw = matrix.Yw();
-        final double matrixZx = matrix.Zx();
-        final double matrixZy = matrix.Zy();
-        final double matrixZz = matrix.Zz();
-        final double matrixZw = matrix.Zw();
-        final double matrixTx = matrix.Tx();
-        final double matrixTy = matrix.Ty();
-        final double matrixTz = matrix.Tz();
-        final double matrixTw = matrix.Tw();
+    public static <R> R matrixInverse4x4(final Matrix4x4.Accessible mat, final Matrix4x4.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matXw = mat.Xw();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matYw = mat.Yw();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matZw = mat.Zw();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+        final double matTw = mat.Tw();
 
-        final double det00 = matrixXx * matrixYy - matrixXy * matrixYx;
-        final double det01 = matrixXx * matrixYz - matrixXz * matrixYx;
-        final double det02 = matrixXx * matrixYw - matrixXw * matrixYx;
-        final double det03 = matrixXy * matrixYz - matrixXz * matrixYy;
-        final double det04 = matrixXy * matrixYw - matrixXw * matrixYy;
-        final double det05 = matrixXz * matrixYw - matrixXw * matrixYz;
-        final double det06 = matrixZx * matrixTy - matrixZy * matrixTx;
-        final double det07 = matrixZx * matrixTz - matrixZz * matrixTx;
-        final double det08 = matrixZx * matrixTw - matrixZw * matrixTx;
-        final double det09 = matrixZy * matrixTz - matrixZz * matrixTy;
-        final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
-        final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
+        final double detXYxy = matXx * matYy - matXy * matYx;
+        final double detXYxz = matXx * matYz - matXz * matYx;
+        final double detXYxw = matXx * matYw - matXw * matYx;
+        final double detXYyz = matXy * matYz - matXz * matYy;
+        final double detXYyw = matXy * matYw - matXw * matYy;
+        final double detXYzw = matXz * matYw - matXw * matYz;
+        final double detZTxy = matZx * matTy - matZy * matTx;
+        final double detZTxz = matZx * matTz - matZz * matTx;
+        final double detZTxw = matZx * matTw - matZw * matTx;
+        final double detZTyz = matZy * matTz - matZz * matTy;
+        final double detZTyw = matZy * matTw - matZw * matTy;
+        final double detZTzw = matZz * matTw - matZw * matTz;
 
-        final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
+        final double inverseDet = 1.0D / (detXYxy * detZTzw - detXYxz * detZTyw + detXYxw * detZTyz + detXYyz * detZTxw - detXYyw * detZTxz + detXYzw * detZTxy);
 
         return factory.create(
-                (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
-                (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * inverseDet,
-                (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * inverseDet,
-                (matrixZz * det04 - matrixZy * det05 - matrixZw * det03) * inverseDet,
-                (matrixYz * det08 - matrixYx * det11 - matrixYw * det07) * inverseDet,
-                (matrixXx * det11 - matrixXz * det08 + matrixXw * det07) * inverseDet,
-                (matrixTz * det02 - matrixTx * det05 - matrixTw * det01) * inverseDet,
-                (matrixZx * det05 - matrixZz * det02 + matrixZw * det01) * inverseDet,
-                (matrixYx * det10 - matrixYy * det08 + matrixYw * det06) * inverseDet,
-                (matrixXy * det08 - matrixXx * det10 - matrixXw * det06) * inverseDet,
-                (matrixTx * det04 - matrixTy * det02 + matrixTw * det00) * inverseDet,
-                (matrixZy * det02 - matrixZx * det04 - matrixZw * det00) * inverseDet,
-                (matrixYy * det07 - matrixYx * det09 - matrixYz * det06) * inverseDet,
-                (matrixXx * det09 - matrixXy * det07 + matrixXz * det06) * inverseDet,
-                (matrixTy * det01 - matrixTx * det03 - matrixTz * det00) * inverseDet,
-                (matrixZx * det03 - matrixZy * det01 + matrixZz * det00) * inverseDet
+                (matYy * detZTzw - matYz * detZTyw + matYw * detZTyz) * inverseDet,
+                (matXz * detZTyw - matXy * detZTzw - matXw * detZTyz) * inverseDet,
+                (matTy * detXYzw - matTz * detXYyw + matTw * detXYyz) * inverseDet,
+                (matZz * detXYyw - matZy * detXYzw - matZw * detXYyz) * inverseDet,
+                (matYz * detZTxw - matYx * detZTzw - matYw * detZTxz) * inverseDet,
+                (matXx * detZTzw - matXz * detZTxw + matXw * detZTxz) * inverseDet,
+                (matTz * detXYxw - matTx * detXYzw - matTw * detXYxz) * inverseDet,
+                (matZx * detXYzw - matZz * detXYxw + matZw * detXYxz) * inverseDet,
+                (matYx * detZTyw - matYy * detZTxw + matYw * detZTxy) * inverseDet,
+                (matXy * detZTxw - matXx * detZTyw - matXw * detZTxy) * inverseDet,
+                (matTx * detXYyw - matTy * detXYxw + matTw * detXYxy) * inverseDet,
+                (matZy * detXYxw - matZx * detXYyw - matZw * detXYxy) * inverseDet,
+                (matYy * detZTxz - matYx * detZTyz - matYz * detZTxy) * inverseDet,
+                (matXx * detZTyz - matXy * detZTxz + matXz * detZTxy) * inverseDet,
+                (matTy * detXYxz - matTx * detXYyz - matTz * detXYxy) * inverseDet,
+                (matZx * detXYyz - matZy * detXYxz + matZz * detXYxy) * inverseDet
         );
     }
 
-    public static void matrixInverse4x4To(final Matrix4x4.Accessible matrix, final Matrix4x4.Consumer consumer) {
-        final double matrixXx = matrix.Xx();
-        final double matrixXy = matrix.Xy();
-        final double matrixXz = matrix.Xz();
-        final double matrixXw = matrix.Xw();
-        final double matrixYx = matrix.Yx();
-        final double matrixYy = matrix.Yy();
-        final double matrixYz = matrix.Yz();
-        final double matrixYw = matrix.Yw();
-        final double matrixZx = matrix.Zx();
-        final double matrixZy = matrix.Zy();
-        final double matrixZz = matrix.Zz();
-        final double matrixZw = matrix.Zw();
-        final double matrixTx = matrix.Tx();
-        final double matrixTy = matrix.Ty();
-        final double matrixTz = matrix.Tz();
-        final double matrixTw = matrix.Tw();
+    public static void matrixInverse4x4To(final Matrix4x4.Accessible mat, final Matrix4x4.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matXw = mat.Xw();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matYw = mat.Yw();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matZw = mat.Zw();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+        final double matTw = mat.Tw();
 
-        final double det00 = matrixXx * matrixYy - matrixXy * matrixYx;
-        final double det01 = matrixXx * matrixYz - matrixXz * matrixYx;
-        final double det02 = matrixXx * matrixYw - matrixXw * matrixYx;
-        final double det03 = matrixXy * matrixYz - matrixXz * matrixYy;
-        final double det04 = matrixXy * matrixYw - matrixXw * matrixYy;
-        final double det05 = matrixXz * matrixYw - matrixXw * matrixYz;
-        final double det06 = matrixZx * matrixTy - matrixZy * matrixTx;
-        final double det07 = matrixZx * matrixTz - matrixZz * matrixTx;
-        final double det08 = matrixZx * matrixTw - matrixZw * matrixTx;
-        final double det09 = matrixZy * matrixTz - matrixZz * matrixTy;
-        final double det10 = matrixZy * matrixTw - matrixZw * matrixTy;
-        final double det11 = matrixZz * matrixTw - matrixZw * matrixTz;
+        final double detXYxy = matXx * matYy - matXy * matYx;
+        final double detXYxz = matXx * matYz - matXz * matYx;
+        final double detXYxw = matXx * matYw - matXw * matYx;
+        final double detXYyz = matXy * matYz - matXz * matYy;
+        final double detXYyw = matXy * matYw - matXw * matYy;
+        final double detXYzw = matXz * matYw - matXw * matYz;
+        final double detZTxy = matZx * matTy - matZy * matTx;
+        final double detZTxz = matZx * matTz - matZz * matTx;
+        final double detZTxw = matZx * matTw - matZw * matTx;
+        final double detZTyz = matZy * matTz - matZz * matTy;
+        final double detZTyw = matZy * matTw - matZw * matTy;
+        final double detZTzw = matZz * matTw - matZw * matTz;
 
-        final double inverseDet = 1.0D / (det00 * det11 - det01 * det10 + det02 * det09 + det03 * det08 - det04 * det07 + det05 * det06);
+        final double inverseDet = 1.0D / (detXYxy * detZTzw - detXYxz * detZTyw + detXYxw * detZTyz + detXYyz * detZTxw - detXYyw * detZTxz + detXYzw * detZTxy);
 
         consumer.XYZTxyzw(
-                (matrixYy * det11 - matrixYz * det10 + matrixYw * det09) * inverseDet,
-                (matrixXz * det10 - matrixXy * det11 - matrixXw * det09) * inverseDet,
-                (matrixTy * det05 - matrixTz * det04 + matrixTw * det03) * inverseDet,
-                (matrixZz * det04 - matrixZy * det05 - matrixZw * det03) * inverseDet,
-                (matrixYz * det08 - matrixYx * det11 - matrixYw * det07) * inverseDet,
-                (matrixXx * det11 - matrixXz * det08 + matrixXw * det07) * inverseDet,
-                (matrixTz * det02 - matrixTx * det05 - matrixTw * det01) * inverseDet,
-                (matrixZx * det05 - matrixZz * det02 + matrixZw * det01) * inverseDet,
-                (matrixYx * det10 - matrixYy * det08 + matrixYw * det06) * inverseDet,
-                (matrixXy * det08 - matrixXx * det10 - matrixXw * det06) * inverseDet,
-                (matrixTx * det04 - matrixTy * det02 + matrixTw * det00) * inverseDet,
-                (matrixZy * det02 - matrixZx * det04 - matrixZw * det00) * inverseDet,
-                (matrixYy * det07 - matrixYx * det09 - matrixYz * det06) * inverseDet,
-                (matrixXx * det09 - matrixXy * det07 + matrixXz * det06) * inverseDet,
-                (matrixTy * det01 - matrixTx * det03 - matrixTz * det00) * inverseDet,
-                (matrixZx * det03 - matrixZy * det01 + matrixZz * det00) * inverseDet
+                (matYy * detZTzw - matYz * detZTyw + matYw * detZTyz) * inverseDet,
+                (matXz * detZTyw - matXy * detZTzw - matXw * detZTyz) * inverseDet,
+                (matTy * detXYzw - matTz * detXYyw + matTw * detXYyz) * inverseDet,
+                (matZz * detXYyw - matZy * detXYzw - matZw * detXYyz) * inverseDet,
+                (matYz * detZTxw - matYx * detZTzw - matYw * detZTxz) * inverseDet,
+                (matXx * detZTzw - matXz * detZTxw + matXw * detZTxz) * inverseDet,
+                (matTz * detXYxw - matTx * detXYzw - matTw * detXYxz) * inverseDet,
+                (matZx * detXYzw - matZz * detXYxw + matZw * detXYxz) * inverseDet,
+                (matYx * detZTyw - matYy * detZTxw + matYw * detZTxy) * inverseDet,
+                (matXy * detZTxw - matXx * detZTyw - matXw * detZTxy) * inverseDet,
+                (matTx * detXYyw - matTy * detXYxw + matTw * detXYxy) * inverseDet,
+                (matZy * detXYxw - matZx * detXYyw - matZw * detXYxy) * inverseDet,
+                (matYy * detZTxz - matYx * detZTyz - matYz * detZTxy) * inverseDet,
+                (matXx * detZTyz - matXy * detZTxz + matXz * detZTxy) * inverseDet,
+                (matTy * detXYxz - matTx * detXYyz - matTz * detXYxy) * inverseDet,
+                (matZx * detXYyz - matZy * detXYxz + matZz * detXYxy) * inverseDet
         );
     }
 

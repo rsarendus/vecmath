@@ -3283,7 +3283,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform3x2(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Factory<R> factory) {
+    public static <R> R affineTransform3x2(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aYx = a.Yx();
@@ -3306,7 +3306,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform3x2To(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Consumer consumer) {
+    public static void affineTransform3x2To(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Consumer consumer) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aYx = a.Yx();
@@ -3329,7 +3329,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform3x2And3x3(final Matrix3x2.Accessible a, final Matrix3x3.Accessible b, final Matrix3x3.Factory<R> factory) {
+    public static <R> R projectiveTransform3x2And3x3(final Matrix3x2.Accessible a, final Matrix3x3.Accessible b, final Matrix3x3.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aYx = a.Yx();
@@ -3360,7 +3360,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform3x2And3x3To(final Matrix3x2.Accessible a, final Matrix3x3.Accessible b, final Matrix3x3.Consumer consumer) {
+    public static void projectiveTransform3x2And3x3To(final Matrix3x2.Accessible a, final Matrix3x3.Accessible b, final Matrix3x3.Consumer consumer) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aYx = a.Yx();
@@ -3391,7 +3391,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform3x2And2(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
+    public static <R> R affineTransform3x2And2(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
 
@@ -3401,7 +3401,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform3x2And2To(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
+    public static void affineTransform3x2And2To(final Matrix3x2.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
 
@@ -4114,7 +4114,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform3x3And3x2(final Matrix3x3.Accessible a, final Matrix3x2.Accessible b, final Matrix3x3.Factory<R> factory) {
+    public static <R> R projectiveTransform3x3And3x2(final Matrix3x3.Accessible a, final Matrix3x2.Accessible b, final Matrix3x3.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -4142,7 +4142,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform3x3And3x2To(final Matrix3x3.Accessible a, final Matrix3x2.Accessible b, final Matrix3x3.Consumer consumer) {
+    public static void projectiveTransform3x3And3x2To(final Matrix3x3.Accessible a, final Matrix3x2.Accessible b, final Matrix3x3.Consumer consumer) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -4194,7 +4194,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixProject3x3And2(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
+    public static <R> R perspectiveTransform3x3And2(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
 
@@ -4206,7 +4206,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixProject3x3And2To(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
+    public static void perspectiveTransform3x3And2To(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
 
@@ -5126,7 +5126,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform4x3(final Matrix4x3.Accessible a, final Matrix4x3.Accessible b, final Matrix4x3.Factory<R> factory) {
+    public static <R> R affineTransform4x3(final Matrix4x3.Accessible a, final Matrix4x3.Accessible b, final Matrix4x3.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -5166,7 +5166,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform4x3To(final Matrix4x3.Accessible a, final Matrix4x3.Accessible b, final Matrix4x3.Consumer consumer) {
+    public static void affineTransform4x3To(final Matrix4x3.Accessible a, final Matrix4x3.Accessible b, final Matrix4x3.Consumer consumer) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -5206,7 +5206,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform4x3And4x4(final Matrix4x3.Accessible a, final Matrix4x4.Accessible b, final Matrix4x4.Factory<R> factory) {
+    public static <R> R projectiveTransform4x3And4x4(final Matrix4x3.Accessible a, final Matrix4x4.Accessible b, final Matrix4x4.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -5257,7 +5257,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform4x3And4x4To(final Matrix4x3.Accessible a, final Matrix4x4.Accessible b, final Matrix4x4.Consumer consumer) {
+    public static void projectiveTransform4x3And4x4To(final Matrix4x3.Accessible a, final Matrix4x4.Accessible b, final Matrix4x4.Consumer consumer) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -5308,7 +5308,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform4x3And3(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
+    public static <R> R affineTransform4x3And3(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();
@@ -5320,7 +5320,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform4x3And3To(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
+    public static void affineTransform4x3And3To(final Matrix4x3.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();
@@ -6138,7 +6138,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixTransform4x4And4x3(final Matrix4x4.Accessible a, final Matrix4x3.Accessible b, final Matrix4x4.Factory<R> factory) {
+    public static <R> R projectiveTransform4x4And4x3(final Matrix4x4.Accessible a, final Matrix4x3.Accessible b, final Matrix4x4.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -6185,7 +6185,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixTransform4x4And4x3To(final Matrix4x4.Accessible a, final Matrix4x3.Accessible b, final Matrix4x4.Consumer consumer) {
+    public static void projectiveTransform4x4And4x3To(final Matrix4x4.Accessible a, final Matrix4x3.Accessible b, final Matrix4x4.Consumer consumer) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
         final double aXz = a.Xz();
@@ -6260,7 +6260,7 @@ public final class VecMath {
         );
     }
 
-    public static <R> R matrixProject4x4And3(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
+    public static <R> R perspectiveTransform4x4And3(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();
@@ -6274,7 +6274,7 @@ public final class VecMath {
         );
     }
 
-    public static void matrixProject4x4And3To(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
+    public static void perspectiveTransform4x4And3To(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector3.Consumer consumer) {
         final double x = p.x();
         final double y = p.y();
         final double z = p.z();

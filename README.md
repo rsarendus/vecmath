@@ -176,10 +176,11 @@ No replication of elements is supported.
 
 > [!IMPORTANT]
 > While the matrix interfaces themselves do not mandate the treatment of base vectors as either rows or columns,
-> **all vectors are treated as columns for the purpose of calculating matrix products!**
+> **the library treats all vectors as columns for the purpose of calculating matrix products!**
 
 An example of transforming a 4-component vector by a 4&nbsp;&times;&nbsp;4 transformation matrix, i.e. calculating
-the product of a 4&nbsp;&times;&nbsp;4 matrix and a 1&nbsp;&times;&nbsp;4 matrix (i.e. a column vector):
+the product of a 4&nbsp;&times;&nbsp;4 matrix and a 1&nbsp;&times;&nbsp;4 matrix (i.e. a column vector) as performed
+by the library:
 
 ```math
 \begin{bmatrix} Xx & Yx & Zx & Tx \\ Xy & Yy & Zy & Ty \\ Xz & Yz & Zz & Tz \\ Xw & Yw & Zw & Tw \end{bmatrix}

@@ -4194,6 +4194,28 @@ public final class VecMath {
         );
     }
 
+    public static <R> R projectiveTransform3x3And2(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector3.Factory<R> factory) {
+        final double x = p.x();
+        final double y = p.y();
+
+        return factory.create(
+                m.Xx() * x + m.Yx() * y + m.Zx(),
+                m.Xy() * x + m.Yy() * y + m.Zy(),
+                m.Xz() * x + m.Yz() * y + m.Zz()
+        );
+    }
+
+    public static void projectiveTransform3x3And2To(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector3.Consumer consumer) {
+        final double x = p.x();
+        final double y = p.y();
+
+        consumer.xyz(
+                m.Xx() * x + m.Yx() * y + m.Zx(),
+                m.Xy() * x + m.Yy() * y + m.Zy(),
+                m.Xz() * x + m.Yz() * y + m.Zz()
+        );
+    }
+
     public static <R> R perspectiveTransform3x3And2(final Matrix3x3.Accessible m, final Vector2.Accessible p, final Vector2.Factory<R> factory) {
         final double x = p.x();
         final double y = p.y();
@@ -6257,6 +6279,32 @@ public final class VecMath {
                 m.Xy() * x + m.Yy() * y + m.Zy() * z + m.Ty() * w,
                 m.Xz() * x + m.Yz() * y + m.Zz() * z + m.Tz() * w,
                 m.Xw() * x + m.Yw() * y + m.Zw() * z + m.Tw() * w
+        );
+    }
+
+    public static <R> R projectiveTransform4x4And3(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector4.Factory<R> factory) {
+        final double x = p.x();
+        final double y = p.y();
+        final double z = p.z();
+
+        return factory.create(
+                m.Xx() * x + m.Yx() * y + m.Zx() * z + m.Tx(),
+                m.Xy() * x + m.Yy() * y + m.Zy() * z + m.Ty(),
+                m.Xz() * x + m.Yz() * y + m.Zz() * z + m.Tz(),
+                m.Xw() * x + m.Yw() * y + m.Zw() * z + m.Tw()
+        );
+    }
+
+    public static void projectiveTransform4x4And3To(final Matrix4x4.Accessible m, final Vector3.Accessible p, final Vector4.Consumer consumer) {
+        final double x = p.x();
+        final double y = p.y();
+        final double z = p.z();
+
+        consumer.xyzw(
+                m.Xx() * x + m.Yx() * y + m.Zx() * z + m.Tx(),
+                m.Xy() * x + m.Yy() * y + m.Zy() * z + m.Ty(),
+                m.Xz() * x + m.Yz() * y + m.Zz() * z + m.Tz(),
+                m.Xw() * x + m.Yw() * y + m.Zw() * z + m.Tw()
         );
     }
 

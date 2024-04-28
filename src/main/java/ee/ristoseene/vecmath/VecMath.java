@@ -3237,6 +3237,52 @@ public final class VecMath {
         );
     }
 
+    public static <R> R affineInverse3x2(final Matrix3x2.Accessible mat, final Matrix3x2.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+
+        final double inverseDet2x2 = 1.0D / (matXx * matYy - matXy * matYx);
+
+        final double inverse2x2Xx = matYy * inverseDet2x2;
+        final double inverse2x2Xy = -matXy * inverseDet2x2;
+        final double inverse2x2Yx = -matYx * inverseDet2x2;
+        final double inverse2x2Yy = matXx * inverseDet2x2;
+
+        return factory.create(
+                inverse2x2Xx, inverse2x2Xy,
+                inverse2x2Yx, inverse2x2Yy,
+                -(inverse2x2Xx * matZx + inverse2x2Yx * matZy),
+                -(inverse2x2Xy * matZx + inverse2x2Yy * matZy)
+        );
+    }
+
+    public static void affineInverse3x2To(final Matrix3x2.Accessible mat, final Matrix3x2.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+
+        final double inverseDet2x2 = 1.0D / (matXx * matYy - matXy * matYx);
+
+        final double inverse2x2Xx = matYy * inverseDet2x2;
+        final double inverse2x2Xy = -matXy * inverseDet2x2;
+        final double inverse2x2Yx = -matYx * inverseDet2x2;
+        final double inverse2x2Yy = matXx * inverseDet2x2;
+
+        consumer.XYZxy(
+                inverse2x2Xx, inverse2x2Xy,
+                inverse2x2Yx, inverse2x2Yy,
+                -(inverse2x2Xx * matZx + inverse2x2Yx * matZy),
+                -(inverse2x2Xy * matZx + inverse2x2Yy * matZy)
+        );
+    }
+
     public static <R> R matrixTransform3x2(final Matrix3x2.Accessible a, final Matrix3x2.Accessible b, final Matrix3x2.Factory<R> factory) {
         final double aXx = a.Xx();
         final double aXy = a.Xy();
@@ -4997,6 +5043,86 @@ public final class VecMath {
                 a / b.Tx(),
                 a / b.Ty(),
                 a / b.Tz()
+        );
+    }
+
+    public static <R> R affineInverse4x3(final Matrix4x3.Accessible mat, final Matrix4x3.Factory<R> factory) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+
+        final double cofactor3x3Xx = matYy * matZz - matYz * matZy;
+        final double cofactor3x3Xy = matYz * matZx - matYx * matZz;
+        final double cofactor3x3Xz = matYx * matZy - matYy * matZx;
+
+        final double inverseDet3x3 = 1.0D / (matXx * cofactor3x3Xx + matXy * cofactor3x3Xy + matXz * cofactor3x3Xz);
+
+        final double inverse3x3Xx = cofactor3x3Xx * inverseDet3x3;
+        final double inverse3x3Xy = (matXz * matZy - matXy * matZz) * inverseDet3x3;
+        final double inverse3x3Xz = (matXy * matYz - matXz * matYy) * inverseDet3x3;
+        final double inverse3x3Yx = cofactor3x3Xy * inverseDet3x3;
+        final double inverse3x3Yy = (matXx * matZz - matXz * matZx) * inverseDet3x3;
+        final double inverse3x3Yz = (matXz * matYx - matXx * matYz) * inverseDet3x3;
+        final double inverse3x3Zx = cofactor3x3Xz * inverseDet3x3;
+        final double inverse3x3Zy = (matXy * matZx - matXx * matZy) * inverseDet3x3;
+        final double inverse3x3Zz = (matXx * matYy - matXy * matYx) * inverseDet3x3;
+
+        return factory.create(
+                inverse3x3Xx, inverse3x3Xy, inverse3x3Xz,
+                inverse3x3Yx, inverse3x3Yy, inverse3x3Yz,
+                inverse3x3Zx, inverse3x3Zy, inverse3x3Zz,
+                -(inverse3x3Xx * matTx + inverse3x3Yx * matTy + inverse3x3Zx * matTz),
+                -(inverse3x3Xy * matTx + inverse3x3Yy * matTy + inverse3x3Zy * matTz),
+                -(inverse3x3Xz * matTx + inverse3x3Yz * matTy + inverse3x3Zz * matTz)
+        );
+    }
+
+    public static void affineInverse4x3To(final Matrix4x3.Accessible mat, final Matrix4x3.Consumer consumer) {
+        final double matXx = mat.Xx();
+        final double matXy = mat.Xy();
+        final double matXz = mat.Xz();
+        final double matYx = mat.Yx();
+        final double matYy = mat.Yy();
+        final double matYz = mat.Yz();
+        final double matZx = mat.Zx();
+        final double matZy = mat.Zy();
+        final double matZz = mat.Zz();
+        final double matTx = mat.Tx();
+        final double matTy = mat.Ty();
+        final double matTz = mat.Tz();
+
+        final double cofactor3x3Xx = matYy * matZz - matYz * matZy;
+        final double cofactor3x3Xy = matYz * matZx - matYx * matZz;
+        final double cofactor3x3Xz = matYx * matZy - matYy * matZx;
+
+        final double inverseDet3x3 = 1.0D / (matXx * cofactor3x3Xx + matXy * cofactor3x3Xy + matXz * cofactor3x3Xz);
+
+        final double inverse3x3Xx = cofactor3x3Xx * inverseDet3x3;
+        final double inverse3x3Xy = (matXz * matZy - matXy * matZz) * inverseDet3x3;
+        final double inverse3x3Xz = (matXy * matYz - matXz * matYy) * inverseDet3x3;
+        final double inverse3x3Yx = cofactor3x3Xy * inverseDet3x3;
+        final double inverse3x3Yy = (matXx * matZz - matXz * matZx) * inverseDet3x3;
+        final double inverse3x3Yz = (matXz * matYx - matXx * matYz) * inverseDet3x3;
+        final double inverse3x3Zx = cofactor3x3Xz * inverseDet3x3;
+        final double inverse3x3Zy = (matXy * matZx - matXx * matZy) * inverseDet3x3;
+        final double inverse3x3Zz = (matXx * matYy - matXy * matYx) * inverseDet3x3;
+
+        consumer.XYZTxyz(
+                inverse3x3Xx, inverse3x3Xy, inverse3x3Xz,
+                inverse3x3Yx, inverse3x3Yy, inverse3x3Yz,
+                inverse3x3Zx, inverse3x3Zy, inverse3x3Zz,
+                -(inverse3x3Xx * matTx + inverse3x3Yx * matTy + inverse3x3Zx * matTz),
+                -(inverse3x3Xy * matTx + inverse3x3Yy * matTy + inverse3x3Zy * matTz),
+                -(inverse3x3Xz * matTx + inverse3x3Yz * matTy + inverse3x3Zz * matTz)
         );
     }
 
